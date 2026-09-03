@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Switchboard</title>
+<style>
+  :root {
+    --bg-start: #fdf6f0;
+    --bg-end: #f2e6da;
+    --card-bg: #ffffff;
+    --text: #2b2b2b;
+    --subtext: #7a7a7a;
+    --accent: #c9a25c;
+    --shadow: rgba(0, 0, 0, 0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    color: var(--text);
+    padding: 2rem;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px var(--shadow);
+    padding: 3rem 2.5rem;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+  }
+
+  p.subtitle {
+    color: var(--subtext);
+    margin: 0 0 2.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+
+  a.brand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    background: #faf7f2;
+    border: 1px solid #ece2d3;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+
+  a.brand-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--shadow);
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  a.brand-btn:active {
+    transform: translateY(-1px);
+  }
+
+  footer {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--subtext);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Fashion Switchboard</h1>
+    <p class="subtitle">Pick a destination</p>
+    <div class="buttons">
+      <a class="brand-btn" href="https://www.vogue.com" target="_blank" rel="noopener noreferrer">Vogue</a>
+      <a class="brand-btn" href="https://www.elle.com" target="_blank" rel="noopener noreferrer">Elle</a>
+      <a class="brand-btn" href="https://www.harpersbazaar.com" target="_blank" rel="noopener noreferrer">Harper's Bazaar</a>
+      <a class="brand-btn" href="https://www.maxmara.com" target="_blank" rel="noopener noreferrer">Max Mara</a>
+      <a class="brand-btn" href="https://www.hm.com" target="_blank" rel="noopener noreferrer">H&amp;M</a>
+      <a class="brand-btn" href="https://www.zara.com" target="_blank" rel="noopener noreferrer">Zara</a>
+    </div>
+    <footer>Opens each site in a new tab</footer>
+  </div>
+</body>
+</html>
