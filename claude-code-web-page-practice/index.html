@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orbit — Personal Dashboard</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='12' rx='10' ry='4.5' fill='none' stroke='%234f6df5' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%234f6df5'/%3E%3C/svg%3E">
+<title>OneSpace — Work and Life Dashboard</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='12' height='12' rx='4' fill='%23536dff'/%3E%3Crect x='9' y='9' width='12' height='12' rx='4' fill='none' stroke='%238a5cff' stroke-width='2'/%3E%3C/svg%3E">
 <script>(function(){try{var p=localStorage.getItem('orbit-palette'),t=localStorage.getItem('orbit-theme'),b=localStorage.getItem('orbit-background');if(p&&p!=='classic'&&p!=='auto')document.documentElement.setAttribute('data-palette',p);document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));document.addEventListener('DOMContentLoaded',function(){document.body.setAttribute('data-background',b||'orbit')});}catch(e){}})();</script>
 <style>
-/* LUMINOUS ORBIT — unified visual system */
+/* ONESPACE — unified visual system */
 :root {
   color-scheme: light;
   --bg:#eef2fa;--bg-2:#e7ecf8;--surface:#fff;--surface-2:#f7f9fd;--surface-3:#edf1fa;
@@ -40,14 +40,15 @@ button,input,select,textarea{font:inherit}button,a{touch-action:manipulation}but
 kbd{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-content:center;padding:0 6px;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;background:var(--surface-2);color:var(--muted);font-size:.72rem;font-weight:750}
 .btn{display:inline-flex;min-height:40px;align-items:center;justify-content:center;gap:8px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);color:var(--text);font-weight:700;font-size:.84rem;cursor:pointer;transition:transform .18s,background .18s,border-color .18s}.btn:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--accent) 38%,var(--line));background:var(--surface-3)}.btn-primary{border-color:transparent;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:var(--accent-contrast);box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 24%,transparent)}.btn-icon{width:42px;padding:0}.btn-ghost{background:transparent;border-color:transparent}
 /* Navigation rail */
-.sidebar{position:fixed;z-index:50;inset:0 auto 0 0;width:var(--rail);display:flex;flex-direction:column;padding:22px 14px;background:color-mix(in srgb,var(--surface) 88%,var(--bg));border-right:1px solid var(--line);box-shadow:10px 0 34px rgba(25,38,77,.045);backdrop-filter:blur(24px);overflow-y:auto;transition:transform .2s}
-.sidebar-brand{display:flex;align-items:center;gap:12px;padding:0 7px 20px;font-size:1.08rem;font-weight:820;letter-spacing:-.03em}.sidebar-mark{position:relative;display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 26%,transparent)}.sidebar-mark svg{width:27px;height:27px}.side-section-label{display:block;margin:18px 10px 7px;color:var(--faint);font-size:.61rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.space-switcher,.side-nav{display:grid;width:100%;gap:4px}.space-btn,.side-btn{display:flex;width:100%;min-height:42px;align-items:center;gap:10px;padding:0 11px;border:0;border-radius:11px;background:transparent;color:var(--muted);font-size:.78rem;font-weight:700;cursor:pointer;transition:.18s}.space-btn:hover,.side-btn:hover{background:var(--surface-2);color:var(--text)}.space-btn.active,.side-btn.active{background:var(--accent-soft);color:var(--accent)}.space-dot{width:9px;height:9px;border:2px solid currentColor;border-radius:50%}.space-btn.active .space-dot{background:currentColor;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 12%,transparent)}.side-btn .icon{width:18px;height:18px}.side-label{display:inline}.side-nav[aria-label="Dashboard actions"]{margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}.side-spacer,.sidebar-tip,.side-count,.legacy-data-actions,.category-jump,#sideCommand,#sideToolbox,#sideAdd,#customizeBtn,#sideHelp{display:none!important}.space-action{font-size:.72rem}.explore-action{display:none}body[data-space="explore"] .explore-action{display:flex}body[data-space="explore"] .work-action{display:none}.sidebar-toggle{display:none}
+.sidebar{position:fixed;z-index:50;inset:0 auto 0 0;width:var(--rail);display:flex;flex-direction:column;padding:28px 16px 20px;background:color-mix(in srgb,var(--surface) 94%,var(--bg));border-right:1px solid color-mix(in srgb,var(--line) 72%,transparent);box-shadow:18px 0 55px rgba(25,38,77,.04);backdrop-filter:blur(28px);overflow-y:auto;transition:transform .2s}
+.sidebar-brand{display:flex;align-items:center;gap:11px;padding:0 8px 28px;font-size:1.02rem;font-weight:850;letter-spacing:-.045em}.sidebar-mark{position:relative;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:#121a35;color:#fff;box-shadow:0 10px 24px rgba(39,52,108,.2)}.sidebar-mark svg{width:23px;height:23px}.side-section-label{display:block;margin:17px 11px 8px;color:var(--faint);font-size:.58rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}.space-switcher,.side-nav{display:grid;width:100%;gap:5px}.space-btn,.side-btn{display:flex;width:100%;min-height:44px;align-items:center;gap:11px;padding:0 12px;border:0;border-radius:12px;background:transparent;color:var(--muted);font-size:.79rem;font-weight:700;cursor:pointer;transition:.18s}.space-btn:hover,.side-btn:hover{background:var(--surface-2);color:var(--text)}.space-btn.active,.side-btn.active{background:linear-gradient(100deg,var(--accent-soft),color-mix(in srgb,var(--accent-soft) 32%,transparent));color:var(--accent)}.space-dot{width:8px;height:8px;border:1.5px solid currentColor;border-radius:3px;transform:rotate(45deg)}.space-btn.active .space-dot{background:currentColor;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 10%,transparent)}.side-btn .icon{width:17px;height:17px}.side-label{display:inline}.side-nav[aria-label="Dashboard actions"]{margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}.side-spacer,.sidebar-tip,.side-count,.legacy-data-actions,.category-jump,#sideCommand,#sideToolbox,#sideAdd,#customizeBtn,#sideHelp{display:none!important}.space-action{font-size:.72rem}.explore-action{display:none}body[data-space="explore"] .explore-action{display:flex}body[data-space="explore"] .work-action{display:none}.sidebar-toggle{display:none}
 .today-rail{display:none;position:fixed;z-index:20;top:32px;bottom:32px;width:292px;padding:22px;overflow:auto;border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line));border-radius:28px;background:linear-gradient(165deg,color-mix(in srgb,var(--surface) 96%,var(--accent-soft)),color-mix(in srgb,var(--surface) 96%,var(--gaming-soft)));box-shadow:var(--shadow)}.rail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line)}.rail-head h2{margin:3px 0 2px;font-size:1.25rem;letter-spacing:-.03em}.rail-eyebrow{color:var(--accent);font-size:.62rem;font-weight:850;letter-spacing:.15em}.rail-date{margin:0;color:var(--muted);font-size:.72rem}.rail-close{width:32px;height:32px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);cursor:pointer}.rail-focus{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;margin:18px 0;padding:17px;border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));border-radius:18px;background:linear-gradient(145deg,var(--accent-soft),color-mix(in srgb,var(--surface) 76%,var(--gaming-soft)))}.focus-orb{grid-row:1/3;width:38px;height:38px;border:8px solid color-mix(in srgb,var(--accent) 18%,transparent);border-top-color:var(--accent);border-radius:50%;box-shadow:0 0 24px color-mix(in srgb,var(--accent) 32%,transparent)}.rail-focus span:not(.focus-orb){color:var(--muted);font-size:.67rem;text-transform:uppercase;letter-spacing:.08em}.rail-focus strong{display:block;font-size:1.45rem;line-height:1;font-variant-numeric:tabular-nums}.rail-focus .rail-action{grid-column:1/-1;margin-top:10px}.rail-section{padding:17px 0;border-top:1px solid var(--line)}.rail-title{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:.76rem;text-transform:uppercase;letter-spacing:.07em}.rail-title .icon{width:16px;color:var(--accent)}.rail-list{margin:0}.rail-list li{padding:9px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 75%,transparent);font-size:.76rem}.rail-list strong,.rail-list span{display:block}.rail-empty,.rail-note,.rail-countdown{color:var(--muted);font-size:.76rem;line-height:1.55}.rail-note{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3}.rail-action{width:100%;min-height:36px;margin-top:10px;font-size:.74rem}
+.today-rail{top:28px;bottom:auto;width:264px;border-color:color-mix(in srgb,var(--accent) 16%,var(--line));background:color-mix(in srgb,var(--surface) 96%,var(--accent-soft));box-shadow:0 24px 64px rgba(35,48,92,.13)}.rail-head h2{font-size:1.55rem}.rail-eyebrow{letter-spacing:.16em}.today-rail .rail-section:not(.rail-next){display:none}.rail-next #nextUpDetail{display:grid;gap:6px}.rail-next #nextUpDetail strong{font-size:.94rem;line-height:1.35}.rail-next #nextUpDetail span{color:var(--muted);font-size:.73rem;line-height:1.45}.rail-next-actions{display:flex;gap:7px;margin-top:16px}.rail-next-actions .btn{flex:1;padding-inline:10px;font-size:.72rem}.mobile-today-toggle{display:none}
 .wrap{width:min(calc(100vw - var(--rail) - 64px),1600px);margin:0 auto 0 calc(var(--rail) + max(32px,(100vw - var(--rail) - 1600px)/2));padding:32px 0 80px}
 /* Hero */
-.app-header{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);grid-template-areas:"brand orbit" "message orbit" "meta orbit";gap:10px 40px;min-height:300px;align-content:center;padding:40px 44px;margin-bottom:16px;overflow:hidden;border:1px solid color-mix(in srgb,var(--accent) 24%,var(--line));border-radius:32px;background:linear-gradient(125deg,color-mix(in srgb,var(--surface) 88%,var(--accent-soft)),color-mix(in srgb,var(--surface) 92%,var(--gaming-soft)));box-shadow:0 28px 70px rgba(35,48,92,.15);animation:heroIn .48s ease both;isolation:isolate}
-.app-header::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 46%,color-mix(in srgb,var(--accent-2) 9%,transparent));z-index:-1}.app-header::after{content:"";position:absolute;width:420px;height:420px;right:-80px;top:-90px;background:radial-gradient(circle,color-mix(in srgb,var(--accent-2) 26%,transparent),transparent 68%);z-index:-1}
-.brand-lockup{grid-area:brand;display:flex;align-items:center;gap:20px;position:relative;z-index:1}.orbit-logo{display:grid;width:74px;height:74px;place-items:center;border-radius:23px;background:linear-gradient(145deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 18px 44px color-mix(in srgb,var(--accent) 38%,transparent),inset 0 1px rgba(255,255,255,.35);animation:identityIn .5s .06s ease both}.orbit-logo svg{width:52px;height:52px}.orbit-logo .ring{transform-origin:center;animation:orbitTurn 12s linear infinite}.brand h1{margin:0;font-size:clamp(2.8rem,4.5vw,4.8rem);line-height:.9;letter-spacing:-.065em}.brand p{margin:12px 0 0;color:var(--muted);font-size:1rem}.header-message{grid-area:message;position:relative;z-index:1;margin-left:94px;color:var(--muted);font-size:.86rem}.header-message .greeting{color:var(--text);font-weight:780;margin-right:7px}.header-meta{grid-area:meta;position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-start;gap:14px;margin-left:94px}.clock-box{text-align:left}.clock-box .time{font-size:1.55rem;line-height:1;font-variant-numeric:tabular-nums;font-weight:760;letter-spacing:-.04em}.clock-box .date{margin-top:6px;color:var(--muted);font-size:.74rem}.hero-orbit{grid-area:orbit;position:relative;z-index:1;align-self:stretch;display:grid;place-items:center;min-width:0}.hero-orbit svg{width:min(100%,430px);filter:drop-shadow(0 20px 28px color-mix(in srgb,var(--accent) 20%,transparent))}.hero-halo{fill:color-mix(in srgb,var(--accent) 9%,transparent);stroke:color-mix(in srgb,var(--accent) 17%,transparent);stroke-width:1}.hero-ring{stroke:color-mix(in srgb,var(--accent) 48%,transparent);stroke-width:1.5;stroke-dasharray:8 7;transform-origin:center;animation:orbitTurn 24s linear infinite}.ring-two{stroke:color-mix(in srgb,var(--accent-2) 44%,transparent);animation-duration:32s;animation-direction:reverse}.hero-trail{stroke:url(#trail);stroke-width:3;stroke-linecap:round}.hero-planet{fill:url(#planetGlow);filter:drop-shadow(0 0 22px color-mix(in srgb,var(--accent) 70%,transparent))}.hero-moon{fill:var(--accent-2);filter:drop-shadow(0 0 8px var(--accent-2))}.hero-star{fill:var(--accent)}.star-two{fill:var(--accent-2)}.orbit-caption{position:absolute;bottom:8px;color:var(--muted);font-size:.62rem;font-weight:800;letter-spacing:.22em}.view-heading{display:flex;align-items:end;justify-content:space-between;margin:18px 4px 12px}.view-heading h2{margin:0;font-size:1.35rem;letter-spacing:-.025em}.view-heading p{margin:3px 0 0;color:var(--muted);font-size:.84rem}.view-badge{display:none}
+.app-header{position:relative;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);grid-template-areas:"brand visual" "message visual" "meta visual";gap:12px 34px;min-height:292px;align-content:center;padding:44px 48px;margin-bottom:16px;overflow:hidden;border:0;border-radius:34px;background:linear-gradient(120deg,#111a36 0%,#18254b 54%,#293363 100%);color:#fff;box-shadow:0 32px 80px rgba(25,37,83,.24);animation:heroIn .48s ease both;isolation:isolate}
+.app-header::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 32%,rgba(152,132,255,.3),transparent 29%),linear-gradient(105deg,rgba(255,255,255,.04),transparent 45%);z-index:-1}.app-header::after{content:"";position:absolute;width:480px;height:1px;left:48px;bottom:28px;background:linear-gradient(90deg,rgba(255,255,255,.34),transparent);z-index:-1}
+.brand-lockup{grid-area:brand;display:flex;align-items:center;gap:18px;position:relative;z-index:1}.orbit-logo{display:grid;width:62px;height:62px;place-items:center;border-radius:19px;background:linear-gradient(145deg,#6780ff,#a879ff);color:#fff;box-shadow:0 16px 38px rgba(90,104,255,.36),inset 0 1px rgba(255,255,255,.35);animation:identityIn .5s .06s ease both}.orbit-logo svg{width:38px;height:38px}.brand h1{margin:0;font-size:clamp(3rem,5vw,5.1rem);line-height:.88;letter-spacing:-.07em}.brand p{margin:14px 0 0;color:rgba(255,255,255,.68);font-size:1.02rem}.header-message{grid-area:message;position:relative;z-index:1;margin-left:80px;color:rgba(255,255,255,.62);font-size:.86rem}.header-message .greeting{display:block;margin:0 0 5px;color:#fff;font-size:1.04rem;font-weight:780}.header-meta{grid-area:meta;position:relative;z-index:1;display:flex;align-items:center;justify-content:flex-start;gap:14px;margin-left:80px}.clock-box{text-align:left}.clock-box .time{font-size:1.45rem;line-height:1;font-variant-numeric:tabular-nums;font-weight:760;letter-spacing:-.04em}.clock-box .date{margin-top:6px;color:rgba(255,255,255,.58);font-size:.72rem}.app-header .btn-icon{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff}.hero-orbit{grid-area:visual;position:relative;z-index:1;align-self:stretch;display:grid;place-items:center;min-width:0}.hero-orbit svg{width:min(100%,270px);filter:drop-shadow(0 28px 34px rgba(3,7,24,.3));animation:identityIn .65s .1s ease both}.space-plane{fill:rgba(255,255,255,.08);stroke:rgba(255,255,255,.4);stroke-width:1}.space-plane.primary{fill:url(#spaceGlow);stroke:rgba(255,255,255,.7)}.space-line{stroke:rgba(255,255,255,.38);stroke-width:1.5;stroke-linecap:round}.space-core{fill:#fff;filter:drop-shadow(0 0 15px rgba(180,170,255,.9))}.orbit-caption{position:absolute;bottom:16px;color:rgba(255,255,255,.5);font-size:.58rem;font-weight:800;letter-spacing:.2em}.view-heading{display:flex;align-items:end;justify-content:space-between;margin:18px 4px 12px}.view-heading h2{margin:0;font-size:1.35rem;letter-spacing:-.025em}.view-heading p{margin:3px 0 0;color:var(--muted);font-size:.84rem}.view-badge{display:none}
 /* Search */
 .search-panel{position:relative;padding:11px;margin-bottom:14px;border:1px solid color-mix(in srgb,var(--accent) 22%,var(--line));border-radius:20px;background:color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:0 16px 40px rgba(44,62,110,.11);animation:searchIn .48s .1s ease both}.search-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;padding:0 4px}.search-providers,.search-mode{display:flex;align-items:center;gap:4px}.search-providers .icon{display:none}.search-providers button,.search-mode button{min-height:30px;padding:0 10px;border:0;border-radius:9px;background:transparent;color:var(--muted);font-size:.73rem;font-weight:700;cursor:pointer}.search-providers button.active,.search-mode button.active{background:var(--accent-soft);color:var(--accent)}.search-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;min-height:60px;padding:7px 8px 7px 16px;border:1px solid var(--line);border-radius:15px;background:var(--surface-2);transition:.18s}.search-row:focus-within{border-color:var(--accent);box-shadow:var(--focus);background:var(--surface)}.search-row>.icon{color:var(--accent)}.search-row input{min-width:0;border:0;outline:0;background:transparent;color:var(--text);font-size:1rem}.search-row input::placeholder{color:var(--faint)}.search-hint{margin:7px 6px 0;color:var(--muted);font-size:.72rem}.local-result{margin:10px 5px 2px;color:var(--muted);font-size:.82rem}
 /* Compact Today */
@@ -61,6 +62,7 @@ kbd{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-co
 .group{--category:var(--accent);--category-soft:var(--accent-soft);position:relative;margin:0 0 28px;padding:0}.category-development{--category:var(--development);--category-soft:var(--development-soft)}.category-shopping-home{--category:var(--shopping-home);--category-soft:var(--shopping-home-soft)}.category-gaming{--category:var(--gaming);--category-soft:var(--gaming-soft)}.category-daily{--category:var(--daily);--category-soft:var(--daily-soft)}.category-smart-home{--category:var(--smart-home);--category-soft:var(--smart-home-soft)}
 .section-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 2px 12px;padding-left:12px;border-left:3px solid var(--category)}.section-heading h2{display:flex;align-items:center;gap:9px;margin:0;font-size:1.08rem;letter-spacing:-.018em}.category-title-icon{display:none}.section-heading>span{display:flex;align-items:center;gap:7px}.collapse-btn{min-height:32px;padding:0 9px;background:transparent}.collapse-btn .icon{display:none}.group.collapsed .grid{display:none}.category-tools{display:none;gap:5px}body.customizing .category-tools{display:flex}.category-tools .btn{min-height:32px;padding:0 9px;font-size:.72rem}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card-wrap{position:relative;min-width:0;animation:cardIn .42s calc(.18s + var(--i)*22ms) ease both}.card{--brand:var(--category);position:relative;display:flex;min-height:218px;flex-direction:column;padding:19px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(150deg,var(--surface),color-mix(in srgb,var(--surface) 88%,var(--category-soft)));box-shadow:0 8px 24px rgba(35,52,92,.07);text-decoration:none;transition:transform .19s ease,border-color .19s,box-shadow .19s}.card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(var(--category),transparent 80%);opacity:.8}.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--brand) 42%,var(--line));box-shadow:0 20px 44px color-mix(in srgb,var(--brand) 16%,transparent)}.icon-badge{display:grid;width:54px;height:54px;place-items:center;margin-bottom:21px;border:1px solid color-mix(in srgb,var(--brand) 24%,transparent);border-radius:17px;background:linear-gradient(145deg,color-mix(in srgb,var(--brand) 16%,var(--surface)),color-mix(in srgb,var(--brand) 7%,var(--surface)));color:var(--brand);box-shadow:inset 0 1px rgba(255,255,255,.45),0 10px 22px color-mix(in srgb,var(--brand) 16%,transparent);transition:transform .19s}.card:hover .icon-badge{transform:translateY(-2px) rotate(-2deg)}.icon-badge .icon{width:30px;height:30px;stroke-width:1.8}.card-copy{display:flex;min-width:0;flex:1;flex-direction:column}.label{display:-webkit-box;overflow:hidden;margin-right:38px;color:var(--text);font-size:1rem;font-weight:780;line-height:1.25;letter-spacing:-.015em;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:normal;word-break:normal}.description{display:-webkit-box;overflow:hidden;margin-top:8px;color:var(--muted);font-size:.8rem;line-height:1.45;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow-wrap:normal;word-break:normal}.card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:18px;color:var(--category);font-size:.7rem;font-weight:750}.external-indicator{position:absolute;right:18px;bottom:18px;color:var(--category);transition:transform .18s}.external-indicator .icon{width:17px;height:17px}.card:hover .external-indicator{transform:translate(3px,-3px)}.custom-badge{align-self:flex-start;margin-top:9px;padding:3px 7px;border-radius:6px;background:var(--category-soft);color:var(--category);font-size:.65rem;font-weight:800}.card-actions{position:absolute;z-index:3;display:flex;gap:3px;right:12px;top:12px;opacity:.25;transition:.18s}.card-wrap:hover .card-actions,.card-wrap:focus-within .card-actions,body.customizing .card-actions{opacity:1}.favorite,.menu-toggle{display:grid;width:34px;height:34px;place-items:center;border:0;border-radius:10px;background:color-mix(in srgb,var(--surface) 90%,transparent);color:var(--muted);cursor:pointer}.favorite:hover,.menu-toggle:hover,.favorite.active{background:var(--category-soft);color:var(--category)}.favorite.active .icon{fill:currentColor}.card-menu{position:absolute;z-index:10;display:none;right:0;top:42px;width:180px;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow-hover)}.card-menu.open{display:grid}.card-menu button{display:flex;align-items:center;gap:8px;min-height:38px;padding:0 9px;border:0;border-radius:8px;background:transparent;color:var(--text);font-size:.77rem;text-align:left;cursor:pointer}.card-menu button:hover{background:var(--surface-2)}.card-menu button.delete{color:var(--danger)}.card-menu .icon{width:16px;height:16px}.grid.drag-over{outline:2px dashed var(--category);outline-offset:5px;border-radius:14px}
+.card{min-height:196px;border-color:color-mix(in srgb,var(--line) 78%,transparent);background:linear-gradient(150deg,var(--surface),color-mix(in srgb,var(--surface) 94%,var(--category-soft)));box-shadow:0 8px 24px rgba(35,52,92,.055)}.card::before{width:2px;opacity:.48}.icon-badge{width:48px;height:48px;margin-bottom:18px;border-radius:15px;box-shadow:none}.icon-badge .icon{width:27px;height:27px}.card-actions{opacity:0}.favorite.active{opacity:1}.card-meta{margin-top:14px}
 /* Productivity */
 .widget-grid{display:grid;grid-template-columns:.82fr 1.2fr 1fr;gap:14px;margin:0 0 22px}.widget{min-width:0;padding:20px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface);box-shadow:var(--shadow)}.widget-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.widget-header h2{display:flex;align-items:center;gap:8px;margin:0;font-size:.92rem}.focus-time{font-size:2.2rem;font-weight:760;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.focus-actions,.tool-row,.form-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.task-form,.countdown-form{display:flex;gap:7px}.task-form input,.countdown-form input{min-width:0;flex:1}.task-form select{width:92px}.task-list,.countdown-list,.palette-list,.rail-list{list-style:none;margin:12px 0 0;padding:0}.task-list li,.countdown-list li{display:flex;align-items:center;gap:8px;padding:9px 0;border-top:1px solid var(--line);font-size:.8rem}.task-list button,.countdown-list button{margin-left:auto}.calendar-head{display:flex;justify-content:space-between;margin-bottom:8px}.calendar-month{font-weight:750;font-size:.82rem}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:12px;font-size:.68rem;text-align:center}.calendar-grid>*{padding:4px 2px;border-radius:6px}.calendar-grid .today{background:var(--accent);color:var(--accent-contrast)}
 input,select,textarea{min-height:42px;padding:9px 11px;border:1px solid var(--line);border-radius:11px;background:var(--surface-2);color:var(--text)}textarea{resize:vertical}.form-field{display:grid;gap:7px;margin-bottom:16px}.form-field>label{font-weight:750;font-size:.84rem}.form-error{min-height:20px;color:var(--danger);font-size:.78rem}.form-actions{justify-content:flex-end;margin-top:20px}
@@ -69,12 +71,17 @@ input,select,textarea{min-height:42px;padding:9px 11px;border:1px solid var(--li
 /* Views and minimal mode */
 body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display:none}body[data-view="home"] .app-header{margin-bottom:0;padding-bottom:58px}body[data-view="home"] .search-panel{z-index:2;margin:-42px 36px 18px;padding:14px;border-color:color-mix(in srgb,var(--accent) 34%,var(--line));box-shadow:0 26px 64px rgba(35,48,92,.2)}body[data-view="shortcuts"] .glance-bar,body[data-view="shortcuts"] .widget-grid{display:none}body[data-view="productivity"] .search-panel,body[data-view="productivity"] .personal-section,body[data-view="productivity"] main{display:none}
 .minimal-exit{display:none}.mobile-nav{display:none}body.minimal-mode .sidebar,body.minimal-mode .today-rail,body.minimal-mode .view-heading,body.minimal-mode .glance-bar,body.minimal-mode .toolbar,body.minimal-mode .widget-grid,body.minimal-mode main,body.minimal-mode .site-footer{display:none!important}body.minimal-mode .wrap{width:min(100% - 32px,1080px);margin:0 auto;padding-top:8vh}body.minimal-mode .app-header{grid-template-columns:1fr 1fr;grid-template-areas:"brand orbit" "message orbit" "meta orbit";min-height:360px}.minimal-mode .header-message,.minimal-mode .header-meta{margin-left:94px}.minimal-mode .search-panel{margin-top:-42px}.minimal-mode .quick-access{margin-top:18px}.minimal-mode .quick-access-head{justify-content:center;text-align:center}.minimal-mode .quick-tabs{display:none}.minimal-mode .mini-grid{grid-template-columns:repeat(3,1fr)}body.minimal-mode .minimal-exit{display:inline-flex;position:fixed;z-index:60;right:22px;top:22px}
+body.minimal-mode .app-header{grid-template-areas:"brand visual" "message visual" "meta visual"}.minimal-mode .header-message,.minimal-mode .header-meta{margin-left:80px}
 /* Responsive */
-@media(min-width:1720px){.wrap{width:min(calc(100vw - var(--rail) - 388px),1440px);margin-left:calc(var(--rail) + max(32px,(100vw - var(--rail) - 1764px)/2))}.today-rail{display:block;left:calc(var(--rail) + max(32px,(100vw - var(--rail) - 1764px)/2) + min(calc(100vw - var(--rail) - 388px),1440px) + 24px)}body.focus-rail-hidden .today-rail{display:none}body.focus-rail-hidden .wrap{width:min(calc(100vw - var(--rail) - 64px),1600px);margin-left:calc(var(--rail) + max(32px,(100vw - var(--rail) - 1600px)/2))}}
+@media(min-width:1280px){.wrap{width:min(calc(100vw - var(--rail) - 352px),1332px);margin-left:calc(var(--rail) + max(24px,(100vw - var(--rail) - 1636px)/2))}.today-rail{display:block;left:calc(var(--rail) + max(24px,(100vw - var(--rail) - 1636px)/2) + min(calc(100vw - var(--rail) - 352px),1332px) + 24px)}body.focus-rail-hidden .today-rail,body:not([data-space="work"]) .today-rail{display:none}body.focus-rail-hidden .wrap,body:not([data-space="work"]) .wrap{width:min(calc(100vw - var(--rail) - 64px),1500px);margin-left:calc(var(--rail) + max(32px,(100vw - var(--rail) - 1500px)/2))}}
+@media(min-width:1280px) and (max-width:1550px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:1120px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mini-grid{grid-template-columns:repeat(3,1fr)}.widget-grid{grid-template-columns:1fr 1fr}.widget:last-child{grid-column:1/-1}.theme-choices{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){:root{--rail:0px}body[data-view="home"] .app-header{padding-bottom:22px}body[data-view="home"] .search-panel{margin:0 0 14px}.sidebar{transform:translateX(-110%);width:min(310px,86vw);align-items:stretch;padding:70px 14px 18px;background:var(--surface)}body.sidebar-open .sidebar,body.mobile-menu-open .sidebar{transform:translateX(0)}.sidebar-brand{display:none}.sidebar .side-nav{gap:6px}.sidebar .side-nav[aria-label="Dashboard actions"]{margin-top:14px}.sidebar .side-label{display:inline!important}.sidebar .side-btn{display:flex;width:100%;min-height:48px;justify-content:flex-start;gap:12px;padding:10px 12px}.sidebar .side-btn::after{display:none}.sidebar #sideCommand,.sidebar #sideToolbox,.sidebar #sideAdd,.sidebar #customizeBtn,.sidebar #sideHelp{display:flex!important}.sidebar-toggle{display:inline-flex;position:fixed;z-index:120;top:14px;left:14px}.wrap{width:100%;margin:0;padding:18px 16px 104px}.app-header{grid-template-columns:1fr auto;grid-template-areas:"brand meta" "message message";min-height:132px;padding:22px 18px;border-radius:22px}.orbit-logo{width:50px;height:50px;border-radius:16px}.orbit-logo svg{width:36px}.brand-lockup{gap:12px}.brand h1{font-size:1.8rem}.brand p{display:none}.header-message{margin:8px 0 0}.clock-box .time{font-size:1.25rem}.clock-box .date{max-width:130px;font-size:.67rem}.header-meta{gap:7px}.view-heading{margin-top:15px}.view-heading p{display:none}.search-top{display:grid;gap:7px;align-items:stretch}.search-providers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:none;overflow:visible;padding-bottom:0}.search-mode{justify-content:flex-end;flex-shrink:0}.search-mode button{padding:0 7px}.search-row{min-height:58px}.search-hint{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.glance-bar{grid-template-columns:1fr}.glance-item{padding:11px 13px}.glance-item:nth-child(4){display:none}.toolbar{justify-content:space-between}.toolbar .btn span{display:none}.toolbar #addShortcutBtn span{display:inline}.quick-access{padding:16px}.quick-access-head{align-items:flex-start;flex-direction:column}.quick-tabs{width:100%}.quick-tabs button{flex:1}.mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{min-height:200px;padding:15px}.icon-badge{width:48px;height:48px;margin-bottom:17px}.icon-badge .icon{width:27px;height:27px}.label{font-size:.92rem}.description{font-size:.75rem;-webkit-line-clamp:2}.section-heading{margin-top:24px}.section-heading h2{font-size:1.05rem}.collapse-btn span{display:none}.widget-grid{grid-template-columns:1fr}.widget:last-child{grid-column:auto}.task-form,.countdown-form{flex-wrap:wrap}.task-form input,.countdown-form input{flex-basis:100%}.toolbox-grid,.welcome-grid{grid-template-columns:1fr}.theme-choices{grid-template-columns:repeat(2,1fr)}.mobile-nav{position:fixed;z-index:80;display:grid;grid-template-columns:repeat(5,1fr);left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));height:70px;padding:7px;border:1px solid var(--line);border-radius:20px;background:color-mix(in srgb,var(--surface) 92%,transparent);box-shadow:0 18px 44px rgba(0,0,0,.22);backdrop-filter:blur(22px)}.mobile-nav button{display:grid;min-width:0;place-items:center;align-content:center;gap:3px;border:0;border-radius:13px;background:transparent;color:var(--muted);font-size:.62rem}.mobile-nav button.active{color:var(--accent);background:var(--accent-soft)}.mobile-nav .mobile-search{position:relative;margin-top:-23px;width:58px;height:58px;justify-self:center;border-radius:18px;background:linear-gradient(145deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 36%,transparent)}body.minimal-mode .mobile-nav{display:none}.modal-overlay{padding:10px;align-items:end}.modal{width:100%;max-height:90vh;border-radius:22px 22px 14px 14px}.palette{align-self:end;margin:0}.minimal-mode .mini-grid{grid-template-columns:repeat(2,1fr)}body.minimal-mode .minimal-exit{top:auto;bottom:92px;right:16px}}
 @media(max-width:760px){.hero-orbit{position:absolute;right:-58px;top:42px;width:230px;height:170px;opacity:.42}.hero-orbit .orbit-caption{display:none}.app-header{isolation:isolate}.brand-lockup,.header-message,.header-meta{z-index:2}.minimal-mode .hero-orbit{display:none}}
 @media(max-width:420px){.wrap{padding-inline:12px}.app-header{padding:19px 15px}.brand p{max-width:145px}.header-meta{gap:0}.header-meta .btn-icon{display:none}.clock-box .time{font-size:.95rem;white-space:nowrap}.clock-box .date{max-width:124px;font-size:.58rem}.header-message{max-width:300px;line-height:1.45}.search-panel{padding:8px}.search-top{display:block}.search-mode{margin-top:5px}.search-row{grid-template-columns:auto 1fr}.search-row .btn{grid-column:1/-1}.grid{grid-template-columns:1fr}.card{min-height:178px}.mini-grid{grid-template-columns:1fr}.glance-bar{display:none}.toolbar{margin-top:10px}.theme-choices{grid-template-columns:1fr 1fr}.minimal-mode .mini-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.glance-bar{display:block;margin-bottom:20px}.glance-item{display:none!important}.mobile-today-toggle{display:flex;width:100%;min-height:48px;align-items:center;justify-content:space-between;padding:0 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);font-weight:780}.mobile-today-toggle::after{content:"Next task · timer";color:var(--muted);font-size:.66rem;font-weight:600}.today-rail{inset:auto 12px 88px;width:auto;max-height:70vh;z-index:110;border-radius:24px}body.mobile-focus-open .today-rail{display:block}.today-rail .rail-close{display:grid;place-items:center}}
+@media(max-width:420px){.glance-bar{display:block}}
+@media(max-width:760px){body[data-view="home"] .app-header{grid-template-columns:1fr;grid-template-areas:"brand" "message" "meta";min-height:238px;padding:26px 20px 30px}.header-message,.header-meta{margin-left:0}.header-message{margin-top:10px;max-width:250px}.header-meta{margin-top:8px}.brand h1{font-size:2rem}.brand p{display:block;margin-top:6px;max-width:230px;font-size:.72rem}.hero-orbit{right:-48px;top:80px;width:190px;height:145px;opacity:.18}.clock-box .date{max-width:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}}
 @keyframes ambientIn{from{opacity:0}to{opacity:.62}}@keyframes heroIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes identityIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}@keyframes searchIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes contentIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes cardIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes orbitTurn{to{transform:rotate(360deg)}}
 
@@ -84,10 +91,10 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" aria-label="Open navigation" aria-expanded="false">
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
   </button>
-  <aside class="sidebar" aria-label="Orbit tools">
-    <div class="sidebar-brand"><span class="sidebar-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><ellipse cx="16" cy="16" rx="13" ry="5" stroke="currentColor" stroke-width="2"></ellipse><circle cx="16" cy="16" r="4.5" fill="currentColor"></circle></svg></span><span>Orbit</span></div>
+  <aside class="sidebar" aria-label="OneSpace navigation">
+    <div class="sidebar-brand"><span class="sidebar-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="5" y="5" width="13" height="13" rx="4" fill="currentColor" opacity=".95"></rect><rect x="14" y="14" width="13" height="13" rx="4" stroke="currentColor" stroke-width="2"></rect></svg></span><span>OneSpace</span></div>
     <p class="side-section-label">Spaces</p>
-    <nav class="space-switcher" aria-label="Orbit spaces">
+    <nav class="space-switcher" aria-label="OneSpace spaces">
       <button class="space-btn active" type="button" data-space-button="work"><span class="space-dot"></span><span>Work</span></button>
       <button class="space-btn" type="button" data-space-button="personal"><span class="space-dot"></span><span>Personal</span></button>
       <button class="space-btn" type="button" data-space-button="explore"><span class="space-dot"></span><span>Explore</span></button>
@@ -98,9 +105,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
       <button class="side-btn" type="button" data-view-button="shortcuts" aria-label="Shortcuts view"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect></svg><span class="side-label">Shortcuts</span></button>
       <button class="side-btn" type="button" data-view-button="productivity" aria-label="Productivity view"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"></path></svg><span class="side-label">Productivity</span></button>
     </nav>
-    <p class="side-section-label">Collections</p>
     <nav class="category-jump" id="categoryJump" aria-label="Shortcut collections"></nav>
-    <p class="side-section-label">Tools</p>
     <nav class="side-nav" aria-label="Dashboard actions">
       <button class="side-btn" id="sideCommand" type="button" aria-label="Command Palette"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16" y2="16"></line></svg><span class="side-label">Command Palette</span></button>
       <button class="side-btn" id="sideNotes" type="button" aria-label="Quick notes"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg><span class="side-label">Quick notes</span></button>
@@ -122,9 +127,9 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     <p class="sidebar-tip">Press <kbd>Ctrl</kbd> + <kbd>K</kbd> anywhere to open commands.</p>
   </aside>
   <aside class="today-rail" aria-label="Focus rail">
-    <div class="rail-head"><div><span class="rail-eyebrow">ORBIT FOCUS</span><h2>Your horizon</h2><p class="rail-date" id="railDate">Your live daily overview</p></div><button class="rail-close" id="focusRailToggle" type="button" aria-label="Hide focus rail">×</button></div>
-    <div class="rail-focus"><span class="focus-orb" aria-hidden="true"></span><div><span id="railFocusStatus">Ready</span><strong id="railFocusTime">25:00</strong></div><button class="btn rail-action" id="railProductivity" type="button">Open focus tools</button></div>
-    <section class="rail-section"><h3 class="rail-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"></path></svg>Next actions</h3><ul class="rail-list" id="railTasks"><li class="rail-empty">No open tasks. Your list is clear.</li></ul></section>
+    <div class="rail-head"><div><span class="rail-eyebrow">TODAY</span><h2>Focus</h2><p class="rail-date" id="railDate">Your live daily overview</p></div><button class="rail-close" id="focusRailToggle" type="button" aria-label="Hide focus rail">×</button></div>
+    <div class="rail-focus"><span class="focus-orb" aria-hidden="true"></span><div><span id="railFocusStatus">Ready</span><strong id="railFocusTime">25:00</strong></div><button class="btn rail-action" id="railProductivity" type="button">Open Productivity</button></div>
+    <section class="rail-section rail-next"><h3 class="rail-title">Next up</h3><div id="nextUpDetail"><strong id="nextUpText">Your task list is clear</strong><span id="nextUpDue">Nothing needs your attention.</span></div><ul class="rail-list" id="railTasks" hidden><li class="rail-empty">No open tasks. Your list is clear.</li></ul><div class="rail-next-actions"><button class="btn" id="completeNextTask" type="button" hidden>Complete</button><button class="btn btn-primary" id="openProductivity" type="button">Open Productivity</button></div></section>
     <section class="rail-section"><h3 class="rail-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Recently opened</h3><ul class="rail-list" id="railRecent"><li class="rail-empty">Open a shortcut to build your recent list.</li></ul></section>
     <section class="rail-section"><h3 class="rail-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path><circle cx="12" cy="12" r="4"></circle></svg>Next milestone</h3><div class="rail-countdown" id="railCountdown">No countdown yet. Add one in Productivity.</div></section>
     <section class="rail-section"><h3 class="rail-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>Quick note</h3><p class="rail-note" id="railNote">No note yet. Capture an idea whenever it appears.</p><button class="btn rail-action" id="railOpenNotes" type="button">Open Quick Notes</button></section>
@@ -135,14 +140,14 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     <header class="app-header">
       <div class="brand-lockup">
         <div class="orbit-logo" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none"><ellipse class="ring" cx="24" cy="24" rx="20" ry="8" stroke="currentColor" stroke-width="2"></ellipse><circle class="planet" cx="24" cy="24" r="7"></circle><circle cx="42" cy="22" r="2.5" fill="currentColor"></circle></svg>
+          <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="21" height="21" rx="7" fill="currentColor" opacity=".96"></rect><rect x="19" y="19" width="21" height="21" rx="7" stroke="currentColor" stroke-width="2.5"></rect></svg>
         </div>
         <div class="brand">
-          <h1>Orbit</h1>
-          <p>Everything you need, one click away.</p>
+          <h1>OneSpace</h1>
+          <p>Your focused space for work and life.</p>
         </div>
       </div>
-      <div class="header-message"><span class="greeting" id="greeting">Hello</span><span>Your day starts here.</span></div>
+      <div class="header-message"><span class="greeting" id="greeting">Hello</span><span>Make room for what matters today.</span></div>
       <div class="header-meta">
         <div class="clock-box">
           <div class="time" id="clockTime" aria-live="off">--:--:--</div>
@@ -154,11 +159,15 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
         </button>
       </div>
       <div class="hero-orbit" aria-hidden="true">
-        <svg viewBox="0 0 420 300" fill="none">
-          <defs><radialGradient id="planetGlow"><stop stop-color="#fff"/><stop offset=".25" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)"/></radialGradient><linearGradient id="trail" x1="40" y1="150" x2="380" y2="150"><stop stop-color="var(--accent)" stop-opacity="0"/><stop offset=".48" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent-2)" stop-opacity="0"/></linearGradient></defs>
-          <circle class="hero-halo" cx="210" cy="150" r="112"/><ellipse class="hero-ring ring-one" cx="210" cy="150" rx="166" ry="62"/><ellipse class="hero-ring ring-two" cx="210" cy="150" rx="142" ry="104" transform="rotate(-24 210 150)"/><path class="hero-trail" d="M35 176C112 92 300 88 386 166"/><circle class="hero-planet" cx="210" cy="150" r="48"/><circle class="hero-moon" cx="351" cy="118" r="8"/><circle class="hero-star" cx="83" cy="87" r="3"/><circle class="hero-star star-two" cx="318" cy="238" r="2.5"/>
+        <svg viewBox="0 0 280 250" fill="none">
+          <defs><linearGradient id="spaceGlow" x1="45" y1="35" x2="235" y2="215"><stop stop-color="#91a8ff"/><stop offset="1" stop-color="#9d6dff"/></linearGradient></defs>
+          <path class="space-line" d="M52 198 140 228l89-43M52 151l88 30 89-43" opacity=".45"/>
+          <path class="space-plane" d="m48 142 92-48 92 48-92 48-92-48Z"/>
+          <path class="space-plane primary" d="m48 102 92-48 92 48-92 48-92-48Z"/>
+          <path class="space-line" d="M82 102h116M105 82h71M105 122h71"/>
+          <circle class="space-core" cx="140" cy="102" r="5"/>
         </svg>
-        <span class="orbit-caption">YOUR DIGITAL UNIVERSE</span>
+        <span class="orbit-caption">ONE PLACE · CLEAR FOCUS</span>
       </div>
     </header>
 
@@ -166,7 +175,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
 
     <!-- ===================== Search ===================== -->
     <section class="search-panel" aria-label="Web search">
-      <div class="search-top"><div class="search-providers" id="searchProviders" role="group" aria-label="Search provider"></div><div class="search-mode" role="group" aria-label="Search mode"><button type="button" class="active" data-search-mode="web" aria-pressed="true">Search web</button><button type="button" data-search-mode="orbit" aria-pressed="false">Find in Orbit</button></div></div>
+      <div class="search-top"><div class="search-providers" id="searchProviders" role="group" aria-label="Search provider"></div><div class="search-mode" role="group" aria-label="Search mode"><button type="button" class="active" data-search-mode="web" aria-pressed="true">Search web</button><button type="button" data-search-mode="orbit" aria-pressed="false">Find in OneSpace</button></div></div>
       <form class="search-row" id="searchForm">
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -180,6 +189,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     </section>
 
     <section class="glance-bar" aria-label="Today at a glance">
+      <button class="mobile-today-toggle" id="mobileTodayToggle" type="button" aria-expanded="false">Today &amp; Focus</button>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span class="glance-copy"><span class="glance-label">Day progress</span><span class="glance-value" id="dayProgressText">0% complete</span><span class="day-progress"><span id="dayProgressBar"></span></span></span></div>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"></path></svg></span><span class="glance-copy"><span class="glance-label">Open tasks</span><span class="glance-value" id="glanceTasks">None</span></span></div>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15 8.3 22 9.3 17 14.2 18.2 21 12 17.8 5.8 21 7 14.2 2 9.3 9 8.3"></polygon></svg></span><span class="glance-copy"><span class="glance-label">Quick Access</span><span class="glance-value" id="glanceFavorites">No favorites</span></span></div>
@@ -206,7 +216,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
         </svg>
         <span>Download backup</span>
       </button>
-      <button class="btn" id="importDataBtn" type="button" title="Restore an Orbit backup">
+      <button class="btn" id="importDataBtn" type="button" title="Restore a OneSpace backup">
         <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
         </svg>
@@ -225,7 +235,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
       </button>
     </div>
 
-    <section class="chill-strip" id="chillStrip" hidden><div><span class="chill-kicker">CHILL MODE</span><strong>Step away. Orbit can wait.</strong><small>Explore only · calmer motion · no work tasks</small></div><div class="chill-actions"><button class="btn" id="chillTimer" type="button">5 min break</button><button class="btn btn-primary" id="randomPick" type="button">Random Pick</button></div></section>
+    <section class="chill-strip" id="chillStrip" hidden><div><span class="chill-kicker">CHILL MODE</span><strong>Step away. OneSpace can wait.</strong><small>Explore only · calmer motion · no work tasks</small></div><div class="chill-actions"><button class="btn" id="chillTimer" type="button">5 min break</button><button class="btn btn-primary" id="randomPick" type="button">Random Pick</button></div></section>
 
     <div class="customize-bar" id="customizeBar" role="status">
       <span><strong>Customize mode</strong> — drag custom shortcuts between categories or manage sections.</span>
@@ -261,10 +271,10 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     <!-- ===================== Link sections (populated by JS) ===================== -->
     <main id="sections"></main>
 
-    <footer class="site-footer">Orbit · your personal dashboard</footer>
+    <footer class="site-footer">OneSpace · your focused space for work and life</footer>
   </div>
 
-  <button class="minimal-exit btn btn-primary" id="minimalExit" type="button">Return to full Orbit</button>
+  <button class="minimal-exit btn btn-primary" id="minimalExit" type="button">Return to full OneSpace</button>
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <button type="button" data-view-button="home"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"></path></svg><span>Home</span></button>
     <button type="button" data-view-button="shortcuts"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect></svg><span>Shortcuts</span></button>
@@ -363,13 +373,13 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
       </div>
       <div class="modal-body">
         <div class="form-field"><label for="paletteSetting">Appearance</label><select id="paletteSetting" class="visually-hidden" tabindex="-1"><option value="auto">Auto</option><option value="classic">Classic Light</option><option value="midnight">Deep Space</option><option value="aurora">Aurora</option><option value="graphite">Graphite</option></select><div class="theme-choices" role="radiogroup" aria-label="Appearance"><button type="button" role="radio" data-theme-choice="auto"><span class="theme-preview preview-auto"></span><strong>Auto</strong><small>Follow your device</small></button><button type="button" role="radio" data-theme-choice="classic"><span class="theme-preview preview-classic"></span><strong>Classic Light</strong><small>Bright and crisp</small></button><button type="button" role="radio" data-theme-choice="midnight"><span class="theme-preview preview-midnight"></span><strong>Deep Space</strong><small>Navy and violet</small></button><button type="button" role="radio" data-theme-choice="aurora"><span class="theme-preview preview-aurora"></span><strong>Aurora</strong><small>Green and teal</small></button><button type="button" role="radio" data-theme-choice="graphite"><span class="theme-preview preview-graphite"></span><strong>Graphite</strong><small>Quiet monochrome</small></button></div></div>
-        <div class="form-field"><label>Background</label><div class="choice-pills" role="radiogroup" aria-label="Background style"><button type="button" role="radio" data-background-choice="clean">Clean</button><button type="button" role="radio" data-background-choice="gradient">Gradient</button><button type="button" role="radio" data-background-choice="orbit">Orbit</button></div><span class="setting-help">Orbit adds only soft light and subtle rings behind the interface.</span></div>
-        <div class="form-field"><label for="startupSetting">Start page</label><select id="startupSetting"><option value="full">Full dashboard</option><option value="minimal">Minimal Mode</option></select><span class="setting-help">Minimal Mode opens with only Orbit, search, time, and up to six favorites.</span></div>
-        <div class="form-field"><label for="accentSetting">Accent color</label><select id="accentSetting"><option value="blue">Orbit blue</option><option value="purple">Nebula purple</option><option value="green">Aurora green</option><option value="amber">Solar amber</option></select><span class="setting-help">Controls active buttons, focus rings, and highlights in the Classic theme.</span></div>
+        <div class="form-field"><label>Background</label><div class="choice-pills" role="radiogroup" aria-label="Background style"><button type="button" role="radio" data-background-choice="clean">Clean</button><button type="button" role="radio" data-background-choice="gradient">Gradient</button><button type="button" role="radio" data-background-choice="orbit">Atmosphere</button></div><span class="setting-help">Atmosphere adds soft light and subtle depth behind the interface.</span></div>
+        <div class="form-field"><label for="startupSetting">Start page</label><select id="startupSetting"><option value="full">Full dashboard</option><option value="minimal">Minimal Mode</option></select><span class="setting-help">Minimal Mode opens with only OneSpace, search, time, and up to six favorites.</span></div>
+        <div class="form-field"><label for="accentSetting">Accent color</label><select id="accentSetting"><option value="blue">OneSpace blue</option><option value="purple">Nebula purple</option><option value="green">Aurora green</option><option value="amber">Solar amber</option></select><span class="setting-help">Controls active buttons, focus rings, and highlights in the Classic theme.</span></div>
         <div class="form-field"><label for="densitySetting">Shortcut card layout</label><select id="densitySetting"><option value="comfortable">Comfortable — show descriptions</option><option value="compact">Compact — fit more shortcuts</option></select><span class="setting-help">Compact mode keeps the same links while using less vertical space.</span></div>
         <div class="form-field"><label for="widgetsSetting">Productivity area</label><select id="widgetsSetting"><option value="visible">Show timer, tasks, and planner</option><option value="hidden">Hide productivity tools</option></select><span class="setting-help">Your saved tasks and countdowns remain available even when this area is hidden.</span></div>
         <div class="form-field"><label for="clockSetting">Clock format</label><select id="clockSetting"><option value="12">12-hour clock</option><option value="24">24-hour clock</option></select></div>
-        <div class="settings-data"><h4>Data</h4><p>Download a private backup of your shortcuts, notes, tasks, and preferences, or restore one you saved earlier. Orbit never uploads this information.</p><div class="tool-row"><button type="button" class="btn" id="settingsExport">Download backup</button><button type="button" class="btn" id="settingsImport">Restore backup</button></div><span class="setting-help" id="settingsBackupStatus">No backup downloaded yet.</span></div>
+        <div class="settings-data"><h4>Data</h4><p>Download a private OneSpace backup of your shortcuts, notes, tasks, and preferences, or restore one you saved earlier. OneSpace never uploads this information.</p><div class="tool-row"><button type="button" class="btn" id="settingsExport">Download backup</button><button type="button" class="btn" id="settingsImport">Restore backup</button></div><span class="setting-help" id="settingsBackupStatus">No backup downloaded yet.</span></div>
         <div class="form-actions"><button type="button" class="btn" id="resetSettingsBtn">Reset preferences</button><button type="button" class="btn btn-primary" id="settingsDone">Done</button></div>
       </div>
     </div>
@@ -377,20 +387,20 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
 
   <div class="modal-overlay" id="welcomeOverlay" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
-      <div class="modal-header"><h3 id="welcomeTitle">Welcome to Orbit</h3></div>
+      <div class="modal-header"><h3 id="welcomeTitle">Welcome to OneSpace</h3></div>
       <div class="modal-body">
         <p class="brand p">Your private launchpad now includes a few powerful tools.</p>
         <div class="welcome-grid">
-          <div class="welcome-item"><strong>Command Palette</strong><span>Press Ctrl + K to open links or run Orbit actions.</span></div>
+          <div class="welcome-item"><strong>Command Palette</strong><span>Press Ctrl + K to open links or run OneSpace actions.</span></div>
           <div class="welcome-item"><strong>Workspace views</strong><span>Switch between Home, Shortcuts, and Productivity from the sidebar.</span></div>
-          <div class="welcome-item"><strong>Find in Orbit</strong><span>Change Search mode to Orbit to instantly filter every shortcut.</span></div>
+          <div class="welcome-item"><strong>Find in OneSpace</strong><span>Change Search mode to OneSpace to instantly filter every shortcut.</span></div>
           <div class="welcome-item"><strong>Quick Access</strong><span>Hover over a card and select the star to pin it.</span></div>
           <div class="welcome-item"><strong>Customize</strong><span>Create categories and drag your custom shortcuts between them.</span></div>
           <div class="welcome-item"><strong>Planner</strong><span>See the month, prioritize tasks, and track important countdowns.</span></div>
           <div class="welcome-item"><strong>Quick calculator</strong><span>Open Ctrl + K and type an expression beginning with =.</span></div>
           <div class="welcome-item"><strong>Quick Access</strong><span>Switch between Favorites, Recent, and Most Used without duplicating your full shortcut list.</span></div>
           <div class="welcome-item"><strong>Local toolbox</strong><span>Generate passwords, count text, and encode URLs without sending data anywhere.</span></div>
-          <div class="welcome-item"><strong>Safe backups</strong><span>Download your personal Orbit data to a file and restore it later. Nothing is uploaded.</span></div>
+          <div class="welcome-item"><strong>Safe backups</strong><span>Download your personal OneSpace data to a file and restore it later. Nothing is uploaded.</span></div>
         </div>
         <div class="form-actions"><button class="btn btn-primary" id="welcomeDone" type="button">Start exploring</button></div>
       </div>
@@ -861,7 +871,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     recentSection.hidden = true;
     var mostUsed = Object.keys(usageCounts).map(function (id) { return { link: findLink(id), count: Number(usageCounts[id]) || 0 }; }).filter(function (item) { return item.link && linkSpace(item.link) === currentSpace && HIDDEN_DEFAULT_IDS.indexOf(item.link.id) === -1 && item.count > 0; }).sort(function (a, b) { return b.count - a.count; }).slice(0, 6).map(function (item) { return item.link; });
     var selected = (document.body.classList.contains("minimal-mode") ? favorites : quickAccessTab === "recent" ? recent : quickAccessTab === "used" ? mostUsed : favorites).slice(0, 6);
-    var emptyCopy = quickAccessTab === "favorites" ? "Favorite a shortcut to keep it one click away." : quickAccessTab === "recent" ? "Your recently opened shortcuts will appear here." : "Open shortcuts and Orbit will surface the ones you use most.";
+    var emptyCopy = quickAccessTab === "favorites" ? "Favorite a shortcut to keep it one click away." : quickAccessTab === "recent" ? "Your recently opened shortcuts will appear here." : "Open shortcuts and OneSpace will surface the ones you use most.";
     document.getElementById("favoritesGrid").innerHTML = selected.length ? selected.map(miniCardHtml).join("") : '<div class="quick-empty"><span>' + emptyCopy + '</span><button class="btn" type="button" data-empty-shortcuts>Browse shortcuts</button></div>';
     document.getElementById("recentGrid").innerHTML = recent.map(miniCardHtml).join("");
     document.getElementById("glanceFavorites").textContent = favorites.length ? favorites.length + (favorites.length === 1 ? " favorite" : " favorites") : "No favorites";
@@ -1147,7 +1157,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
   });
 
   document.getElementById("resetSettingsBtn").addEventListener("click", function () {
-    if (!window.confirm("Reset Orbit's display preferences, Favorites, recent links, and collapsed sections? Your custom shortcuts and notes will remain.")) return;
+    if (!window.confirm("Reset OneSpace's display preferences, Favorites, recent links, and collapsed sections? Your custom shortcuts and notes will remain.")) return;
     accentChoice = "blue";
     paletteChoice = "auto";
     backgroundChoice = "orbit";
@@ -1319,7 +1329,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     var railFocusStatus = document.getElementById("railFocusStatus");
     if (railFocusTime) railFocusTime.textContent = focusTimeEl.textContent;
     if (railFocusStatus) railFocusStatus.textContent = focusStatusEl.textContent;
-    document.title = focusTimerId ? focusTimeEl.textContent + " · Orbit" : "Orbit — Personal Dashboard";
+    document.title = focusTimerId ? focusTimeEl.textContent + " · OneSpace" : "OneSpace — Work and Life Dashboard";
   }
   function pauseFocusTimer() {
     clearInterval(focusTimerId);
@@ -1361,8 +1371,12 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     document.getElementById("glanceTasks").textContent = remainingTasks ? remainingTasks + " remaining" : "All clear";
     var railTasks = document.getElementById("railTasks");
     if (railTasks) {
-      var nextTasks = tasks.filter(function (task) { return !task.done; }).slice(0, 4);
+      var nextTasks = tasks.filter(function (task) { return !task.done; }).slice(0, 1);
       railTasks.innerHTML = nextTasks.length ? nextTasks.map(function (task) { return '<li><strong>' + escapeHtml(task.text) + '</strong><span class="btn-subtext">' + escapeHtml(task.priority || "normal") + ' priority</span></li>'; }).join("") : '<li class="rail-empty">No open tasks. Your list is clear.</li>';
+      var nextTask = nextTasks[0];
+      document.getElementById("nextUpText").textContent = nextTask ? nextTask.text : "Your task list is clear";
+      document.getElementById("nextUpDue").textContent = nextTask ? ((nextTask.due || nextTask.date || (nextTask.priority || "normal") + " priority")) : "Nothing needs your attention.";
+      document.getElementById("completeNextTask").hidden = !nextTask;
     }
     if (!tasks.length) { taskListEl.innerHTML = '<li class="task-empty">Nothing here yet. Add one small next step.</li>'; return; }
     taskListEl.innerHTML = tasks.map(function (task) {
@@ -1387,6 +1401,19 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     saveTasks(); renderTasks();
   });
   renderTasks();
+  document.getElementById("completeNextTask").addEventListener("click", function () {
+    var nextTask = tasks.filter(function (task) { return !task.done; })[0];
+    if (!nextTask) return;
+    nextTask.done = true;
+    saveTasks();
+    renderTasks();
+    showToast("Task completed.");
+  });
+  document.getElementById("openProductivity").addEventListener("click", function () {
+    document.body.classList.remove("mobile-focus-open");
+    applyMinimalMode(false);
+    applyView("productivity");
+  });
 
   var countdowns = safeGetJSON(STORAGE.countdowns, []).filter(function (item) {
     return item && typeof item.id === "string" && typeof item.name === "string" && /^\d{4}-\d{2}-\d{2}$/.test(item.date);
@@ -1457,7 +1484,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     var choice = choices[Math.floor(Math.random() * choices.length)];
     rememberRecent(choice.id); recordUsage(choice.id);
     window.open(choice.url, "_blank", "noopener,noreferrer");
-    showToast("Orbit picked " + choice.name + ".");
+    showToast("OneSpace picked " + choice.name + ".");
   });
   document.getElementById("endWorkdayBtn").addEventListener("click", function () {
     var completed = tasks.filter(function (task) { return task.done; }).length;
@@ -1657,7 +1684,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     { id: "cmd-settings", name: "Open dashboard settings", category: "Command", icon: "cpu", keywords: "accent layout clock", run: function () { document.getElementById("settingsBtn").click(); } },
     { id: "cmd-theme", name: "Toggle light or dark mode", category: "Command", icon: "moon", keywords: "theme appearance", run: function () { themeToggle.click(); } },
     { id: "cmd-customize", name: "Toggle Customize mode", category: "Command", icon: "edit", keywords: "arrange categories drag", run: function () { customizeBtn.click(); } },
-    { id: "cmd-export", name: "Export an Orbit backup", category: "Command", icon: "repeat", keywords: "download save data", run: function () { document.getElementById("exportDataBtn").click(); } }
+    { id: "cmd-export", name: "Export a OneSpace backup", category: "Command", icon: "repeat", keywords: "download save data", run: function () { document.getElementById("exportDataBtn").click(); } }
   ];
 
   function renderPaletteResults(query) {
@@ -1904,7 +1931,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
 
   document.getElementById("exportDataBtn").addEventListener("click", function () {
     var backup = {
-      app: "Orbit",
+      app: "OneSpace",
       version: 1,
       exportedAt: new Date().toISOString(),
       customLinks: customLinks,
@@ -1941,7 +1968,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     var stamp = new Date().toISOString();
     safeSet("orbit-last-backup", stamp);
     updateBackupStatus();
-    showToast("Backup downloaded. Your Orbit data stayed on this device.");
+    showToast("Backup downloaded. Your OneSpace data stayed on this device.");
   });
 
   document.getElementById("importDataBtn").addEventListener("click", function () {
@@ -1960,10 +1987,10 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     reader.addEventListener("load", function () {
       try {
         var backup = JSON.parse(String(reader.result));
-        if (!backup || backup.app !== "Orbit" || backup.version !== 1 || !Array.isArray(backup.customLinks)) {
+        if (!backup || (backup.app !== "Orbit" && backup.app !== "OneSpace") || backup.version !== 1 || !Array.isArray(backup.customLinks)) {
           throw new Error("Invalid backup format");
         }
-        var summary = "Restore this Orbit backup?\n\nCreated: " + (backup.exportedAt ? new Date(backup.exportedAt).toLocaleString() : "Unknown") + "\nCustom shortcuts: " + backup.customLinks.length + "\nTasks: " + (Array.isArray(backup.tasks) ? backup.tasks.length : 0) + "\nCountdowns: " + (Array.isArray(backup.countdowns) ? backup.countdowns.length : 0) + "\n\nYour current local Orbit data will be replaced.";
+        var summary = "Restore this OneSpace backup?\n\nCreated: " + (backup.exportedAt ? new Date(backup.exportedAt).toLocaleString() : "Unknown") + "\nCustom shortcuts: " + backup.customLinks.length + "\nTasks: " + (Array.isArray(backup.tasks) ? backup.tasks.length : 0) + "\nCountdowns: " + (Array.isArray(backup.countdowns) ? backup.countdowns.length : 0) + "\n\nYour current local OneSpace data will be replaced.";
         if (!window.confirm(summary)) return;
         var importedCategories = Array.isArray(backup.customCategories) ? backup.customCategories.filter(function (name) {
           return typeof name === "string" && name.trim() && BASE_CATEGORIES.indexOf(name.trim()) === -1;
@@ -2052,9 +2079,9 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
         renderCountdowns();
         buildSectionShells();
         renderLinks();
-        showToast("Orbit backup imported.");
+        showToast("OneSpace backup imported.");
       } catch (error) {
-        showToast("That file is not a valid Orbit backup.");
+        showToast("That file is not a valid OneSpace backup.");
       }
     });
     reader.addEventListener("error", function () { showToast("The backup file could not be read."); });
@@ -2087,7 +2114,19 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
   updateBackupStatus();
   document.getElementById("railOpenNotes").addEventListener("click", function () { document.getElementById("notesToggle").click(); });
   document.getElementById("railProductivity").addEventListener("click", function () { applyMinimalMode(false); applyView("productivity"); });
-  document.getElementById("focusRailToggle").addEventListener("click", function () { document.body.classList.add("focus-rail-hidden"); showToast("Focus rail hidden for this visit."); });
+  document.getElementById("mobileTodayToggle").addEventListener("click", function () {
+    var open = document.body.classList.toggle("mobile-focus-open");
+    this.setAttribute("aria-expanded", String(open));
+  });
+  document.getElementById("focusRailToggle").addEventListener("click", function () {
+    if (window.innerWidth <= 760) {
+      document.body.classList.remove("mobile-focus-open");
+      document.getElementById("mobileTodayToggle").setAttribute("aria-expanded", "false");
+      return;
+    }
+    document.body.classList.add("focus-rail-hidden");
+    showToast("Focus rail hidden for this visit.");
+  });
 
   document.getElementById("notesToggle").addEventListener("click", function () {
     openModal(notesOverlay, notesArea);
