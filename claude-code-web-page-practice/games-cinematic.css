@@ -1,12 +1,12 @@
-/* GameVault cinematic layer. Existing application and appearance tokens stay intact. */
+﻿/* GameVault cinematic layer. Existing application and appearance tokens stay intact. */
 @property --world { syntax:'<color>'; inherits:true; initial-value:#efa65c; }
 @property --world-secondary { syntax:'<color>'; inherits:true; initial-value:#b88756; }
 #gamesView { --world: #eea35d; --world-secondary:#c9b898; }
-body[data-view="games"] { background:#0a0e1f; }
-body[data-view="games"][data-games-theme="neon"] { background:#0b0518; }
-body[data-view="games"][data-games-theme="crimson"] { background:#170808; }
-body[data-view="games"][data-games-theme="aurora"] { background:#04191c; }
-body[data-view="games"]::before,body[data-view="games"]::after { display:none; }
+body[data-page="games"] { background:#0a0e1f; }
+body[data-page="games"][data-games-theme="neon"] { background:#0b0518; }
+body[data-page="games"][data-games-theme="crimson"] { background:#170808; }
+body[data-page="games"][data-games-theme="aurora"] { background:#04191c; }
+body[data-page="games"]::before,body[data-page="games"]::after { display:none; }
 #gamesView .gv-header { max-width:none; border:0; box-shadow:none; background:none; padding:12px 0 22px; margin:0; }
 #gamesView .gv-wordmark { color:var(--gv-text); background:none; font-size:1.35rem; animation:none; }
 #gamesView .gv-emblem { width:34px; height:34px; }
@@ -196,3 +196,8 @@ body[data-view="games"]::before,body[data-view="games"]::after { display:none; }
   .gv-scene-art,.gv-scene-glow { transform:none; }
   .gv-scene-fog,.gv-scene-particles { display:none; }
 }
+/* Manual "Reduced Motion" override from Settings — same treatment as the OS-level query above */
+body.force-reduced-motion #gamesView *, body.force-reduced-motion #gamesView *::before, body.force-reduced-motion #gamesView *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+body.force-reduced-motion #gamesView [data-reveal] { opacity:1; transform:none; }
+body.force-reduced-motion .gv-scene-art, body.force-reduced-motion .gv-scene-glow { transform:none; }
+body.force-reduced-motion .gv-scene-fog, body.force-reduced-motion .gv-scene-particles { display:none; }

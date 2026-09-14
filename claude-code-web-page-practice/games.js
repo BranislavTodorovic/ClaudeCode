@@ -12,6 +12,15 @@
   var safeGet = OS.safeGet, safeSet = OS.safeSet, safeGetJSON = OS.safeGetJSON;
   var showToast = OS.showToast, openModal = OS.openModal, closeModal = OS.closeModal;
 
+  /* Safe matchMedia: some environments (older WebViews, hardened browsers,
+     test runners) don't implement window.matchMedia at all — fall back to a
+     MediaQueryList-shaped stub so callers can always read .matches and
+     attach a "change" listener without guarding every call site. */
+  function safeMatchMedia(query) {
+    if (window.matchMedia) return window.matchMedia(query);
+    return { matches: false, addEventListener: function () {}, removeEventListener: function () {} };
+  }
+
   var GK = {
     library: "orbit-games-library",
     weekly: "orbit-games-weekly",
@@ -85,7 +94,7 @@
   }
   function wireReveal(root) {
     pendingReveals.forEach(function (el) { if (!el.isConnected) { if (revealObserver) revealObserver.unobserve(el); pendingReveals.delete(el); } });
-    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var reduced = OS.prefersReducedMotion ? OS.prefersReducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
     var counts = {};
     (root || document).querySelectorAll("[data-reveal]").forEach(function (el) {
       var group = el.getAttribute("data-reveal-group") || "default";
@@ -428,7 +437,7 @@
   function animateRingDraw(container) {
     var circle = container && container.querySelector(".gv-ring-fill");
     if (!circle) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (OS.prefersReducedMotion ? OS.prefersReducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
     var target = circle.getAttribute("stroke-dashoffset");
     var circumference = circle.getAttribute("stroke-dasharray");
     circle.style.transition = "none";
@@ -1048,7 +1057,7 @@
   function startSessionTicker() {
     stopSessionTicker();
     sessionTickInterval = setInterval(function () {
-      if (!document.hidden && document.body.dataset.view === "games" && (activeTab === "overview" || activeTab === "sessions")) withFocusPreserved(renderSessionsPanel);
+      if (!document.hidden && document.body.dataset.page === "games" && (activeTab === "overview" || activeTab === "sessions")) withFocusPreserved(renderSessionsPanel);
     }, 1000);
   }
   function stopSessionTicker() {
@@ -1191,8 +1200,19 @@
   }
 
   /* Cinematic spotlight. Transient motion state never replaces stored progress. */
-  var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var finePointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+  /* .matches reflects OneSpace's manual Settings override first (if the user
+     forced reduced/full motion), falling back to the OS-level media query —
+     so GameVault's own motion respects the same "Reduced Motion" control as
+     the rest of the app, not just the device setting. */
+  var osMotionQuery = safeMatchMedia("(prefers-reduced-motion: reduce)");
+  var motionQuery = {
+    get matches() {
+      if (OS.prefersReducedMotion) return OS.prefersReducedMotion();
+      return osMotionQuery.matches;
+    },
+    addEventListener: function (type, fn) { osMotionQuery.addEventListener(type, fn); }
+  };
+  var finePointerQuery = safeMatchMedia("(hover: hover) and (pointer: fine)");
   var spotlight = {
     id: safeGet("orbit-games-spotlight") || "game-alan-wake-2",
     paused: safeGet("orbit-games-autoplay") === "paused",
@@ -1310,7 +1330,7 @@
     clearTimeout(spotlight.timer); spotlight.timer = null;
     var hero = document.getElementById("gvSpotlight");
     if (!hero) return;
-    var isGames = document.body.dataset.view === "games";
+    var isGames = document.body.dataset.page === "games";
     var blocked = spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isGames || activeTab !== "overview" || !spotlight.visible;
     hero.dataset.playing = String(!blocked);
     document.getElementById("gamesView").classList.toggle("gv-motion-paused", document.hidden || !isGames);
@@ -1375,7 +1395,7 @@
     document.addEventListener("visibilitychange", function () { syncSpotlightPlayback(); if (document.hidden) stopSessionTicker(); else if (activeSession()) startSessionTicker(); });
     motionQuery.addEventListener("change", function () { wireReveal(document.getElementById("gamesView")); syncSpotlightPlayback(); });
     finePointerQuery.addEventListener("change", syncSpotlightPlayback);
-    new MutationObserver(syncSpotlightPlayback).observe(document.body, {attributes:true,attributeFilter:["data-view"]});
+    document.addEventListener("onespace:page-changed", syncSpotlightPlayback);
     if ("IntersectionObserver" in window) new IntersectionObserver(function (entries) { spotlight.visible = entries[0].isIntersecting; syncSpotlightPlayback(); }, {threshold:.1}).observe(hero);
     var labels = {overview:"Your play, at a glance",library:"My Games",missions:"Mission Progress",weekly:"Diablo Weekly Tasks",suggestions:"Discover your next obsession",sessions:"Gaming Sessions",journal:"Gaming Journal",appearance:"Make it your world"};
     document.querySelectorAll(".gv-tab").forEach(function (button) {
@@ -1392,7 +1412,7 @@
       heading.innerHTML = '<span>0' + (i+1) + ' / YOUR GAMEVAULT</span><h2 id="gvHeading-' + name + '">' + gvIcon(name) + labels[name] + '</h2>';
       panel.prepend(heading);
     });
-    document.querySelectorAll('[data-view-button="games"] svg, .gv-emblem svg').forEach(function (svg) {
+    document.querySelectorAll('[data-page-button="games"] svg, .gv-emblem svg').forEach(function (svg) {
       svg.setAttribute("viewBox", "0 0 24 24"); svg.setAttribute("fill", "none"); svg.setAttribute("stroke", "currentColor"); svg.setAttribute("stroke-width", "1.75"); svg.setAttribute("stroke-linecap", "round"); svg.setAttribute("stroke-linejoin", "round"); svg.innerHTML = gameIcons.library;
     });
     wireReveal(document.getElementById("gamesView"));
@@ -1409,7 +1429,7 @@
       btn.tabIndex = active ? 0 : -1;
     });
     document.querySelectorAll(".gv-panel").forEach(function (panel) {
-      panel.hidden = tab !== "overview" && panel.getAttribute("data-panel") !== tab;
+      panel.hidden = panel.getAttribute("data-panel") !== tab;
       panel.setAttribute("role", tab === "overview" ? "region" : "tabpanel");
     });
     document.getElementById("gvSpotlight").hidden = tab !== "overview";
@@ -1619,16 +1639,11 @@
     window.OneSpace = window.OneSpace || {};
     window.OneSpace.playGamesEntryAnimation = playEntryAnimation;
 
-    var viewObserver = new MutationObserver(function (mutations) {
-      mutations.forEach(function (m) {
-        if (m.attributeName === "data-view" && document.body.getAttribute("data-view") === "games") {
-          playEntryAnimation();
-        }
-      });
+    document.addEventListener("onespace:page-changed", function (e) {
+      if (e.detail && e.detail.page === "games") playEntryAnimation();
     });
-    viewObserver.observe(document.body, { attributes: true, attributeFilter: ["data-view"] });
 
-    if (document.body.getAttribute("data-view") === "games") playEntryAnimation();
+    if (document.body.getAttribute("data-page") === "games") playEntryAnimation();
   }
 
   if (document.readyState === "loading") {

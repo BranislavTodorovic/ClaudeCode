@@ -1,5 +1,5 @@
-/* ===========================================================================
- * GameVault — Games dashboard styles.
+﻿/* ===========================================================================
+ * GameVault â€” Games dashboard styles.
  * Scoped to #gamesView (and the two Games modals which live outside it) so
  * nothing here touches OneSpace's existing design system. Loaded after the
  * page's inline <style> block, so equal-specificity overrides below (e.g.
@@ -7,23 +7,23 @@
  * ===================================================================== */
 
 /* ---- view plumbing: hide the rest of the dashboard while Games is active ---- */
-body[data-view="games"] .app-header,
-body[data-view="games"] .view-heading,
-body[data-view="games"] .glance-bar,
-body[data-view="games"] .toolbar,
-body[data-view="games"] .chill-strip,
-body[data-view="games"] .customize-bar,
-body[data-view="games"] .widget-grid,
-body[data-view="games"] .personal-section,
-body[data-view="games"] main#sections,
-body[data-view="games"] .today-rail,
-body[data-view="games"] .open-focus-btn {
+body[data-page="games"] .app-header,
+body[data-page="games"] .view-heading,
+body[data-page="games"] .glance-bar,
+body[data-page="games"] .toolbar,
+body[data-page="games"] .chill-strip,
+body[data-page="games"] .customize-bar,
+body[data-page="games"] .widget-grid,
+body[data-page="games"] .personal-section,
+body[data-page="games"] main#sections,
+body[data-page="games"] .today-rail,
+body[data-page="games"] .open-focus-btn {
   display: none !important;
 }
 .games-view { display: none; }
-body[data-view="games"] .games-view { display: block; }
+body[data-page="games"] .games-view { display: block; }
 @media (min-width: 1280px) {
-  body[data-view="games"] .wrap {
+  body[data-page="games"] .wrap {
     width: min(calc(100vw - var(--rail) - 64px), 1500px) !important;
     margin-left: calc(var(--rail) + max(32px, (100vw - var(--rail) - 1500px) / 2)) !important;
   }
@@ -31,7 +31,7 @@ body[data-view="games"] .games-view { display: block; }
 
 /* ---- Home promo banner ---- */
 .games-promo-banner { display: none; }
-body[data-view="home"] .games-promo-banner {
+body[data-page="home"] .games-promo-banner {
   display: flex; align-items: center; justify-content: space-between; gap: 18px;
   margin: 0 0 24px; padding: 18px 22px; border-radius: 20px;
   border: 1px solid color-mix(in srgb, #a855f7 22%, var(--line));
@@ -74,10 +74,10 @@ body[data-view="home"] .games-promo-banner {
   background: linear-gradient(135deg, var(--gv-accent), var(--gv-accent-2));
   box-shadow: 0 10px 24px color-mix(in srgb, var(--gv-accent) 30%, transparent);
 }
-body[data-view="games"] .modal-overlay .modal {
+body[data-page="games"] .modal-overlay .modal {
   background: var(--gv-surface); border-color: var(--gv-line); color: var(--gv-text);
 }
-body[data-view="games"] .modal-header { border-color: var(--gv-line); }
+body[data-page="games"] .modal-header { border-color: var(--gv-line); }
 
 /* ---- header bar + GameVault logo ---- */
 .gv-header {
@@ -430,7 +430,7 @@ body[data-view="games"] .modal-header { border-color: var(--gv-line); }
 /* ===========================================================================
  * Scroll-triggered reveal (data-reveal / data-reveal-group), used for game
  * cards, mission chapters, weekly tasks, suggestion cards, session rows and
- * journal entries — replaces the old tab-switch-only nth-child stagger for
+ * journal entries â€” replaces the old tab-switch-only nth-child stagger for
  * those same lists (see games.js wireReveal()) so items also animate in as
  * the user scrolls a long panel, not only when its tab is first opened.
  * ===================================================================== */
