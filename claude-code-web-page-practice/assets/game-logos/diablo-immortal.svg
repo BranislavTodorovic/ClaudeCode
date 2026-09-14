@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" role="img" aria-label="Diablo Immortal logo">
+  <defs>
+    <linearGradient id="di-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#160a26"/>
+      <stop offset="1" stop-color="#341448"/>
+    </linearGradient>
+    <linearGradient id="di-text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9b04c"/>
+      <stop offset="0.5" stop-color="#c085f7"/>
+      <stop offset="1" stop-color="#8a5cf7"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="100" rx="14" fill="url(#di-bg)"/>
+  <text x="160" y="50" text-anchor="middle" font-family="'Trajan Pro', Georgia, serif" font-size="32" font-weight="700" letter-spacing="5" fill="url(#di-text)">DIABLO</text>
+  <text x="160" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="17" font-weight="600" letter-spacing="8" fill="#d9b04c">IMMORTAL</text>
+</svg>

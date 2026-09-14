@@ -95,6 +95,8 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
 @keyframes ambientDrift{0%{transform:translate3d(-1%,0,0) scale(.98)}100%{transform:translate3d(5%,4%,0) scale(1.06)}}@keyframes heroIn{from{opacity:0;transform:translateY(14px) scale(.99)}to{opacity:1;transform:none}}@keyframes identityIn{from{opacity:0;transform:scale(.9) translateY(6px)}to{opacity:1;transform:none}}@keyframes contentIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes orbitTurn{to{transform:rotate(360deg)}}@keyframes slowSpin{to{transform:rotate(360deg)}}@keyframes glowPulse{0%,100%{opacity:.48;transform:scale(.96)}50%{opacity:.95;transform:scale(1.04)}}@keyframes coreFloat{0%,100%{transform:translateY(0);filter:drop-shadow(0 0 17px rgba(180,170,255,.86))}50%{transform:translateY(-3px);filter:drop-shadow(0 0 27px rgba(180,170,255,1))}}@keyframes twinkle{0%,100%{opacity:.16}50%{opacity:.9}}@keyframes revealIn{from{opacity:0;transform:translateY(12px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes focusButtonIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}@keyframes taskUpdate{0%{opacity:.25;transform:translateY(5px)}100%{opacity:1;transform:none}}@keyframes spaceSwap{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:none}}
 
 </style>
+<link rel="stylesheet" href="games.css">
+<link rel="stylesheet" href="games-cinematic.css">
 </head>
 <body class="has-sidebar" data-view="home">
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
@@ -104,9 +106,10 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     <div class="sidebar-brand"><span class="sidebar-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="5" y="5" width="13" height="13" rx="4" fill="currentColor" opacity=".95"></rect><rect x="14" y="14" width="13" height="13" rx="4" stroke="currentColor" stroke-width="2"></rect></svg></span><span class="brand-word">OneSpace</span><button class="btn btn-icon btn-ghost sidebar-collapse-btn" id="collapseSidebar" type="button" title="Collapse sidebar" aria-label="Collapse sidebar" aria-controls="oneSpaceSidebar" aria-expanded="true"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg></button></div>
     <p class="side-section-label">Spaces</p>
     <nav class="space-switcher" aria-label="OneSpace spaces">
-      <button class="space-btn active" type="button" data-space-button="work" title="Work"><span class="space-dot"></span><span class="space-copy"><strong>Work</strong><small>Build &amp; focus</small></span></button>
-      <button class="space-btn" type="button" data-space-button="personal" title="Personal"><span class="space-dot"></span><span class="space-copy"><strong>Personal</strong><small>Life &amp; home</small></span></button>
-      <button class="space-btn" type="button" data-space-button="explore" title="Explore"><span class="space-dot"></span><span class="space-copy"><strong>Explore</strong><small>Travel &amp; play</small></span></button>
+      <button class="space-btn active" type="button" data-space-button="work" title="Work"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="3" y1="13" x2="21" y2="13"></line></svg><span class="space-copy"><strong>Work</strong><small>Build &amp; focus</small></span></button>
+      <button class="space-btn" type="button" data-space-button="personal" title="Personal"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.5C.5 7.8 2.7 4 6.5 4A5.5 5.5 0 0 1 12 8a5.5 5.5 0 0 1 5.5-4c3.8 0 6 3.8 4.5 7.5C19.5 16.4 12 21 12 21z"></path></svg><span class="space-copy"><strong>Personal</strong><small>Life &amp; home</small></span></button>
+      <button class="space-btn" type="button" data-space-button="explore" title="Explore"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polygon points="14.5 9.5 12.5 14.5 9.5 14.5 11.5 9.5"></polygon></svg><span class="space-copy"><strong>Explore</strong><small>Travel &amp; play</small></span></button>
+      <button class="space-btn" type="button" data-view-button="games" title="Games"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.55l-.7 6.13A2.5 2.5 0 0 0 4.48 17.5c.86 0 1.66-.44 2.12-1.17L8 14h8l1.4 2.33a2.5 2.5 0 0 0 2.12 1.17 2.5 2.5 0 0 0 2.48-2.82l-.7-6.13A4 4 0 0 0 17.32 5Z"></path><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle></svg><span class="space-copy"><strong>Games</strong><small>Play &amp; track</small></span></button>
     </nav>
     <p class="side-section-label">Workspace</p>
     <nav class="side-nav" aria-label="Dashboard views">
@@ -287,8 +290,154 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     </section>
     <section class="personal-section" id="recentSection" hidden aria-hidden="true"><div id="recentGrid"></div></section>
 
+    <div class="games-promo-banner">
+      <div><strong>GameVault</strong><p>Track chapters, weekly tasks, and get new game suggestions.</p></div>
+      <button type="button" class="btn btn-primary" data-view-button="games">Browse Games</button>
+    </div>
+
     <!-- ===================== Link sections (populated by JS) ===================== -->
     <main id="sections"></main>
+
+    <!-- ===================== Games dashboard (GameVault) ===================== -->
+    <section id="gamesView" class="games-view" aria-label="Games dashboard">
+      <div class="gv-header">
+        <div class="gv-brand" role="img" aria-label="GameVault — your gaming dashboard">
+          <span class="gv-emblem" aria-hidden="true">
+            <span class="gv-ring"></span>
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M45 16H19a11 11 0 0 0-10.9 9.7L6.2 42.5A6.5 6.5 0 0 0 12.6 50c2.2 0 4.3-1.1 5.5-3l3.4-5.5h17l3.4 5.5c1.2 1.9 3.3 3 5.5 3a6.5 6.5 0 0 0 6.4-7.5L51.9 25.7A11 11 0 0 0 45 16Z" fill="currentColor" opacity=".92"/>
+              <path d="M32 4l4.6 4.6L32 13.2l-4.6-4.6z" fill="currentColor"/>
+              <line x1="16" y1="33" x2="24" y2="33" stroke="#0b0b14" stroke-width="3" stroke-linecap="round"/>
+              <line x1="20" y1="29" x2="20" y2="37" stroke="#0b0b14" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="38" cy="35" r="2.4" fill="#0b0b14"/>
+              <circle cx="45" cy="30" r="2.4" fill="#0b0b14"/>
+            </svg>
+          </span>
+          <span class="gv-wordmark">GameVault</span>
+          <span class="gv-tagline">Your personal game tracker</span>
+        </div>
+        <div class="gv-header-actions">
+          <div class="gv-theme-switch" role="group" aria-label="Games theme">
+            <button type="button" class="gv-theme-btn" data-games-theme-choice="midnight" aria-pressed="false">Midnight</button>
+            <button type="button" class="gv-theme-btn" data-games-theme-choice="neon" aria-pressed="false">Neon</button>
+            <button type="button" class="gv-theme-btn" data-games-theme-choice="crimson" aria-pressed="false">Crimson</button>
+            <button type="button" class="gv-theme-btn" data-games-theme-choice="aurora" aria-pressed="false">Aurora</button>
+          </div>
+          <button type="button" class="btn btn-primary" id="addGameBtn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            Add Game
+          </button>
+        </div>
+      </div>
+
+      <section id="gvSpotlight" class="gv-spotlight" aria-label="Game spotlight" aria-roledescription="carousel" tabindex="0">
+        <div class="gv-scene" aria-hidden="true"><div id="gvSceneArt" class="gv-scene-art"></div><div class="gv-scene-shade"></div><div class="gv-scene-glow"></div><div class="gv-scene-fog"></div><div class="gv-scene-particles"></div></div>
+        <div class="gv-hero-topline"><span><span class="gv-status-light"></span> YOUR NEXT CHAPTER</span><span id="gvHeroIndex">01 / 03</span></div>
+        <div id="gvHeroContent" class="gv-hero-content"></div>
+        <div class="gv-hero-footer">
+          <div class="gv-hero-controls" role="group" aria-label="Spotlight controls">
+            <button type="button" id="gvPrevious" class="gv-control" aria-label="Previous game"></button>
+            <div id="gvHeroDots" class="gv-hero-dots" role="group" aria-label="Choose spotlight game"></div>
+            <button type="button" id="gvNext" class="gv-control" aria-label="Next game"></button>
+            <button type="button" id="gvAutoplay" class="gv-control gv-autoplay" aria-label="Pause automatic rotation"></button>
+          </div>
+          <button type="button" class="gv-explore" data-action="explore-library">Explore your collection <span aria-hidden="true">↓</span></button>
+        </div>
+      </section>
+      <div id="gvSpotlightRail" class="gv-spotlight-rail" role="group" aria-label="Featured games"></div>
+      <p id="gvSpotlightAnnouncement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+
+      <nav class="gv-tabs" aria-label="Games sections" role="tablist">
+        <button type="button" class="gv-tab active" data-gv-tab="overview" role="tab" aria-selected="true">Overview</button>
+        <button type="button" class="gv-tab" data-gv-tab="library" role="tab" aria-selected="false">My Games</button>
+        <button type="button" class="gv-tab" data-gv-tab="missions" role="tab" aria-selected="false">Mission Progress</button>
+        <button type="button" class="gv-tab" data-gv-tab="weekly" role="tab" aria-selected="false">Weekly Tasks</button>
+        <button type="button" class="gv-tab" data-gv-tab="suggestions" role="tab" aria-selected="false">Suggestions</button>
+        <button type="button" class="gv-tab" data-gv-tab="sessions" role="tab" aria-selected="false">Sessions</button>
+        <button type="button" class="gv-tab" data-gv-tab="journal" role="tab" aria-selected="false">Journal</button>
+        <button type="button" class="gv-tab" data-gv-tab="appearance" role="tab" aria-selected="false">Appearance</button>
+      </nav>
+
+      <section class="gv-panel" data-panel="overview" role="tabpanel">
+        <div class="gv-overview-stats" id="gvOverviewStats"></div>
+        <div class="gv-mini-row" id="gvOverviewMiniRow"></div>
+        <div class="gv-continue-card" id="gvContinueCard"></div>
+      </section>
+
+      <section class="gv-panel" data-panel="library" role="tabpanel" hidden>
+        <div class="gv-quick-add">
+          <label class="visually-hidden" for="gvGameSearch">Search a game to track or add</label>
+          <input type="text" id="gvGameSearch" placeholder="Search a game to track or add…" autocomplete="off"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="gvSearchDropdown" aria-haspopup="listbox">
+          <ul class="gv-search-dropdown" id="gvSearchDropdown" role="listbox" hidden></ul>
+        </div>
+        <div class="gv-grid" id="gvLibraryGrid"></div>
+      </section>
+
+      <section class="gv-panel" data-panel="missions" role="tabpanel" hidden>
+        <div class="gv-game-picker" id="gvMissionsPicker"></div>
+        <div id="gvMissionsBody"></div>
+      </section>
+
+      <section class="gv-panel" data-panel="weekly" role="tabpanel" hidden>
+        <div class="gv-game-picker" id="gvWeeklyPicker"></div>
+        <div id="gvWeeklyBody"></div>
+      </section>
+
+      <section class="gv-panel" data-panel="suggestions" role="tabpanel" hidden>
+        <div class="gv-suggestions" aria-labelledby="gvSuggestTitle">
+          <div class="gv-suggest-head">
+            <h2 id="gvSuggestTitle">Game Suggestions</h2>
+            <p>Tell us what you're into and we'll point you at something worth playing.</p>
+          </div>
+          <div class="gv-pref-groups" id="gvPrefGroups"></div>
+          <div class="gv-suggest-actions">
+            <button type="button" class="btn btn-primary" id="gvGetSuggestions">Get Suggestions</button>
+            <button type="button" class="btn" id="gvClearFilters">Clear Filters</button>
+            <button type="button" class="btn btn-ghost" id="gvResetPreferences">Reset Preferences</button>
+          </div>
+          <div class="gv-suggest-results" id="gvSuggestResults"></div>
+        </div>
+        <div class="gv-wishlist" id="gvWishlistSection" hidden aria-labelledby="gvWishlistTitle">
+          <h2 id="gvWishlistTitle">Wishlist</h2>
+          <div class="gv-wishlist-list" id="gvWishlistList"></div>
+        </div>
+      </section>
+
+      <section class="gv-panel" data-panel="sessions" role="tabpanel" hidden>
+        <div class="gv-session-active" id="gvSessionActive"></div>
+        <form class="gv-session-form" id="gvSessionStartForm">
+          <select id="gvSessionGame" aria-label="Game to play"></select>
+          <button type="submit" class="btn btn-primary">Start Session</button>
+        </form>
+        <form class="gv-session-form gv-session-log-form" id="gvSessionLogForm">
+          <select id="gvLogSessionGame" aria-label="Game played"></select>
+          <input type="number" id="gvLogSessionMinutes" min="1" max="1440" placeholder="Minutes" aria-label="Minutes played" required>
+          <input type="date" id="gvLogSessionDate" aria-label="Date played">
+          <input type="text" id="gvLogSessionNote" placeholder="Note (optional)" maxlength="140" aria-label="Session note">
+          <button type="submit" class="btn">Log Session</button>
+        </form>
+        <div class="gv-session-log" id="gvSessionLog"></div>
+      </section>
+
+      <section class="gv-panel" data-panel="journal" role="tabpanel" hidden>
+        <form id="gvJournalForm">
+          <input type="hidden" id="gvJournalId">
+          <select id="gvJournalGame" aria-label="Related game (optional)"><option value="">General entry</option></select>
+          <input type="text" id="gvJournalTitle" placeholder="Entry title" maxlength="80" required aria-label="Entry title">
+          <textarea id="gvJournalBody" placeholder="Write your thoughts…" maxlength="2000" required aria-label="Entry body"></textarea>
+          <div class="gv-journal-form-actions">
+            <button type="button" class="btn" id="gvJournalCancel" hidden>Cancel edit</button>
+            <button type="submit" class="btn btn-primary" id="gvJournalSave">Save Entry</button>
+          </div>
+        </form>
+        <div class="gv-journal-list" id="gvJournalList"></div>
+      </section>
+
+      <section class="gv-panel" data-panel="appearance" role="tabpanel" hidden>
+        <div class="gv-theme-swatches" id="gvThemeSwatches"></div>
+      </section>
+    </section>
 
     <footer class="site-footer">OneSpace · your focused space for work and life</footer>
   </div>
@@ -299,6 +448,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
     <button type="button" data-view-button="shortcuts"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect></svg><span>Shortcuts</span></button>
     <button class="mobile-search" id="mobileSearch" type="button"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><span>Search</span></button>
     <button type="button" data-view-button="productivity"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"></path></svg><span>Productivity</span></button>
+    <button type="button" data-view-button="games"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.55l-.7 6.13A2.5 2.5 0 0 0 4.48 17.5c.86 0 1.66-.44 2.12-1.17L8 14h8l1.4 2.33a2.5 2.5 0 0 0 2.12 1.17 2.5 2.5 0 0 0 2.48-2.82l-.7-6.13A4 4 0 0 0 17.32 5Z"></path><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle></svg><span>Games</span></button>
     <button id="mobileMore" type="button"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle></svg><span>More</span></button>
   </nav>
 
@@ -350,6 +500,74 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
           </div>
         </form>
       </div>
+    </div>
+  </div>
+
+  <!-- ===================== Add / edit game modal ===================== -->
+  <div class="modal-overlay" id="addGameOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addGameTitle">
+      <div class="modal-header">
+        <h3 id="addGameTitle">Add Game</h3>
+        <button class="btn btn-icon btn-ghost" type="button" id="addGameClose" title="Close dialog" aria-label="Close dialog">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addGameForm" novalidate>
+          <input type="hidden" id="addGameId">
+          <div class="form-field">
+            <label for="addGameName">Game name</label>
+            <input type="text" id="addGameName" maxlength="60" required aria-describedby="addGameError">
+          </div>
+          <div class="form-field">
+            <label for="addGamePlatform">Platform</label>
+            <select id="addGamePlatform">
+              <option value="PC">PC</option>
+              <option value="PS5">PS5</option>
+              <option value="Xbox">Xbox</option>
+              <option value="Nintendo Switch">Nintendo Switch</option>
+              <option value="Mobile">Mobile</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="addGameLogoFile">Logo</label>
+            <input type="file" id="addGameLogoFile" accept="image/*">
+            <div class="gv-logo-preview" id="addGameLogoPreview" hidden>
+              <img alt="Logo preview">
+              <button type="button" class="btn btn-ghost" id="addGameLogoRemove">Remove logo</button>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="addGameAccent">Accent color</label>
+            <input type="color" id="addGameAccent" value="#7a8fff">
+          </div>
+          <div class="form-field">
+            <label>Tracker type</label>
+            <div class="choice-pills" role="radiogroup" aria-label="Tracker type">
+              <button type="button" class="gv-tracker-choice" data-tracker-type="story" aria-checked="true">Story / Mission Progress</button>
+              <button type="button" class="gv-tracker-choice" data-tracker-type="weekly" aria-checked="false">Daily / Weekly Tasks</button>
+            </div>
+          </div>
+          <p class="form-error" id="addGameError" role="alert" aria-live="polite"></p>
+          <div class="form-actions">
+            <button type="button" class="btn" id="addGameCancel">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Game</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== Game / suggestion details modal ===================== -->
+  <div class="modal-overlay" id="gameDetailsOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="gameDetailsTitle">
+      <div class="modal-header">
+        <h3 id="gameDetailsTitle">Game details</h3>
+        <button class="btn btn-icon btn-ghost" type="button" id="gameDetailsClose" title="Close dialog" aria-label="Close dialog">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="gameDetailsBody"></div>
     </div>
   </div>
 
@@ -1248,11 +1466,13 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
    * Sidebar, customization mode, and responsive navigation
    * ===================================================================== */
   var sidebarCollapsed = safeGet(STORAGE.sidebar) === "collapsed";
-  var currentView = ["home", "shortcuts", "productivity"].indexOf(safeGet(STORAGE.view)) !== -1 ? safeGet(STORAGE.view) : "home";
+  var currentView = ["home", "shortcuts", "productivity", "games"].indexOf(safeGet(STORAGE.view)) !== -1 ? safeGet(STORAGE.view) : "home";
+  var lastNonGamesView = currentView !== "games" ? currentView : "home";
   var VIEW_META = {
     home: { title: "Home", description: "Your favorite places, ready when you are.", badge: "Home" },
     shortcuts: { title: "Shortcuts", description: "Browse, find, and organize every saved destination.", badge: "Shortcuts" },
-    productivity: { title: "Productivity", description: "Focus, plan today, and keep important dates within reach.", badge: "Productivity" }
+    productivity: { title: "Productivity", description: "Focus, plan today, and keep important dates within reach.", badge: "Productivity" },
+    games: { title: "Games", description: "Track every game you're playing, one objective at a time.", badge: "Games" }
   };
   var SPACE_META = {
     work: { label: "Work", line: "A focused space for building and getting things done." },
@@ -1281,6 +1501,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
   }
   function applyView(view) {
     currentView = VIEW_META[view] ? view : "home";
+    if (currentView !== "games") lastNonGamesView = currentView;
     document.body.setAttribute("data-view", currentView);
     document.getElementById("viewTitle").textContent = VIEW_META[currentView].title;
     document.getElementById("viewDescription").textContent = VIEW_META[currentView].description;
@@ -1310,10 +1531,24 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
   applySpace(currentSpace, false);
   applyView(currentView);
   document.querySelectorAll("[data-space-button]").forEach(function (button) {
-    button.addEventListener("click", function () { document.body.classList.remove("chill-mode"); document.getElementById("chillStrip").hidden = true; applySpace(button.getAttribute("data-space-button"), true); closeMobileSidebar(); });
+    button.addEventListener("click", function () {
+      document.body.classList.remove("chill-mode");
+      document.getElementById("chillStrip").hidden = true;
+      if (currentView === "games") applyView(lastNonGamesView);
+      applySpace(button.getAttribute("data-space-button"), true);
+      closeMobileSidebar();
+    });
   });
   document.querySelectorAll("[data-view-button]").forEach(function (button) {
-    button.addEventListener("click", function () { applyMinimalMode(false); applyView(button.getAttribute("data-view-button")); closeMobileSidebar(); });
+    button.addEventListener("click", function () {
+      applyMinimalMode(false);
+      var view = button.getAttribute("data-view-button");
+      applyView(view);
+      if (view === "games" && window.OneSpace && window.OneSpace.playGamesEntryAnimation) {
+        window.OneSpace.playGamesEntryAnimation();
+      }
+      closeMobileSidebar();
+    });
   });
 
   document.getElementById("minimalExit").addEventListener("click", function () { startupChoice = "full"; safeSet(STORAGE.startup, startupChoice); applyMinimalMode(false); });
@@ -1669,7 +1904,7 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
    * ===================================================================== */
   var lastFocusedEl = null;
   var wrapEl = document.querySelector(".wrap");
-  var OVERLAY_IDS = ["paletteOverlay", "shortcutOverlay", "notesOverlay", "toolboxOverlay", "settingsOverlay", "welcomeOverlay"];
+  var OVERLAY_IDS = ["paletteOverlay", "shortcutOverlay", "notesOverlay", "toolboxOverlay", "settingsOverlay", "welcomeOverlay", "addGameOverlay", "gameDetailsOverlay"];
 
   function anyModalOpen() {
     return OVERLAY_IDS.some(function (id) {
@@ -2278,7 +2513,13 @@ body[data-view="home"] .view-heading,body[data-view="home"] .widget-grid{display
   if (reducedMotion) {
     document.querySelectorAll(".hero-orbit svg").forEach(function (svg) { if (svg.pauseAnimations) svg.pauseAnimations(); });
   }
+  window.OneSpace = {
+    safeGet: safeGet, safeSet: safeSet, safeGetJSON: safeGetJSON,
+    showToast: showToast, openModal: openModal, closeModal: closeModal
+  };
 })();
 </script>
+<script src="games-data.js"></script>
+<script src="games.js"></script>
 </body>
 </html>
