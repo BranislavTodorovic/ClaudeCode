@@ -30,16 +30,18 @@
   }
 
   function scan(root) {
+    if (activeTarget && (!activeTarget.isConnected || activeTarget.closest('[hidden], [inert]'))) hide();
     root.querySelectorAll(SELECTOR).forEach(function (el) {
       if (el.hasAttribute("data-no-tooltip")) return;
-      if (!el.dataset.tooltipSource) {
-        var label = el.getAttribute("aria-label") || el.getAttribute("title");
-        if (!label) return;
-        el.dataset.tooltipSource = label;
-        if (el.hasAttribute("title")) el.removeAttribute("title");
+      var label = el.getAttribute("aria-label") || el.getAttribute("title") || el.dataset.tooltipSource;
+      if (!label) return;
+      el.dataset.tooltipSource = label;
+      if (el.hasAttribute("title")) el.removeAttribute("title");
+      if (/[\p{L}\p{N}]/u.test(visibleText(el))) el.removeAttribute("data-tooltip");
+      else {
+        el.setAttribute("data-tooltip", el.dataset.tooltipSource);
+        if (!el.hasAttribute("aria-label")) el.setAttribute("aria-label", label);
       }
-      if (visibleText(el)) el.removeAttribute("data-tooltip");
-      else el.setAttribute("data-tooltip", el.dataset.tooltipSource);
     });
   }
 
@@ -68,19 +70,24 @@
   function show(target) {
     var text = target.getAttribute("data-tooltip");
     if (!text) return;
+    if (activeTarget && activeTarget !== target) hide();
     clearTimeout(hideTimer);
     var bubble = ensureTip();
     bubble.textContent = text;
     bubble.classList.add("is-visible");
     place(target);
-    target.setAttribute("aria-describedby", bubble.id);
+    var descriptions = (target.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+    if (descriptions.indexOf(bubble.id) < 0) descriptions.push(bubble.id);
+    target.setAttribute("aria-describedby", descriptions.join(" "));
     activeTarget = target;
   }
 
   function hide() {
     if (!tip || !activeTarget) return;
     tip.classList.remove("is-visible");
-    activeTarget.removeAttribute("aria-describedby");
+    var descriptions = (activeTarget.getAttribute("aria-describedby") || "").split(/\s+/).filter(function (id) { return id && id !== tip.id; });
+    if (descriptions.length) activeTarget.setAttribute("aria-describedby", descriptions.join(" "));
+    else activeTarget.removeAttribute("aria-describedby");
     activeTarget = null;
   }
 
@@ -112,8 +119,21 @@
 
   function start() {
     scan(document.body);
-    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "class"] });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "class", "aria-label", "title"] });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-sidebar"] });
+    document.querySelectorAll('input[placeholder]:not([aria-label]), textarea[placeholder]:not([aria-label])').forEach(function (field) {
+      if (!field.labels || !field.labels.length) field.setAttribute('aria-label', field.placeholder.replace(/…/g, ''));
+    });
+    document.addEventListener('keydown', function (event) {
+      var radio = event.target.closest('[role="radio"]');
+      if (!radio || ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].indexOf(event.key) < 0) return;
+      var group = radio.closest('[role="radiogroup"]');
+      if (!group) return;
+      var radios = Array.from(group.querySelectorAll('[role="radio"]'));
+      var direction = event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 1;
+      var index = event.key === 'Home' ? 0 : event.key === 'End' ? radios.length - 1 : (radios.indexOf(radio) + direction + radios.length) % radios.length;
+      event.preventDefault(); radios[index].click(); radios[index].focus();
+    });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();

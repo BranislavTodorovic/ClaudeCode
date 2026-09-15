@@ -34,7 +34,7 @@
     list.innerHTML = items.length ? items.map(function (p) { return preview(p, false); }).join("") : '<div class="proof-empty"><span aria-hidden="true">↗</span><h3>Your next idea starts here.</h3><p>Create your first project above. No sample projects, just your own work.</p></div>';
     document.getElementById("workProjectCount").textContent = active.length + " in progress";
     document.getElementById("workProjectsList").innerHTML = active.length ? active.slice(0, 3).map(function (p) { return preview(p, true); }).join("") : '<div class="proof-empty"><h3>A clear desk. A fresh start.</h3><p>Create a project and its progress will appear here.</p><button type="button" class="btn" data-page-jump="projects">Create your first project ↗</button></div>';
-    var tasks = OS.safeGetJSON("orbit-tasks", []), open = tasks.filter(function (t) { return !t.done; });
+    var tasks = OS.safeGetJSON("orbit-tasks", []), open = OS.prioritizeTasks(tasks).filter(function (t) { return !t.done; });
     var high = open.filter(function (t) { return t.priority === "high"; }).length;
     var notes = OS.safeGetJSON("orbit-notes-list", []);
     document.getElementById("homeOverview").innerHTML =
@@ -43,7 +43,7 @@
       tile("Thoughts captured", notes.length, notes.length ? (notes[0].title || "Your latest note") : "Save an idea before it goes", "notes", "✎");
     document.getElementById("workOverview").innerHTML =
       tile("In progress", active.length, "Projects moving toward done", "projects", "▧") +
-      tile("Next up", open.length, high ? high + " high-priority tasks" : "Your priorities, in one place", "productivity", "✓") +
+      tile("Next up", open.length, high ? high + (high === 1 ? " high-priority task" : " high-priority tasks") : "Your priorities, in one place", "productivity", "✓") +
       tile("Finished", items.filter(function (p) { return p.status === "done"; }).length, "Make space for what comes next", "projects", "↗");
   }
   function cancel() { editingId = null; form.reset(); document.getElementById("projectSave").textContent = "Create project"; document.getElementById("projectFormHeading").textContent = "Create a project"; document.getElementById("projectCancel").hidden = true; }

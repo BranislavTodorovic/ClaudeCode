@@ -330,11 +330,28 @@
     for (var i = 0; i < genres.length; i++) { if (GENRE_TO_SCENE[genres[i]]) return GENRE_TO_SCENE[genres[i]]; }
     return "marquee";
   }
+  var sceneSerial = 0;
   function buildMovieSceneSvg(movie) {
     var accent = movie.accent || hashAccent(movie.title || "");
     var key = sceneKeyFor(movie);
     var builder = SCENE_BUILDERS[key] || SCENE_BUILDERS.marquee;
-    return '<svg class="mv-scene-illustration" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' + builder(accent, movie.id.replace(/[^a-z0-9]/gi, "")) + "</svg>";
+    return '<svg class="mv-scene-illustration" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' + builder(accent, String(movie.id || 'cover').replace(/[^a-z0-9]/gi, "") + (++sceneSerial)) + movieForeground(key, accent) + "</svg>";
+  }
+
+  // Original set pieces give each genre a focal subject and a readable silhouette.
+  function movieForeground(key, accent) {
+    var subjects = {
+      crime: '<path d="M850 760V230Q1100 50 1370 230V760" fill="none" stroke="#997754" stroke-width="18"/><path d="M870 755V250Q1100 100 1350 250V755M1105 130V720M866 320H1347" fill="none" stroke="#d3ad72" stroke-width="3"/><path d="M1170 723Q1115 651 1137 598L1190 567 1246 590 1290 720Z" fill="#0b0c12"/><ellipse cx="1192" cy="548" rx="34" ry="43" fill="#181821"/><path d="M1154 540L1157 501 1223 494 1242 535 1262 546 1128 558Z" fill="#0a0b11"/><path d="M980 725H1390V760H960Z" fill="#936c49"/><path d="M1100 716V600M1060 600H1140L1114 521H1084Z" fill="#e5b86e" stroke="#a5865e" stroke-width="6"/>',
+      sciFi: '<g fill="none" stroke="#8ebfcf"><ellipse cx="1130" cy="390" rx="212" ry="275" stroke-width="18"/><ellipse cx="1130" cy="390" rx="178" ry="240" stroke-width="2"/><ellipse cx="1130" cy="390" rx="235" ry="303" stroke-dasharray="3 19" stroke-width="8"/></g><path d="M941 605L1300 605 1430 823 793 823Z" fill="#173443" stroke="#87b6c3"/><path d="M1030 678H1230M995 728H1270M945 790H1310" stroke="#8baebd" stroke-width="2"/><path d="M1110 600V540Q1125 520 1140 540V600M1116 600L1106 643M1136 600L1145 643" stroke="#12222d" stroke-width="13" fill="none"/><circle cx="1125" cy="513" r="18" fill="#172b36"/>',
+      animation: '<path d="M865 695L922 517 1175 517 1230 695Z" fill="#735a76"/><path d="M884 518L1044 417 1212 518Z" fill="#d3a879"/><path d="M955 520V343H1139V520" fill="#ab737f"/><path d="M927 344L1046 244 1168 344Z" fill="#efc4a0"/><path d="M997 340V280H1091V340M973 518V686M1120 518V686" fill="none" stroke="#583d62" stroke-width="9"/><g fill="#ffda94"><path d="M989 400H1025V455H989ZM1070 400H1106V455H1070ZM977 566H1013V619H977ZM1081 566H1117V619H1081Z"/></g><path d="M1045 615a23 23 0 0 1 46 0v73h-46Z" fill="#3a2f51"/><path d="M710 793Q962 639 1360 760" fill="none" stroke="#d2b29d" stroke-width="17"/>',
+      horror: '<path d="M965 770V464L1115 317 1266 464V770Z" fill="#101a20" stroke="#73888b" stroke-width="3"/><path d="M925 480L1115 277 1310 480" fill="none" stroke="#18272e" stroke-width="28"/><path d="M1165 352V246H1210V397" fill="#24323a"/><path d="M1010 516H1058V582H1010ZM1170 516H1218V582H1170Z" fill="#d8b986"/><path d="M1087 770V634a28 28 0 0 1 56 0v136" fill="#56757b"/><path d="M1087 780L960 900H1250L1143 780" fill="#49666a"/><path d="M1345 785L1318 459 1370 353M1326 553L1400 472M1318 468L1278 411" fill="none" stroke="#102024" stroke-width="14"/>',
+      action: '<path d="M950 820L1020 560 1140 403 1330 601 1400 820Z" fill="#362536"/><path d="M1020 560L1140 403 1200 560 1154 530 1127 561 1097 527Z" fill="#d89a79"/><path d="M1130 747L1165 670 1210 690 1260 755Z" fill="#131620"/><path d="M1173 670L1170 622 1190 602 1210 628 1204 684Z" fill="#17202a"/><circle cx="1187" cy="593" r="18" fill="#17202a"/><path d="M1192 656L1250 627" stroke="#17202a" stroke-width="17"/><path d="M1190 719L1165 781M1215 726L1257 780" stroke="#111723" stroke-width="22"/>',
+      drama: '<path d="M882 144H1240V791H882Z" fill="#38202b" stroke="#b88b78" stroke-width="8"/><path d="M912 178H1210V720H912Z" fill="#d4a980" opacity=".34"/><path d="M1055 178V720M914 433H1210" stroke="#62414a" stroke-width="12"/><path d="M946 742H1280V784H946Z" fill="#b18469"/><path d="M1000 782V873M1230 782V873" stroke="#4d303a" stroke-width="16"/><path d="M1160 742L1132 680 1150 590 1195 588 1225 657 1210 742Z" fill="#3c2935"/><ellipse cx="1171" cy="561" rx="29" ry="36" fill="#46313a"/>',
+      romance: '<path d="M834 790Q1090 595 1430 790" fill="none" stroke="#d7a2a1" stroke-width="18"/><path d="M843 782V840M950 719V811M1065 695V800M1180 710V818M1300 750V835M1410 790V850" stroke="#94667d" stroke-width="8"/><path d="M980 639V432M968 432H992L986 395H974Z" stroke="#f0c7a1" stroke-width="5" fill="#ffdbac"/><path d="M1145 698V606Q1163 577 1180 606V698M1188 700V617Q1205 590 1220 617V700" fill="#38233c"/><circle cx="1162" cy="570" r="19" fill="#38233c"/><circle cx="1203" cy="585" r="18" fill="#38233c"/>',
+      adventure: '<path d="M900 760L945 384 1220 384 1280 760Z" fill="#385b4c"/><path d="M915 387L1084 235 1250 387Z" fill="#a6af83"/><path d="M965 420H1000V697H965ZM1170 420H1205V697H1170Z" fill="#7a9270"/><path d="M1040 759V499a44 44 0 0 1 88 0v260" fill="#172f2b"/><path d="M820 848H1350L1280 777H900ZM925 744H1245V777H900Z" fill="#69866b"/><path d="M1220 371q-55 60-27 120t-13 167M960 384q60 90 28 181" stroke="#284c39" stroke-width="17" fill="none"/>',
+      marquee: '<path d="M890 735V275H1310V735Z" fill="#37222e" stroke="#bba078" stroke-width="7"/><path d="M925 310H1275V663H925Z" fill="#c7b495"/><path d="M1065 420L1170 486 1065 548Z" fill="#644254"/><path d="M848 778H1350M825 818H1380" stroke="#b49270" stroke-width="18"/>'
+    };
+    return '<g class="mv-illustrated-subject">' + (subjects[key] || subjects.marquee) + '</g>';
   }
 
   function saveLibrary() { safeSet(MK.library, JSON.stringify(library)); }
@@ -374,7 +391,7 @@
    * ------------------------------------------------------------------- */
   function posterCoverHtml(movie, cls) {
     var accent = movie.accent || hashAccent(movie.title || "");
-    return '<div class="' + cls + ' mv-poster-cover" style="background:linear-gradient(160deg,' + esc(accent) + ',color-mix(in srgb,' + esc(accent) + ' 40%,#0b0b14))">' + mvIcon("film") + '<span>' + esc(movie.title) + '</span></div>';
+    return '<div class="' + cls + ' mv-poster-cover mv-drawn-cover">' + buildMovieSceneSvg(movie).replace('viewBox="0 0 1600 900"', 'viewBox="720 100 720 800"') + '<span>' + esc(movie.title) + '</span></div>';
   }
   function posterHtml(movie, extraClass) {
     var cls = "mv-poster" + (extraClass ? " " + extraClass : "");
@@ -386,9 +403,8 @@
     return posterCoverHtml(movie, cls);
   }
   function wirePosterFallback() {
-    var root = document.getElementById("moviesMount");
-    if (!root) return;
-    root.addEventListener("error", function (e) {
+    // The details dialog lives outside moviesMount; handle both surfaces.
+    document.addEventListener("error", function (e) {
       var img = e.target;
       if (!img.classList || !img.classList.contains("mv-poster-img")) return;
       var title = img.getAttribute("data-fallback-title") || "";
@@ -1042,7 +1058,7 @@
         root.dataset.signature = sig;
         root.innerHTML = list.map(function (m, i) {
           return '<button type="button" class="' + (type ? "mv-spotlight-card" : "mv-dot") + '" data-spotlight-id="' + esc(m.id) + '" aria-label="Show ' + esc(m.title) + '">' +
-            (type ? (posterHtml(m, "mv-rail-poster") + "<span><small>0" + (i + 1) + " / " + esc((m.genre && m.genre[0]) || "") + "</small><strong>" + esc(m.title) + "</strong></span>" + mvIcon("next")) : "<span></span>") +
+            (type ? (posterHtml(m, "mv-rail-poster") + "<span><small>" + pad2(i + 1) + " / " + esc((m.genre && m.genre[0]) || "") + "</small><strong>" + esc(m.title) + "</strong></span>" + mvIcon("next")) : "<span></span>") +
             "</button>";
         }).join("");
       }
@@ -1065,6 +1081,7 @@
     var isMovies = document.body.getAttribute("data-page") === "movies";
     var blocked = spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isMovies || activeTab !== "overview" || !spotlight.visible;
     hero.dataset.playing = String(!blocked);
+    hero.classList.toggle('mv-ambient-paused', spotlight.paused || document.hidden || !isMovies || !spotlight.visible);
     var button = document.getElementById("mvAutoplay");
     if (button) {
       var controlState = spotlight.paused || motionQuery.matches ? "play" : "pause";
@@ -1197,6 +1214,15 @@
   function wireDelegatedEvents() {
     var root = document.getElementById("moviesMount");
     if (!root) return;
+    document.getElementById('movieDetailsOverlay').addEventListener('click', function (event) {
+      var button = event.target.closest('[data-action]');
+      if (!button) return;
+      var action = button.dataset.action;
+      if (action !== 'details-watchlist' && action !== 'details-watched') return;
+      if (action === 'details-watchlist') addToWatchlist(button.dataset.id);
+      else addSeedToLibrary(button.dataset.id, 'watched');
+      closeModal(document.getElementById('movieDetailsOverlay'));
+    });
     root.addEventListener("click", function (e) {
       var target = e.target.closest("[data-action]");
       if (!target) return;
@@ -1245,7 +1271,9 @@
       prefs = defaultPrefs();
       savePrefs();
       renderPrefGroups();
-      document.getElementById("mvSuggestResults").innerHTML = '<p class="mv-empty">Pick a few preferences above, then select Get Movie Suggestions.</p>';
+      dismissed = [];
+      saveDismissed();
+      renderSuggestions();
       showToast("Preferences reset.");
     });
   }
@@ -1254,6 +1282,7 @@
    * Render everything
    * ------------------------------------------------------------------- */
   function renderAll() {
+    renderPrefGroups();
     renderLibraryGrid();
     renderOverviewStats();
     renderOverviewWatchlistNext();
@@ -1394,7 +1423,6 @@
 
     initSpotlight();
     renderPrefGroups();
-    document.getElementById("mvSuggestResults").innerHTML = '<p class="mv-empty">Pick a few preferences above, then select Get Movie Suggestions.</p>';
 
     wireAddMovieModal();
     wireMovieDetailsModal();

@@ -105,6 +105,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 <link rel="stylesheet" href="pages.css">
 <link rel="stylesheet" href="movies.css">
 <link rel="stylesheet" href="movies-cinematic.css">
+<link rel="stylesheet" href="cinematic-refinement.css">
 </head>
 <body class="has-sidebar" data-page="home">
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
@@ -201,7 +202,6 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       <div class="overview-grid" id="homeOverview"></div>
     </section>
     <section class="glance-bar" aria-label="Today at a glance">
-      <button class="mobile-today-toggle" id="mobileTodayToggle" type="button" aria-expanded="false" aria-controls="focusRail">Today &amp; Focus</button>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span class="glance-copy"><span class="glance-label">Day progress</span><span class="glance-value" id="dayProgressText">0% complete</span><span class="day-progress"><span id="dayProgressBar"></span></span></span></div>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"></path></svg></span><span class="glance-copy"><span class="glance-label">Open tasks</span><span class="glance-value" id="glanceTasks">None</span></span></div>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15 8.3 22 9.3 17 14.2 18.2 21 12 17.8 5.8 21 7 14.2 2 9.3 9 8.3"></polygon></svg></span><span class="glance-copy"><span class="glance-label">Quick Access</span><span class="glance-value" id="glanceFavorites">No favorites</span></span></div>
@@ -475,6 +475,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
     <!-- ===================== Work ===================== -->
     <section id="workView" class="page-view" data-page-when="work" hidden aria-label="Work dashboard">
+      <button class="mobile-today-toggle" id="mobileTodayToggle" type="button" aria-expanded="false" aria-controls="focusRail">Today &amp; Focus</button>
       <header class="scene-hero work-scene">
         <img class="scene-image" src="assets/page-art/work-studio.png" width="1672" height="941" alt="" loading="lazy">
         <div class="scene-shade"></div>
@@ -961,6 +962,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     try {
       var existing = window.localStorage.getItem(key);
       if (existing !== null && !window.OneSpaceStorage.valid(key, existing)) throw new Error("Stored data needs recovery");
+      if (!window.OneSpaceStorage.valid(key, String(value))) throw new Error("Invalid data cannot be saved");
       window.localStorage.setItem(key, value);
       document.dispatchEvent(new CustomEvent("onespace:data-changed", { detail: { key: key } }));
       return true;
@@ -1260,7 +1262,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       var categoryTools = '<span class="category-tools"><button class="btn" type="button" data-move-category="up" data-category-name="' + escapeHtml(cat) + '" aria-label="Move ' + escapeHtml(cat) + ' up">↑</button><button class="btn" type="button" data-move-category="down" data-category-name="' + escapeHtml(cat) + '" aria-label="Move ' + escapeHtml(cat) + ' down">↓</button>' + (customCategories.indexOf(cat) !== -1 ? '<button class="btn" type="button" data-rename-category="' + escapeHtml(cat) + '">Rename</button><button class="btn" type="button" data-delete-category="' + escapeHtml(cat) + '">Delete</button>' : '') + '</span>';
       html += '<section class="group category-' + CATEGORY_SLUG[cat] + (isCollapsed ? ' collapsed' : '') + '" aria-labelledby="h-' + CATEGORY_SLUG[cat] + '" data-category="' + escapeHtml(cat) + '">' +
         '<div class="section-heading"><h2 id="h-' + CATEGORY_SLUG[cat] + '"><span class="category-title-icon">' + iconSvg(CATEGORY_ICON[cat] || "star") + '</span>' + escapeHtml(cat) + '</h2><span>' + categoryTools +
-        '<button class="btn collapse-btn" type="button" data-collapse="' + escapeHtml(cat) + '" aria-expanded="' + (!isCollapsed) + '" aria-controls="grid-' + CATEGORY_SLUG[cat] + '">' + iconSvg("chevron", "icon-sm") + '<span>' + (isCollapsed ? "Expand" : "Collapse") + '</span></button></span></div>' +
+        '<button class="btn collapse-btn" type="button" data-collapse="' + escapeHtml(cat) + '" aria-label="' + (isCollapsed ? "Expand " : "Collapse ") + escapeHtml(cat) + '" aria-expanded="' + (!isCollapsed) + '" aria-controls="grid-' + CATEGORY_SLUG[cat] + '">' + iconSvg("chevron", "icon-sm") + '<span>' + (isCollapsed ? "Expand" : "Collapse") + '</span></button></span></div>' +
         '<div class="grid" id="grid-' + CATEGORY_SLUG[cat] + '"></div>' +
         '</section>';
     });
@@ -1302,6 +1304,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     renderCategoryJump();
     attachCardActionHandlers();
     observeSections();
+    filterShortcuts();
     if (typeof searchMode !== "undefined" && searchMode === "orbit") applyLocalSearch(searchInput.value);
   }
 
@@ -1429,6 +1432,14 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   document.querySelectorAll("[data-quick-tab]").forEach(function (button) {
     button.addEventListener("click", function () { quickAccessTab = button.getAttribute("data-quick-tab"); spaceQuickTabs[currentSpace] = quickAccessTab; safeSet(STORAGE.spaceQuickTabs, JSON.stringify(spaceQuickTabs)); safeSet(STORAGE.quickTab, quickAccessTab); renderPersonalSections(); });
+    button.addEventListener("keydown", function (e) {
+      if (["ArrowLeft", "ArrowRight", "Home", "End"].indexOf(e.key) === -1) return;
+      e.preventDefault();
+      var tabs = Array.from(document.querySelectorAll("[data-quick-tab]"));
+      var index = tabs.indexOf(button);
+      var next = e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : (index + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+      tabs[next].click(); tabs[next].focus();
+    });
   });
 
   function toggleFavorite(id) {
@@ -1707,6 +1718,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     densityChoice = "comfortable";
     widgetsChoice = "visible";
     clockFormat = "12";
+    motionOverride = "auto";
     favoriteIds = [];
     recentIds = [];
     collapsedCategories = [];
@@ -1719,6 +1731,8 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     safeSet(STORAGE.widgets, widgetsChoice);
     safeSet(STORAGE.clock, clockFormat);
     safeSet(STORAGE.favorites, "[]");
+    safeSet(STORAGE.motionOverride, motionOverride);
+    applyMotionOverride();
     safeSet(STORAGE.recent, "[]");
     safeSet(STORAGE.collapsed, "[]");
     safeSet(STORAGE.searchProvider, currentProvider);
@@ -1911,7 +1925,11 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     document.body.classList.remove("sidebar-open");
     document.getElementById("mobileSidebarToggle").setAttribute("aria-expanded", "false");
     document.getElementById("mobileMore").setAttribute("aria-expanded", "false");
+    if (window.matchMedia('(max-width:760px)').matches && document.getElementById('oneSpaceSidebar').contains(document.activeElement)) mobileSidebarToggle.focus();
   }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && document.body.classList.contains('sidebar-open') && !anyModalOpen()) { closeMobileSidebar(); mobileSidebarToggle.focus(); }
+  });
   mobileSidebarToggle.addEventListener("click", function () {
     var open = document.body.classList.toggle("sidebar-open");
     mobileSidebarToggle.setAttribute("aria-expanded", String(open));
@@ -1988,6 +2006,14 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   }).slice(0, 50);
   var taskListEl = document.getElementById("taskList");
   function saveTasks() { return safeSet(STORAGE.tasks, JSON.stringify(tasks)); }
+  function prioritizeTasks(items) {
+    var order = { high: 0, normal: 1, low: 2 };
+    return items.slice().sort(function (a, b) {
+      var aPriority = Object.prototype.hasOwnProperty.call(order, a.priority) ? order[a.priority] : 1;
+      var bPriority = Object.prototype.hasOwnProperty.call(order, b.priority) ? order[b.priority] : 1;
+      return (Number(!!a.done) - Number(!!b.done)) || aPriority - bPriority;
+    });
+  }
   function taskMeta(task) {
     var priority = task.priority === "high" || task.priority === "low" ? task.priority : "normal";
     var parts = [priority.charAt(0).toUpperCase() + priority.slice(1) + " priority"];
@@ -2009,7 +2035,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     document.getElementById("glanceTasks").textContent = remainingTasks ? remainingTasks + " remaining" : "All clear";
     var railTasks = document.getElementById("railTasks");
     if (railTasks) {
-      var nextTasks = tasks.filter(function (task) { return !task.done; }).slice(0, 1);
+      var nextTasks = prioritizeTasks(tasks).filter(function (task) { return !task.done; }).slice(0, 1);
       railTasks.innerHTML = nextTasks.length ? nextTasks.map(function (task) { return '<li><strong>' + escapeHtml(task.text) + '</strong><span class="btn-subtext">' + escapeHtml(task.priority || "normal") + ' priority</span></li>'; }).join("") : '<li class="rail-empty">No open tasks. Your list is clear.</li>';
       var nextTask = nextTasks[0];
       document.getElementById("nextUpText").textContent = nextTask ? nextTask.text : "Your task list is clear";
@@ -2040,11 +2066,12 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   });
   renderTasks();
   document.getElementById("completeNextTask").addEventListener("click", function () {
-    var nextTask = tasks.filter(function (task) { return !task.done; })[0];
+    var nextTask = prioritizeTasks(tasks).filter(function (task) { return !task.done; })[0];
     if (!nextTask) return;
     nextTask.done = true;
     saveTasks();
     renderTasks();
+    renderWorkPage();
     animateNextUp();
     showToast("Task completed.");
   });
@@ -2188,7 +2215,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    if (searchMode === "web") applyLocalSearch("");
+    applyLocalSearch(searchMode === "orbit" ? searchInput.value : "");
     searchInput.focus();
   }
   document.querySelectorAll("[data-search-mode]").forEach(function (button) {
@@ -2241,7 +2268,9 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "/" && !isTypingTarget(document.activeElement)) {
+      if (anyModalOpen()) return;
       e.preventDefault();
+      goToPage("home");
       searchInput.focus();
       searchInput.select();
     }
@@ -2250,8 +2279,8 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   /* =====================================================================
    * Modal helpers (shared open/close + focus handling)
    * ===================================================================== */
-  var lastFocusedEl = null;
-  var wrapEl = document.querySelector(".wrap");
+  var modalStack = [];
+  var modalBackground = new Map();
   var OVERLAY_IDS = ["paletteOverlay", "shortcutOverlay", "toolboxOverlay", "welcomeOverlay", "addGameOverlay", "gameDetailsOverlay", "addMovieOverlay", "movieDetailsOverlay"];
 
   function anyModalOpen() {
@@ -2261,31 +2290,55 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     });
   }
 
-  /* While a modal is open, "inert" keeps the page behind it out of the
-     tab order and off-limits to clicks, so keyboard focus can't leak
-     out of the dialog. */
+  // Isolate the active dialog, including navigation and any underlying dialog.
+  function syncModalBackground() {
+    var top = modalStack[modalStack.length - 1];
+    if (!top) {
+      modalBackground.forEach(function (wasInert, el) { el.inert = wasInert; });
+      modalBackground.clear();
+      return;
+    }
+    Array.from(document.body.children).forEach(function (el) {
+      if (["SCRIPT", "STYLE", "LINK"].indexOf(el.tagName) !== -1 || el.id === "toast" || el.id === "osTooltipBubble") return;
+      if (!modalBackground.has(el)) modalBackground.set(el, el.inert);
+      el.inert = el !== top.overlay;
+    });
+  }
   function openModal(overlay, focusEl) {
-    lastFocusedEl = document.activeElement;
-    if (wrapEl) wrapEl.inert = true;
+    if (!overlay || modalStack.some(function (entry) { return entry.overlay === overlay; })) return;
+    modalStack.push({ overlay: overlay, opener: document.activeElement });
     overlay.hidden = false;
+    syncModalBackground();
     if (overlay === paletteOverlay) paletteInput.setAttribute("aria-expanded", "true");
     if (overlay.querySelector(".modal")) overlay.querySelector(".modal").scrollTop = 0;
     if (focusEl) focusEl.focus({ preventScroll: true });
   }
   function closeModal(overlay) {
+    var index = modalStack.findIndex(function (entry) { return entry.overlay === overlay; });
+    if (index === -1) return;
+    var wasTop = index === modalStack.length - 1;
+    var entry = modalStack.splice(index, 1)[0];
     overlay.hidden = true;
     if (overlay === paletteOverlay) {
       paletteInput.setAttribute("aria-expanded", "false");
       paletteInput.removeAttribute("aria-activedescendant");
     }
-    if (!anyModalOpen() && wrapEl) wrapEl.inert = false;
-    if (lastFocusedEl && typeof lastFocusedEl.focus === "function") lastFocusedEl.focus();
+    syncModalBackground();
+    if (wasTop) {
+      var focusTarget = entry.opener && entry.opener.isConnected && !entry.opener.closest('[inert], [hidden]') ? entry.opener : null;
+      if (!focusTarget) {
+        var parent = modalStack[modalStack.length - 1];
+        focusTarget = parent ? parent.overlay.querySelector('button, input') : document.querySelector('[data-page-when]:not([hidden]) h1, [data-page-when]:not([hidden]) [role="tab"][aria-selected="true"]');
+        if (focusTarget) focusTarget.tabIndex = -1;
+      }
+      if (focusTarget) focusTarget.focus({ preventScroll:true });
+    }
   }
 
   function trapModalFocus(e) {
     if (e.key !== "Tab") return;
-    var overlay = OVERLAY_IDS.map(function (id) { return document.getElementById(id); })
-      .filter(function (item) { return item && !item.hidden; })[0];
+    var top = modalStack[modalStack.length - 1];
+    var overlay = top && top.overlay;
     if (!overlay) return;
     var focusable = Array.prototype.slice.call(overlay.querySelectorAll(
       'button:not([disabled]), [href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
@@ -2293,10 +2346,10 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     if (!focusable.length) return;
     var first = focusable[0];
     var last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
+    if (e.shiftKey && (document.activeElement === first || !overlay.contains(document.activeElement))) {
       e.preventDefault();
       last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
+    } else if (!e.shiftKey && (document.activeElement === last || !overlay.contains(document.activeElement))) {
       e.preventDefault();
       first.focus();
     }
@@ -2311,8 +2364,8 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape") return;
-    OVERLAY_IDS.map(function (id) { return document.getElementById(id); })
-      .forEach(function (overlay) { if (!overlay.hidden) closeModal(overlay); });
+    var top = modalStack[modalStack.length - 1];
+    if (top) { e.preventDefault(); closeModal(top.overlay); }
   });
 
   /* =====================================================================
@@ -2326,6 +2379,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   var COMMANDS = [
     { id: "cmd-home", name: "Open Home", category: "View", icon: "home", keywords: "dashboard overview", run: function () { goToPage("home"); } },
     { id: "cmd-work", name: "Open Work", category: "View", icon: "briefcase", keywords: "projects tasks", run: function () { goToPage("work"); } },
+    { id: "cmd-projects", name: "Open Projects", category: "View", icon: "briefcase", keywords: "creative studio progress", run: function () { goToPage("projects"); } },
     { id: "cmd-personal", name: "Open Personal", category: "View", icon: "heart", keywords: "goals routines habits", run: function () { goToPage("personal"); } },
     { id: "cmd-explore", name: "Open Explore", category: "View", icon: "compass", keywords: "travel discover chill", run: function () { goToPage("explore"); } },
     { id: "cmd-games", name: "Open Games", category: "View", icon: "target", keywords: "gamevault progress", run: function () { goToPage("games"); } },
@@ -2343,7 +2397,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   ];
 
   function renderPaletteResults(query) {
-    var q = (query == null ? document.getElementById("exploreSearchInput").value : query).trim().toLowerCase();
+    var q = String(query || "").trim().toLowerCase();
     var calculatorResult = calculateExpression(q);
     if (calculatorResult !== null) {
       paletteResults = [{ id: "calculator", name: calculatorResult, category: "Calculator result · press Enter to copy", icon: "cpu", run: function () { fallbackCopy(calculatorResult); } }];
@@ -2866,7 +2920,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     document.getElementById("focusRailToggle").focus();
   });
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && document.body.classList.contains("mobile-focus-open")) {
+    if (event.key === "Escape" && !event.defaultPrevented && document.body.classList.contains("mobile-focus-open")) {
       document.body.classList.remove("mobile-focus-open");
       document.getElementById("mobileTodayToggle").setAttribute("aria-expanded", "false");
       document.getElementById("mobileTodayToggle").focus();
@@ -2960,8 +3014,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   function renderWorkPage() {
     var timeline = document.getElementById("workTimelineList");
     if (timeline) {
-      var order = { high: 0, normal: 1, low: 2 };
-      var prioritized = tasks.slice().sort(function (a, b) { return (a.done - b.done) || (order[a.priority] - order[b.priority]); }).slice(0, 6);
+      var prioritized = prioritizeTasks(tasks).slice(0, 6);
       timeline.innerHTML = prioritized.length ? prioritized.map(function (t) {
         return '<li class="' + (t.done ? "is-done" : "") + '"><strong>' + escapeHtml(t.text) + "</strong><span>" + (t.done ? "Completed" : t.priority + " priority") + "</span></li>";
       }).join("") : '<li class="timeline-empty">No tasks yet — add one in Productivity.</li>';
@@ -3098,7 +3151,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     safeGet: safeGet, safeSet: safeSet, safeGetJSON: safeGetJSON,
     showToast: showToast, openModal: openModal, closeModal: closeModal,
     goToPage: goToPage, PAGES: PAGES, escapeHtml: escapeHtml, uid: uid, iconSvg: iconSvg,
-    prefersReducedMotion: prefersReducedMotion
+    prefersReducedMotion: prefersReducedMotion, prioritizeTasks: prioritizeTasks
   };
 })();
 </script>
@@ -3107,5 +3160,6 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 <script src="games.js"></script>
 <script src="movies-data.js"></script>
 <script src="movies.js"></script>
+<script src="cinematic-scenes.js"></script>
 </body>
 </html>

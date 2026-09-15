@@ -255,6 +255,17 @@
     var accent = game.accent || "#7a8fff";
     return '<div class="gv-logo-cover" style="background:linear-gradient(135deg,' + esc(accent) + ',color-mix(in srgb,' + esc(accent) + ' 40%,#0b0b14))">' + esc(game.name) + "</div>";
   }
+  function gameScene(game) {
+    var name = game.title || game.name || 'Game';
+    var hue = Array.from(name).reduce(function (sum, char) { return (sum * 31 + char.charCodeAt(0)) % 360; }, 0);
+    var genre = (game.genre || (game.genres || []).join(' ')).toLowerCase();
+    var subject = /horror|survival/.test(genre)
+      ? '<path d="M330 285V150L407 65 488 150V285Z" fill="#101e29" stroke="#8aa5ad"/><path d="M383 285V210a23 23 0 0 1 46 0v75" fill="#d2c193"/><path d="M315 153L407 47 506 153" fill="none" stroke="#172733" stroke-width="14"/>'
+      : /racing|sport/.test(genre)
+      ? '<path d="M230 280L373 160H475L593 280" fill="none" stroke="#b4d7eb" stroke-width="8"/><path d="M280 244L323 216H437L480 244V276H280Z" fill="#253c58" stroke="#c4d6e8"/><path d="M335 210L355 182H415L434 210Z" fill="#719fac"/>'
+      : '<path d="M320 287V138a92 92 0 0 1 184 0v149" fill="#112432" stroke="#8fbac5" stroke-width="12"/><path d="M343 287V141a69 69 0 0 1 138 0v146" fill="#659aa8" opacity=".6"/><path d="M286 316L344 271H480L540 316Z" fill="#214155"/><path d="M394 276V227Q410 209 426 227V276M399 276L392 303M421 276L432 303" fill="none" stroke="#122736" stroke-width="10"/><circle cx="410" cy="212" r="12" fill="#122736"/>';
+    return '<svg class="gv-drawn-scene" viewBox="0 0 600 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="340" fill="hsl(' + hue + ' 30% 19%)"/><circle cx="435" cy="107" r="93" fill="hsl(' + hue + ' 45% 69%)" opacity=".45"/><path d="M0 245L110 110 231 219 314 143 441 240 550 132 600 210V340H0Z" fill="#1b3343"/><path d="M0 289L200 210 359 280 550 250 600 280V340H0Z" fill="#11232f"/>' + subject + '<g fill="#d1e9e9"><circle cx="60" cy="49" r="1.5"/><circle cx="179" cy="84" r="2"/><circle cx="321" cy="38" r="1.5"/><circle cx="560" cy="49" r="2"/></g></svg>';
+  }
   /* A failed asset/upload <img> falls back to the same text-cover badge used
      when a game has no logo at all, instead of a broken-image icon. Wired
      once on #gamesView (error events don't bubble, so this listener uses
@@ -288,7 +299,7 @@
     var weekBadge = isWeekly ? '<span class="gv-week-badge">Week ' + esc(stats.weekKey || "") + "</span>" : "";
     return (
       '<article class="gv-card" data-game-id="' + esc(game.id) + '" data-reveal data-reveal-group="library" data-reveal-key="' + esc(game.id) + '" style="--gv-brand:' + esc(game.accent || "#7a8fff") + '">' +
-        '<button type="button" class="gv-card-logo" data-action="spotlight-game" data-id="' + esc(game.id) + '" aria-label="Spotlight ' + esc(game.name) + '">' + (game.artwork ? '<img class="gv-card-art" src="' + esc(game.artwork) + '" alt="" loading="lazy" width="600" height="340">' : '') + renderLogo(game) + "</button>" +
+        '<button type="button" class="gv-card-logo" data-action="spotlight-game" data-id="' + esc(game.id) + '" aria-label="Spotlight ' + esc(game.name) + '">' + (game.artwork ? '<img class="gv-card-art" src="' + esc(game.artwork) + '" alt="" loading="lazy" width="600" height="340">' : gameScene(game)) + renderLogo(game) + "</button>" +
         '<div class="gv-card-body">' +
           '<h3 class="gv-card-title">' + esc(game.name) + "</h3>" +
           '<div class="gv-card-meta"><span>' + esc(game.genre || "Custom") + " · " + esc(game.platform || "") + "</span>" + weekBadge + "</div>" +
@@ -793,7 +804,7 @@
       var g = r.game;
       return (
         '<article class="gv-suggest-card" data-reveal data-reveal-group="suggestions" data-reveal-key="' + esc(g.id) + '" style="--gv-brand:' + esc(g.accent) + '">' +
-          '<div class="gv-suggest-cover" style="' + suggestCoverStyle(g.accent) + '">' + esc(g.title) + "</div>" +
+          '<div class="gv-suggest-cover gv-illustrated-cover">' + (g.artwork ? '<img class="gv-drawn-scene" src="' + esc(g.artwork) + '" alt="" loading="lazy">' : gameScene(g)) + '<span>' + esc(g.title) + "</span></div>" +
           '<div class="gv-suggest-body">' +
             '<div class="gv-suggest-top"><h3>' + esc(g.title) + "</h3><span class=\"gv-match\">" + "Local catalog</span></div>" +
             '<p class="gv-suggest-genre">' + esc(g.genres.join(", ")) + " · " + esc(g.platforms.join(", ")) + "</p>" +
@@ -1284,7 +1295,7 @@
       if (game.artwork) {
         picture.innerHTML = (game.artworkMobile ? '<source media="(max-width: 640px)" srcset="' + esc(game.artworkMobile) + '">' : '') + '<img src="' + esc(game.artwork) + '" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">';
         picture.querySelector("img").addEventListener("error", function () { picture.remove(); });
-      }
+      } else picture.innerHTML = gameScene(game);
       art.appendChild(picture);
       requestAnimationFrame(function () { picture.classList.add("is-active"); });
       setTimeout(function () { Array.from(art.children).forEach(function (p) { if (p !== art.lastElementChild) p.remove(); }); }, 650);
@@ -1470,7 +1481,6 @@
     var now = Date.now();
     if (now - (gamesView._gvLastEntryAnim || 0) < 80) return;
     gamesView._gvLastEntryAnim = now;
-    activeTab = "overview";
     applyTabVisibility(activeTab);
     renderSpotlight("entry");
     resetReveals();
@@ -1587,6 +1597,8 @@
   }
 
   function renderAll() {
+    renderPrefGroups();
+    renderSuggestions();
     renderLibraryGrid();
     renderMissionsPanel();
     renderWeeklyPanel();
@@ -1611,8 +1623,6 @@
     initSpotlight();
     renderPrefGroups();
     renderAll();
-    var resultsEl = document.getElementById("gvSuggestResults");
-    if (resultsEl) resultsEl.innerHTML = '<p class="gv-empty">Pick a few preferences above, then select Get Suggestions.</p>';
 
     wireAddGameModal();
     wireThemeSwitcher();

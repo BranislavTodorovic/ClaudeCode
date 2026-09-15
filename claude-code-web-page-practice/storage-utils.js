@@ -8,6 +8,8 @@
   var arrayKeys = ["custom-links","favorites","recent","collapsed-sections","custom-categories","tasks","countdowns","category-order","notes-list","personal-goals","personal-routines","personal-habits","work-projects","games-library","games-wishlist","games-dismissed","games-sessions","games-journal","movies-library","movies-watchlist","movies-dismissed"].map(function (k) { return "orbit-" + k; });
   var objectKeys = ["usage-counts","space-quick-tabs","games-weekly","games-preferences","movies-preferences"].map(function (k) { return "orbit-" + k; });
   function object(v) { return v !== null && typeof v === "object" && !Array.isArray(v); }
+  function strings(v) { return Array.isArray(v) && v.every(function (x) { return typeof x === "string"; }); }
+  function optionalString(value) { return value == null || typeof value === "string"; }
   function valid(key, value) {
     if (KEYS.indexOf(key) < 0) return false;
     if (value === null) return true;
@@ -18,12 +20,12 @@
         if (/favorites|recent|collapsed-sections|custom-categories|category-order|wishlist|watchlist|dismissed/.test(key)) return a.every(function (x) { return typeof x === "string"; });
         return a.every(function (x) {
           if (!object(x) || typeof x.id !== "string" || !x.id || /[<>"']/.test(x.id)) return false;
-          if (key === "orbit-notes-list") return typeof x.body === "string";
-          if (key === "orbit-work-projects") return typeof x.name === "string" && ["active","blocked","done"].indexOf(x.status) >= 0 && Number.isFinite(x.progress) && x.progress >= 0 && x.progress <= 100;
+          if (key === "orbit-notes-list") return typeof x.body === "string" && optionalString(x.title);
+          if (key === "orbit-work-projects") return typeof x.name === "string" && ["active","blocked","done"].indexOf(x.status) >= 0 && Number.isFinite(x.progress) && x.progress >= 0 && x.progress <= 100 && optionalString(x.description) && optionalString(x.url) && (x.tags == null || strings(x.tags));
           if (/personal-|orbit-tasks/.test(key)) return typeof x.text === "string";
           if (key === "orbit-custom-links") return typeof x.name === "string" && typeof x.url === "string" && /^https?:\/\//i.test(x.url);
           if (key === "orbit-games-library") return typeof x.name === "string" && (!x.story || (object(x.story) && Array.isArray(x.story.chapters) && x.story.chapters.every(function (c) { return object(c) && typeof c.id === "string" && typeof c.title === "string" && Array.isArray(c.objectives) && c.objectives.every(function (o) { return object(o) && typeof o.id === "string" && typeof o.text === "string"; }); })));
-          if (key === "orbit-movies-library") return typeof x.title === "string" && Array.isArray(x.genre) && Array.isArray(x.platforms);
+          if (key === "orbit-movies-library") return typeof x.title === "string" && strings(x.genre) && strings(x.platforms) && (x.moods == null || strings(x.moods)) && (x.tags == null || strings(x.tags));
           return true;
         });
       }
