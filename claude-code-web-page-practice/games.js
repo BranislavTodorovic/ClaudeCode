@@ -143,7 +143,7 @@
     });
   }
   var weekly = safeGetJSON(GK.weekly, {});
-  var prefs = safeGetJSON(GK.prefs, { platforms: [], genres: [], playstyles: [], moods: [] });
+  var prefs = Object.assign({ platforms: [], genres: [], playstyles: [], moods: [] }, safeGetJSON(GK.prefs, {}));
   var sessions = safeGetJSON(GK.sessions, []);
   var journal = safeGetJSON(GK.journal, []);
   var draftTrackerType = "story";
@@ -751,7 +751,10 @@
       return '<fieldset class="gv-pref-group"><legend>' + esc(group.label) + "</legend><div class=\"gv-pref-options\">" + opts + "</div></fieldset>";
     }).join("");
     var el = document.getElementById("gvPrefGroups");
-    if (el) el.innerHTML = html;
+    if (el) {
+      el.innerHTML = '<label class="catalog-source-label">More like this<select id="gvSimilarTo"><option value="">All games</option>' + gameCatalog().map(function (g) { return '<option value="' + esc(g.id) + '"' + ((prefs.similarTo || [])[0] === g.id ? " selected" : "") + '>' + esc(g.title) + "</option>"; }).join("") + "</select></label>" + html;
+      document.getElementById("gvSimilarTo").addEventListener("change", function () { prefs.similarTo = this.value ? [this.value] : []; safeSet(GK.prefs, JSON.stringify(prefs)); renderSuggestions(); });
+    }
   }
   function handlePrefChange(input) {
     var group = input.getAttribute("data-pref-group");
@@ -763,23 +766,19 @@
     var chip = input.closest(".gv-pref-chip");
     if (chip) chip.classList.toggle("is-checked", input.checked);
     safeSet(GK.prefs, JSON.stringify(prefs));
+    renderSuggestions();
   }
+  function gameCatalog() { return window.OneSpaceCatalog.merge([window.SUGGESTION_CATALOG || [], window.DEFAULT_GAMES || [], library], window.OneSpaceCatalog.game); }
   function allSelectedTags() { return [].concat(prefs.platforms, prefs.genres, prefs.playstyles, prefs.moods); }
   function computeSuggestions() {
-    var dismissed = safeGetJSON(GK.dismissed, []);
-    var selected = allSelectedTags();
-    if (!selected.length) return { selected: selected, results: [] };
-    var results = (window.SUGGESTION_CATALOG || [])
-      .filter(function (g) { return dismissed.indexOf(g.id) === -1; })
-      .map(function (g) {
-        var allTags = [].concat(g.platforms, g.genres, g.playstyles, g.moods);
-        var matched = allTags.filter(function (t) { return selected.indexOf(t) !== -1; });
-        var uniqueMatched = matched.filter(function (v, i) { return matched.indexOf(v) === i; });
-        var percent = Math.round((uniqueMatched.length / selected.length) * 100);
-        return { game: g, matched: uniqueMatched, percent: percent };
-      })
-      .filter(function (r) { return r.percent > 0; })
-      .sort(function (a, b) { return b.percent - a.percent; });
+    var dismissed = safeGetJSON(GK.dismissed, []), catalog = gameCatalog(), selected = allSelectedTags();
+    var source = catalog.find(function (g) { return g.id === (prefs.similarTo || [])[0]; });
+    var filtered = window.OneSpaceCatalog.similar(catalog, source, ["genres", "playstyles", "moods"]);
+    var groups = { platforms: prefs.platforms, genres: prefs.genres, playstyles: prefs.playstyles, moods: prefs.moods };
+    var results = filtered.filter(function (g) { return dismissed.indexOf(g.id) < 0 && window.OneSpaceCatalog.matches(g, groups); }).map(function (g) {
+      var matched = [].concat(g.platforms, g.genres, g.playstyles, g.moods).filter(function (t, i, a) { return selected.indexOf(t) >= 0 && a.indexOf(t) === i; });
+      return { game: g, matched: matched, source: source ? source.title : "" };
+    });
     return { selected: selected, results: results };
   }
   function suggestCoverStyle(accent) {
@@ -789,18 +788,17 @@
     var el = document.getElementById("gvSuggestResults");
     if (!el) return;
     var data = computeSuggestions();
-    if (!data.selected.length) { el.innerHTML = '<p class="gv-empty">Pick a few preferences above, then select Get Suggestions.</p>'; return; }
     if (!data.results.length) { el.innerHTML = '<p class="gv-empty">No games match those filters yet — try clearing a few.</p>'; return; }
-    el.innerHTML = data.results.map(function (r) {
+    el.innerHTML = '<p class="catalog-count" role="status">' + data.results.length + ' games · full local catalog · matches every active filter group</p>' + data.results.map(function (r) {
       var g = r.game;
       return (
         '<article class="gv-suggest-card" data-reveal data-reveal-group="suggestions" data-reveal-key="' + esc(g.id) + '" style="--gv-brand:' + esc(g.accent) + '">' +
           '<div class="gv-suggest-cover" style="' + suggestCoverStyle(g.accent) + '">' + esc(g.title) + "</div>" +
           '<div class="gv-suggest-body">' +
-            '<div class="gv-suggest-top"><h3>' + esc(g.title) + "</h3><span class=\"gv-match\">" + r.percent + "% match</span></div>" +
+            '<div class="gv-suggest-top"><h3>' + esc(g.title) + "</h3><span class=\"gv-match\">" + "Local catalog</span></div>" +
             '<p class="gv-suggest-genre">' + esc(g.genres.join(", ")) + " · " + esc(g.platforms.join(", ")) + "</p>" +
             '<div class="gv-tag-row">' + r.matched.map(function (t) { return '<span class="gv-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
-            '<p class="gv-suggest-why">Matches your picks: ' + esc(r.matched.join(", ")) + ".</p>" +
+            '<p class="gv-suggest-why">Matches your picks: ' + esc(r.matched.length ? r.matched.join(", ") : (r.source ? "Similar genres or play styles to " + r.source : "All local games")) + ".</p>" +
             '<div class="gv-suggest-actions">' +
               '<button type="button" class="btn btn-primary" data-action="suggest-add" data-id="' + g.id + '">Add to My Games</button>' +
               '<button type="button" class="btn" data-action="suggest-wishlist" data-id="' + g.id + '">Save to Wishlist</button>' +
@@ -814,13 +812,13 @@
     wireReveal(el);
   }
   function addSuggestionToLibrary(id) {
-    var g = (window.SUGGESTION_CATALOG || []).find(function (x) { return x.id === id; });
+    var g = gameCatalog().find(function (x) { return x.id === id; });
     if (!g) return;
-    if (library.some(function (l) { return l.sourceSuggestion === id; })) { showToast("Already in My Games."); return; }
+    if (library.some(function (l) { return l.id === id || l.sourceSuggestion === id || l.name.toLowerCase() === g.title.toLowerCase(); })) { showToast("Already in My Games."); return; }
     var game = {
       id: uid("game"), name: g.title, platform: g.platforms[0], genre: g.genres[0] || "Custom",
-      accent: g.accent, logo: { kind: "cover" }, trackerType: "story", custom: true, sourceSuggestion: id,
-      story: { chapters: [{ id: uid("c"), title: "Getting Started", expanded: true, objectives: [{ id: uid("o"), text: "Begin your journey", done: false }] }] }
+      accent: g.accent, platforms: g.platforms, genres: g.genres, playstyles: g.playstyles, moods: g.moods, logo: g.logo || { kind: "cover" }, artwork: g.artwork, trackerType: "story", custom: true, sourceSuggestion: id,
+      story: { chapters: [] }
     };
     library.push(game);
     saveLibrary();
@@ -853,7 +851,7 @@
     if (!wishlist.length) { section.hidden = true; list.innerHTML = ""; return; }
     section.hidden = false;
     list.innerHTML = wishlist.map(function (id) {
-      var g = (window.SUGGESTION_CATALOG || []).find(function (x) { return x.id === id; });
+      var g = gameCatalog().find(function (x) { return x.id === id; });
       if (!g) return "";
       return (
         '<div class="gv-wishlist-item" style="--gv-brand:' + esc(g.accent) + '">' +
@@ -868,7 +866,7 @@
     }).join("");
   }
   function openSuggestionDetails(id) {
-    var g = (window.SUGGESTION_CATALOG || []).find(function (x) { return x.id === id; });
+    var g = gameCatalog().find(function (x) { return x.id === id; });
     if (!g) return;
     document.getElementById("gameDetailsTitle").textContent = g.title;
     document.getElementById("gameDetailsBody").innerHTML =
@@ -893,7 +891,8 @@
       prefs = { platforms: [], genres: [], playstyles: [], moods: [] };
       safeSet(GK.prefs, JSON.stringify(prefs));
       renderPrefGroups();
-      document.getElementById("gvSuggestResults").innerHTML = '<p class="gv-empty">Pick a few preferences above, then select Get Suggestions.</p>';
+      safeSet(GK.dismissed, "[]");
+      renderSuggestions();
       showToast("Preferences reset.");
     });
     document.getElementById("gameDetailsClose").addEventListener("click", function () { closeModal(document.getElementById("gameDetailsOverlay")); });
@@ -906,17 +905,7 @@
    * and reuses addSuggestionToLibrary()/openAddGameModal() rather than
    * duplicating add-a-game logic.
    * ------------------------------------------------------------------- */
-  function filterCatalog(query) {
-    var q = query.trim().toLowerCase();
-    if (!q) return [];
-    var starts = [], contains = [];
-    (window.SUGGESTION_CATALOG || []).forEach(function (g) {
-      var title = g.title.toLowerCase();
-      if (title.indexOf(q) === 0) starts.push(g);
-      else if (title.indexOf(q) !== -1) contains.push(g);
-    });
-    return starts.concat(contains).slice(0, 8);
-  }
+  function filterCatalog(query) { return query.trim() ? window.OneSpaceCatalog.search(gameCatalog(), query) : []; }
   function searchOptionHtml(g, index) {
     return (
       '<li class="gv-search-option" id="gv-search-opt-' + index + '" role="option" data-index="' + index + '" data-id="' + esc(g.id) + '" aria-selected="' + (index === searchSelectedIndex ? "true" : "false") + '">' +
@@ -1393,6 +1382,7 @@
     hero.addEventListener("pointerup", function (e) { if (!touch) return; var dx = e.clientX-touch.x, dy = e.clientY-touch.y; touch = null; if (Math.abs(dx)>55 && Math.abs(dx)>Math.abs(dy)*1.5) advanceSpotlight(dx>0?-1:1,"manual"); });
     hero.addEventListener("pointercancel", function () { touch = null; });
     document.addEventListener("visibilitychange", function () { syncSpotlightPlayback(); if (document.hidden) stopSessionTicker(); else if (activeSession()) startSessionTicker(); });
+    document.addEventListener("onespace:motion-changed", function () { wireReveal(document.getElementById("gamesView")); syncSpotlightPlayback(); });
     motionQuery.addEventListener("change", function () { wireReveal(document.getElementById("gamesView")); syncSpotlightPlayback(); });
     finePointerQuery.addEventListener("change", syncSpotlightPlayback);
     document.addEventListener("onespace:page-changed", syncSpotlightPlayback);

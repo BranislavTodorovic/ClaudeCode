@@ -338,6 +338,10 @@
   }
 
   function saveLibrary() { safeSet(MK.library, JSON.stringify(library)); }
+  function watchlistItems() {
+    var ids = watchlist.filter(function (id) { var item = findLibrary(id); return !item || item.status === "watchlist"; }).concat(library.filter(function (item) { return item.status === "watchlist"; }).map(function (item) { return item.id; }));
+    return Array.from(new Set(ids)).map(function (id) { return findLibrary(id) || findSeed(id); }).filter(Boolean);
+  }
   function saveWatchlist() { safeSet(MK.watchlist, JSON.stringify(watchlist)); }
   function saveDismissed() { safeSet(MK.dismissed, JSON.stringify(dismissed)); }
   function savePrefs() { safeSet(MK.prefs, JSON.stringify(prefs)); }
@@ -402,7 +406,7 @@
    * Library mutations
    * ------------------------------------------------------------------- */
   function addSeedToLibrary(id, status) {
-    var seed = findSeed(id);
+    var seed = findLibrary(id) || findSeed(id);
     if (!seed) return;
     var existing = findLibrary(id);
     if (existing) {
@@ -438,22 +442,13 @@
     renderAll();
   }
   function addToWatchlist(id) {
-    if (watchlist.indexOf(id) === -1) { watchlist.push(id); saveWatchlist(); showToast("Added to watchlist."); }
-    renderWatchlist();
-    renderOverviewWatchlistNext();
-    renderOverviewStats();
+    addSeedToLibrary(id, "watchlist");
   }
   function removeFromWatchlist(id) {
-    watchlist = watchlist.filter(function (x) { return x !== id; });
-    saveWatchlist();
-    renderWatchlist();
-    renderOverviewWatchlistNext();
-    renderOverviewStats();
+    var item = findLibrary(id); if (item && item.status === "watchlist") { item.status = "unwatched"; saveLibrary(); }
+    watchlist = watchlist.filter(function (x) { return x !== id; }); saveWatchlist(); renderAll();
   }
-  function moveWatchlistToWatched(id) {
-    addSeedToLibrary(id, "watched");
-    removeFromWatchlist(id);
-  }
+  function moveWatchlistToWatched(id) { addSeedToLibrary(id, "watched"); removeFromWatchlist(id); }
   function dismissSuggestion(id) {
     if (dismissed.indexOf(id) === -1) dismissed.push(id);
     saveDismissed();
@@ -490,14 +485,14 @@
       case "durations": return "Matches your " + joined + " length preference";
       case "languages": return "In your " + joined + " language filter";
       case "types": return "Matches your " + joined + " type filter";
-      case "platforms": return "Available on " + joined + ", one of your platforms";
+      case "platforms": return "Catalog lists " + joined + " (availability not verified)";
       default: return "";
     }
   }
   function computeSuggestions() {
     var activeGroups = PREF_GROUPS.filter(function (g) { return (prefs[g.key] || []).length; });
-    if (!activeGroups.length) return { active: false, results: [] };
-    var results = (window.SEED_MOVIES || [])
+    var pool = mergedPool(), source = pool.find(function (movie) { return movie.id === (prefs.similarTo || [])[0]; });
+    var results = window.OneSpaceCatalog.similar(pool, source, ["genre","moods","tags"])
       .filter(function (m) { return dismissed.indexOf(m.id) === -1; })
       .map(function (m) {
         var score = 0, reasons = [];
@@ -507,14 +502,14 @@
         });
         return { movie: m, score: score, reasons: reasons };
       })
-      .filter(function (r) { return r.score > 0; })
+      .filter(function (r) { return r.score === activeGroups.length; })
       .sort(function (a, b) { return b.score - a.score || b.movie.rating - a.movie.rating || a.movie.title.localeCompare(b.movie.title); });
-    return { active: true, results: results.slice(0, 8) };
+    return { active: true, results: results };
   }
   function renderPrefGroups() {
     var el = document.getElementById("mvPrefGroups");
     if (!el) return;
-    el.innerHTML = PREF_GROUPS.map(function (group) {
+    el.innerHTML = '<label class="catalog-source-label">More like this<select id="mvSimilarTo"><option value="">All titles</option>' + mergedPool().map(function (movie) { return '<option value="' + esc(movie.id) + '"' + ((prefs.similarTo || [])[0] === movie.id ? " selected" : "") + '>' + esc(movie.title) + "</option>"; }).join("") + "</select></label>" + PREF_GROUPS.map(function (group) {
       var opts = group.options.map(function (opt) {
         var checked = (prefs[group.key] || []).indexOf(opt) !== -1;
         return (
@@ -526,6 +521,7 @@
       }).join("");
       return '<fieldset class="mv-pref-group"><legend>' + esc(group.label) + "</legend><div class=\"mv-pref-options\">" + opts + "</div></fieldset>";
     }).join("");
+    document.getElementById("mvSimilarTo").addEventListener("change", function () { prefs.similarTo = this.value ? [this.value] : []; savePrefs(); renderSuggestions(); });
   }
   function handlePrefChange(input) {
     var group = input.getAttribute("data-pref-group");
@@ -537,6 +533,7 @@
     var chip = input.closest(".mv-pref-chip");
     if (chip) chip.classList.toggle("is-checked", input.checked);
     savePrefs();
+    renderSuggestions();
   }
   function renderSuggestions() {
     var el = document.getElementById("mvSuggestResults");
@@ -544,7 +541,7 @@
     var data = computeSuggestions();
     if (!data.active) { el.innerHTML = '<p class="mv-empty">Pick a few preferences above, then select Get Movie Suggestions.</p>'; return; }
     if (!data.results.length) { el.innerHTML = '<p class="mv-empty">No movies match those filters yet — try clearing a few.</p>'; return; }
-    el.innerHTML = data.results.map(function (r) {
+    el.innerHTML = '<p class="catalog-count" role="status">' + data.results.length + ' titles · full local catalog · matches every active filter group</p>' + data.results.map(function (r) {
       var m = r.movie;
       return (
         '<article class="mv-suggest-card" data-reveal data-reveal-group="suggestions" data-reveal-key="' + esc(m.id) + '" style="--mv-brand:' + esc(m.accent) + '">' +
@@ -553,7 +550,7 @@
             '<div class="mv-suggest-top"><h3>' + esc(m.title) + '</h3><span class="mv-rating">' + mvIcon("star") + ratingLabel(m.rating) + "</span></div>" +
             '<p class="mv-suggest-meta">' + esc((m.genre || []).join(", ")) + " · " + m.year + " · " + durationLabel(m.durationMinutes) + "</p>" +
             '<div class="mv-tag-row">' + (m.tags || []).map(function (t) { return '<span class="mv-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
-            '<p class="mv-suggest-why">' + esc(r.reasons.join("; ") + ".") + "</p>" +
+            '<p class="mv-suggest-why">' + esc(r.reasons.length ? r.reasons.join("; ") + "." : (prefs.similarTo && prefs.similarTo.length ? "Shares genres, moods or tags with your selection." : "From the complete local catalog.")) + "</p>" +
             '<div class="mv-suggest-actions">' +
               '<button type="button" class="btn btn-ghost" data-action="suggest-details" data-id="' + esc(m.id) + '">View Details</button>' +
               '<button type="button" class="btn" data-action="suggest-watchlist" data-id="' + esc(m.id) + '">Add to Watchlist</button>' +
@@ -573,9 +570,9 @@
   function renderWatchlist() {
     var list = document.getElementById("mvWatchlistList");
     if (!list) return;
-    if (!watchlist.length) { list.innerHTML = '<p class="mv-empty">Your watchlist is empty — add movies from Suggestions.</p>'; return; }
-    list.innerHTML = watchlist.map(function (id) {
-      var m = findSeed(id);
+    if (!watchlistItems().length) { list.innerHTML = '<p class="mv-empty">Your watchlist is empty — add movies from Suggestions.</p>'; return; }
+    list.innerHTML = watchlistItems().map(function (m) {
+      var id = m.id;
       if (!m) return "";
       return (
         '<div class="mv-watchlist-item" data-reveal data-reveal-group="watchlist" data-reveal-key="' + esc(id) + '" style="--mv-brand:' + esc(m.accent) + '">' +
@@ -638,7 +635,7 @@
     var el = document.getElementById("mvOverviewStats");
     if (!el) return;
     var watched = library.filter(function (m) { return m.status === "watched"; }).length;
-    var watchlistCount = watchlist.length + library.filter(function (m) { return m.status === "watchlist"; }).length;
+    var watchlistCount = watchlistItems().length;
     el.innerHTML =
       '<div class="mv-stat-tile"><strong>' + library.length + "</strong><span>Movies tracked</span></div>" +
       '<div class="mv-stat-tile"><strong>' + watched + "</strong><span>Watched</span></div>" +
@@ -647,8 +644,7 @@
   function renderOverviewWatchlistNext() {
     var el = document.getElementById("mvOverviewWatchlistNext");
     if (!el) return;
-    var nextId = watchlist[0];
-    var next = nextId ? findSeed(nextId) : null;
+    var next = watchlistItems()[0];
     if (!next) {
       el.innerHTML = "<h3>Up Next</h3><p>Your watchlist is empty. Get suggestions to find something to watch.</p>" +
         '<button type="button" class="btn btn-primary" data-action="goto-suggestions">Get Suggestions</button>';
@@ -706,23 +702,8 @@
    * navigation and an "Add Custom Movie" fallback, mirroring games.js's
    * filterCatalog/combobox pattern.
    * ------------------------------------------------------------------- */
-  function mergedPool() {
-    var map = {};
-    (window.SEED_MOVIES || []).forEach(function (m) { map[m.id] = m; });
-    library.forEach(function (m) { map[m.id] = m; });
-    return Object.keys(map).map(function (k) { return map[k]; });
-  }
-  function filterCatalog(query) {
-    var q = query.trim().toLowerCase();
-    if (!q) return [];
-    var starts = [], contains = [];
-    mergedPool().forEach(function (m) {
-      var title = (m.title || "").toLowerCase();
-      if (title.indexOf(q) === 0) starts.push(m);
-      else if (title.indexOf(q) !== -1) contains.push(m);
-    });
-    return starts.concat(contains).slice(0, 8);
-  }
+  function mergedPool() { return window.OneSpaceCatalog.merge([library, window.SEED_MOVIES || []]); }
+  function filterCatalog(query) { return query.trim() ? window.OneSpaceCatalog.search(mergedPool(), query) : []; }
   function searchOptionHtml(m, index) {
     var inLib = !!findLibrary(m.id);
     return (
@@ -1144,6 +1125,7 @@
     hero.addEventListener("pointerup", function (e) { if (!touch) return; var dx = e.clientX - touch.x, dy = e.clientY - touch.y; touch = null; if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) advanceSpotlight(dx > 0 ? -1 : 1, "manual"); });
     hero.addEventListener("pointercancel", function () { touch = null; });
     document.addEventListener("visibilitychange", function () { syncSpotlightPlayback(); });
+    document.addEventListener("onespace:motion-changed", function () { wireReveal(document.getElementById("moviesMount")); syncSpotlightPlayback(); });
     motionQuery.addEventListener("change", function () { wireReveal(document.getElementById("moviesMount")); syncSpotlightPlayback(); });
     finePointerQuery.addEventListener("change", syncSpotlightPlayback);
     document.addEventListener("onespace:page-changed", syncSpotlightPlayback);

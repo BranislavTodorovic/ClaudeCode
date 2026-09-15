@@ -115,6 +115,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     <p class="side-section-label">Spaces</p>
     <nav class="space-switcher" aria-label="OneSpace spaces">
       <button class="space-btn" type="button" data-page-button="work" title="Work"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="3" y1="13" x2="21" y2="13"></line></svg><span class="space-copy"><strong>Work</strong><small>Build &amp; focus</small></span></button>
+<button class="space-btn" type="button" data-page-button="projects" title="Projects"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="3" y1="13" x2="21" y2="13"></line></svg><span class="space-copy"><strong>Projects</strong><small>Build &amp; focus</small></span></button>
       <button class="space-btn" type="button" data-page-button="personal" title="Personal"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.5C.5 7.8 2.7 4 6.5 4A5.5 5.5 0 0 1 12 8a5.5 5.5 0 0 1 5.5-4c3.8 0 6 3.8 4.5 7.5C19.5 16.4 12 21 12 21z"></path></svg><span class="space-copy"><strong>Personal</strong><small>Life &amp; home</small></span></button>
       <button class="space-btn" type="button" data-page-button="explore" title="Explore"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polygon points="14.5 9.5 12.5 14.5 9.5 14.5 11.5 9.5"></polygon></svg><span class="space-copy"><strong>Explore</strong><small>Travel &amp; play</small></span></button>
       <button class="space-btn" type="button" data-page-button="games" title="Games"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.55l-.7 6.13A2.5 2.5 0 0 0 4.48 17.5c.86 0 1.66-.44 2.12-1.17L8 14h8l1.4 2.33a2.5 2.5 0 0 0 2.12 1.17 2.5 2.5 0 0 0 2.48-2.82l-.7-6.13A4 4 0 0 0 17.32 5Z"></path><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle></svg><span class="space-copy"><strong>Games</strong><small>Play &amp; track</small></span></button>
@@ -160,21 +161,11 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   </button>
   <div class="wrap">
 
-  <div id="dashboardPages" data-page-when="home,shortcuts,productivity">
-    <!-- ===================== Header ===================== -->
-    <header class="app-header">
-      <div class="brand-lockup">
-        <div class="orbit-logo" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="21" height="21" rx="7" fill="currentColor" opacity=".96"></rect><rect x="19" y="19" width="21" height="21" rx="7" stroke="currentColor" stroke-width="2.5"></rect></svg>
-        </div>
-        <div class="brand">
-          <span class="hero-kicker" id="heroSpaceLabel">WORKSPACE · WORK</span>
-          <h1>OneSpace</h1>
-          <p>Your focused space for work and life.</p>
-        </div>
-      </div>
-      <div class="header-message"><span class="greeting" id="greeting">Hello</span><span>Make room for what matters today.</span></div>
-      <div class="header-meta">
+  <section id="homeView" class="page-view" data-page-when="home" aria-label="Home">
+    <header class="app-header scene-hero home-scene">
+      <img class="scene-image" src="assets/page-art/home-observatory.png" width="1672" height="941" alt="" fetchpriority="high">
+      <div class="scene-shade"></div>
+      <div class="scene-topline"><span class="scene-wordmark">ONESPACE <span>/ YOUR DAILY UNIVERSE</span></span>      <div class="header-meta">
         <div class="clock-box">
           <div class="time" id="clockTime" aria-live="off">--:--:--</div>
           <div class="date" id="clockDate">Loading date…</div>
@@ -184,28 +175,16 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
           <span id="themeLabel" class="visually-hidden">Dark mode</span>
         </button>
       </div>
-      <div class="hero-orbit" aria-hidden="true">
-        <svg viewBox="0 0 320 250" fill="none">
-          <defs>
-            <radialGradient id="orbCore" cx="32%" cy="28%" r="78%"><stop offset="0%" stop-color="#ffffff"/><stop offset="38%" stop-color="#d8ddff"/><stop offset="72%" stop-color="#8a7cff"/><stop offset="100%" stop-color="#536dff"/></radialGradient>
-            <radialGradient id="orbHalo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(184,174,255,.7)"/><stop offset="52%" stop-color="rgba(108,126,255,.22)"/><stop offset="100%" stop-color="rgba(98,113,255,0)"/></radialGradient>
-            <linearGradient id="orbitRibbon" x1="44" y1="82" x2="274" y2="176"><stop stop-color="#80a7ff" stop-opacity="0"/><stop offset=".48" stop-color="#d6d0ff" stop-opacity=".72"/><stop offset="1" stop-color="#a974ff" stop-opacity="0"/></linearGradient>
-            <path id="orbitPath" d="M39,122 A121,39 0 1,0 281,122 A121,39 0 1,0 39,122"/>
-          </defs>
-          <circle class="star star-1" cx="43" cy="43" r="1.2"/><circle class="star star-2" cx="277" cy="57" r="1"/><circle class="star star-3" cx="65" cy="199" r="1.1"/><circle class="star star-4" cx="264" cy="188" r="1.1"/><circle class="star star-5" cx="160" cy="25" r="1"/><circle class="star star-6" cx="108" cy="216" r="1.2"/>
-          <path class="orbit-ribbon" d="M35 132C83 83 232 79 285 126C233 173 86 178 35 132Z" stroke="url(#orbitRibbon)" stroke-width="1.3"/>
-          <ellipse class="orbit-ring-outer" cx="160" cy="122" rx="145" ry="54"/>
-          <ellipse class="orbit-ring" cx="160" cy="122" rx="121" ry="39"/>
-          <circle class="orb-halo" cx="160" cy="122" r="62" fill="url(#orbHalo)"/>
-          <circle class="orb-core" cx="160" cy="122" r="23" fill="url(#orbCore)"/>
-          <circle class="orb-glint" cx="151" cy="113" r="5" fill="#fff" opacity=".72"/>
-          <circle class="satellite" r="3.4" fill="#fff">
-            <animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#orbitPath" xlink:href="#orbitPath"/></animateMotion>
-          </circle>
-        </svg>
-        <span class="orbit-caption">EVERYTHING ALIGNED</span>
+</div>
+      <div class="scene-copy">
+        <span class="hero-kicker" id="heroSpaceLabel">YOUR SPACE, CONNECTED</span>
+        <h1>Make room<br>for <em>what matters.</em></h1>
+        <div class="header-message"><span class="greeting" id="greeting">Hello</span><span>Your work, your worlds, your next idea. All within reach.</span></div>
+        <div class="scene-actions"><button class="btn btn-primary" data-page-jump="work" type="button">Enter your workspace <span aria-hidden="true">↗</span></button><button class="btn scene-secondary" data-page-jump="explore" type="button">Find something new</button></div>
       </div>
-      <section class="search-panel" aria-label="Web search">
+      <div class="scene-caption" aria-hidden="true"><span>01 / THE OBSERVATORY</span><span>A little perspective changes everything.</span></div>
+    </header>
+    <div class="home-search">      <section class="search-panel" aria-label="Web search">
         <div class="search-top"><div class="search-providers" id="searchProviders" role="group" aria-label="Search provider"></div><div class="search-mode" role="group" aria-label="Search mode"><button type="button" class="active" data-search-mode="web" aria-pressed="true">Search web</button><button type="button" data-search-mode="orbit" aria-pressed="false">Find in OneSpace</button></div></div>
         <form class="search-row" id="searchForm">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -216,35 +195,11 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
         <p class="search-hint">Press <kbd>/</kbd> to focus search · <kbd>Ctrl</kbd> + <kbd>K</kbd> for commands</p>
         <p class="local-result" id="localSearchResult" hidden></p>
       </section>
-    </header>
-
-    <header class="page-hero page-hero-shortcuts" data-page-hero="shortcuts" data-page-when="shortcuts" hidden>
-      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="shortcutsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#161b2e"/><stop offset="1" stop-color="#2a2f52"/></linearGradient></defs><rect width="800" height="300" fill="url(#shortcutsGrad)"/><g fill="rgba(140,160,255,.5)"><rect x="80" y="60" width="70" height="70" rx="14"/><rect x="180" y="60" width="70" height="70" rx="14" opacity=".7"/><rect x="80" y="160" width="70" height="70" rx="14" opacity=".5"/><rect x="280" y="110" width="70" height="70" rx="14" opacity=".85"/><rect x="380" y="60" width="70" height="70" rx="14" opacity=".4"/><rect x="480" y="160" width="70" height="70" rx="14" opacity=".65"/><rect x="600" y="80" width="70" height="70" rx="14" opacity=".55"/><rect x="620" y="190" width="70" height="70" rx="14" opacity=".35"/></g></svg></div>
-      <div class="page-hero-shade"></div>
-      <div class="page-hero-copy">
-        <span class="page-hero-eyebrow">SHORTCUTS</span>
-        <h1>Your launchpad</h1>
-        <p>Every saved destination, organized and one click away.</p>
-      </div>
-    </header>
-    <header class="page-hero page-hero-productivity" data-page-hero="productivity" data-page-when="productivity" hidden>
-      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="prodGrad" cx="70%" cy="40%" r="80%"><stop offset="0" stop-color="#2c4b3e"/><stop offset="1" stop-color="#0f1c22"/></radialGradient></defs><rect width="800" height="300" fill="url(#prodGrad)"/><g fill="none" stroke="rgba(120,230,190,.5)" stroke-width="6" stroke-linecap="round"><circle cx="640" cy="140" r="90" stroke-dasharray="420" stroke-dashoffset="140"/></g><circle cx="640" cy="140" r="50" fill="rgba(120,230,190,.12)"/></svg></div>
-      <div class="page-hero-shade"></div>
-      <div class="page-hero-copy">
-        <span class="page-hero-eyebrow">PRODUCTIVITY</span>
-        <h1>Stay in focus</h1>
-        <p>A timer, today's tasks, and the dates that matter — all in reach.</p>
-      </div>
-    </header>
-
-    <div class="view-heading"><div><h2 id="viewTitle">Home</h2><p id="viewDescription">Your favorite places, ready when you are.</p></div><span class="view-badge" id="viewBadge">Home</span></div>
-
-    <div class="space-picker" role="group" aria-label="Browsing space">
-      <button type="button" data-space-pick="work">Work</button>
-      <button type="button" data-space-pick="personal">Personal</button>
-      <button type="button" data-space-pick="explore">Explore</button>
-    </div>
-
+<div id="homeSearchResults" class="mini-grid" hidden></div></div>
+    <section class="home-overview" aria-labelledby="homeOverviewTitle">
+      <div class="proof-section-heading"><div><span class="section-index">YOUR DAY, AT A GLANCE</span><h2 id="homeOverviewTitle">Pick up where you left off.</h2></div><button class="btn btn-ghost" data-page-jump="productivity" type="button">Plan today ↗</button></div>
+      <div class="overview-grid" id="homeOverview"></div>
+    </section>
     <section class="glance-bar" aria-label="Today at a glance">
       <button class="mobile-today-toggle" id="mobileTodayToggle" type="button" aria-expanded="false" aria-controls="focusRail">Today &amp; Focus</button>
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span class="glance-copy"><span class="glance-label">Day progress</span><span class="glance-value" id="dayProgressText">0% complete</span><span class="day-progress"><span id="dayProgressBar"></span></span></span></div>
@@ -253,7 +208,34 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       <div class="glance-item"><span class="glance-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M12 3v18"></path></svg></span><span class="glance-copy"><span class="glance-label">Shortcuts</span><span class="glance-value" id="glanceShortcuts">15 available</span></span></div>
     </section>
 
-    <!-- ===================== Toolbar ===================== -->
+    <section class="personal-section quick-access" id="favoritesSection" aria-labelledby="favoritesTitle">
+      <div class="quick-access-head"><div><h2 class="personal-title" id="favoritesTitle"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 14.8 8.7 21 9.6l-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"></path></svg>Quick Access</h2><p>Your most useful destinations, kept close.</p></div><div class="quick-tabs" role="tablist" aria-label="Quick Access view"><button type="button" role="tab" data-quick-tab="favorites" aria-selected="true">Favorites</button><button type="button" role="tab" data-quick-tab="recent" aria-selected="false">Recent</button><button type="button" role="tab" data-quick-tab="used" aria-selected="false">Most Used</button></div></div>
+      <div class="mini-grid" id="favoritesGrid" role="tabpanel"></div>
+    </section>
+    <section class="personal-section" id="recentSection" hidden aria-hidden="true"><div id="recentGrid"></div></section>
+
+
+    <section class="home-destinations" aria-labelledby="destinationsTitle"><div class="proof-section-heading"><div><span class="section-index">BEYOND THE EVERYDAY</span><h2 id="destinationsTitle">A space for every side of you.</h2></div></div><div class="destination-grid">
+      <button class="destination destination-games" type="button" data-page-jump="games"><span class="destination-icon" aria-hidden="true">✦</span><span class="section-index">GAMEVAULT / PLAY</span><strong>Your next adventure.</strong><span>Games, missions &amp; the worlds you return to.</span><span class="destination-link">Enter GameVault ↗</span></button>
+      <button class="destination destination-movies" type="button" data-page-jump="movies"><span class="destination-icon" aria-hidden="true">▶</span><span class="section-index">MOVIES / UNWIND</span><strong>Set the evening scene.</strong><span>Your watchlist. Your own double feature.</span><span class="destination-link">Explore Movies ↗</span></button>
+    </div></section>
+  </section>
+  <section id="shortcutsView" class="page-view" data-page-when="shortcuts" hidden aria-label="Shortcuts">
+    <header class="page-hero page-hero-shortcuts" data-page-hero="shortcuts">
+      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="shortcutsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#161b2e"/><stop offset="1" stop-color="#2a2f52"/></linearGradient></defs><rect width="800" height="300" fill="url(#shortcutsGrad)"/><g fill="rgba(140,160,255,.5)"><rect x="80" y="60" width="70" height="70" rx="14"/><rect x="180" y="60" width="70" height="70" rx="14" opacity=".7"/><rect x="80" y="160" width="70" height="70" rx="14" opacity=".5"/><rect x="280" y="110" width="70" height="70" rx="14" opacity=".85"/><rect x="380" y="60" width="70" height="70" rx="14" opacity=".4"/><rect x="480" y="160" width="70" height="70" rx="14" opacity=".65"/><rect x="600" y="80" width="70" height="70" rx="14" opacity=".55"/><rect x="620" y="190" width="70" height="70" rx="14" opacity=".35"/></g></svg></div>
+      <div class="page-hero-shade"></div>
+      <div class="page-hero-copy">
+        <span class="page-hero-eyebrow">SHORTCUTS</span>
+        <h1>Your launchpad</h1>
+        <p>Every saved destination, organized and one click away.</p>
+      </div>
+    </header>
+    <div class="space-picker" role="group" aria-label="Browsing space">
+      <button type="button" data-space-pick="work">Work</button>
+      <button type="button" data-space-pick="personal">Personal</button>
+      <button type="button" data-space-pick="explore">Explore</button>
+    </div>
+
     <div class="toolbar">
       <button class="btn" id="paletteHint" type="button" aria-haspopup="dialog">
         <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -297,6 +279,21 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       <div><button class="btn" id="addCategoryBtn" type="button">Add category</button> <button class="btn btn-primary" id="finishCustomizeBtn" type="button">Done</button></div>
     </div>
 
+
+    <label class="shortcut-search-label" for="shortcutSearch">Find a shortcut in this space</label><input class="shortcut-search" id="shortcutSearch" type="search" placeholder="Search name, category or website…">
+    <p id="shortcutSearchStatus" role="status"></p><main id="sections"></main>
+  </section>
+  <section id="productivityView" class="page-view" data-page-when="productivity" hidden aria-label="Productivity">
+    <header class="page-hero page-hero-productivity" data-page-hero="productivity">
+      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="prodGrad" cx="70%" cy="40%" r="80%"><stop offset="0" stop-color="#2c4b3e"/><stop offset="1" stop-color="#0f1c22"/></radialGradient></defs><rect width="800" height="300" fill="url(#prodGrad)"/><g fill="none" stroke="rgba(120,230,190,.5)" stroke-width="6" stroke-linecap="round"><circle cx="640" cy="140" r="90" stroke-dasharray="420" stroke-dashoffset="140"/></g><circle cx="640" cy="140" r="50" fill="rgba(120,230,190,.12)"/></svg></div>
+      <div class="page-hero-shade"></div>
+      <div class="page-hero-copy">
+        <span class="page-hero-eyebrow">PRODUCTIVITY</span>
+        <h1>Stay in focus</h1>
+        <p>A timer, today's tasks, and the dates that matter — all in reach.</p>
+      </div>
+    </header>
+
     <section class="widget-grid" id="widgetGrid" aria-label="Productivity tools">
       <article class="widget">
         <div class="widget-header"><h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2M9 2h6"></path></svg>Focus timer</h2><span class="search-hint" id="focusStatus">Ready</span></div>
@@ -317,20 +314,9 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       </article>
     </section>
 
-    <section class="personal-section quick-access" id="favoritesSection" aria-labelledby="favoritesTitle">
-      <div class="quick-access-head"><div><h2 class="personal-title" id="favoritesTitle"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 14.8 8.7 21 9.6l-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"></path></svg>Quick Access</h2><p>Your most useful destinations, kept close.</p></div><div class="quick-tabs" role="tablist" aria-label="Quick Access view"><button type="button" role="tab" data-quick-tab="favorites" aria-selected="true">Favorites</button><button type="button" role="tab" data-quick-tab="recent" aria-selected="false">Recent</button><button type="button" role="tab" data-quick-tab="used" aria-selected="false">Most Used</button></div></div>
-      <div class="mini-grid" id="favoritesGrid" role="tabpanel"></div>
-    </section>
-    <section class="personal-section" id="recentSection" hidden aria-hidden="true"><div id="recentGrid"></div></section>
 
-    <div class="games-promo-banner">
-      <div><strong>GameVault</strong><p>Track chapters, weekly tasks, and get new game suggestions.</p></div>
-      <button type="button" class="btn btn-primary" data-page-button="games">Browse Games</button>
-    </div>
-
-    <!-- ===================== Link sections (populated by JS) ===================== -->
-    <main id="sections"></main>
-  </div>
+  </section>
+  <div class="view-heading" hidden><h2 id="viewTitle">Home</h2><p id="viewDescription"></p><span id="viewBadge"></span></div>
 
     <!-- ===================== Games dashboard (GameVault) ===================== -->
     <section id="gamesView" class="games-view" data-page-when="games" hidden aria-label="Games dashboard">
@@ -475,22 +461,18 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
     <!-- ===================== Work ===================== -->
     <section id="workView" class="page-view" data-page-when="work" hidden aria-label="Work dashboard">
-      <header class="page-hero page-hero-work" data-page-hero="work">
-        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="workGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d3a5c"/><stop offset="1" stop-color="#0a223f"/></linearGradient><pattern id="workGrid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="rgba(120,200,255,.16)" stroke-width="1"/></pattern></defs><rect width="800" height="300" fill="url(#workGrad)"/><rect width="800" height="300" fill="url(#workGrid)"/><g stroke="#5fd4ff" stroke-width="1.4" fill="none" opacity=".55"><path d="M60 220 L220 220 L220 120 L400 120"/><path d="M400 120 L400 60 L620 60"/><circle cx="400" cy="120" r="5" fill="#5fd4ff"/><circle cx="620" cy="60" r="5" fill="#8fe6ff"/><circle cx="60" cy="220" r="5" fill="#5fd4ff"/></g></svg></div>
-        <div class="page-hero-shade"></div>
-        <div class="page-hero-copy">
-          <span class="page-hero-eyebrow">WORK SPACE</span>
-          <h1>Project command center</h1>
-          <p>Every active build, its priorities, and the tools behind it — in one focused view.</p>
-          <div class="page-hero-actions">
-            <button class="btn" type="button" data-page-jump="productivity">Open Productivity</button>
-          </div>
-        </div>
+      <header class="scene-hero work-scene">
+        <img class="scene-image" src="assets/page-art/work-studio.png" width="1672" height="941" alt="" loading="lazy">
+        <div class="scene-shade"></div>
+        <div class="scene-topline"><span class="scene-wordmark">WORK <span>/ THE DRAFTING ROOM</span></span><span class="studio-status">SPACE TO FOCUS</span></div>
+        <div class="scene-copy"><span class="hero-kicker">IDEAS BECOME REAL HERE</span><h1>Build with<br><em>intention.</em></h1><p>Clear priorities. Visible progress.<br>A quieter place to do your best work.</p><div class="scene-actions"><button class="btn btn-primary" type="button" data-page-jump="productivity">Start a focus session ↗</button><button class="btn scene-secondary" type="button" data-page-jump="projects">Open Projects</button></div></div>
+        <div class="scene-caption" aria-hidden="true"><span>02 / THE STUDIO</span><span>One meaningful step at a time.</span></div>
       </header>
+      <div id="workOverview" class="overview-grid work-overview"></div>
       <div class="page-body">
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2>Active projects</h2><span class="page-section-hint" id="workProjectCount">0 projects</span></div>
-          <form class="mini-form" id="workProjectForm"><input type="text" id="workProjectInput" maxlength="60" placeholder="New project name…" autocomplete="off"><button class="btn btn-primary" type="submit">Add project</button></form>
+          <button class="btn" type="button" data-page-jump="projects">Manage all projects ↗</button>
           <div class="list-card-grid" id="workProjectsList"></div>
         </section>
         <section class="page-section" data-reveal>
@@ -502,6 +484,13 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
           <div class="mini-grid" id="workShortcutsGrid"></div>
         </section>
       </div>
+    </section>
+
+    <section id="projectsView" class="page-view" data-page-when="projects" hidden aria-label="Projects">
+      <header class="page-hero projects-scene"><div class="project-scene-art" aria-hidden="true"><i></i><i></i><i></i></div><div class="page-hero-shade"></div><div class="page-hero-copy"><span class="page-hero-eyebrow">PROJECTS / YOUR CREATIVE STUDIO</span><h1>From idea to done.</h1><p>Give your work a shape. Keep its next step in sight.</p></div></header>
+      <div class="page-body"><section class="page-section"><div class="page-section-head"><h2 id="projectFormHeading">Create a project</h2><span class="page-section-hint">Saved on this device</span></div>
+        <form id="projectForm" class="project-form"><label>Name<input name="name" required maxlength="100" placeholder="What are you building?"></label><label>Description<textarea name="description" maxlength="2000" rows="2" placeholder="Purpose, ideas, and next steps"></textarea></label><label>Tags<input name="tags" maxlength="200" placeholder="Design, research (comma separated)"></label><label>Project link (optional)<input name="url" type="url" placeholder="https://…"></label><label>Status<select name="status"><option value="active">Active</option><option value="blocked">Blocked</option><option value="done">Done</option></select></label><label>Progress (%)<input name="progress" type="number" min="0" max="100" value="0" required></label><div class="project-form-actions"><button class="btn btn-primary" type="submit" id="projectSave">Create project</button><button class="btn" type="button" id="projectCancel" hidden>Cancel edit</button></div></form>
+      </section><section class="page-section"><div class="page-section-head"><h2>Your projects</h2><span id="projectCount" class="page-section-hint" role="status"></span></div><div id="projectList" class="list-card-grid"></div></section></div>
     </section>
 
     <!-- ===================== Personal ===================== -->
@@ -868,6 +857,8 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   <div id="toast" role="status" aria-live="polite"></div>
 
+<script src="storage-utils.js"></script>
+<script src="catalog-utils.js"></script>
 <script>
 (function () {
   "use strict";
@@ -918,15 +909,20 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   }
   function safeSet(key, value) {
     try {
+      var existing = window.localStorage.getItem(key);
+      if (existing !== null && !window.OneSpaceStorage.valid(key, existing)) throw new Error("Stored data needs recovery");
       window.localStorage.setItem(key, value);
+      document.dispatchEvent(new CustomEvent("onespace:data-changed", { detail: { key: key } }));
       return true;
     } catch (e) {
+      window.setTimeout(function () { showToast("Changes could not be saved. Storage is full, unavailable, or needs recovery. Export a backup before closing."); }, 0);
       return false;
     }
   }
   function safeGetJSON(key, fallback) {
     var raw = safeGet(key);
     if (!raw) return fallback;
+    if (!window.OneSpaceStorage.valid(key, raw)) { window.setTimeout(function () { showToast("Some saved data could not be loaded. It has been preserved; download a backup before resetting."); }, 0); return fallback; }
     try {
       var parsed = JSON.parse(raw);
       return Array.isArray(fallback) ? (Array.isArray(parsed) ? parsed : fallback) : parsed;
@@ -1361,13 +1357,13 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   function renderPersonalSections() {
     favoriteIds = favoriteIds.filter(function (id) { return !!findLink(id); });
     recentIds = recentIds.filter(function (id) { return !!findLink(id); }).slice(0, 5);
-    var favorites = favoriteIds.map(findLink).filter(function (link) { return link && linkSpace(link) === currentSpace && HIDDEN_DEFAULT_IDS.indexOf(link.id) === -1; });
-    var recent = recentIds.map(findLink).filter(function (link) { return link && linkSpace(link) === currentSpace && HIDDEN_DEFAULT_IDS.indexOf(link.id) === -1; });
+    var favorites = favoriteIds.map(findLink).filter(function (link) { return link && HIDDEN_DEFAULT_IDS.indexOf(link.id) === -1; });
+    var recent = recentIds.map(findLink).filter(function (link) { return link && HIDDEN_DEFAULT_IDS.indexOf(link.id) === -1; });
     var favoritesSection = document.getElementById("favoritesSection");
     var recentSection = document.getElementById("recentSection");
     favoritesSection.hidden = false;
     recentSection.hidden = true;
-    var mostUsed = Object.keys(usageCounts).map(function (id) { return { link: findLink(id), count: Number(usageCounts[id]) || 0 }; }).filter(function (item) { return item.link && linkSpace(item.link) === currentSpace && HIDDEN_DEFAULT_IDS.indexOf(item.link.id) === -1 && item.count > 0; }).sort(function (a, b) { return b.count - a.count; }).slice(0, 6).map(function (item) { return item.link; });
+    var mostUsed = Object.keys(usageCounts).map(function (id) { return { link: findLink(id), count: Number(usageCounts[id]) || 0 }; }).filter(function (item) { return item.link && HIDDEN_DEFAULT_IDS.indexOf(item.link.id) === -1 && item.count > 0; }).sort(function (a, b) { return b.count - a.count; }).slice(0, 6).map(function (item) { return item.link; });
     var selected = (document.body.classList.contains("minimal-mode") ? favorites : quickAccessTab === "recent" ? recent : quickAccessTab === "used" ? mostUsed : favorites).slice(0, 6);
     var emptyCopy = quickAccessTab === "favorites" ? "Favorite a shortcut to keep it one click away." : quickAccessTab === "recent" ? "Your recently opened shortcuts will appear here." : "Open shortcuts and OneSpace will surface the ones you use most.";
     document.getElementById("favoritesGrid").innerHTML = selected.length ? selected.map(miniCardHtml).join("") : '<div class="quick-empty"><span>' + emptyCopy + '</span><button class="btn" type="button" data-empty-shortcuts>Browse shortcuts</button></div>';
@@ -1376,9 +1372,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     document.getElementById("glanceShortcuts").textContent = activeLinks().length + " available";
     var railRecent = document.getElementById("railRecent");
     if (railRecent) railRecent.innerHTML = recent.length ? recent.slice(0, 3).map(function (link) { return '<li>' + escapeHtml(link.name) + '</li>'; }).join("") : '<li class="rail-empty">Open a shortcut to build your recent list.</li>';
-    document.querySelectorAll(".mini-card[data-link-id]").forEach(function (anchor) {
-      anchor.addEventListener("click", function () { var id = anchor.getAttribute("data-link-id"); rememberRecent(id); recordUsage(id); });
-    });
+
     document.querySelectorAll("[data-quick-tab]").forEach(function (button) { var active = button.getAttribute("data-quick-tab") === quickAccessTab; button.setAttribute("aria-selected", String(active)); button.tabIndex = active ? 0 : -1; });
     document.querySelectorAll("[data-empty-shortcuts]").forEach(function (button) { button.addEventListener("click", function () { goToPage("shortcuts"); }); });
   }
@@ -1607,7 +1601,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   function applyDashboardPreferences() {
     if (paletteChoice === "classic" || paletteChoice === "auto") root.removeAttribute("data-palette"); else root.setAttribute("data-palette", paletteChoice);
-    if (paletteChoice === "classic") applyTheme("light");
+    if (paletteChoice === "classic") applyTheme(safeGet(STORAGE.theme) === "dark" ? "dark" : "light");
     if (paletteChoice === "auto") applyTheme(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     document.body.setAttribute("data-background", backgroundChoice);
     root.setAttribute("data-accent", accentChoice);
@@ -1629,7 +1623,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     safeSet(STORAGE.palette, paletteChoice);
     applyDashboardPreferences();
   });
-  document.querySelectorAll("[data-theme-choice]").forEach(function (button) { button.addEventListener("click", function () { paletteChoice = button.getAttribute("data-theme-choice"); paletteSetting.value = paletteChoice; safeSet(STORAGE.palette, paletteChoice); applyDashboardPreferences(); }); });
+  document.querySelectorAll("[data-theme-choice]").forEach(function (button) { button.addEventListener("click", function () { paletteChoice = button.getAttribute("data-theme-choice"); if (paletteChoice === "classic") safeSet(STORAGE.theme, "light"); paletteSetting.value = paletteChoice; safeSet(STORAGE.palette, paletteChoice); applyDashboardPreferences(); }); });
   document.querySelectorAll("[data-background-choice]").forEach(function (button) { button.addEventListener("click", function () { backgroundChoice = button.getAttribute("data-background-choice"); safeSet(STORAGE.background, backgroundChoice); applyDashboardPreferences(); }); });
   startupSetting.addEventListener("change", function () { startupChoice = startupSetting.value; safeSet(STORAGE.startup, startupChoice); applyMinimalMode(startupChoice === "minimal"); if (startupChoice === "minimal") goToPage("home"); });
 
@@ -1690,6 +1684,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   function applyMotionOverride() {
     document.body.classList.toggle("force-reduced-motion", motionOverride === "reduced");
     document.body.classList.toggle("force-full-motion", motionOverride === "full");
+    document.dispatchEvent(new CustomEvent("onespace:motion-changed"));
   }
   var motionSetting = document.getElementById("motionSetting");
   motionSetting.value = motionOverride;
@@ -1707,7 +1702,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   document.getElementById("resetAllDataBtn").addEventListener("click", function () {
     if (!window.confirm("This permanently deletes ALL OneSpace data on this device — shortcuts, notes, tasks, games, movies, and preferences. This cannot be undone. Continue?")) return;
-    try { window.localStorage.clear(); } catch (e) {}
+    try { window.OneSpaceStorage.reset(window.localStorage); } catch (e) { showToast(e.message); return; }
     showToast("All OneSpace data has been reset. Reloading…");
     window.setTimeout(function () { window.location.reload(); }, 900);
   });
@@ -1751,12 +1746,12 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       button.setAttribute("aria-current", active ? "true" : "false");
     });
     var heroLine = document.querySelector(".header-message span:last-child");
-    if (heroLine) heroLine.textContent = SPACE_META[currentSpace].line;
+    if (heroLine) heroLine.textContent = "Your work, your worlds, your next idea. All within reach.";
     var heroSpaceLabel = document.getElementById("heroSpaceLabel");
-    if (heroSpaceLabel) heroSpaceLabel.textContent = "WORKSPACE · " + SPACE_META[currentSpace].label.toUpperCase();
+    if (heroSpaceLabel) heroSpaceLabel.textContent = "YOUR SPACE, CONNECTED";
     quickAccessTab = ["favorites", "recent", "used"].indexOf(spaceQuickTabs[currentSpace]) !== -1 ? spaceQuickTabs[currentSpace] : "favorites";
     safeSet(STORAGE.space, currentSpace);
-    if (shouldRender) { buildSectionShells(); renderLinks(); }
+    if (shouldRender) { buildSectionShells(); renderLinks(); filterShortcuts(); }
   }
 
   /* =====================================================================
@@ -1767,8 +1762,9 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
    * toggles a nav button's active state, so exactly one page and one active
    * button can ever exist at a time.
    * ===================================================================== */
-  var PAGES = ["home", "work", "personal", "explore", "games", "movies", "shortcuts", "productivity", "notes", "settings"];
+  var PAGES = ["projects", "home", "work", "personal", "explore", "games", "movies", "shortcuts", "productivity", "notes", "settings"];
   var PAGE_META = {
+    projects: { title: "Projects", description: "Your creative studio, from idea to done.", badge: "Projects" },
     home: { title: "Home", description: "Your favorite places, ready when you are.", badge: "Home" },
     work: { title: "Work", description: "Active projects, priorities, and the tools you build with.", badge: "Work" },
     personal: { title: "Personal", description: "Goals, routines, and the everyday things that matter.", badge: "Personal" },
@@ -1805,6 +1801,9 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
       var descEl = document.getElementById("viewDescription"); if (descEl) descEl.textContent = PAGE_META[currentPage].description;
       var badgeEl = document.getElementById("viewBadge"); if (badgeEl) badgeEl.textContent = PAGE_META[currentPage].badge;
     }
+    document.title = (focusTimerId && focusTimeEl ? focusTimeEl.textContent + " · " : "") + PAGE_META[currentPage].title + " — OneSpace";
+    if (currentPage === "settings") syncSettingsForm();
+    closeMobileSidebar();
     safeSet(STORAGE.page, currentPage);
     if (previous !== currentPage) window.scrollTo({ top: 0, behavior: "auto" });
     document.dispatchEvent(new CustomEvent("onespace:page-changed", { detail: { page: currentPage, previous: previous } }));
@@ -1840,7 +1839,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   });
   document.getElementById("minimalExit").addEventListener("click", function () { startupChoice = "full"; safeSet(STORAGE.startup, startupChoice); applyMinimalMode(false); });
   document.getElementById("mobileSearch").addEventListener("click", function () { applyMinimalMode(false); goToPage("home"); searchInput.scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(function () { searchInput.focus(); }, 250); });
-  document.getElementById("mobileMore").addEventListener("click", function () { var open = document.body.classList.toggle("sidebar-open"); document.getElementById("mobileMore").setAttribute("aria-expanded", String(open)); });
+  document.getElementById("mobileMore").addEventListener("click", function () { var open = document.body.classList.toggle("sidebar-open"); document.getElementById("mobileMore").setAttribute("aria-expanded", String(open)); document.getElementById("mobileSidebarToggle").setAttribute("aria-expanded", String(open)); });
 
   document.getElementById("sideCommand").addEventListener("click", function () { openPalette(); closeMobileSidebar(); });
   document.getElementById("sideToolbox").addEventListener("click", function () { openModal(document.getElementById("toolboxOverlay"), document.getElementById("generatePassword")); closeMobileSidebar(); });
@@ -1860,11 +1859,13 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   var mobileSidebarToggle = document.getElementById("mobileSidebarToggle");
   function closeMobileSidebar() {
     document.body.classList.remove("sidebar-open");
-    mobileSidebarToggle.setAttribute("aria-expanded", "false");
+    document.getElementById("mobileSidebarToggle").setAttribute("aria-expanded", "false");
+    document.getElementById("mobileMore").setAttribute("aria-expanded", "false");
   }
   mobileSidebarToggle.addEventListener("click", function () {
     var open = document.body.classList.toggle("sidebar-open");
     mobileSidebarToggle.setAttribute("aria-expanded", String(open));
+    document.getElementById("mobileMore").setAttribute("aria-expanded", String(open));
   });
 
   var customizeBtn = document.getElementById("customizeBtn");
@@ -1884,6 +1885,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   var focusMinutes = 25;
   var focusRemaining = focusMinutes * 60;
   var focusTimerId = null;
+  var focusDeadline = 0;
   var focusTimeEl = document.getElementById("focusTime");
   var focusStatusEl = document.getElementById("focusStatus");
   var focusStartBtn = document.getElementById("focusStart");
@@ -1896,7 +1898,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     var railFocusStatus = document.getElementById("railFocusStatus");
     if (railFocusTime) railFocusTime.textContent = focusTimeEl.textContent;
     if (railFocusStatus) railFocusStatus.textContent = focusStatusEl.textContent;
-    document.title = focusTimerId ? focusTimeEl.textContent + " · OneSpace" : "OneSpace — Work and Life Dashboard";
+    document.title = (focusTimerId ? focusTimeEl.textContent + " · " : "") + PAGE_META[currentPage].title + " — OneSpace";
   }
   function pauseFocusTimer() {
     clearInterval(focusTimerId);
@@ -1904,11 +1906,13 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     focusStartBtn.textContent = "Start";
   }
   focusStartBtn.addEventListener("click", function () {
-    if (focusTimerId) { pauseFocusTimer(); focusStatusEl.textContent = "Paused"; return; }
+    if (focusTimerId) { pauseFocusTimer(); focusStatusEl.textContent = "Paused"; renderFocusTimer(); return; }
     focusStartBtn.textContent = "Pause";
     focusStatusEl.textContent = focusMinutes === 25 ? "Focus" : "Break";
+    if (focusRemaining <= 0) focusRemaining = focusMinutes * 60;
+    focusDeadline = Date.now() + focusRemaining * 1000;
     focusTimerId = setInterval(function () {
-      focusRemaining -= 1;
+      focusRemaining = Math.max(0, Math.ceil((focusDeadline - Date.now()) / 1000));
       if (focusRemaining <= 0) {
         pauseFocusTimer();
         focusRemaining = 0;
@@ -2141,23 +2145,30 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
   function applyLocalSearch(query) {
     var q = String(query || "").trim().toLowerCase();
-    var matches = 0;
-    CATEGORIES.forEach(function (category) {
-      var group = sectionsEl.querySelector('[data-category="' + CSS.escape(category) + '"]');
-      if (!group) return;
-      var groupMatches = 0;
-      group.querySelectorAll(".card-wrap").forEach(function (card) {
-        var link = findLink(card.querySelector("[data-link-id]").getAttribute("data-link-id"));
-        var haystack = link ? [link.name, link.category, link.description || "", getHostname(link.url)].join(" ").toLowerCase() : "";
-        var visible = !q || haystack.indexOf(q) !== -1;
-        card.hidden = !visible;
-        if (visible) { matches += 1; groupMatches += 1; }
-      });
-      group.hidden = !!q && groupMatches === 0;
+    var items = allLinks().filter(function (link) {
+      return HIDDEN_DEFAULT_IDS.indexOf(link.id) === -1 && [link.name, link.category, link.description || "", getHostname(link.url)].join(" ").toLowerCase().indexOf(q) >= 0;
     });
-    localSearchResult.hidden = !q;
-    localSearchResult.textContent = q ? matches + (matches === 1 ? " shortcut found." : " shortcuts found.") : "";
+    var results = document.getElementById("homeSearchResults");
+    results.hidden = !q || searchMode !== "orbit";
+    results.innerHTML = results.hidden ? "" : items.map(miniCardHtml).join("");
+    localSearchResult.hidden = results.hidden;
+    localSearchResult.setAttribute("role", "status");
+    localSearchResult.textContent = q ? items.length + (items.length === 1 ? " shortcut found." : " shortcuts found.") : "";
   }
+  function filterShortcuts() {
+    var q = document.getElementById("shortcutSearch").value.trim().toLowerCase(), total = 0;
+    sectionsEl.querySelectorAll("[data-category]").forEach(function (section) {
+      var count = 0;
+      section.querySelectorAll(".card-wrap").forEach(function (card) {
+        var anchor = card.querySelector("[data-link-id]"), link = anchor && findLink(anchor.getAttribute("data-link-id"));
+        var match = !!link && (!q || [link.name, link.category, link.description, link.url].join(" ").toLowerCase().indexOf(q) >= 0);
+        card.hidden = !match; if (match) count++;
+      });
+      section.hidden = !!q && !count; total += count;
+    });
+    document.getElementById("shortcutSearchStatus").textContent = q ? total + " matching shortcuts" : "";
+  }
+  document.getElementById("shortcutSearch").addEventListener("input", filterShortcuts);
 
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -2280,7 +2291,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   ];
 
   function renderPaletteResults(query) {
-    var q = (query || "").trim().toLowerCase();
+    var q = (query == null ? document.getElementById("exploreSearchInput").value : query).trim().toLowerCase();
     var calculatorResult = calculateExpression(q);
     if (calculatorResult !== null) {
       paletteResults = [{ id: "calculator", name: calculatorResult, category: "Calculator result · press Enter to copy", icon: "cpu", run: function () { fallbackCopy(calculatorResult); } }];
@@ -2522,32 +2533,8 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   var importDataFile = document.getElementById("importDataFile");
 
   document.getElementById("exportDataBtn").addEventListener("click", function () {
-    var backup = {
-      app: "OneSpace",
-      version: 1,
-      exportedAt: new Date().toISOString(),
-      customLinks: customLinks,
-      notesList: notesList,
-      theme: root.getAttribute("data-theme"),
-      searchProvider: currentProvider,
-      favorites: favoriteIds,
-      recent: recentIds,
-      collapsedSections: collapsedCategories,
-      customCategories: customCategories,
-      tasks: tasks,
-      countdowns: countdowns,
-      accent: accentChoice,
-      density: densityChoice,
-      widgets: widgetsChoice,
-      clockFormat: clockFormat,
-      sidebar: sidebarCollapsed ? "collapsed" : "expanded",
-      page: currentPage,
-      palette: paletteChoice,
-      background: backgroundChoice,
-      startup: startupChoice,
-      usage: usageCounts,
-      quickTab: quickAccessTab
-    };
+    var backup;
+    try { backup = window.OneSpaceStorage.backup(window.localStorage); } catch (e) { showToast("Storage could not be read. No backup was downloaded."); return; }
     var blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
     var downloadUrl = URL.createObjectURL(blob);
     var anchor = document.createElement("a");
@@ -2571,7 +2558,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   importDataFile.addEventListener("change", function () {
     var file = importDataFile.files && importDataFile.files[0];
     if (!file) return;
-    if (file.size > 1024 * 1024) {
+    if (file.size > 30 * 1024 * 1024) {
       showToast("That backup is too large.");
       return;
     }
@@ -2579,6 +2566,12 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     reader.addEventListener("load", function () {
       try {
         var backup = JSON.parse(String(reader.result));
+        if (backup && backup.version === 2) {
+          window.OneSpaceStorage.validate(backup.data);
+          if (!window.confirm("Restore this complete backup? Your OneSpace data will be replaced, including games, movies, projects and preferences. Download a current backup first if needed.")) return;
+          window.OneSpaceStorage.restore(window.localStorage, backup);
+          window.location.reload(); return;
+        }
         if (!backup || (backup.app !== "Orbit" && backup.app !== "OneSpace") || backup.version !== 1 || !Array.isArray(backup.customLinks)) {
           throw new Error("Invalid backup format");
         }
@@ -2614,27 +2607,30 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
         var importedCountdowns = Array.isArray(backup.countdowns) ? backup.countdowns.filter(function (item) { return item && typeof item.name === "string" && /^\d{4}-\d{2}-\d{2}$/.test(item.date); }).slice(0, 20).map(function (item, index) { return { id: typeof item.id === "string" ? item.id : "countdown-imported-" + index, name: item.name.trim().slice(0, 40), date: item.date }; }) : [];
         var importedSidebar = backup.sidebar === "collapsed" ? "collapsed" : "expanded";
         var importedPage = PAGES.indexOf(backup.page) !== -1 ? backup.page : (PAGES.indexOf(backup.view) !== -1 ? backup.view : "home");
-        var writesOk = safeSet(STORAGE.customLinks, JSON.stringify(importedLinks));
-        writesOk = safeSet(STORAGE.notesList, JSON.stringify(importedNotesList)) && writesOk;
-        writesOk = safeSet(STORAGE.theme, importedTheme) && writesOk;
-        writesOk = safeSet(STORAGE.searchProvider, importedProvider) && writesOk;
-        writesOk = safeSet(STORAGE.favorites, JSON.stringify(importedFavorites)) && writesOk;
-        writesOk = safeSet(STORAGE.recent, JSON.stringify(importedRecent)) && writesOk;
-        writesOk = safeSet(STORAGE.collapsed, JSON.stringify(importedCollapsed)) && writesOk;
-        writesOk = safeSet(STORAGE.accent, importedAccent) && writesOk;
-        writesOk = safeSet(STORAGE.palette, importedPalette) && writesOk;
-        writesOk = safeSet(STORAGE.background, importedBackground) && writesOk;
-        writesOk = safeSet(STORAGE.startup, importedStartup) && writesOk;
-        writesOk = safeSet(STORAGE.quickTab, importedQuickTab) && writesOk;
-        writesOk = safeSet(STORAGE.usage, JSON.stringify(importedUsage)) && writesOk;
-        writesOk = safeSet(STORAGE.density, importedDensity) && writesOk;
-        writesOk = safeSet(STORAGE.widgets, importedWidgets) && writesOk;
-        writesOk = safeSet(STORAGE.clock, importedClock) && writesOk;
-        writesOk = safeSet(STORAGE.customCategories, JSON.stringify(importedCategories)) && writesOk;
-        writesOk = safeSet(STORAGE.tasks, JSON.stringify(importedTasks)) && writesOk;
-        writesOk = safeSet(STORAGE.countdowns, JSON.stringify(importedCountdowns)) && writesOk;
-        writesOk = safeSet(STORAGE.sidebar, importedSidebar) && writesOk;
-        writesOk = safeSet(STORAGE.page, importedPage) && writesOk;
+        var importWrites = {};
+        importWrites[STORAGE.customLinks] = JSON.stringify(importedLinks);
+        importWrites[STORAGE.notesList] = JSON.stringify(importedNotesList);
+        importWrites[STORAGE.theme] = importedTheme;
+        importWrites[STORAGE.searchProvider] = importedProvider;
+        importWrites[STORAGE.favorites] = JSON.stringify(importedFavorites);
+        importWrites[STORAGE.recent] = JSON.stringify(importedRecent);
+        importWrites[STORAGE.collapsed] = JSON.stringify(importedCollapsed);
+        importWrites[STORAGE.accent] = importedAccent;
+        importWrites[STORAGE.palette] = importedPalette;
+        importWrites[STORAGE.background] = importedBackground;
+        importWrites[STORAGE.startup] = importedStartup;
+        importWrites[STORAGE.quickTab] = importedQuickTab;
+        importWrites[STORAGE.usage] = JSON.stringify(importedUsage);
+        importWrites[STORAGE.density] = importedDensity;
+        importWrites[STORAGE.widgets] = importedWidgets;
+        importWrites[STORAGE.clock] = importedClock;
+        importWrites[STORAGE.customCategories] = JSON.stringify(importedCategories);
+        importWrites[STORAGE.tasks] = JSON.stringify(importedTasks);
+        importWrites[STORAGE.countdowns] = JSON.stringify(importedCountdowns);
+        importWrites[STORAGE.sidebar] = importedSidebar;
+        importWrites[STORAGE.page] = importedPage;
+        var writesOk = true;
+        try { window.OneSpaceStorage.transaction(window.localStorage, importWrites); } catch (error) { writesOk = false; }
         if (!writesOk) {
           customCategories = previousCustomCategories;
           CATEGORIES = previousCategories;
@@ -2674,7 +2670,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
         renderLinks();
         showToast("OneSpace backup imported.");
       } catch (error) {
-        showToast("That file is not a valid OneSpace backup.");
+        showToast(error.message || "That file is not a valid OneSpace backup.");
       }
     });
     reader.addEventListener("error", function () { showToast("The backup file could not be read."); });
@@ -2895,6 +2891,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   if (!prefersReducedMotion() && !(window.matchMedia && window.matchMedia("(pointer: coarse)").matches)) {
     document.querySelectorAll(".page-hero").forEach(function (hero) {
       hero.addEventListener("pointermove", function (e) {
+        if (prefersReducedMotion()) return;
         var rect = hero.getBoundingClientRect();
         hero.style.setProperty("--px", (((e.clientX - rect.left) / rect.width - .5) * 2).toFixed(3));
         hero.style.setProperty("--py", (((e.clientY - rect.top) / rect.height - .5) * 2).toFixed(3));
@@ -2908,52 +2905,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   /* =====================================================================
    * Work — active projects, task timeline, Work shortcuts
    * ===================================================================== */
-  var workProjects = safeGetJSON(STORAGE.workProjects, null);
-  if (!workProjects) {
-    workProjects = [{ id: uid("proj"), name: "OneSpace redesign", status: "active", progress: 60 }, { id: uid("proj"), name: "Quarterly report", status: "active", progress: 25 }];
-    safeSet(STORAGE.workProjects, JSON.stringify(workProjects));
-  }
-  var PROJECT_STATUS_ORDER = ["active", "blocked", "done"];
-  var PROJECT_STATUS_LABEL = { active: "Active", blocked: "Blocked", done: "Done" };
-  function saveWorkProjects() { safeSet(STORAGE.workProjects, JSON.stringify(workProjects)); }
   function renderWorkPage() {
-    var list = document.getElementById("workProjectsList");
-    if (!list) return;
-    var countEl = document.getElementById("workProjectCount");
-    if (countEl) countEl.textContent = workProjects.length + (workProjects.length === 1 ? " project" : " projects");
-    list.innerHTML = workProjects.length ? workProjects.map(function (p) {
-      return '<div class="list-card" data-project-id="' + p.id + '">' +
-        '<div class="list-card-head"><strong>' + escapeHtml(p.name) + '</strong><div class="list-card-actions">' +
-        '<button type="button" data-project-advance="' + p.id + '" title="Advance progress" aria-label="Advance progress">' + iconSvg("chevron") + "</button>" +
-        '<button type="button" data-project-delete="' + p.id + '" title="Delete project" aria-label="Delete project">' + iconSvg("trash") + "</button></div></div>" +
-        '<div class="list-card-progress"><span style="width:' + p.progress + '%"></span></div>' +
-        '<div class="list-card-foot"><button type="button" class="status-chip status-' + p.status + '" data-project-status="' + p.id + '">' + PROJECT_STATUS_LABEL[p.status] + "</button><span class=\"page-section-hint\">" + p.progress + "%</span></div></div>";
-    }).join("") : '<div class="list-empty">No active projects yet. Add one above.</div>';
-    list.querySelectorAll("[data-project-status]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var project = workProjects.filter(function (p) { return p.id === btn.getAttribute("data-project-status"); })[0];
-        if (!project) return;
-        project.status = PROJECT_STATUS_ORDER[(PROJECT_STATUS_ORDER.indexOf(project.status) + 1) % PROJECT_STATUS_ORDER.length];
-        if (project.status === "done") project.progress = 100;
-        saveWorkProjects(); renderWorkPage();
-      });
-    });
-    list.querySelectorAll("[data-project-advance]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var project = workProjects.filter(function (p) { return p.id === btn.getAttribute("data-project-advance"); })[0];
-        if (!project) return;
-        project.progress = Math.min(100, project.progress + 20);
-        if (project.progress === 100) project.status = "done";
-        saveWorkProjects(); renderWorkPage();
-      });
-    });
-    list.querySelectorAll("[data-project-delete]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        if (!window.confirm("Delete this project?")) return;
-        workProjects = workProjects.filter(function (p) { return p.id !== btn.getAttribute("data-project-delete"); });
-        saveWorkProjects(); renderWorkPage();
-      });
-    });
     var timeline = document.getElementById("workTimelineList");
     if (timeline) {
       var order = { high: 0, normal: 1, low: 2 };
@@ -2966,26 +2918,18 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     if (grid) { var links = linksForSpace("work").slice(0, 12); grid.innerHTML = links.length ? links.map(miniCardHtml).join("") : '<div class="quick-empty"><span>No work shortcuts yet.</span></div>'; }
     observeReveals(document);
   }
-  document.getElementById("workProjectForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var input = document.getElementById("workProjectInput");
-    var name = input.value.trim();
-    if (!name) return;
-    workProjects.unshift({ id: uid("proj"), name: name.slice(0, 60), status: "active", progress: 0 });
-    input.value = "";
-    saveWorkProjects(); renderWorkPage();
-    showToast("Project added.");
-  });
-  document.querySelectorAll("[data-page-jump]").forEach(function (btn) {
-    btn.addEventListener("click", function () { goToPage(btn.getAttribute("data-page-jump")); });
+  document.addEventListener("click", function (e) {
+    var button = e.target.closest("[data-page-jump]");
+    if (button) { applyMinimalMode(false); goToPage(button.getAttribute("data-page-jump")); }
+    var anchor = e.target.closest(".mini-card[data-link-id]");
+    if (anchor) { var id = anchor.getAttribute("data-link-id"); rememberRecent(id); recordUsage(id); }
   });
 
   /* =====================================================================
    * Personal — goals, routines, habits, Personal shortcuts
    * ===================================================================== */
   function makeCheckListController(storageKey, seedText) {
-    var items = safeGetJSON(storageKey, null);
-    if (!items) { items = [{ id: uid("item"), text: seedText, done: false }]; safeSet(storageKey, JSON.stringify(items)); }
+    var items = safeGetJSON(storageKey, []);
     function save() { safeSet(storageKey, JSON.stringify(items)); }
     var controller = {
       count: function () { return items.length; },
@@ -3106,6 +3050,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   };
 })();
 </script>
+<script src="projects.js"></script>
 <script src="games-data.js"></script>
 <script src="games.js"></script>
 <script src="movies-data.js"></script>
