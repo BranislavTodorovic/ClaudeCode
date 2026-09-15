@@ -47,7 +47,7 @@ kbd{display:inline-flex;min-width:22px;height:22px;align-items:center;justify-co
 /* Navigation rail */
 .sidebar{position:fixed;z-index:50;inset:0 auto 0 0;width:var(--rail);display:flex;flex-direction:column;padding:24px 14px 18px;background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 97%,var(--accent-soft)),color-mix(in srgb,var(--surface) 93%,var(--bg)));border-right:1px solid color-mix(in srgb,var(--line) 75%,transparent);box-shadow:20px 0 65px rgba(25,38,77,.06);backdrop-filter:blur(30px);overflow-y:auto;transition:width .3s cubic-bezier(.2,.8,.2,1),transform .25s ease}
 .sidebar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(transparent 4%,var(--accent) 22%,var(--accent-2) 58%,transparent 92%);opacity:.55}
-.sidebar-brand{display:flex;align-items:center;gap:10px;padding:2px 4px 28px;font-size:1.02rem;font-weight:850;letter-spacing:-.045em}.sidebar-mark{position:relative;display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;border-radius:14px;background:linear-gradient(145deg,#111a35,#263466);color:#fff;box-shadow:0 12px 28px rgba(39,52,108,.23),inset 0 1px rgba(255,255,255,.12)}.sidebar-mark::after{content:"";position:absolute;inset:-5px;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:18px}.sidebar-mark svg{width:24px;height:24px}.brand-word{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sidebar-collapse-btn{margin-left:auto;width:28px;height:28px;min-height:28px;padding:0;flex:0 0 auto;color:var(--faint)}.sidebar-collapse-btn svg{width:15px;height:15px;transition:transform .25s}
+.sidebar-brand{display:flex;align-items:center;gap:10px;padding:2px 4px 28px;font-size:1.02rem;font-weight:850;letter-spacing:-.045em}.sidebar-mark{position:relative;display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;border-radius:14px;background:linear-gradient(145deg,#111a35,#263466);color:#fff;box-shadow:0 12px 28px rgba(39,52,108,.23),inset 0 1px rgba(255,255,255,.12)}.sidebar-mark::after{content:"";position:absolute;inset:-5px;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);border-radius:18px}.sidebar-mark svg{width:24px;height:24px}.brand-word{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sidebar-collapse-btn{margin-left:auto;width:36px;height:36px;min-height:36px;padding:0;flex:0 0 auto;color:var(--faint)}.sidebar-collapse-btn svg{width:16px;height:16px;transition:transform .25s}
 :root[data-sidebar="collapsed"]{--rail:80px}
 [data-sidebar="collapsed"] .sidebar{padding-left:14px;padding-right:14px}
 [data-sidebar="collapsed"] .sidebar-brand{flex-direction:column;gap:10px;padding:0 0 22px;align-items:center}
@@ -222,7 +222,15 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   </section>
   <section id="shortcutsView" class="page-view" data-page-when="shortcuts" hidden aria-label="Shortcuts">
     <header class="page-hero page-hero-shortcuts" data-page-hero="shortcuts">
-      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="shortcutsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#161b2e"/><stop offset="1" stop-color="#2a2f52"/></linearGradient></defs><rect width="800" height="300" fill="url(#shortcutsGrad)"/><g fill="rgba(140,160,255,.5)"><rect x="80" y="60" width="70" height="70" rx="14"/><rect x="180" y="60" width="70" height="70" rx="14" opacity=".7"/><rect x="80" y="160" width="70" height="70" rx="14" opacity=".5"/><rect x="280" y="110" width="70" height="70" rx="14" opacity=".85"/><rect x="380" y="60" width="70" height="70" rx="14" opacity=".4"/><rect x="480" y="160" width="70" height="70" rx="14" opacity=".65"/><rect x="600" y="80" width="70" height="70" rx="14" opacity=".55"/><rect x="620" y="190" width="70" height="70" rx="14" opacity=".35"/></g></svg></div>
+      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="shortcutsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#161b2e"/><stop offset="1" stop-color="#2a2f52"/></linearGradient></defs><rect width="800" height="300" fill="url(#shortcutsGrad)"/>
+        <g transform="skewY(-6)">
+          <g fill="rgba(140,160,255,.5)"><rect x="60" y="70" width="76" height="76" rx="15"/><rect x="166" y="50" width="76" height="76" rx="15" opacity=".78"/><rect x="60" y="180" width="76" height="76" rx="15" opacity=".55"/><rect x="272" y="120" width="76" height="76" rx="15" opacity=".9"/><rect x="378" y="55" width="76" height="76" rx="15" opacity=".45"/><rect x="484" y="175" width="76" height="76" rx="15" opacity=".68"/><rect x="600" y="85" width="76" height="76" rx="15" opacity=".6"/><rect x="640" y="200" width="76" height="76" rx="15" opacity=".38"/></g>
+          <g fill="none" stroke="rgba(255,255,255,.75)" stroke-width="4" stroke-linecap="round">
+            <path d="M92 98 v42 M76 112 l16 -14 l16 14" transform="translate(6,6)"/>
+            <circle cx="310" cy="158" r="16" transform="translate(0,0)"/>
+            <path d="M420 85 l14 14 l-14 14 M406 99 h28" transform="translate(0,0)"/>
+          </g>
+        </g></svg></div>
       <div class="page-hero-shade"></div>
       <div class="page-hero-copy">
         <span class="page-hero-eyebrow">SHORTCUTS</span>
@@ -285,7 +293,13 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   </section>
   <section id="productivityView" class="page-view" data-page-when="productivity" hidden aria-label="Productivity">
     <header class="page-hero page-hero-productivity" data-page-hero="productivity">
-      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="prodGrad" cx="70%" cy="40%" r="80%"><stop offset="0" stop-color="#2c4b3e"/><stop offset="1" stop-color="#0f1c22"/></radialGradient></defs><rect width="800" height="300" fill="url(#prodGrad)"/><g fill="none" stroke="rgba(120,230,190,.5)" stroke-width="6" stroke-linecap="round"><circle cx="640" cy="140" r="90" stroke-dasharray="420" stroke-dashoffset="140"/></g><circle cx="640" cy="140" r="50" fill="rgba(120,230,190,.12)"/></svg></div>
+      <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="prodGrad" cx="70%" cy="40%" r="80%"><stop offset="0" stop-color="#2c4b3e"/><stop offset="1" stop-color="#0f1c22"/></radialGradient></defs><rect width="800" height="300" fill="url(#prodGrad)"/>
+        <path d="M0 235 L140 205 L260 222 L400 195 L540 218 L680 200 L800 222 L800 300 L0 300 Z" fill="#0a1712" opacity=".85"/>
+        <path d="M0 255 L200 235 L380 250 L600 232 L800 248 L800 300 L0 300 Z" fill="#071008"/>
+        <g fill="none" stroke="rgba(120,230,190,.22)" stroke-width="6" stroke-linecap="round"><circle cx="640" cy="140" r="90"/></g>
+        <g fill="none" stroke="rgba(120,230,190,.85)" stroke-width="6" stroke-linecap="round" transform="rotate(-90 640 140)"><circle id="prodProgressRing" cx="640" cy="140" r="90" stroke-dasharray="565.48" stroke-dashoffset="565.48"/></g>
+        <circle cx="640" cy="140" r="50" fill="rgba(120,230,190,.12)"/>
+      </svg></div>
       <div class="page-hero-shade"></div>
       <div class="page-hero-copy">
         <span class="page-hero-eyebrow">PRODUCTIVITY</span>
@@ -496,7 +510,15 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     <!-- ===================== Personal ===================== -->
     <section id="personalView" class="page-view" data-page-when="personal" hidden aria-label="Personal dashboard">
       <header class="page-hero page-hero-personal" data-page-hero="personal">
-        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><radialGradient id="personalGlow" cx="30%" cy="30%" r="80%"><stop offset="0" stop-color="#ffd9b0"/><stop offset="45%" stop-color="#f2a5b0"/><stop offset="100%" stop-color="#5b3a6b"/></radialGradient></defs><rect width="800" height="300" fill="url(#personalGlow)"/><circle cx="620" cy="90" r="70" fill="rgba(255,255,255,.18)"/><circle cx="120" cy="230" r="110" fill="rgba(255,255,255,.10)"/></svg></div>
+        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="personalWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a2f52"/><stop offset="1" stop-color="#2a1c34"/></linearGradient><linearGradient id="personalFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2438"/><stop offset="1" stop-color="#1a1220"/></linearGradient><radialGradient id="personalGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd9a6" stop-opacity=".38"/><stop offset="100%" stop-color="#ffd9a6" stop-opacity="0"/></radialGradient></defs>
+          <rect width="800" height="195" fill="url(#personalWall)"/><rect y="195" width="800" height="105" fill="url(#personalFloor)"/>
+          <circle cx="605" cy="120" r="170" fill="url(#personalGlow)"/>
+          <g opacity=".95"><rect x="500" y="45" width="200" height="150" rx="6" fill="#2c1c34" stroke="#f2c99a" stroke-opacity=".45" stroke-width="3"/><line x1="600" y1="45" x2="600" y2="195" stroke="#f2c99a" stroke-opacity=".4" stroke-width="3"/><line x1="500" y1="120" x2="700" y2="120" stroke="#f2c99a" stroke-opacity=".4" stroke-width="3"/></g>
+          <g fill="#ffe6bf" opacity=".1"><polygon points="500,45 700,45 780,290 560,290"/></g>
+          <g fill="#ffe6bf" opacity=".07"><polygon points="560,90 660,90 720,270 500,270"/></g>
+          <g><path d="M118 235 C114 195 132 150 152 150 C172 150 188 195 184 235 Z" fill="#120a17"/><path d="M152 150 C140 128 114 120 92 128 C106 104 140 100 156 118 C162 90 196 86 214 106 C232 98 258 112 256 136 C272 138 280 154 272 172 C258 176 150 176 152 150 Z" fill="#150c1b" stroke="#7a5a86" stroke-opacity=".3" stroke-width="1.5"/><rect x="128" y="233" width="44" height="16" rx="2" fill="#0e0813"/></g>
+          <circle cx="250" cy="90" r="3" fill="#ffe9c8" opacity=".5"/><circle cx="300" cy="60" r="2" fill="#ffe9c8" opacity=".4"/><circle cx="360" cy="100" r="2.4" fill="#ffe9c8" opacity=".35"/>
+        </svg></div>
         <div class="page-hero-shade"></div>
         <div class="page-hero-copy">
           <span class="page-hero-eyebrow">PERSONAL SPACE</span>
@@ -530,7 +552,15 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     <!-- ===================== Explore ===================== -->
     <section id="exploreView" class="page-view" data-page-when="explore" hidden aria-label="Explore dashboard">
       <header class="page-hero page-hero-explore" data-page-hero="explore">
-        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="exploreSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12294f"/><stop offset="1" stop-color="#2a6a6b"/></linearGradient></defs><rect width="800" height="300" fill="url(#exploreSky)"/><circle cx="660" cy="70" r="46" fill="#ffe9b8" opacity=".85"/><path d="M0 220 L120 140 L230 200 L340 110 L460 190 L600 120 L800 210 L800 300 L0 300Z" fill="#123326" opacity=".8"/><path d="M0 250 L150 190 L300 240 L500 170 L800 250 L800 300 L0 300Z" fill="#0c2118"/></svg></div>
+        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="exploreSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1f3d"/><stop offset=".55" stop-color="#1c4a5f"/><stop offset="1" stop-color="#2f7a6e"/></linearGradient><radialGradient id="exploreSun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe9b8"/><stop offset="100%" stop-color="#ffe9b8" stop-opacity="0"/></radialGradient></defs>
+          <rect width="800" height="300" fill="url(#exploreSky)"/>
+          <circle cx="660" cy="75" r="110" fill="url(#exploreSun)"/><circle cx="660" cy="75" r="42" fill="#ffe9b8" opacity=".92"/>
+          <path d="M0 175 L100 110 L190 155 L280 90 L370 150 L470 100 L580 160 L680 105 L800 165 L800 300 L0 300Z" fill="#173a52" opacity=".55"/>
+          <path d="M0 220 L120 140 L230 200 L340 110 L460 190 L600 120 L800 210 L800 300 L0 300Z" fill="#123326" opacity=".8"/>
+          <path d="M0 250 L150 190 L300 240 L500 170 L800 250 L800 300 L0 300Z" fill="#0c2118"/>
+          <path d="M40 300 C160 260 220 260 300 300" fill="none" stroke="#ffe9b8" stroke-opacity=".22" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 16"/>
+          <g fill="#0c2118" opacity=".9"><path d="M120 233 c4 -10 14 -10 18 0 z"/><path d="M150 240 c4 -14 16 -14 20 0 z"/><path d="M180 231 c3 -8 12 -8 15 0 z"/></g>
+        </svg></div>
         <div class="page-hero-shade"></div>
         <div class="page-hero-copy">
           <span class="page-hero-eyebrow">EXPLORE SPACE</span>
@@ -542,6 +572,14 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
         </div>
       </header>
       <div class="page-body">
+        <section class="page-section" data-reveal>
+          <div class="page-section-head"><h2>Categories</h2></div>
+          <div class="explore-category-grid">
+            <button class="explore-category" type="button" data-page-jump="games"><span class="explore-category-icon" aria-hidden="true">✦</span><strong>Games</strong><span>Missions, sessions and your library</span></button>
+            <button class="explore-category" type="button" data-page-jump="movies"><span class="explore-category-icon" aria-hidden="true">▶</span><strong>Movies</strong><span>Watchlist and tonight's pick</span></button>
+            <button class="explore-category" type="button" data-page-jump="productivity"><span class="explore-category-icon" aria-hidden="true">✓</span><strong>Take a break</strong><span>Set a short timer and step away</span></button>
+          </div>
+        </section>
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2>Discover</h2></div>
           <form class="mini-form" id="exploreSearchForm"><input type="text" id="exploreSearchInput" placeholder="Search travel and leisure shortcuts…" autocomplete="off"><button class="btn" type="submit">Search</button></form>
@@ -561,7 +599,13 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     <!-- ===================== Quick Notes ===================== -->
     <section id="notesView" class="page-view" data-page-when="notes" hidden aria-label="Quick Notes">
       <header class="page-hero page-hero-notes" data-page-hero="notes">
-        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="notesGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2440"/><stop offset="1" stop-color="#40365c"/></linearGradient></defs><rect width="800" height="300" fill="url(#notesGrad)"/><rect x="120" y="60" width="180" height="220" rx="10" fill="rgba(255,255,255,.08)" transform="rotate(-6 210 170)"/><rect x="320" y="40" width="180" height="220" rx="10" fill="rgba(255,255,255,.12)" transform="rotate(4 410 150)"/><rect x="500" y="70" width="180" height="220" rx="10" fill="rgba(255,255,255,.16)" transform="rotate(-3 590 180)"/></svg></div>
+        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="notesGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#241f38"/><stop offset="1" stop-color="#463b62"/></linearGradient><linearGradient id="notesWindowLight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3d8" stop-opacity=".5"/><stop offset="1" stop-color="#fff3d8" stop-opacity="0"/></linearGradient></defs>
+          <rect width="800" height="300" fill="url(#notesGrad)"/>
+          <polygon points="560,0 800,0 800,300 300,300" fill="url(#notesWindowLight)"/>
+          <g><rect x="110" y="66" width="190" height="230" rx="6" fill="#faf6ec" opacity=".92" transform="rotate(-7 205 181)"/><g transform="rotate(-7 205 181)" stroke="#c9c0a8" stroke-width="2"><line x1="132" y1="118" x2="278" y2="118"/><line x1="132" y1="146" x2="278" y2="146"/><line x1="132" y1="174" x2="248" y2="174"/></g></g>
+          <g><rect x="320" y="40" width="190" height="230" rx="6" fill="#f4ede0" opacity=".95" transform="rotate(4 415 155)"/><g transform="rotate(4 415 155)" stroke="#b9ae94" stroke-width="2"><path d="M344 96 q18 -14 36 0 q18 14 36 0 q18 -14 36 0" fill="none" stroke-linecap="round"/><line x1="344" y1="128" x2="470" y2="128"/><line x1="344" y1="152" x2="450" y2="152"/></g></g>
+          <g><rect x="500" y="70" width="190" height="230" rx="6" fill="#fffaf0" transform="rotate(-3 595 185)"/><g transform="rotate(-3 595 185)" stroke="#d8cdb2" stroke-width="2"><line x1="524" y1="112" x2="666" y2="112"/><line x1="524" y1="140" x2="666" y2="140"/><line x1="524" y1="168" x2="606" y2="168"/></g></g>
+        </svg></div>
         <div class="page-hero-shade"></div>
         <div class="page-hero-copy">
           <span class="page-hero-eyebrow">QUICK NOTES</span>
@@ -585,7 +629,12 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     <!-- ===================== Settings ===================== -->
     <section id="settingsView" class="page-view" data-page-when="settings" hidden aria-label="Settings">
       <header class="page-hero page-hero-settings" data-page-hero="settings">
-        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="settingsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#151a26"/><stop offset="1" stop-color="#26314a"/></linearGradient></defs><rect width="800" height="300" fill="url(#settingsGrad)"/><g fill="none" stroke="rgba(150,180,255,.35)" stroke-width="1.4"><circle cx="200" cy="150" r="70"/><circle cx="200" cy="150" r="40"/><circle cx="560" cy="110" r="50"/><circle cx="560" cy="110" r="24"/><circle cx="640" cy="220" r="30"/></g></svg></div>
+        <div class="page-hero-art" data-parallax-art aria-hidden="true"><svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="settingsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12151f"/><stop offset="1" stop-color="#232c42"/></linearGradient><radialGradient id="settingsLight" cx="70%" cy="20%" r="70%"><stop offset="0" stop-color="#8fb0ff" stop-opacity=".22"/><stop offset="100%" stop-color="#8fb0ff" stop-opacity="0"/></radialGradient></defs>
+          <rect width="800" height="300" fill="url(#settingsGrad)"/><rect width="800" height="300" fill="url(#settingsLight)"/>
+          <rect x="470" y="40" width="280" height="220" rx="18" fill="#ffffff0a" stroke="#ffffff22" stroke-width="1.4"/>
+          <g fill="none" stroke="rgba(150,180,255,.4)" stroke-width="1.4"><circle cx="200" cy="150" r="70"/><circle cx="200" cy="150" r="40"/><circle cx="560" cy="110" r="50"/><circle cx="560" cy="110" r="24"/><circle cx="660" cy="200" r="30"/></g>
+          <g fill="rgba(150,180,255,.55)"><circle cx="200" cy="150" r="3"/><circle cx="560" cy="110" r="3"/><circle cx="660" cy="200" r="3"/></g>
+        </svg></div>
         <div class="page-hero-shade"></div>
         <div class="page-hero-copy">
           <span class="page-hero-eyebrow">CONTROL CENTER</span>
@@ -859,6 +908,7 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
 
 <script src="storage-utils.js"></script>
 <script src="catalog-utils.js"></script>
+<script src="tooltip-utils.js"></script>
 <script>
 (function () {
   "use strict";
@@ -1898,6 +1948,8 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
     var railFocusStatus = document.getElementById("railFocusStatus");
     if (railFocusTime) railFocusTime.textContent = focusTimeEl.textContent;
     if (railFocusStatus) railFocusStatus.textContent = focusStatusEl.textContent;
+    var progressRing = document.getElementById("prodProgressRing");
+    if (progressRing) { var total = focusMinutes * 60; progressRing.style.strokeDashoffset = String(565.48 * (total > 0 ? focusRemaining / total : 1)); }
     document.title = (focusTimerId ? focusTimeEl.textContent + " · " : "") + PAGE_META[currentPage].title + " — OneSpace";
   }
   function pauseFocusTimer() {
@@ -3022,11 +3074,11 @@ body.force-full-motion *,body.force-full-motion *::before,body.force-full-motion
   document.addEventListener("onespace:page-changed", function (e) {
     if (e.detail.page === "work") renderWorkPage();
     if (e.detail.page === "personal") renderPersonalPage();
-    if (e.detail.page === "explore") renderExplorePage();
+    if (e.detail.page === "explore") renderExplorePage(document.getElementById("exploreSearchInput").value);
   });
   if (currentPage === "work") renderWorkPage();
   if (currentPage === "personal") renderPersonalPage();
-  if (currentPage === "explore") renderExplorePage();
+  if (currentPage === "explore") renderExplorePage(document.getElementById("exploreSearchInput").value);
 
   /* Button feedback — a light ripple on any .btn press, delegated once */
   document.addEventListener("pointerdown", function (e) {

@@ -7,11 +7,19 @@
   function projects() { return OS.safeGetJSON(key, []); }
   function commit(next) { if (!OS.safeSet(key, JSON.stringify(next))) return false; render(); return true; }
   function safeUrl(value) { try { var url = new URL(value); return /^https?:$/.test(url.protocol) ? url.href : ""; } catch (_) { return ""; } }
+  function coverHue(seed) {
+    var hash = 0;
+    for (var i = 0; i < seed.length; i++) hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+    return hash % 360;
+  }
   function preview(p, compact) {
     var progress = Math.min(100, Math.max(0, Number(p.progress) || 0));
     var tags = Array.isArray(p.tags) ? p.tags : [];
     var url = safeUrl(p.url);
-    return '<article class="project-card"><div class="project-preview" aria-hidden="true"><span>' + esc(p.name.slice(0, 2).toUpperCase()) + '</span><div class="project-blueprint"></div></div><div class="project-card-body"><div class="project-card-top"><h3>' + esc(p.name) + '</h3><span class="status-chip status-' + esc(p.status) + '">' + esc(p.status) + '</span></div>' +
+    var hue = coverHue(p.name + (tags[0] || ""));
+    var coverStyle = "background:linear-gradient(125deg,hsl(" + hue + " 38% 22%),hsl(" + ((hue + 45) % 360) + " 42% 34%))";
+    var blueprintStyle = "border-color:hsl(" + hue + " 60% 78% / .3)";
+    return '<article class="project-card"><div class="project-preview" aria-hidden="true" style="' + coverStyle + '"><span>' + esc(p.name.slice(0, 2).toUpperCase()) + '</span><div class="project-blueprint" style="' + blueprintStyle + '"></div></div><div class="project-card-body"><div class="project-card-top"><h3>' + esc(p.name) + '</h3><span class="status-chip status-' + esc(p.status) + '">' + esc(p.status) + '</span></div>' +
       (p.description ? '<p class="project-description">' + esc(p.description) + '</p>' : '<p class="project-description">An idea in progress. Give it a next step.</p>') +
       '<div class="project-tags">' + tags.map(function (tag) { return '<span>' + esc(tag) + '</span>'; }).join("") + '</div><div class="project-meter" role="progressbar" aria-label="' + esc(p.name) + ' progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="project-card-foot"><span>' + progress + '% complete</span>' +
       (compact ? '<button class="btn btn-ghost" type="button" data-page-jump="projects">Open Projects ↗</button>' :
