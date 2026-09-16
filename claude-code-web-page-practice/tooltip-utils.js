@@ -51,6 +51,7 @@
     tip.className = "os-tooltip";
     tip.setAttribute("role", "tooltip");
     tip.id = "osTooltipBubble";
+    tip.hidden = true;
     document.body.appendChild(tip);
     return tip;
   }
@@ -74,6 +75,7 @@
     clearTimeout(hideTimer);
     var bubble = ensureTip();
     bubble.textContent = text;
+    bubble.hidden = false;
     bubble.classList.add("is-visible");
     place(target);
     var descriptions = (target.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
@@ -85,6 +87,7 @@
   function hide() {
     if (!tip || !activeTarget) return;
     tip.classList.remove("is-visible");
+    tip.hidden = true;
     var descriptions = (activeTarget.getAttribute("aria-describedby") || "").split(/\s+/).filter(function (id) { return id && id !== tip.id; });
     if (descriptions.length) activeTarget.setAttribute("aria-describedby", descriptions.join(" "));
     else activeTarget.removeAttribute("aria-describedby");

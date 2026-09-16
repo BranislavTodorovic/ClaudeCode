@@ -184,11 +184,11 @@ body[data-page="movies"]::before, body[data-page="movies"]::after { display: non
   .mv-scene-spotcones { animation: none; opacity: .3; }
 }
 @media (prefers-reduced-motion: reduce) {
-  #moviesRoot *, #moviesRoot *::before, #moviesRoot *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  #moviesMount [data-reveal] { opacity: 1; transform: none; }
-  .mv-scene-art, .mv-scene-spotcones { transform: none; }
-  .mv-scene-art img { animation: none; }
-  .mv-scene-spotcones { display: none; }
+  body:not(.force-full-motion) #moviesRoot *, body:not(.force-full-motion) #moviesRoot *::before, body:not(.force-full-motion) #moviesRoot *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  body:not(.force-full-motion) #moviesMount [data-reveal] { opacity: 1; transform: none; }
+  body:not(.force-full-motion) :is(.mv-scene-art, .mv-scene-spotcones) { transform: none; }
+  body:not(.force-full-motion) .mv-scene-art img { animation: none; }
+  body:not(.force-full-motion) .mv-scene-spotcones { display: none; }
 }
 /* Manual "Reduced Motion" override from Settings — same treatment as the OS-level query above */
 body.force-reduced-motion #moviesRoot *, body.force-reduced-motion #moviesRoot *::before, body.force-reduced-motion #moviesRoot *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

@@ -112,6 +112,22 @@ test('reset removes only known OneSpace keys', () => {
   assert.equal(store.getItem('orbit-unrelated'), 'Also keep');
 });
 
+test('complete browser-import fixture restores all keys and preserves unrelated storage', () => {
+  const fixture = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/complete-backup.json'), 'utf8'));
+  const store = memory({ 'another-app': 'Keep' });
+  storage.restore(store, fixture);
+  assert.deepEqual(storage.snapshot(store), fixture.data);
+  assert.equal(store.getItem('another-app'), 'Keep');
+});
+
+test('malformed browser-import fixture leaves existing notes unchanged', () => {
+  const fixture = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/invalid-backup.json'), 'utf8'));
+  const original = JSON.stringify([{ id: 'keep', body: 'Keep existing notes' }]);
+  const store = memory({ 'orbit-notes-list': original });
+  assert.throws(() => storage.restore(store, fixture), /Invalid backup field/);
+  assert.equal(store.getItem('orbit-notes-list'), original);
+});
+
 test('every application script parses', () => {
   for (const file of fs.readdirSync(root).filter(name => name.endsWith('.js'))) {
     new vm.Script(fs.readFileSync(path.join(root, file), 'utf8'), { filename: file });

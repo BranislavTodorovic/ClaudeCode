@@ -226,7 +226,7 @@
     var status = (total === 0 || completed === 0) ? "Not started" : (completed === total ? "Completed" : "In progress");
     var next = null;
     for (var i = 0; i < flat.length; i++) { if (!flat[i].done) { next = flat[i].text; break; } }
-    return { total: total, completed: completed, percent: percent, status: status, next: next || "All objectives complete" };
+    return { total: total, completed: completed, percent: percent, status: status, next: next || (total ? "All objectives complete" : "Add your first objective") };
   }
   function weeklyStats(gameId) {
     var entry = ensureWeekly(gameId);
@@ -366,7 +366,7 @@
           '<div class="gv-tracker-title">' + renderLogo(game) + "<div><h2>" + esc(game.name) + "</h2><p>" + stats.completed + "/" + stats.total + " objectives · " + stats.percent + "% · " + esc(stats.status) + "</p></div></div>" +
         "</div>" +
         '<p class="gv-tracker-next"><strong>Next up:</strong> ' + esc(stats.next) + "</p>" +
-        '<div class="gv-chapters">' + chaptersHtml + "</div>" +
+        '<div class="gv-chapters">' + (chaptersHtml || '<form class="gv-add-objective" data-action="add-objective-form" data-chapter-id=""><input type="text" placeholder="Add your first objective…" maxlength="140" aria-label="New objective text"><button type="submit" class="btn">Add</button></form>') + "</div>" +
       "</div>"
     );
   }
@@ -504,6 +504,13 @@
   }
   function addObjective(chapterId, text) {
     var chapter = findChapter(chapterId);
+    if (!chapter && !chapterId) {
+      var game = library.find(function (g) { return g.id === selectedStoryGameId; });
+      if (game && game.story && !game.story.chapters.length) {
+        chapter = { id: uid("c"), title: "My goals", expanded: true, objectives: [] };
+        game.story.chapters.push(chapter);
+      }
+    }
     if (!chapter) return;
     chapter.objectives.push({ id: uid("o"), text: text, done: false });
     chapter.expanded = true;

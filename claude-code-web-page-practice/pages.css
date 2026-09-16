@@ -171,7 +171,7 @@
 .page-hero-settings { background: linear-gradient(135deg,#12161f,#25314a); min-height: 260px; }
 .settings-card { max-width: 640px; padding: 24px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); }
 #prodProgressRing { transition: stroke-dashoffset .6s linear; }
-@media (prefers-reduced-motion: reduce) { #prodProgressRing { transition: none; } }
+@media (prefers-reduced-motion: reduce) { body:not(.force-full-motion) #prodProgressRing { transition: none; } }
 body.force-reduced-motion #prodProgressRing { transition: none; }
 
 /* ---------------------------------------------------------------------- */
@@ -184,7 +184,7 @@ body.force-reduced-motion #prodProgressRing { transition: none; }
   .list-card-grid, .notes-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .page-hero-art { animation: none !important; transform: none !important; }
+  body:not(.force-full-motion) .page-hero-art { animation: none !important; transform: none !important; }
 }
 body.force-reduced-motion .page-hero-art { animation: none !important; transform: none !important; }
 
@@ -363,8 +363,8 @@ body.force-reduced-motion .scene-image { transform:none; }
   #homeView .glance-item { display:none; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .scene-image,.is-page-entering .scene-copy { animation:none!important; transform:none!important; transition:none!important; }
-  [data-reveal] { opacity:1; transform:none; }
+  body:not(.force-full-motion) :is(.scene-image,.is-page-entering .scene-copy) { animation:none!important; transform:none!important; transition:none!important; }
+  body:not(.force-full-motion) [data-reveal] { opacity:1; transform:none; }
 }
 
 /* ---------------------------------------------------------------------- */
@@ -380,5 +380,5 @@ body.force-reduced-motion .scene-image { transform:none; }
 }
 .os-tooltip.is-visible { opacity: 1; transform: translateY(0); }
 [data-tooltip] { position: relative; }
-@media (prefers-reduced-motion: reduce) { .os-tooltip { transition: none; } }
+@media (prefers-reduced-motion: reduce) { body:not(.force-full-motion) .os-tooltip { transition: none; } }
 body.force-reduced-motion .os-tooltip { transition: none; }

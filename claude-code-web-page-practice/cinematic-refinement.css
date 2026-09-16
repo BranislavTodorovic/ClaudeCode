@@ -91,6 +91,8 @@ body::after { background:radial-gradient(ellipse,color-mix(in srgb,var(--atmosph
 .mv-hero-blurb { font-size:14px; line-height:1.75; }
 .os-tooltip { background:#172235; color:#fff; font-size:.8rem; padding:9px 12px; max-width:min(280px,calc(100vw - 16px)); }
 #settingsView label,#settingsView select { min-width:0; max-width:100%; }
+body.minimal-mode .home-scene { min-height:150px; }
+body.minimal-mode .home-scene .scene-copy,body.minimal-mode .home-scene .scene-footer,body.minimal-mode #mobileSidebarToggle { display:none; }
 @media (hover:none) { .card-actions { opacity:1; transform:none; } }
 @media (max-width:760px) {
   .collapse-btn { min-width:44px; min-height:44px; }
@@ -124,6 +126,6 @@ body::after { background:radial-gradient(ellipse,color-mix(in srgb,var(--atmosph
   .scene-topline { gap:10px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .page-hero *, .scene-hero *, .scene-hero::after, .mv-scene-bg *, :is(button,a) .icon { animation:none!important; transition:none!important; translate:none!important; rotate:none!important; }
+  body:not(.force-full-motion) :is(.page-hero *, .scene-hero *, .mv-scene-bg *, :is(button,a) .icon), body:not(.force-full-motion) .scene-hero::after { animation:none!important; transition:none!important; translate:none!important; rotate:none!important; }
 }
 body.force-reduced-motion .page-hero *,body.force-reduced-motion .scene-hero *,body.force-reduced-motion .scene-hero::after,body.force-reduced-motion .mv-scene-bg *,body.force-reduced-motion :is(button,a) .icon { animation:none!important; transition:none!important; translate:none!important; rotate:none!important; }

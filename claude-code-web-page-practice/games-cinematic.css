@@ -191,10 +191,10 @@ body[data-page="games"]::before,body[data-page="games"]::after { display:none; }
   .gv-scene-art,.gv-scene-glow { transform:none; }
 }
 @media (prefers-reduced-motion:reduce) {
-  #gamesView *, #gamesView *::before, #gamesView *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
-  #gamesView [data-reveal] { opacity:1; transform:none; }
-  .gv-scene-art,.gv-scene-glow { transform:none; }
-  .gv-scene-fog,.gv-scene-particles { display:none; }
+  body:not(.force-full-motion) #gamesView *, body:not(.force-full-motion) #gamesView *::before, body:not(.force-full-motion) #gamesView *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  body:not(.force-full-motion) #gamesView [data-reveal] { opacity:1; transform:none; }
+  body:not(.force-full-motion) :is(.gv-scene-art,.gv-scene-glow) { transform:none; }
+  body:not(.force-full-motion) :is(.gv-scene-fog,.gv-scene-particles) { display:none; }
 }
 /* Manual "Reduced Motion" override from Settings — same treatment as the OS-level query above */
 body.force-reduced-motion #gamesView *, body.force-reduced-motion #gamesView *::before, body.force-reduced-motion #gamesView *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }

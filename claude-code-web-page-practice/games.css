@@ -447,8 +447,8 @@ body[data-page="games"] .modal-header { border-color: var(--gv-line); }
 [data-reveal].is-revealing { animation: gvRevealIn .5s var(--gv-reveal-delay, 0ms) both; }
 
 @media (prefers-reduced-motion: reduce) {
-  .gv-ring, .gv-ring::before, .gv-wordmark { animation: none !important; }
-  .gv-tagline, .gv-header-actions, #gamesView::after, #gamesView.is-entering-view::after { animation: none !important; }
-  [data-reveal] { opacity: 1; transform: none; }
-  [data-reveal].is-revealing { animation: none !important; }
+  body:not(.force-full-motion) :is(.gv-ring, .gv-wordmark), body:not(.force-full-motion) .gv-ring::before { animation: none !important; }
+  body:not(.force-full-motion) :is(.gv-tagline, .gv-header-actions), body:not(.force-full-motion) #gamesView::after { animation: none !important; }
+  body:not(.force-full-motion) [data-reveal] { opacity: 1; transform: none; }
+  body:not(.force-full-motion) [data-reveal].is-revealing { animation: none !important; }
 }
