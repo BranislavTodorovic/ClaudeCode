@@ -137,7 +137,7 @@
       if (existing) {
         existing.name = def.name; existing.platform = existing.platform || def.platform; existing.genre = def.genre;
         existing.accent = def.accent; existing.logo = def.logo;
-        existing.artwork = def.artwork; existing.artworkMobile = def.artworkMobile;
+        existing.artwork = def.artwork; existing.artworkMobile = def.artworkMobile; existing.cardArtwork = def.cardArtwork; existing.artworkPosition = def.artworkPosition;
         existing.world = def.world; existing.tagline = def.tagline;
       }
     });
@@ -277,7 +277,7 @@
     gamesView.addEventListener("error", function (e) {
       var img = e.target;
       if (!img.classList || !img.classList.contains("gv-logo-img")) return;
-      var name = img.getAttribute("data-fallback-name") || "";
+      var name = img.getAttribute("data-fallback-name") || ""; console.warn('[OneSpace logo]',name,img.getAttribute('src'));
       var accent = img.getAttribute("data-fallback-accent") || "#7a8fff";
       var cover = document.createElement("div");
       cover.className = img.className.replace("gv-logo-img", "gv-logo-cover");
@@ -299,7 +299,7 @@
     var weekBadge = isWeekly ? '<span class="gv-week-badge">Week ' + esc(stats.weekKey || "") + "</span>" : "";
     return (
       '<article class="gv-card" data-game-id="' + esc(game.id) + '" data-reveal data-reveal-group="library" data-reveal-key="' + esc(game.id) + '" style="--gv-brand:' + esc(game.accent || "#7a8fff") + '">' +
-        '<button type="button" class="gv-card-logo" data-action="spotlight-game" data-id="' + esc(game.id) + '" aria-label="Spotlight ' + esc(game.name) + '">' + (game.artwork ? '<img class="gv-card-art" src="' + esc(game.artwork) + '" alt="" loading="lazy" width="600" height="340">' : gameScene(game)) + renderLogo(game) + "</button>" +
+        '<button type="button" class="gv-card-logo" data-action="spotlight-game" data-id="' + esc(game.id) + '" aria-label="Spotlight ' + esc(game.name) + '">' + (game.artwork ? '<img class="gv-card-art" src="' + esc(game.cardArtwork || game.artwork) + '" alt="" loading="lazy" width="600" height="340">' : gameScene(game)) + renderLogo(game) + "</button>" +
         '<div class="gv-card-body">' +
           '<h3 class="gv-card-title">' + esc(game.name) + "</h3>" +
           '<div class="gv-card-meta"><span>' + esc(game.genre || "Custom") + " · " + esc(game.platform || "") + "</span>" + weekBadge + "</div>" +
@@ -1283,7 +1283,7 @@
     var stats = statsFor(game), games = featuredGames();
     var index = games.findIndex(function (g) { return g.id === game.id; });
     hero.dataset.gameId = game.id;
-    hero.dataset.world = game.world || "violet";
+    hero.dataset.world = game.world || "violet"; hero.style.setProperty('--feature-accent', game.accent || '#a99ada'); hero.style.setProperty('--art-position',game.artworkPosition || 'center');
     var content = document.getElementById("gvHeroContent");
     var focusedAction = content.contains(document.activeElement) ? document.activeElement.getAttribute("data-action") : null;
     content.innerHTML = '<div class="gv-hero-logo">' + renderLogo(game) + '</div>' +
@@ -1301,7 +1301,7 @@
       var picture = document.createElement("picture");
       if (game.artwork) {
         picture.innerHTML = (game.artworkMobile ? '<source media="(max-width: 640px)" srcset="' + esc(game.artworkMobile) + '">' : '') + '<img src="' + esc(game.artwork) + '" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">';
-        picture.querySelector("img").addEventListener("error", function () { picture.remove(); });
+        picture.querySelector("img").addEventListener("error", function () { console.warn('[OneSpace asset]',game.name,game.artwork); picture.innerHTML=window.OneSpaceVisual.cover(game.name, 'game',game.accent); }, {once:true});
       } else picture.innerHTML = gameScene(game);
       art.appendChild(picture);
       requestAnimationFrame(function () { picture.classList.add("is-active"); });

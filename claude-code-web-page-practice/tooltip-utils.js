@@ -128,6 +128,13 @@
       if (!field.labels || !field.labels.length) field.setAttribute('aria-label', field.placeholder.replace(/…/g, ''));
     });
     document.addEventListener('keydown', function (event) {
+      var tab = event.target.closest('[role="tab"]');
+      // Game/movie tablists already own their keyboard handlers.
+      if (tab && !tab.matches('.gv-tab,.mv-tab') && ['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) {
+        var tabs = Array.from(tab.closest('[role="tablist"]').querySelectorAll('[role="tab"]'));
+        var next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (tabs.indexOf(tab) + (event.key === 'ArrowLeft' ? -1 : 1) + tabs.length) % tabs.length;
+        event.preventDefault(); tabs[next].click(); tabs[next].focus(); return;
+      }
       var radio = event.target.closest('[role="radio"]');
       if (!radio || ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].indexOf(event.key) < 0) return;
       var group = radio.closest('[role="radiogroup"]');

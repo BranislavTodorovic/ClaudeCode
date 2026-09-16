@@ -1,0 +1,1990 @@
+{
+  "version": 2,
+  "created": "2026-09-16",
+  "strategy": "All runtime artwork local. Landscape images use responsive object-position; poster aspect ratio is preserved.",
+  "pages": [
+    {
+      "page": "home",
+      "file": "assets/page-art/home-observatory.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2040927,
+      "source": "Existing original OneSpace artwork",
+      "mobile": {
+        "file": "assets/page-art/home-observatory.png",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "work",
+      "file": "assets/page-art/work-studio.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1946722,
+      "source": "Existing original OneSpace artwork",
+      "mobile": {
+        "file": "assets/page-art/work-studio.png",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "projects",
+      "file": "assets/page-art/projects-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 117768,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/projects-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "personal",
+      "file": "assets/page-art/personal-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 201872,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/personal-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "explore",
+      "file": "assets/page-art/explore-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 192692,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/explore-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "shortcuts",
+      "file": "assets/page-art/shortcuts-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 173594,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/shortcuts-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "productivity",
+      "file": "assets/page-art/productivity-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 193380,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/productivity-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "notes",
+      "file": "assets/page-art/notes-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 118268,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/notes-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    },
+    {
+      "page": "settings",
+      "file": "assets/page-art/settings-cinematic.webp",
+      "width": 1672,
+      "height": 941,
+      "bytes": 180598,
+      "source": "OpenAI built-in image generation; assets/page-art/PROMPTS.md",
+      "mobile": {
+        "file": "assets/page-art/settings-cinematic.webp",
+        "position": "72% center"
+      },
+      "fallback": "Deterministic local SVG illustration, with console warning"
+    }
+  ],
+  "games": [
+    {
+      "id": "game-alan-wake-2",
+      "title": "Alan Wake 2",
+      "accent": "#e8892b",
+      "hero": {
+        "file": "assets/game-art/alan-wake-2.webp",
+        "width": 2560,
+        "height": 1318,
+        "bytes": 642846,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/alan-wake-2.webp",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/alan-wake-2.webp",
+        "width": 2560,
+        "height": 1318,
+        "bytes": 642846,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/alan-wake-2.webp",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/alan-wake-2-logo.png",
+        "width": 800,
+        "height": 166,
+        "bytes": 12439,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/alan-wake-2-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "mobile": {
+        "file": "assets/game-art/alan-wake-2.webp",
+        "width": 2560,
+        "height": 1318,
+        "bytes": 642846,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/alan-wake-2.webp",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "game-resident-evil-4",
+      "title": "Resident Evil 4",
+      "accent": "#8a1f1f",
+      "hero": {
+        "file": "assets/game-art/resident-evil-4.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 250815,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/resident-evil-4.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/resident-evil-4.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 250815,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/resident-evil-4.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/resident-evil-4-logo.png",
+        "width": 640,
+        "height": 121,
+        "bytes": 59939,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/resident-evil-4-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "mobile": {
+        "file": "assets/game-art/resident-evil-4.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 250815,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/resident-evil-4.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "game-diablo-immortal",
+      "title": "Diablo Immortal",
+      "accent": "#a855f7",
+      "hero": {
+        "file": "assets/game-art/diablo-immortal.webp",
+        "width": 1920,
+        "height": 996,
+        "bytes": 610408,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/diablo-immortal.webp",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/diablo-immortal.webp",
+        "width": 1920,
+        "height": 996,
+        "bytes": 610408,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/diablo-immortal.webp",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/diablo-immortal-logo.png",
+        "width": 640,
+        "height": 320,
+        "bytes": 220371,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/diablo-immortal-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "mobile": {
+        "file": "assets/game-art/diablo-immortal-mobile.webp",
+        "width": 1000,
+        "height": 1600,
+        "bytes": 250547,
+        "source": "Existing local asset; see source notes",
+        "mobile": {
+          "file": "assets/game-art/diablo-immortal-mobile.webp",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "game-cyberpunk-2077",
+      "title": "Cyberpunk 2077",
+      "accent": "#00f0ff",
+      "hero": {
+        "file": "assets/game-art/cyberpunk-2077-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 222935,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/cyberpunk-2077-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/cyberpunk-2077-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 34342,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/cyberpunk-2077-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/cyberpunk-2077-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 80192,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/logo.png",
+        "mobile": {
+          "file": "assets/game-art/cyberpunk-2077-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "mobile": {
+        "file": "assets/game-art/cyberpunk-2077-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 222935,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/cyberpunk-2077-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "game-hades",
+      "title": "Hades",
+      "accent": "#ff6b57",
+      "hero": {
+        "file": "assets/game-art/hades-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 474286,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/hades-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/hades-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 56368,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/hades-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/hades-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 70480,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/logo.png",
+        "mobile": {
+          "file": "assets/game-art/hades-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "mobile": {
+        "file": "assets/game-art/hades-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 474286,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/hades-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "game-death-stranding",
+      "title": "Death Stranding",
+      "accent": "#7cc2ff",
+      "hero": {
+        "file": "assets/game-art/death-stranding-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 151838,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/death-stranding-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/death-stranding-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 27954,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/death-stranding-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/death-stranding-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 8178,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/logo.png",
+        "mobile": {
+          "file": "assets/game-art/death-stranding-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "mobile": {
+        "file": "assets/game-art/death-stranding-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 151838,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/death-stranding-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    }
+  ],
+  "movies": [
+    {
+      "id": "mv-godfather",
+      "title": "The Godfather",
+      "accent": "#8a1f1f",
+      "poster": {
+        "file": "assets/movie-art/godfather-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 20953,
+        "source": "https://images.metahub.space/poster/small/tt0068646/img",
+        "mobile": {
+          "file": "assets/movie-art/godfather-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/godfather-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 191841,
+        "source": "https://images.metahub.space/background/medium/tt0068646/img",
+        "mobile": {
+          "file": "assets/movie-art/godfather-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-jurassic-park",
+      "title": "Jurassic Park",
+      "accent": "#2f6b3a",
+      "poster": {
+        "file": "assets/movie-art/jurassic-park-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 14404,
+        "source": "https://images.metahub.space/poster/small/tt0107290/img",
+        "mobile": {
+          "file": "assets/movie-art/jurassic-park-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/jurassic-park-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 368989,
+        "source": "https://images.metahub.space/background/medium/tt0107290/img",
+        "mobile": {
+          "file": "assets/movie-art/jurassic-park-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-matrix",
+      "title": "The Matrix",
+      "accent": "#1f8a5a",
+      "poster": {
+        "file": "assets/movie-art/matrix-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 34606,
+        "source": "https://images.metahub.space/poster/small/tt0133093/img",
+        "mobile": {
+          "file": "assets/movie-art/matrix-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/matrix-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 688767,
+        "source": "https://images.metahub.space/background/medium/tt0133093/img",
+        "mobile": {
+          "file": "assets/movie-art/matrix-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-spirited-away",
+      "title": "Spirited Away",
+      "accent": "#c77b3f",
+      "poster": {
+        "file": "assets/movie-art/spirited-away-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 15862,
+        "source": "https://images.metahub.space/poster/small/tt0245429/img",
+        "mobile": {
+          "file": "assets/movie-art/spirited-away-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/spirited-away-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 368050,
+        "source": "https://images.metahub.space/background/medium/tt0245429/img",
+        "mobile": {
+          "file": "assets/movie-art/spirited-away-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-inception",
+      "title": "Inception",
+      "accent": "#2b4b7a",
+      "poster": {
+        "file": "assets/movie-art/inception-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 41941,
+        "source": "https://images.metahub.space/poster/small/tt1375666/img",
+        "mobile": {
+          "file": "assets/movie-art/inception-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/inception-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 695668,
+        "source": "https://images.metahub.space/background/medium/tt1375666/img",
+        "mobile": {
+          "file": "assets/movie-art/inception-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-jaws",
+      "title": "Jaws",
+      "accent": "#0f5f7a",
+      "poster": {
+        "file": "assets/movie-art/jaws-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 26634,
+        "source": "https://images.metahub.space/poster/small/tt0073195/img",
+        "mobile": {
+          "file": "assets/movie-art/jaws-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/jaws-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 241299,
+        "source": "https://images.metahub.space/background/medium/tt0073195/img",
+        "mobile": {
+          "file": "assets/movie-art/jaws-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-back-to-the-future",
+      "title": "Back to the Future",
+      "accent": "#c9711a",
+      "poster": {
+        "file": "assets/movie-art/back-to-the-future-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 29804,
+        "source": "https://images.metahub.space/poster/small/tt0088763/img",
+        "mobile": {
+          "file": "assets/movie-art/back-to-the-future-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/back-to-the-future-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 1047209,
+        "source": "https://images.metahub.space/background/medium/tt0088763/img",
+        "mobile": {
+          "file": "assets/movie-art/back-to-the-future-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-pulp-fiction",
+      "title": "Pulp Fiction",
+      "accent": "#b8860b",
+      "poster": {
+        "file": "assets/movie-art/pulp-fiction-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 55183,
+        "source": "https://images.metahub.space/poster/small/tt0110912/img",
+        "mobile": {
+          "file": "assets/movie-art/pulp-fiction-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/pulp-fiction-background.jpg",
+        "width": 1280,
+        "height": 720,
+        "bytes": 173258,
+        "source": "https://images.metahub.space/background/medium/tt0110912/img",
+        "mobile": {
+          "file": "assets/movie-art/pulp-fiction-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-dark-knight",
+      "title": "The Dark Knight",
+      "accent": "#1a1a2e",
+      "poster": {
+        "file": "assets/movie-art/dark-knight-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 20796,
+        "source": "https://images.metahub.space/poster/small/tt0468569/img",
+        "mobile": {
+          "file": "assets/movie-art/dark-knight-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/dark-knight-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 655945,
+        "source": "https://images.metahub.space/background/medium/tt0468569/img",
+        "mobile": {
+          "file": "assets/movie-art/dark-knight-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-parasite",
+      "title": "Parasite",
+      "accent": "#3a4a3a",
+      "poster": {
+        "file": "assets/movie-art/parasite-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 38973,
+        "source": "https://images.metahub.space/poster/small/tt6751668/img",
+        "mobile": {
+          "file": "assets/movie-art/parasite-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/parasite-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 596617,
+        "source": "https://images.metahub.space/background/medium/tt6751668/img",
+        "mobile": {
+          "file": "assets/movie-art/parasite-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-la-la-land",
+      "title": "La La Land",
+      "accent": "#d94f70",
+      "poster": {
+        "file": "assets/movie-art/la-la-land-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 18527,
+        "source": "https://images.metahub.space/poster/small/tt3783958/img",
+        "mobile": {
+          "file": "assets/movie-art/la-la-land-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/la-la-land-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 923572,
+        "source": "https://images.metahub.space/background/medium/tt3783958/img",
+        "mobile": {
+          "file": "assets/movie-art/la-la-land-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-get-out",
+      "title": "Get Out",
+      "accent": "#8b0000",
+      "poster": {
+        "file": "assets/movie-art/get-out-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 17760,
+        "source": "https://images.metahub.space/poster/small/tt5052448/img",
+        "mobile": {
+          "file": "assets/movie-art/get-out-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/get-out-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 365815,
+        "source": "https://images.metahub.space/background/medium/tt5052448/img",
+        "mobile": {
+          "file": "assets/movie-art/get-out-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-toy-story",
+      "title": "Toy Story",
+      "accent": "#2266cc",
+      "poster": {
+        "file": "assets/movie-art/toy-story-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 54178,
+        "source": "https://images.metahub.space/poster/small/tt0114709/img",
+        "mobile": {
+          "file": "assets/movie-art/toy-story-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/toy-story-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 679374,
+        "source": "https://images.metahub.space/background/medium/tt0114709/img",
+        "mobile": {
+          "file": "assets/movie-art/toy-story-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-mad-max-fury-road",
+      "title": "Mad Max: Fury Road",
+      "accent": "#c25a1a",
+      "poster": {
+        "file": "assets/movie-art/mad-max-fury-road-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 25838,
+        "source": "https://images.metahub.space/poster/small/tt1392190/img",
+        "mobile": {
+          "file": "assets/movie-art/mad-max-fury-road-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/mad-max-fury-road-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 951130,
+        "source": "https://images.metahub.space/background/medium/tt1392190/img",
+        "mobile": {
+          "file": "assets/movie-art/mad-max-fury-road-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-shawshank",
+      "title": "The Shawshank Redemption",
+      "accent": "#5a4a3a",
+      "poster": {
+        "file": "assets/movie-art/shawshank-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 26932,
+        "source": "https://images.metahub.space/poster/small/tt0111161/img",
+        "mobile": {
+          "file": "assets/movie-art/shawshank-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/shawshank-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 782828,
+        "source": "https://images.metahub.space/background/medium/tt0111161/img",
+        "mobile": {
+          "file": "assets/movie-art/shawshank-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "mv-amelie",
+      "title": "Amelie",
+      "accent": "#c23b6b",
+      "poster": {
+        "file": "assets/movie-art/amelie-poster.jpg",
+        "width": 300,
+        "height": 450,
+        "bytes": 13128,
+        "source": "https://images.metahub.space/poster/small/tt0211915/img",
+        "mobile": {
+          "file": "assets/movie-art/amelie-poster.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "backdrop": {
+        "file": "assets/movie-art/amelie-background.jpg",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 397047,
+        "source": "https://images.metahub.space/background/medium/tt0211915/img",
+        "mobile": {
+          "file": "assets/movie-art/amelie-background.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "sg-hades",
+      "title": "Hades",
+      "hero": {
+        "file": "assets/game-art/hades-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 474286,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/hades-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/hades-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 56368,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/hades-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/hades-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 70480,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/logo.png",
+        "mobile": {
+          "file": "assets/game-art/hades-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-hollow-knight",
+      "title": "Hollow Knight",
+      "hero": {
+        "file": "assets/game-art/hollow-knight-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 186926,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/hollow-knight-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/hollow-knight-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 43840,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/hollow-knight-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/hollow-knight-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 84009,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/logo.png",
+        "mobile": {
+          "file": "assets/game-art/hollow-knight-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-elden-ring",
+      "title": "Elden Ring",
+      "hero": {
+        "file": "assets/game-art/elden-ring-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 203966,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/elden-ring-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/elden-ring-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 32689,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/elden-ring-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/elden-ring-logo.png",
+        "width": 640,
+        "height": 98,
+        "bytes": 86158,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/logo.png",
+        "mobile": {
+          "file": "assets/game-art/elden-ring-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-gow-ragnarok",
+      "title": "God of War Ragnarök",
+      "hero": {
+        "file": "assets/game-art/gow-ragnarok-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 399090,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/gow-ragnarok-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/gow-ragnarok-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 47645,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/gow-ragnarok-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/gow-ragnarok-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 167748,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/logo.png",
+        "mobile": {
+          "file": "assets/game-art/gow-ragnarok-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-bg3",
+      "title": "Baldur's Gate 3",
+      "hero": {
+        "file": "assets/game-art/bg3-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 342486,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/bg3-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/bg3-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 56973,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/bg3-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/bg3-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 184065,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/logo.png",
+        "mobile": {
+          "file": "assets/game-art/bg3-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-stardew",
+      "title": "Stardew Valley",
+      "hero": {
+        "file": "assets/game-art/stardew-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 249959,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/stardew-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/stardew-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 58853,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/stardew-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/stardew-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 93533,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/logo.png",
+        "mobile": {
+          "file": "assets/game-art/stardew-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-it-takes-two",
+      "title": "It Takes Two",
+      "hero": {
+        "file": "assets/game-art/it-takes-two-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 315785,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/it-takes-two-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/it-takes-two-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 51761,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/it-takes-two-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/it-takes-two-logo.png",
+        "width": 391,
+        "height": 279,
+        "bytes": 104526,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/logo.png",
+        "mobile": {
+          "file": "assets/game-art/it-takes-two-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-forza5",
+      "title": "Forza Horizon 5",
+      "hero": {
+        "file": "assets/game-art/forza5-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 840827,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/forza5-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/forza5-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 56059,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/forza5-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/forza5-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 33540,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/logo.png",
+        "mobile": {
+          "file": "assets/game-art/forza5-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-dead-cells",
+      "title": "Dead Cells",
+      "hero": {
+        "file": "assets/game-art/dead-cells-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 287205,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/dead-cells-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/dead-cells-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 113671,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/dead-cells-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/dead-cells-logo.png",
+        "width": 640,
+        "height": 358,
+        "bytes": 27791,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/logo.png",
+        "mobile": {
+          "file": "assets/game-art/dead-cells-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-outer-wilds",
+      "title": "Outer Wilds",
+      "hero": {
+        "file": "assets/game-art/outer-wilds-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 188495,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/outer-wilds-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/outer-wilds-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 37699,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/outer-wilds-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/outer-wilds-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 65070,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/logo.png",
+        "mobile": {
+          "file": "assets/game-art/outer-wilds-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    },
+    {
+      "id": "sg-persona5",
+      "title": "Persona 5 Royal",
+      "hero": {
+        "file": "assets/game-art/persona5-hero.jpg",
+        "width": 1920,
+        "height": 620,
+        "bytes": 283213,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_hero.jpg",
+        "mobile": {
+          "file": "assets/game-art/persona5-hero.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "card": {
+        "file": "assets/game-art/persona5-card.jpg",
+        "width": 460,
+        "height": 215,
+        "bytes": 57228,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/header.jpg",
+        "mobile": {
+          "file": "assets/game-art/persona5-card.jpg",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      },
+      "logo": {
+        "file": "assets/game-art/persona5-logo.png",
+        "width": 640,
+        "height": 360,
+        "bytes": 128922,
+        "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/logo.png",
+        "mobile": {
+          "file": "assets/game-art/persona5-logo.png",
+          "position": "72% center"
+        },
+        "fallback": "Deterministic local SVG illustration, with console warning"
+      }
+    }
+  ],
+  "downloads": [
+    {
+      "title": "The Godfather",
+      "kind": "poster",
+      "file": "assets/movie-art/godfather-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0068646/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0068646/img",
+      "bytes": 20953,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "The Godfather",
+      "kind": "background",
+      "file": "assets/movie-art/godfather-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0068646/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0068646/img",
+      "bytes": 191841,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Jurassic Park",
+      "kind": "poster",
+      "file": "assets/movie-art/jurassic-park-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0107290/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0107290/img",
+      "bytes": 14404,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "The Matrix",
+      "kind": "poster",
+      "file": "assets/movie-art/matrix-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0133093/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0133093/img",
+      "bytes": 34606,
+      "mime": "image/webp"
+    },
+    {
+      "title": "Spirited Away",
+      "kind": "poster",
+      "file": "assets/movie-art/spirited-away-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0245429/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0245429/img",
+      "bytes": 15862,
+      "mime": "image/webp"
+    },
+    {
+      "title": "Jurassic Park",
+      "kind": "background",
+      "file": "assets/movie-art/jurassic-park-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0107290/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0107290/img",
+      "bytes": 368989,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Spirited Away",
+      "kind": "background",
+      "file": "assets/movie-art/spirited-away-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0245429/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0245429/img",
+      "bytes": 368050,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "The Matrix",
+      "kind": "background",
+      "file": "assets/movie-art/matrix-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0133093/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0133093/img",
+      "bytes": 688767,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Jaws",
+      "kind": "poster",
+      "file": "assets/movie-art/jaws-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0073195/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0073195/img",
+      "bytes": 26634,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Back to the Future",
+      "kind": "poster",
+      "file": "assets/movie-art/back-to-the-future-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0088763/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0088763/img",
+      "bytes": 29804,
+      "mime": "image/webp"
+    },
+    {
+      "title": "Inception",
+      "kind": "poster",
+      "file": "assets/movie-art/inception-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt1375666/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt1375666/img",
+      "bytes": 41941,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Pulp Fiction",
+      "kind": "poster",
+      "file": "assets/movie-art/pulp-fiction-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0110912/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0110912/img",
+      "bytes": 55183,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Jaws",
+      "kind": "background",
+      "file": "assets/movie-art/jaws-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0073195/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0073195/img",
+      "bytes": 241299,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Inception",
+      "kind": "background",
+      "file": "assets/movie-art/inception-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt1375666/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt1375666/img",
+      "bytes": 695668,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Back to the Future",
+      "kind": "background",
+      "file": "assets/movie-art/back-to-the-future-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0088763/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0088763/img",
+      "bytes": 1047209,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Pulp Fiction",
+      "kind": "background",
+      "file": "assets/movie-art/pulp-fiction-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0110912/img",
+      "resolvedSource": "https://live.metahub.space/background/medium/tt0110912/img",
+      "bytes": 173258,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "The Dark Knight",
+      "kind": "poster",
+      "file": "assets/movie-art/dark-knight-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0468569/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0468569/img",
+      "bytes": 20796,
+      "mime": "image/webp"
+    },
+    {
+      "title": "La La Land",
+      "kind": "poster",
+      "file": "assets/movie-art/la-la-land-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt3783958/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt3783958/img",
+      "bytes": 18527,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "La La Land",
+      "kind": "background",
+      "file": "assets/movie-art/la-la-land-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt3783958/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt3783958/img",
+      "bytes": 923572,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Get Out",
+      "kind": "poster",
+      "file": "assets/movie-art/get-out-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt5052448/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt5052448/img",
+      "bytes": 17760,
+      "mime": "image/webp"
+    },
+    {
+      "title": "Get Out",
+      "kind": "background",
+      "file": "assets/movie-art/get-out-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt5052448/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt5052448/img",
+      "bytes": 365815,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "The Dark Knight",
+      "kind": "background",
+      "file": "assets/movie-art/dark-knight-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0468569/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0468569/img",
+      "bytes": 655945,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Parasite",
+      "kind": "poster",
+      "file": "assets/movie-art/parasite-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt6751668/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt6751668/img",
+      "bytes": 38973,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Parasite",
+      "kind": "background",
+      "file": "assets/movie-art/parasite-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt6751668/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt6751668/img",
+      "bytes": 596617,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "kind": "poster",
+      "file": "assets/movie-art/shawshank-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0111161/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0111161/img",
+      "bytes": 26932,
+      "mime": "image/webp"
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "kind": "background",
+      "file": "assets/movie-art/shawshank-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0111161/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0111161/img",
+      "bytes": 782828,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Toy Story",
+      "kind": "background",
+      "file": "assets/movie-art/toy-story-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0114709/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0114709/img",
+      "bytes": 679374,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Toy Story",
+      "kind": "poster",
+      "file": "assets/movie-art/toy-story-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0114709/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0114709/img",
+      "bytes": 54178,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Mad Max: Fury Road",
+      "kind": "poster",
+      "file": "assets/movie-art/mad-max-fury-road-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt1392190/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt1392190/img",
+      "bytes": 25838,
+      "mime": "image/webp"
+    },
+    {
+      "title": "Mad Max: Fury Road",
+      "kind": "background",
+      "file": "assets/movie-art/mad-max-fury-road-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt1392190/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt1392190/img",
+      "bytes": 951130,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "Amélie",
+      "kind": "poster",
+      "file": "assets/movie-art/amelie-poster.jpg",
+      "source": "https://images.metahub.space/poster/small/tt0211915/img",
+      "resolvedSource": "https://images.metahub.space/poster/small/tt0211915/img",
+      "bytes": 13128,
+      "mime": "image/webp"
+    },
+    {
+      "title": "Amélie",
+      "kind": "background",
+      "file": "assets/movie-art/amelie-background.jpg",
+      "source": "https://images.metahub.space/background/medium/tt0211915/img",
+      "resolvedSource": "https://images.metahub.space/background/medium/tt0211915/img",
+      "bytes": 397047,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "hollow-knight",
+      "kind": "hero",
+      "file": "assets/game-art/hollow-knight-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_hero.jpg",
+      "bytes": 186926,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "cyberpunk-2077",
+      "kind": "hero",
+      "file": "assets/game-art/cyberpunk-2077-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg",
+      "bytes": 222935,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "hades",
+      "kind": "hero",
+      "file": "assets/game-art/hades-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+      "bytes": 474286,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "hollow-knight",
+      "kind": "card",
+      "file": "assets/game-art/hollow-knight-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+      "bytes": 43840,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "hades",
+      "kind": "card",
+      "file": "assets/game-art/hades-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg",
+      "bytes": 56368,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "death-stranding",
+      "kind": "hero",
+      "file": "assets/game-art/death-stranding-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/library_hero.jpg",
+      "bytes": 151838,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "death-stranding",
+      "kind": "card",
+      "file": "assets/game-art/death-stranding-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/header.jpg",
+      "bytes": 27954,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "hollow-knight",
+      "kind": "logo",
+      "file": "assets/game-art/hollow-knight-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/logo.png",
+      "bytes": 84009,
+      "mime": "image/png"
+    },
+    {
+      "title": "death-stranding",
+      "kind": "logo",
+      "file": "assets/game-art/death-stranding-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/logo.png",
+      "bytes": 8178,
+      "mime": "image/png"
+    },
+    {
+      "title": "hades",
+      "kind": "logo",
+      "file": "assets/game-art/hades-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/logo.png",
+      "bytes": 70480,
+      "mime": "image/png"
+    },
+    {
+      "title": "cyberpunk-2077",
+      "kind": "logo",
+      "file": "assets/game-art/cyberpunk-2077-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/logo.png",
+      "bytes": 80192,
+      "mime": "image/png"
+    },
+    {
+      "title": "elden-ring",
+      "kind": "hero",
+      "file": "assets/game-art/elden-ring-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_hero.jpg",
+      "bytes": 203966,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "bg3",
+      "kind": "hero",
+      "file": "assets/game-art/bg3-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/library_hero.jpg",
+      "bytes": 342486,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "elden-ring",
+      "kind": "card",
+      "file": "assets/game-art/elden-ring-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
+      "bytes": 32689,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "bg3",
+      "kind": "card",
+      "file": "assets/game-art/bg3-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg",
+      "bytes": 56973,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "stardew",
+      "kind": "hero",
+      "file": "assets/game-art/stardew-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/library_hero.jpg",
+      "bytes": 249959,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "stardew",
+      "kind": "card",
+      "file": "assets/game-art/stardew-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+      "bytes": 58853,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "bg3",
+      "kind": "logo",
+      "file": "assets/game-art/bg3-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/logo.png",
+      "bytes": 184065,
+      "mime": "image/png"
+    },
+    {
+      "title": "elden-ring",
+      "kind": "logo",
+      "file": "assets/game-art/elden-ring-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/logo.png",
+      "bytes": 86158,
+      "mime": "image/png"
+    },
+    {
+      "title": "stardew",
+      "kind": "logo",
+      "file": "assets/game-art/stardew-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/logo.png",
+      "bytes": 93533,
+      "mime": "image/png"
+    },
+    {
+      "title": "gow-ragnarok",
+      "kind": "hero",
+      "file": "assets/game-art/gow-ragnarok-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/library_hero.jpg",
+      "bytes": 399090,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "gow-ragnarok",
+      "kind": "card",
+      "file": "assets/game-art/gow-ragnarok-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/header.jpg",
+      "bytes": 47645,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "gow-ragnarok",
+      "kind": "logo",
+      "file": "assets/game-art/gow-ragnarok-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/2322010/logo.png",
+      "bytes": 167748,
+      "mime": "image/png"
+    },
+    {
+      "title": "outer-wilds",
+      "kind": "hero",
+      "file": "assets/game-art/outer-wilds-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/library_hero.jpg",
+      "bytes": 188495,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "forza5",
+      "kind": "hero",
+      "file": "assets/game-art/forza5-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/library_hero.jpg",
+      "bytes": 840827,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "it-takes-two",
+      "kind": "hero",
+      "file": "assets/game-art/it-takes-two-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/library_hero.jpg",
+      "bytes": 315785,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "outer-wilds",
+      "kind": "card",
+      "file": "assets/game-art/outer-wilds-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/header.jpg",
+      "bytes": 37699,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "it-takes-two",
+      "kind": "card",
+      "file": "assets/game-art/it-takes-two-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg",
+      "bytes": 51761,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "dead-cells",
+      "kind": "hero",
+      "file": "assets/game-art/dead-cells-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/library_hero.jpg",
+      "bytes": 287205,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "dead-cells",
+      "kind": "card",
+      "file": "assets/game-art/dead-cells-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/header.jpg",
+      "bytes": 113671,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "forza5",
+      "kind": "card",
+      "file": "assets/game-art/forza5-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg",
+      "resolvedSource": "https://cdn.steamstatic.com/steam/apps/1551360/header.jpg",
+      "bytes": 56059,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "forza5",
+      "kind": "logo",
+      "file": "assets/game-art/forza5-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/logo.png",
+      "bytes": 33540,
+      "mime": "image/png"
+    },
+    {
+      "title": "it-takes-two",
+      "kind": "logo",
+      "file": "assets/game-art/it-takes-two-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/logo.png",
+      "bytes": 104526,
+      "mime": "image/png"
+    },
+    {
+      "title": "dead-cells",
+      "kind": "logo",
+      "file": "assets/game-art/dead-cells-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/588650/logo.png",
+      "bytes": 27791,
+      "mime": "image/png"
+    },
+    {
+      "title": "outer-wilds",
+      "kind": "logo",
+      "file": "assets/game-art/outer-wilds-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/753640/logo.png",
+      "bytes": 65070,
+      "mime": "image/png"
+    },
+    {
+      "title": "persona5",
+      "kind": "hero",
+      "file": "assets/game-art/persona5-hero.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_hero.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/library_hero.jpg",
+      "bytes": 283213,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "persona5",
+      "kind": "card",
+      "file": "assets/game-art/persona5-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/header.jpg",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/header.jpg",
+      "bytes": 57228,
+      "mime": "image/jpeg"
+    },
+    {
+      "title": "persona5",
+      "kind": "logo",
+      "file": "assets/game-art/persona5-logo.png",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/logo.png",
+      "resolvedSource": "https://cdn.cloudflare.steamstatic.com/steam/apps/1687950/logo.png",
+      "bytes": 128922,
+      "mime": "image/png"
+    },
+    {
+      "file": "assets/game-art/cyberpunk-2077-card.jpg",
+      "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+      "title": "Cyberpunk 2077",
+      "kind": "card"
+    }
+  ]
+}

@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = __dirname;
-const port = 8973;
+const port = Number(process.env.PORT) || 8973;
 
 const mime = {
   ".html": "text/html; charset=utf-8",
@@ -29,4 +29,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream" });
     res.end(data);
   });
-}).listen(port, () => console.log("Static server running at http://localhost:" + port));
+}).listen(port, "127.0.0.1", () => console.log("Static server running at http://localhost:" + port));

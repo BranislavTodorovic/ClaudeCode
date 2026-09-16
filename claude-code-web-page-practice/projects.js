@@ -19,21 +19,21 @@
     var hue = coverHue(p.name + (tags[0] || ""));
     var coverStyle = "background:linear-gradient(125deg,hsl(" + hue + " 38% 22%),hsl(" + ((hue + 45) % 360) + " 42% 34%))";
     var blueprintStyle = "border-color:hsl(" + hue + " 60% 78% / .3)";
-    return '<article class="project-card"><div class="project-preview" aria-hidden="true" style="' + coverStyle + '"><span>' + esc(p.name.slice(0, 2).toUpperCase()) + '</span><div class="project-blueprint" style="' + blueprintStyle + '"></div></div><div class="project-card-body"><div class="project-card-top"><h3>' + esc(p.name) + '</h3><span class="status-chip status-' + esc(p.status) + '">' + esc(p.status) + '</span></div>' +
+    return '<article class="project-card"><div class="project-preview" aria-hidden="true" style="' + coverStyle + '">' + window.OneSpaceVisual.cover(p.name + ' ' + tags.join(' '), 'project', 'hsl(' + hue + ' 60% 70%)') + '<span class="project-cover-label">' + esc(tags[0] || 'IN THE MAKING') + '</span></div><div class="project-card-body"><div class="project-card-top"><h3>' + esc(p.name) + '</h3><span class="status-chip status-' + esc(p.status) + '">' + esc(p.status) + '</span></div>' +
       (p.description ? '<p class="project-description">' + esc(p.description) + '</p>' : '<p class="project-description">An idea in progress. Give it a next step.</p>') +
       '<div class="project-tags">' + tags.map(function (tag) { return '<span>' + esc(tag) + '</span>'; }).join("") + '</div><div class="project-meter" role="progressbar" aria-label="' + esc(p.name) + ' progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="project-card-foot"><span>' + progress + '% complete</span>' +
-      (compact ? '<button class="btn btn-ghost" type="button" data-page-jump="projects">Open Projects ↗</button>' :
-        '<div>' + (url ? '<a class="btn" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open link ↗</a>' : '') + '<button class="btn" type="button" data-project-edit="' + esc(p.id) + '">Edit</button><button class="btn btn-ghost" type="button" data-project-delete="' + esc(p.id) + '">Delete</button></div>') + '</div></div></article>';
+      (compact ? '<button class="btn btn-ghost" type="button" data-page-jump="projects">Open Projects <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>' :
+        '<div>' + (url ? '<a class="btn" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open link <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>' : '') + '<button class="btn" type="button" data-project-edit="' + esc(p.id) + '">Edit</button><button class="btn btn-ghost" type="button" data-project-delete="' + esc(p.id) + '">Delete</button></div>') + '</div></div></article>';
   }
   function tile(label, value, note, page, symbol) {
-    return '<button class="overview-tile" type="button" data-page-jump="' + page + '"><span class="overview-tile-top"><span>' + label + '</span><span aria-hidden="true">' + symbol + '</span></span><strong>' + value + '</strong><span class="overview-tile-bottom">' + esc(note) + '<span aria-hidden="true">↗</span></span></button>';
+    return '<button class="overview-tile" type="button" data-page-jump="' + page + '"><span class="overview-tile-top"><span>' + label + '</span><span aria-hidden="true">' + OS.iconSvg(page === 'notes' ? 'book' : page === 'productivity' ? 'check' : 'layers') + '</span></span><strong>' + value + '</strong><span class="overview-tile-bottom">' + esc(note) + '<span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></span></button>';
   }
   function render() {
     var items = projects(), active = items.filter(function (p) { return p.status !== "done"; });
     document.getElementById("projectCount").textContent = items.length + (items.length === 1 ? " project" : " projects");
-    list.innerHTML = items.length ? items.map(function (p) { return preview(p, false); }).join("") : '<div class="proof-empty"><span aria-hidden="true">↗</span><h3>Your next idea starts here.</h3><p>Create your first project above. No sample projects, just your own work.</p></div>';
+    list.innerHTML = items.length ? items.map(function (p) { return preview(p, false); }).join("") : '<div class="proof-empty"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span><h3>Your next idea starts here.</h3><p>Create your first project above. No sample projects, just your own work.</p></div>';
     document.getElementById("workProjectCount").textContent = active.length + " in progress";
-    document.getElementById("workProjectsList").innerHTML = active.length ? active.slice(0, 3).map(function (p) { return preview(p, true); }).join("") : '<div class="proof-empty"><h3>A clear desk. A fresh start.</h3><p>Create a project and its progress will appear here.</p><button type="button" class="btn" data-page-jump="projects">Create your first project ↗</button></div>';
+    document.getElementById("workProjectsList").innerHTML = active.length ? active.slice(0, 3).map(function (p) { return preview(p, true); }).join("") : '<div class="proof-empty"><h3>A clear desk. A fresh start.</h3><p>Create a project and its progress will appear here.</p><button type="button" class="btn" data-page-jump="projects">Create your first project <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>';
     var tasks = OS.safeGetJSON("orbit-tasks", []), open = OS.prioritizeTasks(tasks).filter(function (t) { return !t.done; });
     var high = open.filter(function (t) { return t.priority === "high"; }).length;
     var notes = OS.safeGetJSON("orbit-notes-list", []);
@@ -44,7 +44,7 @@
     document.getElementById("workOverview").innerHTML =
       tile("In progress", active.length, "Projects moving toward done", "projects", "▧") +
       tile("Next up", open.length, high ? high + (high === 1 ? " high-priority task" : " high-priority tasks") : "Your priorities, in one place", "productivity", "✓") +
-      tile("Finished", items.filter(function (p) { return p.status === "done"; }).length, "Make space for what comes next", "projects", "↗");
+      tile("Finished", items.filter(function (p) { return p.status === "done"; }).length, "Make space for what comes next", "projects", "");
   }
   function cancel() { editingId = null; form.reset(); document.getElementById("projectSave").textContent = "Create project"; document.getElementById("projectFormHeading").textContent = "Create a project"; document.getElementById("projectCancel").hidden = true; }
   form.addEventListener("submit", function (e) {
@@ -101,3 +101,4 @@
   });
   render();
 })();
+

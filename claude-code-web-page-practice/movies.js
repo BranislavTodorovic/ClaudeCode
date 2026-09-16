@@ -408,12 +408,15 @@
       var img = e.target;
       if (!img.classList || !img.classList.contains("mv-poster-img")) return;
       var title = img.getAttribute("data-fallback-title") || "";
+      console.warn('[OneSpace asset]', title, img.getAttribute('src'));
+      var original = (window.SEED_MOVIES || []).find(function(m) { return m.title === title; });
+      if(original && original.backdrop && !img.dataset.fallbackTried) { img.dataset.fallbackTried='true'; img.src=original.backdrop.src; return; }
       var accent = img.getAttribute("data-fallback-accent") || "#7a8fff";
       var cls = img.getAttribute("data-fallback-class") || "mv-poster";
       var cover = document.createElement("div");
       cover.className = cls + " mv-poster-cover";
       cover.style.background = "linear-gradient(160deg," + accent + ",color-mix(in srgb," + accent + " 40%,#0b0b14))";
-      cover.innerHTML = mvIcon("film") + "<span>" + esc(title) + "</span>";
+      cover.innerHTML = window.OneSpaceVisual.cover(title, 'film', accent);
       img.replaceWith(cover);
     }, true);
   }
@@ -1024,7 +1027,7 @@
     spotlight.id = movie.id;
     var list = featuredMovies();
     var index = list.findIndex(function (m) { return m.id === movie.id; });
-    hero.dataset.movieId = movie.id;
+    hero.dataset.movieId = movie.id; hero.style.setProperty('--feature-accent', movie.accent || '#d4af37');
     var inLib = findLibrary(movie.id);
     var content = document.getElementById("mvHeroContent");
     content.innerHTML =
@@ -1043,7 +1046,7 @@
       art.querySelectorAll(".mv-scene-bg").forEach(function (p) { p.classList.remove("is-active"); });
       var scene = document.createElement("div");
       scene.className = "mv-scene-bg";
-      scene.innerHTML = buildMovieSceneSvg(movie);
+      scene.innerHTML = movie.backdrop && movie.backdrop.src ? '<img class="mv-backdrop-img" src="' + esc(movie.backdrop.src) + '" alt="" width="1920" height="1080" decoding="async" data-fallback-src="' + esc(movie.poster && movie.poster.src || '') + '">' : buildMovieSceneSvg(movie);
       art.appendChild(scene);
       requestAnimationFrame(function () { scene.classList.add("is-active"); });
       setTimeout(function () { Array.from(art.children).forEach(function (p) { if (p !== art.lastElementChild) p.remove(); }); }, 650);

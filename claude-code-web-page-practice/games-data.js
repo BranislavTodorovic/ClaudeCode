@@ -141,8 +141,8 @@
       platform: "PC",
       genre: "Open world",
       accent: "#00f0ff",
-      logo: { kind: "asset", src: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/logo.png" },
-      artwork: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg",
+      logo: { kind: "asset", src: "assets/game-art/cyberpunk-2077-logo.png" },
+      artwork: "assets/game-art/cyberpunk-2077-hero.jpg",
       world: "neon",
       tagline: "Choose your life. Or let it choose you.",
       trackerType: "story",
@@ -155,8 +155,8 @@
       platform: "Nintendo Switch",
       genre: "Action RPG",
       accent: "#ff6b57",
-      logo: { kind: "asset", src: "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/logo.png" },
-      artwork: "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+      logo: { kind: "asset", src: "assets/game-art/hades-logo.png" },
+      artwork: "assets/game-art/hades-hero.jpg",
       world: "crimson",
       tagline: "Every escape is a new beginning.",
       trackerType: "story",
@@ -169,8 +169,8 @@
       platform: "PS5",
       genre: "Adventure",
       accent: "#7cc2ff",
-      logo: { kind: "asset", src: "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/logo.png" },
-      artwork: "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/library_hero.jpg",
+      logo: { kind: "asset", src: "assets/game-art/death-stranding-logo.png" },
+      artwork: "assets/game-art/death-stranding-hero.jpg",
       world: "aurora",
       tagline: "A connection is all you need.",
       trackerType: "story",
@@ -193,4 +193,8 @@
     { id: "sg-persona5", title: "Persona 5 Royal", genres: ["RPG", "Story-rich"], platforms: ["PC", "PS5", "Xbox", "Nintendo Switch"], playstyles: ["Single-player", "Long sessions"], moods: ["Atmospheric", "Challenging"], accent: "#c0272d", blurb: "A stylish turn-based RPG about a group of students leading double lives as phantom thieves." },
     { id: "sg-genshin", title: "Genshin Impact", genres: ["RPG", "Open world", "Adventure"], platforms: ["PC", "PS5", "Mobile"], playstyles: ["Single-player", "Co-op", "Short sessions"], moods: ["Relaxed", "Atmospheric"], accent: "#5dade2", blurb: "A free-to-play open-world action RPG you can dip into for a short session or an afternoon." }
   ];
+  // Local artwork is shared by catalog matches and tracked copies.
+  var artSlugs = {"Hades":"hades","Hollow Knight":"hollow-knight","Elden Ring":"elden-ring","God of War Ragnarök":"gow-ragnarok","Baldur's Gate 3":"bg3","Stardew Valley":"stardew","It Takes Two":"it-takes-two","Forza Horizon 5":"forza5","Dead Cells":"dead-cells","Outer Wilds":"outer-wilds","Persona 5 Royal":"persona5"};
+  window.SUGGESTION_CATALOG.forEach(function(game) { var slug=artSlugs[game.title]; if(slug) { game.artwork='assets/game-art/'+slug+'-hero.jpg'; game.cardArtwork='assets/game-art/'+slug+'-card.jpg'; game.logo={kind:'asset',src:'assets/game-art/'+slug+'-logo.png'}; } });
+  window.DEFAULT_GAMES.forEach(function(game) { var slug=game.id.replace('game-',''); if(['hades','cyberpunk-2077','death-stranding'].includes(slug)) game.cardArtwork='assets/game-art/'+slug+'-card.jpg'; game.artworkPosition=slug==='hades'?'65% center':slug==='cyberpunk-2077'?'62% center':'center'; });
 })();
