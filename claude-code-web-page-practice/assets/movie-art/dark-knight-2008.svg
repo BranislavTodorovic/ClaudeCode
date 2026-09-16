@@ -1,0 +1,21 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#080b12"/>
+      <stop offset="48%" stop-color="#111a2e"/>
+      <stop offset="100%" stop-color="#070a10"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <circle cx="515" cy="200" r="160" fill="#4d5d7a" opacity="0.24"/>
+  <path d="M0 820 L170 520 L350 560 L470 430 L720 820 L720 1080 L0 1080 Z" fill="#0d1422" opacity="0.9"/>
+  <path d="M200 830 L310 420 L470 470 L550 830 Z" fill="#1d2a38" opacity="0.9"/>
+  <path d="M355 390 L445 270 L530 390 Z" fill="#8d9ab1" opacity="0.8"/>
+  <path d="M365 410 L420 330 L487 410 Z" fill="#eff5ff" opacity="0.7"/>
+  <path d="M270 650 L360 530 L450 650 L390 820 L310 820 Z" fill="#d9e1ee" opacity="0.72"/>
+  <path d="M200 820 L275 700 L360 820 Z" fill="#b1bfdb" opacity="0.74"/>
+  <path d="M460 820 L520 700 L590 820 Z" fill="#a5b0c7" opacity="0.74"/>
+  <path d="M71 1010 L640 1010" stroke="#6d7ea2" stroke-width="4" opacity="0.6"/>
+  <text x="360" y="90" text-anchor="middle" font-size="24" fill="#dfe9ff" letter-spacing="8" font-family="Segoe UI, Arial, sans-serif">THE DARK KNIGHT</text>
+  <text x="360" y="960" text-anchor="middle" font-size="48" fill="#eef5ff" font-weight="700" font-family="Segoe UI, Arial, sans-serif">BATMAN</text>
+</svg>

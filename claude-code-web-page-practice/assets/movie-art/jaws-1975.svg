@@ -1,0 +1,25 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#041821"/>
+      <stop offset="48%" stop-color="#0a3452"/>
+      <stop offset="100%" stop-color="#07141a"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2d7db2" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#091820" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <ellipse cx="360" cy="290" rx="260" ry="180" fill="#0a2030" opacity="0.9"/>
+  <path d="M0 720 C120 680, 200 640, 300 690 S520 760, 720 690 L720 1080 L0 1080 Z" fill="url(#water)"/>
+  <path d="M140 820 L250 510 L390 540 L470 820 Z" fill="#7caac4" opacity="0.45"/>
+  <path d="M190 860 L325 520 L450 620 L510 860 Z" fill="#dfeef7" opacity="0.7"/>
+  <path d="M310 510 C350 490, 500 470, 530 510 L570 840 L240 840 L270 610 L310 510 Z" fill="#1a2d39" opacity="0.85"/>
+  <path d="M330 560 C355 530, 500 505, 520 535 C520 535, 545 700, 490 820 L255 820 C265 720, 290 595, 330 560 Z" fill="#a8c8d7" opacity="0.88"/>
+  <circle cx="540" cy="275" r="62" fill="#d7ecf5" opacity="0.8"/>
+  <path d="M200 930 L330 880 L420 930 L470 1020 L200 1020 Z" fill="#061d28" opacity="0.9"/>
+  <text x="360" y="75" text-anchor="middle" font-size="28" fill="#dfeff9" letter-spacing="8" font-family="Segoe UI, Arial, sans-serif">JAWS</text>
+  <text x="360" y="966" text-anchor="middle" font-size="56" fill="#edf6fb" font-weight="700" font-family="Segoe UI, Arial, sans-serif">JAWS</text>
+  <rect x="80" y="1000" width="560" height="4" fill="#8ec9eb" opacity="0.7"/>
+</svg>

@@ -61,77 +61,77 @@
     {
       id: "mv-jaws", title: "Jaws", genre: ["Thriller", "Horror"], year: 1975, decade: "1970s",
       durationMinutes: 124, language: "English", type: "Movie", platforms: ["Own It"], rating: 8.1,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/jaws-1975.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/jaws-1975.svg" },
       moods: ["Suspenseful", "Dark"], tags: ["Shark", "Classic", "Spielberg"], accent: "#0f5f7a",
       blurb: "A giant great white shark terrorizes a New England beach town, forcing three men to hunt it down."
     },
     {
       id: "mv-back-to-the-future", title: "Back to the Future", genre: ["Adventure", "Comedy", "Sci-Fi"], year: 1985, decade: "1980s",
       durationMinutes: 116, language: "English", type: "Movie", platforms: ["Netflix", "Own It"], rating: 8.5,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/back-to-the-future-1985.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/back-to-the-future-1985.svg" },
       moods: ["Feel-good", "Nostalgic"], tags: ["Time Travel", "Comedy", "Classic"], accent: "#c9711a",
       blurb: "A teenager is accidentally sent 30 years into the past in a time-traveling DeLorean built by his eccentric friend."
     },
     {
       id: "mv-pulp-fiction", title: "Pulp Fiction", genre: ["Crime", "Drama"], year: 1994, decade: "1990s",
       durationMinutes: 154, language: "English", type: "Movie", platforms: ["Prime Video", "Own It"], rating: 8.9,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/pulp-fiction-1994.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/pulp-fiction-1994.svg" },
       moods: ["Dark", "Intense"], tags: ["Nonlinear", "Tarantino", "Crime"], accent: "#b8860b",
       blurb: "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence."
     },
     {
       id: "mv-dark-knight", title: "The Dark Knight", genre: ["Action", "Crime", "Thriller"], year: 2008, decade: "2000s",
       durationMinutes: 152, language: "English", type: "Movie", platforms: ["HBO Max", "Own It"], rating: 9.0,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/dark-knight-2008.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/dark-knight-2008.svg" },
       moods: ["Intense", "Dark", "Epic"], tags: ["Superhero", "Batman", "Crime"], accent: "#1a1a2e",
       blurb: "Batman faces the Joker, a criminal mastermind who plunges Gotham into anarchy."
     },
     {
       id: "mv-parasite", title: "Parasite", genre: ["Drama", "Thriller"], year: 2019, decade: "2010s",
       durationMinutes: 132, language: "Korean", type: "Movie", platforms: ["Prime Video", "Own It"], rating: 8.6,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/parasite-2019.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/parasite-2019.svg" },
       moods: ["Dark", "Suspenseful"], tags: ["Class", "Satire", "Oscar Winner"], accent: "#3a4a3a",
       blurb: "Greed and class discrimination threaten the newly formed symbiotic relationship between a wealthy family and a poor one."
     },
     {
       id: "mv-la-la-land", title: "La La Land", genre: ["Romance", "Comedy", "Drama"], year: 2016, decade: "2010s",
       durationMinutes: 128, language: "English", type: "Movie", platforms: ["Netflix", "Own It"], rating: 8.0,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/la-la-land-2016.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/la-la-land-2016.svg" },
       moods: ["Feel-good", "Nostalgic"], tags: ["Musical", "Romance", "Jazz"], accent: "#d94f70",
       blurb: "A jazz pianist and an aspiring actress fall in love while pursuing their dreams in Los Angeles."
     },
     {
       id: "mv-get-out", title: "Get Out", genre: ["Horror", "Thriller"], year: 2017, decade: "2010s",
       durationMinutes: 104, language: "English", type: "Movie", platforms: ["Netflix"], rating: 7.7,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/get-out-2017.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/get-out-2017.svg" },
       moods: ["Dark", "Suspenseful"], tags: ["Social Thriller", "Horror"], accent: "#8b0000",
       blurb: "A young Black man uncovers a disturbing secret when he meets his white girlfriend's family for the first time."
     },
     {
       id: "mv-toy-story", title: "Toy Story", genre: ["Animation", "Comedy", "Adventure"], year: 1995, decade: "1990s",
       durationMinutes: 81, language: "English", type: "Movie", platforms: ["Disney+", "Own It"], rating: 8.3,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/toy-story-1995.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/toy-story-1995.svg" },
       moods: ["Feel-good", "Heartwarming"], tags: ["Pixar", "Family", "Animation"], accent: "#2266cc",
       blurb: "A cowboy doll's world is turned upside down when a spaceman action figure becomes his owner's new favorite toy."
     },
     {
       id: "mv-mad-max-fury-road", title: "Mad Max: Fury Road", genre: ["Action", "Adventure"], year: 2015, decade: "2010s",
       durationMinutes: 120, language: "English", type: "Movie", platforms: ["HBO Max", "Own It"], rating: 8.1,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/mad-max-fury-road-2015.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/mad-max-fury-road-2015.svg" },
       moods: ["Intense", "Epic"], tags: ["Post-apocalyptic", "Action", "Chase"], accent: "#c25a1a",
       blurb: "In a post-apocalyptic wasteland, Max joins a rebel convoy fleeing a tyrant across the desert."
     },
     {
       id: "mv-shawshank", title: "The Shawshank Redemption", genre: ["Drama"], year: 1994, decade: "1990s",
       durationMinutes: 142, language: "English", type: "Movie", platforms: ["Netflix", "Own It"], rating: 9.3,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/shawshank-1994.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/shawshank-1994.svg" },
       moods: ["Heartwarming", "Epic", "Nostalgic"], tags: ["Prison", "Friendship", "Hope"], accent: "#5a4a3a",
       blurb: "Two imprisoned men bond over years, finding solace and eventual redemption through acts of common decency."
     },
     {
       id: "mv-amelie", title: "Amelie", genre: ["Romance", "Comedy"], year: 2001, decade: "2000s",
       durationMinutes: 122, language: "French", type: "Movie", platforms: ["Prime Video", "Own It"], rating: 8.3,
-      poster: { kind: "placeholder" }, backdrop: { kind: "placeholder" },
+      poster: { kind: "asset", src: "assets/movie-art/amelie-2001.svg" }, backdrop: { kind: "asset", src: "assets/movie-art/amelie-2001.svg" },
       moods: ["Feel-good", "Heartwarming"], tags: ["Paris", "Whimsical", "Romance"], accent: "#c23b6b",
       blurb: "A shy waitress in Paris decides to change the lives of those around her for the better, while struggling with her own."
     }

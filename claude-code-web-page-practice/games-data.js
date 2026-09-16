@@ -134,6 +134,48 @@
       tagline: "Your next legend starts here.",
       trackerType: "weekly",
       custom: false
+    },
+    {
+      id: "game-cyberpunk-2077",
+      name: "Cyberpunk 2077",
+      platform: "PC",
+      genre: "Open world",
+      accent: "#00f0ff",
+      logo: { kind: "asset", src: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/logo.png" },
+      artwork: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg",
+      world: "neon",
+      tagline: "Choose your life. Or let it choose you.",
+      trackerType: "story",
+      custom: false,
+      story: { chapters: [{ id: "c1", title: "Night City", expanded: true, objectives: [{ id: "o1", text: "Complete the opening mission chain", done: false }, { id: "o2", text: "Set up your first apartment and contacts", done: false }, { id: "o3", text: "Hit the first major street-level gig", done: false }] }, { id: "c2", title: "Cybernetics and choices", expanded: false, objectives: [{ id: "o4", text: "Upgrade cyberware and weapons", done: false }, { id: "o5", text: "Take on a side contract in Watson", done: false }, { id: "o6", text: "Unlock a major faction questline", done: false }] }] }
+    },
+    {
+      id: "game-hades",
+      name: "Hades",
+      platform: "Nintendo Switch",
+      genre: "Action RPG",
+      accent: "#ff6b57",
+      logo: { kind: "asset", src: "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/logo.png" },
+      artwork: "https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/library_hero.jpg",
+      world: "crimson",
+      tagline: "Every escape is a new beginning.",
+      trackerType: "story",
+      custom: false,
+      story: { chapters: [{ id: "c1", title: "The house of Hades", expanded: true, objectives: [{ id: "o1", text: "Escape the first few chambers cleanly", done: false }, { id: "o2", text: "Unlock a new weapon or boon route", done: false }, { id: "o3", text: "Reach the final boss room with a stronger build", done: false }] }, { id: "c2", title: "The gods' feud", expanded: false, objectives: [{ id: "o4", text: "Clear a full heat run with a stable build", done: false }, { id: "o5", text: "Learn the late-game boon synergies", done: false }, { id: "o6", text: "Finish a boss encounter without dying", done: false }] }] }
+    },
+    {
+      id: "game-death-stranding",
+      name: "Death Stranding",
+      platform: "PS5",
+      genre: "Adventure",
+      accent: "#7cc2ff",
+      logo: { kind: "asset", src: "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/logo.png" },
+      artwork: "https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/library_hero.jpg",
+      world: "aurora",
+      tagline: "A connection is all you need.",
+      trackerType: "story",
+      custom: false,
+      story: { chapters: [{ id: "c1", title: "The coast", expanded: true, objectives: [{ id: "o1", text: "Deliver the first major package route", done: false }, { id: "o2", text: "Upgrade your equipment and balance", done: false }, { id: "o3", text: "Reach the next foothold settlement", done: false }] }, { id: "c2", title: "The road ahead", expanded: false, objectives: [{ id: "o4", text: "Create a more reliable supply chain", done: false }, { id: "o5", text: "Complete a delivery in difficult weather", done: false }, { id: "o6", text: "Unlock a regionally significant branch route", done: false }] }] }
     }
   ];
 

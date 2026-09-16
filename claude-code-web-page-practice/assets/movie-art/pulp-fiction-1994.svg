@@ -1,0 +1,22 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#120a06"/>
+      <stop offset="50%" stop-color="#3d2111"/>
+      <stop offset="100%" stop-color="#0d0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <circle cx="190" cy="280" r="150" fill="#f9d279" opacity="0.2"/>
+  <circle cx="560" cy="720" r="180" fill="#d78a2d" opacity="0.15"/>
+  <path d="M70 760 L240 420 L410 520 L610 260 L660 760 Z" fill="#1a0d09" opacity="0.82"/>
+  <path d="M150 350 L285 290 L370 520 L200 555 Z" fill="#cc7c2c" opacity="0.9"/>
+  <path d="M335 420 L480 270 L610 520 L440 590 Z" fill="#e9ae5a" opacity="0.92"/>
+  <path d="M170 660 L310 590 L420 780 L240 840 Z" fill="#f4d5a1" opacity="0.66"/>
+  <path d="M358 660 L570 610 L610 770 L420 860 Z" fill="#5b3520" opacity="0.9"/>
+  <path d="M255 520 L520 510" stroke="#f9d59c" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M270 620 L510 620" stroke="#f1b55d" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+  <text x="360" y="110" text-anchor="middle" font-size="22" fill="#f4d8a1" letter-spacing="7" font-family="Segoe UI, Arial, sans-serif">PULP FICTION</text>
+  <text x="360" y="960" text-anchor="middle" font-size="44" fill="#f8e7c8" font-weight="700" font-family="Segoe UI, Arial, sans-serif">PULP FICTION</text>
+  <rect x="85" y="996" width="550" height="4" fill="#d18d41" opacity="0.85"/>
+</svg>

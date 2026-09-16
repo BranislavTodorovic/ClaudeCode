@@ -1,0 +1,18 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1d120f"/>
+      <stop offset="48%" stop-color="#8d3b1a"/>
+      <stop offset="100%" stop-color="#160d0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <path d="M0 760 C180 660, 300 640, 420 710 S620 820, 720 700 L720 1080 L0 1080 Z" fill="#1a0d0a" opacity="0.96"/>
+  <path d="M170 820 L260 420 L465 470 L525 820 Z" fill="#d38a4a" opacity="0.8"/>
+  <path d="M245 455 L360 290 L480 470 L405 700 L295 700 Z" fill="#f4c57d" opacity="0.84"/>
+  <path d="M295 540 L360 500 L425 540 L355 680 L290 680 Z" fill="#3a2018" opacity="0.82"/>
+  <circle cx="360" cy="455" r="85" fill="#f0a24e" opacity="0.52"/>
+  <path d="M80 860 L635 860" stroke="#d9a866" stroke-width="6" opacity="0.8"/>
+  <text x="360" y="105" text-anchor="middle" font-size="22" fill="#fde6b8" letter-spacing="6" font-family="Segoe UI, Arial, sans-serif">MAD MAX</text>
+  <text x="360" y="962" text-anchor="middle" font-size="42" fill="#fff3dc" font-weight="700" font-family="Segoe UI, Arial, sans-serif">FURY ROAD</text>
+</svg>

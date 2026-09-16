@@ -1,0 +1,19 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1d0d16"/>
+      <stop offset="45%" stop-color="#d65e7a"/>
+      <stop offset="100%" stop-color="#200f12"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <circle cx="150" cy="160" r="120" fill="#f9d9b5" opacity="0.18"/>
+  <circle cx="600" cy="240" r="120" fill="#ffd6b9" opacity="0.12"/>
+  <path d="M0 725 L90 610 L232 670 L360 570 L520 635 L720 560 L720 1080 L0 1080 Z" fill="#2a1017" opacity="0.9"/>
+  <path d="M180 640 L300 420 L475 460 L560 650 Z" fill="#ffe4c8" opacity="0.76"/>
+  <path d="M245 500 L360 330 L472 500 L360 690 Z" fill="#f7b69e" opacity="0.82"/>
+  <path d="M320 630 L360 520 L395 630 Z" fill="#e7ebff" opacity="0.8"/>
+  <path d="M120 840 L600 840" stroke="#f6d4b8" stroke-width="5" opacity="0.7"/>
+  <text x="360" y="108" text-anchor="middle" font-size="22" fill="#fff0eb" letter-spacing="8" font-family="Segoe UI, Arial, sans-serif">LA LA LAND</text>
+  <text x="360" y="960" text-anchor="middle" font-size="52" fill="#fff8f5" font-weight="700" font-family="Segoe UI, Arial, sans-serif">LA LA LAND</text>
+</svg>

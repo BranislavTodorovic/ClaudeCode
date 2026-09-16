@@ -1,0 +1,18 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1c0909"/>
+      <stop offset="45%" stop-color="#4b0d10"/>
+      <stop offset="100%" stop-color="#140707"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <path d="M0 760 C120 700, 180 650, 290 670 S500 760, 720 700 L720 1080 L0 1080 Z" fill="#190709" opacity="0.94"/>
+  <path d="M140 820 L250 440 L430 470 L500 820 Z" fill="#5a1c1e" opacity="0.88"/>
+  <path d="M240 440 L350 300 L470 440 L405 680 L270 680 Z" fill="#d4b39d" opacity="0.72"/>
+  <path d="M268 540 L351 470 L436 540 L392 666 L317 666 Z" fill="#2f0d11" opacity="0.8"/>
+  <path d="M318 518 L340 430 L365 518 Z" fill="#efd0bc" opacity="0.8"/>
+  <path d="M175 870 L548 870" stroke="#853f40" stroke-width="6" opacity="0.8"/>
+  <text x="360" y="90" text-anchor="middle" font-size="24" fill="#f3d8d5" letter-spacing="7" font-family="Segoe UI, Arial, sans-serif">GET OUT</text>
+  <text x="360" y="968" text-anchor="middle" font-size="54" fill="#ffe2df" font-weight="700" font-family="Segoe UI, Arial, sans-serif">GET OUT</text>
+</svg>

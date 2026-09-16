@@ -1,0 +1,18 @@
+<svg width="720" height="1080" viewBox="0 0 720 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1d2d22"/>
+      <stop offset="100%" stop-color="#0d1a17"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1080" fill="url(#bg)"/>
+  <rect x="0" y="705" width="720" height="375" fill="#0b1715" opacity="0.9"/>
+  <rect x="110" y="290" width="500" height="470" rx="32" fill="#2d483e" opacity="0.8"/>
+  <path d="M190 710 L268 445 L373 518 L451 710 Z" fill="#ced7d4" opacity="0.76"/>
+  <path d="M240 420 L328 300 L426 418 L380 532 L274 528 Z" fill="#d2cdb3" opacity="0.78"/>
+  <path d="M220 620 L510 620" stroke="#9bb2a8" stroke-width="6" opacity="0.8"/>
+  <path d="M252 655 L242 778 M375 655 L375 792 M495 655 L511 780" stroke="#cbd7d0" stroke-width="9" stroke-linecap="round" opacity="0.75"/>
+  <path d="M93 830 L630 830" stroke="#6a7f75" stroke-width="4" opacity="0.5"/>
+  <text x="360" y="100" text-anchor="middle" font-size="22" fill="#dfece5" letter-spacing="8" font-family="Segoe UI, Arial, sans-serif">PARASITE</text>
+  <text x="360" y="960" text-anchor="middle" font-size="48" fill="#edf7f1" font-weight="700" font-family="Segoe UI, Arial, sans-serif">PARASITE</text>
+</svg>
