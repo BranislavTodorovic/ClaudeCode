@@ -1,6 +1,6 @@
 {
   "app": "OneSpace",
-  "version": 3,
+  "version": 4,
   "exportedAt": "2026-09-16T00:00:00.000Z",
   "data": {
     "orbit-theme": null,
@@ -63,6 +63,7 @@
     "orbit-work-tasks": "[{\"id\":\"fixture-task\",\"itemId\":\"fixture-story\",\"title\":\"Check imported notes\",\"details\":\"\",\"priority\":\"medium\",\"dueDate\":\"2026-09-19\",\"estimate\":1,\"done\":false,\"createdAt\":\"2026-09-17T12:00:00.000Z\",\"updatedAt\":\"2026-09-17T12:00:00.000Z\"}]",
     "orbit-work-history": "[{\"id\":\"fixture-event\",\"itemId\":\"fixture-story\",\"projectId\":\"acceptance-import-project\",\"name\":\"Verify migration\",\"action\":\"created\",\"at\":\"2026-09-17T12:00:00.000Z\",\"snapshot\":{\"id\":\"fixture-story\",\"projectId\":\"acceptance-import-project\",\"name\":\"Verify migration\",\"type\":\"story\",\"status\":\"open\",\"priority\":\"high\",\"analysis\":\"Existing data stays readable.\",\"plan\":\"Import, reload, verify.\",\"execution\":\"\",\"labels\":[\"QA\"],\"deadline\":\"2026-09-19\",\"reminderAt\":\"2026-09-18T09:00\",\"createdAt\":\"2026-09-17T12:00:00.000Z\",\"updatedAt\":\"2026-09-17T12:00:00.000Z\",\"links\":[]},\"tasks\":[]}]",
     "orbit-explore-preferences": "{\"categories\":[\"nature\"],\"budget\":[\"medium\"]}",
-    "orbit-explore-saved": "[{\"id\":\"fixture-trip\",\"destinationId\":\"azores\",\"notes\":\"Lake walk\",\"createdAt\":\"2026-09-17T12:00:00.000Z\"}]"
+    "orbit-explore-saved": "[{\"id\":\"fixture-trip\",\"destinationId\":\"azores\",\"notes\":\"Lake walk\",\"createdAt\":\"2026-09-17T12:00:00.000Z\"}]",
+    "orbit-trip-board": null
   }
 }

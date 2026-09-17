@@ -13,6 +13,7 @@
   var LEGACY_KEYS = KEYS.slice();
   var NEW_KEYS = ['orbit-work-items', 'orbit-work-tasks', 'orbit-work-history', 'orbit-explore-preferences', 'orbit-explore-saved'];
   KEYS = KEYS.concat(NEW_KEYS);
+  var V3_KEYS=KEYS.slice(); KEYS.push('orbit-trip-board'); arrayKeys.push('orbit-trip-board');
   arrayKeys = arrayKeys.concat(NEW_KEYS.filter(function (k) { return k !== 'orbit-explore-preferences'; }));
   objectKeys.push('orbit-explore-preferences');
   function text(v, max, required) { return typeof v === 'string' && v.length <= max && (!required || !!v.trim()); }
@@ -45,6 +46,7 @@
         return a.every(function (x) {
           if (!object(x) || typeof x.id !== "string" || !x.id || /[<>"']/.test(x.id)) return false;
           if (key === "orbit-notes-list") return typeof x.body === "string" && optionalString(x.title);
+          if (key === 'orbit-trip-board') return (typeof module === 'object' && module.exports ? require('./trip-board') : window.OneSpaceTrips).valid(x);
           if (key === 'orbit-work-items') return workItem(x);
           if (key === 'orbit-work-tasks') return workTask(x);
           if (key === 'orbit-work-history') return id(x.itemId) && id(x.projectId) && text(x.name,160,true) && ['created','updated','closed','reopened','deleted','task-created','task-updated','task-deleted','task-completed'].includes(x.action) && !!x.at && date(x.at,true) && (x.snapshot == null || (object(x.snapshot) && workItem(x.snapshot))) && (x.tasks == null || (Array.isArray(x.tasks) && x.tasks.every(workTask)));
@@ -102,13 +104,13 @@
       failure.recovery = before; failure.rollbackFailed = rollbackFailed; throw failure;
     }
   }
-  function backup(storage) { return { app: "OneSpace", version: 3, exportedAt: new Date().toISOString(), data: snapshot(storage) }; }
+  function backup(storage) { return { app: "OneSpace", version: 4, exportedAt: new Date().toISOString(), data: snapshot(storage) }; }
   function restore(storage, backup) {
-    if (!backup || backup.app !== "OneSpace" || ![2,3].includes(backup.version)) throw new Error("Unsupported backup");
+    if (!backup || backup.app !== "OneSpace" || ![2,3,4].includes(backup.version)) throw new Error("Unsupported backup");
     validate(backup.data);
-    if (!(backup.version === 2 ? LEGACY_KEYS : KEYS).every(function (k) { return Object.prototype.hasOwnProperty.call(backup.data, k); })) throw new Error("Incomplete backup");
+    if (!(backup.version === 2 ? LEGACY_KEYS : backup.version === 3 ? V3_KEYS : KEYS).every(function (k) { return Object.prototype.hasOwnProperty.call(backup.data, k); })) throw new Error("Incomplete backup");
     var next = Object.assign({}, backup.data);
-    NEW_KEYS.forEach(function (k) { if (!(k in next)) next[k] = null; });
+    NEW_KEYS.concat(['orbit-trip-board']).forEach(function (k) { if (!(k in next)) next[k] = null; });
     transaction(storage, next);
   }
   function reset(storage) { var data = {}; KEYS.forEach(function (k) { data[k] = null; }); transaction(storage, data); }

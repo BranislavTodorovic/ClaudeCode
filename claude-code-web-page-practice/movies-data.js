@@ -143,3 +143,5 @@ window.SEED_MOVIES.push(
 window.SEED_MOVIES.forEach(function(m){m.genre.forEach(function(g){if(!window.MOVIE_GENRES.includes(g))window.MOVIE_GENRES.push(g);});});
 
 window.SEED_MOVIES.forEach(function(m){if(!window.MOVIE_LANGUAGES.includes(m.language))window.MOVIE_LANGUAGES.push(m.language);m.moods.forEach(function(v){if(!window.MOVIE_MOODS.includes(v))window.MOVIE_MOODS.push(v);});});
+
+(function(){var metadata={'Dark':{episodes:26,seriesStatus:'Ended',lastAirDate:'2020-06-27'},"The Queen's Gambit":{episodes:7,seriesStatus:'Ended',lastAirDate:'2020-10-23'},'The Good Place':{episodes:53,seriesStatus:'Ended',lastAirDate:'2020-01-30'},'Chernobyl':{episodes:5,seriesStatus:'Ended',lastAirDate:'2019-06-03'}};(window.SEED_MOVIES||[]).forEach(function(m){if(metadata[m.title])Object.assign(m,metadata[m.title]);});})();

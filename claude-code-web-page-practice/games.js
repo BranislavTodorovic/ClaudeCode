@@ -891,6 +891,9 @@
     }).join("");
   }
   function openSuggestionDetails(id) {
+    var providerGame=library.find(function(g){return g.id===id;});
+    if(providerGame && providerGame.discoveryRecord){var extra='<h3>Your tasks</h3><p>'+statsFor(providerGame).percent+'% complete</p><ul>'+window.OneSpaceGameResources.tasks(providerGame).map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul><h3>Resources</h3>'+window.OneSpaceGameResources.resources(providerGame).map(function(r){return '<p>'+window.OneSpaceDiscovery.link(r.url,r.group+' · '+r.label)+'</p>';}).join('');window.OneSpaceDiscovery.openDetail(providerGame.discoveryRecord,null,null,extra);return;}
+
     var tracked=library.find(function(x){return x.id===id;});
     var g = tracked ? window.OneSpaceCatalog.game(tracked) : gameCatalog().find(function (x) { return x.id === id; });
     if (!g) return;
@@ -1631,6 +1634,12 @@
   /* ---------------------------------------------------------------------
    * Init
    * ------------------------------------------------------------------- */
+  window.OneSpaceGameDiscovery={has:function(x){return library.some(function(g){return g.id===x.id;});},save:function(x,f){
+    if(library.some(function(g){return g.id===x.id;})){showToast('Already in My Games.');return true;}
+    var g={id:x.id,name:x.name.slice(0,160),platform:x.platforms?.[0]||'Unspecified',platforms:x.platforms||[],genre:x.genres?.[0]||'Adventure',genres:x.genres||[],accent:'#a99ada',logo:x.image?{kind:'asset',src:x.image}:{kind:'cover'},artwork:x.image||'',cardArtwork:x.image||'',trackerType:String(f?.get('tracker')||'story'),custom:true,discoveryRecord:x,resources:window.OneSpaceGameResources.resources({name:x.name}),story:{chapters:[]}};
+    if(x.website)g.resources.unshift({group:'Official',label:'Official website',url:x.website});
+    if(x.defaultTaskTemplates)g.defaultTaskTemplates=x.defaultTaskTemplates;g.story=starterStory(g);library.push(g);if(g.trackerType==='weekly')ensureWeekly(g.id,false);if(!commitGameChanges())return false;renderAll();showToast(x.name+' added to My Games.');return true;
+  }};
   function init() {
     if (!document.getElementById("gamesView")) return;
     saveLibrary();

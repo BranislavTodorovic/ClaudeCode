@@ -624,7 +624,7 @@
         '<div class="mv-card-body">' +
           '<h3 class="mv-card-title">' + esc(movie.title) + "</h3>" +
           '<div class="mv-card-meta"><span>' + esc((movie.genre || []).join(", ")) + " · " + movie.year + '</span><span class="mv-rating">' + mvIcon("star") + ratingLabel(movie.rating) + "</span></div>" +
-          '<p class="mv-card-duration">' + esc(movie.type || 'movie') + (movie.type==='series' ? ' · '+(movie.seasons || '—')+' seasons · approx. ' : ' · ') + durationLabel(movie.durationMinutes) + " · " + esc(movie.language || "English") + "</p>" +
+          '<p class="mv-card-duration">' + esc((movie.type || 'movie').charAt(0).toUpperCase()+(movie.type || 'movie').slice(1)) + (movie.type==='series' ? ' · '+(movie.seasons || '—')+' seasons · approx. ' : ' · ') + durationLabel(movie.durationMinutes) + " · " + esc(movie.language || "English") + "</p>" +
           '<div class="mv-card-status-row">' +
             '<span class="mv-status mv-status-' + esc(movie.status) + '">' + statusLabel(movie.status) + "</span>" +
             '<select class="mv-status-select" data-action="change-status" data-id="' + esc(movie.id) + '" aria-label="Change status for ' + esc(movie.title) + '">' +
@@ -690,6 +690,8 @@
    * Movie details modal (works for seed movies and library/custom movies)
    * ------------------------------------------------------------------- */
   function openMovieDetails(movie) {
+    if(movie.discoveryRecord){window.OneSpaceDiscovery.openDetail(movie.discoveryRecord);return;}
+
     var inLibraryEntry = findLibrary(movie.id);
     var isSeed = !!findSeed(movie.id);
     document.getElementById("movieDetailsTitle").textContent = movie.title;
@@ -1449,6 +1451,13 @@
     applyTabVisibility(activeTab);
   }
 
+  window.OneSpaceTitleDiscovery={has:function(x){return library.some(function(m){return m.id===x.id;});},save:function(x,f){
+    var status=String(f?.get('saveStatus')||'unwatched'),m={id:x.id,title:x.name.slice(0,160),genre:x.genres||[],platforms:[],year:x.year||null,durationMinutes:x.runtime||null,rating:x.rating||null,blurb:(x.description||'').slice(0,5000),type:x.kind,seasons:x.seasons||null,episodes:x.episodes||null,language:x.language||'',accent:'#dba57a',poster:x.image?{kind:'asset',src:x.image}:{kind:'placeholder'},artwork:x.backdrop||x.image||'',status:status,custom:true,discoveryRecord:x,moods:[],tags:[]};
+    var existing=findLibrary(x.id),next=existing?library.map(function(v){return v.id===x.id?Object.assign({},v,{status:status}):v;}):library.concat([m]);
+    var ids=watchlist.filter(function(id){return id!==x.id;});if(status==='watchlist')ids.push(x.id);
+    var changes={};changes[MK.library]=JSON.stringify(next);changes[MK.watchlist]=JSON.stringify(ids);
+    try{window.OneSpaceStorage.transaction(window.localStorage,changes);}catch(e){showToast(e.message);return false;}library=next;watchlist=ids;renderAll();showToast(x.name+' saved.');return true;
+  }};
   function init() {
     document.addEventListener("onespace:page-changed", function (e) {
       if (e.detail && e.detail.page === "movies") { mount(); playEntryAnimation(); }

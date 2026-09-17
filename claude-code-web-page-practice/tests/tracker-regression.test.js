@@ -50,7 +50,7 @@ test('atomic lifecycle transaction rolls back all keys after quota failure',()=>
 });
 test('version 2 migrates missing domain keys to null, while version 3 requires completeness',()=>{
  const store=memory({'orbit-explore-saved':'[]','other-app':'keep'}),legacy=fixture('legacy-v2-backup.json');storage.restore(store,legacy);assert.equal(store.getItem('orbit-explore-saved'),null);assert.equal(store.getItem('other-app'),'keep');
- const current=storage.backup(store);assert.equal(current.version,3);delete current.data['orbit-work-items'];assert.throws(()=>storage.restore(store,current),/Incomplete/);
+ const current=storage.backup(store);assert.equal(current.version,4);delete current.data['orbit-work-items'];assert.throws(()=>storage.restore(store,current),/Incomplete/);
 });
 test('complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values',()=>{
  const store=memory({'other-app':'keep'}),complete=fixture('complete-backup.json');storage.restore(store,complete);assert.deepEqual(storage.snapshot(store),complete.data);

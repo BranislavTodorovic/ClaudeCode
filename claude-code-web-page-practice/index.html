@@ -107,6 +107,7 @@ body.force-full-motion { scroll-behavior:smooth; }
 <link rel="stylesheet" href="movies-cinematic.css">
 <link rel="stylesheet" href="cinematic-refinement.css">
 <link rel="stylesheet" href="tracker.css">
+<link rel="stylesheet" href="discovery.css">
 </head>
 <body class="has-sidebar" data-page="home">
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
@@ -869,6 +870,7 @@ body.force-full-motion { scroll-behavior:smooth; }
 
   <div id="toast" role="status" aria-live="polite"></div>
 
+<script src="trip-board.js"></script>
 <script src="storage-utils.js"></script>
 <script src="catalog-utils.js"></script>
 <script src="tooltip-utils.js"></script>
@@ -2632,7 +2634,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     reader.addEventListener("load", function () {
       try {
         var backup = JSON.parse(String(reader.result));
-        if (backup && [2, 3].includes(backup.version)) {
+        if (backup && [2, 3, 4].includes(backup.version)) {
           window.OneSpaceStorage.validate(backup.data);
           if (!window.confirm("Restore this complete backup? Your OneSpace data will be replaced, including games, movies, projects and preferences. Download a current backup first if needed.")) return;
           window.OneSpaceStorage.restore(window.localStorage, backup);
@@ -3089,12 +3091,15 @@ body.force-full-motion { scroll-behavior:smooth; }
 <script src="projects.js"></script>
 <script src="work-tracker.js"></script>
 <script src="explore-data.js"></script>
-<script src="explore.js"></script>
+<script src="local-discovery.js"></script>
+<script src="discovery-ui.js"></script>
+<script src="explore-global.js"></script>
 <script src="game-resources.js"></script>
 <script src="games-data.js"></script>
 <script src="games.js"></script>
 <script src="movies-data.js"></script>
 <script src="movies.js"></script>
 <script src="cinematic-scenes.js"></script>
+<script src="discovery-integration.js"></script>
 </body>
 </html>

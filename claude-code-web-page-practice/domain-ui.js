@@ -21,7 +21,7 @@
     return '<label>' + esc(label) + (type === 'textarea' ? '<textarea name="' + name + '" ' + (attrs.includes('maxlength=') ? '' : 'maxlength="10000"') + ' rows="3" ' + attrs + '>' + v + '</textarea>' : '<input name="' + name + '" type="' + (type || 'text') + '" value="' + v + '" ' + attrs + '>') + '</label>';
   }
   function select(name, label, values, current) {
-    return '<label>' + esc(label) + '<select name="' + name + '">' + values.map(function (v) { var pair = Array.isArray(v) ? v : [v, v]; return '<option value="' + esc(pair[0]) + '"' + (pair[0] === current ? ' selected' : '') + '>' + esc(pair[1]) + '</option>'; }).join('') + '</select></label>';
+    return '<label>' + esc(label) + '<select name="' + name + '">' + values.map(function (v) { var pair = Array.isArray(v) ? v : [v, v]; return '<option value="' + esc(pair[0]) + '"' + (pair[0] === current ? ' selected' : '') + '>' + esc(String(pair[1]).charAt(0).toUpperCase()+String(pair[1]).slice(1)) + '</option>'; }).join('') + '</select></label>';
   }
   window.OneSpaceUI = { open: open, field: field, select: select, confirm: function (title, message, action) { open(title, '<p>' + esc(message) + '</p>', action, 'Delete'); } };
 })();
