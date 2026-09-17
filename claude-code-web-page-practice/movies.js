@@ -1,5 +1,5 @@
 /* ===========================================================================
- * Movie Nights — Movies dashboard behavior.
+ * Movies & Series — Movies dashboard behavior.
  * Reuses window.OneSpace helpers (safeGet/safeSet/safeGetJSON/showToast/
  * openModal/closeModal/escapeHtml/uid) exposed by index.html instead of
  * redefining them. All storage keys are namespaced "orbit-movies-*" to avoid
@@ -116,7 +116,7 @@
    * ------------------------------------------------------------------- */
   function defaultPrefs() { return { genres: [], moods: [], decades: [], durations: [], languages: [], types: [], platforms: [] }; }
 
-  var library = safeGetJSON(MK.library, []);
+  var library = safeGetJSON(MK.library, []).map(function(m){return Object.assign({},m,{type:String(m.type || "movie").toLowerCase() === "series" ? "series" : "movie"});});
   /* Seed-sourced entries (custom:false) always resync their identity fields
      (poster/backdrop/blurb/tags/etc.) from the current movies-data.js
      definition, mirroring GameVault's DEFAULT_GAMES resync — a movie the
@@ -129,7 +129,7 @@
       existing.platforms = (def.platforms || []).slice(); existing.rating = def.rating;
       existing.poster = def.poster; existing.backdrop = def.backdrop;
       existing.moods = (def.moods || []).slice(); existing.tags = (def.tags || []).slice();
-      existing.blurb = def.blurb; existing.accent = def.accent;
+      existing.blurb = def.blurb; existing.accent = def.accent; existing.seasons=def.seasons;
     }
   });
 
@@ -138,6 +138,8 @@
   var prefs = safeGetJSON(MK.prefs, defaultPrefs());
   (function () { var d = defaultPrefs(); Object.keys(d).forEach(function (k) { if (!prefs[k]) prefs[k] = []; }); })();
 
+  prefs.types=(prefs.types || []).map(function(t){return t === "Series" ? "series" : t === "Movie" || t === "Documentary" ? "movie" : t;});
+  var typeFilter="", genreFilter="";
   var activeTab = "overview";
   var libraryStatusFilter = "all";
   var editingMovieId = null;
@@ -380,7 +382,7 @@
     var h = Math.floor(minutes / 60), m = minutes % 60;
     return h > 0 ? (h + "h" + (m ? " " + m + "m" : "")) : (m + "m");
   }
-  function ratingLabel(rating) { return (rating == null ? 0 : rating).toFixed(1); }
+  function ratingLabel(rating) { if (!rating) return "—"; return (rating == null ? 0 : rating).toFixed(1); }
 
   /* ---------------------------------------------------------------------
    * Poster rendering — every non-fetched movie renders a CSS-gradient
@@ -558,7 +560,7 @@
     var el = document.getElementById("mvSuggestResults");
     if (!el) return;
     var data = computeSuggestions();
-    if (!data.active) { el.innerHTML = '<p class="mv-empty">Pick a few preferences above, then select Get Movie Suggestions.</p>'; return; }
+    if (!data.active) { el.innerHTML = '<p class="mv-empty">Pick a few preferences above, then select Get Title Suggestions.</p>'; return; }
     if (!data.results.length) { el.innerHTML = '<p class="mv-empty">No movies match those filters yet — try clearing a few.</p>'; return; }
     el.innerHTML = '<p class="catalog-count" role="status">' + data.results.length + ' titles · full local catalog · matches every active filter group</p>' + data.results.map(function (r) {
       var m = r.movie;
@@ -567,7 +569,7 @@
           '<div class="mv-suggest-poster">' + posterHtml(m, "mv-suggest-poster-img") + "</div>" +
           '<div class="mv-suggest-body">' +
             '<div class="mv-suggest-top"><h3>' + esc(m.title) + '</h3><span class="mv-rating">' + mvIcon("star") + ratingLabel(m.rating) + "</span></div>" +
-            '<p class="mv-suggest-meta">' + esc((m.genre || []).join(", ")) + " · " + m.year + " · " + durationLabel(m.durationMinutes) + "</p>" +
+            '<p class="mv-suggest-meta">' + esc(m.type || "movie") + (m.type === "series" ? " · " + (m.seasons || "—") + " seasons" : "") + " · " + esc((m.genre || []).join(", ")) + " · " + m.year + " · " + durationLabel(m.durationMinutes) + "</p>" +
             '<div class="mv-tag-row">' + (m.tags || []).map(function (t) { return '<span class="mv-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
             '<p class="mv-suggest-why">' + esc(r.reasons.length ? r.reasons.join("; ") + "." : (prefs.similarTo && prefs.similarTo.length ? "Shares genres, moods or tags with your selection." : "From the complete local catalog.")) + "</p>" +
             '<div class="mv-suggest-actions">' +
@@ -608,11 +610,10 @@
   }
 
   /* ---------------------------------------------------------------------
-   * Library ("My Movies") panel
+   * Library ("My Movies & Series") panel
    * ------------------------------------------------------------------- */
   function filteredLibrary() {
-    if (libraryStatusFilter === "all") return library;
-    return library.filter(function (m) { return m.status === libraryStatusFilter; });
+    return library.filter(function(m){return (libraryStatusFilter === "all" || m.status === libraryStatusFilter) && (!typeFilter || m.type===typeFilter) && (!genreFilter || m.genre.includes(genreFilter));});
   }
   function libraryCardHtml(movie) {
     var deleteBtn = movie.custom ? '<button type="button" class="btn btn-icon btn-ghost" data-action="delete-movie" data-id="' + esc(movie.id) + '" aria-label="Delete ' + esc(movie.title) + '" title="Delete movie">' + ICON_DELETE + "</button>" : "";
@@ -623,7 +624,7 @@
         '<div class="mv-card-body">' +
           '<h3 class="mv-card-title">' + esc(movie.title) + "</h3>" +
           '<div class="mv-card-meta"><span>' + esc((movie.genre || []).join(", ")) + " · " + movie.year + '</span><span class="mv-rating">' + mvIcon("star") + ratingLabel(movie.rating) + "</span></div>" +
-          '<p class="mv-card-duration">' + durationLabel(movie.durationMinutes) + " · " + esc(movie.language || "English") + "</p>" +
+          '<p class="mv-card-duration">' + esc(movie.type || 'movie') + (movie.type==='series' ? ' · '+(movie.seasons || '—')+' seasons · approx. ' : ' · ') + durationLabel(movie.durationMinutes) + " · " + esc(movie.language || "English") + "</p>" +
           '<div class="mv-card-status-row">' +
             '<span class="mv-status mv-status-' + esc(movie.status) + '">' + statusLabel(movie.status) + "</span>" +
             '<select class="mv-status-select" data-action="change-status" data-id="' + esc(movie.id) + '" aria-label="Change status for ' + esc(movie.title) + '">' +
@@ -638,6 +639,7 @@
     );
   }
   function renderLibraryGrid() {
+    var tf=document.getElementById("mvTypeFilter"),gf=document.getElementById("mvGenreFilter"); if(tf){tf.value=typeFilter;tf.onchange=function(){typeFilter=this.value;renderLibraryGrid();};gf.value=genreFilter;gf.onchange=function(){genreFilter=this.value;renderLibraryGrid();};}
     var el = document.getElementById("mvLibraryGrid");
     if (!el) return;
     var items = filteredLibrary();
@@ -656,7 +658,7 @@
     var watched = library.filter(function (m) { return m.status === "watched"; }).length;
     var watchlistCount = watchlistItems().length;
     el.innerHTML =
-      '<div class="mv-stat-tile"><strong>' + library.length + "</strong><span>Movies tracked</span></div>" +
+      '<div class="mv-stat-tile"><strong>' + library.length + "</strong><span>Titles tracked</span></div>" +
       '<div class="mv-stat-tile"><strong>' + watched + "</strong><span>Watched</span></div>" +
       '<div class="mv-stat-tile"><strong>' + watchlistCount + "</strong><span>On your watchlist</span></div>";
   }
@@ -699,6 +701,7 @@
       : "";
     document.getElementById("movieDetailsBody").innerHTML =
       '<div class="mv-details-poster">' + posterHtml(movie, "mv-details-poster-img") + "</div>" +
+      '<p><strong>'+esc(movie.type || 'movie')+'</strong>'+(movie.type==='series'?' · '+(movie.seasons || 'Unspecified')+' seasons · duration is per episode':'')+'</p>' +
       (movie.blurb ? "<p>" + esc(movie.blurb) + "</p>" : "") +
       "<p><strong>Genre:</strong> " + esc((movie.genre || []).join(", ")) + "</p>" +
       "<p><strong>Year:</strong> " + movie.year + " · <strong>Duration:</strong> " + durationLabel(movie.durationMinutes) + "</p>" +
@@ -718,7 +721,7 @@
    * Quick search — searches BOTH the static SEED_MOVIES catalogue and the
    * user's own tracked library by title (GameVault's search only covers
    * its static catalog; this fixes that gap for Movies), with keyboard
-   * navigation and an "Add Custom Movie" fallback, mirroring games.js's
+   * navigation and an "Add Custom Title" fallback, mirroring games.js's
    * filterCatalog/combobox pattern.
    * ------------------------------------------------------------------- */
   function mergedPool() { return window.OneSpaceCatalog.merge([library, window.SEED_MOVIES || []]); }
@@ -736,7 +739,7 @@
     return (
       '<li class="mv-search-option mv-search-option-add" id="mv-search-opt-' + index + '" role="option" data-index="' + index + '" data-add-custom="1" aria-selected="' + (index === searchSelectedIndex ? "true" : "false") + '">' +
         ICON_PLUS +
-        '<span>Add Custom Movie: "' + esc(query) + '"</span>' +
+        '<span>Add Custom Title: "' + esc(query) + '"</span>' +
       "</li>"
     );
   }
@@ -844,8 +847,10 @@
   function openAddMovieModal(editId) {
     populateLanguageSelect();
     var movie = editId ? findLibrary(editId) : null;
-    document.getElementById("addMovieTitle").textContent = movie ? "Edit Movie" : "Add Movie";
+    document.getElementById("addMovieTitle").textContent = movie ? "Edit Title" : "Add Title";
     document.getElementById("addMovieId").value = movie ? movie.id : "";
+    document.getElementById("addMovieType").value=movie ? movie.type || "movie" : "movie";
+    document.getElementById("addMovieSeasons").value=movie && movie.seasons || "";
     document.getElementById("addMovieTitleInput").value = movie ? movie.title : "";
     document.getElementById("addMovieYear").value = movie ? movie.year : "";
     document.getElementById("addMovieDuration").value = movie ? movie.durationMinutes : "";
@@ -902,6 +907,8 @@
       var title = document.getElementById("addMovieTitleInput").value.trim();
       if (!title) { errorEl.textContent = "Please enter a movie title."; document.getElementById("addMovieTitleInput").focus(); return; }
       var id = document.getElementById("addMovieId").value || uid("movie");
+      var type=document.getElementById("addMovieType").value,seasons=type === "series" && document.getElementById("addMovieSeasons").value ? Number(document.getElementById("addMovieSeasons").value) : null;
+      if(seasons !== null && (!Number.isInteger(seasons) || seasons<1 || seasons>100)){errorEl.textContent="Use a whole season count between 1 and 100.";return;}
       var year = parseInt(document.getElementById("addMovieYear").value, 10) || new Date().getFullYear();
       var duration = parseInt(document.getElementById("addMovieDuration").value, 10) || 100;
       var language = document.getElementById("addMovieLanguage").value || "English";
@@ -916,14 +923,14 @@
       var accent = hashAccent(title);
       var existing = findLibrary(id);
       if (existing) {
-        existing.title = title; existing.genre = genre; existing.year = year; existing.decade = decade;
+        existing.type=type;existing.seasons=seasons;existing.title = title; existing.genre = genre; existing.year = year; existing.decade = decade;
         existing.durationMinutes = duration; existing.language = language; existing.rating = rating;
         existing.status = status; existing.poster = poster; existing.backdrop = backdrop;
         existing.accent = existing.accent || accent;
       } else {
         library.push({
           id: id, title: title, genre: genre, year: year, decade: decade, durationMinutes: duration,
-          language: language, type: "Movie", platforms: [], rating: rating, poster: poster, backdrop: backdrop,
+          language: language, type: type, seasons: seasons, platforms: [], rating: rating, poster: poster, backdrop: backdrop,
           moods: [], tags: [], blurb: "", accent: accent, status: status, custom: true
         });
       }
@@ -1321,9 +1328,9 @@
     return (
       '<div id="moviesRoot" class="mv-root" data-movies-theme="marquee">' +
         '<div class="mv-header">' +
-          '<div class="mv-brand" role="img" aria-label="Movie Nights — your watch tracker">' +
+          '<div class="mv-brand" role="img" aria-label="Movies & Series — your watch tracker">' +
             '<span class="mv-emblem" aria-hidden="true"><span class="mv-emblem-ring"></span>' + mvIcon("reel") + "</span>" +
-            '<span class="mv-wordmark">Movie Nights</span>' +
+            '<span class="mv-wordmark">Movies & Series</span>' +
             '<span class="mv-tagline">Discover, track, and decide what\'s next</span>' +
           "</div>" +
           '<div class="mv-header-actions">' +
@@ -1334,7 +1341,7 @@
           "</div>" +
         "</div>" +
 
-        '<section id="mvSpotlight" class="mv-spotlight" aria-label="Featured movie" aria-roledescription="carousel" tabindex="0">' +
+        '<section id="mvSpotlight" class="mv-spotlight" aria-label="Featured title" aria-roledescription="carousel" tabindex="0">' +
           '<div class="mv-scene" aria-hidden="true">' +
             '<div id="mvSceneArt" class="mv-scene-art"></div>' +
             '<div class="mv-scene-shade"></div>' +
@@ -1346,19 +1353,19 @@
           '<div id="mvHeroContent" class="mv-hero-content"></div>' +
           '<div class="mv-hero-footer">' +
             '<div class="mv-hero-controls" role="group" aria-label="Spotlight controls">' +
-              '<button type="button" id="mvPrevious" class="mv-control" aria-label="Previous movie"></button>' +
-              '<div id="mvHeroDots" class="mv-hero-dots" role="group" aria-label="Choose featured movie"></div>' +
-              '<button type="button" id="mvNext" class="mv-control" aria-label="Next movie"></button>' +
+              '<button type="button" id="mvPrevious" class="mv-control" aria-label="Previous title"></button>' +
+              '<div id="mvHeroDots" class="mv-hero-dots" role="group" aria-label="Choose featured title"></div>' +
+              '<button type="button" id="mvNext" class="mv-control" aria-label="Next title"></button>' +
               '<button type="button" id="mvAutoplay" class="mv-control mv-autoplay" aria-label="Pause automatic rotation"></button>' +
             "</div>" +
           "</div>" +
         "</section>" +
-        '<div id="mvSpotlightRail" class="mv-spotlight-rail" role="group" aria-label="Featured movies"></div>' +
+        '<div id="mvSpotlightRail" class="mv-spotlight-rail" role="group" aria-label="Featured titles"></div>' +
         '<p id="mvSpotlightAnnouncement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>' +
 
         '<nav class="mv-tabs" aria-label="Movies sections" role="tablist">' +
           '<button type="button" class="mv-tab active" data-mv-tab="overview" role="tab" aria-selected="true">' + mvIcon("overview") + "<span>Overview</span></button>" +
-          '<button type="button" class="mv-tab" data-mv-tab="library" role="tab" aria-selected="false">' + mvIcon("library") + "<span>My Movies</span></button>" +
+          '<button type="button" class="mv-tab" data-mv-tab="library" role="tab" aria-selected="false">' + mvIcon("library") + "<span>My Movies & Series</span></button>" +
           '<button type="button" class="mv-tab" data-mv-tab="suggestions" role="tab" aria-selected="false">' + mvIcon("suggestions") + "<span>Suggestions</span></button>" +
           '<button type="button" class="mv-tab" data-mv-tab="watchlist" role="tab" aria-selected="false">' + mvIcon("watchlist") + "<span>Watchlist</span></button>" +
           '<button type="button" class="mv-tab" data-mv-tab="appearance" role="tab" aria-selected="false">' + mvIcon("appearance") + "<span>Appearance</span></button>" +
@@ -1374,8 +1381,8 @@
 
         '<section class="mv-panel" data-panel="library" role="tabpanel" hidden>' +
           '<div class="mv-quick-add">' +
-            '<label class="visually-hidden" for="mvMovieSearch">Search a movie to track or add</label>' +
-            '<input type="text" id="mvMovieSearch" placeholder="Search a movie to track or add…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mvSearchDropdown" aria-haspopup="listbox">' +
+            '<label class="visually-hidden" for="mvMovieSearch">Search a movie or series to track or add</label>' +
+            '<input type="text" id="mvMovieSearch" placeholder="Search a movie or series to track or add…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="mvSearchDropdown" aria-haspopup="listbox">' +
             '<ul class="mv-search-dropdown" id="mvSearchDropdown" role="listbox" hidden></ul>' +
           "</div>" +
           '<div class="mv-status-filter" id="mvStatusFilter" role="group" aria-label="Filter by status">' +
@@ -1384,15 +1391,15 @@
             '<button type="button" class="mv-filter-chip" data-status-filter="unwatched">Unwatched</button>' +
             '<button type="button" class="mv-filter-chip" data-status-filter="watchlist">Watchlist</button>' +
           "</div>" +
-          '<div class="mv-grid" id="mvLibraryGrid"></div>' +
+          '<div class="domain-filters"><label>Title type<select id="mvTypeFilter"><option value="">Movies &amp; Series</option><option value="movie">Movies</option><option value="series">Series</option></select></label><label>Library genre<select id="mvGenreFilter"><option value="">All genres</option>'+(window.MOVIE_GENRES || []).map(function(g){return '<option>'+esc(g)+'</option>';}).join('')+'</select></label></div><div class="mv-grid" id="mvLibraryGrid"></div>' +
         "</section>" +
 
         '<section class="mv-panel" data-panel="suggestions" role="tabpanel" hidden>' +
           '<div class="mv-suggestions" aria-labelledby="mvSuggestTitle">' +
-            '<div class="mv-suggest-head"><h2 id="mvSuggestTitle">Movie Suggestions</h2><p>Tell us what you\'re in the mood for and we\'ll point you at something worth watching.</p></div>' +
+            '<div class="mv-suggest-head"><h2 id="mvSuggestTitle">Title Suggestions</h2><p>Tell us what you\'re in the mood for and we\'ll point you at something worth watching.</p></div>' +
             '<div class="mv-pref-groups" id="mvPrefGroups"></div>' +
             '<div class="mv-suggest-actions">' +
-              '<button type="button" class="btn btn-primary" id="mvGetSuggestions">Get Movie Suggestions</button>' +
+              '<button type="button" class="btn btn-primary" id="mvGetSuggestions">Get Title Suggestions</button>' +
               '<button type="button" class="btn" id="mvClearFilters">Clear Filters</button>' +
               '<button type="button" class="btn btn-ghost" id="mvResetPreferences">Reset Preferences</button>' +
             "</div>" +

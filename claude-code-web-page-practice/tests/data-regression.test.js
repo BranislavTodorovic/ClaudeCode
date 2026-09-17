@@ -9,7 +9,7 @@ const catalog = require('../catalog-utils.js');
 const root = path.resolve(__dirname, '..');
 const data = { window: {} };
 vm.createContext(data);
-for (const file of ['games-data.js', 'movies-data.js']) {
+for (const file of ['game-resources.js', 'games-data.js', 'movies-data.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), data);
 }
 const games = catalog.merge([data.window.SUGGESTION_CATALOG, data.window.DEFAULT_GAMES], catalog.game);
@@ -41,7 +41,7 @@ test('a saved copy does not duplicate its catalog source', () => {
 
 test('search includes metadata and does not cap results at eight', () => {
   const results = catalog.search(data.window.SEED_MOVIES, 'Movie');
-  assert.equal(results.length, data.window.SEED_MOVIES.length);
+  assert.equal(results.length, data.window.SEED_MOVIES.filter(m => m.type === 'movie').length);
   assert.ok(results.length > 8);
   assert.ok(catalog.search(games, 'Horror').some(game => game.title === 'Alan Wake 2'));
 });

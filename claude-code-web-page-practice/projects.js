@@ -21,7 +21,7 @@
     var blueprintStyle = "border-color:hsl(" + hue + " 60% 78% / .3)";
     return '<article class="project-card"><div class="project-preview" aria-hidden="true" style="' + coverStyle + '">' + window.OneSpaceVisual.cover(p.name + ' ' + tags.join(' '), 'project', 'hsl(' + hue + ' 60% 70%)') + '<span class="project-cover-label">' + esc(tags[0] || 'IN THE MAKING') + '</span></div><div class="project-card-body"><div class="project-card-top"><h3>' + esc(p.name) + '</h3><span class="status-chip status-' + esc(p.status) + '">' + esc(p.status) + '</span></div>' +
       (p.description ? '<p class="project-description">' + esc(p.description) + '</p>' : '<p class="project-description">An idea in progress. Give it a next step.</p>') +
-      '<div class="project-tags">' + tags.map(function (tag) { return '<span>' + esc(tag) + '</span>'; }).join("") + '</div><div class="project-meter" role="progressbar" aria-label="' + esc(p.name) + ' progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="project-card-foot"><span>' + progress + '% complete</span>' +
+      (p.deadline ? '<p>Deadline: ' + esc(p.deadline) + '</p>' : '') + '<div class="project-tags">' + tags.map(function (tag) { return '<span>' + esc(tag) + '</span>'; }).join("") + '</div><div class="project-meter" role="progressbar" aria-label="' + esc(p.name) + ' progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="project-card-foot"><span>' + progress + '% complete</span>' +
       (compact ? '<button class="btn btn-ghost" type="button" data-page-jump="projects">Open Projects <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>' :
         '<div>' + (url ? '<a class="btn" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">Open link <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>' : '') + '<button class="btn" type="button" data-project-edit="' + esc(p.id) + '">Edit</button><button class="btn btn-ghost" type="button" data-project-delete="' + esc(p.id) + '">Delete</button></div>') + '</div></div></article>';
   }
@@ -41,7 +41,7 @@
       tile("Work in motion", active.length, active.length ? active[0].name : "Give your next idea a home", "projects", "▧") +
       tile("On your mind", open.length, open.length ? open[0].text : "A little room to breathe", "productivity", "✓") +
       tile("Thoughts captured", notes.length, notes.length ? (notes[0].title || "Your latest note") : "Save an idea before it goes", "notes", "✎");
-    document.getElementById("workOverview").innerHTML =
+    if (!window.OneSpaceWork) document.getElementById("workOverview").innerHTML =
       tile("In progress", active.length, "Projects moving toward done", "projects", "▧") +
       tile("Next up", open.length, high ? high + (high === 1 ? " high-priority task" : " high-priority tasks") : "Your priorities, in one place", "productivity", "✓") +
       tile("Finished", items.filter(function (p) { return p.status === "done"; }).length, "Make space for what comes next", "projects", "");
@@ -55,7 +55,7 @@
     var status = fields.status.value, progress = Math.min(100, Math.max(0, Number(fields.progress.value)));
     if (status === "done") progress = 100;
     else if (progress === 100) { progress = 99; OS.showToast("Set status to Done for 100% completion."); }
-    var item = Object.assign({}, previous || {}, { id: editingId || OS.uid("proj"), name: name, description: fields.description.value.trim(), tags: Array.from(new Set(fields.tags.value.split(",").map(function (t) { return t.trim(); }).filter(Boolean))).slice(0, 12), url: safeUrl(url), status: status, progress: progress });
+    var item = Object.assign({}, previous || {}, { id: editingId || OS.uid("proj"), name: name, description: fields.description.value.trim(), tags: Array.from(new Set(fields.tags.value.split(",").map(function (t) { return t.trim(); }).filter(Boolean))).slice(0, 12), url: safeUrl(url), status: status, progress: progress, deadline: fields.deadline.value, createdAt: previous && previous.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString() });
     if (editingId) items = items.map(function (p) { return p.id === editingId ? item : p; }); else items.unshift(item);
     if (commit(items)) { cancel(); OS.showToast(previous ? "Project updated." : "Project created."); }
   });
@@ -69,16 +69,16 @@
     if (edit) {
       var p = projects().find(function (x) { return x.id === edit.dataset.projectEdit; }); if (!p) return;
       editingId = p.id;
-      ["name","description","url","status","progress"].forEach(function (field) { form.elements[field].value = p[field] == null ? "" : p[field]; });
+      ["name","description","url","status","progress","deadline"].forEach(function (field) { form.elements[field].value = p[field] == null ? "" : p[field]; });
       form.elements.tags.value = (p.tags || []).join(", ");
       document.getElementById("projectSave").textContent = "Save project";
       document.getElementById("projectFormHeading").textContent = "Edit project";
       document.getElementById("projectCancel").hidden = false;
       form.scrollIntoView({ block: "center", behavior: OS.prefersReducedMotion() ? "auto" : "smooth" }); form.elements.name.focus();
     }
-    if (del && window.confirm("Delete this project? Export a backup first if you want to keep it.")) {
-      if (commit(projects().filter(function (p) { return p.id !== del.dataset.projectDelete; }))) { if (editingId === del.dataset.projectDelete) cancel(); OS.showToast("Project deleted."); }
-    }
+    if (del) window.OneSpaceUI.confirm('Delete project?', 'Its stories, defects and tasks will be removed. Snapshots remain in Work history.', function () {
+      if (window.OneSpaceWork.deleteProject(del.dataset.projectDelete)) { if (editingId === del.dataset.projectDelete) cancel(); render(); }
+    });
   });
   var scheduled = false;
   document.addEventListener("onespace:data-changed", function (e) {

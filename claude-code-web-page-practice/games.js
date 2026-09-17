@@ -138,7 +138,7 @@
         existing.name = def.name; existing.platform = existing.platform || def.platform; existing.genre = def.genre;
         existing.accent = def.accent; existing.logo = def.logo;
         existing.artwork = def.artwork; existing.artworkMobile = def.artworkMobile; existing.cardArtwork = def.cardArtwork; existing.artworkPosition = def.artworkPosition;
-        existing.world = def.world; existing.tagline = def.tagline;
+        existing.world = def.world; existing.tagline = def.tagline; existing.defaultTaskTemplates=def.defaultTaskTemplates; if(!existing.resources)existing.resources=def.resources;
       }
     });
   }
@@ -173,6 +173,10 @@
   ];
 
   function saveLibrary() { safeSet(GK.library, JSON.stringify(library)); }
+  function commitGameChanges() {
+    var data={}; data[GK.library]=JSON.stringify(library);data[GK.weekly]=JSON.stringify(weekly);
+    try { window.OneSpaceStorage.transaction(window.localStorage,data); return true; } catch(error) {library=safeGetJSON(GK.library,[]);weekly=safeGetJSON(GK.weekly,{});showToast(error.message);return false;}
+  }
   function saveWeekly() { safeSet(GK.weekly, JSON.stringify(weekly)); }
   function saveSessions() { safeSet(GK.sessions, JSON.stringify(sessions)); }
   function saveJournal() { safeSet(GK.journal, JSON.stringify(journal)); }
@@ -199,16 +203,18 @@
     var fmt = function (x) { return x.toLocaleDateString(undefined, { month: "short", day: "numeric" }); };
     return fmt(d) + " – " + fmt(sunday);
   }
-  function cloneWeeklyTemplate() {
-    return (window.DIABLO_WEEKLY_TEMPLATE || []).map(function (t) { return { id: t.id, label: t.label, done: false }; });
+  function cloneWeeklyTemplate(gameId) {
+    var game=library.find(function(g){return g.id===gameId;}) || {};
+    if(game.id === "game-diablo-immortal") return (window.DIABLO_WEEKLY_TEMPLATE || []).map(function(t){return {id:t.id,label:t.label,done:false};});
+    return window.OneSpaceGameResources.weekly(game);
   }
-  function ensureWeekly(gameId) {
+  function ensureWeekly(gameId, persist) {
     var currentKey = getISOWeekKey(new Date());
     var entry = weekly[gameId];
     if (!entry || entry.weekKey !== currentKey) {
-      entry = { weekKey: currentKey, tasks: cloneWeeklyTemplate() };
+      entry = { weekKey: currentKey, tasks: cloneWeeklyTemplate(gameId) };
       weekly[gameId] = entry;
-      saveWeekly();
+      if(persist !== false) saveWeekly();
     }
     return entry;
   }
@@ -293,7 +299,7 @@
   function cardHtml(game) {
     var isWeekly = game.trackerType === "weekly";
     var stats = statsFor(game);
-    var deleteBtn = game.custom
+    var deleteBtn = true
       ? '<button type="button" class="btn btn-icon btn-ghost" data-action="delete-game" data-id="' + esc(game.id) + '" aria-label="Delete ' + esc(game.name) + '" title="Delete game">' + ICON_DELETE + "</button>"
       : "";
     var weekBadge = isWeekly ? '<span class="gv-week-badge">Week ' + esc(stats.weekKey || "") + "</span>" : "";
@@ -308,6 +314,7 @@
           '<p class="gv-next"><strong>Next:</strong> ' + esc(stats.next) + "</p>" +
           '<div class="gv-card-actions">' +
             '<button type="button" class="btn btn-primary" data-action="open-progress" data-id="' + esc(game.id) + '">Open Progress</button>' +
+            '<button type="button" class="btn" data-action="suggest-details" data-id="' + esc(game.id) + '">Resources</button>' +
             '<button type="button" class="btn" data-action="edit-game" data-id="' + esc(game.id) + '">Edit</button>' +
             deleteBtn +
           "</div>" +
@@ -316,9 +323,19 @@
     );
   }
 
+  var libraryGenre="",libraryQuery="";
   function renderLibraryGrid() {
     var el = document.getElementById("gvLibraryGrid");
-    if (el) { el.innerHTML = library.map(cardHtml).join(""); wireReveal(el); }
+    if (el) {
+      var controls=document.getElementById('gameLibraryFilters');
+      if(!controls){controls=document.createElement('div');controls.id='gameLibraryFilters';controls.className='domain-filters';el.before(controls);}
+      var genres=Array.from(new Set(library.flatMap(function(g){return g.genres || [g.genre || 'Custom'];}))).sort();
+      controls.innerHTML=window.OneSpaceUI.select('genre','My Games genre',[['','All genres']].concat(genres),libraryGenre)+window.OneSpaceUI.field('query','Search My Games',libraryQuery,'search');
+      controls.querySelector('select').onchange=function(){libraryGenre=this.value;renderLibraryGrid();document.querySelector('#gameLibraryFilters select').focus();};
+      controls.querySelector('input').oninput=function(){libraryQuery=this.value;var start=this.selectionStart;renderLibraryGrid();var input=document.querySelector('#gameLibraryFilters input');input.focus();input.setSelectionRange(start,start);};
+      var filtered=window.OneSpaceCatalog.search(library,libraryQuery).filter(function(g){return !libraryGenre || (g.genres || [g.genre || 'Custom']).includes(libraryGenre);});
+      el.innerHTML=filtered.length?filtered.map(cardHtml).join(''):'<p class="gv-empty">No games match your filters.</p>';wireReveal(el);
+    }
   }
 
   /* ---------------------------------------------------------------------
@@ -570,25 +587,14 @@
 
   function deleteGame(id) {
     var game = library.find(function (g) { return g.id === id; });
-    if (!game || !game.custom) return;
+    if (!game) return;
     if (!window.confirm('Delete "' + game.name + '"? This cannot be undone.')) return;
-    library = library.filter(function (g) { return g.id !== id; });
-    delete weekly[id];
-    saveLibrary();
-    saveWeekly();
-    if (selectedStoryGameId === id) selectedStoryGameId = null;
-    if (selectedWeeklyGameId === id) selectedWeeklyGameId = null;
-    /* Clean up dangling references so a deleted game never lingers as an
-       unlabeled "Unknown" row: sessions tied only to this game are removed
-       outright (there is nothing else identifying them); journal entries
-       keep their written text but drop the game link, becoming general entries. */
-    if (sessions.some(function (s) { return s.gameId === id; })) {
-      stopSessionTicker();
-      sessions = sessions.filter(function (s) { return s.gameId !== id; });
-      saveSessions();
-    }
-    journal.forEach(function (entry) { if (entry.gameId === id) entry.gameId = null; });
-    saveJournal();
+    var next=window.OneSpaceGameResources.cleanup({library:library,weekly:weekly,sessions:sessions,journal:journal},id);
+    var data={};data[GK.library]=JSON.stringify(next.library);data[GK.weekly]=JSON.stringify(next.weekly);data[GK.sessions]=JSON.stringify(next.sessions);data[GK.journal]=JSON.stringify(next.journal);
+    try{window.OneSpaceStorage.transaction(window.localStorage,data);}catch(error){showToast(error.message);return;}
+    library=next.library;weekly=next.weekly;sessions=next.sessions;journal=next.journal;
+    if(selectedStoryGameId===id)selectedStoryGameId=null;if(selectedWeeklyGameId===id)selectedWeeklyGameId=null;
+    if(!activeSession())stopSessionTicker();
     showToast("Game deleted.");
     renderAll();
   }
@@ -606,6 +612,7 @@
     var game = editId ? library.find(function (g) { return g.id === editId; }) : null;
     document.getElementById("addGameTitle").textContent = game ? "Edit Game" : "Add Game";
     document.getElementById("addGameId").value = game ? game.id : "";
+    document.getElementById("addGameGenre").value = game ? game.genre || "Custom" : "";
     document.getElementById("addGameName").value = game ? game.name : "";
     document.getElementById("addGamePlatform").value = game ? game.platform : "PC";
     document.getElementById("addGameAccent").value = game && game.accent ? game.accent : "#7a8fff";
@@ -619,9 +626,7 @@
     openModal(document.getElementById("addGameOverlay"), document.getElementById("addGameName"));
   }
 
-  function starterStory() {
-    return { chapters: [{ id: uid("c"), title: "Getting Started", expanded: true, objectives: [{ id: uid("o"), text: "Set your first goal", done: false }] }] };
-  }
+  function starterStory(game) { return window.OneSpaceGameResources.story(game || {},uid); }
 
   function wireAddGameModal() {
     document.getElementById("addGameBtn").addEventListener("click", function () { openAddGameModal(null); });
@@ -663,16 +668,16 @@
       var existing = library.find(function (g) { return g.id === id; });
       if (existing) {
         existing.name = name; existing.platform = platform; existing.accent = accent; existing.logo = logo;
-        existing.trackerType = draftTrackerType;
-        if (draftTrackerType === "story" && !existing.story) existing.story = starterStory();
-        if (draftTrackerType === "weekly") ensureWeekly(existing.id);
+        existing.trackerType = draftTrackerType; existing.genre=document.getElementById("addGameGenre").value.trim() || "Custom"; existing.genres=[existing.genre]; existing.custom=true;
+        if (draftTrackerType === "story" && !existing.story) existing.story = starterStory(existing);
+        if (draftTrackerType === "weekly") ensureWeekly(existing.id,false);
       } else {
-        var game = { id: id, name: name, platform: platform, genre: "Custom", accent: accent, logo: logo, trackerType: draftTrackerType, custom: true };
-        if (draftTrackerType === "story") game.story = starterStory();
+        var game = { id: id, name: name, platform: platform, genre: document.getElementById("addGameGenre").value.trim() || "Custom", accent: accent, logo: logo, trackerType: draftTrackerType, custom: true };
+        if (draftTrackerType === "story") game.story = starterStory(game);
         library.push(game);
-        if (draftTrackerType === "weekly") ensureWeekly(game.id);
+        if (draftTrackerType === "weekly") ensureWeekly(game.id,false);
       }
-      saveLibrary();
+      if(!commitGameChanges()) return;
       closeModal(document.getElementById("addGameOverlay"));
       showToast(existing ? "Game updated." : "Game added to your library.");
       renderAll();
@@ -786,7 +791,7 @@
     safeSet(GK.prefs, JSON.stringify(prefs));
     renderSuggestions();
   }
-  function gameCatalog() { return window.OneSpaceCatalog.merge([window.SUGGESTION_CATALOG || [], window.DEFAULT_GAMES || [], library], window.OneSpaceCatalog.game); }
+  function gameCatalog() { return window.OneSpaceCatalog.merge([library, window.SUGGESTION_CATALOG || [], window.DEFAULT_GAMES || []], window.OneSpaceCatalog.game); }
   function allSelectedTags() { return [].concat(prefs.platforms, prefs.genres, prefs.playstyles, prefs.moods); }
   function computeSuggestions() {
     var dismissed = safeGetJSON(GK.dismissed, []), catalog = gameCatalog(), selected = allSelectedTags();
@@ -835,11 +840,13 @@
     if (library.some(function (l) { return l.id === id || l.sourceSuggestion === id || l.name.toLowerCase() === g.title.toLowerCase(); })) { showToast("Already in My Games."); return; }
     var game = {
       id: uid("game"), name: g.title, platform: g.platforms[0], genre: g.genres[0] || "Custom",
-      accent: g.accent, platforms: g.platforms, genres: g.genres, playstyles: g.playstyles, moods: g.moods, logo: g.logo || { kind: "cover" }, artwork: g.artwork, trackerType: "story", custom: true, sourceSuggestion: id,
+      accent: g.accent, platforms: g.platforms, genres: g.genres, playstyles: g.playstyles, moods: g.moods, logo: g.logo || { kind: "cover" }, artwork: g.artwork, resources: g.resources, defaultTasks: g.defaultTasks, defaultTaskTemplates:g.defaultTaskTemplates, trackerType: g.trackerType || "story", custom: true, sourceSuggestion: id,
       story: { chapters: [] }
     };
+    game.story = starterStory(game);
     library.push(game);
-    saveLibrary();
+    if(game.trackerType === "weekly") ensureWeekly(game.id,false);
+    if(!commitGameChanges()) return;
     showToast(g.title + " added to My Games.");
     renderAll();
   }
@@ -884,7 +891,8 @@
     }).join("");
   }
   function openSuggestionDetails(id) {
-    var g = gameCatalog().find(function (x) { return x.id === id; });
+    var tracked=library.find(function(x){return x.id===id;});
+    var g = tracked ? window.OneSpaceCatalog.game(tracked) : gameCatalog().find(function (x) { return x.id === id; });
     if (!g) return;
     document.getElementById("gameDetailsTitle").textContent = g.title;
     document.getElementById("gameDetailsBody").innerHTML =
@@ -894,6 +902,9 @@
       "<p><strong>Platforms:</strong> " + esc(g.platforms.join(", ")) + "</p>" +
       "<p><strong>Play styles:</strong> " + esc(g.playstyles.join(", ")) + "</p>" +
       "<p><strong>Mood:</strong> " + esc(g.moods.join(", ")) + "</p>";
+    var resources=window.OneSpaceGameResources.resources(g), groups=Array.from(new Set(resources.map(function(r){return r.group;})));
+    document.getElementById("gameDetailsBody").innerHTML += '<h4>Game resources</h4><div class="resource-grid">'+groups.map(function(group){return '<section><h4>'+esc(group)+'</h4>'+resources.filter(function(r){return r.group===group;}).map(function(r){return '<a class="btn" href="'+esc(r.url)+'" target="_blank" rel="noopener noreferrer">'+esc(r.label)+'</a>';}).join('')+'</section>';}).join('')+'</div><h4>Suggested tracker tasks</h4><ul>'+window.OneSpaceGameResources.tasks(g).map(function(t){return '<li>'+esc(t)+'</li>';}).join('')+'</ul>'+(tracked?'<button class="btn" id="editGameResources">Edit resources</button>':'');
+    if(tracked) document.getElementById('editGameResources').onclick=function(){window.OneSpaceUI.open('Edit game resources',window.OneSpaceUI.field('resources','One per line: group | label | https://URL',resources.map(function(r){return r.group+' | '+r.label+' | '+r.url;}).join('\n'),'textarea'),function(f){var next=String(f.get('resources')).split('\n').filter(function(s){return s.trim();}).map(function(line){var parts=line.split('|').map(function(s){return s.trim();});if(parts.length!==3 || !parts[2] || !window.OneSpaceStorage.validUrl(parts[2]))throw new Error('Use group | label | a valid http or https URL.');return {group:parts[0],label:parts[1],url:parts[2]};});var updated=library.map(function(x){return x.id===tracked.id?Object.assign({},x,{resources:next}):x;});if(!safeSet(GK.library,JSON.stringify(updated)))return false;library=updated;showToast('Resources saved. Reopen details to view changes.');});};
     openModal(document.getElementById("gameDetailsOverlay"), document.getElementById("gameDetailsClose"));
   }
   function wireSuggestions() {

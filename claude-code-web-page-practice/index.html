@@ -106,6 +106,7 @@ body.force-full-motion { scroll-behavior:smooth; }
 <link rel="stylesheet" href="movies.css">
 <link rel="stylesheet" href="movies-cinematic.css">
 <link rel="stylesheet" href="cinematic-refinement.css">
+<link rel="stylesheet" href="tracker.css">
 </head>
 <body class="has-sidebar" data-page="home">
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
@@ -120,7 +121,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       <button class="space-btn" type="button" data-page-button="personal" title="Personal"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.5C.5 7.8 2.7 4 6.5 4A5.5 5.5 0 0 1 12 8a5.5 5.5 0 0 1 5.5-4c3.8 0 6 3.8 4.5 7.5C19.5 16.4 12 21 12 21z"></path></svg><span class="space-copy"><strong>Personal</strong><small>Life &amp; home</small></span></button>
       <button class="space-btn" type="button" data-page-button="explore" title="Explore"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><polygon points="14.5 9.5 12.5 14.5 9.5 14.5 11.5 9.5"></polygon></svg><span class="space-copy"><strong>Explore</strong><small>Travel &amp; play</small></span></button>
       <button class="space-btn" type="button" data-page-button="games" title="Games"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.55l-.7 6.13A2.5 2.5 0 0 0 4.48 17.5c.86 0 1.66-.44 2.12-1.17L8 14h8l1.4 2.33a2.5 2.5 0 0 0 2.12 1.17 2.5 2.5 0 0 0 2.48-2.82l-.7-6.13A4 4 0 0 0 17.32 5Z"></path><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle></svg><span class="space-copy"><strong>Games</strong><small>Play &amp; track</small></span></button>
-      <button class="space-btn" type="button" data-page-button="movies" title="Movies"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="4" x2="7" y2="20"></line><line x1="17" y1="4" x2="17" y2="20"></line><line x1="3" y1="9" x2="7" y2="9"></line><line x1="3" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="21" y2="9"></line><line x1="17" y1="15" x2="21" y2="15"></line></svg><span class="space-copy"><strong>Movies</strong><small>Watch &amp; discover</small></span></button>
+      <button class="space-btn" type="button" data-page-button="movies" title="Movies"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="4" x2="7" y2="20"></line><line x1="17" y1="4" x2="17" y2="20"></line><line x1="3" y1="9" x2="7" y2="9"></line><line x1="3" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="21" y2="9"></line><line x1="17" y1="15" x2="21" y2="15"></line></svg><span class="space-copy"><strong>Movies &amp; Series</strong><small>Watch &amp; discover</small></span></button>
     </nav>
     <p class="side-section-label">Workspace</p>
     <nav class="side-nav" aria-label="Dashboard views">
@@ -477,8 +478,9 @@ body.force-full-motion { scroll-behavior:smooth; }
           <div class="list-card-grid" id="workProjectsList"></div>
         </section>
         <section class="page-section" data-reveal>
-          <div class="page-section-head"><h2>Priorities &amp; timeline</h2><span class="page-section-hint">From your Productivity tasks</span></div>
-          <ul class="timeline-list" id="workTimelineList"></ul>
+          <div class="page-section-head"><h2>Priorities &amp; timeline</h2><button class="btn" data-page-jump="productivity" type="button">General daily tasks</button></div>
+          <ul class="timeline-list" id="workTimelineList"></ul><div id="workReminders"></div>
+</section><section class="page-section" id="workTracker">
         </section>
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2>Work shortcuts</h2></div>
@@ -490,7 +492,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     <section id="projectsView" class="page-view" data-page-when="projects" hidden aria-label="Projects">
       <header class="page-hero projects-scene"><div class="page-hero-art" data-parallax-art aria-hidden="true"><img src="assets/page-art/projects-cinematic.webp" width="1672" height="941" alt="" loading="lazy"></div><div class="page-hero-shade"></div><div class="page-hero-copy"><span class="page-hero-eyebrow">PROJECTS / YOUR CREATIVE STUDIO</span><h1>From idea to done.</h1><p>Give your work a shape. Keep its next step in sight.</p></div></header>
       <div class="page-body"><section class="page-section"><div class="page-section-head"><h2 id="projectFormHeading">Create a project</h2><span class="page-section-hint">Saved on this device</span></div>
-        <form id="projectForm" class="project-form"><label>Name<input name="name" required maxlength="100" placeholder="What are you building?"></label><label>Description<textarea name="description" maxlength="2000" rows="2" placeholder="Purpose, ideas, and next steps"></textarea></label><label>Tags<input name="tags" maxlength="200" placeholder="Design, research (comma separated)"></label><label>Project link (optional)<input name="url" type="url" placeholder="https://…"></label><label>Status<select name="status"><option value="active">Active</option><option value="blocked">Blocked</option><option value="done">Done</option></select></label><label>Progress (%)<input name="progress" type="number" min="0" max="100" value="0" required></label><div class="project-form-actions"><button class="btn btn-primary" type="submit" id="projectSave">Create project</button><button class="btn" type="button" id="projectCancel" hidden>Cancel edit</button></div></form>
+        <form id="projectForm" class="project-form"><label>Name<input name="name" required maxlength="100" placeholder="What are you building?"></label><label>Description<textarea name="description" maxlength="2000" rows="2" placeholder="Purpose, ideas, and next steps"></textarea></label><label>Tags<input name="tags" maxlength="200" placeholder="Design, research (comma separated)"></label><label>Project link (optional)<input name="url" type="url" placeholder="https://…"></label><label>Status<select name="status"><option value="active">Active</option><option value="blocked">Blocked</option><option value="done">Done</option></select></label><label>Deadline<input name="deadline" type="date"></label><label>Progress (%)<input name="progress" type="number" min="0" max="100" value="0" required></label><div class="project-form-actions"><button class="btn btn-primary" type="submit" id="projectSave">Create project</button><button class="btn" type="button" id="projectCancel" hidden>Cancel edit</button></div></form>
       </section><section class="page-section"><div class="page-section-head"><h2>Your projects</h2><span id="projectCount" class="page-section-hint" role="status"></span></div><div id="projectList" class="list-card-grid"></div></section></div>
     </section>
 
@@ -522,7 +524,7 @@ body.force-full-motion { scroll-behavior:smooth; }
           <ul class="check-list" id="personalHabitsList"></ul>
         </section>
         <section class="page-section" data-reveal>
-          <div class="page-section-head"><h2>Personal shortcuts</h2></div>
+          <div class="page-section-head"><h2>Personal shortcuts</h2><button class="btn" type="button" data-add-space="personal">Add shortcut</button></div>
           <div class="mini-grid" id="personalShortcutsGrid"></div>
         </section>
       </div>
@@ -538,21 +540,22 @@ body.force-full-motion { scroll-behavior:smooth; }
           <h1>Somewhere new</h1>
           <p>Travel, entertainment, and a slower pace — pick a direction and go.</p>
           <div class="page-hero-actions">
-            <button class="btn btn-primary" type="button" data-action="explore-random">Surprise me</button>
+            <button class="btn btn-primary" type="button" data-action="destination-random">Surprise me</button>
           </div>
         </div>
       </header>
       <div class="page-body">
+        <section class="page-section" id="exploreDestinations"></section>
         <section class="page-section" data-reveal>
-          <div class="page-section-head"><h2>Categories</h2></div>
+          <div class="page-section-head"><h2>More to explore</h2></div>
           <div class="explore-category-grid">
             <button class="explore-category" type="button" data-page-jump="games"><span class="explore-category-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 6h10a4 4 0 0 1 4 4l1 6a3 3 0 0 1-5 2l-2-3H9l-2 3a3 3 0 0 1-5-2l1-6a4 4 0 0 1 4-4Z"/><path d="M6 10v4M4 12h4m8-1h.01M19 13h.01"/></svg></span><strong>Games</strong><span>Missions, sessions and your library</span></button>
-            <button class="explore-category" type="button" data-page-jump="movies"><span class="explore-category-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></span><strong>Movies</strong><span>Watchlist and tonight's pick</span></button>
+            <button class="explore-category" type="button" data-page-jump="movies"><span class="explore-category-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></span><strong>Movies &amp; Series</strong><span>Watchlist and tonight's pick</span></button>
             <button class="explore-category" type="button" data-page-jump="productivity"><span class="explore-category-icon" aria-hidden="true">✓</span><strong>Take a break</strong><span>Set a short timer and step away</span></button>
           </div>
         </section>
         <section class="page-section" data-reveal>
-          <div class="page-section-head"><h2>Discover</h2></div>
+          <div class="page-section-head"><h2>Explore shortcuts</h2><button class="btn" type="button" data-add-space="explore">Add shortcut</button></div>
           <form class="mini-form" id="exploreSearchForm"><input type="text" id="exploreSearchInput" placeholder="Search travel and leisure shortcuts…" autocomplete="off"><button class="btn" type="submit">Search</button></form>
           <div class="mini-grid" id="exploreShortcutsGrid"></div>
         </section>
@@ -669,7 +672,7 @@ body.force-full-motion { scroll-behavior:smooth; }
             <input type="url" id="shortcutUrl" maxlength="2048" placeholder="https://example.com" required aria-describedby="shortcutError">
           </div>
           <div class="form-field">
-            <label for="shortcutCategory">Category</label>
+            <label for="shortcutDescription">Description</label><input id="shortcutDescription" maxlength="240"><label for="shortcutSpace">Space</label><select id="shortcutSpace"><option value="work">Work</option><option value="personal">Personal</option><option value="explore">Explore</option></select><label for="shortcutCategory">Category</label>
             <select id="shortcutCategory" required aria-describedby="shortcutError"></select>
           </div>
           <p class="form-error" id="shortcutError" role="alert" aria-live="polite"></p>
@@ -699,7 +702,7 @@ body.force-full-motion { scroll-behavior:smooth; }
             <input type="text" id="addGameName" maxlength="60" required aria-describedby="addGameError">
           </div>
           <div class="form-field">
-            <label for="addGamePlatform">Platform</label>
+            <label for="addGameGenre">Genre</label><input id="addGameGenre" maxlength="60" placeholder="RPG, Racing, Horror…"><label for="addGamePlatform">Platform</label>
             <select id="addGamePlatform">
               <option value="PC">PC</option>
               <option value="PS5">PS5</option>
@@ -761,7 +764,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       </div>
       <div class="modal-body">
         <form id="addMovieForm" novalidate>
-          <input type="hidden" id="addMovieId">
+          <input type="hidden" id="addMovieId"><div class="form-field"><label for="addMovieType">Type</label><select id="addMovieType"><option value="movie">Movie</option><option value="series">Series</option></select><label for="addMovieSeasons">Seasons (series only, optional)</label><input id="addMovieSeasons" type="number" min="1" max="100"></div>
           <div class="form-field">
             <label for="addMovieTitleInput">Title</label>
             <input type="text" id="addMovieTitleInput" maxlength="80" required aria-describedby="addMovieError">
@@ -869,6 +872,8 @@ body.force-full-motion { scroll-behavior:smooth; }
 <script src="storage-utils.js"></script>
 <script src="catalog-utils.js"></script>
 <script src="tooltip-utils.js"></script>
+<script src="shortcut-utils.js"></script>
+<script src="personal-controller.js"></script>
 <script>
 (function () {
   "use strict";
@@ -1020,6 +1025,8 @@ body.force-full-motion { scroll-behavior:smooth; }
     sliders: '<line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line>',
     check: '<polyline points="20 6 9 17 4 12"></polyline>',
     plus: '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>',
+    close: '<path d="m6 6 12 12M18 6 6 18"></path>',
+    layers: '<path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"></path>',
     search: '<circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>'
   };
 
@@ -1040,7 +1047,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   /* =====================================================================
    * Link data — built-in shortcuts (not editable/deletable) + categories
    * ===================================================================== */
-  var BASE_CATEGORIES = ["Development", "Shopping & Home", "Gaming", "Daily", "Smart Home"];
+  var BASE_CATEGORIES = ["Development", "Shopping & Home", "Gaming", "Daily", "Smart Home", "Travel", "Relax & Play"];
   var customCategories = safeGetJSON(STORAGE.customCategories, []).filter(function (name) {
     return typeof name === "string" && name.trim() && BASE_CATEGORIES.indexOf(name.trim()) === -1;
   }).map(function (name) { return name.trim().slice(0, 30); });
@@ -1129,30 +1136,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     CATEGORY_SLUG[category] = "custom-" + category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   });
 
-  function sanitizeCustomLinks(value) {
-    var seenIds = {};
-    var seenUrls = {};
-    BUILT_IN_LINKS.forEach(function (link) {
-      seenIds[link.id] = true;
-      try { seenUrls[new URL(link.url).href] = true; } catch (e) { /* built-ins are trusted */ }
-    });
-    if (!Array.isArray(value)) return [];
-    return value.reduce(function (clean, item) {
-      if (!item || typeof item.name !== "string" || typeof item.url !== "string") return clean;
-      var name = item.name.trim().slice(0, 40);
-      var url = item.url.trim().slice(0, 2048);
-      if (!name || !isValidHttpUrl(url) || CATEGORIES.indexOf(item.category) === -1) return clean;
-      var normalizedUrl;
-      try { normalizedUrl = new URL(url).href; } catch (e) { return clean; }
-      if (seenUrls[normalizedUrl]) return clean;
-      seenUrls[normalizedUrl] = true;
-      var id = typeof item.id === "string" && item.id ? item.id : "custom-" + Date.now() + "-" + clean.length;
-      while (seenIds[id]) id += "-copy";
-      seenIds[id] = true;
-      clean.push({ id: id, name: name, url: normalizedUrl, category: item.category, icon: "link", custom: true });
-      return clean;
-    }, []);
-  }
+  function sanitizeCustomLinks(value) { return window.OneSpaceShortcuts.sanitize(value,BUILT_IN_LINKS,CATEGORIES); }
 
   var customLinks = sanitizeCustomLinks(safeGetJSON(STORAGE.customLinks, []));
   var favoriteIds = safeGetJSON(STORAGE.favorites, []).filter(function (id) { return typeof id === "string"; });
@@ -1175,12 +1159,8 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
 
   var HIDDEN_DEFAULT_IDS = ["hm", "zara", "maxmara"];
-  function linkSpace(link) {
-    if (link.custom) return ["Shopping & Home", "Daily", "Smart Home"].indexOf(link.category) !== -1 ? "personal" : "work";
-    if (["Travel", "Relax & Play", "Gaming"].indexOf(link.category) !== -1 || ["youtube", "maps"].indexOf(link.id) !== -1) return "explore";
-    if (["Shopping & Home", "Daily", "Smart Home"].indexOf(link.category) !== -1) return "personal";
-    return "work";
-  }
+  function linkSpace(link) { return window.OneSpaceShortcuts.space(link); }
+
   function displayCategory(link) {
     if (currentSpace === "explore") return link.category === "Travel" || link.id === "maps" ? "Travel" : "Relax & Play";
     return link.category;
@@ -1365,7 +1345,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
 
   function miniCardHtml(link) {
-    return '<a class="mini-card" style="--brand:' + escapeHtml(BRAND_COLORS[link.id] || 'var(--accent)') + '" data-link-id="' + escapeHtml(link.id) + '" href="' + escapeHtml(link.url) + '" target="_blank" rel="noopener noreferrer"><span class="mini-icon">' + iconSvg(link.icon || "link") + '</span><span>' + escapeHtml(link.name) + '</span><span class="mini-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>';
+    return '<a class="mini-card" style="--brand:' + escapeHtml(BRAND_COLORS[link.id] || 'var(--accent)') + '" data-link-id="' + escapeHtml(link.id) + '" href="' + escapeHtml(link.url) + '" target="_blank" rel="noopener noreferrer"><span class="mini-icon">' + iconSvg(link.icon || "link") + '</span><span class="mini-card-copy">' + escapeHtml(link.name) + '<small>' + escapeHtml(link.description || getHostname(link.url)) + '</small><small>' + escapeHtml(getHostname(link.url)) + '</small></span><span class="mini-arrow" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>';
   }
 
   function renderPersonalSections() {
@@ -1385,7 +1365,8 @@ body.force-full-motion { scroll-behavior:smooth; }
     document.getElementById("glanceFavorites").textContent = favorites.length ? favorites.length + (favorites.length === 1 ? " favorite" : " favorites") : "No favorites";
     document.getElementById("glanceShortcuts").textContent = activeLinks().length + " available";
     var railRecent = document.getElementById("railRecent");
-    if (railRecent) railRecent.innerHTML = recent.length ? recent.slice(0, 3).map(function (link) { return '<li>' + escapeHtml(link.name) + '</li>'; }).join("") : '<li class="rail-empty">Open a shortcut to build your recent list.</li>';
+    var spaceRecent=recent.filter(function(link){return linkSpace(link) === currentSpace;});
+    if (railRecent) railRecent.innerHTML = spaceRecent.length ? spaceRecent.slice(0, 3).map(function (link) { return '<li>' + escapeHtml(link.name) + '</li>'; }).join("") : '<li class="rail-empty">Open a shortcut to build your recent list.</li>';
 
     document.querySelectorAll("[data-quick-tab]").forEach(function (button) { var active = button.getAttribute("data-quick-tab") === quickAccessTab; button.setAttribute("aria-selected", String(active)); button.tabIndex = active ? 0 : -1; });
     document.querySelectorAll("[data-empty-shortcuts]").forEach(function (button) { button.addEventListener("click", function () { goToPage("shortcuts"); }); });
@@ -2242,7 +2223,7 @@ body.force-full-motion { scroll-behavior:smooth; }
    * ===================================================================== */
   var modalStack = [];
   var modalBackground = new Map();
-  var OVERLAY_IDS = ["paletteOverlay", "shortcutOverlay", "toolboxOverlay", "welcomeOverlay", "addGameOverlay", "gameDetailsOverlay", "addMovieOverlay", "movieDetailsOverlay"];
+  var OVERLAY_IDS = ["domainOverlay","paletteOverlay", "shortcutOverlay", "toolboxOverlay", "welcomeOverlay", "addGameOverlay", "gameDetailsOverlay", "addMovieOverlay", "movieDetailsOverlay"];
 
   function anyModalOpen() {
     return OVERLAY_IDS.some(function (id) {
@@ -2287,6 +2268,13 @@ body.force-full-motion { scroll-behavior:smooth; }
     syncModalBackground();
     if (wasTop) {
       var focusTarget = entry.opener && entry.opener.isConnected && !entry.opener.closest('[inert], [hidden]') ? entry.opener : null;
+      if (!focusTarget && entry.opener) {
+        var focusKeys = ['data-work-action','data-id','data-edit','data-toggle','data-delete','data-save-destination','data-trip-notes','data-space-action'];
+        var identity = focusKeys.filter(function(key){ return entry.opener.hasAttribute(key); });
+        if (identity.length) focusTarget = Array.from(document.querySelectorAll('button,input,select')).find(function(el){
+          return el.offsetParent && !el.closest('[inert], [hidden]') && identity.every(function(key){return el.getAttribute(key) === entry.opener.getAttribute(key);});
+        });
+      }
       if (!focusTarget) {
         var parent = modalStack[modalStack.length - 1];
         focusTarget = parent ? parent.overlay.querySelector('button, input') : document.querySelector('[data-page-when]:not([hidden]) h1, [data-page-when]:not([hidden]) [role="tab"][aria-selected="true"]');
@@ -2318,6 +2306,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   document.addEventListener("keydown", trapModalFocus);
 
   OVERLAY_IDS.map(function (id) { return document.getElementById(id); }).forEach(function (overlay) {
+    if (!overlay) return;
     overlay.addEventListener("mousedown", function (e) {
       if (e.target === overlay) closeModal(overlay);
     });
@@ -2466,6 +2455,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   var shortcutNameField = document.getElementById("shortcutName");
   var shortcutUrlField = document.getElementById("shortcutUrl");
   var shortcutCategoryField = document.getElementById("shortcutCategory");
+  var shortcutDescriptionField = document.getElementById("shortcutDescription"), shortcutSpaceField = document.getElementById("shortcutSpace"), shortcutOrigin = null;
   var shortcutError = document.getElementById("shortcutError");
   var shortcutModalTitle = document.getElementById("shortcutModalTitle");
 
@@ -2483,6 +2473,10 @@ body.force-full-motion { scroll-behavior:smooth; }
       field.removeAttribute("aria-invalid");
     });
     shortcutForm.reset();
+    shortcutOrigin = ["personal","explore"].includes(currentPage) ? currentPage : currentSpace;
+    shortcutSpaceField.disabled = shortcutOrigin === "explore";
+    shortcutSpaceField.value = shortcutOrigin;
+    renderCategoryOptions(shortcutOrigin === "explore" ? "Travel" : shortcutOrigin === "personal" ? "Daily" : "Development");
     if (editId) {
       var link = customLinks.filter(function (l) { return l.id === editId; })[0];
       if (!link) return;
@@ -2491,6 +2485,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       shortcutNameField.value = link.name;
       shortcutUrlField.value = link.url;
       shortcutCategoryField.value = link.category;
+      shortcutDescriptionField.value = link.description || ""; shortcutSpaceField.value = linkSpace(link); shortcutSpaceField.disabled = false; shortcutOrigin = null;
     } else {
       shortcutModalTitle.textContent = "Add shortcut";
       shortcutIdField.value = "";
@@ -2498,6 +2493,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     openModal(shortcutOverlay, shortcutNameField);
   }
 
+  document.querySelectorAll("[data-add-space]").forEach(function(b){b.addEventListener("click",function(){openShortcutModal(null);});});
   document.getElementById("addShortcutBtn").addEventListener("click", function () { openShortcutModal(null); });
   document.getElementById("shortcutClose").addEventListener("click", function () { closeModal(shortcutOverlay); });
   document.getElementById("shortcutCancel").addEventListener("click", function () { closeModal(shortcutOverlay); });
@@ -2527,6 +2523,11 @@ body.force-full-motion { scroll-behavior:smooth; }
     var name = shortcutNameField.value.trim();
     var url = shortcutUrlField.value.trim();
     var category = shortcutCategoryField.value;
+    var space = shortcutOrigin === "explore" ? "explore" : shortcutSpaceField.value;
+    if(space === "explore" && !["Travel","Relax & Play"].includes(category)) category="Travel";
+    if(space === "personal" && !["Daily","Shopping & Home","Smart Home"].includes(category)) category="Daily";
+    if(space === "work" && ["Travel","Relax & Play","Gaming","Daily","Shopping & Home","Smart Home"].includes(category)) category="Development";
+    var description = shortcutDescriptionField.value.trim();
 
     if (!name) { showShortcutError("Please enter a name for the shortcut.", shortcutNameField); return; }
     if (!isValidHttpUrl(url)) { showShortcutError("Please enter a valid URL, starting with http:// or https://", shortcutUrlField); return; }
@@ -2541,12 +2542,13 @@ body.force-full-motion { scroll-behavior:smooth; }
       showShortcutError('That URL is already saved as "' + duplicate.name + '".', shortcutUrlField);
       return;
     }
+    var beforeLinks=JSON.parse(JSON.stringify(customLinks));
     if (editId) {
       var existing = customLinks.filter(function (l) { return l.id === editId; })[0];
       if (existing) {
         existing.name = name;
         existing.url = normalizedUrl;
-        existing.category = category;
+        existing.category = category; existing.space = space; existing.description = description;
       }
       showToast("Shortcut updated.");
     } else {
@@ -2554,34 +2556,31 @@ body.force-full-motion { scroll-behavior:smooth; }
         id: "custom-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7),
         name: name,
         url: normalizedUrl,
-        category: category,
+        category: category, space: space, description: description,
         icon: "link",
         custom: true
       });
       showToast("Shortcut added.");
     }
 
-    if (!saveCustomLinks()) showToast("Shortcut changed, but browser storage is unavailable.");
-    renderLinks();
+    if (!saveCustomLinks()) { customLinks=beforeLinks; showShortcutError("Shortcut could not be saved. Your previous links are unchanged."); return; }
+    renderLinks(); renderPersonalPage(); renderExplorePage(); renderWorkPage();
     closeModal(shortcutOverlay);
   });
 
-  function deleteShortcut(id) {
+  function deleteShortcut(id, confirmed) {
     var link = customLinks.filter(function (l) { return l.id === id; })[0];
     if (!link) return;
+    if (!confirmed) { window.OneSpaceUI.confirm("Delete shortcut?", link.name, function () { deleteShortcut(id, true); }); return; }
     var originalIndex = customLinks.indexOf(link);
     customLinks = customLinks.filter(function (l) { return l.id !== id; });
     var saved = saveCustomLinks();
-    renderLinks();
+    if(!saved){customLinks.splice(originalIndex,0,link);showToast("Shortcut could not be deleted.");return;}
+    renderLinks(); renderPersonalPage(); renderExplorePage(); renderWorkPage();
     showToast(saved ? "Shortcut deleted." : "Shortcut deleted, but browser storage is unavailable.", saved ? "Undo" : null, saved ? function () { customLinks.splice(originalIndex, 0, link); saveCustomLinks(); renderLinks(); showToast("Shortcut restored."); } : null);
   }
 
-  function duplicateShortcut(id) {
-    var link = customLinks.filter(function (item) { return item.id === id; })[0];
-    if (!link) return;
-    customLinks.push({ id: "custom-" + Date.now(), name: (link.name + " copy").slice(0, 50), url: link.url, category: link.category, icon: link.icon || "link", description: link.description || "", custom: true });
-    saveCustomLinks(); renderLinks(); showToast("Shortcut duplicated.");
-  }
+  function duplicateShortcut(id) { showToast("This URL is already saved. Edit the existing shortcut instead."); }
 
   function moveShortcut(id, direction) {
     var link = customLinks.filter(function (item) { return item.id === id; })[0];
@@ -2633,7 +2632,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     reader.addEventListener("load", function () {
       try {
         var backup = JSON.parse(String(reader.result));
-        if (backup && backup.version === 2) {
+        if (backup && [2, 3].includes(backup.version)) {
           window.OneSpaceStorage.validate(backup.data);
           if (!window.confirm("Restore this complete backup? Your OneSpace data will be replaced, including games, movies, projects and preferences. Download a current backup first if needed.")) return;
           window.OneSpaceStorage.restore(window.localStorage, backup);
@@ -2974,16 +2973,11 @@ body.force-full-motion { scroll-behavior:smooth; }
   /* =====================================================================
    * Work — active projects, task timeline, Work shortcuts
    * ===================================================================== */
+  function spaceCardHtml(link) { return window.OneSpaceShortcutUI ? window.OneSpaceShortcutUI.card(link,miniCardHtml(link),favoriteIds.includes(link.id),recentIds.includes(link.id)) : miniCardHtml(link); }
   function renderWorkPage() {
     var timeline = document.getElementById("workTimelineList");
-    if (timeline) {
-      var prioritized = prioritizeTasks(tasks).slice(0, 6);
-      timeline.innerHTML = prioritized.length ? prioritized.map(function (t) {
-        return '<li class="' + (t.done ? "is-done" : "") + '"><strong>' + escapeHtml(t.text) + "</strong><span>" + (t.done ? "Completed" : t.priority + " priority") + "</span></li>";
-      }).join("") : '<li class="timeline-empty">No tasks yet — add one in Productivity.</li>';
-    }
     var grid = document.getElementById("workShortcutsGrid");
-    if (grid) { var links = linksForSpace("work").slice(0, 12); grid.innerHTML = links.length ? links.map(miniCardHtml).join("") : '<div class="quick-empty"><span>No work shortcuts yet.</span></div>'; }
+    if (grid) { var links = linksForSpace("work"); grid.innerHTML = links.length ? links.map(spaceCardHtml).join("") : '<div class="quick-empty"><span>No work shortcuts yet.</span></div>'; }
     observeReveals(document);
   }
   document.addEventListener("click", function (e) {
@@ -2996,37 +2990,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   /* =====================================================================
    * Personal — goals, routines, habits, Personal shortcuts
    * ===================================================================== */
-  function makeCheckListController(storageKey, seedText) {
-    var items = safeGetJSON(storageKey, []);
-    function save() { safeSet(storageKey, JSON.stringify(items)); }
-    var controller = {
-      count: function () { return items.length; },
-      add: function (text) { items.unshift({ id: uid("item"), text: text.slice(0, 80), done: false }); save(); },
-      render: function (listEl) {
-        if (!listEl) return;
-        listEl.innerHTML = items.length ? items.map(function (item) {
-          return '<li class="' + (item.done ? "is-done" : "") + '">' +
-            '<button type="button" class="check-toggle" data-toggle="' + item.id + '" aria-pressed="' + !!item.done + '" aria-label="Mark ' + escapeHtml(item.text) + (item.done ? ' incomplete' : ' complete') + '">' + iconSvg("check") + "</button>" +
-            "<span>" + escapeHtml(item.text) + "</span>" +
-            '<button type="button" class="check-delete" data-delete="' + item.id + '" aria-label="Delete">' + iconSvg("trash") + "</button></li>";
-        }).join("") : '<div class="check-empty">Nothing here yet — add one above.</div>';
-        listEl.querySelectorAll("[data-toggle]").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            var item = items.filter(function (i) { return i.id === btn.getAttribute("data-toggle"); })[0];
-            if (!item) return;
-            item.done = !item.done; save(); controller.render(listEl);
-          });
-        });
-        listEl.querySelectorAll("[data-delete]").forEach(function (btn) {
-          btn.addEventListener("click", function () {
-            items = items.filter(function (i) { return i.id !== btn.getAttribute("data-delete"); });
-            save(); controller.render(listEl);
-          });
-        });
-      }
-    };
-    return controller;
-  }
+  function makeCheckListController(storageKey) { return window.makePersonalController(storageKey, {safeGetJSON:safeGetJSON,safeSet:safeSet,uid:uid,escapeHtml:escapeHtml,showToast:showToast,iconSvg:iconSvg,onChange:renderPersonalPage}); }
   var goalsController = makeCheckListController(STORAGE.personalGoals, "Read for 20 minutes a day");
   var routinesController = makeCheckListController(STORAGE.personalRoutines, "Morning stretch");
   var habitsController = makeCheckListController(STORAGE.personalHabits, "Drink water");
@@ -3038,28 +3002,28 @@ body.force-full-motion { scroll-behavior:smooth; }
     var goalsCount = document.getElementById("personalGoalsCount");
     if (goalsCount) goalsCount.textContent = goalsController.count() + (goalsController.count() === 1 ? " goal" : " goals");
     var grid = document.getElementById("personalShortcutsGrid");
-    if (grid) { var links = linksForSpace("personal").slice(0, 12); grid.innerHTML = links.length ? links.map(miniCardHtml).join("") : '<div class="quick-empty"><span>No personal shortcuts yet.</span></div>'; }
+    if (grid) { var links = linksForSpace("personal"); grid.innerHTML = links.length ? links.map(spaceCardHtml).join("") : '<div class="quick-empty"><span>No personal shortcuts yet.</span></div>'; }
     observeReveals(document);
   }
   document.getElementById("personalGoalForm").addEventListener("submit", function (e) {
     e.preventDefault();
     var input = document.getElementById("personalGoalInput");
     if (!input.value.trim()) return;
-    goalsController.add(input.value.trim()); input.value = "";
+    if (!goalsController.add(input.value.trim())) return; input.value = "";
     renderPersonalPage(); showToast("Goal added.");
   });
   document.getElementById("personalRoutineForm").addEventListener("submit", function (e) {
     e.preventDefault();
     var input = document.getElementById("personalRoutineInput");
     if (!input.value.trim()) return;
-    routinesController.add(input.value.trim()); input.value = "";
+    if (!routinesController.add(input.value.trim())) return; input.value = "";
     renderPersonalPage(); showToast("Routine added.");
   });
   document.getElementById("personalHabitForm").addEventListener("submit", function (e) {
     e.preventDefault();
     var input = document.getElementById("personalHabitInput");
     if (!input.value.trim()) return;
-    habitsController.add(input.value.trim()); input.value = "";
+    if (!habitsController.add(input.value.trim())) return; input.value = "";
     renderPersonalPage(); showToast("Habit added.");
   });
 
@@ -3071,7 +3035,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     if (!grid) return;
     var q = (query || "").trim().toLowerCase();
     var items = linksForSpace("explore").filter(function (link) { return !q || link.name.toLowerCase().indexOf(q) !== -1; });
-    grid.innerHTML = items.length ? items.map(miniCardHtml).join("") : '<div class="quick-empty"><span>No matching shortcuts.</span></div>';
+    grid.innerHTML = items.length ? items.map(spaceCardHtml).join("") : '<div class="quick-empty"><span>No matching shortcuts.</span></div>';
     observeReveals(document);
   }
   document.getElementById("exploreSearchForm").addEventListener("submit", function (e) { e.preventDefault(); renderExplorePage(document.getElementById("exploreSearchInput").value); });
@@ -3114,12 +3078,19 @@ body.force-full-motion { scroll-behavior:smooth; }
     safeGet: safeGet, safeSet: safeSet, safeGetJSON: safeGetJSON,
     showToast: showToast, openModal: openModal, closeModal: closeModal,
     goToPage: goToPage, PAGES: PAGES, escapeHtml: escapeHtml, uid: uid, iconSvg: iconSvg,
+    editShortcut:openShortcutModal,deleteShortcut:deleteShortcut,toggleFavorite:toggleFavorite,renderSpaceShortcuts:function(){renderWorkPage();renderPersonalPage();renderExplorePage();},
     prefersReducedMotion: prefersReducedMotion, prioritizeTasks: prioritizeTasks
   };
 })();
 </script>
 <script src="visual-utils.js"></script>
+<script src="domain-ui.js"></script>
+<script src="shortcut-surface.js"></script>
 <script src="projects.js"></script>
+<script src="work-tracker.js"></script>
+<script src="explore-data.js"></script>
+<script src="explore.js"></script>
+<script src="game-resources.js"></script>
 <script src="games-data.js"></script>
 <script src="games.js"></script>
 <script src="movies-data.js"></script>

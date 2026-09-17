@@ -198,3 +198,7 @@
   window.SUGGESTION_CATALOG.forEach(function(game) { var slug=artSlugs[game.title]; if(slug) { game.artwork='assets/game-art/'+slug+'-hero.jpg'; game.cardArtwork='assets/game-art/'+slug+'-card.jpg'; game.logo={kind:'asset',src:'assets/game-art/'+slug+'-logo.png'}; } });
   window.DEFAULT_GAMES.forEach(function(game) { var slug=game.id.replace('game-',''); if(['hades','cyberpunk-2077','death-stranding'].includes(slug)) game.cardArtwork='assets/game-art/'+slug+'-card.jpg'; game.artworkPosition=slug==='hades'?'65% center':slug==='cyberpunk-2077'?'62% center':'center'; });
 })();
+/* Resource and task metadata stays separate from tracked completion. */
+if (window.OneSpaceGameResources) [window.DEFAULT_GAMES,window.SUGGESTION_CATALOG].forEach(function(pool){pool.forEach(function(g){g.resources=window.OneSpaceGameResources.resources(g);g.defaultTasks=g.id==='game-diablo-immortal'?window.DIABLO_WEEKLY_TEMPLATE.map(function(t){return t.label;}):window.OneSpaceGameResources.tasks(g);});});
+
+[window.DEFAULT_GAMES,window.SUGGESTION_CATALOG].forEach(function(pool){pool.forEach(function(g){if(!window.OneSpaceGameResources)return;g.defaultTaskTemplates={story:window.OneSpaceGameResources.tasks(Object.assign({},g,{defaultTasks:null,trackerType:'story'})),weekly:g.id==='game-diablo-immortal'?g.defaultTasks.slice():window.OneSpaceGameResources.tasks(Object.assign({},g,{defaultTasks:null,trackerType:'weekly'}))};});});
