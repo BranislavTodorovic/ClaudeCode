@@ -1,186 +1,253 @@
-# OneSpace Development, Discovery, and Cinematic Interaction Tracker
+# OneSpace — Combined Implementation Plan
 
-## Context
+**This is the standing plan for OneSpace.** It replaces the previous contents of this file, carrying forward **every step** of that earlier version (Part A regrouping, Part B Phases 1–8, Part C defects C.1–C.7), marking what is already delivered, correcting the errors found in it, and folding in the requirements raised since. It is self-contained: no other document is needed to execute it.
 
-OneSpace is a local-first single-page dashboard (`index.html` + 24 sibling JS files + 8 sibling CSS files, all flat at the repository root). It already has working Games, Movies, Explore, Work and Personal modules, a storage validation boundary, a cinematic visual system, and a Node test suite.
-
-Three things are being done here, and they are deliberately kept separate:
-
-1. **Repository regrouping (new in this revision).** Every source file currently sits at the repository root. With ~34 flat files the domain ownership is invisible, and "all games files" cannot be tracked as a unit. Files must be regrouped into top-level domain folders so each file lives in the folder that owns it.
-2. **Feature work (the existing plan, preserved).** Extend the dashboard into a complete development tracker and richer personal/discovery hub, without replacing its router, storage boundary, Games/Movie modules, or cinematic visual system.
-3. **Reported defects and experience gaps (Part C).** Seven issues raised from using the app: a tracked movie can never be untracked, large movie images are blurred, series are effectively missing, game tracker checkboxes cannot be un-checked, destinations lack real photography and substantive descriptions, shortcuts look dated, and the app should feel warm and alive with per-tab cinematic treatment. Two of these are confirmed code defects with root causes identified; one needs reproducing before it is changed. Each is folded into the Part B phase that owns it rather than duplicated.
-
-Additionally, there is **no credentials handling of any kind today**: no `.gitignore`, no `package.json`, and the `providers/` folder is empty. A dedicated, git-ignored secrets folder must be created now so that a future provider-backed phase has a safe place for API keys, and so no key is ever committed by accident.
-
-The intended outcome is a repository where domain ownership is obvious from the folder tree, secrets can never be committed or served over HTTP, and the application's runtime behavior, URL, storage keys and test commands are byte-for-byte unchanged by the reorganization.
+The working checklist derived from this plan is `docs/IMPLEMENTATION-STEPS.md`. This document holds the reasoning; that one holds the boxes to tick.
 
 ---
 
-## Part A — Repository Organization (Phase 1.5)
+## Context
 
-### A.1 Target Structure
+The previous version of this plan was inspected against the actual repository, and **its "Current Findings" section described a pre-implementation state that no longer exists.** `README.md`, `VERIFICATION.md` and the code show that most of Part B Phases 2–6 are already built and verified. Running the suite confirms **31/31 tests pass** today.
 
-Top-level domain folders. `index.html` and `assets/` stay at the repository root.
+What is genuinely open is a different, smaller list than the old document implies — plus seven new requirements:
+
+1. Every tab needs a **living** cinematic background representing its domain. Games and Movies have **no page hero at all**; the nine pages that do have art use static stills.
+2. Settings needs updating with new themes. A theme system exists but is partly broken.
+3. Adding a game must immediately create the right tracker — **chapters for mission games, a weekly tracker for live-service games** like Diablo Immortal.
+4. Movies / Series / Games search bars must suggest titles as you type, with an add affordance.
+5. Every shortcut — including the 47 built-ins — needs an add/remove option.
+6. The **Development tracker** needs a modern, clean, visually appealing rebuild, **starting with UI and layout**.
+7. Each tab must contain only its own domain's content.
+
+The intended outcome: a repository organised by domain, tabs that are strictly single-domain with Home as the only aggregator, a Development tracker that reads as a real tool, and a shell where every route visibly announces itself and feels alive — with no regression to storage keys, the router, or the green baseline.
+
+---
+
+## How to read this plan
+
+Every step from the previous plan is preserved below with a status marker:
+
+- **[DONE]** — verified present in the code; no work required, but it must not regress.
+- **[OPEN]** — carried forward from the previous plan, still to do.
+- **[NEW]** — added in this session.
+- **[FIX]** — a defect found during this inspection.
+
+**Execution order** (phase numbers group related work; this is the order to actually run them):
+
+```
+13.1 → 13.2   write the standing plan and the step checklist first
+0             freeze the baseline
+1             repository regrouping          [gate: 31/31, zero 404s]
+2             Development tracker UI/layout  [gate: all Work actions, 4 widths]
+3             domain boundaries + Home module[gate: boundary test]
+4             Settings and themes
+5             living cinematic scenes
+6             provider search and typeahead
+7             shortcuts add/remove
+8             games trackers
+9             movies and series
+10            explore
+11            personal regression
+12            verification and delivery
+13.3          final documentation
+```
+
+Phases 4–11 are independent of one another and may be reordered or parallelised; 0 → 1 → 2 → 3 is strictly sequential, and 12 runs last.
+
+---
+
+## Verified baseline
+
+Executed, not assumed:
+
+- `node --test tests/data-regression.test.js tests/tracker-regression.test.js` → **31 pass, 0 fail**.
+- 33 source files flat at the repository root. `providers/` is empty. **No `.gitignore` and no `package.json` exist.**
+- `index.html` contains exactly **22 `<script src>` tags** and **8 `<link rel="stylesheet">` tags**.
+- 11 routes in `PAGES` (`index.html:1773`); router `goToPage()` at `index.html:1788-1818`; no hash or History API routing.
+- `assets/page-art/` holds art for 9 routes — **none for games or movies**.
+- Catalog contains **20 titles: 16 movies + 4 series**.
+
+---
+
+## Corrections to the previous plan document
+
+These are errors in the previous version of this plan, found during inspection. **They are already corrected throughout this document** — the table is retained so the corrections are auditable rather than silent.
+
+| # | Claim in the old plan | Reality |
+|---|---|---|
+| 1 | "Current Findings" describes Work as read-only summaries, Personal without edit, Explore without a preference model, Movies without first-class series | All of these were built. `orbit-work-items` / `-tasks` / `-history` exist with full lifecycle; Personal has edit and confirmed delete; Explore has `orbit-explore-preferences` and `orbit-explore-saved`; `MOVIE_TYPES` and a type filter exist |
+| 2 | C.3: "**17** movies" | **16** movies (plus 4 series = 20 titles) |
+| 3 | C.3: names 3 series "and one more, lines 138–141" | The fourth is `tv-chernobyl`; records span `movies-data.js:137-142` |
+| 4 | C.4: lists 5 suspect mechanisms for the checkbox defect | Omits the most likely one — `saveLibrary`/`saveWeekly` discard `safeSet`'s failure return (see Phase 8.3) |
+| 5 | Part A: "~34 flat files" | 33 source files (24 JS, 8 CSS, `index.html`) |
+
+All other factual claims in the old plan were independently re-verified and are correct, including: the server block list containing `work` (`_static-server.js:11`), the non-recursive parse loop (`tests/data-regression.test.js:132`), the `storage-utils.js:49` cross-domain require, the three `^assets/` validators, the five `url()` paths in `cinematic-refinement.css`, and the `VERIFICATION.md` port error (it cites 18973; `tests/browser-server.js` defaults to 18974).
+
+---
+
+## Decisions locked in this session
+
+| Decision | Choice |
+|---|---|
+| Repository regrouping | **Execute first**, before any feature work |
+| Home page scope | **Home is the only aggregator**; every other tab is strictly single-domain |
+| Work / Projects / Productivity | **One Work tab with sub-views**; generic daily tasks leave Work |
+| Typeahead suggestion source | **Provider-backed global search** (TMDB; IGDB or RAWG) via a local server proxy |
+| New tab artwork | **Code-drawn animated scenes** — layered inline SVG + CSS, no new binary assets |
+| Built-in shortcut removal | **Hide per-user, with a restore list** in Settings |
+| Extra defect approved | **Silent save failures in `games.js`** |
+
+**Scope amendment this forces:** provider-backed search breaks the "zero network requests" guarantee asserted in the old plan's Scope Boundaries and C.7 point 5. The app must therefore still work fully offline with a **visible** degraded state — never a silent fallback to the local seed list presented as global results. This is an intentional amendment, recorded here so it is not mistaken for an oversight.
+
+---
+
+## Product decisions
+
+Carried from the previous plan. These govern every phase below; where this session changed one, the change is marked.
+
+- **Local-first for user data.** No accounts, no cloud sync, no multi-user. **Amended:** provider credentials now exist, server-side only, for search (Phase 6) — user records remain entirely local.
+- Core Work hierarchy is `project → work item → task`. A work item is a `story` or a `defect`.
+- Work item statuses: `open`, `in-progress`, `blocked`, `closed`.
+- Tasks have independent completion state, but closing a work item closes all remaining child tasks.
+- Closed work items are preserved in a Work Log / Backlog history rather than deleted; the backlog supports filtering and reopening.
+- Analysis, plan and execution are editable text fields on each story/defect.
+- Work items carry priority, labels, estimate, created/updated dates, deadline and reminder fields.
+- Browser-native date/time values with local reminders **while the page is open**. No promise of notifications after the page closes.
+- Personal deletion uses the existing modal/confirmation conventions and shows a toast on success.
+- Explore uses a curated local destination catalog: city break, nature, beach, culture/history, food, wellness, adventure.
+- Explore recommendations explain the matched preferences and always show a local image or a deterministic fallback.
+- Explore shortcuts are stored/tagged as `explore` and must not appear in Work or Personal.
+- Games retains the existing catalog and gains a per-game detail/resource surface. **Adding a game creates default tracker tasks/objectives from the selected tracker type** (Phase 8 makes that type correct).
+- Movies becomes Movies & Series while preserving the existing `movies` route and storage keys, using a first-class `movie`/`series` type filter. **No episode-level tracking** unless separately approved.
+- Keep the current cinematic direction and the existing inline SVG icon system for all new actions.
+- **Every visible label starts with an uppercase first word** — `City break`, `Nature`, `Series`, `Action`, `Winter`. Never expose raw lowercase enum values.
+
+**Superseded:** the previous plan's Phase 1 step 11, "Do not begin provider-backed global discovery in this iteration," is replaced by the decision recorded above. Phase 6 implements it.
+
+---
+
+# PHASE 0 — Freeze the baseline
+
+Carried from old Part B Phase 1 (Baseline and Contracts).
+
+| Step | Status |
+|---|---|
+| 0.1 Run the two test files; record the 31/31 result with a timestamp | [DONE] — re-run before starting |
+| 0.2 Parse every JS file and the inline `index.html` script | [DONE] — covered by the existing parse test |
+| 0.3 Start `node _static-server.js`; inspect all 11 routes at `http://localhost:8973` | [OPEN] |
+| 0.4 Record current storage keys, backup format, router pages, script load order, and the `onespace:data-changed` / `onespace:page-changed` events | [OPEN] |
+| 0.5 Inventory every button, tab, link, form, checkbox, select, modal action, shortcut and page jump — recording owner, expected state change, persistence key, success feedback, error behaviour, focus return and reload behaviour | [OPEN] — this inventory is the acceptance checklist for Phase 12 |
+| 0.6 Treat `storage-utils.js` as the only persistence validation boundary | [DONE] — holds today; must not regress |
+| 0.7 Schemas for projects, work items, tasks, history, destinations, preferences, saved destinations, Personal records, game resources, game default tasks, movie/series metadata | [DONE] — all present and validated |
+| 0.8 Generated IDs, timestamps, status enums, optional fields, maximum lengths in every schema | [DONE] |
+| 0.9–0.10 Migration behaviour and safe defaults for existing records and v2 backups | [DONE] — v2 accepted, v3 current |
+| 0.11 Capture "before" screenshots of Work, Games, Movies and Settings at 1440 / 1024 / 760 / 390 px | [NEW] — comparison set for the redesign |
+| 0.12 Export a v3 backup from the live origin before any other phase runs | [NEW] — no later phase can then lose real data |
+
+---
+
+# PHASE 1 — Repository regrouping
+
+Old Part A, reproduced in full. Runs first, before any feature work.
+
+## 1.1 Target structure
+
+`index.html` and `assets/` stay at the repository root.
 
 ```
 repo/
-  index.html                 (stays — entry URL and document-relative asset base)
-  assets/                    (stays — see A.3)
-    destinations/ game-art/ game-logos/ movie-art/ page-art/
-  games/
-    games.js  games-data.js  game-resources.js
-    games.css  games-cinematic.css
-  movies/
-    movies.js  movies-data.js
-    movies.css  movies-cinematic.css
-  explore/
-    explore.js  explore-data.js  explore-global.js
-    discovery-integration.js  discovery-ui.js  local-discovery.js
-    trip-board.js
-    discovery.css
-  work/
-    projects.js  work-tracker.js
-    tracker.css
-  personal/
-    personal-controller.js
-  shared/
-    storage-utils.js  catalog-utils.js
-    shortcut-utils.js  shortcut-surface.js
-    domain-ui.js  tooltip-utils.js  visual-utils.js  cinematic-scenes.js
-  styles/
-    pages.css  cinematic-refinement.css
-  server/
-    _static-server.js
-    providers/               (replaces the empty root providers/; future adapters only)
-  config/
-    secrets.example.json     (committed template)
-    secrets/                 (git-ignored — see A.5)
-      .gitkeep
-  tests/
-    data-regression.test.js  tracker-regression.test.js
-    browser-server.js  browser-smoke.mjs
-    structure.test.js        (NEW — see A.6)
-    fixtures/
-  docs/
-    REVISED-IMPLEMENTATION-PLAN.md
-  README.md
-  VERIFICATION.md
-  .gitignore                 (NEW)
+  index.html                 (entry URL and document-relative asset base)
+  assets/                    (destinations/ game-art/ game-logos/ movie-art/ page-art/)
+  games/      games.js  games-data.js  game-resources.js  games.css  games-cinematic.css
+  movies/     movies.js  movies-data.js  movies.css  movies-cinematic.css
+  explore/    explore.js  explore-data.js  explore-global.js  discovery-integration.js
+              discovery-ui.js  local-discovery.js  trip-board.js  discovery.css
+  work/       projects.js  work-tracker.js  tracker.css
+  personal/   personal-controller.js
+  home/       (created in Phase 3.1 — no file moves here, nothing exists to move)
+  shared/     storage-utils.js  catalog-utils.js  shortcut-utils.js  shortcut-surface.js
+              domain-ui.js  tooltip-utils.js  visual-utils.js  cinematic-scenes.js
+  styles/     pages.css  cinematic-refinement.css
+  server/     _static-server.js  providers/
+  config/     secrets.example.json  secrets/.gitkeep
+  tests/      data-regression.test.js  tracker-regression.test.js  browser-server.js
+              browser-smoke.mjs  structure.test.js (NEW)  fixtures/
+  docs/       REVISED-IMPLEMENTATION-PLAN.md  agent-instructions.md
+  README.md  VERIFICATION.md  .gitignore (NEW)
 ```
 
-### A.2 Complete File Move Map
-
-Every existing source file and its destination. No file stays at the root except `index.html`, `README.md`, `VERIFICATION.md`.
-
-| Current path | Destination |
-|---|---|
-| `games.js` | `games/games.js` |
-| `games-data.js` | `games/games-data.js` |
-| `game-resources.js` | `games/game-resources.js` |
-| `games.css` | `games/games.css` |
-| `games-cinematic.css` | `games/games-cinematic.css` |
-| `movies.js` | `movies/movies.js` |
-| `movies-data.js` | `movies/movies-data.js` |
-| `movies.css` | `movies/movies.css` |
-| `movies-cinematic.css` | `movies/movies-cinematic.css` |
-| `explore.js` | `explore/explore.js` |
-| `explore-data.js` | `explore/explore-data.js` |
-| `explore-global.js` | `explore/explore-global.js` |
-| `discovery-integration.js` | `explore/discovery-integration.js` |
-| `discovery-ui.js` | `explore/discovery-ui.js` |
-| `local-discovery.js` | `explore/local-discovery.js` |
-| `trip-board.js` | `explore/trip-board.js` |
-| `discovery.css` | `explore/discovery.css` |
-| `projects.js` | `work/projects.js` |
-| `work-tracker.js` | `work/work-tracker.js` |
-| `tracker.css` | `work/tracker.css` |
-| `personal-controller.js` | `personal/personal-controller.js` |
-| `storage-utils.js` | `shared/storage-utils.js` |
-| `catalog-utils.js` | `shared/catalog-utils.js` |
-| `shortcut-utils.js` | `shared/shortcut-utils.js` |
-| `shortcut-surface.js` | `shared/shortcut-surface.js` |
-| `domain-ui.js` | `shared/domain-ui.js` |
-| `tooltip-utils.js` | `shared/tooltip-utils.js` |
-| `visual-utils.js` | `shared/visual-utils.js` |
-| `cinematic-scenes.js` | `shared/cinematic-scenes.js` |
-| `pages.css` | `styles/pages.css` |
-| `cinematic-refinement.css` | `styles/cinematic-refinement.css` |
-| `_static-server.js` | `server/_static-server.js` |
-| `providers/` (empty) | `server/providers/` |
-| `REVISED-IMPLEMENTATION-PLAN.md` | `docs/REVISED-IMPLEMENTATION-PLAN.md` |
+## 1.2 Complete file move map
 
 Use `git mv` for every move so history is preserved.
 
-### A.3 Assets Stay at the Root — and Why
+| Current | Destination |
+|---|---|
+| `games.js`, `games-data.js`, `game-resources.js`, `games.css`, `games-cinematic.css` | `games/` |
+| `movies.js`, `movies-data.js`, `movies.css`, `movies-cinematic.css` | `movies/` |
+| `explore.js`, `explore-data.js`, `explore-global.js`, `discovery-integration.js`, `discovery-ui.js`, `local-discovery.js`, `trip-board.js`, `discovery.css` | `explore/` |
+| `projects.js`, `work-tracker.js`, `tracker.css` | `work/` |
+| `personal-controller.js` | `personal/` |
+| `storage-utils.js`, `catalog-utils.js`, `shortcut-utils.js`, `shortcut-surface.js`, `domain-ui.js`, `tooltip-utils.js`, `visual-utils.js`, `cinematic-scenes.js` | `shared/` |
+| `pages.css`, `cinematic-refinement.css` | `styles/` |
+| `_static-server.js` | `server/` |
+| `providers/` (empty) | `server/providers/` |
+| `REVISED-IMPLEMENTATION-PLAN.md`, `agent-instructions.md` | `docs/` |
 
-Asset paths inside JS (`'assets/game-art/hades-hero.jpg'` in `games-data.js`, `movies-data.js`, `explore-data.js`) are **document-relative**: the browser resolves them against `index.html`'s URL, not against the script's own location. Because `index.html` stays at the root, moving the JS files changes nothing about these ~40 strings.
+## 1.3 Assets stay at the root — and why
 
-Moving `assets/` into domain folders would require rewriting all of them plus `SOURCES.md` files and the `MISSING_ASSET` test hook, for no runtime benefit. Therefore **`assets/` stays at the repository root**, with its existing per-domain subfolders (`game-art/`, `movie-art/`, `destinations/`, `page-art/`) providing the domain grouping.
+Asset paths inside JS are **document-relative**: the browser resolves them against `index.html`'s URL, not the script's location. Because `index.html` stays at the root, moving JS files changes nothing about those ~40 strings, nor the nine `<img src="assets/page-art/…">` tags in `index.html`.
 
-There is a second, stronger reason. Three validators hardcode an `^assets/` prefix and run against **data already saved in the user's browser**:
+The stronger reason: three validators hardcode an `^assets/` prefix and run against **data already saved in the user's browser** — `shared/storage-utils.js:36` (destination `image`), `explore/local-discovery.js:5`, `explore/trip-board.js:6`. Relocating `assets/` would make every previously-saved destination, trip-board entry and discovery record fail validation on load — silent data loss.
 
-- `local-discovery.js:5` — `/^assets\/[\w./-]+$/`
-- `storage-utils.js:36` — `/^assets\/[\w/-]+\.(svg|webp|png|jpg)$/` (destination `image` field)
-- `trip-board.js:6` — `/^assets\/[\w./-]+$/`
-
-Relocating `assets/` would make every previously-saved destination, trip-board entry and discovery record fail validation on load — silent data loss for anyone already using the app. Keeping `assets/` at the root avoids this entirely and leaves all three regexes untouched.
-
-Also unaffected for the same document-relative reason: the nine `<img src="assets/page-art/...">` tags in `index.html` (lines 169, 227, 290, 468, 494, 503, 537, 577, 601).
-
-CSS `url()` paths are the opposite case — they resolve **relative to the stylesheet**. All five occurrences are in one file, `cinematic-refinement.css` (lines 72, 73, 100, 101, 102), moving to `styles/`. Each needs a `../` prefix:
+CSS `url()` paths are the opposite case: they resolve **relative to the stylesheet**. All five occurrences are in `cinematic-refinement.css` (lines 72, 73, 100, 101, 102) and each needs a `../` prefix:
 
 ```
-url('assets/game-art/cyberpunk-2077-hero.jpg')  ->  url('../assets/game-art/cyberpunk-2077-hero.jpg')
-url('assets/movie-art/inception-background.jpg') ->  url('../assets/movie-art/inception-background.jpg')
-url('assets/game-art/hades-hero.jpg')            ->  url('../assets/game-art/hades-hero.jpg')
-url('assets/movie-art/matrix-background.jpg')    ->  url('../assets/movie-art/matrix-background.jpg')
-url('assets/page-art/personal-cinematic.webp')   ->  url('../assets/page-art/personal-cinematic.webp')
+url('assets/game-art/cyberpunk-2077-hero.jpg')   -> url('../assets/game-art/cyberpunk-2077-hero.jpg')
+url('assets/movie-art/inception-background.jpg') -> url('../assets/movie-art/inception-background.jpg')
+url('assets/game-art/hades-hero.jpg')            -> url('../assets/game-art/hades-hero.jpg')
+url('assets/movie-art/matrix-background.jpg')    -> url('../assets/movie-art/matrix-background.jpg')
+url('assets/page-art/personal-cinematic.webp')   -> url('../assets/page-art/personal-cinematic.webp')
 ```
 
 No other CSS file contains an asset `url()`.
 
-### A.4 Blocking Issues That Must Be Fixed As Part Of The Move
+## 1.4 Blocking issues that must be fixed as part of the move
 
-These are not optional cleanups. Each one silently breaks the app or the test suite the moment files move.
+Each one silently breaks the app or the test suite the moment files move.
 
-**1. The static server 404s a `work/` folder.** `_static-server.js:11` rejects any request whose path contains a segment in `['providers','tests','node_modules','work','outputs','api']`. Creating a top-level `work/` folder makes `work/projects.js`, `work/work-tracker.js` and `work/tracker.css` unreachable, and the Work page dies with no obvious cause. The list must become:
+**1. The static server 404s a `work/` folder.** `_static-server.js:11` rejects any path containing a segment in `['providers','tests','node_modules','work','outputs','api']`. Creating a top-level `work/` makes its three files unreachable and the Work page dies with no obvious cause. The list becomes:
 
 ```
-blocked segments: ['tests','node_modules','outputs','api','server','config','secrets']
+['tests','node_modules','outputs','api','server','config','secrets']
 ```
 
-— `'work'` removed (it is now a served source folder), `'providers'` removed (now covered by blocking `'server'`), and `'server'`, `'config'`, `'secrets'` added. The existing special case `decoded === '/_static-server.js'` can be dropped once `'server'` is blocked, but keeping it is harmless.
+`work` removed (it is now a served source folder), `providers` removed (covered by blocking `server`), and `server`, `config`, `secrets` added.
 
-**2. The parse test silently stops covering anything.** `tests/data-regression.test.js:132` is `fs.readdirSync(root).filter(name => name.endsWith('.js'))` — non-recursive. After the move the root holds no application JS, so this loop would parse ~0 files and still pass, destroying the suite's core guarantee. It must be replaced with a recursive walk over the source folders, excluding `tests/`, `node_modules/`, `config/` and `assets/`.
+**2. The parse test silently stops covering anything.** `tests/data-regression.test.js:132` is `fs.readdirSync(root).filter(name => name.endsWith('.js'))` — non-recursive. After the move the root holds no application JS, so this loop would parse ~0 files and still pass. Replace with a recursive walk over the source folders, excluding `tests/`, `node_modules/`, `config/` and `assets/`.
 
-**3. `shared/storage-utils.js` has a runtime require into the Explore domain.** `storage-utils.js:49` calls `require('./trip-board')` inside the `orbit-trip-board` validator. After the move this becomes `require('../explore/trip-board')`. Update the path in this pass; do **not** restructure the dependency. Note it as an architectural smell (the shared storage boundary reaching into a domain) and leave a follow-up to inject the validator instead — behavior must not change here.
+**3. `shared/storage-utils.js` has a runtime require into the Explore domain.** `storage-utils.js:49` calls `require('./trip-board')` inside the `orbit-trip-board` validator; it becomes `require('../explore/trip-board')`. Update the path only — do **not** restructure the dependency here, because Phase 1 forbids behaviour change. The real fix (injecting domain validators) is **Phase 3 row 15**.
 
-**4. Script execution order is load-bearing.** All 22 `<script src>` tags are classic scripts with no `defer` and no `type="module"`, so they execute strictly in document order. Six run *before* the large inline controller script (line 879–3087) and sixteen run *after* it. The move must rewrite only the `src` prefixes and must not reorder, merge, split, or add `defer` to a single tag.
+**4. Script execution order is load-bearing.** All 22 `<script src>` tags are classic scripts with no `defer` and no `type="module"`, so they execute in document order. Six run *before* the large inline controller script and sixteen *after* it. Rewrite only the `src` prefixes — never reorder, merge, split, or add `defer`. The order encodes real dependencies, each of which breaks with a silent `undefined`:
 
-The order encodes real module-scope dependencies, any of which breaks with a silent `undefined` if disturbed:
+- `trip-board.js` → before `storage-utils.js` (the `orbit-trip-board` validator reads `OneSpaceTrips`)
+- all six batch-1 files → before the inline shell (it reads `OneSpaceStorage`, `OneSpaceShortcuts`, `makePersonalController`)
+- the inline shell (defines `window.OneSpace`) → before **every** batch-2 file
+- `domain-ui.js` → before `projects.js`, `games.js`, `discovery-ui.js`, `explore-global.js`
+- `work-tracker.js` → before `projects.js`; `explore-data.js` → before `discovery-ui.js` and `explore-global.js`; `local-discovery.js` → before `discovery-ui.js`; `game-resources.js` → before `games-data.js`
+- `games.js` and `movies.js` → before `discovery-integration.js`
 
-- `trip-board.js` → before `storage-utils.js` (the `orbit-trip-board` validator reads `OneSpaceTrips`).
-- All six batch-1 files → before the inline shell (it reads `OneSpaceStorage`, `OneSpaceShortcuts`, `makePersonalController`).
-- The inline shell (which defines `window.OneSpace` at line 3079) → before **every** batch-2 file; each reads `window.OneSpace` at module scope.
-- `domain-ui.js` → before `projects.js`, `games.js`, `discovery-ui.js`, `explore-global.js`.
-- `work-tracker.js` → before `projects.js` (reads `OneSpaceWork`).
-- `explore-data.js` → before `discovery-ui.js` and `explore-global.js` (read `DESTINATIONS`).
-- `local-discovery.js` → before `discovery-ui.js`.
-- `game-resources.js` → before `games-data.js` (guarded `if (window.OneSpaceGameResources)`).
-- `games.js` and `movies.js` → before `discovery-integration.js` (reads `OneSpaceGameDiscovery`, `OneSpaceTitleDiscovery`).
-- `games.js` mutates `window.OneSpace.playGamesEntryAnimation`, so the inline shell must have created the object first.
+Note that `work-tracker.js` and `explore.js` **auto-invoke `api.mount(root)` at load** in the browser branch of their UMD wrapper — loading either twice mounts a second instance.
 
-Note also that `work-tracker.js` and `explore.js` **auto-invoke `api.mount(root)` at load time** in the browser branch of their UMD wrapper. Loading either one twice, or loading `explore.js` for the first time, mounts a second instance — which is exactly why A.4 item 5 forbids adding `explore.js` to `index.html` during the move.
+**5. `explore.js` is a pre-existing discrepancy — do not "fix" it during the move.** Confirmed: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags; the browser uses `explore-global.js`. Move the file and update the test require, but do **not** add it to `index.html` here. Resolved in Phase 10.
 
-**5. `explore.js` is a pre-existing discrepancy — do not "fix" it.** `explore.js` is required by `tests/tracker-regression.test.js` but is **not** referenced by any `<script>` tag in `index.html`; the browser uses `explore-global.js` instead. Move `explore.js` to `explore/` and update the test require, but do **not** add it to `index.html` as part of the regrouping. Record it as a separate question to resolve in Part B Phase 4.
+## 1.5 Secrets and credentials folder
 
-### A.5 Secrets and Credentials Folder (new — nothing exists today)
+Nothing exists today — no `.gitignore`, no `package.json`, and `providers/` is empty. Create:
 
-There is no `.gitignore`, no `package.json`, and `providers/` is empty. Create:
-
-- **`config/secrets/`** — real credential files live here. Contains a committed `.gitkeep` so the folder exists in a fresh clone. Everything else in it is ignored.
-- **`config/secrets.example.json`** — committed template with placeholder values documenting every key a future provider phase will need (e.g. TMDB, IGDB/RAWG, a place/geocoding provider). Never contains a real value.
-- **`.gitignore`** (new file at the repository root):
+- **`config/secrets/`** with a committed `.gitkeep`; everything else in it is ignored.
+- **`config/secrets.example.json`** — committed template, placeholder values only. **[NEW]** it now documents the keys Phase 6 will actually consume: `TMDB_API_KEY`, and `IGDB_CLIENT_ID` + `IGDB_CLIENT_SECRET` or `RAWG_API_KEY`.
+- **`.gitignore`** at the repository root:
 
 ```
 config/secrets/*
@@ -191,498 +258,711 @@ config/secrets/*
 node_modules/
 ```
 
-Three rules govern this folder, and all three must hold:
+Three rules govern this folder:
 
-1. **Server-only.** No file under `config/` may ever be referenced by `index.html`, by any browser script, or by any `<script>`/`<link>` tag. Browser JavaScript is fully readable by the user, so a key placed there is a published key.
-2. **Not servable.** `'config'` and `'secrets'` are added to the static server's blocked-segment list (A.4 item 1) so the folder cannot be fetched over HTTP even if a file lands there.
+1. **Server-only.** No file under `config/` may be referenced by `index.html` or any browser script. Browser JS is fully readable, so a key placed there is a published key.
+2. **Not servable.** `config` and `secrets` are in the block list (1.4 item 1). The extension allowlist is a useful second layer but **not sufficient alone** — `_static-server.js` serves only its MIME-mapped extensions, so `secrets.json` would 404 incidentally, but a credential file named `.js` **would be served in full**. The segment block is the real control. `tests/browser-server.js` has *no* deny list and does serve `.json`, so it must never point at a tree containing real credentials.
+3. **Not used in this phase.** Phase 1 creates the folder, template and ignore rules only.
 
-   The server's extension allowlist is a useful second layer but **not sufficient on its own**. `_static-server.js` serves only the extensions in its MIME map (`.html .js .css .svg .webp .png .jpg .jpeg .ico .woff2`), so a `secrets.json` would 404 incidentally — but a credential file named `.js` **would be served in full**. The segment block is the real control; do not rely on the extension allowlist. Note also that `tests/browser-server.js` has *no* deny list at all and does serve `.json`, so it must never be pointed at a tree containing real credentials.
-3. **Not used yet.** This phase creates the folder, the template and the ignore rules only. No credential is read, and no provider adapter is written — that is explicitly out of scope (see Scope Boundaries).
+## 1.6 Reference updates — exhaustive checklist
 
-### A.6 Reference Updates — Exhaustive Checklist
-
-**`index.html`** — 8 `<link rel="stylesheet">` (lines 103–110) and 22 `<script src>` (lines 872–878 and 3088–3103). Rewrite each `href`/`src` with its new folder prefix, preserving exact order:
+**`index.html`** — 8 `<link>` (lines 103–110) and 22 `<script src>` (lines 872–878 and 3088–3103). Rewrite each path, preserving exact order:
 
 - Stylesheets: `games/games.css`, `games/games-cinematic.css`, `styles/pages.css`, `movies/movies.css`, `movies/movies-cinematic.css`, `styles/cinematic-refinement.css`, `work/tracker.css`, `explore/discovery.css`
-- Pre-inline scripts (keep this order): `explore/trip-board.js`, `shared/storage-utils.js`, `shared/catalog-utils.js`, `shared/tooltip-utils.js`, `shared/shortcut-utils.js`, `personal/personal-controller.js`
-- Post-inline scripts (keep this order): `shared/visual-utils.js`, `shared/domain-ui.js`, `shared/shortcut-surface.js`, `work/projects.js`, `work/work-tracker.js`, `explore/explore-data.js`, `explore/local-discovery.js`, `explore/discovery-ui.js`, `explore/explore-global.js`, `games/game-resources.js`, `games/games-data.js`, `games/games.js`, `movies/movies-data.js`, `movies/movies.js`, `shared/cinematic-scenes.js`, `explore/discovery-integration.js`
+- Pre-inline scripts, in this order: `explore/trip-board.js`, `shared/storage-utils.js`, `shared/catalog-utils.js`, `shared/tooltip-utils.js`, `shared/shortcut-utils.js`, `personal/personal-controller.js`
+- Post-inline scripts, in this order: `shared/visual-utils.js`, `shared/domain-ui.js`, `shared/shortcut-surface.js`, `work/projects.js`, `work/work-tracker.js`, `explore/explore-data.js`, `explore/local-discovery.js`, `explore/discovery-ui.js`, `explore/explore-global.js`, `games/game-resources.js`, `games/games-data.js`, `games/games.js`, `movies/movies-data.js`, `movies/movies.js`, `shared/cinematic-scenes.js`, `explore/discovery-integration.js`
 
 The `<link rel="icon">` on line 7 is an inline `data:` URI — leave it alone.
 
-**`tests/data-regression.test.js`** — `require('../storage-utils.js')` (L7) → `../shared/storage-utils.js`; `require('../catalog-utils.js')` (L8) → `../shared/catalog-utils.js`; the `vm.runInContext` loads at L12–13 of `game-resources.js`, `games-data.js`, `movies-data.js` → `games/game-resources.js`, `games/games-data.js`, `movies/movies-data.js`; the recursive parse walk (A.4 item 2, L131–137). The `root/index.html` read at L135 is unchanged. Fixture paths under `tests/fixtures/` are unchanged.
+**`tests/data-regression.test.js`** — `require('../storage-utils.js')` (L7) → `../shared/…`; `require('../catalog-utils.js')` (L8) → `../shared/…`; the `vm.runInContext` loads (L12–13) → `games/game-resources.js`, `games/games-data.js`, `movies/movies-data.js`; the recursive parse walk (1.4 item 2). The `root/index.html` read and `tests/fixtures/` paths are unchanged.
 
-**`tests/tracker-regression.test.js`** — line 4 requires become `../shared/storage-utils`, `../work/work-tracker`, `../explore/explore`, `../shared/shortcut-utils`, `../games/game-resources`; line 80 `../catalog-utils` → `../shared/catalog-utils`; line 12's `vm.runInContext` list becomes `['games/game-resources.js','games/games-data.js','movies/movies-data.js','explore/explore-data.js']`; line 87's `personal-controller.js` → `personal/personal-controller.js`.
+**`tests/tracker-regression.test.js`** — line 4 requires become `../shared/storage-utils`, `../work/work-tracker`, `../explore/explore`, `../shared/shortcut-utils`, `../games/game-resources`; line 80 → `../shared/catalog-utils`; line 12's file list becomes `['games/game-resources.js','games/games-data.js','movies/movies-data.js','explore/explore-data.js']`; line 87 → `personal/personal-controller.js`.
 
-**`tests/browser-server.js`** — resolves `root = path.resolve(__dirname,'..')` and serves any relative path with no block list, so it keeps working unchanged. Confirm the `MISSING_ASSET` hook still points at `assets/destinations/azores.svg` (valid, since assets do not move).
+**`tests/browser-server.js`** — resolves `root` to the repo root with no block list, so it keeps working unchanged. Confirm the `MISSING_ASSET` hook still points at `assets/destinations/azores.svg`.
 
-**`shared/storage-utils.js`** — the `require('./trip-board')` on line 49 (A.4 item 3).
+**`shared/storage-utils.js`** — the `require('./trip-board')` on line 49.
 
-**`README.md`** — `node _static-server.js` (L8) and the `--preserve-symlinks` variant (L14) become `node server/_static-server.js`; the prose load-order paragraph (L67); and the file references at L35 (`explore-data.js`), L43 (`storage-utils.js`), L54 (`explore-data.js`), L65 (`index.html`), L67 (`domain-ui.js`, `tracker.css`). The `tests/*` and `assets/destinations/azores.svg` references (L72, 81, 84, 86) are unchanged.
+**`README.md`** — `node _static-server.js` (L8) and the `--preserve-symlinks` variant (L14) become `node server/_static-server.js`; the load-order paragraph (L67); file references at L35, L43, L54, L65, L67.
 
-**`VERIFICATION.md`** — L8 names `data-regression.test.js` and `tracker-regression.test.js` as bare filenames with no `tests/` prefix; update them to full paths while editing. L9 and L33 (`tests/browser-smoke.mjs`, `assets/destinations/azores.svg`) are unchanged. Separately, VERIFICATION.md cites a port `18973` that no code defines (`tests/browser-server.js` defaults to `18974`) — a pre-existing doc error worth correcting in the same pass.
+**`VERIFICATION.md`** — L8 names the two test files without the `tests/` prefix; update to full paths. Also correct the port: it cites **18973**, but `tests/browser-server.js` defaults to **18974**.
 
-**Out of scope, record only.** The audit found unreferenced assets: the whole `assets/game-logos/` folder (6 SVGs), 16 year-stamped files in `assets/movie-art/`, the 7 `.png` twins of the `.webp` heroes in `assets/page-art/`, and `assets/game-art/cyberpunk-2077.svg` / `hades.svg`. Do **not** delete these during the regrouping — deletion is a behavior change and needs its own review. Note them for a later cleanup.
+**Out of scope, record only.** Unreferenced assets found: the whole `assets/game-logos/` folder (6 SVGs), 16 year-stamped files in `assets/movie-art/`, the 7 `.png` twins of the `.webp` heroes in `assets/page-art/`, and `assets/game-art/cyberpunk-2077.svg` / `hades.svg`. Do **not** delete during regrouping — deletion is a behaviour change needing its own review.
 
-**Structural verification test (`tests/structure.test.js`, new).** Asserts, by reading files rather than by convention:
-- every `<script src>` and `<link href>` in `index.html` resolves to a file that exists on disk;
-- every `require(...)` of a repo-relative path in every source and test file resolves;
-- every `assets/...` string literal in JS and every `url(...)` in CSS resolves to an existing file;
-- the recursive parse walk visits a file count matching the expected source inventory (guards against A.4 item 2 regressing again);
-- no file under `config/` is referenced from `index.html` or any browser script;
-- the 22 `<script src>` values appear in exactly the expected order (guards the load-order coupling in A.4 item 4);
-- every `assets/...` literal still satisfies the three `^assets/` validators in `shared/storage-utils.js`, `explore/local-discovery.js` and `explore/trip-board.js` (guards the A.3 decision against a later accidental asset move).
+## 1.7 New structural test — `tests/structure.test.js`
 
-### A.7 Execution Order for the Regrouping
+Asserts by reading files, not by convention:
 
-Run the full test suite and capture a green baseline **before** touching anything. Then move in small batches, updating references and re-running tests after each batch:
+- every `<script src>` and `<link href>` in `index.html` resolves to a file on disk
+- every repo-relative `require(...)` in every source and test file resolves
+- every `assets/...` string literal in JS and every `url(...)` in CSS resolves
+- the recursive parse walk visits a file count matching the expected source inventory (guards 1.4 item 2 from regressing)
+- no file under `config/` is referenced from `index.html` or any browser script
+- the 22 `<script src>` values appear in exactly the expected order (guards 1.4 item 4)
+- every `assets/...` literal still satisfies the three `^assets/` validators (guards the 1.3 decision against a later accidental asset move)
 
-1. `shared/` (highest fan-in — do it first so later batches update against final paths), including the `storage-utils` → `trip-board` require.
-2. `styles/` + the five `url()` rewrites in `cinematic-refinement.css`.
-3. `games/`.
-4. `movies/`.
-5. `explore/` (includes `trip-board.js`; verify the `storage-utils` require resolves).
-6. `work/` + `personal/` — **and in this same batch** update the static server's blocked-segment list, since `work/` is unreachable until then.
-7. `server/` + `config/` + `.gitignore` + `docs/`.
-8. Add `tests/structure.test.js` and the recursive parse walk.
+## 1.8 Execution order
 
-After every batch: `node --test tests/` must pass, and the app must load at `http://localhost:8973` with no 404s, no console errors, no duplicate script execution and unchanged global initialization order.
+Capture a green baseline first, then move in batches, updating references and re-running tests after each:
 
-### A.8 Invariants — Must Not Change
+1. `shared/` (highest fan-in — first, so later batches update against final paths), including the `storage-utils` → `trip-board` require
+2. `styles/` + the five `url()` rewrites
+3. `games/`
+4. `movies/`
+5. `explore/` (includes `trip-board.js`; verify the `storage-utils` require resolves)
+6. `work/` + `personal/` — **and in the same batch** the server block-list fix, since `work/` is unreachable until then
+7. `server/` + `config/` + `.gitignore` + `docs/`
+8. Add `tests/structure.test.js` and the recursive parse walk
 
-- The entry URL stays `http://localhost:8973/` serving root `index.html`.
-- All `localStorage` keys are unchanged (`orbit-work-projects`, `orbit-trip-board`, etc.). A folder move must never touch a storage key.
-- All public browser globals keep their names. The complete set, by owning file:
+After every batch: `node --test tests/` passes, and the app loads at `http://localhost:8973` with no 404s, no console errors, no duplicate script execution, unchanged global init order.
 
-  | Owner (new path) | Global(s) |
-  |---|---|
-  | `index.html` inline | `OneSpace` |
-  | `shared/storage-utils.js` | `OneSpaceStorage` |
-  | `shared/catalog-utils.js` | `OneSpaceCatalog` |
-  | `shared/shortcut-utils.js` | `OneSpaceShortcuts` |
-  | `shared/shortcut-surface.js` | `OneSpaceShortcutUI` |
-  | `shared/domain-ui.js` | `OneSpaceUI` |
-  | `shared/visual-utils.js` | `OneSpaceVisual` |
-  | `personal/personal-controller.js` | `makePersonalController` |
-  | `work/work-tracker.js` | `OneSpaceWork` |
-  | `explore/trip-board.js` | `OneSpaceTrips` |
-  | `explore/explore-data.js` | `DESTINATIONS` |
-  | `explore/local-discovery.js` | `OneSpaceLocalDiscovery` |
-  | `explore/discovery-ui.js` | `OneSpaceDiscovery` |
-  | `explore/explore.js` | `OneSpaceExplore` (test-only today) |
-  | `games/game-resources.js` | `OneSpaceGameResources` |
-  | `games/games-data.js` | `DEFAULT_GAMES`, `SUGGESTION_CATALOG`, `DIABLO_WEEKLY_TEMPLATE`, `GAMES_GENRES`, `GAMES_MOODS`, `GAMES_PLATFORMS`, `GAMES_PLAYSTYLES` |
-  | `games/games.js` | `OneSpaceGameDiscovery`, plus `OneSpace.playGamesEntryAnimation` |
-  | `movies/movies-data.js` | `SEED_MOVIES`, `MOVIE_DECADES`, `MOVIE_DURATIONS`, `MOVIE_GENRES`, `MOVIE_LANGUAGES`, `MOVIE_MOODS`, `MOVIE_PLATFORMS`, `MOVIE_TYPES` |
-  | `movies/movies.js` | `OneSpaceTitleDiscovery` |
+## 1.9 Invariants — must not change
 
-  `work/projects.js`, `shared/tooltip-utils.js`, `shared/cinematic-scenes.js`, `explore/explore-global.js` and `explore/discovery-integration.js` export nothing — they are pure side-effect modules and must keep their exact position in the load order.
-- The UMD dual-export pattern (`typeof module === 'object' && module.exports ? ... : root.X = api`) stays in every file that has it.
-- Test commands stay `node --test tests/data-regression.test.js tests/tracker-regression.test.js`.
-- Backup format version 2 and all existing fixtures remain valid.
-- No compatibility shims unless an external tool demands one; if any is added, document it in `README.md`.
-- **No behavior change of any kind in Part A.** If a bug is found mid-move, note it and fix it in Part B.
+- Entry URL stays `http://localhost:8973/` serving root `index.html`.
+- All `localStorage` keys unchanged. A folder move must never touch a storage key.
+- All public browser globals keep their names: `OneSpace` (inline), `OneSpaceStorage`, `OneSpaceCatalog`, `OneSpaceShortcuts`, `OneSpaceShortcutUI`, `OneSpaceUI`, `OneSpaceVisual`, `makePersonalController`, `OneSpaceWork`, `OneSpaceTrips`, `DESTINATIONS`, `OneSpaceLocalDiscovery`, `OneSpaceDiscovery`, `OneSpaceExplore`, `OneSpaceGameResources`, `DEFAULT_GAMES` / `SUGGESTION_CATALOG` / `DIABLO_WEEKLY_TEMPLATE` / `GAMES_*`, `OneSpaceGameDiscovery` + `OneSpace.playGamesEntryAnimation`, `SEED_MOVIES` / `MOVIE_*`, `OneSpaceTitleDiscovery`.
+- `work/projects.js`, `shared/tooltip-utils.js`, `shared/cinematic-scenes.js`, `explore/explore-global.js` and `explore/discovery-integration.js` export nothing — pure side-effect modules that must keep their exact load position.
+- The UMD dual-export pattern stays in every file that has it.
+- Backup format version 3 (and v2 acceptance) and all existing fixtures remain valid.
+- **No behaviour change of any kind in Phase 1.** If a bug is found mid-move, note it and fix it in a later phase.
+
+**Gate:** 31/31 green; zero 404s; `git log --follow games/games.js` shows history across the move; `curl -I http://localhost:8973/config/secrets/probe.js` returns 404 (the check that matters, since `.js` is in the MIME allowlist).
 
 ---
 
-## Part B — Feature Work (existing plan, preserved)
-
-### Current Findings
-
-- `index.html` is the single-page shell and router. `goToPage()` controls Home, Work, Projects, Personal, Explore, Games, Movies, Shortcuts, Productivity, Notes, and Settings.
-- `projects.js` owns project records in `orbit-work-projects` (name, description, tags, URL, status, progress). Work renders a read-only project summary and generic Productivity tasks.
-- Personal uses `makeCheckListController()` inside `index.html` for goals, routines, and habits. Add/check/delete work, but delete is immediate and there is no edit flow.
-- Explore filters and randomizes existing Travel and Relax & Play links. There is no destination preference model, catalog, recommendation explanation, saved list, or imagery model.
-- Games is the strongest reference implementation: local catalog, genre preferences, add-to-library, story objectives, weekly task templates, sessions, journal, links, progress, themes, persistence.
-- Movies has catalog, library, suggestions, watchlist and details infrastructure, but is movie-focused; series are not first-class.
-- `storage-utils.js` strictly validates known keys and complete version-2 backups. New domain keys require validation rules, fixture updates, and migration decisions.
-- Automated coverage is concentrated in `tests/data-regression.test.js` and `tests/tracker-regression.test.js`.
-- Visual infrastructure includes local page art, fallback illustrations, `visual-utils.js`, `cinematic-scenes.js`, responsive layouts, inline SVG icons, motion overrides, and cinematic CSS. New work must make effects observable in the browser, not infer them from CSS presence.
-
-### Product Decisions
-
-- Local-first. No backend, authentication, provider credentials, or cloud sync in the core iteration.
-- Core Work hierarchy: `project -> work item -> task`. A work item is a `story` or `defect`.
-- Work item statuses: `open`, `in-progress`, `blocked`, `closed`.
-- Tasks have independent completion state, but closing a work item closes all remaining child tasks.
-- Closed work items are preserved in a Work Log/Backlog history rather than deleted; the backlog supports filtering and reopening.
-- Analysis, plan and execution are editable text fields on each story/defect.
-- Add priority, labels, estimate, created/updated dates, deadline and reminder fields.
-- Browser-native date/time values with local reminders while the page is open. No promise of notifications after the page closes.
-- Personal deletion uses the existing modal/confirmation conventions and shows a toast on success.
-- Explore uses a curated local destination catalog: city break, nature, beach, culture/history, food, wellness, adventure.
-- Explore recommendations explain the matched preferences and always show a local image or deterministic fallback.
-- Explore shortcuts are stored/tagged as `explore` and must not appear in Work or Personal.
-- Games retains the existing catalog and gains a per-game detail/resource surface (official news, builds/guides, updates, community, platform links). Adding a game creates default tracker tasks/objectives from the selected tracker type.
-- Movies becomes Movies & Series while preserving the existing `movies` route and storage keys, using a first-class `movie`/`series` type filter. No full episode-level tracking unless separately approved.
-- Keep the current cinematic direction and the existing inline SVG icon system for all new actions.
-
-### Phase 1: Baseline and Contracts
-
-1. Run `node --test tests/data-regression.test.js tests/tracker-regression.test.js` and capture the green baseline.
-2. Parse every JavaScript file and the inline script in `index.html`.
-3. Start the static server and inspect the app at `http://localhost:8973`.
-4. Record current storage keys, backup format, router pages, script load order, and `onespace:data-changed` / `onespace:page-changed` events.
-5. Inventory every button, tab, link, form, checkbox, select, modal action, keyboard shortcut and page jump. For each, record owner, expected state change, persistence key, success feedback, error behavior, focus return and reload behavior.
-6. Treat `shared/storage-utils.js` as the only persistence validation boundary.
-7. Define schemas for projects, work items, tasks, work history, destinations, destination preferences, saved destinations, Personal records, game resources, game default tasks, and movie/series metadata.
-8. Include generated IDs, timestamps, status enums, optional fields and maximum lengths in every schema.
-9. Decide migration behavior for existing projects, Personal arrays, Games, Movies and version-2 backups.
-10. Ensure existing records remain readable and new fields receive safe defaults.
-11. Do not begin provider-backed global discovery in this iteration.
-
-### Phase 1.5: Repository Regrouping
-
-**See Part A above** — this is the detailed, binding specification. It runs after the Phase 1 baseline is captured and before any Part B feature work begins.
-
-### Phase 2: Work Tracker Core
-
-1. Stabilize `work/work-tracker.js` as the module home instead of growing the inline script.
-2. Keep `work/projects.js` compatible with current project summaries and Home/Work cards.
-3. Add storage keys and validation for projects, work items, tasks and work log/history.
-4. Update backup, restore, reset, complete, invalid, legacy and current fixtures.
-5. Project CRUD: name, description, link, tags, status, progress, deadline.
-6. Story/defect CRUD under a selected project.
-7. Story/defect fields: name, type, status, priority, analysis, plan, execution notes, labels, deadline, reminder time, optional links.
-8. Validate required name, project, type and status fields.
-9. Reject invalid URLs and invalid dates.
-10. Task CRUD: title, details, priority, due date, estimate, `done` state.
-11. Accessible task checkboxes with completion styling and progress counts.
-12. Open, reopen, in-progress, blocked and close lifecycle behavior.
-13. Closing a story/defect marks all child tasks complete, stores completion time, creates a log entry and removes it from active views.
-14. Closed items persist in the backlog and reopen without losing task history.
-15. Work views: active projects, active stories/defects, due soon, overdue, blocked, backlog, history.
-16. Filters by project, type, status, priority, deadline and search text.
-17. Replace the generic Work timeline with real story/defect and task priorities.
-18. Keep a link to Productivity for general daily tasks.
-19. Local due-soon and overdue badges, reminder panels and page-entry toast notifications.
-20. Respect reduced-motion settings for reminder and state-change animations.
-21. Verify every Work button: create, edit, detail, hide, lifecycle, status, task add/edit/delete/toggle, filters, backlog, history, project links, deletion confirmation.
-
-### Phase 3: Personal and Shortcut Scope
-
-1. Refactor `makeCheckListController()` into reusable add, edit, toggle and delete operations.
-2. Route deletion through the existing modal/confirmation pattern.
-3. Toast and `aria-live` message after successful deletion.
-4. Keep separate storage for goals, routines and habits.
-5. Completion counts and progress summaries.
-6. Optional habit frequency or target metadata.
-7. Clear empty states.
-8. Extend the shortcut modal with a short description field and explicit space/category ownership.
-9. Adding from Personal defaults the shortcut to Personal.
-10. Adding from Explore forces the shortcut to Explore.
-11. Enforce ownership in shortcut sanitization and `linkSpace()` so links cannot leak between spaces.
-12. Edit and delete confirmation for custom shortcuts.
-13. Show name, description, hostname, icon fallback, favorite action, recent action, safe external-link behavior.
-14. Regression tests for Personal deletion, descriptions, space filtering, duplicate URLs and backup round trips.
-15. Verify Personal add/edit/check/delete/cancel, shortcut add/edit/favorite/recent/reorder/delete/cancel and empty-state actions after rerender and reload.
-
-### Phase 4: Explore Destination Discovery
-
-1. `explore/explore-data.js` holds the curated local destination catalog.
-2. Destination fields: ID, name, country/region, categories, budget, duration, season, travel style, tags, summary, details, links, image, fallback metadata.
-3. `explore/explore.js` holds persisted destination preferences. **Resolve the Part A.4 item 5 discrepancy here**: decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree.
-4. Support destination type, climate/season, trip length, budget, travel pace, interests and departure-region assumptions.
-5. Keep recommendation ranking deterministic and explainable.
-6. Show why each destination was recommended.
-7. Replace Explore content with preference controls, recommendation cards, destination details, save/favorite behavior, shortlist/trip board and Explore-only shortcuts.
-8. Keep "Surprise me" as a filtered random recommendation.
-9. Responsive destination images with fallback handling modeled on `shared/visual-utils.js`.
-10. Accessible image alt text; never render blank destination cards.
-11. Tests for preference filtering, stable ranking, saved destinations, Explore-only shortcuts and malformed destination data.
-12. Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload.
-13. Keep "More To Explore" after the primary controls, recommendations, details and trip board.
-
-### Phase 5: Games Resource and Task Enrichment
-
-1. Extend `games/games-data.js` records with official, news, build, guide, update, community and platform links.
-2. Add default task/objective templates to game records.
-3. Keep the resource model data-driven so Diablo Immortal is only one example.
-4. Extend `games/games.js` with a per-game detail/resource panel.
-5. Group resources into news/updates, builds/guides, official links, community links and game-specific tasks.
-6. Catalog, suggestions, wishlist and custom-game flows initialize the correct story or daily/weekly tasks.
-7. Avoid duplicate task initialization after rerender or reload.
-8. Keep every built-in and custom game discoverable through genre filtering, search, add, edit, delete, progress and resource flows.
-9. Preserve existing sessions, journal, themes, story objectives and weekly behavior.
-10. Tests for resource mapping, default task creation, genre filtering and deletion cleanup.
-11. Verify every Games tab, filter, search, suggestion, library, wishlist, details, resource link, task, session, journal, theme, add, edit, delete and confirmation action.
-
-### Phase 6: Movies and Series
-
-1. Extend `movies/movies-data.js` with first-class `type: movie|series`.
-2. Add series metadata, explanations, seasons and relevant details.
-3. Add type and genre filters.
-4. Update `movies/movies.js` cards, search, details, suggestions and watchlist views.
-5. Preserve the existing `movies` route and storage keys.
-6. Keep episode tracking lightweight unless scope is expanded.
-7. Series-specific validation in `shared/storage-utils.js`.
-8. Update backup fixtures and migration handling.
-9. Tests for mixed movie/series search, type and genre filtering, suggestion explanations, watchlist behavior and malformed series data.
-10. Verify every Movies & Series tab, type filter, genre filter, search, suggestion, detail, add/remove, watched state, watchlist, library and reload flow.
-
-### Phase 7: Visual, Cinematic, Icon and Interaction Direction
+# PHASE 2 — Development tracker: UI and layout redesign
 
-1. Visual direction per experience: Home = observatory / personal command deck; Work = drafting room / command center; Personal = calm ritual space; Explore = world atlas / travel window; Games = game-world spotlight; Movies & Series = theater / streaming marquee; Shortcuts = navigable launch wall; Productivity = focused timer studio; Notes = quiet capture desk; Settings = control room.
-2. Entry transition when each tab opens — short, consistent, content-first, never delaying interaction.
-3. Hero scene movement or parallax responding to pointer on desktop, stable on touch.
-4. Parallax only on explicitly marked decorative scene layers. Clamp pointer values, use `transform: translate3d`, avoid layout shifts, never move essential text, forms, buttons or focus targets.
-5. Scroll-linked depth effects only where they improve hierarchy, via IntersectionObserver or CSS scroll-driven behavior with a fallback.
-6. Staggered reveal for primary content cards and sections — visible content only, no long queues, modest durations.
-7. Meaningful transitions for search result arrival, filter changes, detail panel opening, save/remove, board status changes, task completion, tab changes, image loading and fallback replacement.
-8. Cinematic loading states matched to the section rather than generic spinners.
-9. Real image crossfades and sensible crop positioning for local artwork and destination/game/movie media.
-10. Fallback art only on failed media requests; broken media still leaves a usable card with text and controls.
-11. One consistent modern inline SVG icon system, with accessible text or labels retained for unfamiliar actions.
-12. Hover, focus, active, empty, loading, error, disabled and success states for every interactive surface.
-13. Accessible labels, tooltips for unfamiliar icons, `aria-pressed`, `aria-expanded`, `aria-current`, and `aria-live` messages for saves, reminders, task completion, close/reopen and deletion.
-14. Route all motion through `prefersReducedMotion()` and the existing motion setting. Reduced motion removes parallax, scroll-linked transforms, stagger delays, persistent ambient animation and nonessential transitions while preserving state clarity.
-15. Touch targets large enough for mobile; hover-only behavior disabled on coarse pointers.
-16. Test layouts at 1440px+, 1024px, 760px and 390px. Cards, forms, lists, tables, modals, badges, task controls and tab bars must not overlap or overflow.
-17. Handle long user-entered text safely: project names, destination titles, game titles, series titles, notes, labels, URLs, provider-like metadata.
-18. Verify modal focus return and focus preservation after dynamic rerenders.
-19. Capture visual evidence that effects are visible in normal motion, stable on touch/mobile, and disabled in reduced-motion mode.
+The first step of the tracker rebuild, and the first feature phase after the regroup.
 
-### Phase 8: Verification and Delivery
+## 2.1 Route consolidation [NEW]
 
-1. Expand the Node tests for pure Work, Explore, shortcut, game, movie, visual-state and migration helpers.
-2. Test schema validation, migration defaults, backup/restore, reset and storage rollback.
-3. Browser-level smoke tests for every top-level route.
-4. Test navigation, add/edit/delete, modal close/cancel, persistence after reload, filters, task checkboxes, close/reopen, backlog/history, reminders, image fallback and external links.
-5. Run the complete recursive JavaScript parse test and all Node tests.
-6. Start the static server and inspect the browser console for uncaught errors and failed local assets.
-7. Verify Work hierarchy and close-all behavior.
-8. Verify Personal delete confirmation.
-9. Verify Explore recommendation explanations and image fallback.
-10. Verify game-specific links and default tasks for multiple genres.
-11. Verify movie and series genre views.
-12. Verify backup export/import with all new data.
-13. Verify reset behavior and unrelated `localStorage` preservation.
-14. Verify keyboard-only navigation and reduced-motion mode.
-15. Verify desktop, tablet and mobile layouts.
-16. Verify each button from the Phase 1 inventory has a successful action test and an applicable cancel/error/persistence test.
-17. Update documentation with the folder structure, data model, local-only behavior, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behavior and scope limits.
+Merge Projects into Work as a sub-view. `projects` stays in the `PAGES` array as a **redirect alias** to `work` with the Projects sub-view selected, so existing `orbit-page` values and the 14 hardcoded `goToPage` / `data-page-jump` call sites keep working. Storage keys untouched.
 
----
+One route, four sub-views under a single header:
 
-## Part C — Reported Defects and Experience Gaps
+- **Board** (default) — active stories and defects
+- **Projects** — project CRUD, moved wholesale from the Projects route
+- **Backlog** — closed items
+- **History** — the event log
 
-These are additions raised after the original plan. Each one is folded into the Part B phase that owns it, so nothing here duplicates work described above — the cross-reference says where it executes. Where a root cause was verified by reading the code, it is stated as confirmed; where it was not, it is labelled a hypothesis to be proven in the browser first.
+`work/projects.js` keeps owning `orbit-work-projects` CRUD and its card component; only its mount target changes. Its two foreign responsibilities move out: `#homeOverview` rendering (`projects.js:40-43`) goes to a Home aggregator module, and the Work-overview fallback (`projects.js:44-47`) is deleted — `work-tracker.js:51` already overwrites it, and it is a domain leak (Phase 3).
 
-### C.1 A tracked movie can never be untracked — **confirmed defect**
+## 2.2 Layout [NEW]
 
-*Executes in Phase 6.*
+- **Results region** — `.domain-grid` is locked to 2 columns until 1440px (`tracker.css:2`). Becomes `repeat(auto-fill, minmax(320px, 1fr))`.
+- **Detail region** — `#workDetail` renders full-width *below* the grid as one long prose column (`work-tracker.js:52,66-69`). Becomes a right-side drawer at ≥1100px and a full-screen sheet below, reusing the existing `OneSpaceUI` modal stack, focus trap, Escape handling and inert background from `shared/domain-ui.js` — not a new dialog implementation.
+- **Focus rail** — the fixed 352px `#focusRail` costs Work ~170px of content width versus every other page (`index.html:93`). Its contents are non-work-domain (Phase 3 empties it), so the rail leaves Work and the width clamp is normalised.
 
-**Symptom (user-reported).** Once a movie is tracked it cannot be untracked.
+## 2.3 Filters [NEW]
 
-**Root cause — confirmed by reading `movies.js`.** It is two independent blocks, and both must be lifted:
+`.domain-filters` puts 5 selects + a search field + a submit button into a fixed 3-column grid, and filtering requires pressing "Apply filters". Rebuild as one responsive filter bar with **live filtering** (debounced text, immediate selects), a dismissible active-filter chip row, and a result count. Add the **sort control that does not exist today** — sorting is hardcoded priority→deadline→createdAt at `work-tracker.js:29`.
 
-1. `addSeedToLibrary()` (line 442) sets `clone.custom = false` on every catalog title added to the library.
-2. `libraryCardHtml()` (line 619) renders the delete button **only** when `movie.custom` is truthy: `var deleteBtn = movie.custom ? '<button … data-action="delete-movie" …>' : "";`. For a tracked catalog title no remove control is ever drawn.
-3. `deleteMovie()` (line 456) independently guards `if (!m || !m.custom) return;`. So even if the action were dispatched, it would return early.
+## 2.4 Card and tile quality [NEW]
 
-The only reversal the UI offers is the status `<select>` (Unwatched / Watched / Watchlist), which keeps the record in `library` — it still counts toward the "Titles tracked" stat tile (line 661). `removeFromWatchlist()` (line 468) likewise only downgrades status to `unwatched`; it never removes the record.
+- **Overview tiles**: `work-tracker.js:51` emits bare `<div><span>…</span><strong>n</strong></div>`, omitting `.overview-tile-top` / `.overview-tile-bottom`, so none of the icon-slot and arrow styling in `pages.css:248-251` applies — three unstyled labels over oversized serif numerals. Emit the same structure as every other overview tile, as `<button data-page-jump>` like `projects.js:29`.
+- **Work item cards**: a flat gradient rectangle printing raw lowercase `esc(i.status)` / `esc(i.priority)` (`work-tracker.js:59`). Add a type glyph (story vs defect) from the existing inline SVG set, priority as a colour-coded rail rather than a word, **capitalised status labels** per the standing labelling rule, and a real task progress bar replacing the "n / m tasks complete" text.
+- **Section heading**: emit the `.page-section-head h2 > .icon` tile that `cinematic-refinement.css:76-77` already styles and the tracker alone never provides.
+- `#workTracker` (`index.html:484`) has no `data-reveal` unlike its siblings — add it.
 
-**Fix.** Separate two distinct concepts that are currently conflated under `custom`:
+## 2.5 Render mechanics [NEW]
 
-- **Untrack / Remove from library** — available for **every** tracked title, catalog or custom. Removes the record from `library` (and from `watchlist`), returning the title to an untracked catalog entry that can be re-added later. Confirmation via the existing `OneSpaceUI.confirm` modal, then a toast.
-- **Delete custom title** — unchanged, remains restricted to `movie.custom`, since a custom record has no catalog entry to fall back to and its deletion is genuinely irreversible.
+`work-tracker.js:52` rewrites the whole section's `innerHTML` on every mutation, forcing the manual focus-restoration hack at `:50,64` and a cosmetic "is-updating" pulse. Scope re-renders to the changed region (results list, detail drawer, filter bar) so focus, scroll position and the caret survive naturally. Keep `OneSpaceUI.confirm` for destructive actions.
 
-Drop the `!m.custom` guard from the untrack path, render the untrack control unconditionally on library cards and in the details panel, and make the "Titles tracked" count drop when a title is untracked.
+## 2.6 Behaviour preserved from old Part B Phase 2
 
-**Verify.** Track a catalog movie → untrack it → it disappears from Library, the tracked count decreases, and it reappears as an untracked suggestion. Reload and confirm it stays untracked. Repeat for a series and for a custom title (which must still offer permanent delete).
+All already built; must not regress. Re-verify each after the redesign.
 
-### C.2 Large movie images are blurred — **confirmed cause**
-
-*Executes in Phase 6, with the media rules in Phase 7.*
-
-**Symptom (user-reported).** Big movie pictures are badly blurred; they should be sharp.
-
-**Root cause — confirmed from `assets/manifest.json`.** This is not a CSS `blur()` filter; there is none on movie artwork in `movies.css` or `movies-cinematic.css`. The source files are simply too small. Every poster in `assets/movie-art/` is **300 × 450** (13–29 KB). Backdrops are fine at 1920 × 1080 (the one exception is `pulp-fiction-background.jpg` at 1280 × 720).
-
-A 300 px-wide source shown in a detail panel at roughly 400–600 CSS px, on a 2× display, is being upscaled three to four times — which is precisely the reported blur.
-
-**Fix.**
-
-1. Re-source posters at a minimum of **1000 × 1500** for detail/hero use, keeping the existing 2:3 aspect ratio and file naming.
-2. Keep a small variant for grid cards and serve both via `srcset` / `sizes`, so cards stay light while detail views are sharp.
-3. Bring `pulp-fiction-background.jpg` up to 1920 × 1080 to match the rest.
-4. Add a CSS guard so no image is ever scaled beyond its intrinsic width, making a future undersized asset visibly wrong rather than quietly blurry.
-5. Update `assets/manifest.json` with the new dimensions and byte sizes, and record provenance in `assets/movie-art/SOURCES.md`.
-6. Respect the existing licensing constraint in Scope Boundaries — no scraping, no unlicensed downloads. Where a properly licensed high-resolution image is unavailable for a title, render the existing deterministic fallback rather than shipping an upscaled blur.
-
-**Verify.** Open a detail view at 1440 px on a 2× display and confirm the poster is sharp; check the Network panel shows the large variant only for detail views; confirm no image reports a rendered width greater than its `naturalWidth`.
-
-### C.3 Series are effectively missing
-
-*Executes in Phase 6.*
-
-**Symptom (user-reported).** "Currently we do not have any series."
-
-**Finding.** Series are not entirely absent, but they are close to invisible, which explains the report. `movies-data.js` defines `window.MOVIE_TYPES = ["movie", "series"]` (line 17) and contains exactly **4** `type:'series'` records (`tv-dark`, `tv-queens-gambit`, `tv-good-place`, and one more, lines 138–141) against 17 movies. Critically, **all 4 series carry `poster:{kind:'placeholder'}` and `backdrop:{kind:'placeholder'}`**, plus `platforms:[]` and `rating:0` — so they render as empty placeholder tiles with no artwork, next to 17 fully-illustrated movies.
-
-**Fix.**
-
-1. Expand the series catalog to a credible size — at least 12–15 titles spanning the same genre range as the movie catalog, so type filtering returns a useful result set.
-2. Give every series real local artwork at the C.2 resolutions; remove all `kind:'placeholder'` entries from the seed data.
-3. Populate the fields left empty: `platforms`, `rating`, `moods`, `tags`, and a substantive `blurb`.
-4. Make the `movie` / `series` type filter first-class and visible in the UI, with correctly capitalized labels (`Movie`, `Series`) per the existing labelling rule.
-5. Keep series cards honest about their shape — seasons and approximate episode length, which `libraryCardHtml` already formats (line 627) — without adding episode-by-episode tracking, which stays out of scope.
-
-**Verify.** Filter by Series and confirm a full, illustrated grid with no placeholder tiles; confirm search returns mixed movie and series results; confirm a series can be tracked, watchlisted and untracked per C.1.
-
-### C.4 Game tracker checkboxes cannot be un-checked — **hypothesis, reproduce first**
-
-*Executes in Phase 5.*
-
-**Symptom (user-reported).** Game tracker checkboxes do not behave as expected — once checked they cannot be returned to unchecked.
-
-**What inspection established.** The toggle functions themselves read correctly and are genuinely two-way: `toggleObjective()` (`games.js:511`) does `obj.done = !obj.done`, and `toggleWeeklyTask()` (line 571) does `task.done = !task.done`. Both persist and re-render. I also ruled out a double-fire: the `click` delegate's `switch` (lines 1527–1555) has **no** case for `toggle-objective` or `toggle-weekly-task`, so those are handled only by the `change` listener (line 1558) and are not toggled twice per interaction. `ensureWeekly()` (line 211) only regenerates tasks when the ISO week key changes, so it is not resetting state mid-session.
-
-**I did not run the app, so the cause is not yet proven.** The first task is to reproduce it in the browser and identify the mechanism before changing anything. Narrowed suspects, in the order worth checking:
-
-1. **Re-render vs. DOM state.** Checkboxes are re-created by `innerHTML` with `(o.done ? "checked" : "")`. If any render path for the tracker panel does not actually re-run, the DOM keeps whatever the user clicked while the model diverges — or the reverse, where a stale render re-applies `checked`.
-2. **Focus restoration re-triggering change.** `withFocusPreserved()` (line 1599) re-focuses the matching element by selector after the re-render; confirm this cannot re-dispatch a `change` event on the checkbox.
-3. **The transient highlight classes.** `lastCheckedObjectiveId` / `lastCheckedTaskId` are set and cleared around the render, and drive `is-just-checked` styling (`games.css:730`, `860`). Confirm that styling is not what makes an unchecked box still *look* checked.
-4. **A rejected write.** If `saveLibrary()` / `saveWeekly()` fails validation in the storage boundary and rolls back, the next render restores the old `done:true`. Check for a silent transaction failure.
-5. **Label/input hit area.** The weekly task is a `<label>` wrapping the `<input>` (line 397); confirm a click is not being counted twice through label forwarding on some browsers.
-
-**Fix.** Determined by the reproduction. Whatever the mechanism, the outcome must be that objectives and weekly tasks toggle freely in both directions, survive reload, and keep progress percentages consistent.
-
-**Verify.** Check and uncheck an objective and a weekly task ten times each; confirm the percentage and the persisted value follow every time, and that the state is correct after reload. Add a regression test that asserts the toggle is a true involution — two toggles return the original state — so this cannot silently return.
-
-### C.5 Every destination needs real imagery and a substantive description
-
-*Executes in Phase 4.*
-
-**Symptom (user-reported).** Every destination should have pictures and a detailed explanation of the place.
-
-**Finding.** `explore-data.js` holds 12 destinations, each pointing at `assets/destinations/<id>.svg` (line 18). These are **conceptual SVG illustrations, not photographs** — the existing `REVISED-IMPLEMENTATION-PLAN.md` already flags this as a missed requirement. Each record carries a `summary` and a `details` field, but the depth is uneven.
-
-**Fix.**
-
-1. Give every destination real, properly licensed local imagery at a resolution suitable for hero and card use, following the same sizing and `srcset` rules as C.2.
-2. Write a substantive description per destination: what the place is, why it suits the categories it is tagged with, the best season and why, rough trip length, budget character, and what a traveller actually does there. This is the "detailed explanation" being asked for — the existing `summary` stays short for cards, and `details` carries the long form.
-3. Keep every destination non-blank: alt text always present, and the deterministic fallback illustration used only on a genuinely failed image request.
-4. Maintain the licensing constraint — no scraping, no unlicensed downloads, attribution recorded in a `SOURCES.md` beside the assets.
-5. Keep all destination art under the root `assets/destinations/` path so the three `^assets/` validators described in A.3 continue to accept previously-saved user records.
-
-**Verify.** Every one of the 12 destinations renders a photograph and a full description; force a 404 on one asset and confirm the card stays usable with the fallback; confirm saved destinations still validate after the content change.
-
-### C.6 Shortcuts need modernizing
-
-*Executes in Phase 3, with the visual work in Phase 7.*
-
-**Symptom (user-reported).** All shortcuts need to be modernized.
-
-**Fix.** The existing Phase 3 work already adds descriptions, space ownership and edit/delete confirmation. This adds the presentation layer on top:
-
-1. Rebuild the shortcut card and the launch wall on the current inline SVG icon system, replacing any dated iconography, with a clean favicon/hostname fallback chain that never renders a broken image.
-2. Give shortcuts a modern grid with proper hover, focus, active, empty, loading and error states, and touch targets large enough for mobile.
-3. Support drag-to-reorder with a keyboard-accessible equivalent, and make favorites and recents visually distinct rather than text-labelled.
-4. Show name, description and hostname in a clear hierarchy, with safe external-link behavior (`rel="noopener noreferrer"`).
-5. Keep Explore-owned shortcuts visually consistent but still strictly scoped — the ownership enforcement in Phase 3 is unchanged.
-
-**Verify.** Add, edit, favorite, reorder and delete shortcuts by mouse and by keyboard alone; confirm state survives reload; confirm no broken icons at 1440, 1024, 760 and 390 px.
-
-### C.7 The whole app should feel warm, alive and cinematic per tab
-
-*Executes in Phase 7, which it extends rather than replaces.*
-
-**Symptom (user-reported).** The whole page should be warm and alive, with cinematic, visual and animation effects that change based on the selected tab. Whatever is needed to build it should be used.
-
-**Fix.** Phase 7 already defines a per-page visual direction, entry transitions, parallax, staggered reveals, media crossfades and the reduced-motion contract. This adds the parts the request makes explicit and the existing plan left implicit:
-
-1. **Warmth is a palette decision, not an animation one.** Today's `--os-*` tokens in `cinematic-refinement.css` run cool. Introduce a warmer base — warmer neutrals, warmer light sources in the scene art — while preserving contrast ratios for accessibility.
-2. **Per-tab identity must be unmistakable.** Each route already sets `body[data-page="…"]`; drive an accent, a scene treatment and an entry transition from that single hook so switching tabs visibly changes the room the user is standing in, not just the content.
-3. **Ambient life within the motion budget.** Slow, low-amplitude ambient movement in decorative scene layers only, so a resting page is not static — subject without exception to `prefersReducedMotion()`, which must remove it entirely.
-4. **The existing constraints still bind.** Parallax only on marked decorative layers, never on text, forms, buttons or focus targets; every effect purposeful and subordinate to content; a reduced-motion equivalent for each.
-5. **"Whatever needs to be used" has one limit.** Point 4 of Scope Boundaries still holds: no external CDNs, no new runtime dependencies, and nothing that breaks the local-first, offline guarantee. The app currently makes zero network requests, and that property must survive this work.
-
-**Verify.** Capture each route in normal motion, in reduced-motion mode, and at 390 px; confirm the tab identity reads at a glance, that reduced-motion is genuinely still, and that the Network panel still shows no external requests.
-
----
-
-## Critical Files
-
-| File | Role |
+| Step | Status |
 |---|---|
-| `index.html` | Shell, router, inline controllers, 22 script + 8 style references. Stays at root. |
-| `server/_static-server.js` | Local server. **Blocked-segment list must change** or `work/` 404s. |
-| `shared/storage-utils.js` | Sole persistence validation boundary; has a cross-domain `require`. |
-| `tests/data-regression.test.js` | **Non-recursive parse loop must become recursive.** |
-| `tests/tracker-regression.test.js` | Six `require` paths + a `vm.runInContext` file list to update. |
-| `styles/cinematic-refinement.css` | The only CSS file with asset `url()` paths — all 5 need `../`. |
-| `games/games.js`, `games/games-data.js` | Reference implementation for catalogs, tasks, resources, themes. |
-| `movies/movies.js`, `movies/movies-data.js` | Catalog, filters, watchlist, details, series metadata. |
-| `explore/explore-global.js`, `explore/explore.js` | Browser vs test entry point discrepancy to resolve in Phase 4. |
-| `work/work-tracker.js`, `work/projects.js` | Work hierarchy, lifecycle, tasks, reminders, filters, history. |
-| `config/secrets.example.json`, `.gitignore` | New credential handling. Server-only, never served, never committed. |
-| `README.md`, `VERIFICATION.md` | Commands and paths to update. |
-| `movies/movies.js` lines 442, 456, 468, 619 | **C.1** — the `custom` guards that make a tracked title permanently untrackable. |
-| `assets/movie-art/*-poster.jpg`, `assets/manifest.json` | **C.2** — all posters are 300×450 and must be re-sourced; manifest records the new dimensions. |
-| `movies/movies-data.js` lines 138–141 | **C.3** — the 4 placeholder-art series records to replace and expand. |
-| `games/games.js` lines 511, 571, 1558, 1599 | **C.4** — the checkbox toggle, change delegate and focus-restore paths to reproduce against. |
-| `explore/explore-data.js`, `assets/destinations/` | **C.5** — conceptual SVGs to replace with real imagery plus long-form descriptions. |
-| `shared/shortcut-surface.js`, `shared/shortcut-utils.js` | **C.6** — shortcut card rendering and ownership rules. |
-| `styles/cinematic-refinement.css` | **C.7** — the `--os-*` token palette to warm, and the `body[data-page]` per-tab hooks. |
+| Stabilise `work-tracker.js` as the module home instead of growing the inline script | [DONE] |
+| Keep `projects.js` compatible with Home/Work project summaries | [DONE] |
+| Storage keys and validation for projects, items, tasks, history | [DONE] |
+| Backup / restore / reset / complete / invalid / legacy / current fixtures updated | [DONE] |
+| Project CRUD: name, description, link, tags, status, progress, deadline | [DONE] |
+| Story/defect CRUD under a selected project | [DONE] |
+| Item fields: name, type, status, priority, analysis, plan, execution, labels, deadline, reminder, links | [DONE] |
+| Validate required name, project, type and status fields | [DONE] |
+| Reject invalid URLs and invalid dates | [DONE] |
+| Task CRUD: title, details, priority, due date, estimate, done | [DONE] |
+| Accessible task checkboxes with completion styling and progress counts | [DONE] |
+| Open / reopen / in-progress / blocked / close lifecycle | [DONE] |
+| Closing an item completes all child tasks, stores completion time, creates a log entry, removes it from active views | [DONE] |
+| Closed items persist in backlog and reopen without losing task history | [DONE] |
+| Views: active projects, active items, due soon, overdue, blocked, backlog, history | [DONE] |
+| Filters by project, type, status, priority, deadline, search text | [DONE] — upgraded to live in 2.3 |
+| Replace the generic Work timeline with real item and task priorities | [DONE] |
+| Keep a link to Productivity for general daily tasks | **[FIX] reversed** — this is a domain leak; removed in Phase 3 |
+| Due-soon / overdue badges, reminder panels, page-entry toasts | [DONE] |
+| Respect reduced motion for reminder and state-change animations | [DONE] |
+| Verify every Work button end to end | [OPEN] — Phase 12 |
 
-## Verification
+**Gate:** every Work action from the Phase 0.5 inventory still works; 31/31 green; side-by-side screenshots at all four widths show no overflow and no overlap.
 
-**After each regrouping batch and at the end:**
+---
 
+# PHASE 3 — Domain boundary cleanup [NEW]
+
+Home is the only aggregator. Every other tab renders only its own domain. Each row is a confirmed leak.
+
+| # | Leak | Location | Action |
+|---|---|---|---|
+| 1 | Work overview tile counts `orbit-tasks` (generic daily tasks) | `projects.js:44-47` | Delete the fallback path |
+| 2 | "General daily tasks" button in Work's timeline head | `index.html:482` | Remove |
+| 3 | Work hero CTA "Start a focus session" → Productivity | `index.html:471` | Replace with a work-domain action |
+| 4 | Work-only focus rail renders `orbit-tasks`, countdowns, `orbit-notes-list`, recents | `index.html:153-159`, fed `1980-1985`, `2049-2053`, `2761-2765` | Rail leaves Work (2.2); its content belongs to Productivity and Notes. Note `index.html:61` already hides three of its five sections, leaving dead markup |
+| 5 | Mobile "Today & Focus" toggle on Work | `index.html:466` | Remove with the rail |
+| 6 | Project deadlines pushed into Work reminders *after* the timeline list is already written | `work-tracker.js:75` | Fold into the Projects sub-view consistently |
+| 7 | Home Quick Access mixes all three spaces unfiltered | `index.html:1354-1365` | Allowed — Home is the aggregator. Label each tile with its space |
+| 8 | Home's "Shortcuts available" count follows the *Shortcuts page's* selected space | `index.html:1368` via `activeLinks()` | Count all spaces, or state which space |
+| 9 | 8 Gaming built-ins + `youtube` / `maps` routed into Explore, then relabelled "Relax & Play" | `shortcut-utils.js:3`, `index.html:1167` | Make Gaming a real category (Phase 7) |
+| 10 | `Gaming` exists in `CATEGORIES` but `visibleCategories()` never returns it | `index.html:1117`, `1172-1176` | Make reachable |
+| 11 | Explore tiles jump to Games / Movies / Productivity; the Productivity tile uses **Personal's** hero art | `index.html:553-555`, `cinematic-refinement.css:102` | Remove cross-domain tiles from Explore; they belong on Home |
+| 12 | `#endWorkdayBtn` (a Work control) calls `applySpace("explore")` + `goToPage("explore")` | `index.html:2100-2109` | Stop relocating the user out of Work |
+| 13 | Games and Movies write `data-games-theme` / `data-movies-theme` to `<body>` and never clear them | `games.js:693`, `movies.js:954` | Scope to the view root, or clear in `goToPage` |
+| 14 | Dead pre-router CSS hiding nodes that now live inside `[data-page-when]` sections | `index.html:89-90` | Delete |
+| 15 | **The shared storage boundary reaches into a domain** — `shared/storage-utils.js:49` calls `require('../explore/trip-board')` inside the `orbit-trip-board` validator | `storage-utils.js:49` | Inject domain validators instead of requiring across domains. Phase 1 only repoints the path because it forbids behaviour change; the real fix lands here |
+
+**Productivity keeps** the generic `orbit-tasks` list, the timer and countdowns — it is their owning domain. Nothing is deleted from the app; content moves to the tab that owns it.
+
+## 3.1 The Home aggregator module [NEW]
+
+Home is the only page allowed to read across domains, so it needs a real owner rather than being rendered from inside `work/projects.js`.
+
+Create `home/home-overview.js` (a new top-level domain folder, following the Phase 1 structure) which:
+
+- Takes over `#homeOverview` from `projects.js:40-43`, reading `orbit-work-projects`, `orbit-tasks` and `orbit-notes-list` as it does today.
+- Becomes the single place cross-domain aggregation is permitted, so the Phase 3 boundary test can allow exactly this one module and forbid everything else.
+- Gains the cross-domain destination tiles removed from Explore (row 11) and the space labels required by rows 7 and 8.
+- Is a pure side-effect module in the load order, placed after the inline shell and after `work/projects.js` (it reads `window.OneSpace` and the same storage helpers).
+
+Its `<script src>` tag is added to `index.html` in this phase, not in Phase 1 — Phase 1 forbids behaviour change, and the structural test from 1.7 asserts an exact script count and order, so that expectation is updated here alongside the new tag.
+
+**Gate:** a new test asserting each page's DOM subtree reads only its own domain's storage keys, with `home/home-overview.js` the single allowed exception.
+
+---
+
+# PHASE 4 — Settings and the theme system
+
+## 4.1 Fix what blocks new themes [FIX]
+
+Not extra scope — the requested theme work cannot land without these:
+
+- **`cinematic-scenes.js:26-34` groups the Settings card by field *index*** (slices `[0,2)`, `[2,7)`, `[7,]`). Adding any new setting silently files controls under the wrong heading. Replace index slicing with declared membership (a `data-settings-group` attribute per field) **before** adding settings.
+- **The header theme toggle destroys the palette** — `index.html:1574-1581` forcibly resets `paletteChoice` to `"classic"` and removes `data-palette`, wiping a selected Aurora / Graphite / Deep Space choice. Make light/dark orthogonal to palette.
+- **"Deep Space" (`midnight`) has no CSS variable block** — it appears only in the dark-mode selector lists at `index.html:21` and `34-36`, so it renders identically to plain dark. Give it real tokens.
+- **`--page-accent` is defined twice and fights over cascade order** — `cinematic-refinement.css:4-15` sets per-page hex values; `pages.css:193-195` sets a different set then `body { --page-accent: var(--accent) }`. Establish one owner.
+- **Reset correctness** — `index.html:1656-1689` "Reset preferences" also wipes favorites, recents, collapsed sections and search provider, and does **not** reset `orbit-theme`, so a dark theme survives a reset while unrelated user data is destroyed. Reset preferences only.
+
+## 4.2 New themes [NEW]
+
+Extend the `data-palette` system (tokens `--bg`, `--bg-2`, `--surface`, `--surface-2`, `--surface-3`, `--accent`, `--accent-2`, `--accent-soft`, `--line`, `--text`, `--muted`, `--faint`) with new palettes beside the existing five (Auto, Classic Light, Deep Space, Aurora, Graphite) and four accents (blue, purple, green, amber).
+
+Each new palette must: define the complete token set in both light and dark; pass WCAG AA contrast for body text and controls; ship a swatch preview in the existing `.theme-choices` radiogroup. Per old C.7 point 1, at least one is a **warm** direction — today's `--os-*` tokens run cool.
+
+## 4.3 New settings [NEW]
+
+- **Per-tab scene intensity** — Full / Subtle / Off, governing Phase 5 ambient motion independently of the motion override.
+- **Surface the Games and Movies sub-themes.** `games.js:168-173` (midnight / neon / crimson / aurora) and `movies.js:162-167` (marquee / noir / velvet / golden) are real theme systems with their own storage keys that Settings never exposes.
+- **Removed shortcuts** restore list (Phase 7).
+- **Provider status** panel (Phase 6) — configured / not configured / offline.
+
+## 4.4 Preserved settings behaviour
+
+Existing settings (palette, background, start page, accent, density, productivity area, clock format, motion) and the Data block (export / import / backup status / reset preferences / reset all data) keep their storage keys and behaviour. [DONE] — must not regress.
+
+---
+
+# PHASE 5 — Living cinematic scenes for every tab
+
+Delivers old Part B Phase 7 and old C.7, using **code-drawn animated scenes**: layered inline SVG + CSS driven by `body[data-page]`. No new binary assets, no external requests. The Games page already proves the technique with its five-layer stack (`gv-scene-art` / `-shade` / `-glow` / `-fog` / `-particles`).
+
+## 5.1 One scene system, replacing three [FIX]
+
+Three uncoordinated entry-animation systems run today: `.is-page-entering` (`index.html:1797-1799`), `.scene-enter` (`discovery-integration.js:14`), and the CSS `osEnter` keyframe (`cinematic-refinement.css:131-132`). Two independent parallax variable sets exist — `--px` / `--py` (`index.html:2961-2970`, with **no consumer in the stylesheets**) and `--scene-x` / `--scene-y` (`discovery-integration.js:15`). Collapse into one scene controller owning entry transition, parallax, ambient motion and reveal, exposed on `window.OneSpace`.
+
+## 5.2 Per-tab scenes [NEW]
+
+Each of the 11 routes gets a layered scene whose subject matches its domain, following the visual directions already agreed: **Home** = observatory / personal command deck; **Work** = drafting room / command centre; **Personal** = calm ritual space; **Explore** = world atlas / travel window; **Games** = game-world spotlight; **Movies & Series** = theater / streaming marquee; **Shortcuts** = navigable launch wall; **Productivity** = focused timer studio; **Notes** = quiet capture desk; **Settings** = control room.
+
+Every scene composes: a drawn SVG backdrop; a depth layer with pointer parallax; a slow ambient layer (drifting light, motes, gradient shift); and a shade scrim guaranteeing text contrast. The nine existing `assets/page-art/*` stills are retained as an optional art slot behind the drawn layers, so a real render can replace a drawn backdrop later without code changes.
+
+## 5.3 Close the gaps [FIX]
+
+- **Games and Movies get a `.page-hero`** with eyebrow, headline and scene caption, and join the scene numbering — currently 01–09 with both absent from the `scenes` map in `cinematic-scenes.js:5`.
+- `#moviesView` is an empty `<div id="moviesMount">` (`index.html:570-572`) until `movies.js` mounts, so it renders nothing cinematic on first paint. Ship hero markup in the document.
+- `index.html:494` uses class `projects-scene`, which **has no matching selector anywhere** — a dead class.
+- Games `world` values `neon` and `aurora` exist in `games-data.js` with **no CSS rule** and silently fall back to the amber default.
+- `cinematic-scenes.js:13-22` injects heading icons by brittle `nth-child` position — move to explicit markup hooks.
+- Gradient-only fallback heroes now dead behind the art layer (`pages.css:81, 113, 136, 148, 171`) — remove or repurpose.
+
+## 5.4 Interaction rules carried from old Phase 7
+
+| Rule | Status |
+|---|---|
+| Entry transition per tab — short, content-first, never delaying interaction | [OPEN] |
+| Hero scene movement / parallax on pointer, stable on touch | [DONE] — unify in 5.1 |
+| Parallax only on explicitly marked decorative layers; clamp values, use `translate3d`, never move text, forms, buttons or focus targets | [DONE] |
+| Scroll-linked depth only where it improves hierarchy, via IntersectionObserver with a fallback | [DONE] |
+| Staggered reveal for primary cards — visible content only, modest durations | [DONE] |
+| Meaningful transitions for search results, filter changes, detail open, save/remove, board status, task completion, tab change, image load and fallback | [OPEN] |
+| Cinematic loading states matched to the section, not generic spinners | [OPEN] |
+| Real image crossfades and sensible crop positioning | [DONE] |
+| Fallback art only on failed media requests; broken media still leaves a usable card | [DONE] |
+| One consistent inline SVG icon system, accessible labels retained | [DONE] |
+| Hover, focus, active, empty, loading, error, disabled, success states for every interactive surface | [OPEN] |
+| Accessible labels, tooltips, `aria-pressed` / `aria-expanded` / `aria-current`, `aria-live` for saves, reminders, completion, close/reopen, deletion | [OPEN] |
+| Touch targets sized for mobile; hover-only behaviour disabled on coarse pointers | [DONE] |
+| Test at 1440 / 1024 / 760 / 390 px — no overlap or overflow | [OPEN] — Phase 12 |
+| Handle long user text safely across all domains | [OPEN] |
+| Modal focus return and focus preservation after dynamic rerenders | [DONE] |
+| Capture visual evidence that effects are visible, stable on touch, and disabled in reduced motion | [OPEN] |
+
+## 5.5 Motion contract [FIX]
+
+All motion routes through `prefersReducedMotion()` (`index.html:1705-1709`, exported at `:3084`). Four paths re-query `matchMedia` directly and therefore **ignore the user's "Full motion" override**: `index.html:1183`, `games.js:97`, `games.js:468`, `movies.js:87`. Route them through the helper. Reduced motion removes parallax, ambient drift, stagger and scroll-linked transforms **entirely** — genuinely still, not slowed.
+
+---
+
+# PHASE 6 — Provider-backed search with typeahead [NEW]
+
+## 6.1 Server layer
+
+Extend `server/_static-server.js` (or add `server/api.js`) with a proxy reading credentials from `config/secrets/` — **server-side only, never in browser JS**. Routes: `/api/search/titles`, `/api/search/games`, `/api/details/:kind/:id`.
+
+Carried from the old REVISED plan's provider requirements:
+
+1. Provider-neutral contract for title search, game search, and details.
+2. Normalise every provider response into the app's existing record shapes, so the UI never sees a TMDB or IGDB payload.
+3. `AbortController` cancellation when the query changes quickly.
+4. Explicit loading, empty, timeout, rate-limit, offline, authentication and provider-error states.
+5. Short-TTL response cache; cache must be clearable without deleting user records.
+6. Pagination / load-more — never silently cap results.
+7. Attribution and source links in details where the provider requires it.
+8. A **local mock provider** so automated tests never need network access or quota.
+9. A clear configuration-error state when credentials are missing — the UI explains what is unavailable rather than showing the local catalog as if it were global.
+
+## 6.2 Typeahead
+
+Both Games (`#gvGameSearch`, wired `games.js:1009-1028`) and Movies (`#mvMovieSearch`, wired `movies.js:802-821`) **already have real ARIA combobox typeaheads** over the local catalog, with arrow-key navigation, Escape, click-outside close, and an "Add Custom" row. [DONE] Keep both and extend:
+
+- **Debounce input** — both currently fire on every keystroke.
+- **Two result groups** in one dropdown: "In your catalog" (local, instant) then "Search results" (provider, async) with a loading row.
+- **Explicit add affordance.** Selecting a row currently calls `addSuggestionToLibrary` / `addSeedToLibrary` **immediately**, with no confirmation and no status choice (`games.js:1004`, `movies.js:797`). Add an explicit add control, and for titles a status choice — matching the Discover panel (`discovery-ui.js:31`), which already does this properly.
+- **Series parity** — series are first-class in the same search; the type filter (`movies.js:1396`) gets capitalised `Movie` / `Series` labels.
+- **Offline / unconfigured state** is visible and explicit.
+
+## 6.3 Reconcile the two search experiences [FIX]
+
+`discovery-integration.js:3-9` mounts a second, unrelated Discover panel into Movies, renames the tab, wraps the existing preference chips into a `<details>`, and rewrites the typeahead placeholder. Games has the same split. Reconcile into one search experience per domain with one result-card design.
+
+---
+
+# PHASE 7 — Shortcuts: add and remove for every shortcut
+
+## 7.1 Removable built-ins [NEW]
+
+All 47 built-ins (`index.html:1060-1112`) have **no delete and no edit control** — `cardHtml` (`index.html:1223`) and `shortcut-surface.js:6` both gate those on `custom`. The only removal mechanism is the hardcoded `HIDDEN_DEFAULT_IDS = ["hm","zara","maxmara"]` (`index.html:1163`).
+
+1. Add an `orbit-hidden-links` array key with a validator in `shared/storage-utils.js`, a fixture, and a backup round-trip test.
+2. Every shortcut card — built-in or custom, full (`index.html:1215-1237`) and compact (`shortcut-surface.js:4-7`) — gets a Remove control. Custom keeps destructive delete; built-in hides.
+3. A **Removed shortcuts** panel in Settings restores any of them.
+4. Replace `HIDDEN_DEFAULT_IDS` with real user data, seeding those three ids on first run so nothing visibly changes for existing users.
+
+## 7.2 Add-control fixes [FIX]
+
+- **Work has no add-shortcut control at all**, unlike Personal (`index.html:528`) and Explore (`index.html:559`). Add one.
+- **`index.html:2498` binds every `[data-add-space]` button to `openShortcutModal(null)` and never reads the attribute**, so the declared space is discarded and the modal guesses from `currentPage` / `currentSpace` (`:2478`). Honour the attribute.
+- `shortcut-surface.js:9` calls `renderExplorePage()` with no argument, silently clearing the Explore search filter whenever any shortcut is favorited.
+- "Duplicate" (`index.html:2585`) is a stub that only shows a toast. Implement or remove.
+
+## 7.3 Modernisation — old C.6
+
+1. Rebuild the card and launch wall on the inline SVG icon system with a favicon/hostname fallback chain that never renders a broken image.
+2. Modern grid with proper hover, focus, active, empty, loading and error states; mobile-sized touch targets.
+3. Drag-to-reorder **with a keyboard-accessible equivalent**; favorites and recents visually distinct rather than text-labelled.
+4. Name, description and hostname in a clear hierarchy, with `rel="noopener noreferrer"` preserved.
+5. Explore-owned shortcuts stay visually consistent but strictly scoped.
+
+## 7.4 Ownership rules preserved from old Part B Phase 3
+
+| Step | Status |
+|---|---|
+| Shortcut modal has a description field and explicit space ownership | [DONE] |
+| Adding from Personal defaults to Personal; adding from Explore forces Explore | [DONE] — but see the 7.2 attribute bug |
+| Enforce ownership in sanitization and `linkSpace()` so links cannot leak between spaces | [DONE] |
+| Edit and delete confirmation for custom shortcuts | [DONE] |
+| Show name, description, hostname, icon fallback, favorite, recent, safe external-link behaviour | [OPEN] — hostname is not shown on the compact card |
+| Regression tests for deletion, descriptions, space filtering, duplicate URLs, backup round trips | [DONE] |
+
+---
+
+# PHASE 8 — Games: correct tracker on add
+
+## 8.1 Tracker type must be correct at add time [NEW]
+
+A tracker **is** already created at add time — `starterStory()` at `games.js:846`, `:676`, `:1641`, and `ensureWeekly()` for weekly. The real defect is that **the type is almost always wrong**: `SUGGESTION_CATALOG` (`games-data.js:182-195`) carries **no `trackerType`**, and `games.js:843` defaults to `g.trackerType || "story"`. Every one of the 12 suggestions — and every future provider result — becomes a story game with one generic 3-objective chapter.
+
+1. Add `trackerType` to every catalog record and to the provider normaliser.
+2. Infer the default from genre and tags (live-service, MMO, looter, gacha, battle-royale → **weekly**; campaign, story-rich, single-player → **story**), and **show the inferred choice in the add flow so it can be corrected before saving**. The two `.gv-tracker-choice` pills (`index.html:729-732`) already exist for custom games.
+3. Mission-based games get **real chapters**, not one catch-all. `OneSpaceGameResources.story` (`game-resources.js:25`) currently always produces a single `"Your first milestones"` chapter; extend the catalog so story games ship a chapter outline.
+4. Editing a game from weekly → story leaves the old `story` object orphaned (`games.js:669-673`). Reconcile on type change.
+
+## 8.2 De-Diablo-ify the weekly tracker [FIX]
+
+Old Phase 5 step 3 required the resource model be data-driven "so Diablo Immortal is only one example". The weekly system is generic in its toggle logic but hardcodes Diablo in four places:
+
+- `cloneWeeklyTemplate` special-cases `game.id === "game-diablo-immortal"` (`games.js:208`)
+- `defaultTasks` / `defaultTaskTemplates.weekly` injection (`games-data.js:202,204`)
+- the Overview stat tile (`games.js:724-725,744`)
+- the literal heading `"Diablo Weekly Tasks"` (`games.js:1422`)
+
+Make all four data-driven so any weekly game behaves identically. Also fix the cascade order in `game-resources.js:24`, where the `defaultTasks` check precedes the `trackerType === 'weekly'` branch, so a record with story-flavoured `defaultTasks` reuses them as weekly tasks.
+
+**[FIX] `resetWeekly()` destroys Diablo's task list.** `games.js:581` calls `cloneWeeklyTemplate()` with **no argument**, so `library.find(g => g.id === undefined)` yields `{}`, the Diablo special case does not match, and `OneSpaceGameResources.weekly({})` returns 3 generic tasks. Pressing "Reset Weekly Tasks" on Diablo Immortal replaces its 7 real tasks with 3 generic ones until the next ISO-week rollover restores them. Pass the game id. This phase already rewrites `cloneWeeklyTemplate`, so fix it in the same pass and add a test asserting reset preserves the game's own template.
+
+## 8.3 C.4 — checkboxes that will not un-check (approved root cause)
+
+`saveLibrary()` (`games.js:175`) and `saveWeekly()` (`:180`) **discard the boolean return from `safeSet`**, which returns `false` and toasts on a quota or validation failure (`index.html:927-939`). In-memory state flips, the UI re-renders checked, storage is unchanged — and the state reverts on reload. This is the most probable mechanism behind the report, and it was missing from the old plan's suspect list.
+
+**Fix.** Route both through the same read-back-and-rollback pattern as `commitGameChanges()` (`games.js:176-179`), surface a real error, and add regression tests asserting (a) the toggle is an involution — two toggles return the original state — and (b) a rejected write never leaves the UI showing a state storage does not hold.
+
+**Secondary contributors to check during reproduction, in order:**
+
+1. **Week rollover mid-interaction.** `ensureWeekly` (`:211-220`) discards all `done` flags and re-clones the template whenever the ISO week key changes, and it is reached from **every render** via `weeklyStats` (`:238`).
+2. **`findChapter` is scoped to `selectedStoryGameId`** (`:498-502`), so an objective rendered for any other game silently no-ops.
+3. `toggleWeeklyTask` depends on an ancestor `.gv-tracker[data-game-id]` (`:1565`); a weekly checkbox rendered elsewhere gets no handler.
+4. Ruled out by inspection: the click delegate's `switch` (`:1522-1557`) has **no** case for `toggle-objective` or `toggle-weekly-task`, so they are handled only by the `change` listener (`:1558`) and are not double-fired.
+5. Also ruled out: `is-just-checked` styling is applied only when the new state is `done === true` (`:351`, `:396-397`), so it cannot make an unchecked box look checked.
+
+## 8.4 Games behaviour preserved from old Part B Phase 5
+
+| Step | Status |
+|---|---|
+| Records carry official, news, build, guide, update, community and platform links | [DONE] |
+| Default task/objective templates on game records | [DONE] |
+| Resource model data-driven, Diablo only one example | **[OPEN]** — see 8.2 |
+| Per-game detail/resource panel | [DONE] |
+| Resources grouped into news/updates, builds/guides, official, community, game-specific tasks | [DONE] |
+| Catalog, suggestions, wishlist and custom flows initialise the correct story or weekly tasks | **[OPEN]** — see 8.1 |
+| No duplicate task initialisation after rerender or reload | [DONE] |
+| Every built-in and custom game discoverable via genre filter, search, add, edit, delete, progress, resources | [DONE] |
+| Sessions, journal, themes, story objectives and weekly behaviour preserved | [DONE] |
+| Tests for resource mapping, default task creation, genre filtering, deletion cleanup | [DONE] |
+| Verify every Games tab, filter, search, suggestion, library, wishlist, details, resource link, task, session, journal, theme, add, edit, delete and confirmation action | [OPEN] — Phase 12 |
+
+## 8.5 Remaining games defects [FIX]
+
+1. **User-added games can never reach the spotlight.** `featuredGames()` (`games.js:1261-1263`) filters the spotlight rail to games that have `artwork`, and custom or provider-added games have none. Fall back to the deterministic `gameScene(game)` generator (`games.js:264-274`) that cards already use, so every tracked game is eligible.
+2. **Unescaped selector in focus restoration.** `withFocusPreserved` (`games.js:1608`) concatenates attribute values into a `querySelector` string without escaping. Ids come from `uid()` today so it is safe, but a `data-id` containing a quote throws out of `querySelector` and aborts refocus. Use `CSS.escape`, or match by element reference rather than by selector.
+3. **Reveal state bleeds between games.** Weekly task ids are `default-0..n` for every non-Diablo game (`game-resources.js:26`) and default chapter ids are `c1..c4` across games (`games-data.js`), while `revealedKeys` (`games.js:71`, `:104`) is a flat map. A freshly-rendered row therefore skips its reveal animation because another game already claimed that key. Namespace the reveal key by game id.
+4. **Games `world` values `neon` and `aurora` have no CSS rule** and silently fall back to the amber default — also listed in Phase 5.3; fix in whichever phase runs first.
+
+---
+
+# PHASE 9 — Movies and Series
+
+## 9.1 C.1 — a tracked title can never be untracked (confirmed defect)
+
+**Root cause, verified.** Every seed-add path — search dropdown (`movies.js:797`), suggestion cards (`:1247-1249`), hero (`:1048`), watchlist (`:1250-1251`), details modal (`:1234-1235`) — flows through `addSeedToLibrary`, which hard-sets `clone.custom = false` (`:442`). That single flag both suppresses the delete button (`:619`) and makes `deleteMovie` return early (`:458`). Line 460 is the **only** place anything is removed from `library`. The three status options are `unwatched | watched | watchlist` — none means "not tracked" — and `renderOverviewStats` counts `library.length` as "Titles tracked" (`:661`).
+
+**Fix.** Separate two concepts currently conflated under `custom`:
+
+- **Untrack / Remove from library** — available for **every** tracked title, catalog or custom. Removes the record from `library` and the watchlist, returning it to an untracked catalog entry that can be re-added. `OneSpaceUI.confirm` then a toast.
+- **Delete custom title** — unchanged, still `custom`-only, since a custom record has no catalog entry to fall back to.
+
+Drop the `!m.custom` guard from the untrack path, render the untrack control unconditionally on library cards and in the details panel, and make "Titles tracked" drop when a title is untracked.
+
+**Also fix [FIX]:** the watchlist is derived from two sources at once — the legacy `watchlist` id array **and** `status === 'watchlist'` (`watchlistItems()` `:360-363`) — while `addToWatchlist` (`:465-467`) only ever writes the status. Reconcile to one source of truth.
+
+**Verify.** Track a catalog movie → untrack it → it leaves Library, the tracked count decreases, it reappears as an untracked suggestion, and it is still untracked after reload. Repeat for a series and for a custom title, which must still offer permanent delete.
+
+## 9.2 C.2 — large movie images are blurred (confirmed cause)
+
+Not a CSS `blur()` — there is none on movie artwork. Per `assets/manifest.json`, every poster in `assets/movie-art/` is **300 × 450** (13–29 KB). Backdrops are 1920 × 1080 except `pulp-fiction-background.jpg` at 1280 × 720. A 300px source shown at 400–600 CSS px on a 2× display is upscaled 3–4×.
+
+1. Re-source posters at a minimum of **1000 × 1500** for detail/hero use, keeping the 2:3 ratio and file naming.
+2. Keep a small variant for grid cards; serve both via `srcset` / `sizes`.
+3. Bring `pulp-fiction-background.jpg` to 1920 × 1080.
+4. Add a CSS guard so no image is scaled beyond its intrinsic width — a future undersized asset then looks visibly wrong rather than quietly blurry.
+5. Update `assets/manifest.json` dimensions and bytes; record provenance in `assets/movie-art/SOURCES.md`.
+6. Licensing constraint holds: no scraping, no unlicensed downloads. Where no licensed high-resolution image exists, render the deterministic fallback rather than shipping an upscaled blur.
+
+Note `.mv-poster-img { object-fit: contain }` (`movies.css:97`) letterboxes posters rather than filling — review alongside the resolution change.
+
+## 9.3 C.3 — series are effectively invisible
+
+`MOVIE_TYPES = ["movie","series"]` exists (`movies-data.js:17`) and there are exactly **4** series (`movies-data.js:137-142`: `tv-dark`, `tv-queens-gambit`, `tv-good-place`, `tv-chernobyl`) against 16 movies. All four carry `poster:{kind:'placeholder'}` and `backdrop:{kind:'placeholder'}`, plus `platforms:[]` and `rating:0` — so they render as generated SVG next to fully-illustrated movies, and `ratingLabel` prints `—`. They also land in the hero carousel as pure generated SVG, since the featured pool is all of `SEED_MOVIES` (`movies.js:1004`).
+
+1. Expand to at least 12–15 series spanning the same genre range, so type filtering returns a useful set.
+2. Real local artwork at the 9.2 resolutions; remove every `kind:'placeholder'` from seed data.
+3. Populate `platforms`, `rating`, `moods`, `tags` and a substantive `blurb`.
+4. Make the `movie` / `series` filter first-class and visible, with capitalised `Movie` / `Series` labels.
+5. Keep series cards honest about shape — seasons and approximate episode length, which `libraryCardHtml` already formats — **without** episode-by-episode tracking, which stays out of scope.
+
+Phase 6's provider search makes catalog size far less critical, but the seeded set must still look credible offline.
+
+## 9.4 Movies behaviour preserved from old Part B Phase 6
+
+| Step | Status |
+|---|---|
+| First-class `type: movie\|series` in `movies-data.js` | [DONE] |
+| Series metadata, explanations, seasons | [DONE] |
+| Type and genre filters | [DONE] |
+| Cards, search, details, suggestions, watchlist views updated | [DONE] |
+| `movies` route and storage keys preserved | [DONE] |
+| Episode tracking stays lightweight | [DONE] |
+| Series-specific validation in `storage-utils.js` | [DONE] |
+| Backup fixtures and migration handling | [DONE] |
+| Tests for mixed search, type/genre filtering, suggestion explanations, watchlist, malformed series data | [DONE] |
+| Verify every Movies & Series tab, type filter, genre filter, search, suggestion, detail, add/remove, watched state, watchlist, library and reload flow | [OPEN] — Phase 12 |
+
+## 9.5 Confirmation dialog consistency [FIX]
+
+`deleteMovie` (`movies.js:459`) uses native `window.confirm`, while every other domain uses `OneSpaceUI.confirm` (`shared/domain-ui.js:26`) with the shell's modal stack, focus trap, Escape handling and inert background. A native dialog cannot be styled, ignores reduced-motion and theme, and breaks the focus-return contract the rest of the app honours. Move it to `OneSpaceUI.confirm`, which the new untrack flow in 9.1 already requires.
+
+---
+
+# PHASE 10 — Explore
+
+## 10.1 C.5 — real imagery and substantive descriptions
+
+`explore-data.js` holds 12 destinations, each pointing at `assets/destinations/<id>.svg`. These are **conceptual SVG illustrations, not photographs** — the old REVISED plan already flagged this as a missed requirement. Each record has `summary` and `details`, but the depth is uneven.
+
+1. Real, properly licensed local imagery per destination at hero and card resolutions, following the 9.2 sizing and `srcset` rules.
+2. A substantive description per destination: what the place is, why it suits its tagged categories, best season and why, rough trip length, budget character, and what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
+3. Never blank: alt text always present; the deterministic fallback used only on a genuinely failed request.
+4. Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
+5. **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
+
+## 10.2 Resolve the `explore.js` discrepancy [OPEN]
+
+Confirmed open: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags — the browser uses `explore-global.js`. Decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree. Note `explore.js` **auto-invokes `api.mount(root)` at load**, so simply adding the tag would double-mount.
+
+## 10.3 "More to explore" is not the final section [FIX]
+
+Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 require "More to explore" be the last Explore section. It is currently **third of four**: Destinations → **More to explore** (`index.html:551`) → Explore shortcuts → chill strip. Move it last.
+
+## 10.4 Explore behaviour preserved from old Part B Phase 4
+
+| Step | Status |
+|---|---|
+| `explore-data.js` holds the curated destination catalog | [DONE] |
+| Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback | [DONE] |
+| `explore.js` holds persisted destination preferences | [DONE] — but see 10.2 |
+| Destination type, climate/season, trip length, budget, pace, interests, departure region | [DONE] |
+| Deterministic, explainable recommendation ranking | [DONE] |
+| Show why each destination was recommended | [DONE] |
+| Preference controls, recommendation cards, details, save/favorite, shortlist/trip board, Explore-only shortcuts | [DONE] |
+| "Surprise me" as a filtered random recommendation | [DONE] |
+| Responsive destination images with fallback modelled on `visual-utils.js` | [DONE] |
+| Accessible alt text; never a blank destination card | [DONE] |
+| Tests for filtering, stable ranking, saved destinations, Explore-only shortcuts, malformed data | [DONE] |
+| Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload | [OPEN] — Phase 12 |
+| Keep "More To Explore" last | **[OPEN]** — see 10.3 |
+
+---
+
+# PHASE 11 — Personal
+
+Old Part B Phase 3, personal half. All delivered; must not regress.
+
+| Step | Status |
+|---|---|
+| `makeCheckListController()` refactored into reusable add / edit / toggle / delete | [DONE] |
+| Deletion routed through the existing modal/confirmation pattern | [DONE] |
+| Toast and `aria-live` message after successful deletion | [DONE] |
+| Separate storage for goals, routines and habits | [DONE] |
+| Completion counts and progress summaries | [DONE] |
+| Optional habit frequency / target metadata | [DONE] |
+| Clear empty states | [DONE] |
+| Verify add / edit / check / delete / cancel after rerender and reload | [OPEN] — Phase 12 |
+
+**[NEW] Where Work's removed content lands.** Phase 3 strips five non-work surfaces from the Work page. None of them moves to Personal:
+
+| Removed from Work | Goes to | Why |
+|---|---|---|
+| Next-up tasks (`orbit-tasks`) | Productivity | Productivity owns that key |
+| Pomodoro timer mirror | Productivity | Already lives there |
+| Countdowns (`orbit-countdowns`) | Productivity | Already rendered there |
+| Quick note (`orbit-notes-list`) | Notes | Notes owns that key |
+| Recently-opened shortcuts | Shortcuts / Home | Space-scoped surface |
+
+Personal's own goals, routines and habits are unchanged. Nothing is deleted — each surface already exists on its owning page, so this is removal from Work, not a migration.
+
+---
+
+# PHASE 12 — Verification and delivery
+
+Old Part B Phase 8, extended.
+
+1. Run the complete recursive JavaScript parse test and all Node tests: `node --test tests/`.
+2. **New tests** added by this plan: structural assertions (1.7); domain-boundary assertions (Phase 3); hidden-shortcut round trip (7.1); tracker-type inference and the toggle-involution regression (8.1, 8.3); untrack behaviour (9.1); provider normalisation, error, timeout, rate-limit and offline states against the mock provider (6.1).
+3. Expand Node tests for pure Work, Explore, shortcut, game, movie, visual-state and migration helpers.
+4. Test schema validation, migration defaults, backup/restore, reset and storage rollback.
+5. Browser-level smoke tests for every top-level route; `tests/browser-smoke.mjs` exports `routes(tab)`, `layout(tab)` and `workLifecycle(tab)`.
+6. Test navigation, add/edit/delete, modal close/cancel, persistence after reload, filters, task checkboxes, close/reopen, backlog/history, reminders, image fallback and external links.
+7. Start the static server and inspect the console for uncaught errors and failed local assets.
+8. Verify Work hierarchy and close-all behaviour; Personal delete confirmation; Explore recommendation explanations and image fallback; game-specific links and default tasks across multiple genres and **both tracker types**; movie and series genre views.
+9. Verify backup export/import with all new data; reset behaviour and unrelated `localStorage` preservation.
+10. Verify keyboard-only navigation and reduced-motion mode — every route genuinely still.
+11. Verify desktop, tablet and mobile layouts at 1440 / 1024 / 760 / 390 px.
+12. **Offline pass:** provider unreachable → visible degraded state, no silent local fallback presented as global results.
+13. Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
+14. Set `MISSING_ASSET='assets/destinations/azores.svg'` on `tests/browser-server.js` to exercise the image-fallback path.
+15. Tick off every remaining box in `docs/IMPLEMENTATION-STEPS.md` and confirm none is left unchecked without a stated reason.
+16. All documentation updates are **Phase 13.3** — do not duplicate them here.
+
+---
+
+## Critical files
+
+| File (post-regroup path) | Role |
+|---|---|
+| `index.html` | Shell, router `goToPage()` (`:1788-1818`), inline controllers, Settings markup (`:599-623`), 47 built-in links (`:1060-1112`), 22 script + 8 style refs |
+| `server/_static-server.js` | Block list must change or `work/` 404s; gains the provider proxy |
+| `shared/storage-utils.js` | Sole validation boundary; cross-domain require at `:49`; new `orbit-hidden-links` key |
+| `tests/data-regression.test.js` | Non-recursive parse loop at `:132` must become recursive |
+| `tests/tracker-regression.test.js` | Six `require` paths + a `vm.runInContext` file list to update |
+| `work/work-tracker.js` | Tracker render (`:52`), overview tiles (`:51`), filters (`:118`), lifecycle, timeline leak (`:75`) |
+| `work/projects.js` | Project CRUD; sheds `#homeOverview` (`:40-43`) and the Work-overview fallback (`:44-47`) |
+| `work/tracker.css` | Grid locks (`:1-4`) driving the cramped layout |
+| `shared/cinematic-scenes.js` | Index-based Settings grouping (`:26-34`), `nth-child` icon injection (`:13-22`), scene map missing games/movies (`:5`) |
+| `styles/cinematic-refinement.css` | `--os-*` and `--page-accent` tokens; the 5 `url()` paths needing `../` |
+| `styles/pages.css` | Competing `--page-accent` (`:193-195`); dead gradient heroes |
+| `games/games.js` | `saveLibrary`/`saveWeekly` (`:175,180`), `addSuggestionToLibrary` (`:837`), `cloneWeeklyTemplate` (`:206`), typeahead (`:1009`), toggles (`:511,571`) |
+| `games/games-data.js` | `SUGGESTION_CATALOG` missing `trackerType` (`:182-195`); Diablo injection (`:202,204`) |
+| `games/game-resources.js` | Task cascade order bug (`:24`); single-chapter `story` (`:25`) |
+| `movies/movies.js` | `custom` gating (`:442,458,619`), typeahead (`:802-821`), watchlist split (`:360-363`) |
+| `movies/movies-data.js` | 4 placeholder-art series (`:137-142`) |
+| `explore/explore-data.js`, `assets/destinations/` | Conceptual SVGs to replace; long-form descriptions |
+| `explore/explore.js` | Loaded by tests, not by `index.html`; auto-mounts on load |
+| `shared/shortcut-utils.js` | `space()` inference incl. `youtube`/`maps` exceptions (`:3`) |
+| `shared/shortcut-surface.js` | Compact card, `custom`-gated controls (`:6`), `renderExplorePage()` arg bug (`:9`) |
+| `movies/movies.css` | `.mv-poster-img { object-fit: contain }` (`:97`) letterboxes posters — review with 9.2 |
+| `assets/manifest.json` | Records art dimensions and bytes; updated by 9.2, 9.3 and 10.1 |
+| `home/home-overview.js` | **New in 3.1** — the only module permitted to read across domains |
+| `config/secrets.example.json`, `.gitignore` | New; TMDB / IGDB or RAWG keys |
+| `docs/IMPLEMENTATION-STEPS.md` | **New in 13.2** — the sequenced execution checklist, written before work begins |
+| `README.md`, `VERIFICATION.md` | Commands, paths and the recorded acceptance run |
+| `agent-instructions.md` | This document — the standing plan |
+
+---
+
+## Verification commands
+
+```sh
+node --test tests/                                       # all suites incl. structure.test.js
+node server/_static-server.js                            # http://localhost:8973
+curl -I http://localhost:8973/config/secrets/api-keys.json   # must 404
+curl -I http://localhost:8973/config/secrets/probe.js        # must 404 — the check that matters
+git check-ignore -v config/secrets/api-keys.json          # confirms the ignore rule
+git log --follow games/games.js                           # proves git mv was used
+$env:PORT = '18974'; node tests/browser-server.js         # disposable origin (PowerShell)
 ```
-node --test tests/data-regression.test.js tests/tracker-regression.test.js tests/structure.test.js
-node server/_static-server.js
-```
 
-Then open `http://localhost:8973` and confirm, per route (Home, Work, Projects, Personal, Explore, Games, Movies, Shortcuts, Productivity, Notes, Settings):
+This machine is Windows with PowerShell as the primary shell, so `PORT=18974 node …` is a parse error — use the `$env:` form, as `README.md` already documents. If Node reports an EPERM during path resolution in a sandboxed Windows install, prefix with `--preserve-symlinks --preserve-symlinks-main`.
 
-- No 404s in the Network panel — in particular `work/projects.js`, `work/work-tracker.js` and `work/tracker.css` load, proving the server block-list fix.
-- No console errors; no duplicate script execution; global initialization order unchanged.
-- All five `cinematic-refinement.css` background images render.
-- Game art, movie art and destination art still resolve (proving the document-relative assumption in A.3).
-
-**Regrouping-specific checks:**
-
-- `curl -I http://localhost:8973/config/secrets/api-keys.json` returns 404.
-- `curl -I http://localhost:8973/config/secrets/probe.js` also returns 404 — this is the check that matters, since `.js` is in the server's MIME allowlist and would otherwise be served in full.
-- `git status --porcelain` shows no untracked file under `config/secrets/` other than `.gitkeep`; `git check-ignore -v config/secrets/api-keys.json` confirms the rule that catches it.
-- `git log --follow games/games.js` shows history across the move (proves `git mv` was used).
-- The recursive parse test reports a file count matching the source inventory, not ~1.
-
-**Part C defect checks (each must fail before the fix and pass after):**
+## Defect acceptance checks — each must FAIL before the fix and PASS after
 
 | Item | Check |
 |---|---|
-| C.1 untrack | Track a catalog movie, untrack it: it leaves Library, "Titles tracked" decreases, it returns to Suggestions, and it is still untracked after reload. A custom title still offers permanent delete. |
-| C.2 sharpness | In a detail view at 1440 px / 2× DPR, no `<img>` has a rendered width greater than its `naturalWidth`; posters report `naturalWidth >= 1000`. |
-| C.3 series | The Series filter returns 12+ illustrated titles; zero records with `kind:'placeholder'` remain in `movies-data.js`; search returns mixed movies and series. |
-| C.4 checkboxes | Toggle an objective and a weekly task ten times each: model, percentage and DOM agree every time, and state is correct after reload. A regression test asserts two toggles return the original state. |
-| C.5 destinations | All 12 destinations show a photograph and long-form description; a forced 404 leaves the card usable via fallback; saved destinations still validate. |
-| C.6 shortcuts | Add, edit, favorite, reorder and delete by keyboard alone; no broken icons at 1440 / 1024 / 760 / 390 px. |
-| C.7 cinematic | Each route is visually distinct; reduced-motion mode is genuinely still; the Network panel shows zero external requests. |
+| 9.1 untrack | Track a catalog movie, untrack it: it leaves Library, "Titles tracked" decreases, it returns to Suggestions, and it is still untracked after reload. A custom title still offers permanent delete. |
+| 9.2 sharpness | In a detail view at 1440 px / 2× DPR, no `<img>` has a rendered width greater than its `naturalWidth`; posters report `naturalWidth >= 1000`. |
+| 9.3 series | The Series filter returns 12+ illustrated titles; zero records with `kind:'placeholder'` remain in `movies-data.js`; search returns mixed movies and series. |
+| 8.3 checkboxes | Toggle an objective and a weekly task ten times each: model, percentage and DOM agree every time, and state is correct after reload. A regression test asserts two toggles return the original state, and that a rejected write never leaves the UI ahead of storage. |
+| 8.1 tracker type | Adding a live-service game from the catalog produces a **weekly** tracker; adding a campaign game produces **chapters**; the inferred type is visible and correctable before saving. |
+| 10.1 destinations | All 12 destinations show a photograph and a long-form description; a forced 404 leaves the card usable via fallback; saved destinations still validate. |
+| 7.1 shortcuts | Every shortcut, built-in included, offers Remove; a removed built-in is restorable from Settings; add, edit, favorite, reorder and delete work by keyboard alone; no broken icons at 1440 / 1024 / 760 / 390 px. |
+| 5.x cinematic | Each route is visually distinct and visibly in motion; reduced-motion mode is genuinely still; the browser bundle still issues no external requests. |
+| 3.x boundaries | No page but Home reads a storage key belonging to another domain. |
+| 10.3 Explore order | "More to explore" is the final section on the Explore page. |
 
-**Browser harness:**
+---
 
-```
-node tests/browser-server.js
-```
+## Further considerations
 
-with `tests/browser-smoke.mjs` exports `routes(tab)`, `layout(tab)` and `workLifecycle(tab)`. Set `MISSING_ASSET='assets/destinations/azores.svg'` to exercise the image-fallback path.
+Carried from the previous plan; all still apply.
 
-## Scope Boundaries
-
-**Included:** local-first data; CRUD; Work tracking and lifecycle; filters and in-page reminders; curated destination discovery; game resources and tasks; movie and series catalogs; local images and fallbacks; cinematic UI, parallax, micro-interactions and accessibility; persistence, backup, restore, reset; automated and browser verification; **repository regrouping into domain folders; a git-ignored, non-servable secrets folder with a committed example template; and all of Part C — reversible movie tracking, high-resolution movie artwork, a real series catalog, the game checkbox toggle defect, destination photography with long-form descriptions, modernized shortcuts, and per-tab warm cinematic treatment.**
-
-**Excluded unless separately approved:** server accounts; multi-user collaboration; cloud sync; real-time external APIs; **reading or using any API credential — this pass creates the secrets folder and ignore rules only**; true push notifications after the browser closes; full Jira integration; episode-by-episode TV tracking (C.3 adds series as a type, not an episode tracker); scraping or unlicensed image downloading (this constrains C.2, C.3 and C.5 — where no licensed high-resolution image exists, ship the deterministic fallback rather than an upscaled blur); **moving `assets/` into domain folders**; **any external CDN or new runtime dependency for C.7 — the app makes zero network requests today and must still make zero afterwards**; any behavior change during Part A.
-
-## Further Considerations
-
-1. The Explore catalog is local and curated, so content and images are maintained in code and assets. A later API-backed phase can reuse the same recommendation interface — and now has `config/secrets/` and `server/providers/` waiting for it.
-2. A full Jira clone is too broad for a single-page local app. The proposed hierarchy and lifecycle deliver the requested development workflow while staying maintainable.
-3. The inline `index.html` script should not grow further. New domain behavior belongs in the domain folders, with only small markup and router hooks in `index.html`.
+1. The Explore catalog is local and curated, so content and images are maintained in code and assets. Phase 6's provider layer reuses the same recommendation interface, and now has `config/secrets/` and `server/providers/` waiting for it.
+2. A full Jira clone is too broad for a single-page local app. The hierarchy and lifecycle already built deliver the requested development workflow while staying maintainable — Phase 2 improves its presentation, not its scope.
+3. **The inline `index.html` script must not grow further.** New domain behaviour belongs in the domain folders, with only small markup and router hooks in `index.html`. This constrains Phases 2, 4, 5 and 7, all of which touch shell-owned code today.
 4. The app should feel cinematic through layered scenes, restrained motion, depth and responsive state changes — not decorative animation everywhere.
 5. Every visual effect must have a purpose, stay subordinate to content and controls, and have a reduced-motion equivalent.
-6. `shared/storage-utils.js` reaching into `explore/trip-board.js` is a layering violation carried over from the flat structure. The regrouping makes it visible; fixing it (dependency injection of domain validators) is a good Part B follow-up.
+6. `shared/storage-utils.js` reaching into `explore/trip-board.js` is a layering violation carried over from the flat structure. The regrouping makes it visible. Phase 1 only repoints the path, because it forbids behaviour change; **Phase 3 row 15 injects domain validators instead.**
 
+---
 
-Please ask the questions if something is not clear.
+## Scope boundaries
+
+**Included:** repository regrouping into domain folders; a git-ignored, non-servable secrets folder with a committed template; Work/Projects consolidation and the tracker redesign; domain boundary cleanup; theme system repair and new palettes; code-drawn animated scenes for all 11 routes; provider-backed search with typeahead; removable built-in shortcuts; games tracker-type correctness and the silent-save fix; Part C defects C.1, C.2, C.3, C.5, C.6, C.7; **every defect in the table above — none are deferred**; local-first data, CRUD, filters, in-page reminders, persistence, backup, restore, reset; automated and browser verification; and the documentation rewrite in Phase 13, including a new step-by-step execution checklist.
+
+**Excluded unless separately approved:** server accounts; multi-user collaboration; cloud sync; true push notifications after the browser closes; full Jira integration; episode-by-episode TV tracking; scraping or unlicensed image downloading (this constrains 9.2, 9.3 and 10.1 — where no licensed high-resolution image exists, ship the deterministic fallback rather than an upscaled blur); moving `assets/` out of the repository root; any behaviour change during Phase 1.
+
+**Amended:** the old plan's "no external CDN or new runtime dependency; the app makes zero network requests today and must still make zero afterwards" now applies to the **browser bundle only**. No CDN and no new browser runtime dependency — but the local server may call configured providers, and the app must still work fully offline with a visible degraded state.
+
+---
+
+## Defects found during inspection — all now in scope
+
+Every defect surfaced by this inspection is assigned to a phase. Nothing is recorded-but-unplanned.
+
+| Defect | Phase |
+|---|---|
+| `saveLibrary`/`saveWeekly` discard `safeSet` failures — silent data loss, likely C.4 root cause | 8.3 |
+| `resetWeekly()` called with no argument, destroying Diablo's 7 weekly tasks | 8.2 |
+| `featuredGames()` requires `artwork`, excluding every user-added game from the spotlight | 8.5.1 |
+| `withFocusPreserved` builds an unescaped `querySelector` string | 8.5.2 |
+| `revealedKeys` bleeds reveal state between games via colliding default ids | 8.5.3 |
+| Games `world` values `neon` / `aurora` have no CSS rule | 5.3 / 8.5.4 |
+| `movies.js:459` uses native `window.confirm` instead of `OneSpaceUI.confirm` | 9.5 |
+| Movies watchlist derived from two conflicting sources | 9.1 |
+| `shared/storage-utils.js` requires across into the Explore domain | 3.15 |
+| Settings card grouped by field index — breaks on any new setting | 4.1 |
+| Theme toggle silently resets the palette to Classic | 4.1 |
+| "Deep Space" palette has no CSS variable block | 4.1 |
+| `--page-accent` defined twice with a cascade conflict | 4.1 |
+| "Reset preferences" wipes unrelated user data and skips `orbit-theme` | 4.1 |
+| Four code paths bypass `prefersReducedMotion()`, ignoring the Full-motion override | 5.5 |
+| `--px`/`--py` parallax variables have no consumer; two competing parallax systems | 5.1 |
+| `projects-scene` is a dead class with no matching selector | 5.3 |
+| `[data-add-space]` buttons never read their own attribute | 7.2 |
+| `renderExplorePage()` called with no argument, clearing the Explore filter | 7.2 |
+| "Duplicate shortcut" is a toast-only stub | 7.2 |
+| `explore.js` required by tests but absent from `index.html` | 10.2 |
+| "More to explore" is not the final Explore section | 10.3 |
+| 14 cross-domain content leaks | Phase 3 |
+
+---
+
+# PHASE 13 — Project documentation
+
+The repository has `README.md` (architecture and contracts), `VERIFICATION.md` (a recorded acceptance run), `REVISED-IMPLEMENTATION-PLAN.md` (the provider-era brief) and `agent-instructions.md` (the standing plan). **It has no sequenced, step-by-step execution document** — nothing an implementer can work down and tick off. Create one.
+
+> **Sequencing — this phase runs in two parts, not at the end.**
+> **13.1 and 13.2 run FIRST, before Phase 0.3**, because they are the working documents every later phase is executed against — a checklist written after the work is finished is a report, not a plan.
+> **13.3 runs LAST, after Phase 12**, because it records what was actually delivered.
+> It is numbered 13 so the documentation deliverables stay together and readable; the numbering is not the execution order.
+
+## 13.1 Rewrite `agent-instructions.md` — **[DONE]**
+
+Completed: this file is that rewrite. It is now the single standing plan, superseding its own previous contents. What was applied:
+
+1. Replace the stale "Current Findings" section with the verified baseline and the `[DONE]`/`[OPEN]`/`[NEW]`/`[FIX]` status model.
+2. Apply the five corrections listed at the top of this document (the 17-vs-16 movie count, the fourth series record, the missing C.4 root cause, the file count, and the completion status of Part B).
+3. Carry the Product Decisions, Further Considerations, Scope Boundaries and defect-acceptance table verbatim.
+4. Record the scope amendment: provider-backed search replaces the zero-network-requests guarantee for the server, while the browser bundle keeps it.
+
+## 13.2 Create `docs/IMPLEMENTATION-STEPS.md` — runs before Phase 0.3 [NEW]
+
+A sequenced execution checklist — the working document, distinct from the plan's rationale:
+
+- One checkbox per actionable step, in execution order, phase by phase.
+- Each step names the file(s) it touches and its acceptance check.
+- Each phase ends with its gate (tests green, no 404s, screenshots captured) as an explicit checkbox.
+- A "Do not break" header block listing the invariants from 1.9 — storage keys, global names, load order, entry URL, backup compatibility.
+- A status column an implementer updates as work lands, so progress is visible without reading a diff.
+
+## 13.3 Keep the rest current — runs after Phase 12
+
+- `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
+- `VERIFICATION.md` — a fresh acceptance run at the end; fix the `18973` → `18974` port error and the bare test filenames.
+- `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile with what Phase 6 actually delivers, so the two documents stop contradicting each other on the provider question.
