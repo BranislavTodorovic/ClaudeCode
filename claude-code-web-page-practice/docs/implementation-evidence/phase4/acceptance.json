@@ -1,0 +1,49 @@
+{
+  "phase": 4,
+  "date": "2026-09-21",
+  "tests": 49,
+  "pass": true,
+  "checks": [
+    "Declared appearance/everyday/motion groups",
+    "Sandstone and Rosewood swatches, complete light/dark tokens",
+    "Token contrast AA across all five named palettes in both modes",
+    "Header light/dark toggles preserve Sandstone; reload persists it",
+    "ArrowRight selects Rosewood and moves keyboard focus",
+    "Preference reset cancel retains Rosewood; confirmed reset retains GitHub favorite and QA project",
+    "Scene intensity and Games/Movies theme choices persist",
+    "New scene preference round trip and existing v4 backup compatibility",
+    "Storage reset rollback on failure",
+    "No browser errors"
+  ],
+  "layouts": [
+    {
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  ],
+  "scheduledFollowThrough": {
+    "4.3.1": "Scene controls persist; ambient behavior verified in Phase 5",
+    "4.3.3": "Restore list mount delivered; functionality Phase 7",
+    "4.3.4": "Provider status mount delivered; connection states Phase 6"
+  }
+}

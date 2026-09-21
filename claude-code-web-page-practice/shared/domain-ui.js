@@ -23,5 +23,16 @@
   function select(name, label, values, current) {
     return '<label>' + esc(label) + '<select name="' + name + '">' + values.map(function (v) { var pair = Array.isArray(v) ? v : [v, v]; return '<option value="' + esc(pair[0]) + '"' + (pair[0] === current ? ' selected' : '') + '>' + esc(String(pair[1]).charAt(0).toUpperCase()+String(pair[1]).slice(1)) + '</option>'; }).join('') + '</select></label>';
   }
-  window.OneSpaceUI = { open: open, field: field, select: select, confirm: function (title, message, action) { open(title, '<p>' + esc(message) + '</p>', action, 'Delete'); } };
+  // A persistent detail surface shares the shell's modal stack, focus trap and Escape handling.
+  // Edit/confirm dialogs can open above it without destroying the underlying detail DOM.
+  function panel(title) {
+    var layer = document.createElement('div');
+    layer.id = 'workDetailOverlay'; layer.className = 'modal-overlay work-detail-overlay'; layer.hidden = true;
+    layer.innerHTML = '<div class="modal work-detail-modal" role="dialog" aria-modal="true" aria-labelledby="workPanelTitle"><header class="modal-header"><h2 id="workPanelTitle"></h2><button class="btn" type="button" data-panel-close aria-label="Close work details">' + OS.iconSvg('close') + '</button></header><div class="work-detail-body"></div></div>';
+    document.body.appendChild(layer);
+    layer.addEventListener('click', function (e) { if (e.target === layer || e.target.closest('[data-panel-close]')) OS.closeModal(layer); });
+    var api = { overlay:layer, body:layer.querySelector('.work-detail-body'), setTitle:function(value){layer.querySelector('h2').textContent=value;}, show:function(){OS.openModal(layer,layer.querySelector('[data-panel-close]'));}, close:function(){OS.closeModal(layer);} };
+    api.setTitle(title); return api;
+  }
+  window.OneSpaceUI = { open: open, panel: panel, field: field, select: select, confirm: function (title, message, action, label) { open(title, '<p>' + esc(message) + '</p>', action, label || 'Delete'); } };
 })();

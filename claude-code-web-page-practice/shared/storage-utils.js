@@ -14,6 +14,7 @@
   var NEW_KEYS = ['orbit-work-items', 'orbit-work-tasks', 'orbit-work-history', 'orbit-explore-preferences', 'orbit-explore-saved'];
   KEYS = KEYS.concat(NEW_KEYS);
   var V3_KEYS=KEYS.slice(); KEYS.push('orbit-trip-board'); arrayKeys.push('orbit-trip-board');
+  var V4_KEYS=KEYS.slice(),OPTIONAL_KEYS=['orbit-scene-intensity','orbit-hidden-links','orbit-shortcut-order','orbit-movies-untracked'];KEYS=KEYS.concat(OPTIONAL_KEYS);objectKeys.push('orbit-scene-intensity');arrayKeys.push('orbit-hidden-links','orbit-shortcut-order','orbit-movies-untracked');
   arrayKeys = arrayKeys.concat(NEW_KEYS.filter(function (k) { return k !== 'orbit-explore-preferences'; }));
   objectKeys.push('orbit-explore-preferences');
   function text(v, max, required) { return typeof v === 'string' && v.length <= max && (!required || !!v.trim()); }
@@ -34,6 +35,8 @@
   function choices(values, allowed) { return Array.isArray(values) && values.length > 0 && values.length <= allowed.length && values.every(function(v){return allowed.includes(v);}); }
   function templates(v) { return v == null || (object(v) && Object.keys(v).every(function(k){return ['story','weekly'].includes(k) && strings(v[k]) && v[k].length <= 30 && v[k].every(function(t){return text(t,200,true);});})); }
   function destination(x) { return object(x) && id(x.id) && text(x.name, 100, true) && text(x.country, 100, true) && choices(x.categories,['city break','nature','beach','culture/history','food','wellness','adventure']) && ['low','medium','high'].includes(x.budget) && choices(x.seasons,['spring','summer','autumn','winter']) && choices(x.duration,['weekend','week','extended']) && choices(x.styles,['relaxed','balanced','active']) && ['warm','temperate','cool'].includes(x.climate) && ['Europe','North America','Asia-Pacific'].includes(x.region) && tags(x.tags) && text(x.summary, 1000, true) && text(x.details, 5000, true) && (x.image == null || (text(x.image,500) && /^assets\/[\w/-]+\.(svg|webp|png|jpg)$/.test(x.image))) && text(x.fallback, 100, true) && resources(x.links); }
+  var domainValidators=Object.create(null);
+  function registerValidator(key,validator){if(!KEYS.includes(key)||typeof validator!=='function')throw new Error('Invalid domain validator');domainValidators[key]=validator;}
   function valid(key, value) {
     if (KEYS.indexOf(key) < 0) return false;
     if (value === null) return true;
@@ -41,12 +44,13 @@
     try {
       if (arrayKeys.indexOf(key) >= 0) {
         var a = JSON.parse(value); if (!Array.isArray(a)) return false;
+        if(key==='orbit-hidden-links'||key==='orbit-shortcut-order')return a.length<=20000 && new Set(a).size===a.length && a.every(id);
         if (/favorites|recent|collapsed-sections|custom-categories|category-order|wishlist|watchlist|dismissed/.test(key)) return a.every(function (x) { return typeof x === "string"; });
         if (a.length > 20000 || new Set(a.map(function (x) { return x && x.id; })).size !== a.length) return false;
         return a.every(function (x) {
           if (!object(x) || typeof x.id !== "string" || !x.id || /[<>"']/.test(x.id)) return false;
           if (key === "orbit-notes-list") return typeof x.body === "string" && optionalString(x.title);
-          if (key === 'orbit-trip-board') return (typeof module === 'object' && module.exports ? require('../explore/trip-board') : window.OneSpaceTrips).valid(x);
+          if (key === 'orbit-trip-board') return !!domainValidators[key] && domainValidators[key](x);
           if (key === 'orbit-work-items') return workItem(x);
           if (key === 'orbit-work-tasks') return workTask(x);
           if (key === 'orbit-work-history') return id(x.itemId) && id(x.projectId) && text(x.name,160,true) && ['created','updated','closed','reopened','deleted','task-created','task-updated','task-deleted','task-completed'].includes(x.action) && !!x.at && date(x.at,true) && (x.snapshot == null || (object(x.snapshot) && workItem(x.snapshot))) && (x.tasks == null || (Array.isArray(x.tasks) && x.tasks.every(workTask)));
@@ -56,12 +60,13 @@
           if (key === 'orbit-tasks') return typeof x.text === 'string';
           if (key === "orbit-custom-links") return text(x.name,50,true) && !!x.url && url(x.url) && optionalText(x.description,240) && (x.space == null || ['work','personal','explore'].includes(x.space));
           if (key === "orbit-games-library") return text(x.name,160,true) && resources(x.resources) && templates(x.defaultTaskTemplates) && (x.defaultTasks == null || (strings(x.defaultTasks) && x.defaultTasks.length <= 30 && x.defaultTasks.every(function(t){return text(t,200,true);}))) && (!x.story || (object(x.story) && Array.isArray(x.story.chapters) && x.story.chapters.every(function (c) { return object(c) && typeof c.id === "string" && typeof c.title === "string" && Array.isArray(c.objectives) && c.objectives.every(function (o) { return object(o) && typeof o.id === "string" && typeof o.text === "string"; }); })));
-          if (key === "orbit-movies-library") return text(x.title,160,true) && strings(x.genre) && strings(x.platforms) && (x.year == null || (Number.isInteger(x.year) && x.year >= 1800 && x.year <= 3000)) && (x.durationMinutes == null || (Number.isFinite(x.durationMinutes) && x.durationMinutes >= 0 && x.durationMinutes <= 10000)) && (x.rating == null || (Number.isFinite(x.rating) && x.rating >= 0 && x.rating <= 10)) && optionalText(x.blurb,5000) && (x.status == null || ['unwatched','watched','watchlist'].includes(x.status)) && (x.type == null || ['movie','series','Movie','Series','Documentary'].includes(x.type)) && (x.seasons == null || (Number.isInteger(x.seasons) && x.seasons >= 1 && x.seasons <= 100)) && (x.moods == null || strings(x.moods)) && (x.tags == null || strings(x.tags));
+          if (key === "orbit-movies-library" || key === "orbit-movies-untracked") return text(x.title,160,true) && strings(x.genre) && strings(x.platforms) && (x.year == null || (Number.isInteger(x.year) && x.year >= 1800 && x.year <= 3000)) && (x.durationMinutes == null || (Number.isFinite(x.durationMinutes) && x.durationMinutes >= 0 && x.durationMinutes <= 10000)) && (x.rating == null || (Number.isFinite(x.rating) && x.rating >= 0 && x.rating <= 10)) && optionalText(x.blurb,5000) && (x.status == null || ['unwatched','watched','watchlist'].includes(x.status)) && (x.type == null || ['movie','series','Movie','Series','Documentary'].includes(x.type)) && (x.seasons == null || (Number.isInteger(x.seasons) && x.seasons >= 1 && x.seasons <= 100)) && (x.moods == null || strings(x.moods)) && (x.tags == null || strings(x.tags));
           return true;
         });
       }
       if (objectKeys.indexOf(key) >= 0) {
         var data = JSON.parse(value); if (!object(data)) return false;
+        if(key==='orbit-scene-intensity')return Object.keys(data).every(function(page){return ['home','work','personal','explore','games','movies','shortcuts','productivity','notes','settings'].includes(page) && ['full','subtle','off'].includes(data[page]);});
         if (key === 'orbit-explore-preferences') {
           var choices = { categories:['city break','nature','beach','culture/history','food','wellness','adventure'], seasons:['spring','summer','autumn','winter'], duration:['weekend','week','extended'], budget:['low','medium','high'], pace:['relaxed','balanced','active'], climate:['warm','temperate','cool'], interests:['architecture','walking','museums','water','hiking','cuisine','spa','wildlife'], departure:['any','Europe','North America','Asia-Pacific'] };
           return Object.keys(data).every(function(k){return choices[k] && Array.isArray(data[k]) && data[k].length <= choices[k].length && data[k].every(function(v){return choices[k].includes(v);});});
@@ -108,11 +113,11 @@
   function restore(storage, backup) {
     if (!backup || backup.app !== "OneSpace" || ![2,3,4].includes(backup.version)) throw new Error("Unsupported backup");
     validate(backup.data);
-    if (!(backup.version === 2 ? LEGACY_KEYS : backup.version === 3 ? V3_KEYS : KEYS).every(function (k) { return Object.prototype.hasOwnProperty.call(backup.data, k); })) throw new Error("Incomplete backup");
+    if (!(backup.version === 2 ? LEGACY_KEYS : backup.version === 3 ? V3_KEYS : V4_KEYS).every(function (k) { return Object.prototype.hasOwnProperty.call(backup.data, k); })) throw new Error("Incomplete backup");
     var next = Object.assign({}, backup.data);
-    NEW_KEYS.concat(['orbit-trip-board']).forEach(function (k) { if (!(k in next)) next[k] = null; });
+    NEW_KEYS.concat(['orbit-trip-board'],OPTIONAL_KEYS).forEach(function (k) { if (!(k in next)) next[k] = null; });
     transaction(storage, next);
   }
   function reset(storage) { var data = {}; KEYS.forEach(function (k) { data[k] = null; }); transaction(storage, data); }
-  return { keys: KEYS, legacyKeys: LEGACY_KEYS, valid: valid, validDate: date, validUrl: url, validDestination: destination, validate: validate, snapshot: snapshot, transaction: transaction, backup: backup, restore: restore, reset: reset };
+  return { registerValidator:registerValidator, keys: KEYS, legacyKeys: LEGACY_KEYS, valid: valid, validDate: date, validUrl: url, validDestination: destination, validate: validate, snapshot: snapshot, transaction: transaction, backup: backup, restore: restore, reset: reset };
 });

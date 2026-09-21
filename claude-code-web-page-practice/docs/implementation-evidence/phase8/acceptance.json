@@ -1,0 +1,8 @@
+{
+  "phase": 8,
+  "origin": "http://localhost:18974",
+  "automated": {"command": "node --test tests/", "passed": 71, "failed": 0},
+  "regressions": ["Tracker inference, weekly template precedence, and rejected objective writes failed before their fixes", "Custom spotlight eligibility and quoted-id focus restoration failed before their fixes", "Weekly rejected second write restores both changed transaction keys", "Explicit game identity overrides the selected tracker", "Week rollover initializes once", "Type changes archive and restore both histories"],
+  "browser": ["Ten weekly checkbox toggles alternate 0/7 and 1/7 with corresponding 0/14 percent", "Ten story toggles alternate 0/6 and 1/6 with corresponding 0/17 percent", "Checked story objective survives reload", "Diablo reset retains seven tasks", "Genshin suggestion review defaults to weekly and allows correction; added/reset retains four game-specific tasks", "Wishlist move cancellation retains Hollow Knight; successful move produces four named chapters", "Hollow Knight story to weekly to story restores completed objective after reload without duplicate chapters", "Custom MMO genre selects weekly before save and creates three weekly tasks", "Custom game resource panel groups platform, news, guides and community links", "Mock provider game appears in spotlight and featured rail using deterministic scene", "1440, 1024, 760 and 390 pixel spotlight layouts have no horizontal overflow or broken images", "No browser error logs"],
+  "followThrough": "8.4.11 remains open for the complete Phase 12 action matrix."
+}

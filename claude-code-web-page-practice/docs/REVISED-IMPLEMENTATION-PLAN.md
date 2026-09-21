@@ -1,5 +1,21 @@
 # OneSpace Revised Implementation Plan
 
+> [!IMPORTANT]
+> **Historical / non-authoritative implementation brief**
+>
+> This document is retained for historical context and will be reconciled in Phase 13.3.
+>
+> It is NOT the active execution authority.
+>
+> Current implementation authority:
+>
+> 1. `docs/agent-instructions.md` — standing plan and current product requirements
+> 2. `docs/IMPLEMENTATION-STEPS.md` — execution order, verification contract, checklist and phase gates
+>
+> Where this document conflicts with either of those files, the standing plan and implementation checklist take precedence.
+>
+> Do not introduce functionality from this document unless it is also present in the current standing plan or explicitly approved by the user.
+
 ## Purpose
 
 The previous implementation missed the product goal. It created small local demonstration catalogs and treated them as the final discovery experience. This plan replaces that assumption.

@@ -221,3 +221,8 @@ body[data-page="movies"] .modal-header { border-color: var(--mv-line); }
   .mv-tagline { margin-left: 0; }
   .mv-details-poster-img { width: 120px; }
 }
+
+/* Intrinsic guard: supplied low-resolution art must never quietly upscale. */
+.mv-poster-img,.mv-backdrop-img { max-width: min(100%,var(--mv-intrinsic-width,100%)); }
+.mv-poster-img { object-fit: cover; aspect-ratio: 2 / 3; }
+.mv-drawn-cover { aspect-ratio: 2 / 3; }

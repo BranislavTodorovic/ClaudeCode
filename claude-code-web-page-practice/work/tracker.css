@@ -2,8 +2,31 @@
 @media(min-width:1440px){.domain-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:1000px){.domain-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.domain-grid,.domain-form,.domain-filters{grid-template-columns:minmax(0,1fr)}.domain-card,.domain-detail,#workReminders{padding:16px}.destination-card{padding:0}.domain-actions .btn{flex:1 1 auto}.domain-form .domain-actions{position:sticky;bottom:0;padding:8px;background:var(--surface)}.check-list .btn{padding:8px}.check-list li>span{min-width:0}.page-section-head{flex-wrap:wrap}.domain-task-list .status-chip{display:inline-flex;white-space:normal}}
-@media(prefers-reduced-motion:reduce){.domain-card,.domain-detail,.destination-card{animation:none!important;transition:none!important}.domain-card .btn:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){body:not(.force-full-motion) :is(.domain-card,.domain-detail,.destination-card){animation:none!important;transition:none!important}body:not(.force-full-motion) .domain-card .btn:hover{transform:none}}
 [data-motion="reduced"] .domain-card .btn:hover{transform:none}
 .force-reduced-motion .domain-card .btn:hover{transform:none}.domain-detail.is-updating{animation:domainAppear .18s ease-out}@keyframes domainAppear{from{opacity:.65;transform:translateY(5px)}to{opacity:1;transform:none}}.force-reduced-motion .domain-detail{animation:none!important}
 
 .space-shortcut{min-width:0;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}.space-shortcut>.mini-card{border:0;min-height:90px}.space-shortcut>.domain-actions{padding:0 12px 12px}.space-shortcut small{font-size:.7rem;color:var(--muted)}
+
+/* Work layout: full usable width and shared-dialog detail drawer. */
+body[data-page="work"] #focusRail,body[data-page="work"] #openFocusRail{display:none!important}
+@media(min-width:761px){body[data-page="work"] .wrap{width:calc(100% - var(--rail) - 64px)!important;max-width:1500px;margin-left:calc(var(--rail) + 32px)!important}}
+#workResults{grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr))}
+#workProjectsPanel[hidden],#workTimelineSection[hidden],#workFilters[hidden],#workResults[hidden]{display:none}
+.work-detail-overlay{display:flex;padding:0;justify-content:flex-end;align-items:stretch;background:rgba(3,9,20,.62);backdrop-filter:blur(5px)}
+.work-detail-modal{width:min(660px,48vw);height:100dvh;max-height:100dvh;margin:0;border-radius:24px 0 0 24px;overflow:auto;background:var(--surface);box-shadow:-24px 0 80px rgba(0,0,0,.24)}
+.work-detail-modal>.modal-header{position:sticky;top:0;z-index:2;background:var(--surface);padding:22px;border-bottom:1px solid var(--line)}
+.work-detail-modal h2{font-size:1.2rem;margin:0;overflow-wrap:anywhere}.work-detail-body{padding:24px}.work-detail-body .domain-detail{margin:0;padding:0;border:0;background:none}.work-detail-body h3{font-size:1rem}.work-detail-body .domain-prose{line-height:1.7;color:var(--muted)}
+@media(max-width:1099px){.work-detail-modal{width:100%;border-radius:0}.work-detail-body{padding:20px}}
+
+#workFilters{display:flex;flex-wrap:wrap;align-items:end;gap:12px;padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+#workFilters>label{flex:1 1 130px}#workFilters>label:has([name="search"]){flex:2 1 210px}#workFilters select,#workFilters input{min-height:44px}
+.work-result-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px;font-size:.8rem;color:var(--muted)}.work-result-meta[hidden]{display:none}
+.work-filter-chips{display:flex;gap:8px;flex-wrap:wrap}.work-filter-chip{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:6px 12px;border:1px solid var(--line);border-radius:100px;background:var(--accent-soft);color:var(--text);font:inherit}.work-filter-chip .icon{width:14px;height:14px}
+@media(max-width:520px){#workFilters>label{flex-basis:calc(50% - 12px)}#workFilters>label:has([name="search"]){flex-basis:100%}}
+
+#workView .work-overview{margin:24px 0}.work-overview .overview-tile{text-align:left;cursor:pointer}.work-overview .overview-tile strong{font-family:inherit;font-size:2.25rem;font-weight:700}.work-overview .overview-tile-top>.icon{width:22px;height:22px;color:var(--accent)}
+#workTracker>.page-section-head h2{display:flex;align-items:center;gap:12px;font-size:1.35rem}#workTracker>.domain-actions{gap:4px;padding:5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;max-width:fit-content}#workTracker>.domain-actions .btn{border-color:transparent;min-width:92px}
+.work-item-card{position:relative;background:var(--surface);border-radius:18px;padding:22px;border-left:3px solid var(--work-priority,var(--muted));box-shadow:0 8px 28px rgba(0,0,0,.06)}.work-item-card[data-priority="urgent"]{--work-priority:#f47e85}.work-item-card[data-priority="high"]{--work-priority:#e9b36b}.work-item-card[data-priority="medium"]{--work-priority:var(--accent)}.work-item-card[data-priority="low"]{--work-priority:var(--muted)}
+.work-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.work-type{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;color:var(--muted)}.work-type .icon{width:17px;height:17px}.work-priority{height:6px;width:28px;background:var(--work-priority);border-radius:10px}.work-item-card h3{font-size:1.12rem;line-height:1.4;margin:8px 0 16px}.work-item-card .domain-eyebrow{margin:0}.work-item-card .status-chip{font-size:.7rem}.status-blocked{color:#e9b36b}.status-closed{color:#84d8bc}.work-progress-label{display:flex;justify-content:space-between;margin:22px 0 9px;font-size:.75rem;color:var(--muted)}.work-progress{height:5px;background:var(--surface-3);border-radius:8px;overflow:hidden}.work-progress>span{display:block;height:100%;background:var(--accent);border-radius:inherit}.work-labels{min-height:20px}.work-empty{grid-column:1/-1;min-height:240px;display:grid;justify-items:center;align-content:center;gap:12px}.work-empty>.icon{width:32px;height:32px;color:var(--accent)}.work-empty h3,.work-empty p{margin:0}.work-empty .btn{margin-top:8px}
+@media(max-width:520px){#workTracker>.domain-actions{max-width:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}#workTracker>.domain-actions .btn{min-width:0;padding:10px 7px}.work-overview .overview-tile strong{font-size:1.8rem}}

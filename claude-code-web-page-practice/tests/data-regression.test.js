@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const storage = require('../shared/storage-utils.js');
+const storage = require('./storage-setup');
 const catalog = require('../shared/catalog-utils.js');
 const root = path.resolve(__dirname, '..');
 const data = { window: {} };
@@ -116,7 +116,7 @@ test('complete browser-import fixture restores all keys and preserves unrelated 
   const fixture = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/complete-backup.json'), 'utf8'));
   const store = memory({ 'another-app': 'Keep' });
   storage.restore(store, fixture);
-  assert.deepEqual(storage.snapshot(store), fixture.data);
+  assert.deepEqual(storage.snapshot(store), Object.assign({'orbit-scene-intensity':null,'orbit-hidden-links':null,'orbit-shortcut-order':null,'orbit-movies-untracked':null}, fixture.data));
   assert.equal(store.getItem('another-app'), 'Keep');
 });
 
@@ -137,7 +137,7 @@ test('every application script parses', () => {
     });
   }
   const scripts = walk(root);
-  assert.equal(scripts.length, 24, 'Application source inventory changed: update this count alongside intentional module additions');
+  assert.equal(scripts.length, 29, 'Application source inventory changed: update this count alongside intentional module additions');
   for (const file of scripts) {
     new vm.Script(fs.readFileSync(path.join(root, file), 'utf8'), { filename: file });
   }

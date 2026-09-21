@@ -78,7 +78,7 @@
 /* ---------------------------------------------------------------------- */
 /* Work — projects, timeline                                              */
 /* ---------------------------------------------------------------------- */
-.page-hero-work { background: linear-gradient(135deg,#0a2036,#0d3a5c); }
+.page-hero-work { }
 .list-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .list-card { position: relative; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: 0 8px 20px rgba(20,40,70,.06); transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s; }
 .list-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(20,40,70,.12); }
@@ -110,7 +110,7 @@
 /* ---------------------------------------------------------------------- */
 /* Personal — goals / routines / habits                                   */
 /* ---------------------------------------------------------------------- */
-.page-hero-personal { background: linear-gradient(135deg,#3a2440,#5b3a6b); }
+.page-hero-personal { }
 .mini-form { display: flex; gap: 8px; margin: 0 0 14px; flex-wrap: wrap; }
 .mini-form input[type="text"] { flex: 1 1 220px; min-width: 0; }
 .notes-new-form.mini-form { display: grid; gap: 8px; }
@@ -133,7 +133,7 @@
 /* ---------------------------------------------------------------------- */
 /* Explore                                                                 */
 /* ---------------------------------------------------------------------- */
-.page-hero-explore { background: linear-gradient(135deg,#0d2237,#1f5a54); }
+.page-hero-explore { }
 .explore-category-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
 .explore-category { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; text-align: left; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); cursor: pointer; transition: transform .2s, box-shadow .2s, border-color .2s; }
 .explore-category:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 12px 26px rgba(20,40,70,.1); }
@@ -145,7 +145,7 @@
 /* ---------------------------------------------------------------------- */
 /* Quick Notes — visual journal                                           */
 /* ---------------------------------------------------------------------- */
-.page-hero-notes { background: linear-gradient(135deg,#241f38,#3a3156); min-height: 260px; }
+.page-hero-notes { min-height: 260px; }
 .notes-search { width: 100%; margin: 0 0 16px; }
 .notes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
 .note-card { position: relative; padding: 16px; border-radius: 16px; background: linear-gradient(160deg, var(--surface), color-mix(in srgb, var(--surface) 92%, var(--accent-soft))); border: 1px solid var(--line); box-shadow: 0 10px 24px rgba(30,20,50,.08); transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s; }
@@ -168,7 +168,7 @@
 /* ---------------------------------------------------------------------- */
 /* Settings                                                                */
 /* ---------------------------------------------------------------------- */
-.page-hero-settings { background: linear-gradient(135deg,#12161f,#25314a); min-height: 260px; }
+.page-hero-settings { min-height: 260px; }
 .settings-card { max-width: 640px; padding: 24px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); box-shadow: var(--shadow); }
 #prodProgressRing { transition: stroke-dashoffset .6s linear; }
 @media (prefers-reduced-motion: reduce) { body:not(.force-full-motion) #prodProgressRing { transition: none; } }
@@ -190,9 +190,6 @@ body.force-reduced-motion .page-hero-art { animation: none !important; transform
 
 
 /* Home + Work visual proof. Local artwork, readable HTML, restrained motion. */
-body[data-page="home"] { --page-accent: #b2a6ec; }
-body[data-page="work"], body[data-page="projects"] { --page-accent: #65bcd4; }
-body { --page-accent: var(--accent); }
 .scene-hero {
   position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: space-between;
   min-height: clamp(540px, 68vh, 760px); padding: 30px 42px; margin: 0 0 28px;

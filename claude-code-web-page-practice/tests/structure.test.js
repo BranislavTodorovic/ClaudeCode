@@ -10,10 +10,10 @@ const expectedScripts = [
   'explore/trip-board.js', 'shared/storage-utils.js', 'shared/catalog-utils.js',
   'shared/tooltip-utils.js', 'shared/shortcut-utils.js', 'personal/personal-controller.js',
   'shared/visual-utils.js', 'shared/domain-ui.js', 'shared/shortcut-surface.js',
-  'work/projects.js', 'work/work-tracker.js', 'explore/explore-data.js',
+  'work/projects.js', 'home/home-overview.js', 'work/work-tracker.js', 'explore/explore-data.js',
   'explore/local-discovery.js', 'explore/discovery-ui.js', 'explore/explore-global.js',
-  'games/game-resources.js', 'games/games-data.js', 'games/games.js',
-  'movies/movies-data.js', 'movies/movies.js', 'shared/cinematic-scenes.js',
+  'shared/provider-search.js', 'games/game-resources.js', 'games/games-data.js', 'games/games.js',
+  'movies/movies-data.js', 'movies/movies.js', 'settings/settings.js', 'shared/cinematic-scenes.js',
   'explore/discovery-integration.js'
 ];
 function walk(dir, tests = false) {
@@ -56,7 +56,7 @@ test('literal artwork and stylesheet URLs resolve without moving assets', () => 
 });
 test('recursive parse inventory covers every application JS file', () => {
   const source=walk(root).filter(f=>f.endsWith('.js'));
-  assert.equal(source.length,24);
+  assert.equal(source.length,29);
   for(const folder of ['shared','work','personal','games','movies','explore','server'])assert(source.some(f=>path.relative(root,f).startsWith(folder+path.sep)),folder);
   const parseTest=fs.readFileSync(path.join(root,'tests/data-regression.test.js'),'utf8');
   assert(parseTest.includes('walk(root)'));
@@ -69,7 +69,7 @@ test('browser entry and modules never load configuration or credential files', (
   }
 });
 test('saved destination paths still satisfy all three existing validators', () => {
-  const storage=require('../shared/storage-utils');
+  const storage=require('./storage-setup');
   const discovery=fs.readFileSync(path.join(root,'explore/local-discovery.js'),'utf8');
   const trips=fs.readFileSync(path.join(root,'explore/trip-board.js'),'utf8');
   for(const source of [fs.readFileSync(path.join(root,'shared/storage-utils.js'),'utf8'),discovery,trips])assert(source.includes('^assets\\/'));

@@ -1,10 +1,61 @@
-config/secrets/*
+# =========================================================
+# SECRETS / CREDENTIALS — NEVER COMMIT
+# =========================================================
+
+# Dedicated secrets directory - everything inside is private
+config/secrets/**
 !config/secrets/.gitkeep
+
+# Environment files
 .env
 .env.*
+!.env.example
+
+# Local configuration
 *.local.json
+*.local.js
+*.local.cjs
+*.local.mjs
+
+# Common secret files
+secrets.json
+secrets.yaml
+secrets.yml
+
+credentials.json
+credentials.yaml
+credentials.yml
+
+# Package-manager credentials
+.npmrc
+
+# Private keys / certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# =========================================================
+# DEPENDENCIES / GENERATED FILES
+# =========================================================
+
 node_modules/
-# Local implementation evidence may contain private exported user records.
+.npm/
+.pnpm-store/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================================================
+# PRIVATE / LOCAL PROJECT DATA
+# =========================================================
+
+# Local implementation evidence may contain private records
 docs/implementation-evidence/live-origin-*.json
-work/implementation-support/*.b64
+
+# Local implementation/support files
 work/implementation-support/

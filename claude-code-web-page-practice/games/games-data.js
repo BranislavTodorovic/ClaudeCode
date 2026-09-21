@@ -123,6 +123,7 @@
     },
     {
       id: "game-diablo-immortal",
+      weeklyTemplate: window.DIABLO_WEEKLY_TEMPLATE,
       name: "Diablo Immortal",
       platform: "Mobile",
       genre: "Action RPG",
@@ -193,12 +194,13 @@
     { id: "sg-persona5", title: "Persona 5 Royal", genres: ["RPG", "Story-rich"], platforms: ["PC", "PS5", "Xbox", "Nintendo Switch"], playstyles: ["Single-player", "Long sessions"], moods: ["Atmospheric", "Challenging"], accent: "#c0272d", blurb: "A stylish turn-based RPG about a group of students leading double lives as phantom thieves." },
     { id: "sg-genshin", title: "Genshin Impact", genres: ["RPG", "Open world", "Adventure"], platforms: ["PC", "PS5", "Mobile"], playstyles: ["Single-player", "Co-op", "Short sessions"], moods: ["Relaxed", "Atmospheric"], accent: "#5dade2", blurb: "A free-to-play open-world action RPG you can dip into for a short session or an afternoon." }
   ];
+  window.SUGGESTION_CATALOG.forEach(function(g){g.tags=g.id==='sg-genshin'?['Gacha','Live-service']:g.id==='sg-forza5'?['Live-service','Racing']:['Single-player'];g.trackerType=window.OneSpaceGameResources.infer(g);if(g.id==='sg-genshin')g.weeklyTemplate=[{id:'commissions',label:'Complete daily commissions'},{id:'bosses',label:'Challenge weekly bosses'},{id:'events',label:'Progress limited-time events'},{id:'planning',label:'Plan character upgrades'}];if(g.id==='sg-forza5')g.weeklyTemplate=[{id:'playlist',label:'Complete Festival Playlist events'},{id:'championship',label:'Finish a seasonal championship'},{id:'rewards',label:'Claim seasonal rewards'}];g.chapterOutline=window.OneSpaceGameResources.outline(g);});
   // Local artwork is shared by catalog matches and tracked copies.
   var artSlugs = {"Hades":"hades","Hollow Knight":"hollow-knight","Elden Ring":"elden-ring","God of War Ragnarök":"gow-ragnarok","Baldur's Gate 3":"bg3","Stardew Valley":"stardew","It Takes Two":"it-takes-two","Forza Horizon 5":"forza5","Dead Cells":"dead-cells","Outer Wilds":"outer-wilds","Persona 5 Royal":"persona5"};
   window.SUGGESTION_CATALOG.forEach(function(game) { var slug=artSlugs[game.title]; if(slug) { game.artwork='assets/game-art/'+slug+'-hero.jpg'; game.cardArtwork='assets/game-art/'+slug+'-card.jpg'; game.logo={kind:'asset',src:'assets/game-art/'+slug+'-logo.png'}; } });
   window.DEFAULT_GAMES.forEach(function(game) { var slug=game.id.replace('game-',''); if(['hades','cyberpunk-2077','death-stranding'].includes(slug)) game.cardArtwork='assets/game-art/'+slug+'-card.jpg'; game.artworkPosition=slug==='hades'?'65% center':slug==='cyberpunk-2077'?'62% center':'center'; });
 })();
 /* Resource and task metadata stays separate from tracked completion. */
-if (window.OneSpaceGameResources) [window.DEFAULT_GAMES,window.SUGGESTION_CATALOG].forEach(function(pool){pool.forEach(function(g){g.resources=window.OneSpaceGameResources.resources(g);g.defaultTasks=g.id==='game-diablo-immortal'?window.DIABLO_WEEKLY_TEMPLATE.map(function(t){return t.label;}):window.OneSpaceGameResources.tasks(g);});});
+if (window.OneSpaceGameResources) [window.DEFAULT_GAMES,window.SUGGESTION_CATALOG].forEach(function(pool){pool.forEach(function(g){g.resources=window.OneSpaceGameResources.resources(g);g.defaultTasks=window.OneSpaceGameResources.tasks(g);});});
 
-[window.DEFAULT_GAMES,window.SUGGESTION_CATALOG].forEach(function(pool){pool.forEach(function(g){if(!window.OneSpaceGameResources)return;g.defaultTaskTemplates={story:window.OneSpaceGameResources.tasks(Object.assign({},g,{defaultTasks:null,trackerType:'story'})),weekly:g.id==='game-diablo-immortal'?g.defaultTasks.slice():window.OneSpaceGameResources.tasks(Object.assign({},g,{defaultTasks:null,trackerType:'weekly'}))};});});
+[window.DEFAULT_GAMES,window.SUGGESTION_CATALOG].forEach(function(pool){pool.forEach(function(g){if(!window.OneSpaceGameResources)return;g.defaultTaskTemplates={story:window.OneSpaceGameResources.tasks(Object.assign({},g,{defaultTasks:null,trackerType:'story'})),weekly:window.OneSpaceGameResources.tasks(Object.assign({},g,{defaultTasks:null,trackerType:'weekly'}))};});});

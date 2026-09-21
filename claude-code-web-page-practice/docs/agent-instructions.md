@@ -6,6 +6,37 @@ The working checklist derived from this plan is `docs/IMPLEMENTATION-STEPS.md`. 
 
 ---
 
+## Required startup procedure
+
+At the beginning of every new agent session or after context compaction/interruption,
+the agent must read:
+
+1. `docs/agent-instructions.md`
+2. `docs/IMPLEMENTATION-STEPS.md`
+3. `docs/REVISED-IMPLEMENTATION-PLAN.md`
+4. `VERIFICATION.md`
+
+Then inspect repository state, Git state and persistent implementation evidence before editing code.
+
+Previous chat summaries are not completion evidence.
+
+---
+
+## Execution authority
+
+Execution and verification are governed by `docs/IMPLEMENTATION-STEPS.md`.
+
+This standing plan defines WHAT must be delivered.
+`docs/IMPLEMENTATION-STEPS.md` defines HOW implementation completion is proven.
+
+A phase is not complete until its checklist gate satisfies the Mandatory Execution and Verification Contract defined in `docs/IMPLEMENTATION-STEPS.md`.
+
+If completion wording is ambiguous, the stricter verification requirement applies.
+
+No requirement in this standing plan may be silently removed, skipped, weakened, or treated as complete solely because code exists or the overall test suite is green.
+
+---
+
 ## Context
 
 The previous version of this plan was inspected against the actual repository, and **its "Current Findings" section described a pre-implementation state that no longer exists.** `README.md`, `VERIFICATION.md` and the code show that most of Part B Phases 2–6 are already built and verified. Running the suite confirms **31/31 tests pass** today.
@@ -978,3 +1009,4 @@ A sequenced execution checklist — the working document, distinct from the plan
 ## Additional baseline correction confirmed by the user — September 21, 2026
 
 Preserve the existing version 4 export format and acceptance of complete version 2 and version 3 imports. Phase 0.12 captures a genuine version 4 backup. The storage keys and existing fixtures stay unchanged. This corrects the standing plan's stale version 3 claim; it does not change application behavior.
+

@@ -1,7 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const storage=require('../shared/storage-utils'),work=require('../work/work-tracker'),explore=require('../explore/explore'),shortcuts=require('../shared/shortcut-utils'),resources=require('../games/game-resources');
+const storage=require('./storage-setup'),work=require('../work/work-tracker'),explore=require('../explore/explore'),shortcuts=require('../shared/shortcut-utils'),resources=require('../games/game-resources');
 const root=path.resolve(__dirname,'..'),at='2026-09-17T12:00:00.000Z';
 const project={id:'p',name:'Project',status:'active',progress:0};
 const item={id:'i',projectId:'p',name:'Story',type:'story',status:'open',priority:'high',createdAt:at,updatedAt:at,deadline:'2026-09-19'};
@@ -53,7 +53,7 @@ test('version 2 migrates missing domain keys to null, while version 3 requires c
  const current=storage.backup(store);assert.equal(current.version,4);delete current.data['orbit-work-items'];assert.throws(()=>storage.restore(store,current),/Incomplete/);
 });
 test('complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values',()=>{
- const store=memory({'other-app':'keep'}),complete=fixture('complete-backup.json');storage.restore(store,complete);assert.deepEqual(storage.snapshot(store),complete.data);
+ const store=memory({'other-app':'keep'}),complete=fixture('complete-backup.json');storage.restore(store,complete);assert.deepEqual(storage.snapshot(store),Object.assign({'orbit-scene-intensity':null,'orbit-hidden-links':null,'orbit-shortcut-order':null,'orbit-movies-untracked':null},complete.data));
  const before=storage.snapshot(store);assert.throws(()=>storage.restore(store,fixture('invalid-work-backup.json')),/Invalid backup field/);assert.deepEqual(storage.snapshot(store),before);
  storage.reset(store);assert.ok(Object.values(storage.snapshot(store)).every(v=>v===null));assert.equal(store.getItem('other-app'),'keep');
 });
@@ -78,7 +78,7 @@ test('game resources and default tasks work for several genres without sharing m
 });
 test('movie/series type and genre filtering, legacy compatibility and series validation',()=>{
  const catalog=require('../shared/catalog-utils'),pool=context.window.SEED_MOVIES;
- assert.equal(catalog.search(pool,'series').length,4);assert.ok(catalog.search(pool,'Dark').some(m=>m.id==='tv-dark'));
+ assert.equal(catalog.search(pool,'series').length,15);assert.ok(catalog.search(pool,'Dark').some(m=>m.id==='tv-dark'));
  assert.equal(pool.filter(m=>catalog.matches(m,{type:['series'],genre:['Comedy']}))[0].id,'tv-good-place');
  const series=pool.find(m=>m.type==='series');assert.equal(storage.valid('orbit-movies-library',JSON.stringify([series])),true);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,seasons:1.5}])),false);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,type:'podcast'}])),false);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,type:'Series'}])),true);
 });

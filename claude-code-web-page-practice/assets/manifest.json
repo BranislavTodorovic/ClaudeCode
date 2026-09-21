@@ -456,7 +456,8 @@
           "file": "assets/movie-art/godfather-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/godfather-background.jpg",
@@ -468,8 +469,10 @@
           "file": "assets/movie-art/godfather-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-jurassic-park",
@@ -485,7 +488,8 @@
           "file": "assets/movie-art/jurassic-park-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/jurassic-park-background.jpg",
@@ -497,8 +501,10 @@
           "file": "assets/movie-art/jurassic-park-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-matrix",
@@ -514,7 +520,8 @@
           "file": "assets/movie-art/matrix-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/matrix-background.jpg",
@@ -526,8 +533,10 @@
           "file": "assets/movie-art/matrix-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-spirited-away",
@@ -543,7 +552,8 @@
           "file": "assets/movie-art/spirited-away-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/spirited-away-background.jpg",
@@ -555,8 +565,10 @@
           "file": "assets/movie-art/spirited-away-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-inception",
@@ -572,7 +584,8 @@
           "file": "assets/movie-art/inception-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/inception-background.jpg",
@@ -584,8 +597,10 @@
           "file": "assets/movie-art/inception-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-jaws",
@@ -601,7 +616,8 @@
           "file": "assets/movie-art/jaws-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/jaws-background.jpg",
@@ -613,8 +629,10 @@
           "file": "assets/movie-art/jaws-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-back-to-the-future",
@@ -630,7 +648,8 @@
           "file": "assets/movie-art/back-to-the-future-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/back-to-the-future-background.jpg",
@@ -642,8 +661,10 @@
           "file": "assets/movie-art/back-to-the-future-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-pulp-fiction",
@@ -659,7 +680,8 @@
           "file": "assets/movie-art/pulp-fiction-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/pulp-fiction-background.jpg",
@@ -671,8 +693,10 @@
           "file": "assets/movie-art/pulp-fiction-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-dark-knight",
@@ -688,7 +712,8 @@
           "file": "assets/movie-art/dark-knight-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/dark-knight-background.jpg",
@@ -700,8 +725,10 @@
           "file": "assets/movie-art/dark-knight-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-parasite",
@@ -717,7 +744,8 @@
           "file": "assets/movie-art/parasite-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/parasite-background.jpg",
@@ -729,8 +757,10 @@
           "file": "assets/movie-art/parasite-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-la-la-land",
@@ -746,7 +776,8 @@
           "file": "assets/movie-art/la-la-land-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/la-la-land-background.jpg",
@@ -758,8 +789,10 @@
           "file": "assets/movie-art/la-la-land-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-get-out",
@@ -775,7 +808,8 @@
           "file": "assets/movie-art/get-out-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/get-out-background.jpg",
@@ -787,8 +821,10 @@
           "file": "assets/movie-art/get-out-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-toy-story",
@@ -804,7 +840,8 @@
           "file": "assets/movie-art/toy-story-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/toy-story-background.jpg",
@@ -816,8 +853,10 @@
           "file": "assets/movie-art/toy-story-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-mad-max-fury-road",
@@ -833,7 +872,8 @@
           "file": "assets/movie-art/mad-max-fury-road-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/mad-max-fury-road-background.jpg",
@@ -845,8 +885,10 @@
           "file": "assets/movie-art/mad-max-fury-road-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-shawshank",
@@ -862,7 +904,8 @@
           "file": "assets/movie-art/shawshank-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/shawshank-background.jpg",
@@ -874,8 +917,10 @@
           "file": "assets/movie-art/shawshank-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     },
     {
       "id": "mv-amelie",
@@ -891,7 +936,8 @@
           "file": "assets/movie-art/amelie-poster.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
       },
       "backdrop": {
         "file": "assets/movie-art/amelie-background.jpg",
@@ -903,8 +949,10 @@
           "file": "assets/movie-art/amelie-background.jpg",
           "position": "72% center"
         },
-        "fallback": "Deterministic local SVG illustration, with console warning"
-      }
+        "fallback": "Deterministic local SVG illustration, with console warning",
+        "runtimeDefault": false
+      },
+      "activeArtwork": "generated"
     }
   ],
   "suggestions": [
@@ -1985,6 +2033,142 @@
       "source": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
       "title": "Cyberpunk 2077",
       "kind": "card"
+    }
+  ],
+  "movieArtworkPolicy": {
+    "updated": "2026-09-21",
+    "active": "Original deterministic SVG genre scenes",
+    "reason": "Phase 9.2.6 licensing exception; retained raster provenance does not document high-resolution redistribution rights.",
+    "posterRatio": "2:3",
+    "requiredLicensedPoster": {
+      "width": 1000,
+      "height": 1500
+    },
+    "requiredLicensedBackdrop": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "series": [
+    {
+      "id": "tv-dark",
+      "title": "Dark",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/17861/dark",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-queens-gambit",
+      "title": "The Queen’s Gambit",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/41428/the-queens-gambit",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-good-place",
+      "title": "The Good Place",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/2790/the-good-place",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-chernobyl",
+      "title": "Chernobyl",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/30770/chernobyl",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-breaking-bad",
+      "title": "Breaking Bad",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/169/breaking-bad",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-better-call-saul",
+      "title": "Better Call Saul",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/618/better-call-saul",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-sherlock",
+      "title": "Sherlock",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/335/sherlock",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-firefly",
+      "title": "Firefly",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/180/firefly",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-fleabag",
+      "title": "Fleabag",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/16149/fleabag",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-avatar",
+      "title": "Avatar: The Last Airbender",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/555/avatar-the-last-airbender",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-gravity-falls",
+      "title": "Gravity Falls",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/396/gravity-falls",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-over-garden-wall",
+      "title": "Over the Garden Wall",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/1744/over-the-garden-wall",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-hill-house",
+      "title": "The Haunting of Hill House",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/29191/the-haunting-of-hill-house",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-band-of-brothers",
+      "title": "Band of Brothers",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/465/band-of-brothers",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
+    },
+    {
+      "id": "tv-expanse",
+      "title": "The Expanse",
+      "activeArtwork": "generated",
+      "source": "https://www.tvmaze.com/shows/1825/the-expanse",
+      "metadataLicense": "CC BY-SA 4.0",
+      "posterRatio": "2:3"
     }
   ]
 }

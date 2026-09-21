@@ -21,6 +21,7 @@
 
   var MK = {
     library: "orbit-movies-library",
+    untracked: "orbit-movies-untracked",
     watchlist: "orbit-movies-watchlist",
     dismissed: "orbit-movies-dismissed",
     prefs: "orbit-movies-preferences",
@@ -69,22 +70,10 @@
     var key = el.getAttribute("data-reveal-key");
     if (key) revealedKeys[key] = true;
   }
-  function ensureRevealObserver() {
-    if (revealObserver || !("IntersectionObserver" in window)) return revealObserver;
-    revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          revealNow(entry.target);
-          revealObserver.unobserve(entry.target);
-          pendingReveals.delete(entry.target);
-        }
-      });
-    }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
-    return revealObserver;
-  }
+  function ensureRevealObserver(){if(!OS.scene)return null;if(!revealObserver)revealObserver={observe:function(el){OS.scene.observe(el,function(){revealNow(el);pendingReveals.delete(el);});},unobserve:function(el){OS.scene.unobserve(el);}};return revealObserver;}
   function wireReveal(root) {
     pendingReveals.forEach(function (el) { if (!el.isConnected) { if (revealObserver) revealObserver.unobserve(el); pendingReveals.delete(el); } });
-    var reduced = OS.prefersReducedMotion ? OS.prefersReducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var reduced = OS.prefersReducedMotion();
     var counts = {};
     (root || document.getElementById("moviesMount") || document).querySelectorAll("[data-reveal]").forEach(function (el) {
       var group = el.getAttribute("data-reveal-group") || "default";
@@ -130,10 +119,14 @@
       existing.poster = def.poster; existing.backdrop = def.backdrop;
       existing.moods = (def.moods || []).slice(); existing.tags = (def.tags || []).slice();
       existing.blurb = def.blurb; existing.accent = def.accent; existing.seasons=def.seasons;
+      existing.ratingSource=def.ratingSource;existing.metadataDate=def.metadataDate;existing.metadataUrl=def.metadataUrl;
     }
   });
 
   var watchlist = safeGetJSON(MK.watchlist, []);
+  var untracked = safeGetJSON(MK.untracked, []);
+  // Import old watchlist-only seeds once; status is the active source of truth.
+  watchlist.forEach(function(id){if(!library.some(function(m){return m.id===id;})){var seed=findSeed(id);if(seed)library.push(Object.assign({},seed,{status:'watchlist',custom:!!seed.custom}));}});
   var dismissed = safeGetJSON(MK.dismissed, []);
   var prefs = safeGetJSON(MK.prefs, defaultPrefs());
   (function () { var d = defaultPrefs(); Object.keys(d).forEach(function (k) { if (!prefs[k]) prefs[k] = []; }); })();
@@ -356,10 +349,12 @@
     return '<g class="mv-illustrated-subject">' + (subjects[key] || subjects.marquee) + '</g>';
   }
 
-  function saveLibrary() { safeSet(MK.library, JSON.stringify(library)); }
+  function saveLibrary() {
+    var data={};data[MK.library]=JSON.stringify(library);data[MK.untracked]=JSON.stringify(untracked);data[MK.watchlist]='[]';
+    try{window.OneSpaceStorage.transaction(window.localStorage,data);watchlist=[];return true;}catch(e){library=safeGetJSON(MK.library,[]);untracked=safeGetJSON(MK.untracked,[]);watchlist=safeGetJSON(MK.watchlist,[]);showToast(e.message);return false;}
+  }
   function watchlistItems() {
-    var ids = watchlist.filter(function (id) { var item = findLibrary(id); return !item || item.status === "watchlist"; }).concat(library.filter(function (item) { return item.status === "watchlist"; }).map(function (item) { return item.id; }));
-    return Array.from(new Set(ids)).map(function (id) { return findLibrary(id) || findSeed(id); }).filter(Boolean);
+    return library.filter(function(item){return item.status==='watchlist';});
   }
   function saveWatchlist() { safeSet(MK.watchlist, JSON.stringify(watchlist)); }
   function saveDismissed() { safeSet(MK.dismissed, JSON.stringify(dismissed)); }
@@ -369,7 +364,7 @@
   /* ---------------------------------------------------------------------
    * Small helpers
    * ------------------------------------------------------------------- */
-  function findSeed(id) { return (window.SEED_MOVIES || []).find(function (m) { return m.id === id; }); }
+  function findSeed(id) { return untracked.find(function(m){return m.id===id;}) || (window.SEED_MOVIES || []).find(function (m) { return m.id === id; }); }
   function findLibrary(id) { return library.find(function (m) { return m.id === id; }); }
   function statusLabel(status) { return status === "watched" ? "Watched" : status === "watchlist" ? "Watchlist" : "Unwatched"; }
   function durationBucket(minutes) {
@@ -378,7 +373,7 @@
     return "Over 120 min";
   }
   function durationLabel(minutes) {
-    minutes = minutes || 0;
+    if(!minutes)return 'Length unknown';
     var h = Math.floor(minutes / 60), m = minutes % 60;
     return h > 0 ? (h + "h" + (m ? " " + m + "m" : "")) : (m + "m");
   }
@@ -393,18 +388,24 @@
    * ------------------------------------------------------------------- */
   function posterCoverHtml(movie, cls) {
     var accent = movie.accent || hashAccent(movie.title || "");
-    return '<div class="' + cls + ' mv-poster-cover mv-drawn-cover">' + buildMovieSceneSvg(movie).replace('viewBox="0 0 1600 900"', 'viewBox="720 100 720 800"') + '<span>' + esc(movie.title) + '</span></div>';
+    return '<div class="' + cls + ' mv-poster-cover mv-drawn-cover" role="img" aria-label="'+esc(movie.title)+' illustrated cover">' + buildMovieSceneSvg(movie).replace('viewBox="0 0 1600 900"', 'viewBox="720 100 540 810"') + '<span>' + esc(movie.title) + '</span></div>';
+  }
+  function imageSizeAttrs(image,sizes) {
+    var attrs='';if(image.width>0&&image.height>0)attrs+=' width="'+Number(image.width)+'" height="'+Number(image.height)+'" style="--mv-intrinsic-width:'+Number(image.width)+'px"';
+    if(image.smallSrc&&image.smallWidth>0&&image.width>image.smallWidth)attrs+=' srcset="'+esc(image.smallSrc)+' '+Number(image.smallWidth)+'w, '+esc(image.src)+' '+Number(image.width)+'w" sizes="'+sizes+'"';
+    return attrs;
   }
   function posterHtml(movie, extraClass) {
     var cls = "mv-poster" + (extraClass ? " " + extraClass : "");
     var p = movie.poster || { kind: "placeholder" };
     if ((p.kind === "asset" || p.kind === "upload") && p.src) {
       var fallbackAttrs = ' data-fallback-title="' + esc(movie.title) + '" data-fallback-accent="' + esc(movie.accent || hashAccent(movie.title || "")) + '" data-fallback-class="' + esc(cls) + '"';
-      return '<img class="' + cls + ' mv-poster-img" src="' + esc(p.src) + '" alt="' + esc(movie.title) + ' poster" loading="lazy"' + fallbackAttrs + '>';
+      return '<img class="' + cls + ' mv-poster-img" src="' + esc(p.src) + '"'+imageSizeAttrs(p,'(max-width: 760px) 42vw, 300px')+' alt="' + esc(movie.title) + ' poster" loading="lazy"' + fallbackAttrs + '>';
     }
     return posterCoverHtml(movie, cls);
   }
   function wirePosterFallback() {
+    document.addEventListener('load',function(e){var img=e.target;if(img.matches?.('.mv-poster-img,.mv-backdrop-img')&&img.naturalWidth)img.style.setProperty('--mv-intrinsic-width',img.naturalWidth+'px');},true);
     // The details dialog lives outside moviesMount; handle both surfaces.
     document.addEventListener("error", function (e) {
       var img = e.target;
@@ -412,7 +413,7 @@
       var title = img.getAttribute("data-fallback-title") || "";
       console.warn('[OneSpace asset]', title, img.getAttribute('src'));
       var original = (window.SEED_MOVIES || []).find(function(m) { return m.title === title; });
-      if(original && original.backdrop && !img.dataset.fallbackTried) { img.dataset.fallbackTried='true'; img.src=original.backdrop.src; return; }
+      if(original && original.backdrop?.src && !img.dataset.fallbackTried) { img.dataset.fallbackTried='true'; img.removeAttribute('srcset');img.src=original.backdrop.src; return; }
       var accent = img.getAttribute("data-fallback-accent") || "#7a8fff";
       var cls = img.getAttribute("data-fallback-class") || "mv-poster";
       var cover = document.createElement("div");
@@ -432,16 +433,17 @@
     var existing = findLibrary(id);
     if (existing) {
       existing.status = status;
-      saveLibrary();
+      if(!saveLibrary()){renderAll();return false;}
       showToast(seed.title + " marked as " + statusLabel(status) + ".");
       renderAll();
       return;
     }
     var clone = JSON.parse(JSON.stringify(seed));
     clone.status = status;
-    clone.custom = false;
+    clone.custom = !!seed.custom;
     library.push(clone);
-    saveLibrary();
+    untracked=untracked.filter(function(m){return m.id!==id;});
+    if(!saveLibrary()){renderAll();return false;}
     showToast(status === "watched" ? (seed.title + " marked as watched.") : (seed.title + " added to your library."));
     renderAll();
   }
@@ -449,25 +451,35 @@
     var m = findLibrary(id);
     if (!m) return;
     m.status = status;
-    saveLibrary();
+    if(!saveLibrary()){renderAll();return false;}
     showToast(m.title + " marked as " + statusLabel(status) + ".");
     renderAll();
   }
-  function deleteMovie(id) {
-    var m = findLibrary(id);
+  function untrackMovie(id,confirmed) {
+    var m=findLibrary(id);if(!m)return false;
+    if(!confirmed){window.OneSpaceUI.confirm('Remove from library?',m.title+' will remain available to add again.',function(){return untrackMovie(id,true);},'Remove');return false;}
+    if(m.custom&&!untracked.some(function(x){return x.id===id;}))untracked.push(JSON.parse(JSON.stringify(m)));
+    library=library.filter(function(x){return x.id!==id;});
+    if(!saveLibrary()){renderAll();return false;}
+    var overlay=document.getElementById('movieDetailsOverlay');if(overlay)closeModal(overlay);
+    renderAll();showToast(m.title+' removed from library.');return true;
+  }
+  function deleteMovie(id,confirmed) {
+    var m = findLibrary(id) || findSeed(id);
     if (!m || !m.custom) return;
-    if (!window.confirm('Delete "' + m.title + '"? This cannot be undone.')) return;
+    if(!confirmed){window.OneSpaceUI.confirm('Delete custom title?','Delete "'+m.title+'" permanently? This cannot be undone.',function(){return deleteMovie(id,true);});return false;}
     library = library.filter(function (x) { return x.id !== id; });
-    saveLibrary();
+    untracked=untracked.filter(function(x){return x.id!==id;});
+    if(!saveLibrary()){renderAll();return false;}
+    var overlay=document.getElementById('movieDetailsOverlay');if(overlay)closeModal(overlay);
     showToast("Movie deleted.");
-    renderAll();
+    renderAll();return true;
   }
   function addToWatchlist(id) {
     addSeedToLibrary(id, "watchlist");
   }
   function removeFromWatchlist(id) {
-    var item = findLibrary(id); if (item && item.status === "watchlist") { item.status = "unwatched"; saveLibrary(); }
-    watchlist = watchlist.filter(function (x) { return x !== id; }); saveWatchlist(); renderAll();
+    var item = findLibrary(id); if (item && item.status === "watchlist") { item.status = "unwatched"; if(saveLibrary())showToast(item.title+' removed from watchlist.'); } renderAll();
   }
   function moveWatchlistToWatched(id) { addSeedToLibrary(id, "watched"); removeFromWatchlist(id); }
   function dismissSuggestion(id) {
@@ -569,7 +581,7 @@
           '<div class="mv-suggest-poster">' + posterHtml(m, "mv-suggest-poster-img") + "</div>" +
           '<div class="mv-suggest-body">' +
             '<div class="mv-suggest-top"><h3>' + esc(m.title) + '</h3><span class="mv-rating">' + mvIcon("star") + ratingLabel(m.rating) + "</span></div>" +
-            '<p class="mv-suggest-meta">' + esc(m.type || "movie") + (m.type === "series" ? " · " + (m.seasons || "—") + " seasons" : "") + " · " + esc((m.genre || []).join(", ")) + " · " + m.year + " · " + durationLabel(m.durationMinutes) + "</p>" +
+            '<p class="mv-suggest-meta">' + esc(m.type==='series'?'Series':'Movie') + (m.type === "series" ? " · " + (m.seasons || "—") + " seasons" : "") + " · " + esc((m.genre || []).join(", ")) + " · " + m.year + " · " + durationLabel(m.durationMinutes) + "</p>" +
             '<div class="mv-tag-row">' + (m.tags || []).map(function (t) { return '<span class="mv-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
             '<p class="mv-suggest-why">' + esc(r.reasons.length ? r.reasons.join("; ") + "." : (prefs.similarTo && prefs.similarTo.length ? "Shares genres, moods or tags with your selection." : "From the complete local catalog.")) + "</p>" +
             '<div class="mv-suggest-actions">' +
@@ -633,7 +645,7 @@
               '<option value="watchlist"' + (movie.status === "watchlist" ? " selected" : "") + ">Watchlist</option>" +
             "</select>" +
           "</div>" +
-          '<div class="mv-card-actions">' + editBtn + deleteBtn + "</div>" +
+          '<div class="mv-card-actions"><button type="button" class="btn btn-ghost" data-action="untrack-movie" data-id="'+esc(movie.id)+'">Remove from library</button>' + editBtn + deleteBtn + "</div>" +
         "</div>" +
       "</article>"
     );
@@ -690,8 +702,6 @@
    * Movie details modal (works for seed movies and library/custom movies)
    * ------------------------------------------------------------------- */
   function openMovieDetails(movie) {
-    if(movie.discoveryRecord){window.OneSpaceDiscovery.openDetail(movie.discoveryRecord);return;}
-
     var inLibraryEntry = findLibrary(movie.id);
     var isSeed = !!findSeed(movie.id);
     document.getElementById("movieDetailsTitle").textContent = movie.title;
@@ -703,14 +713,15 @@
       : "";
     document.getElementById("movieDetailsBody").innerHTML =
       '<div class="mv-details-poster">' + posterHtml(movie, "mv-details-poster-img") + "</div>" +
-      '<p><strong>'+esc(movie.type || 'movie')+'</strong>'+(movie.type==='series'?' · '+(movie.seasons || 'Unspecified')+' seasons · duration is per episode':'')+'</p>' +
+      '<p><strong>'+esc(movie.type==='series'?'Series':'Movie')+'</strong>'+(movie.type==='series'?' · '+(movie.seasons || 'Unspecified')+' seasons · approximate episode length':'')+'</p>' +
       (movie.blurb ? "<p>" + esc(movie.blurb) + "</p>" : "") +
       "<p><strong>Genre:</strong> " + esc((movie.genre || []).join(", ")) + "</p>" +
       "<p><strong>Year:</strong> " + movie.year + " · <strong>Duration:</strong> " + durationLabel(movie.durationMinutes) + "</p>" +
       "<p><strong>Language:</strong> " + esc(movie.language || "—") + " · <strong>Rating:</strong> " + ratingLabel(movie.rating) + "</p>" +
       (movie.platforms && movie.platforms.length ? "<p><strong>Platforms:</strong> " + esc(movie.platforms.join(", ")) + "</p>" : "") +
       (inLibraryEntry ? "<p><strong>Status:</strong> " + statusLabel(inLibraryEntry.status) + "</p>" : "") +
-      actionsHtml;
+      (movie.metadataUrl&&/^https:\/\/www\.tvmaze\.com\//.test(movie.metadataUrl)?'<p>Series metadata and rating: <a href="'+esc(movie.metadataUrl)+'" target="_blank" rel="noopener noreferrer">TVmaze</a> · '+esc(movie.metadataDate)+' · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA</a>. Broadcaster labels do not confirm current availability.</p>':'')+
+      actionsHtml + (inLibraryEntry?'<button type="button" class="btn" data-action="untrack-movie" data-id="'+esc(movie.id)+'">Remove from library</button>':'') + (movie.custom?'<button type="button" class="btn btn-ghost" data-action="delete-movie" data-id="'+esc(movie.id)+'">Delete custom title</button>':'');
     openModal(document.getElementById("movieDetailsOverlay"), document.getElementById("movieDetailsClose"));
   }
   function openSeedDetails(id) { var m = findSeed(id); if (m) openMovieDetails(m); }
@@ -726,99 +737,10 @@
    * navigation and an "Add Custom Title" fallback, mirroring games.js's
    * filterCatalog/combobox pattern.
    * ------------------------------------------------------------------- */
-  function mergedPool() { return window.OneSpaceCatalog.merge([library, window.SEED_MOVIES || []]); }
+  function mergedPool() { return window.OneSpaceCatalog.merge([library, untracked, window.SEED_MOVIES || []]); }
   function filterCatalog(query) { return query.trim() ? window.OneSpaceCatalog.search(mergedPool(), query) : []; }
-  function searchOptionHtml(m, index) {
-    var inLib = !!findLibrary(m.id);
-    return (
-      '<li class="mv-search-option" id="mv-search-opt-' + index + '" role="option" data-index="' + index + '" data-id="' + esc(m.id) + '" aria-selected="' + (index === searchSelectedIndex ? "true" : "false") + '">' +
-        posterHtml(m, "mv-search-thumb") +
-        "<span>" + esc(m.title) + (inLib ? " <small>(in your library)</small>" : "") + "</span>" +
-      "</li>"
-    );
-  }
-  function searchAddCustomHtml(query, index) {
-    return (
-      '<li class="mv-search-option mv-search-option-add" id="mv-search-opt-' + index + '" role="option" data-index="' + index + '" data-add-custom="1" aria-selected="' + (index === searchSelectedIndex ? "true" : "false") + '">' +
-        ICON_PLUS +
-        '<span>Add Custom Title: "' + esc(query) + '"</span>' +
-      "</li>"
-    );
-  }
-  function renderSearchDropdown(query) {
-    var dropdown = document.getElementById("mvSearchDropdown");
-    var input = document.getElementById("mvMovieSearch");
-    if (!dropdown || !input) return;
-    var q = query.trim();
-    if (!q) { closeSearchDropdown(); return; }
-    searchResults = filterCatalog(q);
-    searchSelectedIndex = 0;
-    var html = searchResults.length
-      ? searchResults.map(function (m, i) { return searchOptionHtml(m, i); }).join("")
-      : '<li class="mv-search-empty">No catalogue matches for "' + esc(q) + '".</li>';
-    html += searchAddCustomHtml(q, searchResults.length);
-    dropdown.innerHTML = html;
-    dropdown.hidden = false;
-    input.setAttribute("aria-expanded", "true");
-    highlightSearchOption(0);
-  }
-  function closeSearchDropdown() {
-    var dropdown = document.getElementById("mvSearchDropdown");
-    var input = document.getElementById("mvMovieSearch");
-    if (dropdown) { dropdown.hidden = true; dropdown.innerHTML = ""; }
-    if (input) { input.setAttribute("aria-expanded", "false"); input.removeAttribute("aria-activedescendant"); }
-    searchResults = [];
-  }
-  function highlightSearchOption(index) {
-    var dropdown = document.getElementById("mvSearchDropdown");
-    if (!dropdown) return;
-    var items = dropdown.querySelectorAll(".mv-search-option");
-    if (!items.length) return;
-    searchSelectedIndex = (index + items.length) % items.length;
-    items.forEach(function (item, i) { item.setAttribute("aria-selected", String(i === searchSelectedIndex)); });
-    if (items[searchSelectedIndex].scrollIntoView) items[searchSelectedIndex].scrollIntoView({ block: "nearest" });
-    document.getElementById("mvMovieSearch").setAttribute("aria-activedescendant", items[searchSelectedIndex].id);
-  }
-  function selectSearchOption(index) {
-    var dropdown = document.getElementById("mvSearchDropdown");
-    var input = document.getElementById("mvMovieSearch");
-    if (!dropdown || !input) return;
-    var item = dropdown.querySelector('.mv-search-option[data-index="' + index + '"]');
-    if (!item) return;
-    if (item.getAttribute("data-add-custom")) {
-      var query = input.value.trim();
-      closeSearchDropdown();
-      input.value = "";
-      openAddMovieModal(null);
-      document.getElementById("addMovieTitleInput").value = query;
-    } else {
-      var id = item.getAttribute("data-id");
-      if (findLibrary(id)) { showToast("Already in your library."); openLibraryDetails(id); }
-      else addSeedToLibrary(id, "unwatched");
-      closeSearchDropdown();
-      input.value = "";
-    }
-  }
-  function wireMovieSearch() {
-    var input = document.getElementById("mvMovieSearch");
-    var dropdown = document.getElementById("mvSearchDropdown");
-    if (!input || !dropdown) return;
-    input.addEventListener("input", function () { renderSearchDropdown(input.value); });
-    input.addEventListener("keydown", function (e) {
-      if (dropdown.hidden) return;
-      if (e.key === "ArrowDown") { e.preventDefault(); highlightSearchOption(searchSelectedIndex + 1); }
-      else if (e.key === "ArrowUp") { e.preventDefault(); highlightSearchOption(searchSelectedIndex - 1); }
-      else if (e.key === "Enter") { e.preventDefault(); selectSearchOption(searchSelectedIndex); }
-      else if (e.key === "Escape") { closeSearchDropdown(); }
-    });
-    dropdown.addEventListener("click", function (e) {
-      var item = e.target.closest(".mv-search-option");
-      if (item && !item.classList.contains("mv-search-empty")) selectSearchOption(parseInt(item.getAttribute("data-index"), 10));
-    });
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".mv-quick-add")) closeSearchDropdown();
-    });
-  }
+  function wireMovieSearch(){window.OneSpaceProviderSearch.bind({input:document.getElementById('mvMovieSearch'),dropdown:document.getElementById('mvSearchDropdown'),domain:'titles',local:function(q){return filterCatalog(q).map(function(x){return window.OneSpaceLocalDiscovery.normalize(x,'titles');});},adapter:function(){return window.OneSpaceTitleDiscovery;},custom:function(name){openAddMovieModal(null);document.getElementById("addMovieTitleInput").value=name;}});}
+
   function wireStatusFilter() {
     document.querySelectorAll("#mvStatusFilter [data-status-filter]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -936,7 +858,7 @@
           moods: [], tags: [], blurb: "", accent: accent, status: status, custom: true
         });
       }
-      saveLibrary();
+      if(!saveLibrary())return false;
       closeModal(document.getElementById("addMovieOverlay"));
       showToast(existing ? "Movie updated." : "Movie added to your library.");
       editingMovieId = null;
@@ -947,11 +869,12 @@
   /* ---------------------------------------------------------------------
    * Theme switcher (header pills + Appearance tab swatches)
    * ------------------------------------------------------------------- */
+  document.addEventListener('onespace:subtheme-changed',function(e){if(e.detail.domain==='movies')applyMoviesTheme(e.detail.theme);});
   function applyMoviesTheme(theme) {
     var root = document.getElementById("moviesRoot");
     if (!root) return;
     root.setAttribute("data-movies-theme", theme);
-    document.body.setAttribute("data-movies-theme", theme);
+    if(document.body.dataset.page==="movies")document.body.setAttribute("data-movies-theme", theme);
     document.querySelectorAll(".mv-theme-btn").forEach(function (btn) {
       var active = btn.getAttribute("data-movies-theme-choice") === theme;
       btn.classList.toggle("active", active);
@@ -1055,7 +978,7 @@
       art.querySelectorAll(".mv-scene-bg").forEach(function (p) { p.classList.remove("is-active"); });
       var scene = document.createElement("div");
       scene.className = "mv-scene-bg";
-      scene.innerHTML = movie.backdrop && movie.backdrop.src ? '<img class="mv-backdrop-img" src="' + esc(movie.backdrop.src) + '" alt="" width="1920" height="1080" decoding="async" data-fallback-src="' + esc(movie.poster && movie.poster.src || '') + '">' : buildMovieSceneSvg(movie);
+      scene.innerHTML = movie.backdrop && movie.backdrop.src ? '<img class="mv-backdrop-img" src="' + esc(movie.backdrop.src) + '" alt=""'+imageSizeAttrs(movie.backdrop,'100vw')+' decoding="async" data-fallback-src="' + esc(movie.poster && movie.poster.src || '') + '">' : buildMovieSceneSvg(movie);
       art.appendChild(scene);
       requestAnimationFrame(function () { scene.classList.add("is-active"); });
       setTimeout(function () { Array.from(art.children).forEach(function (p) { if (p !== art.lastElementChild) p.remove(); }); }, 650);
@@ -1091,7 +1014,7 @@
     var hero = document.getElementById("mvSpotlight");
     if (!hero) return;
     var isMovies = document.body.getAttribute("data-page") === "movies";
-    var blocked = spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isMovies || activeTab !== "overview" || !spotlight.visible;
+    var blocked = document.getElementById('moviesView').dataset.sceneIntensity==='off' || spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isMovies || activeTab !== "overview" || !spotlight.visible;
     hero.dataset.playing = String(!blocked);
     hero.classList.toggle('mv-ambient-paused', spotlight.paused || document.hidden || !isMovies || !spotlight.visible);
     var button = document.getElementById("mvAutoplay");
@@ -1108,16 +1031,8 @@
     if (document.hidden || !isMovies || motionQuery.matches || !finePointerQuery.matches || !spotlight.visible || spotlight.paused) {
       cancelAnimationFrame(spotlight.frame); spotlight.frame = null;
       spotlight.x = spotlight.y = spotlight.targetX = spotlight.targetY = 0;
-      hero.style.setProperty("--px", "0"); hero.style.setProperty("--py", "0");
+      if(OS.scene)OS.scene.resetPointer(hero);
     }
-  }
-  function animatePointer() {
-    spotlight.x += (spotlight.targetX - spotlight.x) * .085;
-    spotlight.y += (spotlight.targetY - spotlight.y) * .085;
-    var hero = document.getElementById("mvSpotlight");
-    if (!hero) { spotlight.frame = null; return; }
-    hero.style.setProperty("--px", spotlight.x.toFixed(4)); hero.style.setProperty("--py", spotlight.y.toFixed(4));
-    spotlight.frame = Math.abs(spotlight.x - spotlight.targetX) + Math.abs(spotlight.y - spotlight.targetY) > .002 ? requestAnimationFrame(animatePointer) : null;
   }
   function initSpotlight() {
     var hero = document.getElementById("mvSpotlight");
@@ -1138,17 +1053,12 @@
     });
     [hero, document.getElementById("mvSpotlightRail")].forEach(function (region) {
       region.addEventListener("pointerenter", function (e) { if (e.pointerType !== "touch") { spotlight.hover = true; syncSpotlightPlayback(); } });
-      region.addEventListener("pointerleave", function () { spotlight.hover = false; spotlight.targetX = spotlight.targetY = 0; if (!spotlight.frame && !motionQuery.matches) spotlight.frame = requestAnimationFrame(animatePointer); syncSpotlightPlayback(); });
+      region.addEventListener("pointerleave", function () { spotlight.hover = false; if(OS.scene)OS.scene.resetPointer(hero); syncSpotlightPlayback(); });
       region.addEventListener("focusin", function () { spotlight.focus = true; syncSpotlightPlayback(); });
       region.addEventListener("focusout", function () { setTimeout(function () { spotlight.focus = hero.contains(document.activeElement) || document.getElementById("mvSpotlightRail").contains(document.activeElement); syncSpotlightPlayback(); }, 0); });
     });
-    hero.addEventListener("pointermove", function (e) {
-      if (motionQuery.matches || !finePointerQuery.matches || document.hidden || spotlight.paused) return;
-      var rect = hero.getBoundingClientRect();
-      spotlight.targetX = (e.clientX - rect.left) / rect.width - .5;
-      spotlight.targetY = (e.clientY - rect.top) / rect.height - .5;
-      if (!spotlight.frame) spotlight.frame = requestAnimationFrame(animatePointer);
-    }, { passive: true });
+    if(OS.scene)OS.scene.bind(hero);
+
     var touch = null;
     hero.addEventListener("pointerdown", function (e) { if (e.pointerType === "touch" && !e.target.closest("button")) touch = { x: e.clientX, y: e.clientY }; });
     hero.addEventListener("pointerup", function (e) { if (!touch) return; var dx = e.clientX - touch.x, dy = e.clientY - touch.y; touch = null; if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) advanceSpotlight(dx > 0 ? -1 : 1, "manual"); });
@@ -1230,6 +1140,8 @@
       var button = event.target.closest('[data-action]');
       if (!button) return;
       var action = button.dataset.action;
+      if(action==='untrack-movie'){untrackMovie(button.dataset.id);return;}
+      if(action==='delete-movie'){deleteMovie(button.dataset.id);return;}
       if (action !== 'details-watchlist' && action !== 'details-watched') return;
       if (action === 'details-watchlist') addToWatchlist(button.dataset.id);
       else addSeedToLibrary(button.dataset.id, 'watched');
@@ -1253,6 +1165,7 @@
         case "details-watched": addSeedToLibrary(id, "watched"); closeModal(document.getElementById("movieDetailsOverlay")); break;
         case "edit-movie": openAddMovieModal(id); break;
         case "delete-movie": deleteMovie(id); break;
+        case "untrack-movie": untrackMovie(id); break;
         case "apply-movies-theme": applyMoviesTheme(target.getAttribute("data-theme")); break;
         case "goto-suggestions": switchTab("suggestions"); focusPanel("suggestions"); break;
       }
@@ -1315,11 +1228,7 @@
     applyTabVisibility(activeTab);
     renderSpotlight("entry");
     resetReveals();
-    root.classList.remove("is-entering-view");
-    void root.offsetWidth;
-    root.classList.add("is-entering-view");
-    clearTimeout(root._mvAnimCleanup);
-    root._mvAnimCleanup = setTimeout(function () { root.classList.remove("is-entering-view"); }, 2400);
+    if(OS.scene)OS.scene.enter(document.getElementById('moviesView'));
     playPanelAnimation(activeTab);
   }
 
@@ -1393,7 +1302,7 @@
             '<button type="button" class="mv-filter-chip" data-status-filter="unwatched">Unwatched</button>' +
             '<button type="button" class="mv-filter-chip" data-status-filter="watchlist">Watchlist</button>' +
           "</div>" +
-          '<div class="domain-filters"><label>Title type<select id="mvTypeFilter"><option value="">Movies &amp; Series</option><option value="movie">Movies</option><option value="series">Series</option></select></label><label>Library genre<select id="mvGenreFilter"><option value="">All genres</option>'+(window.MOVIE_GENRES || []).map(function(g){return '<option>'+esc(g)+'</option>';}).join('')+'</select></label></div><div class="mv-grid" id="mvLibraryGrid"></div>' +
+          '<div class="domain-filters"><label>Title type<select id="mvTypeFilter"><option value="">Movies &amp; Series</option><option value="movie">Movie</option><option value="series">Series</option></select></label><label>Library genre<select id="mvGenreFilter"><option value="">All genres</option>'+(window.MOVIE_GENRES || []).map(function(g){return '<option>'+esc(g)+'</option>';}).join('')+'</select></label></div><div class="mv-grid" id="mvLibraryGrid"></div>' +
         "</section>" +
 
         '<section class="mv-panel" data-panel="suggestions" role="tabpanel" hidden>' +
@@ -1451,12 +1360,12 @@
     applyTabVisibility(activeTab);
   }
 
-  window.OneSpaceTitleDiscovery={has:function(x){return library.some(function(m){return m.id===x.id;});},save:function(x,f){
+  window.OneSpaceTitleDiscovery={snapshot:function(){return {titles:library.concat(untracked),SEED_MOVIES:window.SEED_MOVIES};},has:function(x){return library.some(function(m){return m.id===x.id;});},save:function(x,f){
     var status=String(f?.get('saveStatus')||'unwatched'),m={id:x.id,title:x.name.slice(0,160),genre:x.genres||[],platforms:[],year:x.year||null,durationMinutes:x.runtime||null,rating:x.rating||null,blurb:(x.description||'').slice(0,5000),type:x.kind,seasons:x.seasons||null,episodes:x.episodes||null,language:x.language||'',accent:'#dba57a',poster:x.image?{kind:'asset',src:x.image}:{kind:'placeholder'},artwork:x.backdrop||x.image||'',status:status,custom:true,discoveryRecord:x,moods:[],tags:[]};
-    var existing=findLibrary(x.id),next=existing?library.map(function(v){return v.id===x.id?Object.assign({},v,{status:status}):v;}):library.concat([m]);
-    var ids=watchlist.filter(function(id){return id!==x.id;});if(status==='watchlist')ids.push(x.id);
-    var changes={};changes[MK.library]=JSON.stringify(next);changes[MK.watchlist]=JSON.stringify(ids);
-    try{window.OneSpaceStorage.transaction(window.localStorage,changes);}catch(e){showToast(e.message);return false;}library=next;watchlist=ids;renderAll();showToast(x.name+' saved.');return true;
+    var existing=findLibrary(x.id),seed=findSeed(x.id);if(seed)m=Object.assign({},seed,{status:status,custom:!!seed.custom});
+    library=existing?library.map(function(v){return v.id===x.id?Object.assign({},v,{status:status}):v;}):library.concat([m]);
+    untracked=untracked.filter(function(v){return v.id!==x.id;});
+    if(!saveLibrary()){renderAll();return false;}renderAll();showToast(x.name+' saved.');return true;
   }};
   function init() {
     document.addEventListener("onespace:page-changed", function (e) {

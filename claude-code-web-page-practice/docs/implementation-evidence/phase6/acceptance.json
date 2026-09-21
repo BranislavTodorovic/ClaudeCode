@@ -1,0 +1,10 @@
+{
+  "nodeTests": {"passed": 59, "failed": 0},
+  "providerChecks": ["Neutral normalization", "Pagination and details", "TTL and cache clear", "Abort cancellation", "Empty", "Timeout", "Rate limit", "Authentication", "Offline", "Provider error", "Missing credentials", "Same-origin cache mutation", "Secrets remain unservable"],
+  "browserChecks": ["Local matches immediate; provider matches asynchronous", "Load more shows four mock results", "Cancel does not add", "Game add persists after reload", "Series add as watchlist persists", "Arrow navigation and Enter open review", "Escape closes dropdown", "Dialog returns focus to search", "All degraded mock messages visible", "Live origin reports both providers unconfigured", "No console errors"],
+  "widths": [1440, 1024, 760, 390],
+  "overflow": false,
+  "brokenVisibleImages": [],
+  "limitation": "No live credentials were supplied. Real transport is tested with injected responses; browser acceptance uses the explicitly labeled local mock provider.",
+  "references": ["https://developer.themoviedb.org/reference/search-multi", "https://developer.themoviedb.org/reference/movie-details", "https://developer.themoviedb.org/reference/tv-series-details", "https://developer.themoviedb.org/docs/faq", "https://rawg.io/apidocs"]
+}

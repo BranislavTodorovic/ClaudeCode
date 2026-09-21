@@ -1,0 +1,157 @@
+{
+  "testsPassed": 62,
+  "browserChecks": [
+    "Built-in remove cancel and success",
+    "Hidden state survives reload",
+    "Settings restores GitHub",
+    "Work add defaults Work; Explore add forces Explore",
+    "Custom add/edit/delete and cancel",
+    "Keyboard reorder persists and restores focus",
+    "Favoriting Booking.com preserves Explore query",
+    "Every rendered full card includes Remove",
+    "No console errors"
+  ],
+  "layouts": [
+    {
+      "page": "home",
+      "width": 1440,
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "home",
+      "width": 1024,
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "home",
+      "width": 760,
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "work",
+      "width": 1440,
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "work",
+      "width": 1024,
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "work",
+      "width": 760,
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "work",
+      "width": 390,
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "personal",
+      "width": 1440,
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "personal",
+      "width": 1024,
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "personal",
+      "width": 760,
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "personal",
+      "width": 390,
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "explore",
+      "width": 1440,
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "explore",
+      "width": 1024,
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "explore",
+      "width": 760,
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "explore",
+      "width": 390,
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "shortcuts",
+      "width": 1440,
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "shortcuts",
+      "width": 1024,
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "shortcuts",
+      "width": 760,
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false
+    },
+    {
+      "page": "shortcuts",
+      "width": 390,
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false
+    }
+  ],
+  "dragVerification": "Shared reorder model tested; drag delegates to the same scoped reorder function. Keyboard interaction verified in browser."
+}

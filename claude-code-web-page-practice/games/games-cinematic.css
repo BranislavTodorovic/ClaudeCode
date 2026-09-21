@@ -129,7 +129,7 @@ body[data-page="games"]::after {
 .gv-scene-art {
   position: absolute;
   inset: -14px;
-  transform: translate(calc(var(--px) * 18px), calc(var(--py) * 14px));
+  transform: translate3d(var(--scene-x,0px),var(--scene-y,0px),0);
 }
 
 .gv-scene-art picture {
@@ -176,7 +176,7 @@ body[data-page="games"]::after {
   top: -20%;
   opacity: .19;
   background: radial-gradient(ellipse, var(--world) 0%, transparent 65%);
-  transform: translate(calc(var(--px) * 120px), calc(var(--py) * 90px));
+  transform: translate3d(var(--scene-x,0px),var(--scene-y,0px),0);
   transition: background .6s;
   mix-blend-mode: screen;
 }
@@ -1171,3 +1171,5 @@ body.force-reduced-motion .gv-scene-fog,
 body.force-reduced-motion .gv-scene-particles {
   display: none;
 }
+#gamesView [data-world="neon"]{--world:#64e4e4;--world-rgb:100,228,228}#gamesView [data-world="aurora"]{--world:#8ee6bd;--world-rgb:142,230,189}
+.gv-rail-scene{display:block;width:110px;min-width:80px;height:100px;overflow:hidden;border-radius:8px}.gv-rail-scene svg{width:100%;height:100%;object-fit:cover}

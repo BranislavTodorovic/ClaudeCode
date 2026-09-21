@@ -79,22 +79,10 @@
     var key = el.getAttribute("data-reveal-key");
     if (key) revealedKeys[key] = true;
   }
-  function ensureRevealObserver() {
-    if (revealObserver || !("IntersectionObserver" in window)) return revealObserver;
-    revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          revealNow(entry.target);
-          revealObserver.unobserve(entry.target);
-          pendingReveals.delete(entry.target);
-        }
-      });
-    }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
-    return revealObserver;
-  }
+  function ensureRevealObserver(){if(!OS.scene)return null;if(!revealObserver)revealObserver={observe:function(el){OS.scene.observe(el,function(){revealNow(el);pendingReveals.delete(el);});},unobserve:function(el){OS.scene.unobserve(el);}};return revealObserver;}
   function wireReveal(root) {
     pendingReveals.forEach(function (el) { if (!el.isConnected) { if (revealObserver) revealObserver.unobserve(el); pendingReveals.delete(el); } });
-    var reduced = OS.prefersReducedMotion ? OS.prefersReducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var reduced = OS.prefersReducedMotion();
     var counts = {};
     (root || document).querySelectorAll("[data-reveal]").forEach(function (el) {
       var group = el.getAttribute("data-reveal-group") || "default";
@@ -138,7 +126,7 @@
         existing.name = def.name; existing.platform = existing.platform || def.platform; existing.genre = def.genre;
         existing.accent = def.accent; existing.logo = def.logo;
         existing.artwork = def.artwork; existing.artworkMobile = def.artworkMobile; existing.cardArtwork = def.cardArtwork; existing.artworkPosition = def.artworkPosition;
-        existing.world = def.world; existing.tagline = def.tagline; existing.defaultTaskTemplates=def.defaultTaskTemplates; if(!existing.resources)existing.resources=def.resources;
+        existing.world = def.world; existing.tagline = def.tagline; existing.defaultTaskTemplates=def.defaultTaskTemplates; existing.weeklyTemplate=def.weeklyTemplate; if(!existing.resources)existing.resources=def.resources;
       }
     });
   }
@@ -146,7 +134,7 @@
   var prefs = Object.assign({ platforms: [], genres: [], playstyles: [], moods: [] }, safeGetJSON(GK.prefs, {}));
   var sessions = safeGetJSON(GK.sessions, []);
   var journal = safeGetJSON(GK.journal, []);
-  var draftTrackerType = "story";
+  var draftTrackerType = "story",draftTrackerTouched=false;
   var draftLogoDataUrl = null;
   var activeTab = "overview";
   var selectedStoryGameId = null;
@@ -172,14 +160,14 @@
     { key: "aurora", label: "Aurora", preview: "linear-gradient(135deg,#04191c,#2fe7b0,#3fb4e8)" }
   ];
 
-  function saveLibrary() { safeSet(GK.library, JSON.stringify(library)); }
+  function saveLibrary() { return commitGameChanges(); }
   function commitGameChanges() {
     var data={}; data[GK.library]=JSON.stringify(library);data[GK.weekly]=JSON.stringify(weekly);
     try { window.OneSpaceStorage.transaction(window.localStorage,data); return true; } catch(error) {library=safeGetJSON(GK.library,[]);weekly=safeGetJSON(GK.weekly,{});showToast(error.message);return false;}
   }
-  function saveWeekly() { safeSet(GK.weekly, JSON.stringify(weekly)); }
-  function saveSessions() { safeSet(GK.sessions, JSON.stringify(sessions)); }
-  function saveJournal() { safeSet(GK.journal, JSON.stringify(journal)); }
+  function saveWeekly() { return commitGameChanges(); }
+  function saveSessions() { if(safeSet(GK.sessions,JSON.stringify(sessions)))return true;sessions=safeGetJSON(GK.sessions,[]);return false; }
+  function saveJournal() { if(safeSet(GK.journal,JSON.stringify(journal)))return true;journal=safeGetJSON(GK.journal,[]);return false; }
 
   /* ---------------------------------------------------------------------
    * ISO week helpers
@@ -205,7 +193,6 @@
   }
   function cloneWeeklyTemplate(gameId) {
     var game=library.find(function(g){return g.id===gameId;}) || {};
-    if(game.id === "game-diablo-immortal") return (window.DIABLO_WEEKLY_TEMPLATE || []).map(function(t){return {id:t.id,label:t.label,done:false};});
     return window.OneSpaceGameResources.weekly(game);
   }
   function ensureWeekly(gameId, persist) {
@@ -214,7 +201,7 @@
     if (!entry || entry.weekKey !== currentKey) {
       entry = { weekKey: currentKey, tasks: cloneWeeklyTemplate(gameId) };
       weekly[gameId] = entry;
-      if(persist !== false) saveWeekly();
+      if(persist !== false && !saveWeekly())return weekly[gameId] || {weekKey:currentKey,tasks:[]};
     }
     return entry;
   }
@@ -350,7 +337,7 @@
         return (
           '<div class="gv-objective' + (o.id === lastCheckedObjectiveId ? " is-just-checked" : "") + '" data-objective-id="' + esc(o.id) + '">' +
             '<label class="gv-objective-check">' +
-              '<input type="checkbox" data-action="toggle-objective" data-chapter-id="' + esc(c.id) + '" data-objective-id="' + esc(o.id) + '" ' + (o.done ? "checked" : "") + ">" +
+              '<input type="checkbox" data-action="toggle-objective" data-game-id="' + esc(game.id) + '" data-chapter-id="' + esc(c.id) + '" data-objective-id="' + esc(o.id) + '" ' + (o.done ? "checked" : "") + ">" +
               '<span class="gv-objective-text">' + esc(o.text) + "</span>" +
             "</label>" +
             '<div class="gv-objective-actions">' +
@@ -361,7 +348,7 @@
         );
       }).join("");
       return (
-        '<div class="gv-chapter' + (c.expanded ? " is-open" : "") + '" data-chapter-id="' + esc(c.id) + '" data-reveal data-reveal-group="missions" data-reveal-key="' + esc(c.id) + '">' +
+        '<div class="gv-chapter' + (c.expanded ? " is-open" : "") + '" data-chapter-id="' + esc(c.id) + '" data-reveal data-reveal-group="missions" data-reveal-key="' + esc(game.id+':'+c.id) + '">' +
           '<button type="button" class="gv-chapter-head" data-action="toggle-chapter" data-chapter-id="' + esc(c.id) + '" aria-expanded="' + (!!c.expanded) + '">' +
             '<span class="gv-chevron" aria-hidden="true">' + ICON_CHEVRON + "</span>" +
             '<span class="gv-chapter-title">' + esc(c.title) + "</span>" +
@@ -394,7 +381,7 @@
     var offset = circumference - (stats.percent / 100) * circumference;
     var tasksHtml = stats.tasks.map(function (t) {
       var justChecked = t.id === lastCheckedTaskId ? " is-just-checked" : "";
-      return '<label class="gv-weekly-task' + justChecked + '" data-reveal data-reveal-group="weekly" data-reveal-key="' + esc(t.id) + '"><input type="checkbox" data-action="toggle-weekly-task" data-task-id="' + esc(t.id) + '" ' + (t.done ? "checked" : "") + "><span>" + esc(t.label) + "</span></label>";
+      return '<label class="gv-weekly-task' + justChecked + '" data-reveal data-reveal-group="weekly" data-reveal-key="' + esc(game.id+':'+t.id) + '"><input type="checkbox" data-action="toggle-weekly-task" data-game-id="' + esc(game.id) + '" data-task-id="' + esc(t.id) + '" ' + (t.done ? "checked" : "") + "><span>" + esc(t.label) + "</span></label>";
     }).join("");
     return (
       '<div class="gv-tracker" data-game-id="' + esc(game.id) + '">' +
@@ -465,7 +452,7 @@
   function animateRingDraw(container) {
     var circle = container && container.querySelector(".gv-ring-fill");
     if (!circle) return;
-    if (OS.prefersReducedMotion ? OS.prefersReducedMotion() : !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+    if (OS.prefersReducedMotion()) return;
     var target = circle.getAttribute("stroke-dashoffset");
     var circumference = circle.getAttribute("stroke-dasharray");
     circle.style.transition = "none";
@@ -495,8 +482,8 @@
     focusPanel(activeTab);
   }
 
-  function findChapter(chapterId) {
-    var game = library.find(function (g) { return g.id === selectedStoryGameId; });
+  function findChapter(chapterId, gameId) {
+    var game = library.find(function (g) { return g.id === (gameId || selectedStoryGameId); });
     if (!game || !game.story) return null;
     return game.story.chapters.find(function (c) { return c.id === chapterId; });
   }
@@ -508,14 +495,14 @@
     saveLibrary();
     withFocusPreserved(renderAll);
   }
-  function toggleObjective(chapterId, objectiveId) {
-    var chapter = findChapter(chapterId);
+  function toggleObjective(chapterId, objectiveId, gameId) {
+    var chapter = findChapter(chapterId, gameId);
     if (!chapter) return;
     var obj = chapter.objectives.find(function (o) { return o.id === objectiveId; });
     if (!obj) return;
     obj.done = !obj.done;
-    saveLibrary();
-    lastCheckedObjectiveId = obj.done ? objectiveId : null;
+    var saved=saveLibrary();
+    lastCheckedObjectiveId = saved && obj.done ? objectiveId : null;
     withFocusPreserved(renderAll);
     lastCheckedObjectiveId = null;
   }
@@ -542,7 +529,7 @@
     renderAll();
   }
   function startEditObjective(chapterId, objectiveId) {
-    var row = document.querySelector('.gv-objective[data-objective-id="' + objectiveId + '"]');
+    var row = document.querySelector('.gv-objective[data-objective-id="' + CSS.escape(objectiveId) + '"]');
     var chapter = findChapter(chapterId);
     if (!row || !chapter) return;
     var obj = chapter.objectives.find(function (o) { return o.id === objectiveId; });
@@ -573,25 +560,24 @@
     var task = entry.tasks.find(function (t) { return t.id === taskId; });
     if (!task) return;
     task.done = !task.done;
-    saveWeekly();
-    lastCheckedTaskId = task.done ? taskId : null;
+    var saved=saveWeekly();
+    lastCheckedTaskId = saved && task.done ? taskId : null;
     withFocusPreserved(renderAll);
     lastCheckedTaskId = null;
   }
   function resetWeekly(gameId) {
-    weekly[gameId] = { weekKey: getISOWeekKey(new Date()), tasks: cloneWeeklyTemplate() };
-    saveWeekly();
-    showToast("Weekly tasks reset.");
+    weekly[gameId] = { weekKey: getISOWeekKey(new Date()), tasks: cloneWeeklyTemplate(gameId) };
+    if(saveWeekly())showToast("Weekly tasks reset.");
     renderAll();
   }
 
-  function deleteGame(id) {
+  function deleteGame(id,confirmed) {
     var game = library.find(function (g) { return g.id === id; });
     if (!game) return;
-    if (!window.confirm('Delete "' + game.name + '"? This cannot be undone.')) return;
+    if(!confirmed){window.OneSpaceUI.confirm('Delete game?',game.name+' and its trackers will be removed.',function(){return deleteGame(id,true);});return;}
     var next=window.OneSpaceGameResources.cleanup({library:library,weekly:weekly,sessions:sessions,journal:journal},id);
     var data={};data[GK.library]=JSON.stringify(next.library);data[GK.weekly]=JSON.stringify(next.weekly);data[GK.sessions]=JSON.stringify(next.sessions);data[GK.journal]=JSON.stringify(next.journal);
-    try{window.OneSpaceStorage.transaction(window.localStorage,data);}catch(error){showToast(error.message);return;}
+    try{window.OneSpaceStorage.transaction(window.localStorage,data);}catch(error){showToast(error.message);return false;}
     library=next.library;weekly=next.weekly;sessions=next.sessions;journal=next.journal;
     if(selectedStoryGameId===id)selectedStoryGameId=null;if(selectedWeeklyGameId===id)selectedWeeklyGameId=null;
     if(!activeSession())stopSessionTicker();
@@ -609,6 +595,7 @@
     });
   }
   function openAddGameModal(editId) {
+    draftTrackerTouched=false;
     var game = editId ? library.find(function (g) { return g.id === editId; }) : null;
     document.getElementById("addGameTitle").textContent = game ? "Edit Game" : "Add Game";
     document.getElementById("addGameId").value = game ? game.id : "";
@@ -633,8 +620,9 @@
     document.getElementById("addGameClose").addEventListener("click", function () { closeModal(document.getElementById("addGameOverlay")); });
     document.getElementById("addGameCancel").addEventListener("click", function () { closeModal(document.getElementById("addGameOverlay")); });
     document.querySelectorAll(".gv-tracker-choice").forEach(function (btn) {
-      btn.addEventListener("click", function () { draftTrackerType = btn.getAttribute("data-tracker-type"); updateTrackerChoiceUI(); });
+      btn.addEventListener("click", function () { draftTrackerTouched=true;draftTrackerType = btn.getAttribute("data-tracker-type"); updateTrackerChoiceUI(); });
     });
+    document.getElementById('addGameGenre').addEventListener('input',function(){if(!draftTrackerTouched&&!document.getElementById('addGameId').value){draftTrackerType=window.OneSpaceGameResources.infer({genre:this.value});updateTrackerChoiceUI();}});
     document.getElementById("addGameLogoFile").addEventListener("change", function (e) {
       var file = e.target.files && e.target.files[0];
       var errorEl = document.getElementById("addGameError");
@@ -664,11 +652,11 @@
       var id = document.getElementById("addGameId").value || uid("game");
       var platform = document.getElementById("addGamePlatform").value;
       var accent = document.getElementById("addGameAccent").value || "#7a8fff";
-      var logo = draftLogoDataUrl ? { kind: "upload", src: draftLogoDataUrl } : { kind: "cover" };
       var existing = library.find(function (g) { return g.id === id; });
+      var logo = draftLogoDataUrl ? { kind: "upload", src: draftLogoDataUrl } : existing && existing.logo && existing.logo.kind === "asset" ? existing.logo : { kind: "cover" };
       if (existing) {
         existing.name = name; existing.platform = platform; existing.accent = accent; existing.logo = logo;
-        existing.trackerType = draftTrackerType; existing.genre=document.getElementById("addGameGenre").value.trim() || "Custom"; existing.genres=[existing.genre]; existing.custom=true;
+        window.OneSpaceGameResources.reconcile(existing,weekly,draftTrackerType,uid); existing.genre=document.getElementById("addGameGenre").value.trim() || "Custom"; existing.genres=[existing.genre]; existing.custom=true;
         if (draftTrackerType === "story" && !existing.story) existing.story = starterStory(existing);
         if (draftTrackerType === "weekly") ensureWeekly(existing.id,false);
       } else {
@@ -677,7 +665,7 @@
         library.push(game);
         if (draftTrackerType === "weekly") ensureWeekly(game.id,false);
       }
-      if(!commitGameChanges()) return;
+      if(!commitGameChanges()) return false;
       closeModal(document.getElementById("addGameOverlay"));
       showToast(existing ? "Game updated." : "Game added to your library.");
       renderAll();
@@ -687,10 +675,11 @@
   /* ---------------------------------------------------------------------
    * Theme switcher (header pills + Appearance tab swatches)
    * ------------------------------------------------------------------- */
+  document.addEventListener('onespace:subtheme-changed',function(e){if(e.detail.domain==='games')applyGamesTheme(e.detail.theme);});
   function applyGamesTheme(theme) {
     var gamesViewEl = document.getElementById("gamesView");
     gamesViewEl.setAttribute("data-games-theme", theme);
-    document.body.setAttribute("data-games-theme", theme);
+    if(document.body.dataset.page==="games")document.body.setAttribute("data-games-theme", theme);
     document.querySelectorAll(".gv-theme-btn").forEach(function (btn) {
       var active = btn.getAttribute("data-games-theme-choice") === theme;
       btn.classList.toggle("active", active);
@@ -721,9 +710,8 @@
   function aggregateStats() {
     var completions = library.map(function (g) { return statsFor(g).percent; });
     var avg = completions.length ? Math.round(completions.reduce(function (a, b) { return a + b; }, 0) / completions.length) : 0;
-    var diablo = library.find(function (g) { return g.id === "game-diablo-immortal"; });
-    var diabloPercent = diablo ? weeklyStats(diablo.id).percent : null;
-    return { count: library.length, avg: avg, diabloPercent: diabloPercent };
+    var weeklyGames=library.filter(function(g){return g.trackerType==='weekly';}),weeklyPercent=weeklyGames.length?Math.round(weeklyGames.reduce(function(sum,g){return sum+weeklyStats(g.id).percent;},0)/weeklyGames.length):null;
+    return {count:library.length,avg:avg,weeklyPercent:weeklyPercent};
   }
   function findContinueGame() {
     var candidates = library
@@ -741,7 +729,7 @@
     statsEl.innerHTML =
       '<div class="gv-stat-tile"><strong>' + agg.count + '</strong><span>Games tracked</span></div>' +
       '<div class="gv-stat-tile"><strong>' + agg.avg + '%</strong><span>Average completion</span></div>' +
-      '<div class="gv-stat-tile"><strong>' + (agg.diabloPercent == null ? "—" : agg.diabloPercent + "%") + "</strong><span>Diablo weekly progress</span></div>";
+      '<div class="gv-stat-tile"><strong>' + (agg.weeklyPercent == null ? "—" : agg.weeklyPercent + "%") + "</strong><span>Weekly game progress</span></div>";
     miniEl.innerHTML = library.map(function (g) {
       var stats = statsFor(g);
       return '<button type="button" class="gv-mini-card" data-action="open-progress" data-id="' + esc(g.id) + '">' + renderLogo(g) + '<span class="gv-mini-card-body"><strong>' + esc(g.name) + "</strong><span>" + stats.percent + "% · " + esc(stats.status) + "</span></span></button>";
@@ -834,21 +822,23 @@
     }).join("");
     wireReveal(el);
   }
-  function addSuggestionToLibrary(id) {
+  function addSuggestionToLibrary(id, chosenType) {
     var g = gameCatalog().find(function (x) { return x.id === id; });
     if (!g) return;
     if (library.some(function (l) { return l.id === id || l.sourceSuggestion === id || l.name.toLowerCase() === g.title.toLowerCase(); })) { showToast("Already in My Games."); return; }
+    if(!chosenType){var x=window.OneSpaceLocalDiscovery.normalize(g,'games');window.OneSpaceProviderSearch.open('games',x,{has:function(){return false;},save:function(record,f){return addSuggestionToLibrary(id,f.get('tracker'));}});return false;}
     var game = {
       id: uid("game"), name: g.title, platform: g.platforms[0], genre: g.genres[0] || "Custom",
-      accent: g.accent, platforms: g.platforms, genres: g.genres, playstyles: g.playstyles, moods: g.moods, logo: g.logo || { kind: "cover" }, artwork: g.artwork, resources: g.resources, defaultTasks: g.defaultTasks, defaultTaskTemplates:g.defaultTaskTemplates, trackerType: g.trackerType || "story", custom: true, sourceSuggestion: id,
+      accent: g.accent, platforms: g.platforms, genres: g.genres, playstyles: g.playstyles, moods: g.moods, logo: g.logo || { kind: "cover" }, artwork: g.artwork, resources: g.resources, defaultTasks: g.defaultTasks, defaultTaskTemplates:g.defaultTaskTemplates, trackerType: chosenType, chapterOutline:g.chapterOutline, weeklyTemplate:g.weeklyTemplate, custom: true, sourceSuggestion: id,
       story: { chapters: [] }
     };
-    game.story = starterStory(game);
+    if(game.trackerType==='story')game.story=starterStory(game);else delete game.story;
     library.push(game);
     if(game.trackerType === "weekly") ensureWeekly(game.id,false);
-    if(!commitGameChanges()) return;
+    if(!commitGameChanges()) return false;
+    removeFromWishlist(id);
     showToast(g.title + " added to My Games.");
-    renderAll();
+    renderAll();return true;
   }
   function addToWishlist(id) {
     var wishlist = safeGetJSON(GK.wishlist, []);
@@ -860,7 +850,7 @@
     safeSet(GK.wishlist, JSON.stringify(wishlist));
     renderWishlist();
   }
-  function moveWishlistToLibrary(id) { addSuggestionToLibrary(id); removeFromWishlist(id); }
+  function moveWishlistToLibrary(id) { addSuggestionToLibrary(id); }
   function dismissSuggestion(id) {
     var dismissed = safeGetJSON(GK.dismissed, []);
     if (dismissed.indexOf(id) === -1) dismissed.push(id);
@@ -938,94 +928,8 @@
    * duplicating add-a-game logic.
    * ------------------------------------------------------------------- */
   function filterCatalog(query) { return query.trim() ? window.OneSpaceCatalog.search(gameCatalog(), query) : []; }
-  function searchOptionHtml(g, index) {
-    return (
-      '<li class="gv-search-option" id="gv-search-opt-' + index + '" role="option" data-index="' + index + '" data-id="' + esc(g.id) + '" aria-selected="' + (index === searchSelectedIndex ? "true" : "false") + '">' +
-        '<span class="gv-logo-cover" style="' + suggestCoverStyle(g.accent) + '">' + gvIcon("library") + "</span>" +
-        "<span>" + esc(g.title) + "</span>" +
-      "</li>"
-    );
-  }
-  function searchAddCustomHtml(query, index) {
-    return (
-      '<li class="gv-search-option gv-search-option-add" id="gv-search-opt-' + index + '" role="option" data-index="' + index + '" data-add-custom="1" aria-selected="' + (index === searchSelectedIndex ? "true" : "false") + '">' +
-        ICON_PLUS +
-        '<span>Add Custom Game: "' + esc(query) + '"</span>' +
-      "</li>"
-    );
-  }
-  function renderSearchDropdown(query) {
-    var dropdown = document.getElementById("gvSearchDropdown");
-    var input = document.getElementById("gvGameSearch");
-    if (!dropdown || !input) return;
-    var q = query.trim();
-    if (!q) { closeSearchDropdown(); return; }
-    searchResults = filterCatalog(q);
-    searchSelectedIndex = 0;
-    var html = searchResults.length
-      ? searchResults.map(function (g, i) { return searchOptionHtml(g, i); }).join("")
-      : '<li class="gv-search-empty">No catalog matches for "' + esc(q) + '".</li>';
-    html += searchAddCustomHtml(q, searchResults.length);
-    dropdown.innerHTML = html;
-    dropdown.hidden = false;
-    input.setAttribute("aria-expanded", "true");
-    highlightSearchOption(0);
-  }
-  function closeSearchDropdown() {
-    var dropdown = document.getElementById("gvSearchDropdown");
-    var input = document.getElementById("gvGameSearch");
-    if (dropdown) { dropdown.hidden = true; dropdown.innerHTML = ""; }
-    if (input) { input.setAttribute("aria-expanded", "false"); input.removeAttribute("aria-activedescendant"); }
-    searchResults = [];
-  }
-  function highlightSearchOption(index) {
-    var dropdown = document.getElementById("gvSearchDropdown");
-    if (!dropdown) return;
-    var items = dropdown.querySelectorAll(".gv-search-option");
-    if (!items.length) return;
-    searchSelectedIndex = (index + items.length) % items.length;
-    items.forEach(function (item, i) { item.setAttribute("aria-selected", String(i === searchSelectedIndex)); });
-    items[searchSelectedIndex].scrollIntoView({ block: "nearest" });
-    document.getElementById("gvGameSearch").setAttribute("aria-activedescendant", items[searchSelectedIndex].id);
-  }
-  function selectSearchOption(index) {
-    var dropdown = document.getElementById("gvSearchDropdown");
-    var input = document.getElementById("gvGameSearch");
-    if (!dropdown || !input) return;
-    var item = dropdown.querySelector('.gv-search-option[data-index="' + index + '"]');
-    if (!item) return;
-    if (item.getAttribute("data-add-custom")) {
-      var query = input.value.trim();
-      closeSearchDropdown();
-      input.value = "";
-      openAddGameModal(null);
-      document.getElementById("addGameName").value = query;
-    } else {
-      addSuggestionToLibrary(item.getAttribute("data-id"));
-      closeSearchDropdown();
-      input.value = "";
-    }
-  }
-  function wireGameSearch() {
-    var input = document.getElementById("gvGameSearch");
-    var dropdown = document.getElementById("gvSearchDropdown");
-    if (!input || !dropdown) return;
-    input.addEventListener("input", function () { renderSearchDropdown(input.value); });
-    input.addEventListener("keydown", function (e) {
-      if (dropdown.hidden) return;
-      if (e.key === "ArrowDown") { e.preventDefault(); highlightSearchOption(searchSelectedIndex + 1); }
-      else if (e.key === "ArrowUp") { e.preventDefault(); highlightSearchOption(searchSelectedIndex - 1); }
-      else if (e.key === "Enter") { e.preventDefault(); selectSearchOption(searchSelectedIndex); }
-      else if (e.key === "Escape") { closeSearchDropdown(); }
-    });
-    dropdown.addEventListener("click", function (e) {
-      var item = e.target.closest(".gv-search-option");
-      if (item && !item.classList.contains("gv-search-empty")) selectSearchOption(parseInt(item.getAttribute("data-index"), 10));
-    });
-    document.addEventListener("click", function (e) {
-      if (!e.target.closest(".gv-quick-add")) closeSearchDropdown();
-    });
-  }
+  function wireGameSearch(){window.OneSpaceProviderSearch.bind({input:document.getElementById('gvGameSearch'),dropdown:document.getElementById('gvSearchDropdown'),domain:'games',local:function(q){return filterCatalog(q).map(function(x){return window.OneSpaceLocalDiscovery.normalize(x,'games');});},adapter:function(){return window.OneSpaceGameDiscovery;},custom:function(name){openAddGameModal(null);document.getElementById("addGameName").value=name;}});}
+
 
   /* ---------------------------------------------------------------------
    * Gaming Sessions
@@ -1038,7 +942,7 @@
   function startSession(gameId) {
     if (activeSession()) { showToast("Stop the current session first."); return; }
     sessions.unshift({ id: uid("session"), gameId: gameId, start: new Date().toISOString(), end: null, minutes: null, note: "" });
-    saveSessions();
+    if(!saveSessions()){renderSessionsPanel();return false;}
     startSessionTicker();
     renderSessionsPanel();
   }
@@ -1048,7 +952,7 @@
     var endDate = new Date();
     s.end = endDate.toISOString();
     s.minutes = Math.max(1, Math.round((endDate - new Date(s.start)) / 60000));
-    saveSessions();
+    if(!saveSessions()){renderSessionsPanel();return false;}
     stopSessionTicker();
     showToast("Session logged: " + formatMinutes(s.minutes) + ".");
     renderSessionsPanel();
@@ -1066,13 +970,13 @@
        displays back as the exact calendar day the user picked, regardless of
        their timezone offset from UTC. */
     sessions.unshift({ id: uid("session"), gameId: gameId, start: day + "T00:00:00", end: day + "T00:00:00", minutes: minutes, note: note || "" });
-    saveSessions();
+    if(!saveSessions()){renderSessionsPanel();return false;}
     renderSessionsPanel();
     showToast("Session logged.");
   }
   function deleteSession(id) {
     sessions = sessions.filter(function (s) { return s.id !== id; });
-    saveSessions();
+    if(!saveSessions()){renderSessionsPanel();return false;}
     renderSessionsPanel();
   }
   function startSessionTicker() {
@@ -1192,10 +1096,10 @@
     document.getElementById("gvJournalSave").textContent = "Save Entry";
     document.getElementById("gvJournalCancel").hidden = true;
   }
-  function deleteJournalEntry(id) {
-    if (!window.confirm("Delete this journal entry?")) return;
+  function deleteJournalEntry(id,confirmed) {
+    if(!confirmed){window.OneSpaceUI.confirm('Delete journal entry?','This entry will be removed.',function(){return deleteJournalEntry(id,true);});return;}
     journal = journal.filter(function (e) { return e.id !== id; });
-    saveJournal();
+    if(!saveJournal())return false;
     if (editingJournalId === id) cancelJournalEdit();
     renderJournalPanel();
   }
@@ -1212,7 +1116,7 @@
       } else {
         journal.unshift({ id: uid("journal"), gameId: gameId, date: new Date().toISOString(), title: title, body: body });
       }
-      saveJournal();
+      if(!saveJournal())return false;
       cancelJournalEdit();
       renderJournalPanel();
       showToast("Journal entry saved.");
@@ -1259,7 +1163,7 @@
     return library.find(function (g) { return g.id === spotlight.id; }) || library[0];
   }
   function featuredGames() {
-    return library.filter(function (g) { return !!g.artwork; });
+    return library.slice();
   }
   function focusPanel(name) {
     var panel = document.querySelector('.gv-panel[data-panel="' + name + '"]');
@@ -1292,7 +1196,7 @@
   function renderSpotlight(reason) {
     var hero = document.getElementById("gvSpotlight");
     var game = spotlightGame();
-    if (!hero || !game) return;
+    if(!hero)return;hero.hidden=activeTab!=='overview'||!game;document.getElementById('gvSpotlightRail').hidden=activeTab!=='overview'||!game;if(!game){document.getElementById('gvSpotlightRail').innerHTML='';return;}
     spotlight.id = game.id;
     var stats = statsFor(game), games = featuredGames();
     var index = games.findIndex(function (g) { return g.id === game.id; });
@@ -1324,10 +1228,10 @@
     document.getElementById("gvHeroIndex").textContent = index < 0 ? "YOUR COLLECTION" : "0" + (index + 1) + " / 0" + games.length;
     // Keep controls mounted: automatic and keyboard transitions must not steal focus.
     [document.getElementById("gvHeroDots"), document.getElementById("gvSpotlightRail")].forEach(function (root, type) {
-      if (root.dataset.signature !== games.map(function (g) { return g.id; }).join(",")) {
-        root.dataset.signature = games.map(function (g) { return g.id; }).join(",");
+      if (root.dataset.signature !== games.map(function (g) { return g.id+g.name+(g.artwork||""); }).join(",")) {
+        root.dataset.signature = games.map(function (g) { return g.id+g.name+(g.artwork||""); }).join(",");
         root.innerHTML = games.map(function (g, i) {
-          return '<button type="button" class="' + (type ? 'gv-spotlight-card' : 'gv-dot') + '" data-spotlight-id="' + esc(g.id) + '" aria-label="Show ' + esc(g.name) + '">' + (type ? '<img src="' + esc(g.artwork) + '" alt="" width="320" height="180" loading="lazy"><span><small>0' + (i + 1) + ' / ' + esc(g.genre) + '</small><strong>' + esc(g.name) + '</strong><span class="gv-rail-progress"></span></span>' + gvIcon("next") : '<span></span>') + '</button>';
+          return '<button type="button" class="' + (type ? 'gv-spotlight-card' : 'gv-dot') + '" data-spotlight-id="' + esc(g.id) + '" aria-label="Show ' + esc(g.name) + '">' + (type ? (g.artwork ? '<img src="' + esc(g.artwork) + '" alt="" width="320" height="180" loading="lazy">' : '<span class="gv-rail-scene">'+gameScene(g)+'</span>')+'<span><small>0' + (i + 1) + ' / ' + esc(g.genre) + '</small><strong>' + esc(g.name) + '</strong><span class="gv-rail-progress"></span></span>' + gvIcon("next") : '<span></span>') + '</button>';
         }).join("");
       }
       root.querySelectorAll("[data-spotlight-id]").forEach(function (button) {
@@ -1352,7 +1256,7 @@
     var hero = document.getElementById("gvSpotlight");
     if (!hero) return;
     var isGames = document.body.dataset.page === "games";
-    var blocked = spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isGames || activeTab !== "overview" || !spotlight.visible;
+    var blocked = document.getElementById('gamesView').dataset.sceneIntensity==='off' || spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isGames || activeTab !== "overview" || !spotlight.visible;
     hero.dataset.playing = String(!blocked);
     document.getElementById("gamesView").classList.toggle("gv-motion-paused", document.hidden || !isGames);
     hero.classList.toggle("gv-ambient-paused", document.hidden || !isGames || !spotlight.visible || spotlight.paused);
@@ -1370,15 +1274,8 @@
     if (document.hidden || !isGames || motionQuery.matches || !finePointerQuery.matches || !spotlight.visible || spotlight.paused) {
       cancelAnimationFrame(spotlight.frame); spotlight.frame = null;
       spotlight.x = spotlight.y = spotlight.targetX = spotlight.targetY = 0;
-      hero.style.setProperty("--px", "0"); hero.style.setProperty("--py", "0");
+      if(OS.scene)OS.scene.resetPointer(hero);
     }
-  }
-  function animatePointer() {
-    spotlight.x += (spotlight.targetX - spotlight.x) * .085;
-    spotlight.y += (spotlight.targetY - spotlight.y) * .085;
-    var hero = document.getElementById("gvSpotlight");
-    hero.style.setProperty("--px", spotlight.x.toFixed(4)); hero.style.setProperty("--py", spotlight.y.toFixed(4));
-    spotlight.frame = Math.abs(spotlight.x - spotlight.targetX) + Math.abs(spotlight.y - spotlight.targetY) > .002 ? requestAnimationFrame(animatePointer) : null;
   }
   function initSpotlight() {
     var hero = document.getElementById("gvSpotlight");
@@ -1398,17 +1295,12 @@
     });
     [hero, document.getElementById("gvSpotlightRail")].forEach(function (region) {
       region.addEventListener("pointerenter", function (e) { if (e.pointerType !== "touch") { spotlight.hover = true; syncSpotlightPlayback(); } });
-      region.addEventListener("pointerleave", function () { spotlight.hover = false; spotlight.targetX = spotlight.targetY = 0; if (!spotlight.frame && !motionQuery.matches) spotlight.frame = requestAnimationFrame(animatePointer); syncSpotlightPlayback(); });
+      region.addEventListener("pointerleave", function () { spotlight.hover = false; if(OS.scene)OS.scene.resetPointer(hero); syncSpotlightPlayback(); });
       region.addEventListener("focusin", function () { spotlight.focus = true; syncSpotlightPlayback(); });
       region.addEventListener("focusout", function () { setTimeout(function () { spotlight.focus = hero.contains(document.activeElement) || document.getElementById("gvSpotlightRail").contains(document.activeElement); syncSpotlightPlayback(); }, 0); });
     });
-    hero.addEventListener("pointermove", function (e) {
-      if (motionQuery.matches || !finePointerQuery.matches || document.hidden || spotlight.paused) return;
-      var rect = hero.getBoundingClientRect();
-      spotlight.targetX = (e.clientX - rect.left) / rect.width - .5;
-      spotlight.targetY = (e.clientY - rect.top) / rect.height - .5;
-      if (!spotlight.frame) spotlight.frame = requestAnimationFrame(animatePointer);
-    }, {passive:true});
+    if(OS.scene)OS.scene.bind(hero);
+
     var touch = null;
     hero.addEventListener("pointerdown", function (e) { if (e.pointerType === "touch" && !e.target.closest("button")) touch = {x:e.clientX,y:e.clientY}; });
     hero.addEventListener("pointerup", function (e) { if (!touch) return; var dx = e.clientX-touch.x, dy = e.clientY-touch.y; touch = null; if (Math.abs(dx)>55 && Math.abs(dx)>Math.abs(dy)*1.5) advanceSpotlight(dx>0?-1:1,"manual"); });
@@ -1419,7 +1311,7 @@
     finePointerQuery.addEventListener("change", syncSpotlightPlayback);
     document.addEventListener("onespace:page-changed", syncSpotlightPlayback);
     if ("IntersectionObserver" in window) new IntersectionObserver(function (entries) { spotlight.visible = entries[0].isIntersecting; syncSpotlightPlayback(); }, {threshold:.1}).observe(hero);
-    var labels = {overview:"Your play, at a glance",library:"My Games",missions:"Mission Progress",weekly:"Diablo Weekly Tasks",suggestions:"Discover your next obsession",sessions:"Gaming Sessions",journal:"Gaming Journal",appearance:"Make it your world"};
+    var labels = {overview:"Your play, at a glance",library:"My Games",missions:"Mission Progress",weekly:"Weekly Tasks",suggestions:"Discover your next obsession",sessions:"Gaming Sessions",journal:"Gaming Journal",appearance:"Make it your world"};
     document.querySelectorAll(".gv-tab").forEach(function (button) {
       var name = button.dataset.gvTab;
       button.innerHTML = gvIcon(name) + '<span>' + button.textContent + '</span>';
@@ -1454,8 +1346,8 @@
       panel.hidden = panel.getAttribute("data-panel") !== tab;
       panel.setAttribute("role", tab === "overview" ? "region" : "tabpanel");
     });
-    document.getElementById("gvSpotlight").hidden = tab !== "overview";
-    document.getElementById("gvSpotlightRail").hidden = tab !== "overview";
+    document.getElementById("gvSpotlight").hidden = tab !== "overview" || !library.length;
+    document.getElementById("gvSpotlightRail").hidden = tab !== "overview" || !library.length;
     syncSpotlightPlayback();
   }
   /* .is-entering/.is-entering-view are intentionally transient: leaving them on
@@ -1505,11 +1397,7 @@
     applyTabVisibility(activeTab);
     renderSpotlight("entry");
     resetReveals();
-    gamesView.classList.remove("is-entering-view");
-    void gamesView.offsetWidth;
-    gamesView.classList.add("is-entering-view");
-    clearTimeout(gamesView._gvAnimCleanup);
-    gamesView._gvAnimCleanup = setTimeout(function () { gamesView.classList.remove("is-entering-view"); }, 2400);
+    if(OS.scene)OS.scene.enter(document.getElementById('gamesView'));
     playPanelAnimation(activeTab);
   }
 
@@ -1560,10 +1448,10 @@
       if (t.matches && t.matches('[data-action="hero-platform"]')) {
         var game = spotlightGame(); game.platform = t.value; saveLibrary(); withFocusPreserved(renderAll);
       } else if (t.matches && t.matches('[data-action="toggle-objective"]')) {
-        toggleObjective(t.getAttribute("data-chapter-id"), t.getAttribute("data-objective-id"));
+        toggleObjective(t.getAttribute("data-chapter-id"), t.getAttribute("data-objective-id"),t.getAttribute("data-game-id") || t.closest(".gv-tracker")?.getAttribute("data-game-id"));
       } else if (t.matches && t.matches('[data-action="toggle-weekly-task"]')) {
         var trackerEl = t.closest(".gv-tracker");
-        if (trackerEl) toggleWeeklyTask(trackerEl.getAttribute("data-game-id"), t.getAttribute("data-task-id"));
+        if (t.dataset.gameId || trackerEl) toggleWeeklyTask(t.dataset.gameId || trackerEl.getAttribute("data-game-id"), t.getAttribute("data-task-id"));
       } else if (t.matches && t.matches("[data-pref-group]")) {
         handlePrefChange(t);
       }
@@ -1597,24 +1485,10 @@
      data attributes and refocuses the equivalent (freshly-rendered) element
      after the re-render, so keyboard users don't lose their place. */
   function withFocusPreserved(renderFn) {
-    var active = document.activeElement;
-    var selector = null;
-    if (active && typeof active.getAttribute === "function") {
-      var action = active.getAttribute("data-action");
-      if (action) {
-        var parts = ['[data-action="' + action + '"]'];
-        ["data-chapter-id", "data-objective-id", "data-task-id", "data-id"].forEach(function (attr) {
-          var val = active.getAttribute(attr);
-          if (val) parts.push("[" + attr + '="' + val + '"]');
-        });
-        selector = parts.join("");
-      }
-    }
+    var active=document.activeElement,attrs={},owner=active?.closest?.('.gv-tracker')?.getAttribute('data-game-id');
+    if(active?.getAttribute('data-action'))['data-action','data-chapter-id','data-objective-id','data-task-id','data-id','data-game-id'].forEach(function(name){attrs[name]=active.getAttribute(name);});
     renderFn();
-    if (selector) {
-      var el = document.querySelector(selector);
-      if (el && typeof el.focus === "function") el.focus({ preventScroll: true });
-    }
+    if(attrs['data-action']){var next=Array.from(document.querySelectorAll('[data-action]')).find(function(el){return Object.keys(attrs).every(function(name){return el.getAttribute(name)===attrs[name];})&&(!owner||el.closest('.gv-tracker')?.getAttribute('data-game-id')===owner);});next?.focus({preventScroll:true});}
   }
 
   function renderAll() {
@@ -1634,11 +1508,11 @@
   /* ---------------------------------------------------------------------
    * Init
    * ------------------------------------------------------------------- */
-  window.OneSpaceGameDiscovery={has:function(x){return library.some(function(g){return g.id===x.id;});},save:function(x,f){
-    if(library.some(function(g){return g.id===x.id;})){showToast('Already in My Games.');return true;}
-    var g={id:x.id,name:x.name.slice(0,160),platform:x.platforms?.[0]||'Unspecified',platforms:x.platforms||[],genre:x.genres?.[0]||'Adventure',genres:x.genres||[],accent:'#a99ada',logo:x.image?{kind:'asset',src:x.image}:{kind:'cover'},artwork:x.image||'',cardArtwork:x.image||'',trackerType:String(f?.get('tracker')||'story'),custom:true,discoveryRecord:x,resources:window.OneSpaceGameResources.resources({name:x.name}),story:{chapters:[]}};
+  window.OneSpaceGameDiscovery={snapshot:function(){return {games:library,DEFAULT_GAMES:window.DEFAULT_GAMES,SUGGESTION_CATALOG:window.SUGGESTION_CATALOG};},has:function(x){return library.some(function(g){return g.id===x.id||g.sourceSuggestion===x.id||g.name.toLowerCase()===x.name.toLowerCase();});},save:function(x,f){
+    if(library.some(function(g){return g.id===x.id||g.sourceSuggestion===x.id||g.name.toLowerCase()===x.name.toLowerCase();})){showToast('Already in My Games.');return true;}
+    var g={id:x.id,name:x.name.slice(0,160),platform:x.platforms?.[0]||'Unspecified',platforms:x.platforms||[],genre:x.genres?.[0]||'Adventure',genres:x.genres||[],accent:'#a99ada',logo:x.image?{kind:'asset',src:x.image}:{kind:'cover'},artwork:x.image||'',cardArtwork:x.image||'',trackerType:String(f?.get('tracker')||window.OneSpaceGameResources.infer(x)),chapterOutline:x.chapterOutline,weeklyTemplate:x.weeklyTemplate,custom:true,discoveryRecord:x,resources:x.resources?.length?x.resources:window.OneSpaceGameResources.resources({name:x.name}),story:{chapters:[]}};
     if(x.website)g.resources.unshift({group:'Official',label:'Official website',url:x.website});
-    if(x.defaultTaskTemplates)g.defaultTaskTemplates=x.defaultTaskTemplates;g.story=starterStory(g);library.push(g);if(g.trackerType==='weekly')ensureWeekly(g.id,false);if(!commitGameChanges())return false;renderAll();showToast(x.name+' added to My Games.');return true;
+    if(x.defaultTaskTemplates)g.defaultTaskTemplates=x.defaultTaskTemplates;if(g.trackerType==='story')g.story=starterStory(g);else delete g.story;library.push(g);if(g.trackerType==='weekly')ensureWeekly(g.id,false);if(!commitGameChanges())return false;renderAll();showToast(x.name+' added to My Games.');return true;
   }};
   function init() {
     if (!document.getElementById("gamesView")) return;

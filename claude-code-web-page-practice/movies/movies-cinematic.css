@@ -25,7 +25,7 @@ body[data-page="movies"]::before, body[data-page="movies"]::after { display: non
 #mvSpotlight[hidden], #mvSpotlightRail[hidden] { display: none; }
 
 .mv-scene { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.mv-scene-art { position: absolute; inset: -14px; transform: translate(calc(var(--px) * 16px), calc(var(--py) * 12px)); transition: transform .4s ease-out; }
+.mv-scene-art { position: absolute; inset: -14px; transform: translate3d(var(--scene-x,0px),var(--scene-y,0px),0); transition: transform .4s ease-out; }
 /* Generated per-movie scene (color from movie.accent) — no raster photography
    is used here (see assets/movie-art/SOURCES.md: the only real film art we
    can legally source at usable resolution is small poster art, unsuitable

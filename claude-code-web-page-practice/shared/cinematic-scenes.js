@@ -1,44 +1,36 @@
-/* OneSpace scene composition. Rendering stays separate from persistent app state. */
-(function () {
-  'use strict';
-  var OS=window.OneSpace;
-  var scenes={projects:['03','THE ATELIER','A thought, taking shape.'],personal:['04','THE RITUAL GARDEN','Small rituals. A richer everyday.'],explore:['05','THE PORTAL','Let curiosity lead.'],shortcuts:['06','THE LAUNCH CONSOLE','A shorter path to your everyday.'],productivity:['07','THE FOCUS COCKPIT','Give one thing your full attention.'],notes:['08','THE JOURNAL','Leave a little of your mind on the page.'],settings:['09','THE CONTROL ROOM','Make this space feel like you.']};
-  Object.keys(scenes).forEach(function(page){
-    var hero=document.querySelector('#'+page+'View .page-hero');if(!hero)return;
-    hero.dataset.pageHero=page;
-    var caption=document.createElement('div');caption.className='scene-caption';caption.setAttribute('aria-hidden','true');
-    caption.innerHTML='<span>'+scenes[page][0]+' / '+scenes[page][1]+'</span><span>'+scenes[page][2]+'</span>';hero.appendChild(caption);
-  });
-  function iconBefore(selector,name){document.querySelectorAll(selector).forEach(function(el){if(!el.querySelector('svg'))el.insertAdjacentHTML('afterbegin',OS.iconSvg(name));});}
-  iconBefore('#personalView .page-section:nth-child(1) h2','target');
-  iconBefore('#personalView .page-section:nth-child(2) h2','repeat');
-  iconBefore('#personalView .page-section:nth-child(3) h2','heart');
-  iconBefore('#workView .page-section:nth-child(1) h2,#projectFormHeading','layers');
-  iconBefore('#workView .page-section:nth-child(2) h2','calendaricon');
-  iconBefore('#personalView .mini-form button,#notesNewForm button,#projectSave,#taskForm button,#countdownForm button','plus');
-  iconBefore('#focusReset','repeat');iconBefore('#focusMode','timer');
-  iconBefore('#settingsExport','shield');iconBefore('#settingsImport','repeat');
-  iconBefore('#exploreSearchForm button','search');
-  document.querySelectorAll('.explore-category-icon').forEach(function(el,i){el.innerHTML=OS.iconSvg(['gamepad','film','timer'][i]);});
-  var projectNav=document.querySelector('.space-btn[data-page-button="projects"]');
-  if(projectNav){projectNav.querySelector('svg').outerHTML=OS.iconSvg('layers');projectNav.querySelector('small').textContent='Ideas into action';}
-  var settings=document.querySelector('.settings-card');
-  if(settings){
-    var fields=Array.from(settings.querySelectorAll(':scope > .form-field'));
-    [['Look & atmosphere','sun',fields.slice(0,2)],['Your everyday','grid',fields.slice(2,7)],['Movement & attention','compass',fields.slice(7)]].forEach(function(group,index){
-      var section=document.createElement('section');section.className='settings-group';section.setAttribute('aria-labelledby','settingsGroup'+index);
-      section.innerHTML='<h2 id="settingsGroup'+index+'">'+OS.iconSvg(group[1])+group[0]+'</h2>';
-      group[2].forEach(function(field){section.appendChild(field);});settings.insertBefore(section,settings.querySelector('.settings-data'));
-    });
-    settings.querySelector('.settings-data h4').innerHTML=OS.iconSvg('shield')+'Your data, on your terms';
-  }
-  function navigation(){document.querySelectorAll('[data-page-button]').forEach(function(button){
-    var active=button.dataset.pageButton===document.body.dataset.page;
-    button.classList.toggle('active',active);
-    if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
-  });}
-  navigation();document.addEventListener('onespace:page-changed',navigation);
-  var heroes=document.querySelectorAll('.page-hero,.scene-hero');
-  if('IntersectionObserver' in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){entry.target.classList.toggle('scene-offscreen',!entry.isIntersecting);});});heroes.forEach(function(hero){observer.observe(hero);});}
-  document.addEventListener('visibilitychange',function(){document.body.classList.toggle('scene-document-hidden',document.hidden);});
+/* One controller owns page entry, decorative depth, ambient motion and reveals. */
+(function(){
+ 'use strict';var OS=window.OneSpace,callbacks=new WeakMap(),bound=new WeakSet(),timers=new WeakMap();
+ function reduced(){return OS.prefersReducedMotion();}
+ function intensity(el){var view=el.closest('[data-page-when]');return view && view.dataset.sceneIntensity || 'full';}
+ function resetPointer(el){el.style.setProperty('--scene-x','0px');el.style.setProperty('--scene-y','0px');}
+ function bind(el){if(bound.has(el))return;bound.add(el);el.addEventListener('pointermove',function(e){if(e.pointerType!=='mouse'||reduced()||intensity(el)!=='full'||document.hidden||!matchMedia('(pointer: fine)').matches)return;var r=el.getBoundingClientRect(),x=Math.max(-1,Math.min(1,(e.clientX-r.left)/r.width*2-1)),y=Math.max(-1,Math.min(1,(e.clientY-r.top)/r.height*2-1));el.style.setProperty('--scene-x',(x*10).toFixed(2)+'px');el.style.setProperty('--scene-y',(y*6).toFixed(2)+'px');},{passive:true});el.addEventListener('pointerleave',function(){resetPointer(el);});}
+ function revealNow(el){if(!el.classList.contains('is-visible')&&!reduced())el.classList.add('is-revealing');el.classList.add('is-visible');var callback=callbacks.get(el);if(callback){callbacks.delete(el);callback();}if(observer)observer.unobserve(el);}
+ var observer='IntersectionObserver' in window?new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)revealNow(entry.target);});},{threshold:.04}):null;
+ function observe(el,callback){if(callback)callbacks.set(el,callback);if(reduced()||!observer)revealNow(el);else observer.observe(el);}
+ function reveal(scope){(scope||document).querySelectorAll('[data-reveal]:not(.is-visible),.reveal-ready:not(.is-visible)').forEach(function(el,index){el.style.setProperty('--scene-delay',Math.min(index,4)*45+'ms');observe(el);});}
+ function enter(view){if(!view||view.hidden)return;clearTimeout(timers.get(view));view.classList.remove('scene-entry');if(!reduced()){void view.offsetWidth;view.classList.add('scene-entry');timers.set(view,setTimeout(function(){view.classList.remove('scene-entry');},600));}reveal(view);}
+ function refresh(){var still=reduced();document.body.classList.toggle('scene-still',still);document.body.classList.toggle('scene-document-hidden',document.hidden);document.querySelectorAll('.page-hero,.scene-hero,#gvSpotlight,#mvSpotlight').forEach(function(hero){bind(hero);if(still||intensity(hero)!=='full'||document.hidden)resetPointer(hero);});if(still){document.querySelectorAll('[data-reveal],.reveal-ready').forEach(revealNow);document.querySelectorAll('.scene-entry').forEach(function(el){el.classList.remove('scene-entry');});}else reveal(document);}
+ OS.scene={bind:bind,observe:observe,unobserve:function(el){if(observer)observer.unobserve(el);callbacks.delete(el);},reveal:reveal,enter:enter,refresh:refresh,resetPointer:resetPointer};
+ // Drawn compositions stay decorative. The existing art slot can be swapped independently.
+ var scenes={
+ home:{number:'01',name:'THE OBSERVATORY',caption:'A little perspective changes everything.',color:'#9b9ce7',drawing:'<circle cx="875" cy="230" r="155"/><ellipse cx="875" cy="230" rx="215" ry="68" transform="rotate(-28 875 230)"/><circle cx="875" cy="230" r="95"/><path d="M675 420h400l65 75H580Z" fill="#1c2745"/><path d="m890 245 120-90 20 28-120 90Z" fill="#90a9d3"/><path d="m908 270-65 152m65-152 70 152m-100-60h72"/><circle cx="785" cy="123" r="5" fill="#fff"/>'},
+ work:{number:'02',name:'THE DRAFTING ROOM',caption:'One meaningful step at a time.',color:'#70c2c2',drawing:'<path d="m610 330 280-170 280 190-295 160Z" fill="#122e3a"/><path d="m660 330 230-135 225 150-240 130Z"/><path d="m730 300 130-75 135 90-135 75Zm0 0v75l130 77v-62m135-75v75l-135 62"/><path d="M860 225v165m-215 50 220-125m-70 154 200-115"/><path d="m658 470 25 60m406-99-25 99" stroke-width="8"/><circle cx="1035" cy="125" r="42"/><path d="M993 125h84m-42-42v84"/>'},
+ personal:{number:'03',name:'THE RITUAL GARDEN',caption:'Small rituals. A richer everyday.',color:'#d5ac8e',drawing:'<path d="M705 480V190a165 165 0 0 1 330 0v290Z" fill="#263b36"/><path d="M735 480V190a135 135 0 0 1 270 0v290M765 480V190a105 105 0 0 1 210 0v290"/><circle cx="870" cy="182" r="60" fill="#d7af7633"/><path d="M650 460v-170m0 90q-90-80-40-95 65 20 40 95m0-35q70-90 95-60-20 65-95 60"/><path d="M605 460h90l-15 75h-60Z" fill="#835f48"/><ellipse cx="878" cy="467" rx="120" ry="35" fill="#63776a"/><ellipse cx="878" cy="445" rx="85" ry="25" fill="#94a18b"/>'},
+ explore:{number:'04',name:'THE ATLAS WINDOW',caption:'Let curiosity lead.',color:'#80ccca',drawing:'<circle cx="890" cy="260" r="180" fill="#143c47"/><ellipse cx="890" cy="260" rx="90" ry="180"/><path d="M710 260h360m-340-80h320m-320 160h320M890 80v360"/><path d="m805 105 55 30-30 55 40 55-55 60-35-40-30-70Zm110 95 65-55 60 90-40 40-30 90-35-40-10-65-45-20Z" fill="#4b8a79"/><path d="M670 385Q760 30 1080 225" stroke-dasharray="6 9"/><circle cx="1080" cy="225" r="8" fill="#e2dcb3"/><path d="m620 465 180-45 135 48 180-44v90l-180 25-135-42-180 48Z" fill="#33585b"/>'},
+ games:{number:'05',name:'THE NEXT WORLD',caption:'Every adventure leaves a mark.',color:'#bc9dea',drawing:'<path d="m830 70 200 115v230L830 530 630 415V185Z" fill="#241c48"/><path d="m830 105 170 98v194L830 495l-170-98V203Z" stroke-width="4"/><path d="m830 155 127 74v146l-127 74-127-74V229Z"/><path d="m565 460 265-80 320 90-315 110Z" fill="#383055"/><path d="M785 255h90q30 0 42 30l23 65q6 28-20 20l-38-30h-104l-38 30q-26 8-20-20l23-65q12-30 42-30Z" fill="#7e6dac"/><path d="M771 278v34m-17-17h34m77-7h2m25 20h2" stroke-width="5"/>'},
+ movies:{number:'06',name:'THE PRIVATE THEATER',caption:'Tonight belongs to a good story.',color:'#e0b284',drawing:'<path d="M620 70h540v370H620Z" fill="#39253b"/><rect x="665" y="110" width="450" height="240" rx="8" fill="#ddc9aa33"/><path d="M620 70q100 150 20 355m520-355q-100 150-20 355" stroke-width="40" stroke="#743c4c"/><path d="m865 182 90 48-90 48Z" fill="#ead5b1"/><path d="M680 525v-65q0-30 40-30t40 30v65m45 0v-65q0-30 40-30t40 30v65m45 0v-65q0-30 40-30t40 30v65m45 0v-65q0-30 40-30t40 30v65" stroke-width="18" stroke="#966556"/>'},
+ shortcuts:{number:'07',name:'THE LAUNCH WALL',caption:'A shorter path to your everyday.',color:'#9ba8e6',drawing:Array.from({length:9},function(_,i){var x=670+(i%3)*145,y=100+Math.floor(i/3)*145;return '<rect x="'+x+'" y="'+y+'" width="110" height="110" rx="22" fill="#384565"/><path d="M'+(x+30)+' '+(y+75)+'l50-40m-28 0h28v28" stroke-width="4"/>';}).join('')},
+ productivity:{number:'08',name:'THE FOCUS STUDIO',caption:'Give one thing your full attention.',color:'#acd0a0',drawing:'<circle cx="885" cy="245" r="155" fill="#233a35"/><circle cx="885" cy="245" r="128" stroke-dasharray="3 16" stroke-width="8"/><path d="M885 140v105l72 45" stroke-width="8"/><circle cx="885" cy="245" r="10" fill="#dbe6c4"/><path d="m635 470 250-55 250 55-250 75Z" fill="#527363"/><path d="M702 390v-120l60-80m-60 80 70 30m-35-140 40 45-80 38Z" fill="#adbb83"/>'},
+ notes:{number:'09',name:'THE CAPTURE DESK',caption:'Leave a little of your mind on the page.',color:'#d1a2bd',drawing:'<path d="m625 440 285-130 260 170-300 75Z" fill="#49314c"/><path d="m705 385 170-75 148 105-183 68Z" fill="#b0a1ab"/><path d="m730 370 170-75 148 105-183 68Z" fill="#ddd0ce"/><path d="m775 372 111-50m-83 73 111-50m-83 73 111-50" stroke="#7d6279"/><path d="m890 445 126-190 13 10-121 193Z" fill="#c1a66e"/><path d="M675 373V180l135-45m-170 43h75l-15 50h-70Z" fill="#72576e"/>'},
+ settings:{number:'10',name:'THE CONTROL ROOM',caption:'Make this space feel like you.',color:'#91bedb',drawing:'<rect x="630" y="90" width="500" height="360" rx="26" fill="#1c3248"/><path d="M630 175h500M800 175v275"/><circle cx="695" cy="135" r="10" fill="#abd9b6"/><circle cx="735" cy="135" r="10" fill="#e0bb8a"/><path d="M670 245h95m-95 70h95m-95 70h95" stroke-width="8"/><circle cx="700" cy="245" r="16" fill="#9cb9d7"/><circle cx="735" cy="315" r="16" fill="#9cb9d7"/><circle cx="690" cy="385" r="16" fill="#9cb9d7"/><circle cx="970" cy="310" r="100"/><circle cx="970" cy="310" r="65"/><path d="m970 310 42-70" stroke-width="8"/><path d="M730 490h340" stroke-width="14"/>'}
+ };
+ Object.keys(scenes).forEach(function(page){var s=scenes[page],hero=document.querySelector('#'+page+'View .page-hero,#'+page+'View .scene-hero');if(!hero)return;hero.dataset.pageHero=page;hero.classList.add('living-hero');hero.style.setProperty('--scene-color',s.color);var art=document.createElement('div');art.className='scene-drawing';art.setAttribute('aria-hidden','true');art.dataset.sceneDecorative='';art.innerHTML='<svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="light-'+page+'"><stop stop-color="'+s.color+'" stop-opacity=".4"/><stop offset="1" stop-color="'+s.color+'" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="600" fill="#0c1827"/><ellipse cx="900" cy="270" rx="470" ry="380" fill="url(#light-'+page+')"/><g fill="none" stroke="'+s.color+'" stroke-opacity=".65" stroke-width="1.6">'+s.drawing+'</g><g class="scene-motes" fill="'+s.color+'">'+Array.from({length:22},function(_,i){return '<circle cx="'+(500+(i*83)%670)+'" cy="'+(40+(i*67)%510)+'" r="'+(1+i%3*.5)+'" opacity="'+(.18+i%4*.12)+'"/>';}).join('')+'</g></svg>';hero.prepend(art);var glow=document.createElement('div');glow.className='scene-ambient';glow.setAttribute('aria-hidden','true');hero.appendChild(glow);var scrim=document.createElement('div');scrim.className='scene-scrim';scrim.setAttribute('aria-hidden','true');hero.appendChild(scrim);var caption=hero.querySelector('.scene-caption');if(!caption){caption=document.createElement('div');caption.className='scene-caption';hero.appendChild(caption);}caption.innerHTML='<span>'+s.number+' / '+s.name+'</span><span>'+s.caption+'</span>';});
+ // Explicit icon hooks remain stable when sections are inserted or rearranged.
+ document.querySelectorAll('[data-heading-icon]').forEach(function(el){if(!el.querySelector('svg'))el.insertAdjacentHTML('afterbegin',OS.iconSvg(el.dataset.headingIcon));});
+ var settings=document.querySelector('.settings-card');if(settings){[['appearance','Look & atmosphere','sun'],['everyday','Your everyday','grid'],['motion','Movement & attention','compass']].forEach(function(group){var section=document.createElement('section');section.className='settings-group';section.setAttribute('aria-labelledby','settings-'+group[0]);section.innerHTML='<h2 id="settings-'+group[0]+'">'+OS.iconSvg(group[2])+group[1]+'</h2>';settings.querySelectorAll(':scope > [data-settings-group="'+group[0]+'"]').forEach(function(field){section.appendChild(field);});settings.insertBefore(section,settings.querySelector('#removedShortcutsSettings'));});settings.querySelector('.settings-data h4').innerHTML=OS.iconSvg('shield')+'Your data, on your terms';}
+ document.addEventListener('onespace:page-changed',function(e){queueMicrotask(function(){refresh();enter(document.getElementById(e.detail.page+'View'));});});document.addEventListener('onespace:motion-changed',refresh);document.addEventListener('visibilitychange',refresh);
+ var motion=matchMedia('(prefers-reduced-motion: reduce)');motion.addEventListener('change',function(){refresh();document.dispatchEvent(new CustomEvent('onespace:motion-changed'));});
+ if('IntersectionObserver' in window){var visibility=new IntersectionObserver(function(entries){entries.forEach(function(e){e.target.classList.toggle('scene-offscreen',!e.isIntersecting);});});document.querySelectorAll('.living-hero').forEach(function(hero){visibility.observe(hero);});}
+ document.addEventListener('animationend',function(e){if(e.animationName==='sceneReveal')e.target.classList.remove('is-revealing');});refresh();enter(document.getElementById(document.body.dataset.page+'View'));
 })();
