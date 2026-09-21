@@ -5,13 +5,13 @@ A local-first dashboard with development tracking, Personal lists, destination d
 ## Run
 
 ```sh
-node _static-server.js
+node server/_static-server.js
 ```
 
 Open http://localhost:8973. Keep the same hostname and port: browser storage is isolated by origin. If a sandboxed Windows Node installation reports an EPERM during path resolution, use:
 
 ```sh
-node --preserve-symlinks --preserve-symlinks-main _static-server.js
+node --preserve-symlinks --preserve-symlinks-main server/_static-server.js
 ```
 
 ## Work
@@ -32,7 +32,7 @@ Custom shortcuts retain a short description and explicit Work, Personal or Explo
 
 Explore includes 12 editorial destinations with local SVG illustrations and a deterministic illustrated fallback. It matches every selected preference group and sorts by match score, then stable destination ID. Departure region only adds a ranking preference; location is never detected. Relative budgets exclude flights. Save destinations and trip notes to a shortlist. Surprise me samples only the current matching results.
 
-These are maintained travel ideas, not current travel advice, quotes or availability. Illustrations are conceptual, not destination photographs. Edit `explore-data.js` and `assets/destinations/` to maintain the catalog.
+These are maintained travel ideas, not current travel advice, quotes or availability. Illustrations are conceptual, not destination photographs. Edit `explore/explore-data.js` and `assets/destinations/` to maintain the catalog.
 
 Games retains existing trackers, sessions, journal, themes and weekly resets. Resources are grouped into official, news/updates, builds/guides, community and platform links. Direct official links are included where curated; other resources are clearly labeled title-specific searches. Edit resources from a tracked game's details. Story and weekly template sets are separate, and completion is initialized only when adding a tracker or starting a new ISO week. Game deletion cleans up tasks and sessions atomically while retaining journal text without a game association. Custom genres are searchable and filterable in My Games.
 
@@ -40,7 +40,7 @@ Movies & Series keeps the `movies` route and existing storage keys. The catalog 
 
 ## Data and backup contracts
 
-`storage-utils.js` is the validation boundary. It owns known keys, date/URL checks, complete backup validation, transactional writes, rollback and reset. New Work multi-key operations validate parent references and disallow incomplete tasks under closed items before any write. Failed writes leave prior records intact when the browser permits rollback. If rollback itself fails, export data before closing the page; the transaction error retains recovery values.
+`shared/storage-utils.js` is the validation boundary. It owns known keys, date/URL checks, complete backup validation, transactional writes, rollback and reset. New Work multi-key operations validate parent references and disallow incomplete tasks under closed items before any write. Failed writes leave prior records intact when the browser permits rollback. If rollback itself fails, export data before closing the page; the transaction error retains recovery values.
 
 New exports are complete **version 3** backups. Complete version-2 backups remain accepted: the original key set must be present and the five new keys default to null. Partial or malformed backups are rejected. Restore replaces known OneSpace values, while unrelated localStorage keys remain untouched. Reset removes the known keys; application startup may recreate default preferences and the original seed Games library. Existing version-1 shortcut import behavior is retained by the shell.
 
@@ -51,7 +51,7 @@ New exports are complete **version 3** backups. Complete version-2 backups remai
 | Work tasks | `orbit-work-tasks` | ID and item ID; title ≤160, details ≤5000, priority, due date, estimate 0–10000 hours, boolean done, ISO created/updated and optional completed timestamps. |
 | Work history | `orbit-work-history` | Generated event ID, retained project/item IDs and name, allowed action, ISO event time, item snapshot and task snapshots. Deleting current work does not erase history. |
 | Personal | `orbit-personal-goals`, `orbit-personal-routines`, `orbit-personal-habits` | ID, text ≤80, boolean done, optional daily/weekly/monthly frequency and ISO timestamps. Legacy arrays are read without destructive migration. |
-| Destinations | `explore-data.js` | Stable editorial ID, name/country ≤100, category/budget/season/duration/style/climate/region enums, tags, summary ≤1000, details ≤5000, local image path and fallback seed, HTTP(S) resource links. Static catalog records are code-versioned, not mutable user records. |
+| Destinations | `explore/explore-data.js` | Stable editorial ID, name/country ≤100, category/budget/season/duration/style/climate/region enums, tags, summary ≤1000, details ≤5000, local image path and fallback seed, HTTP(S) resource links. Static catalog records are code-versioned, not mutable user records. |
 | Destination preferences | `orbit-explore-preferences` | Enumerated string arrays for categories, seasons, duration, budget, pace, climate, interests and departure. The current UI chooses one value per group. |
 | Shortlist | `orbit-explore-saved` | Generated ID, destination ID, ISO created time, trip notes ≤2000. |
 | Shortcut additions | `orbit-custom-links` | Existing IDs and URLs; description ≤240 and explicit work/personal/explore space. Legacy ownership derives from category. |
@@ -64,7 +64,7 @@ New mutable Work IDs use the shell ID generator; Work IDs and foreign IDs are re
 
 The router remains `goToPage()` in `index.html`, with Home, Work, Projects, Personal, Explore, Games, Movies, Shortcuts, Productivity, Notes and Settings routes. It emits `onespace:page-changed` with `detail.page`. Saves emit `onespace:data-changed` with `detail.key`; atomic Work commits emit for each affected key after success. Motion remains controlled by `prefersReducedMotion()` and the existing settings override.
 
-Load order: storage/catalog/tooltip/shortcut/Personal helpers → inline shell and router → visual helpers → shared domain dialogs and shortcut surfaces → Projects → Work → Explore data and UI → game resources/data/UI → movie data/UI → cinematic refinements. `domain-ui.js` uses the shell's modal stack, focus trap, Escape handling and inert background. New forms and cards live in modules, with responsive styles in `tracker.css`; the inline shell is smaller than before this extension.
+Load order: storage/catalog/tooltip/shortcut/Personal helpers → inline shell and router → visual helpers → shared domain dialogs and shortcut surfaces → Projects → Work → Explore data and UI → game resources/data/UI → movie data/UI → cinematic refinements. `shared/domain-ui.js` uses the shell's modal stack, focus trap, Escape handling and inert background. New forms and cards live in modules, with responsive styles in `work/tracker.css`; the inline shell is smaller than before this extension.
 
 ## Verify
 

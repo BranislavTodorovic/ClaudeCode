@@ -46,7 +46,7 @@
         return a.every(function (x) {
           if (!object(x) || typeof x.id !== "string" || !x.id || /[<>"']/.test(x.id)) return false;
           if (key === "orbit-notes-list") return typeof x.body === "string" && optionalString(x.title);
-          if (key === 'orbit-trip-board') return (typeof module === 'object' && module.exports ? require('./trip-board') : window.OneSpaceTrips).valid(x);
+          if (key === 'orbit-trip-board') return (typeof module === 'object' && module.exports ? require('../explore/trip-board') : window.OneSpaceTrips).valid(x);
           if (key === 'orbit-work-items') return workItem(x);
           if (key === 'orbit-work-tasks') return workTask(x);
           if (key === 'orbit-work-history') return id(x.itemId) && id(x.projectId) && text(x.name,160,true) && ['created','updated','closed','reopened','deleted','task-created','task-updated','task-deleted','task-completed'].includes(x.action) && !!x.at && date(x.at,true) && (x.snapshot == null || (object(x.snapshot) && workItem(x.snapshot))) && (x.tasks == null || (Array.isArray(x.tasks) && x.tasks.every(workTask)));

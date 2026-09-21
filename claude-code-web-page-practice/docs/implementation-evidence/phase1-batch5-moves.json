@@ -1,0 +1,34 @@
+[
+  {
+    "from": "explore.js",
+    "to": "explore/explore.js"
+  },
+  {
+    "from": "explore-data.js",
+    "to": "explore/explore-data.js"
+  },
+  {
+    "from": "explore-global.js",
+    "to": "explore/explore-global.js"
+  },
+  {
+    "from": "discovery-integration.js",
+    "to": "explore/discovery-integration.js"
+  },
+  {
+    "from": "discovery-ui.js",
+    "to": "explore/discovery-ui.js"
+  },
+  {
+    "from": "local-discovery.js",
+    "to": "explore/local-discovery.js"
+  },
+  {
+    "from": "trip-board.js",
+    "to": "explore/trip-board.js"
+  },
+  {
+    "from": "discovery.css",
+    "to": "explore/discovery.css"
+  }
+]

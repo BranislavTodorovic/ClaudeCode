@@ -1,0 +1,10 @@
+config/secrets/*
+!config/secrets/.gitkeep
+.env
+.env.*
+*.local.json
+node_modules/
+# Local implementation evidence may contain private exported user records.
+docs/implementation-evidence/live-origin-*.json
+work/implementation-support/*.b64
+work/implementation-support/

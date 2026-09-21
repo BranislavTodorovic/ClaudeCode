@@ -1,0 +1,125 @@
+{
+  "at": "2026-09-21T09:30:30.607Z",
+  "reports": [
+    {
+      "ref": "games.css",
+      "status": 200
+    },
+    {
+      "ref": "games-cinematic.css",
+      "status": 200
+    },
+    {
+      "ref": "pages.css",
+      "status": 200
+    },
+    {
+      "ref": "movies.css",
+      "status": 200
+    },
+    {
+      "ref": "movies-cinematic.css",
+      "status": 200
+    },
+    {
+      "ref": "cinematic-refinement.css",
+      "status": 200
+    },
+    {
+      "ref": "tracker.css",
+      "status": 200
+    },
+    {
+      "ref": "discovery.css",
+      "status": 200
+    },
+    {
+      "ref": "trip-board.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/storage-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/catalog-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/tooltip-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/shortcut-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "personal-controller.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/visual-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/domain-ui.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/shortcut-surface.js",
+      "status": 200
+    },
+    {
+      "ref": "projects.js",
+      "status": 200
+    },
+    {
+      "ref": "work-tracker.js",
+      "status": 200
+    },
+    {
+      "ref": "explore-data.js",
+      "status": 200
+    },
+    {
+      "ref": "local-discovery.js",
+      "status": 200
+    },
+    {
+      "ref": "discovery-ui.js",
+      "status": 200
+    },
+    {
+      "ref": "explore-global.js",
+      "status": 200
+    },
+    {
+      "ref": "game-resources.js",
+      "status": 200
+    },
+    {
+      "ref": "games-data.js",
+      "status": 200
+    },
+    {
+      "ref": "games.js",
+      "status": 200
+    },
+    {
+      "ref": "movies-data.js",
+      "status": 200
+    },
+    {
+      "ref": "movies.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/cinematic-scenes.js",
+      "status": 200
+    },
+    {
+      "ref": "discovery-integration.js",
+      "status": 200
+    }
+  ]
+}

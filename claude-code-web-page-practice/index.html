@@ -100,14 +100,14 @@ body.force-full-motion { scroll-behavior:smooth; }
 @keyframes ambientDrift{0%{transform:translate3d(-1%,0,0) scale(.98)}100%{transform:translate3d(5%,4%,0) scale(1.06)}}@keyframes heroIn{from{opacity:0;transform:translateY(14px) scale(.99)}to{opacity:1;transform:none}}@keyframes identityIn{from{opacity:0;transform:scale(.9) translateY(6px)}to{opacity:1;transform:none}}@keyframes contentIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes orbitTurn{to{transform:rotate(360deg)}}@keyframes slowSpin{to{transform:rotate(360deg)}}@keyframes glowPulse{0%,100%{opacity:.48;transform:scale(.96)}50%{opacity:.95;transform:scale(1.04)}}@keyframes coreFloat{0%,100%{transform:translateY(0);filter:drop-shadow(0 0 17px rgba(180,170,255,.86))}50%{transform:translateY(-3px);filter:drop-shadow(0 0 27px rgba(180,170,255,1))}}@keyframes twinkle{0%,100%{opacity:.16}50%{opacity:.9}}@keyframes revealIn{from{opacity:0;transform:translateY(12px);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}@keyframes focusButtonIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}@keyframes taskUpdate{0%{opacity:.25;transform:translateY(5px)}100%{opacity:1;transform:none}}@keyframes spaceSwap{from{opacity:.35;transform:translateY(7px)}to{opacity:1;transform:none}}
 
 </style>
-<link rel="stylesheet" href="games.css">
-<link rel="stylesheet" href="games-cinematic.css">
-<link rel="stylesheet" href="pages.css">
-<link rel="stylesheet" href="movies.css">
-<link rel="stylesheet" href="movies-cinematic.css">
-<link rel="stylesheet" href="cinematic-refinement.css">
-<link rel="stylesheet" href="tracker.css">
-<link rel="stylesheet" href="discovery.css">
+<link rel="stylesheet" href="games/games.css">
+<link rel="stylesheet" href="games/games-cinematic.css">
+<link rel="stylesheet" href="styles/pages.css">
+<link rel="stylesheet" href="movies/movies.css">
+<link rel="stylesheet" href="movies/movies-cinematic.css">
+<link rel="stylesheet" href="styles/cinematic-refinement.css">
+<link rel="stylesheet" href="work/tracker.css">
+<link rel="stylesheet" href="explore/discovery.css">
 </head>
 <body class="has-sidebar" data-page="home">
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
@@ -870,12 +870,12 @@ body.force-full-motion { scroll-behavior:smooth; }
 
   <div id="toast" role="status" aria-live="polite"></div>
 
-<script src="trip-board.js"></script>
-<script src="storage-utils.js"></script>
-<script src="catalog-utils.js"></script>
-<script src="tooltip-utils.js"></script>
-<script src="shortcut-utils.js"></script>
-<script src="personal-controller.js"></script>
+<script src="explore/trip-board.js"></script>
+<script src="shared/storage-utils.js"></script>
+<script src="shared/catalog-utils.js"></script>
+<script src="shared/tooltip-utils.js"></script>
+<script src="shared/shortcut-utils.js"></script>
+<script src="personal/personal-controller.js"></script>
 <script>
 (function () {
   "use strict";
@@ -3085,21 +3085,21 @@ body.force-full-motion { scroll-behavior:smooth; }
   };
 })();
 </script>
-<script src="visual-utils.js"></script>
-<script src="domain-ui.js"></script>
-<script src="shortcut-surface.js"></script>
-<script src="projects.js"></script>
-<script src="work-tracker.js"></script>
-<script src="explore-data.js"></script>
-<script src="local-discovery.js"></script>
-<script src="discovery-ui.js"></script>
-<script src="explore-global.js"></script>
-<script src="game-resources.js"></script>
-<script src="games-data.js"></script>
-<script src="games.js"></script>
-<script src="movies-data.js"></script>
-<script src="movies.js"></script>
-<script src="cinematic-scenes.js"></script>
-<script src="discovery-integration.js"></script>
+<script src="shared/visual-utils.js"></script>
+<script src="shared/domain-ui.js"></script>
+<script src="shared/shortcut-surface.js"></script>
+<script src="work/projects.js"></script>
+<script src="work/work-tracker.js"></script>
+<script src="explore/explore-data.js"></script>
+<script src="explore/local-discovery.js"></script>
+<script src="explore/discovery-ui.js"></script>
+<script src="explore/explore-global.js"></script>
+<script src="games/game-resources.js"></script>
+<script src="games/games-data.js"></script>
+<script src="games/games.js"></script>
+<script src="movies/movies-data.js"></script>
+<script src="movies/movies.js"></script>
+<script src="shared/cinematic-scenes.js"></script>
+<script src="explore/discovery-integration.js"></script>
 </body>
 </html>

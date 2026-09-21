@@ -57,6 +57,14 @@ Phases 4–11 are independent of one another and may be reordered or parallelise
 
 ---
 
+## Execution clarifications confirmed by the user — September 21, 2026
+
+1. Preserve the current `projects.js` before `work-tracker.js` script order during Phase 1.
+2. During Phase 1 batch 1, use the temporary `../trip-board` require; change it to `../explore/trip-board` when that file moves in batch 5. References elsewhere to the final require path describe the completed regrouping.
+3. Build 10 distinct page scenes. The retained Projects route is an alias and displays the Work scene. References to 11 routes include that alias.
+
+These clarifications resolve the conflicts without removing planned functionality. Execute phases 4–11 in their listed numeric order, as requested by the user.
+
 ## Verified baseline
 
 Executed, not assumed:
@@ -141,9 +149,9 @@ Carried from old Part B Phase 1 (Baseline and Contracts).
 | 0.6 Treat `storage-utils.js` as the only persistence validation boundary | [DONE] — holds today; must not regress |
 | 0.7 Schemas for projects, work items, tasks, history, destinations, preferences, saved destinations, Personal records, game resources, game default tasks, movie/series metadata | [DONE] — all present and validated |
 | 0.8 Generated IDs, timestamps, status enums, optional fields, maximum lengths in every schema | [DONE] |
-| 0.9–0.10 Migration behaviour and safe defaults for existing records and v2 backups | [DONE] — v2 accepted, v3 current |
+| 0.9–0.10 Migration behaviour and safe defaults for existing records and v2 backups | [DONE] — v2 and v3 accepted, v4 current |
 | 0.11 Capture "before" screenshots of Work, Games, Movies and Settings at 1440 / 1024 / 760 / 390 px | [NEW] — comparison set for the redesign |
-| 0.12 Export a v3 backup from the live origin before any other phase runs | [NEW] — no later phase can then lose real data |
+| 0.12 Export a v4 backup from the live origin before any other phase runs | [NEW] — no later phase can then lose real data |
 
 ---
 
@@ -234,7 +242,7 @@ Each one silently breaks the app or the test suite the moment files move.
 - all six batch-1 files → before the inline shell (it reads `OneSpaceStorage`, `OneSpaceShortcuts`, `makePersonalController`)
 - the inline shell (defines `window.OneSpace`) → before **every** batch-2 file
 - `domain-ui.js` → before `projects.js`, `games.js`, `discovery-ui.js`, `explore-global.js`
-- `work-tracker.js` → before `projects.js`; `explore-data.js` → before `discovery-ui.js` and `explore-global.js`; `local-discovery.js` → before `discovery-ui.js`; `game-resources.js` → before `games-data.js`
+- `projects.js` → before `work-tracker.js` (user-confirmed: preserve the existing order); `explore-data.js` → before `discovery-ui.js` and `explore-global.js`; `local-discovery.js` → before `discovery-ui.js`; `game-resources.js` → before `games-data.js`
 - `games.js` and `movies.js` → before `discovery-integration.js`
 
 Note that `work-tracker.js` and `explore.js` **auto-invoke `api.mount(root)` at load** in the browser branch of their UMD wrapper — loading either twice mounts a second instance.
@@ -304,7 +312,7 @@ Asserts by reading files, not by convention:
 
 Capture a green baseline first, then move in batches, updating references and re-running tests after each:
 
-1. `shared/` (highest fan-in — first, so later batches update against final paths), including the `storage-utils` → `trip-board` require
+1. `shared/` (highest fan-in — first, so later batches update against final paths), including the `storage-utils` → `trip-board` require: temporarily `../trip-board`, then `../explore/trip-board` in batch 5 (user-confirmed): temporarily `../trip-board`, then `../explore/trip-board` in batch 5 (user-confirmed)
 2. `styles/` + the five `url()` rewrites
 3. `games/`
 4. `movies/`
@@ -322,7 +330,7 @@ After every batch: `node --test tests/` passes, and the app loads at `http://loc
 - All public browser globals keep their names: `OneSpace` (inline), `OneSpaceStorage`, `OneSpaceCatalog`, `OneSpaceShortcuts`, `OneSpaceShortcutUI`, `OneSpaceUI`, `OneSpaceVisual`, `makePersonalController`, `OneSpaceWork`, `OneSpaceTrips`, `DESTINATIONS`, `OneSpaceLocalDiscovery`, `OneSpaceDiscovery`, `OneSpaceExplore`, `OneSpaceGameResources`, `DEFAULT_GAMES` / `SUGGESTION_CATALOG` / `DIABLO_WEEKLY_TEMPLATE` / `GAMES_*`, `OneSpaceGameDiscovery` + `OneSpace.playGamesEntryAnimation`, `SEED_MOVIES` / `MOVIE_*`, `OneSpaceTitleDiscovery`.
 - `work/projects.js`, `shared/tooltip-utils.js`, `shared/cinematic-scenes.js`, `explore/explore-global.js` and `explore/discovery-integration.js` export nothing — pure side-effect modules that must keep their exact load position.
 - The UMD dual-export pattern stays in every file that has it.
-- Backup format version 3 (and v2 acceptance) and all existing fixtures remain valid.
+- Backup format version 4 (and v2/v3 acceptance) and all existing fixtures remain valid.
 - **No behaviour change of any kind in Phase 1.** If a bug is found mid-move, note it and fix it in a later phase.
 
 **Gate:** 31/31 green; zero 404s; `git log --follow games/games.js` shows history across the move; `curl -I http://localhost:8973/config/secrets/probe.js` returns 404 (the check that matters, since `.js` is in the MIME allowlist).
@@ -481,7 +489,7 @@ Three uncoordinated entry-animation systems run today: `.is-page-entering` (`ind
 
 ## 5.2 Per-tab scenes [NEW]
 
-Each of the 11 routes gets a layered scene whose subject matches its domain, following the visual directions already agreed: **Home** = observatory / personal command deck; **Work** = drafting room / command centre; **Personal** = calm ritual space; **Explore** = world atlas / travel window; **Games** = game-world spotlight; **Movies & Series** = theater / streaming marquee; **Shortcuts** = navigable launch wall; **Productivity** = focused timer studio; **Notes** = quiet capture desk; **Settings** = control room.
+Each of the 10 distinct pages gets a layered scene; the 11th route, Projects, redirects to Work and shares its scene (user-confirmed). Each page has a scene whose subject matches its domain, following the visual directions already agreed: **Home** = observatory / personal command deck; **Work** = drafting room / command centre; **Personal** = calm ritual space; **Explore** = world atlas / travel window; **Games** = game-world spotlight; **Movies & Series** = theater / streaming marquee; **Shortcuts** = navigable launch wall; **Productivity** = focused timer studio; **Notes** = quiet capture desk; **Settings** = control room.
 
 Every scene composes: a drawn SVG backdrop; a depth layer with pointer parallax; a slow ambient layer (drifting light, motes, gradient shift); and a shade scrim guaranteeing text contrast. The nine existing `assets/page-art/*` stills are retained as an optional art slot behind the drawn layers, so a real render can replace a drawn backdrop later without code changes.
 
@@ -966,3 +974,7 @@ A sequenced execution checklist — the working document, distinct from the plan
 - `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
 - `VERIFICATION.md` — a fresh acceptance run at the end; fix the `18973` → `18974` port error and the bare test filenames.
 - `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile with what Phase 6 actually delivers, so the two documents stop contradicting each other on the provider question.
+
+## Additional baseline correction confirmed by the user — September 21, 2026
+
+Preserve the existing version 4 export format and acceptance of complete version 2 and version 3 imports. Phase 0.12 captures a genuine version 4 backup. The storage keys and existing fixtures stay unchanged. This corrects the standing plan's stale version 3 claim; it does not change application behavior.

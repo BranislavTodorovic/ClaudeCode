@@ -5,13 +5,13 @@ Implemented and verified in the existing project without replacing its router or
 ## Automated checks
 
 - Baseline: 14/14 existing Node tests passed.
-- Final: 31/31 tests passed across `data-regression.test.js` and `tracker-regression.test.js`.
+- Final: 31/31 tests passed across `tests/data-regression.test.js` and `tests/tracker-regression.test.js`.
 - Every application `.js` file and the inline shell script parsed; `tests/browser-smoke.mjs` also passed `node --check`.
 - Tests cover lifecycle close/reopen and idempotence, archived task snapshots, combined filters, local date boundaries, invalid fields, orphan references, transactional quota rollback, version-2 migration, version-3 completeness, backup round trips, reset isolation, destination ranking and malformed catalog entries, shortcut ownership/duplicates, Personal confirmation and failed saves, game resources/templates/deletion cleanup, and movie/series metadata and watchlists.
 
 ## Browser checks
 
-Performed through the Codex in-app Browser. The normal app at localhost:8973 was inspected; mutable acceptance tests used the separate localhost:18973 origin. A second disposable server at localhost:18974 deliberately withheld one destination SVG.
+Performed through the Codex in-app Browser. The normal app at localhost:8973 was inspected; mutable acceptance tests used the separate localhost:18974 origin. A second disposable server at localhost:18974 deliberately withheld one destination SVG.
 
 | Check | Result |
 | --- | --- |

@@ -1,7 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const storage=require('../storage-utils'),work=require('../work-tracker'),explore=require('../explore'),shortcuts=require('../shortcut-utils'),resources=require('../game-resources');
+const storage=require('../shared/storage-utils'),work=require('../work/work-tracker'),explore=require('../explore/explore'),shortcuts=require('../shared/shortcut-utils'),resources=require('../games/game-resources');
 const root=path.resolve(__dirname,'..'),at='2026-09-17T12:00:00.000Z';
 const project={id:'p',name:'Project',status:'active',progress:0};
 const item={id:'i',projectId:'p',name:'Story',type:'story',status:'open',priority:'high',createdAt:at,updatedAt:at,deadline:'2026-09-19'};
@@ -9,7 +9,7 @@ const task={id:'t',itemId:'i',title:'Task',done:false,priority:'medium',createdA
 function memory(initial={}){const values=new Map(Object.entries(initial));return {getItem:k=>values.has(k)?values.get(k):null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};}
 function state(){return {items:[{...item}],tasks:[{...task}],history:[]};}
 function fixture(name){return JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures',name),'utf8'));}
-const context={window:{}};vm.createContext(context);['game-resources.js','games-data.js','movies-data.js','explore-data.js'].forEach(f=>vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),context));
+const context={window:{}};vm.createContext(context);['games/game-resources.js','games/games-data.js','movies/movies-data.js','explore/explore-data.js'].forEach(f=>vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),context));
 
 test('close completes every unfinished task, logs a snapshot, and is idempotent',()=>{
  const initial=state(),closed=work.lifecycle(initial,'i','closed',at,'event');
@@ -77,14 +77,14 @@ test('game resources and default tasks work for several genres without sharing m
  assert.ok(resources.weekly({name:'Custom',trackerType:'weekly'}).every(t=>!t.label.includes('Diablo')));
 });
 test('movie/series type and genre filtering, legacy compatibility and series validation',()=>{
- const catalog=require('../catalog-utils'),pool=context.window.SEED_MOVIES;
+ const catalog=require('../shared/catalog-utils'),pool=context.window.SEED_MOVIES;
  assert.equal(catalog.search(pool,'series').length,4);assert.ok(catalog.search(pool,'Dark').some(m=>m.id==='tv-dark'));
  assert.equal(pool.filter(m=>catalog.matches(m,{type:['series'],genre:['Comedy']}))[0].id,'tv-good-place');
  const series=pool.find(m=>m.type==='series');assert.equal(storage.valid('orbit-movies-library',JSON.stringify([series])),true);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,seasons:1.5}])),false);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,type:'podcast'}])),false);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,type:'Series'}])),true);
 });
 test('Personal deletion waits for confirmation and storage failure preserves the item',()=>{
  let records=[{id:'x',text:'Keep me',done:false}],confirm,toast=[];
- const ctx={window:{OneSpaceUI:{confirm:(title,message,action)=>{confirm=action;}}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'personal-controller.js'),'utf8'),ctx);
+ const ctx={window:{OneSpaceUI:{confirm:(title,message,action)=>{confirm=action;}}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'personal/personal-controller.js'),'utf8'),ctx);
  let fail=false;const controller=ctx.window.makePersonalController('orbit-personal-goals',{safeGetJSON:()=>records,safeSet:(k,v)=>{if(fail)return false;records=JSON.parse(v);return true;},uid:()=> 'new',escapeHtml:s=>s,iconSvg:()=>'',showToast:s=>toast.push(s)});
  const list={innerHTML:''};controller.render(list);list.onclick({target:{closest:()=>({dataset:{delete:'x'}})}});assert.equal(records.length,1);assert.equal(typeof confirm,'function');fail=true;assert.equal(confirm(),false);assert.equal(records.length,1);fail=false;confirm();assert.equal(records.length,0);assert.ok(toast.includes('Personal item deleted.'));
 });

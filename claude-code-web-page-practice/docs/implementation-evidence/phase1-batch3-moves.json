@@ -1,0 +1,22 @@
+[
+  {
+    "from": "games.js",
+    "to": "games/games.js"
+  },
+  {
+    "from": "games-data.js",
+    "to": "games/games-data.js"
+  },
+  {
+    "from": "game-resources.js",
+    "to": "games/game-resources.js"
+  },
+  {
+    "from": "games.css",
+    "to": "games/games.css"
+  },
+  {
+    "from": "games-cinematic.css",
+    "to": "games/games-cinematic.css"
+  }
+]

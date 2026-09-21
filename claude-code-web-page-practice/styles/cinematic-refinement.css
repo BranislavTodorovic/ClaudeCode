@@ -69,8 +69,8 @@ input:user-invalid,textarea:user-invalid{border-color:var(--danger)}
 .quick-access{border:1px solid var(--line);box-shadow:var(--os-shadow);padding:26px;border-radius:20px}
 .quick-access-head{margin-bottom:22px}.mini-card{border-radius:12px;min-height:72px;gap:12px}.mini-icon{width:40px;height:40px;border-radius:12px}.mini-arrow .icon{width:18px;height:18px}
 .destination{min-height:355px;padding:30px;justify-content:flex-end;border-radius:20px;background-size:cover;background-position:60% center;box-shadow:var(--os-shadow)}
-.destination-games{background-image:linear-gradient(0deg,#070b13fa,#070b1333 95%),url('assets/game-art/cyberpunk-2077-hero.jpg')}
-.destination-movies{background-image:linear-gradient(0deg,#070b13fa,#070b1333 95%),url('assets/movie-art/inception-background.jpg')}
+.destination-games{background-image:linear-gradient(0deg,#070b13fa,#070b1333 95%),url('../assets/game-art/cyberpunk-2077-hero.jpg')}
+.destination-movies{background-image:linear-gradient(0deg,#070b13fa,#070b1333 95%),url('../assets/movie-art/inception-background.jpg')}
 .destination::after{display:none}.destination-icon{margin-bottom:auto;width:48px;height:48px;display:grid;place-items:center;border:1px solid #ffffff50;border-radius:50%;background:#0a122359;backdrop-filter:blur(8px)}
 .destination strong{font-size:2rem}.destination-link{display:flex;align-items:center;gap:16px;margin-top:0;padding-top:22px}.destination-link .icon{width:20px;height:20px}
 .page-body{gap:26px}.page-section{min-width:0}.page-section-head h2,.settings-group h2,.settings-data h4{display:flex;align-items:center;gap:12px;font-size:1.18rem;font-weight:550;letter-spacing:-.025em}
@@ -97,9 +97,9 @@ input:user-invalid,textarea:user-invalid{border-color:var(--danger)}
 .proof-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:240px;padding:30px;border:1px dashed var(--line);border-radius:18px;background:var(--surface-2);text-align:center;color:var(--muted)}
 .proof-empty h3{color:var(--text);font-weight:550;font-size:1.35rem}.proof-empty>.icon,.proof-empty>span>.icon{width:42px;height:42px;color:var(--page-ink)}
 .explore-category-grid{gap:20px}.explore-category{position:relative;isolation:isolate;min-height:310px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;color:#fff;padding:26px;background-size:cover;background-position:center;border-radius:18px;overflow:hidden}
-.explore-category[data-page-jump="games"]{background-image:linear-gradient(0deg,#0a1115f5,#0a111533),url('assets/game-art/hades-hero.jpg')}
-.explore-category[data-page-jump="movies"]{background-image:linear-gradient(0deg,#0a1115f5,#0a111533),url('assets/movie-art/matrix-background.jpg')}
-.explore-category[data-page-jump="productivity"]{background-image:linear-gradient(0deg,#0a1115f5,#0a111533),url('assets/page-art/personal-cinematic.webp')}
+.explore-category[data-page-jump="games"]{background-image:linear-gradient(0deg,#0a1115f5,#0a111533),url('../assets/game-art/hades-hero.jpg')}
+.explore-category[data-page-jump="movies"]{background-image:linear-gradient(0deg,#0a1115f5,#0a111533),url('../assets/movie-art/matrix-background.jpg')}
+.explore-category[data-page-jump="productivity"]{background-image:linear-gradient(0deg,#0a1115f5,#0a111533),url('../assets/page-art/personal-cinematic.webp')}
 .explore-category strong{font-size:1.6rem;font-weight:500}.explore-category>span:last-child{color:#e0e4ea;font-size:.8rem}.explore-category-icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:auto;border-radius:50%;border:1px solid #ffffff4d;background:#0b111544}
 .chill-strip{background:var(--page-soft);border:1px solid var(--line);border-radius:18px;padding:28px}
 .card{border-radius:18px;box-shadow:var(--os-shadow);border:1px solid var(--line);min-height:220px}.card:hover{box-shadow:0 18px 35px #111e3517}

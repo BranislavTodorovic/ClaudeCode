@@ -4,12 +4,12 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const storage = require('../storage-utils.js');
-const catalog = require('../catalog-utils.js');
+const storage = require('../shared/storage-utils.js');
+const catalog = require('../shared/catalog-utils.js');
 const root = path.resolve(__dirname, '..');
 const data = { window: {} };
 vm.createContext(data);
-for (const file of ['game-resources.js', 'games-data.js', 'movies-data.js']) {
+for (const file of ['games/game-resources.js', 'games/games-data.js', 'movies/movies-data.js']) {
   vm.runInContext(fs.readFileSync(path.join(root, file), 'utf8'), data);
 }
 const games = catalog.merge([data.window.SUGGESTION_CATALOG, data.window.DEFAULT_GAMES], catalog.game);
@@ -129,7 +129,16 @@ test('malformed browser-import fixture leaves existing notes unchanged', () => {
 });
 
 test('every application script parses', () => {
-  for (const file of fs.readdirSync(root).filter(name => name.endsWith('.js'))) {
+  function walk(dir) {
+    return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+      if (entry.name.startsWith('.') || ['tests', 'node_modules', 'config', 'assets', 'docs', 'outputs', 'implementation-support'].includes(entry.name)) return [];
+      const file = path.join(dir, entry.name);
+      return entry.isDirectory() ? walk(file) : entry.name.endsWith('.js') ? [path.relative(root, file)] : [];
+    });
+  }
+  const scripts = walk(root);
+  assert.equal(scripts.length, 24, 'Application source inventory changed: update this count alongside intentional module additions');
+  for (const file of scripts) {
     new vm.Script(fs.readFileSync(path.join(root, file), 'utf8'), { filename: file });
   }
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');

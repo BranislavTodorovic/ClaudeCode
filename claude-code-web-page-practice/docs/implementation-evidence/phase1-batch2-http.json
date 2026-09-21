@@ -1,0 +1,145 @@
+{
+  "at": "2026-09-21T09:31:30.891Z",
+  "reports": [
+    {
+      "ref": "games.css",
+      "status": 200
+    },
+    {
+      "ref": "games-cinematic.css",
+      "status": 200
+    },
+    {
+      "ref": "styles/pages.css",
+      "status": 200
+    },
+    {
+      "ref": "movies.css",
+      "status": 200
+    },
+    {
+      "ref": "movies-cinematic.css",
+      "status": 200
+    },
+    {
+      "ref": "styles/cinematic-refinement.css",
+      "status": 200
+    },
+    {
+      "ref": "/assets/game-art/cyberpunk-2077-hero.jpg",
+      "status": 200
+    },
+    {
+      "ref": "/assets/movie-art/inception-background.jpg",
+      "status": 200
+    },
+    {
+      "ref": "/assets/game-art/hades-hero.jpg",
+      "status": 200
+    },
+    {
+      "ref": "/assets/movie-art/matrix-background.jpg",
+      "status": 200
+    },
+    {
+      "ref": "/assets/page-art/personal-cinematic.webp",
+      "status": 200
+    },
+    {
+      "ref": "tracker.css",
+      "status": 200
+    },
+    {
+      "ref": "discovery.css",
+      "status": 200
+    },
+    {
+      "ref": "trip-board.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/storage-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/catalog-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/tooltip-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/shortcut-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "personal-controller.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/visual-utils.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/domain-ui.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/shortcut-surface.js",
+      "status": 200
+    },
+    {
+      "ref": "projects.js",
+      "status": 200
+    },
+    {
+      "ref": "work-tracker.js",
+      "status": 200
+    },
+    {
+      "ref": "explore-data.js",
+      "status": 200
+    },
+    {
+      "ref": "local-discovery.js",
+      "status": 200
+    },
+    {
+      "ref": "discovery-ui.js",
+      "status": 200
+    },
+    {
+      "ref": "explore-global.js",
+      "status": 200
+    },
+    {
+      "ref": "game-resources.js",
+      "status": 200
+    },
+    {
+      "ref": "games-data.js",
+      "status": 200
+    },
+    {
+      "ref": "games.js",
+      "status": 200
+    },
+    {
+      "ref": "movies-data.js",
+      "status": 200
+    },
+    {
+      "ref": "movies.js",
+      "status": 200
+    },
+    {
+      "ref": "shared/cinematic-scenes.js",
+      "status": 200
+    },
+    {
+      "ref": "discovery-integration.js",
+      "status": 200
+    }
+  ]
+}

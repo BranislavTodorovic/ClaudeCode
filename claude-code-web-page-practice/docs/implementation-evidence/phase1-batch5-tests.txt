@@ -1,0 +1,40 @@
+2026-09-21T09:32:20.809Z
+✔ PC and Horror require both groups, including default games (1.4953ms)
+✔ multiple selections within one group use OR; groups use AND (0.2197ms)
+✔ a saved copy does not duplicate its catalog source (0.2354ms)
+✔ search includes metadata and does not cap results at eight (0.5356ms)
+✔ similarity excludes the selected title and requires shared metadata (0.4943ms)
+✔ complete backups round-trip projects, preferences, trackers and unrelated data (3.9898ms)
+✔ legacy project records without optional fields remain valid (0.1436ms)
+✔ malformed project tags and note titles are rejected before writes (0.4978ms)
+✔ storage failure rolls back previously written values (0.2662ms)
+✔ restore rejects unknown keys and incomplete backups without changing state (0.2629ms)
+✔ reset removes only known OneSpace keys (0.2032ms)
+✔ complete browser-import fixture restores all keys and preserves unrelated storage (1.2589ms)
+✔ malformed browser-import fixture leaves existing notes unchanged (0.3041ms)
+✔ every application script parses (4.6832ms)
+✔ close completes every unfinished task, logs a snapshot, and is idempotent (1.0803ms)
+✔ reopen keeps task completion history and removes the item completion timestamp (0.1776ms)
+✔ active/backlog and combined filters do not lose closed records (0.7275ms)
+✔ deadlines use the local end of day and distinguish due soon from overdue (0.7361ms)
+✔ work schema rejects invalid status, type, URLs, dates, estimates and lengths (1.9399ms)
+✔ hierarchy rejects orphan items/tasks and incomplete tasks below closed items before writes (1.4133ms)
+✔ atomic lifecycle transaction rolls back all keys after quota failure (0.9634ms)
+✔ version 2 migrates missing domain keys to null, while version 3 requires completeness (1.0131ms)
+✔ complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values (1.5175ms)
+✔ all curated destinations validate and ranking is stable, explained and intersects groups (10.1244ms)
+✔ shortcut normalization preserves descriptions and explicit ownership; duplicate and unsafe URLs rejected (0.3849ms)
+✔ game resources and default tasks work for several genres without sharing mutable task state (0.5782ms)
+✔ movie/series type and genre filtering, legacy compatibility and series validation (1.5321ms)
+✔ Personal deletion waits for confirmation and storage failure preserves the item (1.6135ms)
+✔ deleting a game removes its weekly tasks and sessions but preserves journal text (0.3058ms)
+✔ series watchlist and enriched game resources survive backup restore (0.8946ms)
+✔ malformed destination metadata and game templates are rejected, and tracker templates stay independent (0.3571ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 124.9175
