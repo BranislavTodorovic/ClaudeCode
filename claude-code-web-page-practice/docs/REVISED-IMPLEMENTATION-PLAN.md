@@ -573,7 +573,63 @@ Provider work must not reintroduce the cross-domain leaks removed by Phase 3.
 
 ---
 
-# 30. Backup/migration contract
+
+# 30. Global modern icon design system
+
+OneSpace uses one coherent application-control icon language across every tab.
+
+The preferred implementation is shared inline SVG or equivalent reusable local SVG markup; do not introduce an external icon CDN or a mixed third-party icon dependency merely for polish.
+
+The icon system applies to application UI such as:
+
+- navigation;
+- page/section headings;
+- buttons;
+- search/filter/sort;
+- add/edit/remove/save/restore;
+- dialogs and sheets;
+- favorite/status actions;
+- expand/collapse;
+- retry/error/empty-state actions.
+
+Shared actions should reuse the same recognizable glyph where context permits.
+
+Visual consistency includes:
+
+- geometry/viewBox conventions;
+- stroke/fill philosophy;
+- stroke weight;
+- optical size;
+- alignment;
+- spacing;
+- active/disabled/focus treatment.
+
+Domain-specific icons may have distinct silhouettes, but they must still belong to the same visual family.
+
+Modernization is **selective**, not churn: an existing icon that is already clear, modern, aligned and consistent should be retained.
+
+Application UI must not fall back to random emoji or Unicode symbols as substitute control icons.
+
+Accessibility remains mandatory:
+
+- icon-only actions require an accessible name;
+- focus remains visible;
+- touch targets remain adequate;
+- required ARIA state remains accurate;
+- decorative icons are hidden from assistive technology when appropriate;
+- text labels are not removed when the icon alone would be ambiguous.
+
+Legitimate source/content identity is explicitly outside the UI-glyph normalization rule. Preserve appropriate:
+
+- website favicons;
+- provider attribution marks;
+- service/game/movie logos;
+- other content-owned brand marks.
+
+The icon system is verified across all tabs, supported themes and responsive widths. It must not clip, drift off baseline, become blurry, or lose contrast at supported sizes.
+
+
+# 31. Backup/migration contract
 
 Current export: version 4.
 
@@ -587,7 +643,7 @@ Final acceptance includes provider-origin records in export/import.
 
 ---
 
-# 31. Verification strategy
+# 32. Verification strategy
 
 Automated coverage includes:
 
@@ -606,6 +662,7 @@ Automated coverage includes:
 - open-proxy/SSRF rejection;
 - media validation;
 - content-art race ownership.
+- global icon consistency, accessibility and responsive visual quality.
 
 Browser acceptance includes:
 
@@ -622,7 +679,7 @@ Live provider smoke is separate from mock automation.
 
 ---
 
-# 32. Final architectural principle
+# 33. Final architectural principle
 
 Provider integrations must be removable without destroying OneSpace.
 

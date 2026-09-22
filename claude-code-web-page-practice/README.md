@@ -834,18 +834,32 @@ At least one warm visual direction is part of the current design requirements.
 
 # Modern icon system
 
-OneSpace uses a shared inline SVG icon language.
+OneSpace uses **one shared modern inline-SVG application icon language across every tab**.
 
-Icons should be:
+The global icon system covers navigation, headings, cards, forms/dialogs, search/filter/sort controls and shared actions throughout:
+
+- Home;
+- Work / Projects;
+- Personal;
+- Explore;
+- Games;
+- Movies & Series;
+- Shortcuts;
+- Productivity;
+- Notes;
+- Settings.
+
+Icons are expected to be:
 
 - visually consistent;
 - modern;
 - optically balanced;
-- coherent in stroke/fill weight;
-- appropriately sized;
+- coherent in geometry and stroke/fill weight;
+- appropriately sized and aligned;
+- crisp at supported sizes;
 - accessible.
 
-Major actions should use recognizable modern glyphs where helpful, including:
+Shared actions reuse recognizable glyphs where context permits, including:
 
 - add;
 - edit;
@@ -859,17 +873,28 @@ Major actions should use recognizable modern glyphs where helpful, including:
 - save;
 - restore;
 - open/play;
-- navigation.
+- navigation;
+- close;
+- retry;
+- expand/collapse.
 
-Icon-only actions must retain:
+The goal is improvement, not icon churn: existing icons that are already clear, polished and consistent are retained; dated, ambiguous, generic, misaligned or visually weak UI icons are refined/replaced.
+
+Icon-only actions retain:
 
 - accessible names;
-- focus states;
+- visible focus states;
+- adequate touch targets;
+- required ARIA state;
 - tooltips where appropriate.
 
-OneSpace should not replace clear text with ambiguous icons only for decoration.
+OneSpace does not replace useful text with ambiguous icons merely for decoration.
 
-Random emoji/fashion-icon substitutions are not part of the design language.
+Random emoji/Unicode/fashion-icon substitutions are not part of the application-control design language.
+
+Legitimate website favicons, provider/source attribution marks and content/service/game/movie logos remain distinct because they represent source or brand identity rather than OneSpace application controls.
+
+The icon system is verified across supported themes and desktop/tablet/mobile widths so no broken, clipped, misaligned or low-contrast UI icons remain.
 
 ---
 

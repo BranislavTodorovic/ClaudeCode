@@ -2283,13 +2283,57 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
 
-199. [x] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
 
-   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+## 5.6 Global icon modernization and consistency [NEW V2]
+
+198A. [ ] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
+
+   Files: `index.html`, `shared/`, `styles/`, domain JS/CSS files as required. Acceptance: Produce an inventory/audit showing which existing icons are retained and which require improvement; content/source brand marks and favicons are identified as exceptions rather than application-control icons.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+   | Pending | Pending |
+
+198B. [ ] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
+
+   Files: `index.html`, `shared/`, `styles/`, affected domain files. Acceptance: Shared UI icons use consistent geometry, stroke/fill philosophy, optical sizing, alignment and spacing without unrelated redesign or icon churn.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198C. [ ] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
+
+   Files: shared icon helpers/markup and affected domain surfaces. Acceptance: Add/edit/remove/back/more/favorite/search/filter/sort/save/restore/open/navigation/close/retry/expand-collapse do not use conflicting or random glyphs without an explicit reason; no accidental emoji/Unicode substitute controls remain.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198D. [ ] **5.6.4** — Preserve icon accessibility and interaction quality.
+
+   Files: affected markup/styles/shared UI helpers. Acceptance: Icon-only actions have accessible names, visible focus, adequate touch targets, correct ARIA state where applicable and tooltips where useful; decorative icons do not create redundant announcements; clear text labels are not removed merely to add icons.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198E. [ ] **5.6.5** — Verify global icon quality across required themes and responsive widths.
+
+   Files: all affected UI files; `docs/implementation-evidence/phase5/`; browser verification. Acceptance: All tabs are inspected at the active required desktop/tablet/mobile widths; no broken/missing/clipped/misaligned UI icons remain; icons are crisp/readable in light/dark and supported palettes; representative visual evidence covers navigation, headings, cards, forms/dialogs and shared actions. Brand/provider/source logos and favicons remain intentionally distinct.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+
+199. [ ] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `index.html`, `shared/`, `styles/`, affected domain files, `docs/implementation-evidence/phase5/`. Acceptance: Existing Phase 5 cinematic/motion evidence remains valid, and the newly approved 5.6 global icon-modernization requirements are also VERIFIED before Gate 5 closes again.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Gate 5 was previously Verified under the pre-5.6 scope. Prior Phase 5 evidence is retained; the gate is reopened only because the newly approved global icon-modernization requirement must now be completed and evidenced. |
 
 ## Phase 6
 
@@ -4118,11 +4162,11 @@ No final "complete" statement is allowed until these conditions are true.
   |---|---|
   | Pending | Pending |
 
-- [ ] **19.8 — Verify Full/Subtle/Off/reduced motion and keyboard/accessibility.**
+- [ ] **19.8 — Verify Full/Subtle/Off/reduced motion, keyboard/accessibility and the global modern icon system.**
 
   Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
 
-  Acceptance: Focus, modal behavior, ARIA/async feedback, alt/decorative treatment, touch targets and motion contract pass.
+  Acceptance: Focus, modal behavior, ARIA/async feedback, alt/decorative treatment, touch targets and motion contract pass; all tabs retain the verified coherent modern application-icon language with no broken, clipped, inconsistent or inaccessible icon-only controls.
 
   | Status | Evidence |
   |---|---|

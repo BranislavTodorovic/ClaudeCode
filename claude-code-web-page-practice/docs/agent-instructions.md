@@ -165,7 +165,7 @@ Carried from the previous plan. These govern every phase below; where this sessi
 - Explore shortcuts are stored/tagged as `explore` and must not appear in Work or Personal.
 - Games retains the existing catalog and gains a per-game detail/resource surface. **Adding a game creates default tracker tasks/objectives from the selected tracker type** (Phase 8 makes that type correct).
 - Movies becomes Movies & Series while preserving the existing `movies` route and storage keys, using a first-class `movie`/`series` type filter. **No episode-level tracking** unless separately approved.
-- Keep the current cinematic direction and the existing inline SVG icon system for all new actions.
+- Keep the current cinematic direction and use **one coherent modern inline SVG icon language across the entire OneSpace UI**. Existing good icons may be retained; dated, inconsistent, generic, misaligned or visually weak UI icons must be improved during the global icon audit in Phase 5.6. Brand marks, provider attribution marks and site favicons/logos are content/source identity and are not forced into the OneSpace UI-icon style.
 - **Every visible label starts with an uppercase first word** — `City break`, `Nature`, `Series`, `Action`, `Winter`. Never expose raw lowercase enum values.
 
 **Superseded:** the previous plan's Phase 1 step 11, "Do not begin provider-backed global discovery in this iteration," is replaced by the decision recorded above. Phase 6 implements it.
@@ -900,6 +900,128 @@ All motion routes through `prefersReducedMotion()` (`index.html:1705-1709`, expo
 
 ---
 
+
+## 5.6 Global icon modernization and consistency [NEW V2]
+
+The existing requirement for a consistent inline SVG icon system remains valid, but V2 makes the quality bar explicit across **every OneSpace tab**, not only newly-added actions.
+
+Audit all visible **interface icons** across:
+
+- Home;
+- Work / Projects;
+- Personal;
+- Explore;
+- Games;
+- Movies & Series;
+- Shortcuts;
+- Productivity;
+- Notes;
+- Settings;
+- global navigation, dialogs, filters, search, cards, empty/error states and shared controls.
+
+The goal is one polished, modern icon language rather than a mixture of unrelated, dated or generic glyphs.
+
+### 5.6.1 Visual language
+
+UI icons should use consistent:
+
+- SVG geometry/viewBox conventions;
+- stroke/fill philosophy;
+- stroke weight where stroked icons are used;
+- corner/line character;
+- optical size;
+- alignment;
+- spacing inside buttons, chips, headings and navigation.
+
+Domain icons may have distinct silhouettes appropriate to their domain, but still belong to the same visual family.
+
+### 5.6.2 Action consistency
+
+The same action should use the same recognizable glyph throughout the application where context permits, including:
+
+- add;
+- edit;
+- remove/delete;
+- back;
+- more;
+- favorite;
+- search;
+- filter;
+- sort;
+- save;
+- restore;
+- open/play;
+- navigation;
+- close;
+- refresh/retry;
+- expand/collapse.
+
+Do not substitute random emoji, Unicode symbols or unrelated visual styles for application controls.
+
+### 5.6.3 Improve, do not churn
+
+Do not replace an existing icon merely because a different icon could also work.
+
+Retain icons that are already clear, modern, correctly aligned and consistent.
+
+Replace or refine icons only when they are:
+
+- visually dated;
+- inconsistent with the shared icon language;
+- ambiguous;
+- poorly aligned;
+- disproportionately sized;
+- low-quality at supported sizes;
+- duplicated with conflicting meanings;
+- using a text/emoji glyph where the application icon system should be used.
+
+This is a global polish pass, not an excuse for unrelated UI redesign.
+
+### 5.6.4 Accessibility and interaction
+
+Icon-only controls must retain:
+
+- an accessible name;
+- keyboard focus visibility;
+- appropriate tooltip where useful;
+- required ARIA state;
+- adequate touch target;
+- clear hover/focus/active/disabled behavior.
+
+Do not remove useful text labels merely to display more icons.
+
+Decorative icons must not create redundant screen-reader announcements.
+
+### 5.6.5 Brand/source exceptions
+
+Do not restyle legitimate:
+
+- website favicons;
+- provider/source attribution marks;
+- game/movie/service logos;
+- other content-owned brand marks
+
+into the OneSpace UI glyph style.
+
+Those are source/content identity rather than application-control icons.
+
+### 5.6.6 Verification
+
+Verify the icon system across all tabs at the required desktop/tablet/mobile widths.
+
+Acceptance requires:
+
+- no broken or missing UI icons;
+- no accidental emoji/text-glyph controls;
+- no conflicting glyph for the same shared action without documented reason;
+- no clipping, baseline drift or obvious size mismatch;
+- icon-only actions remain accessible;
+- icons remain crisp and readable in light/dark themes and supported palettes;
+- brand/content icons remain distinguishable from application-control icons.
+
+Retain visual evidence covering representative navigation, page headings, cards, forms/dialogs and shared actions.
+
+
 # PHASE 6 — Provider-backed search with typeahead [NEW]
 
 ## 6.1 Server layer
@@ -1251,6 +1373,7 @@ This machine is Windows with PowerShell as the primary shell, so `PORT=18974 nod
 | 10.1 destinations | All 12 destinations show a photograph and a long-form description; a forced 404 leaves the card usable via fallback; saved destinations still validate. |
 | 7.1 shortcuts | Every shortcut, built-in included, offers Remove; a removed built-in is restorable from Settings; add, edit, favorite, reorder and delete work by keyboard alone; no broken icons at 1440 / 1024 / 760 / 390 px. |
 | 5.x cinematic | Each route is visually distinct and visibly in motion; reduced-motion mode is genuinely still; the browser bundle still issues no external requests. |
+| 5.6 icons | Every tab uses one coherent modern inline-SVG application icon language; shared actions are consistent, icon-only controls remain accessible, no broken/emoji substitute controls remain, and brand/provider/favicons are preserved as source identity. |
 | 3.x boundaries | No page but Home reads a storage key belonging to another domain. |
 | 10.3 Explore order | "More to explore" is the final section on the Explore page. |
 
@@ -1277,7 +1400,7 @@ Carried from the previous plan; all still apply.
 
 **Amended:** the old plan's "no external CDN or new runtime dependency; the app makes zero network requests today and must still make zero afterwards" now applies to the **browser bundle's credential/provider-data access model**. External provider access is mediated through the local server/provider layer; provider media must follow the approved safe media contract. The app must still work with a visible degraded/offline state.
 
-**V2 included additions:** provider-backed global destination discovery; deterministic provider identity and duplicate prevention; first-class local persistence for provider-origin Movies/Series, Games and Destinations; provider refresh merge safety; live-vs-mock evidence separation; server input validation; no-open-proxy/SSRF protections; safe bounded provider-media handling; untrusted-provider-text/XSS protection; async query/detail/content-art race protection; selected-content environmental art integrated into the existing cinematic controller; wide-desktop media-rich acceptance; complete V2 regression before final documentation.
+**V2 included additions:** global modernization/audit of the OneSpace UI icon system across every tab; provider-backed global destination discovery; deterministic provider identity and duplicate prevention; first-class local persistence for provider-origin Movies/Series, Games and Destinations; provider refresh merge safety; live-vs-mock evidence separation; server input validation; no-open-proxy/SSRF protections; safe bounded provider-media handling; untrusted-provider-text/XSS protection; async query/detail/content-art race protection; selected-content environmental art integrated into the existing cinematic controller; wide-desktop media-rich acceptance; complete V2 regression before final documentation.
 
 
 ---

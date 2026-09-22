@@ -590,6 +590,23 @@ Verify applicable:
 - no stale-request announcement;
 - mobile/coarse-pointer usability.
 
+
+## Global modern icon system
+
+Across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes and Settings verify:
+
+- one coherent application-control icon language;
+- shared actions use consistent recognizable glyphs where context permits;
+- no broken/missing icon;
+- no accidental emoji/Unicode substitute control icon;
+- no obvious clipping, baseline drift, disproportionate sizing or visual mismatch;
+- icons remain crisp/readable in light/dark and supported palettes;
+- icon-only controls retain accessible names, visible focus and adequate touch targets;
+- decorative icons do not create redundant assistive-technology output;
+- legitimate favicons/provider/source/brand marks remain intentionally distinct from application UI icons.
+
+Inspect representative navigation, headings, cards, forms/dialogs, filters/search and shared action controls at the required responsive widths.
+
 Result: `PASS / FAIL`
 
 ---
