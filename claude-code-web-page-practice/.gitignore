@@ -5,9 +5,9 @@
 # ---------------------------------------------------------
 # Secrets / local credentials
 # ---------------------------------------------------------
-# Never commit anything stored in config/secrets/.
-# Keep config/secrets.example.json tracked as the safe template.
-config/secrets/
+# Keep only the empty directory marker; ignore all local credentials.
+config/secrets/*
+!config/secrets/.gitkeep
 
 # Environment files
 .env
