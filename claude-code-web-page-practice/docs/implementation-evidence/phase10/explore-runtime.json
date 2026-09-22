@@ -1,0 +1,34 @@
+{
+  "checklistItem": "10.2.1",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "decision": "Retire the obsolete auto-mounting explore.js instead of loading it in index.html.",
+  "ownership": {
+    "browserMount": "explore/explore-global.js",
+    "browserAndTestModel": "explore/local-discovery.js",
+    "catalog": "explore/explore-data.js"
+  },
+  "changes": [
+    "Removed explore/explore.js and its duplicate legacy UI mount.",
+    "Moved deterministic, explainable destination recommendation into local-discovery.js.",
+    "Made local-discovery search call that recommendation model for the browser path.",
+    "Changed tracker regression tests to import and exercise local-discovery.js, including the browser search path.",
+    "Updated application-script inventory counts for the intentional module removal.",
+    "Updated the standing implementation plan to record the resolved ownership."
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/tracker-regression.test.js tests/explore-imagery.test.js tests/structure.test.js tests/data-regression.test.js",
+    "passed": 43,
+    "failed": 0
+  },
+  "browserChecks": {
+    "discoveryWorkspaces": 1,
+    "discoveryForms": 1,
+    "tripBoards": 1,
+    "unfilteredOrderIsDeterministic": true,
+    "filteredResults": ["São Miguel", "Lake Bohinj"],
+    "filter": "category=nature, budget=medium",
+    "explanation": "Why this fits · Categories: nature · Budget: medium",
+    "consoleWarningsOrErrors": 0
+  }
+}

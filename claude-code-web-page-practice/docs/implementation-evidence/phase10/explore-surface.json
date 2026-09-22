@@ -1,0 +1,24 @@
+{
+  "checklistItem": "10.4.7",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "browserOrigin": "http://127.0.0.1:18978/",
+  "checks": {
+    "preferenceSelects": 8,
+    "initialRecommendationCards": 6,
+    "detailDialog": "São Miguel opened and closed successfully",
+    "shortlist": "São Miguel changed to Saved",
+    "tripBoardCards": 1,
+    "tripBoardActions": ["Details", "Edit trip", "Create trip plan", "Move earlier", "Move later", "Remove"],
+    "shortcutFavorite": "Google Maps changed from Favorite to Unfavorite and was restored",
+    "exploreShortcutNames": ["Google Maps", "Google Flights", "Booking.com", "Airbnb", "Tripadvisor", "Rome2Rio"],
+    "crossSpaceShortcutLeak": false,
+    "consoleWarningsOrErrors": 0
+  },
+  "automatedChecks": {
+    "command": "node --test tests/tracker-regression.test.js tests/data-regression.test.js tests/structure.test.js tests/explore-imagery.test.js",
+    "passed": 45,
+    "failed": 0,
+    "notes": "Shortcut ownership, destination validation, ranking, and trip-board model behavior are covered by the targeted suites."
+  }
+}

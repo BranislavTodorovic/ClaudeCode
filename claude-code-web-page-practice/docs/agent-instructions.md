@@ -200,7 +200,7 @@ repo/
   assets/                    (destinations/ game-art/ game-logos/ movie-art/ page-art/)
   games/      games.js  games-data.js  game-resources.js  games.css  games-cinematic.css
   movies/     movies.js  movies-data.js  movies.css  movies-cinematic.css
-  explore/    explore.js  explore-data.js  explore-global.js  discovery-integration.js
+  explore/    explore-data.js  explore-global.js  discovery-integration.js
               discovery-ui.js  local-discovery.js  trip-board.js  discovery.css
   work/       projects.js  work-tracker.js  tracker.css
   personal/   personal-controller.js
@@ -224,7 +224,7 @@ Use `git mv` for every move so history is preserved.
 |---|---|
 | `games.js`, `games-data.js`, `game-resources.js`, `games.css`, `games-cinematic.css` | `games/` |
 | `movies.js`, `movies-data.js`, `movies.css`, `movies-cinematic.css` | `movies/` |
-| `explore.js`, `explore-data.js`, `explore-global.js`, `discovery-integration.js`, `discovery-ui.js`, `local-discovery.js`, `trip-board.js`, `discovery.css` | `explore/` |
+| `explore-data.js`, `explore-global.js`, `discovery-integration.js`, `discovery-ui.js`, `local-discovery.js`, `trip-board.js`, `discovery.css` | `explore/` |
 | `projects.js`, `work-tracker.js`, `tracker.css` | `work/` |
 | `personal-controller.js` | `personal/` |
 | `storage-utils.js`, `catalog-utils.js`, `shortcut-utils.js`, `shortcut-surface.js`, `domain-ui.js`, `tooltip-utils.js`, `visual-utils.js`, `cinematic-scenes.js` | `shared/` |
@@ -276,9 +276,9 @@ Each one silently breaks the app or the test suite the moment files move.
 - `projects.js` → before `work-tracker.js` (user-confirmed: preserve the existing order); `explore-data.js` → before `discovery-ui.js` and `explore-global.js`; `local-discovery.js` → before `discovery-ui.js`; `game-resources.js` → before `games-data.js`
 - `games.js` and `movies.js` → before `discovery-integration.js`
 
-Note that `work-tracker.js` and `explore.js` **auto-invoke `api.mount(root)` at load** in the browser branch of their UMD wrapper — loading either twice mounts a second instance.
+Note that `work-tracker.js` **auto-invokes `api.mount(root)` at load** in the browser branch of its UMD wrapper — loading it twice mounts a second instance. The obsolete auto-mounting `explore.js` was retired in Phase 10; `explore-global.js` is the sole Explore mount owner.
 
-**5. `explore.js` is a pre-existing discrepancy — do not "fix" it during the move.** Confirmed: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags; the browser uses `explore-global.js`. Move the file and update the test require, but do **not** add it to `index.html` here. Resolved in Phase 10.
+**5. `explore.js` was a pre-existing discrepancy — do not "fix" it during the move.** At this historical Phase 1 point it was required by `tests/tracker-regression.test.js` but absent from the browser scripts. Phase 10 resolved the mismatch by retiring that duplicate auto-mounting module, keeping `explore-global.js` as the sole UI mount, and making both browser search and regression tests call `local-discovery.js` for deterministic recommendation logic.
 
 ## 1.5 Secrets and credentials folder
 
@@ -358,7 +358,7 @@ After every batch: `node --test tests/` passes, and the app loads at `http://loc
 
 - Entry URL stays `http://localhost:8973/` serving root `index.html`.
 - All `localStorage` keys unchanged. A folder move must never touch a storage key.
-- All public browser globals keep their names: `OneSpace` (inline), `OneSpaceStorage`, `OneSpaceCatalog`, `OneSpaceShortcuts`, `OneSpaceShortcutUI`, `OneSpaceUI`, `OneSpaceVisual`, `makePersonalController`, `OneSpaceWork`, `OneSpaceTrips`, `DESTINATIONS`, `OneSpaceLocalDiscovery`, `OneSpaceDiscovery`, `OneSpaceExplore`, `OneSpaceGameResources`, `DEFAULT_GAMES` / `SUGGESTION_CATALOG` / `DIABLO_WEEKLY_TEMPLATE` / `GAMES_*`, `OneSpaceGameDiscovery` + `OneSpace.playGamesEntryAnimation`, `SEED_MOVIES` / `MOVIE_*`, `OneSpaceTitleDiscovery`.
+- All public browser globals keep their names: `OneSpace` (inline), `OneSpaceStorage`, `OneSpaceCatalog`, `OneSpaceShortcuts`, `OneSpaceShortcutUI`, `OneSpaceUI`, `OneSpaceVisual`, `makePersonalController`, `OneSpaceWork`, `OneSpaceTrips`, `DESTINATIONS`, `OneSpaceLocalDiscovery`, `OneSpaceDiscovery`, `OneSpaceGameResources`, `DEFAULT_GAMES` / `SUGGESTION_CATALOG` / `DIABLO_WEEKLY_TEMPLATE` / `GAMES_*`, `OneSpaceGameDiscovery` + `OneSpace.playGamesEntryAnimation`, `SEED_MOVIES` / `MOVIE_*`, `OneSpaceTitleDiscovery`.
 - `work/projects.js`, `shared/tooltip-utils.js`, `shared/cinematic-scenes.js`, `explore/explore-global.js` and `explore/discovery-integration.js` export nothing — pure side-effect modules that must keep their exact load position.
 - The UMD dual-export pattern stays in every file that has it.
 - Backup format version 4 (and v2/v3 acceptance) and all existing fixtures remain valid.
@@ -772,9 +772,9 @@ Phase 6's provider search makes catalog size far less critical, but the seeded s
 4. Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
 5. **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
 
-## 10.2 Resolve the `explore.js` discrepancy [OPEN]
+## 10.2 Resolve the `explore.js` discrepancy [RESOLVED]
 
-Confirmed open: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags — the browser uses `explore-global.js`. Decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree. Note `explore.js` **auto-invokes `api.mount(root)` at load**, so simply adding the tag would double-mount.
+Resolved in Phase 10: the obsolete auto-mounting `explore.js` was removed instead of being added to `index.html`. `explore-global.js` remains the sole browser mount owner, while deterministic recommendation logic lives in `local-discovery.js`, the exact module called by the browser discovery controller and imported by regression tests. This removes the duplicate implementation and makes browser/test behavior agree without creating a second mount.
 
 ## 10.3 "More to explore" is not the final section [FIX]
 
@@ -786,7 +786,7 @@ Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 req
 |---|---|
 | `explore-data.js` holds the curated destination catalog | [DONE] |
 | Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback | [DONE] |
-| `explore.js` holds persisted destination preferences | [DONE] — but see 10.2 |
+| `explore-global.js` owns persisted destination preferences | [DONE] — re-verified in 10.4.3 |
 | Destination type, climate/season, trip length, budget, pace, interests, departure region | [DONE] |
 | Deterministic, explainable recommendation ranking | [DONE] |
 | Show why each destination was recommended | [DONE] |
@@ -873,7 +873,7 @@ Old Part B Phase 8, extended.
 | `movies/movies.js` | `custom` gating (`:442,458,619`), typeahead (`:802-821`), watchlist split (`:360-363`) |
 | `movies/movies-data.js` | 4 placeholder-art series (`:137-142`) |
 | `explore/explore-data.js`, `assets/destinations/` | Conceptual SVGs to replace; long-form descriptions |
-| `explore/explore.js` | Loaded by tests, not by `index.html`; auto-mounts on load |
+| `explore/local-discovery.js`, `explore/explore-global.js` | Shared deterministic discovery model plus the sole browser mount owner after the Phase 10 discrepancy fix |
 | `shared/shortcut-utils.js` | `space()` inference incl. `youtube`/`maps` exceptions (`:3`) |
 | `shared/shortcut-surface.js` | Compact card, `custom`-gated controls (`:6`), `renderExplorePage()` arg bug (`:9`) |
 | `movies/movies.css` | `.mv-poster-img { object-fit: contain }` (`:97`) letterboxes posters — review with 9.2 |
@@ -966,7 +966,7 @@ Every defect surfaced by this inspection is assigned to a phase. Nothing is reco
 | `[data-add-space]` buttons never read their own attribute | 7.2 |
 | `renderExplorePage()` called with no argument, clearing the Explore filter | 7.2 |
 | "Duplicate shortcut" is a toast-only stub | 7.2 |
-| `explore.js` required by tests but absent from `index.html` | 10.2 |
+| ~~`explore.js` required by tests but absent from `index.html`~~ | Resolved in 10.2: duplicate module retired; browser and tests use `local-discovery.js` |
 | "More to explore" is not the final Explore section | 10.3 |
 | 14 cross-domain content leaks | Phase 3 |
 
@@ -1009,4 +1009,3 @@ A sequenced execution checklist — the working document, distinct from the plan
 ## Additional baseline correction confirmed by the user — September 21, 2026
 
 Preserve the existing version 4 export format and acceptance of complete version 2 and version 3 imports. Phase 0.12 captures a genuine version 4 backup. The storage keys and existing fixtures stay unchanged. This corrects the standing plan's stale version 3 claim; it does not change application behavior.
-

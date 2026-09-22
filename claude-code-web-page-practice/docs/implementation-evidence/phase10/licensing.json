@@ -1,0 +1,27 @@
+{
+  "checklistItem": "10.1.4",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "sourceLedger": "assets/destinations/SOURCES.md",
+  "destinations": 12,
+  "sourceHost": "Wikimedia Commons",
+  "licenses": [
+    "CC0",
+    "CC BY 2.0",
+    "CC BY 4.0",
+    "CC BY-SA 3.0",
+    "CC BY-SA 4.0"
+  ],
+  "checks": [
+    "Each source-ledger row names the destination derivatives, source work or description, author, Commons file page and license URL.",
+    "Catalog source, author, license and license URL exactly match the destination manifest entry.",
+    "Every catalog source, author and license URL appears in the colocated source ledger.",
+    "All 12 rendered cards expose both a Wikimedia Commons source/author link and a Creative Commons license link.",
+    "The normal browser run has no warnings or errors."
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js",
+    "passed": 29,
+    "failed": 0
+  }
+}

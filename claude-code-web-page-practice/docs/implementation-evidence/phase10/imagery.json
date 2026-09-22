@@ -1,0 +1,55 @@
+{
+  "checklistItem": "10.1.1",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "implementation": {
+    "destinations": 12,
+    "cardAssets": {
+      "count": 12,
+      "format": "WebP",
+      "width": 640,
+      "height": 420
+    },
+    "heroAssets": {
+      "count": 12,
+      "format": "WebP",
+      "width": 1600,
+      "height": 900
+    },
+    "responsiveMarkup": {
+      "card": "single 640w local candidate with card-specific sizes",
+      "hero": "single 1600w local candidate with hero-specific sizes",
+      "loading": "lazy",
+      "decoding": "async"
+    }
+  },
+  "automatedChecks": {
+    "command": "node --test tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js",
+    "passed": 27,
+    "failed": 0,
+    "coverage": [
+      "all canonical destinations have distinct card and hero files",
+      "WebP file headers report the required dimensions",
+      "manifest entries match every destination asset",
+      "runtime normalization preserves role-specific media and attribution",
+      "renderer contains responsive source, fallback, and alt handling"
+    ]
+  },
+  "browserChecks": {
+    "origin": "http://127.0.0.1:18974/",
+    "viewports": [
+      { "width": 1440, "height": 1000, "columns": 3, "documentWidth": 1425, "result": "PASS" },
+      { "width": 1920, "height": 1080, "columns": 3, "documentWidth": 1905, "result": "PASS" },
+      { "width": 2048, "height": 1152, "columns": 3, "documentWidth": 2033, "result": "PASS" },
+      { "width": 390, "height": 844, "columns": 1, "documentWidth": 375, "result": "PASS" }
+    ],
+    "observations": [
+      "All 12 destination cards rendered after pagination with the expected per-destination card URL, non-empty alt text, attribution, and license.",
+      "The detail dialog requested the matching 1600x900 hero URL rather than reusing the card URL.",
+      "Card and hero media used the required 32:21 and 16:9 crops with object-fit cover.",
+      "Cards and their image scale expose hover transitions; controls expose a two-pixel focus-visible outline.",
+      "No horizontal overflow occurred at any required viewport.",
+      "The normal run produced no browser warnings or errors. A forced missing Azores card request produced the expected asset warning and swapped only that image to assets/destinations/azores.svg."
+    ]
+  }
+}

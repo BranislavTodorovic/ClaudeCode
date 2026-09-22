@@ -36,3 +36,47 @@ test('pointer depth clamps, resets and ignores touch, reduced and Off input',()=
   handlers.pointermove({pointerType:mode==='touch'?'touch':'mouse',clientX:200,clientY:100});assert.equal(values['--scene-x'],'0px',mode);
  }
 });
+
+test('scene lifecycle stages entry, settle and ambient; exit resets without same-page replay',()=>{
+ const vm=require('node:vm'),scheduled=[],events=[];let still=false;
+ function classList(){var values=new Set();return {add:x=>values.add(x),remove:x=>values.delete(x),contains:x=>values.has(x)};}
+ function view(id,level){var styles={};var node={id,hidden:false,dataset:{sceneIntensity:level||'full'},classList:classList(),style:{setProperty:(k,v)=>styles[k]=v,removeProperty:k=>delete styles[k]},querySelectorAll:()=>[],closest:()=>node,offsetWidth:1200};return node;}
+ const document={hidden:false,body:{classList:classList()},querySelectorAll:()=>[],dispatchEvent:e=>events.push(e.detail)};
+ const OS={prefersReducedMotion:()=>still};
+ const setTimer=(fn,delay)=>{var task={fn,delay,cancelled:false};scheduled.push(task);return task;};
+ const clearTimer=task=>{if(task)task.cancelled=true;};
+ const source=read('shared/cinematic-scenes.js').split(' // Drawn compositions')[0]+'})();';
+ vm.runInNewContext(source,{window:{OneSpace:OS},document,matchMedia:()=>({matches:true}),setTimeout:setTimer,clearTimeout:clearTimer,CustomEvent:function(type,init){this.type=type;this.detail=init.detail;}});
+ const home=view('homeView');OS.scene.enter(home);assert.equal(home.dataset.sceneState,'entry');
+ scheduled.find(x=>x.delay===2350).fn();assert.equal(home.dataset.sceneState,'settle');
+ scheduled.find(x=>x.delay===3350).fn();assert.equal(home.dataset.sceneState,'ambient');
+ var eventCount=events.length;OS.scene.enter(home);assert.equal(events.length,eventCount,'same-page work must not restart entry');
+ const work=view('workView');OS.scene.enter(work);assert.equal(home.dataset.sceneState,'idle');assert.equal(work.dataset.sceneState,'entry');
+ OS.scene.exit(work);assert.equal(work.dataset.sceneState,'idle');
+ const subtle=view('personalView','subtle');OS.scene.enter(subtle);assert.equal(subtle.dataset.sceneState,'entry');assert(scheduled.some(x=>x.delay===1050));assert(scheduled.some(x=>x.delay===1550));
+ OS.scene.exit(subtle);const off=view('notesView','off');OS.scene.enter(off);assert.equal(off.dataset.sceneState,'still');
+ OS.scene.exit(off);still=true;const reduced=view('settingsView');OS.scene.enter(reduced);assert.equal(reduced.dataset.sceneState,'still');
+ assert(events.some(x=>x.page==='home'&&x.state==='entry'));assert(events.some(x=>x.page==='home'&&x.state==='settle'));assert(events.some(x=>x.page==='home'&&x.state==='ambient'));
+});
+
+test('each domain entry has its own camera direction and subject motion',()=>{
+ const css=read('styles/cinematic-refinement.css');
+ for(const page of ['home','work','personal','explore','games','movies','shortcuts','productivity','notes','settings'])assert(css.includes('#'+page+'View .living-hero{--wake-'),page);
+ for(const motion of ['sceneOrbitWake','sceneGardenWake','sceneAtlasWake','scenePortalWake','sceneProjectorWake','sceneTileWake','sceneFocusWake','sceneInkWake','sceneControlWake'])assert(css.includes('@keyframes '+motion),motion);
+ assert(css.includes('var(--wake-x,32px)'));assert(css.includes('var(--wake-scale,1.12)'));
+});
+
+test('top-level navigation keeps a coherent accessible outline-icon language',()=>{
+ const html=read('index.html'),css=read('styles/cinematic-refinement.css'),sidebar=html.slice(html.indexOf('<aside class="sidebar"'),html.indexOf('</aside>')+8);
+ for(const page of ['home','work','personal','explore','games','movies','shortcuts','productivity','notes','settings']){
+  const button=sidebar.match(new RegExp('<button[^>]*data-page-button="'+page+'"[\\s\\S]*?</button>'));
+  assert(button,page+' navigation button');assert(button[0].includes('<svg class="icon'),page+' icon');assert(/(?:aria-label|title)="[^"]+"/.test(button[0]),page+' accessible label');
+ }
+ for(const id of ['sideCommand','sideToolbox','sideAdd','customizeBtn','sideHelp']){
+  const button=sidebar.match(new RegExp('<button[^>]*id="'+id+'"[\\s\\S]*?</button>'));
+  assert(button,id);assert(button[0].includes('<svg class="icon'));assert(button[0].includes('aria-label='));
+ }
+ assert(html.includes('<script src="shared/tooltip-utils.js"></script>'));
+ assert(css.includes(':is(button,a,input,select,textarea,[tabindex]):focus-visible'));
+ assert(css.includes('outline:3px solid var(--page-accent)'));
+});

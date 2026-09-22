@@ -1549,7 +1549,7 @@ An exception is not an undocumented shortcut.
 | `docs/agent-instructions.md` fully reviewed                    | NOT RUN |          |
 | `docs/IMPLEMENTATION-STEPS.md` fully reconciled                | NOT RUN |          |
 | Historical Revised plan correctly treated as non-authoritative | NOT RUN |          |
-| Mandatory Phase 0–9 audit complete                             | NOT RUN |          |
+| Mandatory Phase 0–9 audit complete                             | PASS    | `docs/implementation-evidence/audit-phase0-9/AUDIT.md` and `audit.json`. |
 | Gate 12 complete                                               | NOT RUN |          |
 | No unresolved PENDING items                                    | NOT RUN |          |
 | No unresolved IMPLEMENTED / NOT VERIFIED items                 | NOT RUN |          |
@@ -1582,16 +1582,16 @@ Do not change `Overall status` to PASS until every mandatory final acceptance co
 
 | Phase | Gate    | Result  | Evidence |
 | ----- | ------- | ------- | -------- |
-| 0     | Gate 0  | NOT RUN |          |
-| 1     | Gate 1  | NOT RUN |          |
-| 2     | Gate 2  | NOT RUN |          |
-| 3     | Gate 3  | NOT RUN |          |
-| 4     | Gate 4  | NOT RUN |          |
-| 5     | Gate 5  | NOT RUN |          |
-| 6     | Gate 6  | NOT RUN |          |
-| 7     | Gate 7  | NOT RUN |          |
-| 8     | Gate 8  | NOT RUN |          |
-| 9     | Gate 9  | NOT RUN |          |
+| 0     | Gate 0  | PASS    | Mandatory Phase 0–9 audit; baseline contract/routes/inventory re-read. |
+| 1     | Gate 1  | PASS    | Mandatory audit; 82/82 suite, structural/load-order/secret-denial checks. |
+| 2     | Gate 2  | PASS    | Mandatory audit; Work regression plus four-width before/after visual review. |
+| 3     | Gate 3  | PASS    | Mandatory audit; current boundary/ownership/validation regressions. |
+| 4     | Gate 4  | PASS    | Mandatory audit; palette/contrast/reset tests and four-width visual review. |
+| 5     | Gate 5  | PASS    | `docs/implementation-evidence/phase5/gate5-rerun.json` — clarified 5.3A matrix, 82/82 tests, clean console/media and four-width browser evidence. |
+| 6     | Gate 6  | PASS    | Mandatory audit; current provider/API/security regressions and Phase 6 evidence. |
+| 7     | Gate 7  | PASS    | Mandatory audit; shortcut tests and browser ownership/restore/reorder evidence. |
+| 8     | Gate 8  | PASS    | Mandatory audit; current Games defect regressions and Phase 8 browser matrix. |
+| 9     | Gate 9  | PASS    | Mandatory audit; current Movies regressions, browser matrix and approved art exceptions. |
 | 10    | Gate 10 | NOT RUN |          |
 | 11    | Gate 11 | NOT RUN |          |
 | 12    | Gate 12 | NOT RUN |          |

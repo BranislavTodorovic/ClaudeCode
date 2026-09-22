@@ -1,0 +1,34 @@
+{
+  "checklistItem": "10.4.12",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "browserOrigin": "http://127.0.0.1:18978/",
+  "interactions": [
+    { "behavior": "preference controls", "result": "PASS", "evidence": "Eight selects render; selections search immediately and persist." },
+    { "behavior": "search submission", "result": "PASS", "evidence": "Search places = Lisbon returned only Lisbon." },
+    { "behavior": "recommendation cards", "result": "PASS", "evidence": "Filtered card contained image, source/license, summary, reason, Details and Shortlist." },
+    { "behavior": "detail open/close", "result": "PASS", "evidence": "Lisbon opened from recommendations and from the saved trip board, then closed." },
+    { "behavior": "save", "result": "PASS", "evidence": "Lisbon changed to Saved and appeared beside São Miguel on the trip board." },
+    { "behavior": "remove", "result": "PASS", "evidence": "São Miguel required the Remove destination confirmation and disappeared only after Delete." },
+    { "behavior": "notes", "result": "PASS", "evidence": "Museum morning and riverside evening remained visible after Save trip and reload." },
+    { "behavior": "status", "result": "PASS", "evidence": "Lisbon moved to Planned; São Miguel was also moved to Planned for order testing." },
+    { "behavior": "ordering", "result": "PASS", "evidence": "Move Lisbon earlier changed the shared Planned column from São Miguel/Lisbon to Lisbon/São Miguel." },
+    { "behavior": "trip plan", "result": "PASS", "evidence": "Lisbon long weekend with two day entries rendered and survived reload." },
+    { "behavior": "Surprise me", "result": "PASS", "evidence": "nature + medium selected one of São Miguel/Lake Bohinj; an impossible filter showed the no-match state." },
+    { "behavior": "image fallback", "result": "PASS", "evidence": "Forced missing Azores card swapped only that image to its decoded named SVG fallback." },
+    { "behavior": "reload", "result": "PASS", "evidence": "Only Lisbon remained, with planned status, notes, plan title and itinerary intact." }
+  ],
+  "finalReload": {
+    "tripBoardDestinations": ["Lisbon"],
+    "status": "planned",
+    "notesPersisted": true,
+    "planPersisted": true,
+    "itineraryPersisted": true,
+    "consoleWarningsOrErrors": 0
+  },
+  "automatedChecks": {
+    "command": "node --test tests/explore-preservation.test.js tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js tests/data-regression.test.js",
+    "passed": 49,
+    "failed": 0
+  }
+}

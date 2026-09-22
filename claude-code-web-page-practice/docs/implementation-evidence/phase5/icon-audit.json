@@ -1,0 +1,35 @@
+{
+  "phase": 5,
+  "date": "2026-09-22",
+  "checklist": "5.3A.6",
+  "status": "PASS",
+  "system": {
+    "format": "inline 24x24 outline SVG",
+    "stroke": "currentColor",
+    "sharedSizingToken": "--os-icon",
+    "navigationPages": ["home", "work", "personal", "explore", "games", "movies", "shortcuts", "productivity", "notes", "settings"],
+    "majorActionIcons": ["sideCommand", "sideToolbox", "sideAdd", "customizeBtn", "sideHelp"],
+    "iconOnlyTooltipSource": "aria-label or title via shared/tooltip-utils.js",
+    "focusRing": "3px page-accent outline with 4px offset"
+  },
+  "browser": {
+    "routesAudited": 10,
+    "unnamedInteractiveControls": 0,
+    "routeResults": [
+      {"page": "home", "interactiveControls": 40, "inlineSvgIcons": 37},
+      {"page": "work", "interactiveControls": 74, "inlineSvgIcons": 76},
+      {"page": "personal", "interactiveControls": 105, "inlineSvgIcons": 111},
+      {"page": "explore", "interactiveControls": 49, "inlineSvgIcons": 38},
+      {"page": "games", "interactiveControls": 66, "inlineSvgIcons": 54},
+      {"page": "movies", "interactiveControls": 85, "inlineSvgIcons": 59},
+      {"page": "shortcuts", "interactiveControls": 49, "inlineSvgIcons": 68},
+      {"page": "productivity", "interactiveControls": 16, "inlineSvgIcons": 4},
+      {"page": "notes", "interactiveControls": 12, "inlineSvgIcons": 0},
+      {"page": "settings", "interactiveControls": 22, "inlineSvgIcons": 4}
+    ],
+    "note": "Page counts exclude the persistent sidebar; every route retains the shared SVG navigation and action icons. Text-labelled page actions do not require redundant decoration."
+  },
+  "automated": {
+    "test": "tests/scenes.test.js -> top-level navigation keeps a coherent accessible outline-icon language"
+  }
+}

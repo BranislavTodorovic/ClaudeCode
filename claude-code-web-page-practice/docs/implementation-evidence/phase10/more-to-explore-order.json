@@ -1,0 +1,27 @@
+{
+  "checklistItem": "10.3.1",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "implementation": [
+    "Moved the More To Explore section to the final position in index.html.",
+    "Removed the runtime appendChild reorder shim from explore-global.js.",
+    "Added a source-order regression test."
+  ],
+  "sourceOrder": [
+    "Find your next horizon / trip board",
+    "Explore shortcuts",
+    "chill strip",
+    "More To Explore"
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/structure.test.js tests/data-regression.test.js tests/tracker-regression.test.js tests/explore-imagery.test.js",
+    "passed": 44,
+    "failed": 0
+  },
+  "browserChecks": {
+    "directPageBodySections": 4,
+    "lastSectionIndex": 3,
+    "lastSectionHeading": "More To Explore",
+    "consoleWarningsOrErrors": 0
+  }
+}

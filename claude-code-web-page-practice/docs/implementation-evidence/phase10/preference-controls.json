@@ -1,0 +1,30 @@
+{
+  "checklistItem": "10.4.4",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "selectControls": [
+    "Destination type",
+    "Season",
+    "Trip length",
+    "Budget",
+    "Travel style",
+    "Climate",
+    "Interests",
+    "Departure region"
+  ],
+  "additionalSearchFields": ["Search places", "Region", "Country"],
+  "departureBehavior": "A broad departure region is a ranking preference, not an exclusion filter.",
+  "automatedChecks": {
+    "command": "node --test tests/tracker-regression.test.js tests/data-regression.test.js tests/structure.test.js tests/explore-imagery.test.js",
+    "passed": 45,
+    "failed": 0,
+    "rankingFixture": "Asia-Pacific ranks bali, chiang-mai and kyoto first with an explicit same-region reason."
+  },
+  "browserChecks": {
+    "selectedDeparture": "Asia-Pacific",
+    "afterReload": "Asia-Pacific",
+    "topThree": ["Ubud", "Chiang Mai", "Kyoto"],
+    "reason": "Why this fits · Same broad departure region",
+    "consoleWarningsOrErrors": 0
+  }
+}

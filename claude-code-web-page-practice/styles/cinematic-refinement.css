@@ -218,13 +218,33 @@ body.force-reduced-motion [data-reveal]{opacity:1!important;transform:none!impor
 .scene-drawing svg{display:block;width:100%;height:100%}.scene-drawing rect:first-of-type{fill-opacity:.88}
 .living-hero .scene-image,.living-hero .page-hero-art{z-index:0;opacity:.3}
 .living-hero[data-scene-art="photo"] .scene-image,.living-hero[data-scene-art="photo"] .page-hero-art{opacity:1}.living-hero[data-scene-art="photo"] .scene-drawing{opacity:.35}
-.living-hero .scene-ambient{inset:-20%;z-index:2;background:radial-gradient(ellipse at 70% 40%,color-mix(in srgb,var(--scene-color) 24%,transparent),transparent 55%);animation:sceneLight 18s ease-in-out infinite alternate;mix-blend-mode:screen}
-.scene-motes{animation:sceneMotes 22s ease-in-out infinite alternate}
+.living-hero .scene-ambient{inset:-20%;z-index:2;background:radial-gradient(ellipse at 70% 40%,color-mix(in srgb,var(--scene-color) 24%,transparent),transparent 55%);animation:none;mix-blend-mode:screen}
+.scene-motes{animation:none}
 .living-hero .scene-scrim{z-index:3;background:linear-gradient(90deg,#07111eee 0%,#07111ec9 27%,#07111e66 50%,#07111e08 76%),linear-gradient(0deg,#07111eaa,transparent 28%)}
 .living-hero>.page-hero-copy,.living-hero>.scene-copy,.living-hero>.scene-topline,.living-hero>.scene-caption,.living-hero>.home-hero-copy{position:relative;z-index:4}
 .living-hero :is(h1,p,.page-hero-eyebrow,.hero-kicker,.scene-caption,.scene-topline){color:#f4f3f2}.living-hero .page-hero-copy{max-width:650px}.living-hero .scene-caption{margin-top:auto}
+#homeView .living-hero{--wake-x:18px;--wake-y:20px;--wake-scale:1.14;--wake-rotate:-2deg}#workView .living-hero{--wake-x:42px;--wake-y:12px;--wake-scale:1.11}#personalView .living-hero{--wake-x:0px;--wake-y:28px;--wake-scale:1.08}#exploreView .living-hero{--wake-x:68px;--wake-y:0px;--wake-scale:1.1;--wake-rotate:1.5deg}#gamesView .living-hero{--wake-x:0px;--wake-y:8px;--wake-scale:1.2;--wake-rotate:-1deg}#moviesView .living-hero{--wake-x:-52px;--wake-y:4px;--wake-scale:1.12}#shortcutsView .living-hero{--wake-x:24px;--wake-y:18px;--wake-scale:.94}#productivityView .living-hero{--wake-x:0px;--wake-y:0px;--wake-scale:1.16}#notesView .living-hero{--wake-x:46px;--wake-y:-18px;--wake-scale:1.09}#settingsView .living-hero{--wake-x:0px;--wake-y:-28px;--wake-scale:1.08}
 #gamesView>.living-hero,#moviesView>.living-hero{margin-bottom:24px;border:1px solid var(--line);border-radius:28px;padding:42px;display:flex;flex-direction:column;gap:50px}
-.scene-entry>.living-hero .page-hero-copy,.scene-entry>.living-hero .scene-copy{animation:sceneEntry .48s ease-out both}
+.scene-entry>.living-hero .page-hero-copy,.scene-entry>.living-hero .scene-copy{animation:sceneEntry .72s var(--scene-copy-delay,520ms) cubic-bezier(.2,.75,.2,1) both}
+[data-scene-state="entry"]>.living-hero .scene-drawing{animation:sceneWakeCamera var(--scene-wake-duration,2350ms) cubic-bezier(.18,.72,.18,1) both}
+[data-scene-state="entry"]>.living-hero .scene-drawing svg>g:not(.scene-motes){animation:sceneWakeLines var(--scene-wake-duration,2350ms) cubic-bezier(.22,.7,.22,1) both}
+[data-scene-state="entry"]>.living-hero .scene-ambient{animation:sceneWakeLight var(--scene-wake-duration,2350ms) ease-out both}
+[data-scene-state="entry"]>.living-hero .scene-scrim{animation:sceneWakeScrim var(--scene-wake-duration,2350ms) ease-out both}
+[data-scene-state="entry"]>.living-hero .scene-caption{animation:sceneCaptionWake .72s var(--scene-caption-delay,1180ms) cubic-bezier(.2,.75,.2,1) both}
+[data-scene-state="entry"]>.living-hero .scene-drawing svg>g:not(.scene-motes)>*{transform-box:fill-box;transform-origin:center}
+#homeView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>:is(circle,ellipse){animation:sceneOrbitWake var(--scene-wake-duration) ease-out both}
+#personalView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>ellipse{animation:sceneGardenWake var(--scene-wake-duration) ease-out both}
+#exploreView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>:is(circle,ellipse){animation:sceneAtlasWake var(--scene-wake-duration) ease-out both}
+#gamesView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>path{animation:scenePortalWake var(--scene-wake-duration) cubic-bezier(.2,.75,.2,1) both}
+#moviesView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>rect{animation:sceneProjectorWake var(--scene-wake-duration) ease-out both}
+#shortcutsView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>rect{animation:sceneTileWake .72s ease-out both}#shortcutsView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>rect:nth-of-type(2){animation-delay:.14s}#shortcutsView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>rect:nth-of-type(3){animation-delay:.28s}#shortcutsView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>rect:nth-of-type(4){animation-delay:.42s}#shortcutsView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>rect:nth-of-type(n+5){animation-delay:.56s}
+#productivityView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>circle{animation:sceneFocusWake var(--scene-wake-duration) ease-out both}
+#notesView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>path{animation:sceneInkWake var(--scene-wake-duration) ease-out both}
+#settingsView[data-scene-state="entry"] .scene-drawing svg>g:not(.scene-motes)>circle{animation:sceneControlWake var(--scene-wake-duration) ease-out both}
+[data-scene-state="settle"]>.living-hero .scene-drawing,[data-scene-state="settle"]>.living-hero .scene-scrim{transition:transform .85s ease-out,opacity .85s ease-out}
+[data-scene-state="ambient"]>.living-hero .scene-ambient{animation:sceneLight 18s ease-in-out infinite alternate}
+[data-scene-state="ambient"]>.living-hero .scene-motes{animation:sceneMotes 22s ease-in-out infinite alternate}
+[data-scene-state="idle"]>.living-hero :is(.scene-ambient,.scene-motes){animation:none}
 [data-reveal].is-revealing{animation:sceneReveal .38s var(--scene-delay,0ms) ease-out both}
 .scene-offscreen .scene-ambient,.scene-offscreen .scene-motes,.scene-document-hidden .scene-ambient,.scene-document-hidden .scene-motes{animation-play-state:paused}
 [data-scene-intensity="subtle"] .scene-ambient{opacity:.35;animation-duration:36s}[data-scene-intensity="subtle"] .scene-motes{animation:none;opacity:.4}
@@ -238,6 +258,20 @@ button:disabled{cursor:not-allowed;opacity:.55}.btn:focus-visible{outline:3px so
 .work-progress>span{transition:width .25s ease}.domain-task-list input:checked+span{transition:color .2s ease}.discovery-photo img{transition:opacity .35s ease}.discovery-photo.is-missing{background:linear-gradient(135deg,var(--surface-2),var(--accent-soft))}
 @keyframes sceneEntry{from{opacity:.4;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes sceneReveal{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes sceneWakeCamera{0%{opacity:.08;transform:translate3d(var(--wake-x,32px),var(--wake-y,14px),0) scale(var(--wake-scale,1.12)) rotate(var(--wake-rotate,0deg));filter:saturate(.55) brightness(.65)}38%{opacity:.72;transform:translate3d(-7px,-3px,0) scale(1.065);filter:saturate(.82) brightness(.88)}100%{opacity:.94;transform:translate3d(var(--scene-x,0px),var(--scene-y,0px),0) scale(1.035);filter:none}}
+@keyframes sceneWakeLines{0%{opacity:.08;stroke-dasharray:12 42;stroke-dashoffset:180}48%{opacity:.82;stroke-dasharray:34 16;stroke-dashoffset:48}100%{opacity:1;stroke-dasharray:initial;stroke-dashoffset:0}}
+@keyframes sceneWakeLight{0%{opacity:0;transform:translate3d(-16%,-8%,0) scale(.72)}42%{opacity:.92;transform:translate3d(5%,2%,0) scale(1.12)}100%{opacity:.68;transform:none}}
+@keyframes sceneWakeScrim{0%{opacity:1;transform:translate3d(-8%,0,0)}48%{opacity:.72}100%{opacity:1;transform:none}}
+@keyframes sceneCaptionWake{from{opacity:0;transform:translate3d(0,14px,0);letter-spacing:.08em}to{opacity:1;transform:none;letter-spacing:normal}}
+@keyframes sceneOrbitWake{0%{transform:rotate(-16deg) scale(.76)}58%{transform:rotate(4deg) scale(1.04)}100%{transform:none}}
+@keyframes sceneGardenWake{0%{transform:translateY(24px) scale(.72)}55%{transform:translateY(-4px) scale(1.04)}100%{transform:none}}
+@keyframes sceneAtlasWake{0%{transform:translateX(42px) rotate(12deg) scale(.78)}60%{transform:translateX(-4px) rotate(-2deg) scale(1.03)}100%{transform:none}}
+@keyframes scenePortalWake{0%{transform:scale(.72) rotate(-5deg)}52%{transform:scale(1.06) rotate(1deg)}100%{transform:none}}
+@keyframes sceneProjectorWake{0%{transform:scaleX(.15);opacity:.12}48%{transform:scaleX(1.06);opacity:.9}100%{transform:none;opacity:1}}
+@keyframes sceneTileWake{from{transform:translateY(22px) scale(.72);opacity:0}to{transform:none;opacity:1}}
+@keyframes sceneFocusWake{0%{transform:rotate(-80deg) scale(.72)}62%{transform:rotate(5deg) scale(1.03)}100%{transform:none}}
+@keyframes sceneInkWake{0%{transform:translateX(30px);opacity:.08}56%{transform:translateX(-3px);opacity:.9}100%{transform:none;opacity:1}}
+@keyframes sceneControlWake{0%{transform:rotate(-30deg) scale(.65);opacity:.12}58%{transform:rotate(4deg) scale(1.05);opacity:1}100%{transform:none;opacity:1}}
 @keyframes sceneLight{from{transform:translate3d(-2%,-1%,0);opacity:.5}to{transform:translate3d(3%,2%,0);opacity:1}}
 @keyframes sceneMotes{from{transform:translate3d(0,0,0)}to{transform:translate3d(-12px,-16px,0)}}
 @media(max-width:760px){.living-hero{min-height:360px}.living-hero .scene-scrim{background:linear-gradient(90deg,#07111eee,#07111eaa 60%,#07111e55)}#gamesView>.living-hero,#moviesView>.living-hero{padding:28px 22px;gap:32px}.living-hero .page-hero-copy{max-width:100%}.scene-caption{gap:12px}}

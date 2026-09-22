@@ -1,0 +1,88 @@
+{
+  "phase": 5,
+  "date": "2026-09-22",
+  "checklist": {
+    "5.3A.1": "PASS",
+    "5.3A.2": "PASS",
+    "5.3A.3": "PASS",
+    "5.3A.4": "PASS",
+    "5.3A.5": "PASS"
+  },
+  "implementation": {
+    "states": ["entry", "settle", "ambient", "idle", "still"],
+    "fullTimingMs": {
+      "settle": 2350,
+      "ambient": 3350
+    },
+    "subtleTimingMs": {
+      "settle": 1050,
+      "ambient": 1550
+    },
+    "entryStages": [
+      "camera/depth and image reveal",
+      "line drawing and light sweep",
+      "copy and scene-caption reveal"
+    ]
+  },
+  "automated": {
+    "command": "node --test tests/",
+    "tests": 82,
+    "passed": 82,
+    "failed": 0,
+    "regression": "tests/scenes.test.js -> scene lifecycle stages entry, settle and ambient; exit resets without same-page replay"
+  },
+  "browser": {
+    "productionOrigin": "http://localhost:8973/",
+    "disposableOrigin": "http://localhost:18974/",
+    "sceneMatrix": [
+      {"page": "home", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 24},
+      {"page": "work", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 80},
+      {"page": "personal", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 97},
+      {"page": "explore", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 52},
+      {"page": "games", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 248},
+      {"page": "movies", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 270},
+      {"page": "shortcuts", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 86},
+      {"page": "productivity", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 9},
+      {"page": "notes", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 4},
+      {"page": "settings", "beginning": "entry", "middleAt2400Ms": "settle", "settledAt3400Ms": "ambient", "controlsAvailable": 40}
+    ],
+    "workComputedFrames": [
+      {"timeMs": 0, "state": "entry", "drawingTransform": "matrix(1.08662, 0, 0, 1.08662, 8.32838, 3.6816)", "copyOpacity": 0.4},
+      {"timeMs": 1200, "state": "entry", "drawingTransform": "matrix(1.03984, 0, 0, 1.03984, -1.12919, -0.48394)", "copyOpacity": 1},
+      {"timeMs": 2500, "state": "settle", "drawingTransform": "matrix(1.035, 0, 0, 1.035, 0, 0)", "copyOpacity": 1},
+      {"timeMs": 3500, "state": "ambient", "drawingTransform": "matrix(1.035, 0, 0, 1.035, 0, 0)", "copyOpacity": 1}
+    ],
+    "domainMotion": [
+      {"page": "home", "camera": "18px 20px / 1.14 / -2deg", "subject": "sceneOrbitWake"},
+      {"page": "work", "camera": "42px 12px / 1.11", "subject": "sceneWakeLines"},
+      {"page": "personal", "camera": "0px 28px / 1.08", "subject": "sceneGardenWake"},
+      {"page": "explore", "camera": "68px 0px / 1.10 / 1.5deg", "subject": "sceneAtlasWake"},
+      {"page": "games", "camera": "0px 8px / 1.20 / -1deg", "subject": "scenePortalWake"},
+      {"page": "movies", "camera": "-52px 4px / 1.12", "subject": "sceneProjectorWake"},
+      {"page": "shortcuts", "camera": "24px 18px / 0.94", "subject": "sceneTileWake stagger"},
+      {"page": "productivity", "camera": "0px 0px / 1.16", "subject": "sceneFocusWake"},
+      {"page": "notes", "camera": "46px -18px / 1.09", "subject": "sceneInkWake"},
+      {"page": "settings", "camera": "0px -28px / 1.08", "subject": "sceneControlWake"}
+    ],
+    "replay": {
+      "samePageBefore": "ambient",
+      "samePageAfter": "ambient",
+      "afterExit": "idle",
+      "afterReentry": "entry"
+    },
+    "intensity": {
+      "subtle": ["entry", "settle", "ambient"],
+      "off": "still",
+      "reducedMotion": "still"
+    },
+    "responsive": {
+      "widths": [1440, 1024, 760, 390],
+      "routesPerWidth": 10,
+      "checks": 40,
+      "overflowFailures": 0,
+      "missingHeroFailures": 0
+    },
+    "consoleWarnings": 0,
+    "consoleErrors": 0
+  }
+}

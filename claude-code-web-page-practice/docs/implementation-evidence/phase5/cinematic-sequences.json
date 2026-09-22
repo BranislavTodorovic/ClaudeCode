@@ -1,0 +1,68 @@
+{
+  "phase": 5,
+  "date": "2026-09-22",
+  "checklist": "5.3A.7",
+  "status": "PASS",
+  "method": "Equivalent browser-state measurements at beginning, mid-entry and settled/ambient markers, as permitted by the Phase 5 evidence rule.",
+  "timestampsMs": [0, 1200, 3400],
+  "expectedStateSequence": ["entry", "entry", "ambient"],
+  "measuredProperties": ["scene state", "drawing transform and opacity", "copy transform and opacity", "caption opacity", "hero height", "document overflow"],
+  "pages": ["home", "work", "personal", "explore", "games", "movies", "shortcuts", "productivity", "notes", "settings"],
+  "results": [
+    {
+      "viewport": [1440, 1000],
+      "routesPassingStateSequence": 10,
+      "routesWithDrawingChange": 10,
+      "routesWithCopyChange": 10,
+      "routesWithCaptionChange": 10,
+      "overflowFailures": 0,
+      "heroHeightsBeginningMidSettled": {
+        "home": [627, 628, 628], "work": [588, 588, 588], "personal": [380, 380, 380], "explore": [402, 402, 402], "games": [432, 432, 432],
+        "movies": [380, 380, 380], "shortcuts": [380, 380, 380], "productivity": [380, 380, 380], "notes": [380, 380, 380], "settings": [380, 380, 380]
+      }
+    },
+    {
+      "viewport": [1024, 900],
+      "routesPassingStateSequence": 10,
+      "routesWithDrawingChange": 10,
+      "routesWithCopyChange": 10,
+      "routesWithCaptionChange": 10,
+      "overflowFailures": 0,
+      "heroHeightsBeginningMidSettled": {
+        "home": [589, 590, 590], "work": [550, 550, 550], "personal": [380, 380, 380], "explore": [382, 382, 382], "games": [380, 380, 380],
+        "movies": [380, 380, 380], "shortcuts": [380, 380, 380], "productivity": [380, 380, 380], "notes": [380, 380, 380], "settings": [380, 380, 380]
+      }
+    },
+    {
+      "viewport": [760, 900],
+      "routesPassingStateSequence": 10,
+      "routesWithDrawingChange": 10,
+      "routesWithCopyChange": 10,
+      "routesWithCaptionChange": 10,
+      "overflowFailures": 0,
+      "heroHeightsBeginningMidSettled": {
+        "home": [595, 596, 596], "work": [577, 577, 577], "personal": [445, 445, 445], "explore": [513, 513, 513], "games": [461, 461, 461],
+        "movies": [461, 461, 461], "shortcuts": [421, 421, 421], "productivity": [421, 421, 421], "notes": [445, 445, 445], "settings": [421, 421, 421]
+      }
+    },
+    {
+      "viewport": [390, 844],
+      "routesPassingStateSequence": 10,
+      "routesWithDrawingChange": 10,
+      "routesWithCopyChange": 10,
+      "routesWithCaptionChange": 10,
+      "overflowFailures": 0,
+      "heroHeightsBeginningMidSettled": {
+        "home": [721, 722, 722], "work": [505, 505, 505], "personal": [445, 445, 445], "explore": [562, 562, 562], "games": [510, 510, 510],
+        "movies": [534, 534, 534], "shortcuts": [445, 445, 445], "productivity": [445, 445, 445], "notes": [494, 494, 494], "settings": [445, 445, 445]
+      }
+    }
+  ],
+  "summary": {
+    "routeViewportSequences": 40,
+    "stageMeasurements": 120,
+    "stateSequenceFailures": 0,
+    "stagedVisualChangeFailures": 0,
+    "overflowFailures": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "checklistItem": "10.4.3",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "storageKey": "orbit-explore-preferences",
+  "schema": {
+    "categories": "single selected value stored as an array",
+    "seasons": "single selected value stored as an array",
+    "duration": "single selected value stored as an array",
+    "budget": "single selected value stored as an array",
+    "pace": "single selected value stored as an array",
+    "climate": "single selected value stored as an array",
+    "interests": "single selected value stored as an array",
+    "departure": "single selected value stored as an array"
+  },
+  "ownership": "explore-global.js owns persistence; discovery-ui.js restores controls and triggers the shared search model.",
+  "automatedChecks": {
+    "command": "node --test tests/data-regression.test.js tests/tracker-regression.test.js tests/structure.test.js",
+    "passed": 40,
+    "failed": 0,
+    "notes": "The existing storage validator continues to accept only the legacy allow-listed preference schema."
+  },
+  "browserChecks": {
+    "origin": "http://127.0.0.1:18977/",
+    "selected": { "category": "nature", "budget": "medium" },
+    "afterReload": { "category": "nature", "budget": "medium", "results": ["São Miguel", "Lake Bohinj"] },
+    "afterClearAndReload": { "category": "", "budget": "", "status": "Local collection · no accounts or API keys. Search to begin." },
+    "consoleWarningsOrErrors": 0
+  }
+}

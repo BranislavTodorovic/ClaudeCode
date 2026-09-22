@@ -1,0 +1,38 @@
+{
+  "checklistItems": ["10.4.5", "10.4.6"],
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "model": "explore/local-discovery.js#recommend",
+  "rankingRules": [
+    "Each selected preference group must match.",
+    "Multiple values inside one preference group are alternatives.",
+    "Each matched value contributes one point.",
+    "A matching broad departure region contributes one point without excluding other regions.",
+    "Equal scores use destination ID as the deterministic tie-breaker."
+  ],
+  "reasonRules": [
+    "Matched preference values are shown on every recommendation card.",
+    "A departure-region boost is shown as Same broad departure region.",
+    "With no preferences, cards identify themselves as local catalog starting points."
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/tracker-regression.test.js tests/data-regression.test.js tests/structure.test.js tests/explore-imagery.test.js",
+    "passed": 45,
+    "failed": 0,
+    "determinism": "Original and reversed input catalogs produce the same ranked IDs.",
+    "intersection": "nature + medium returns only destinations matching both groups."
+  },
+  "browserChecks": [
+    {
+      "preferences": { "category": "nature", "budget": "medium" },
+      "results": ["São Miguel", "Lake Bohinj"],
+      "reason": "Why this fits · Categories: nature · Budget: medium"
+    },
+    {
+      "preferences": { "departure": "Asia-Pacific" },
+      "topResults": ["Ubud", "Chiang Mai", "Kyoto"],
+      "reason": "Why this fits · Same broad departure region"
+    }
+  ],
+  "consoleWarningsOrErrors": 0
+}

@@ -35,6 +35,15 @@ test('classic scripts preserve the exact baseline dependency order and inline bo
   assert(controller > html.indexOf('src="personal/personal-controller.js"'));
   assert(controller < html.indexOf('src="shared/visual-utils.js"'));
 });
+test('More To Explore is the final Explore page-body section in source order', () => {
+  const start=html.indexOf('<section id="exploreView"');
+  const end=html.indexOf('<!-- ===================== Movies',start);
+  const explore=html.slice(start,end);
+  const more=explore.indexOf('<h2>More To Explore</h2>');
+  assert(more>explore.indexOf('<h2>Explore shortcuts</h2>'));
+  assert(more>explore.indexOf('id="chillStrip"'));
+  assert.equal((explore.match(/<h2>More To Explore<\/h2>/g)||[]).length,1);
+});
 test('all literal relative requires in source and test files resolve', () => {
   for (const file of walk(root,true).filter(f=>/\.(js|mjs)$/.test(f))) {
     const source=fs.readFileSync(file,'utf8');
@@ -56,7 +65,7 @@ test('literal artwork and stylesheet URLs resolve without moving assets', () => 
 });
 test('recursive parse inventory covers every application JS file', () => {
   const source=walk(root).filter(f=>f.endsWith('.js'));
-  assert.equal(source.length,29);
+  assert.equal(source.length,28);
   for(const folder of ['shared','work','personal','games','movies','explore','server'])assert(source.some(f=>path.relative(root,f).startsWith(folder+path.sep)),folder);
   const parseTest=fs.readFileSync(path.join(root,'tests/data-regression.test.js'),'utf8');
   assert(parseTest.includes('walk(root)'));

@@ -1,7 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const storage=require('./storage-setup'),work=require('../work/work-tracker'),explore=require('../explore/explore'),shortcuts=require('../shared/shortcut-utils'),resources=require('../games/game-resources');
+const storage=require('./storage-setup'),work=require('../work/work-tracker'),explore=require('../explore/local-discovery'),shortcuts=require('../shared/shortcut-utils'),resources=require('../games/game-resources');
 const root=path.resolve(__dirname,'..'),at='2026-09-17T12:00:00.000Z';
 const project={id:'p',name:'Project',status:'active',progress:0};
 const item={id:'i',projectId:'p',name:'Story',type:'story',status:'open',priority:'high',createdAt:at,updatedAt:at,deadline:'2026-09-19'};
@@ -61,6 +61,9 @@ test('all curated destinations validate and ranking is stable, explained and int
  const destinations=context.window.DESTINATIONS;assert.ok(destinations.every(storage.validDestination));
  const prefs={categories:['nature'],budget:['medium']},a=explore.recommend(destinations,prefs,storage.validDestination),b=explore.recommend([...destinations].reverse(),prefs,storage.validDestination);
  assert.deepEqual(Array.from(a,x=>x.destination.id),Array.from(b,x=>x.destination.id));assert.ok(a.length);assert.ok(a.every(x=>x.destination.categories.includes('nature')&&x.destination.budget==='medium'&&x.reasons.length===2));
+ const browserA=explore.search('destinations',{category:'nature',budget:'medium'},{DESTINATIONS:destinations,trips:[]}),browserB=explore.search('destinations',{category:'nature',budget:'medium'},{DESTINATIONS:[...destinations].reverse(),trips:[]});
+ assert.deepEqual(Array.from(browserA.items,x=>x.id),Array.from(browserB.items,x=>x.id));assert.ok(browserA.items.every(x=>x.matchExplanation.includes('Categories: nature')&&x.matchExplanation.includes('Budget: medium')));
+ const departure=explore.search('destinations',{departure:'Asia-Pacific'},{DESTINATIONS:destinations,trips:[]});assert.deepEqual(Array.from(departure.items.slice(0,3),x=>x.id),['bali','chiang-mai','kyoto']);assert.ok(departure.items.slice(0,3).every(x=>x.matchExplanation.includes('Same broad departure region')));
  assert.equal(explore.recommend([{name:'broken'}],{},storage.validDestination).length,0);
  assert.equal(storage.valid('orbit-explore-preferences',JSON.stringify({budget:['unlimited']})),false);
  assert.equal(storage.valid('orbit-explore-saved',JSON.stringify([{id:'s',destinationId:'azores',createdAt:'bad'}])),false);
@@ -102,4 +105,3 @@ test('malformed destination metadata and game templates are rejected, and tracke
  const g=context.window.DEFAULT_GAMES[0];assert.equal(storage.valid('orbit-games-library',JSON.stringify([{...g,defaultTaskTemplates:{weekly:[42]}}])),false);
  const story=resources.tasks({...g,trackerType:'story'}),weekly=resources.tasks({...g,trackerType:'weekly'});assert.notDeepEqual(story,weekly);assert.equal(weekly.length,3);
 });
-

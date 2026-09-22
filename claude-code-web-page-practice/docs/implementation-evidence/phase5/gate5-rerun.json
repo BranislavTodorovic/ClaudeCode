@@ -1,0 +1,48 @@
+{
+  "phase": 5,
+  "date": "2026-09-22",
+  "gate": "Gate 5 rerun under clarified 5.3A criteria",
+  "status": "PASS",
+  "checklistItems": {
+    "5.3A.1": "VERIFIED",
+    "5.3A.2": "VERIFIED",
+    "5.3A.3": "VERIFIED",
+    "5.3A.4": "VERIFIED",
+    "5.3A.5": "VERIFIED",
+    "5.3A.6": "VERIFIED",
+    "5.3A.7": "VERIFIED",
+    "5.3A.8": "VERIFIED"
+  },
+  "automated": {
+    "command": "node --test tests/",
+    "tests": 82,
+    "passed": 82,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "distinctScenes": 10,
+    "responsiveWidths": [1440, 1024, 760, 390],
+    "routeViewportSequences": 40,
+    "stageMeasurements": 120,
+    "lifecycleFailures": 0,
+    "stagedVisualChangeFailures": 0,
+    "overflowFailures": 0,
+    "unnamedInteractiveControls": 0,
+    "consoleWarningsOrErrors": 0,
+    "brokenLoadedMediaWithSource": 0
+  },
+  "motion": {
+    "full": "entry at 0/1200 ms, settle at 2350 ms, ambient at 3350 ms",
+    "subtle": "entry, settle at 1050 ms, ambient at 1550 ms",
+    "off": "still",
+    "reducedMotion": "still"
+  },
+  "evidence": [
+    "docs/implementation-evidence/phase5/acceptance.json",
+    "docs/implementation-evidence/phase5/cinematic-lifecycle.json",
+    "docs/implementation-evidence/phase5/cinematic-sequences.json",
+    "docs/implementation-evidence/phase5/icon-audit.json",
+    "docs/implementation-evidence/phase5/scene-*.png"
+  ]
+}
