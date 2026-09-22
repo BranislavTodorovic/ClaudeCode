@@ -723,7 +723,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | docs/implementation-evidence/baseline-tests.txt: 31 pass, 0 fail; every root application JS and inline script parsed. |
+   | Verified | Historical baseline: docs/implementation-evidence/baseline-tests.txt (31/31). Current recheck at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.1-tests.txt (31/31). |
 
 13. [x] **0.2** — Parse every JS file and the inline `index.html` script — [DONE] — covered by the existing parse test
 
@@ -731,7 +731,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | docs/implementation-evidence/baseline-tests.txt: 31 pass, 0 fail; every root application JS and inline script parsed. |
+   | Verified | Current recursive parse test at tests/data-regression.test.js:131–145 enumerates 28 application JS files and parses inline index.html scripts; passing run: docs/implementation-evidence/audit-2026-09-22/phase0-0.1-tests.txt. Historical baseline: baseline-tests.txt. |
 
 14. [x] **0.3** — Start `node _static-server.js`; inspect all 11 routes at `http://localhost:8973` — [OPEN]
 
@@ -739,7 +739,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | baseline-routes.json: all 11 route identities and rendered headings verified; no broken visible images or console errors. Existing smoke helper has an outdated Explore heading, recorded for Phase 12. |
+   | Verified | Historical baseline: baseline-routes.json. Current 11-route browser recheck at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.3-routes.json (Projects resolves to Work subview; no visible broken images or console errors). |
 
 15. [x] **0.4** — Record current storage keys, backup format, router pages, script load order, and the `onespace:data-changed` / `onespace:page-changed` events — [OPEN]
 
@@ -747,7 +747,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | baseline-contract.json records all 62 keys, version 4 exports and 2/3/4 imports, 11 routes, 22 scripts, 8 styles and event contracts; user-confirmed correction recorded. |
+   | Verified | Historical contract: baseline-contract.json. Current source recheck at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.4-contract.json records 66 keys, v4 export/v2–v4 imports, 11 routes, 25 ordered scripts, 8 styles and event payloads. |
 
 16. [x] **0.5** — Inventory every button, tab, link, form, checkbox, select, modal action, shortcut and page jump — recording owner, expected state change, persistence key, success feedback, error behaviour, focus return and reload behaviour — [OPEN] — this inventory is the acceptance checklist for Phase 12
 
@@ -755,7 +755,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | interaction-inventory.json and INTERACTION-INVENTORY.md record source control templates and required acceptance fields; baseline-routes.json records visible route controls. Phase 12 outcomes remain pending. |
+   | Verified | Historical baseline: interaction-inventory.json and INTERACTION-INVENTORY.md. Current 388 source control templates across 26 browser files, with owner, action, expected state, persistence, feedback, error/focus/reload contract and Phase 12 outcome slots: docs/implementation-evidence/audit-2026-09-22/phase0-0.5-current-inventory.json. Current route rendering: phase0-0.3-routes.json. |
 
 17. [x] **0.6** — Treat `storage-utils.js` as the only persistence validation boundary — [DONE] — holds today; must not regress
 
@@ -763,7 +763,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+   | Verified | Current source and direct-write scan at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.6-storage-boundary.json; validation and rollback tests in phase0-0.1-tests.txt pass. |
 
 18. [x] **0.7** — Schemas for projects, work items, tasks, history, destinations, preferences, saved destinations, Personal records, game resources, game default tasks, movie/series metadata — [DONE] — all present and validated
 
@@ -771,7 +771,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+   | Verified | Current schema branches and matching regression tests at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.7-schemas.json and phase0-0.1-tests.txt. |
 
 19. [x] **0.8** — Generated IDs, timestamps, status enums, optional fields, maximum lengths in every schema — [DONE]
 
@@ -779,7 +779,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+   | Verified | Current field contracts and generators at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.8-field-contracts.json; named schema regressions pass in phase0-0.1-tests.txt. |
 
 20. [x] **0.9–0.10** — Migration behaviour and safe defaults for existing records and v2 backups — [DONE] — v2 and v3 accepted, v4 current
 
@@ -787,7 +787,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+   | Verified | Current v4 export and complete v2/v3/v4 import/default/rollback contract at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.9-0.10-migration.json; named migration tests pass in phase0-0.1-tests.txt. |
 
 21. [x] **0.11** — Capture "before" screenshots of Work, Games, Movies and Settings at 1440 / 1024 / 760 / 390 px — [NEW] — comparison set for the redesign
 
@@ -795,7 +795,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 16 before screenshots in docs/implementation-evidence/before; widths 1440/1024/760/390. Layout measurements in before-layouts.json. Existing Work sidebar overlap recorded for Phase 2. |
+   | Verified | All 16 historical captures remain present and readable; four representative 1440-width images visually inspected, dimensions/hashes and per-route width set recorded at 37f3e00 in docs/implementation-evidence/audit-2026-09-22/phase0-0.11-before-screenshots.json. Browser viewport measurements remain in before-layouts.json. |
 
 22. [x] **0.12** — Export a v4 backup from the live origin before any other phase runs — [NEW] — no later phase can then lose real data
 
@@ -803,7 +803,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | live-origin-baseline-v4.json exported using the actual Settings control; all 62 keys validate and restore round trip succeeds. See baseline-backup-validation.json. |
+   | Verified | Genuine historical 62-key v4 export and Settings provenance remain in live-origin-baseline-v4.json and baseline-backup-validation.json; current 66-key storage boundary validates/restores it without disturbing unrelated storage (docs/implementation-evidence/audit-2026-09-22/phase0-0.12-backup-validation.json). |
 
 23. [x] **Gate 0** — Verify baseline tests, all routes, contracts, interaction inventory, 16 screenshots, and live-origin v4 backup
 
@@ -811,9 +811,11 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 31/31 baseline tests, 11 routes, contracts, interaction inventory, 16 screenshots and genuine live-origin backup retained. |
+   | Verified | Current Gate 0 rerun at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-gate.json and phase0-gate-tests.txt (92/92); all item evidence mapped, 11 browser routes inspected, 16 historical screenshots and genuine v4 backup validated. |
 
 ## Phase 1 — Repository regrouping
+
+Current-state audit (2026-09-22): items 24–98 were checked in checklist order. Per-item results are in `docs/implementation-evidence/audit-2026-09-22/phase1-items-24-78.jsonl`, `phase1-79-secrets-marker.json`, `phase1-items-80-94.jsonl`, and `phase1-items-95-98.json`. Current gate evidence includes `phase1-gate-tests.txt` (92/92), `phase1-gate-http.json`, and `phase1-95-missing-asset.json`.
 
 ### §1.8 batch 1 — shared
 
@@ -1251,7 +1253,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+   | Verified | Current `server/providers/catalog.js` exists and root `providers/` is absent. No provider files were tracked before Phase 1, so Git cannot show a directory rename; the historical wording was inaccurate. See `audit-2026-09-22/phase1-items-24-78.jsonl` item 76 and Phase 6 provider evidence. |
 
 77. [x] **1.8.7.move3** — Use git mv for `REVISED-IMPLEMENTATION-PLAN.md` → `docs/REVISED-IMPLEMENTATION-PLAN.md`, preserving its contents (§1.2)
 
@@ -1275,7 +1277,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+   | Verified | A later commit had removed the tracked marker. Restored the authoritative ignore exception and committed the empty `config/secrets/.gitkeep` at `81105a9`; current structure tests pass (9/9), and credential-like files remain ignored. See `audit-2026-09-22/phase1-79-secrets-marker.json`. |
 
 80. [x] **1.5.2** — **`config/secrets.example.json`** — committed template, placeholder values only. **[NEW]** it now documents the keys Phase 6 will actually consume: `TMDB_API_KEY`, and `IGDB_CLIENT_ID` + `IGDB_CLIENT_SECRET` or `RAWG_API_KEY`.
 
@@ -1403,7 +1405,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+   | Verified | Current disposable server returned 404 for forced `assets/destinations/azores.svg` failure and 200 for the entry page; see `audit-2026-09-22/phase1-95-missing-asset.json`. |
 
 96. [x] **1.6.README** — Update server commands, load-order paragraph and file references listed in §1.6
 
@@ -1427,9 +1429,11 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 39/39 tests pass; all seven batch HTTP/browser gates pass; config/secrets/probe.js and api-keys.json blocked; commit 6b4e27e preserves git log --follow games/games.js history. |
+   | Verified | Historical seven batch gates remain recorded. Current run: 92/92 Node tests pass; config secrets probe JS and JSON return 404; Work and Games files return 200; `git log --follow games/games.js` reaches pre-move commits; Phase 0 browser route audit had no console errors. See `audit-2026-09-22/phase1-items-95-98.json`, `phase1-gate-tests.txt`, and `phase1-gate-http.json`. |
 
 ## Phase 2
+
+Current-state audit (2026-09-22): items 99–136 were inspected in order; per-item source checks, unchanged Phase 2 core source hashes, current 22/22 Work/domain tests, retained browser acceptance, and responsive captures are recorded in `docs/implementation-evidence/audit-2026-09-22/phase2-items.jsonl` and `phase2-current-tests.txt`. The Projects alias, four Work views, live search with preserved input focus, and detail drawer Escape focus were also rechecked in the disposable browser. Item 135 is explicitly assigned to Phase 12 by the higher-priority standing plan.
 
 > The first step of the tracker rebuild, and the first feature phase after the regroup.
 
@@ -1741,7 +1745,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | DEFERRED TO PHASE 12 | The standing plan and this item place the exhaustive Work control matrix in Phase 12. Current partial browser checks and the historical Phase 2 interaction run are recorded in `audit-2026-09-22/phase2-items.jsonl`; do not treat this as the final all-control result. |
 
 136. [x] **Gate 2** — every Work action from the Phase 0.5 inventory still works; 31/31 green; side-by-side screenshots at all four widths show no overflow and no overlap.
 
@@ -1752,6 +1756,8 @@ No final "complete" statement is allowed until these conditions are true.
    | Verified | 40 tests pass; browser lifecycle and four-width geometry in phase2/acceptance.json. Viewport captures verify layout without full-page capture artifacts. |
 
 ## Phase 3
+
+Current-state audit (2026-09-22): items 137–158 were checked in order against current Work, Home, Explore, router, storage validator, and boundary-test sources. Four current domain-boundary tests and the 92-test full suite pass. Per-item findings are in `docs/implementation-evidence/audit-2026-09-22/phase3-items.jsonl`; test output is in `phase3-current-tests.txt`.
 
 > Home is the only aggregator. Every other tab renders only its own domain. Each row is a confirmed leak.
 
@@ -1939,6 +1945,8 @@ No final "complete" statement is allowed until these conditions are true.
 
 ## Phase 4
 
+Current-state audit (2026-09-22): items 159–171 were checked in order against current Settings, palette token, scene, and CSS sources. The five current Settings tests and 92-test full suite pass. In the disposable browser, Sandstone survived a dark→light→dark header toggle; the retained responsive captures were visually rechecked. Per-item evidence is in `docs/implementation-evidence/audit-2026-09-22/phase4-items.jsonl` and `phase4-current-tests.txt`.
+
 ## 4.1 Fix what blocks new themes [FIX]
 
 > Not extra scope — the requested theme work cannot land without these:
@@ -2054,6 +2062,8 @@ No final "complete" statement is allowed until these conditions are true.
    | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
 
 ## Phase 5
+
+Current-state audit (2026-09-22): items 172–198 were checked in order against current sources with Git hashes identical to accepted Phase 5 commit `8ca7b76`, the retained scene/lifecycle evidence, eight current scene tests, and the 92-test full suite. Per-item findings are in `docs/implementation-evidence/audit-2026-09-22/phase5-items-172-198.jsonl` and `phase5-current-scene-tests.txt`. The exhaustive all-domain width/control matrix at item 194 remains explicitly assigned to Phase 12. The new V2 icon audit starts at item 198A.
 
 > Delivers old Part B Phase 7 and old C.7, using **code-drawn animated scenes**: layered inline SVG + CSS driven by `body[data-page]`. No new binary assets, no external requests. The Games page already proves the technique with its five-layer stack (`gv-scene-art` / `-shade` / `-glow` / `-fog` / `-particles`).
 
@@ -2247,7 +2257,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+    | DEFERRED TO PHASE 12 | The standing plan explicitly places the exhaustive all-domain width/control matrix in Phase 12. Existing Phase 5 evidence covers 40 scene/width sequences, not the final all-control matrix; see `audit-2026-09-22/phase5-items-172-198.jsonl` item 194. |
 
 195. [x] **5.4.15** — Handle long user text safely across all domains — [OPEN]
 
@@ -2286,37 +2296,37 @@ No final "complete" statement is allowed until these conditions are true.
 
 ## 5.6 Global icon modernization and consistency [NEW V2]
 
-198A. [ ] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
+198A. [x] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
 
    Files: `index.html`, `shared/`, `styles/`, domain JS/CSS files as required. Acceptance: Produce an inventory/audit showing which existing icons are retained and which require improvement; content/source brand marks and favicons are identified as exceptions rather than application-control icons.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | Verified | `audit-2026-09-22/phase5-198A-visible-icon-inventory.json` inventories 433 visible route controls and SVG geometry/names; `phase5-198A-decisions.json` records retained icons, eight focused improvements, and brand/content exceptions. Phase 0.5 source-template inventory covers dynamic/hidden controls. |
 
-198B. [ ] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
+198B. [x] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
 
    Files: `index.html`, `shared/`, `styles/`, affected domain files. Acceptance: Shared UI icons use consistent geometry, stroke/fill philosophy, optical sizing, alignment and spacing without unrelated redesign or icon churn.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | Verified | Focused SVG replacements in Games collection cue, category/shortcut/trip reorder controls, Home break tile, and Explore filter disclosure. Existing clear icons and source marks retained. Current suite 92/92 passes; browser checks confirmed SVG output on Home, Games, and Explore. See `audit-2026-09-22/phase5-198B-modernization.json` and `phase5-198B-tests.txt`. |
 
-198C. [ ] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
+198C. [x] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
 
    Files: shared icon helpers/markup and affected domain surfaces. Acceptance: Add/edit/remove/back/more/favorite/search/filter/sort/save/restore/open/navigation/close/retry/expand-collapse do not use conflicting or random glyphs without an explicit reason; no accidental emoji/Unicode substitute controls remain.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | Shared action mapping, targeted fixes, and current browser checks are recorded in `audit-2026-09-22/phase5-198C-semantics.json`; 92/92 tests and diff check in `phase5-198C-tests.txt`. |
 
-198D. [ ] **5.6.4** — Preserve icon accessibility and interaction quality.
+198D. [x] **5.6.4** — Preserve icon accessibility and interaction quality.
 
    Files: affected markup/styles/shared UI helpers. Acceptance: Icon-only actions have accessible names, visible focus, adequate touch targets, correct ARIA state where applicable and tooltips where useful; decorative icons do not create redundant announcements; clear text labels are not removed merely to add icons.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | Ten-route SVG-only control audit, corrected 44px targets, note pin ARIA/tooltip/focus browser checks, and 92/92 tests recorded in `audit-2026-09-22/phase5-198D-accessibility.json`. |
 
 198E. [ ] **5.6.5** — Verify global icon quality across required themes and responsive widths.
 

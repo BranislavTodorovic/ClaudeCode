@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/config/secrets/probe.js",
+    "status": 404
+  },
+  {
+    "path": "/config/secrets/api-keys.json",
+    "status": 404
+  },
+  {
+    "path": "/work/projects.js",
+    "status": 200
+  },
+  {
+    "path": "/games/games.js",
+    "status": 200
+  }
+]

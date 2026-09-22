@@ -1,0 +1,34 @@
+{
+  "item": "198C / 5.6.3",
+  "status": "VERIFIED",
+  "date": "2026-09-22",
+  "scope": "Shared icon semantics across the current OneSpace routes; source inventory and disposable-origin browser checks",
+  "changes": [
+    "The note pin control now uses a pushpin glyph, matching its pin/unpin action instead of the previous map-location glyph.",
+    "The countdown delete control now uses the shared trash SVG rather than a Unicode multiplication sign.",
+    "Shortcut reorder menu actions now use the shared arrow-up and arrow-down glyphs, matching category and trip reorder controls; obsolete rotated-chevron styling was removed."
+  ],
+  "browserChecks": [
+    "On Quick Notes, added a disposable test note and reloaded current source. Pin note rendered a pushpin SVG with aria-hidden=true and the accessible name Pin note.",
+    "On Productivity, added a disposable countdown. Delete countdown rendered the shared trash SVG with aria-hidden=true and an item-specific accessible name.",
+    "On Shortcuts, opened the GitHub More actions menu. Move earlier and Move later rendered shared arrow-up and arrow-down SVGs with explicit text labels."
+  ],
+  "actionSemantics": {
+    "add": "Shared plus outline or explicit text-labelled Add action",
+    "edit": "Shared pencil outline",
+    "remove": "Shared trash outline or explicit text-labelled Remove action",
+    "back": "Directional left arrow",
+    "more": "Ellipsis menu icon",
+    "favorite": "Heart or star depending on domain-specific saved/favorite semantics, with accessible state",
+    "search": "Magnifier outline",
+    "filter": "Filter outline or chevron disclosure alongside text",
+    "sort": "Directional arrow or explicit text-labelled sort control",
+    "saveRestore": "Explicit text labels in Settings and dialogs",
+    "openNavigation": "Arrow or menu icon with accessible name",
+    "close": "X outline with accessible name",
+    "retry": "Circular arrow",
+    "expandCollapse": "Chevron/disclosure with aria-expanded"
+  },
+  "exceptions": "Provider/brand marks, favicons, and decorative scene artwork retain their own visual identity; text-labelled actions need no forced icon.",
+  "testEvidence": "phase5-198C-tests.txt (92/92 tests passing; git diff --check clean)"
+}

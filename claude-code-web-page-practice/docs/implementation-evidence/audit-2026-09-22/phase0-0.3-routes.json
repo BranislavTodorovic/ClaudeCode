@@ -1,0 +1,22 @@
+{
+  "item": "0.3",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "origin": "http://localhost:8973/",
+  "browser": "Codex In-app Browser",
+  "result": "PASS",
+  "routes": {
+    "projects": { "page": "work", "pressedSubView": "Projects", "headings": ["Create a project", "Your projects"] },
+    "work": { "page": "work", "headings": ["Build with intention.", "Development tracker"] },
+    "personal": { "page": "personal", "headings": ["A calmer corner", "Goals", "Routines", "Habits"] },
+    "explore": { "page": "explore", "headings": ["Somewhere new", "Find your next horizon", "More To Explore"] },
+    "games": { "page": "games", "headings": ["Worlds worth returning to.", "Resident Evil 4"] },
+    "movies": { "page": "movies", "headings": ["Set the evening scene.", "Spirited Away"] },
+    "shortcuts": { "page": "shortcuts", "headings": ["Your launchpad", "Development"] },
+    "productivity": { "page": "productivity", "headings": ["Stay in focus", "Focus timer"] },
+    "notes": { "page": "notes", "headings": ["Your visual journal"] },
+    "settings": { "page": "settings", "headings": ["Settings", "Look & atmosphere"] },
+    "home": { "page": "home", "headings": ["Make room for what matters.", "Quick Access"] }
+  },
+  "visibleBrokenImages": 0,
+  "consoleErrors": 0
+}

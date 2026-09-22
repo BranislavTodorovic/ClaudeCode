@@ -349,7 +349,7 @@ body.force-full-motion { scroll-behavior:smooth; }
             <button type="button" id="gvNext" class="gv-control" aria-label="Next game"></button>
             <button type="button" id="gvAutoplay" class="gv-control gv-autoplay" aria-label="Pause automatic rotation"></button>
           </div>
-          <button type="button" class="gv-explore" data-action="explore-library">Explore your collection <span aria-hidden="true">↓</span></button>
+          <button type="button" class="gv-explore" data-action="explore-library">Explore your collection <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></button>
         </div>
       </section>
       <div id="gvSpotlightRail" class="gv-spotlight-rail" role="group" aria-label="Featured games"></div>
@@ -999,13 +999,15 @@ body.force-full-motion { scroll-behavior:smooth; }
     heart: '<path d="M12 21s-7.5-4.6-10-9.5C.5 7.8 2.7 4 6.5 4A5.5 5.5 0 0 1 12 8a5.5 5.5 0 0 1 5.5-4c3.8 0 6 3.8 4.5 7.5C19.5 16.4 12 21 12 21z"></path>',
     compass: '<circle cx="12" cy="12" r="9"></circle><polygon points="14.5 9.5 12.5 14.5 9.5 14.5 11.5 9.5"></polygon>',
     film: '<rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="4" x2="7" y2="20"></line><line x1="17" y1="4" x2="17" y2="20"></line><line x1="3" y1="9" x2="7" y2="9"></line><line x1="3" y1="15" x2="7" y2="15"></line><line x1="17" y1="9" x2="21" y2="9"></line><line x1="17" y1="15" x2="21" y2="15"></line>',
-    pin: '<path d="M12 2C8.5 2 6 4.7 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.3-2.5-6-6-6z"></path><circle cx="12" cy="8" r="2"></circle>',
+    pin: '<path d="M8 3h8l-1 5 3 3v2H6v-2l3-3-1-5z"></path><path d="M12 13v8"></path>',
     grid: '<rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect>',
     timer: '<circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2M9 2h6"></path>',
     sliders: '<line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line>',
     check: '<polyline points="20 6 9 17 4 12"></polyline>',
     plus: '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>',
     close: '<path d="m6 6 12 12M18 6 6 18"></path>',
+    arrowUp: '<path d="M12 19V5m-6 6 6-6 6 6"></path>',
+    arrowDown: '<path d="M12 5v14m-6-6 6 6 6-6"></path>',
     layers: '<path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"></path>',
     search: '<circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>'
   };
@@ -1171,7 +1173,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     var html = "";
     visibleCategories().forEach(function (cat) {
       var isCollapsed = collapsedCategories.indexOf(cat) !== -1;
-      var categoryTools = '<span class="category-tools"><button class="btn" type="button" data-move-category="up" data-category-name="' + escapeHtml(cat) + '" aria-label="Move ' + escapeHtml(cat) + ' up">↑</button><button class="btn" type="button" data-move-category="down" data-category-name="' + escapeHtml(cat) + '" aria-label="Move ' + escapeHtml(cat) + ' down">↓</button>' + (customCategories.indexOf(cat) !== -1 ? '<button class="btn" type="button" data-rename-category="' + escapeHtml(cat) + '">Rename</button><button class="btn" type="button" data-delete-category="' + escapeHtml(cat) + '">Delete</button>' : '') + '</span>';
+      var categoryTools = '<span class="category-tools"><button class="btn" type="button" data-move-category="up" data-category-name="' + escapeHtml(cat) + '" aria-label="Move ' + escapeHtml(cat) + ' up">' + iconSvg("arrowUp") + '</button><button class="btn" type="button" data-move-category="down" data-category-name="' + escapeHtml(cat) + '" aria-label="Move ' + escapeHtml(cat) + ' down">' + iconSvg("arrowDown") + '</button>' + (customCategories.indexOf(cat) !== -1 ? '<button class="btn" type="button" data-rename-category="' + escapeHtml(cat) + '">Rename</button><button class="btn" type="button" data-delete-category="' + escapeHtml(cat) + '">Delete</button>' : '') + '</span>';
       html += '<section class="group category-' + CATEGORY_SLUG[cat] + (isCollapsed ? ' collapsed' : '') + '" aria-labelledby="h-' + CATEGORY_SLUG[cat] + '" data-category="' + escapeHtml(cat) + '">' +
         '<div class="section-heading"><h2 id="h-' + CATEGORY_SLUG[cat] + '"><span class="category-title-icon">' + iconSvg(CATEGORY_ICON[cat] || "star") + '</span>' + escapeHtml(cat) + '</h2><span>' + categoryTools +
         '<button class="btn collapse-btn" type="button" data-collapse="' + escapeHtml(cat) + '" aria-label="' + (isCollapsed ? "Expand " : "Collapse ") + escapeHtml(cat) + '" aria-expanded="' + (!isCollapsed) + '" aria-controls="grid-' + CATEGORY_SLUG[cat] + '">' + iconSvg("chevron", "icon-sm") + '<span>' + (isCollapsed ? "Expand" : "Collapse") + '</span></button></span></div>' +
@@ -1190,7 +1192,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       '<div class="card-menu" role="menu" data-menu-id="' + escapeHtml(link.id) + '">' +
       '<button type="button" role="menuitem" data-action="copy" data-id="' + escapeHtml(link.id) + '">' + iconSvg("copy") + 'Copy address</button>' +
       '<button type="button" role="menuitem" data-action="remove" data-id="' + escapeHtml(link.id) + '">' + iconSvg("trash") + 'Remove shortcut</button>' +
-      '<button type="button" role="menuitem" data-action="move-up" data-id="' + escapeHtml(link.id) + '">↑ Move earlier</button><button type="button" role="menuitem" data-action="move-down" data-id="' + escapeHtml(link.id) + '">↓ Move later</button>' + (isCustom ? '<button type="button" role="menuitem" data-action="edit" data-id="' + escapeHtml(link.id) + '">' + iconSvg("edit") + 'Edit shortcut</button><button type="button" class="delete" role="menuitem" data-action="delete" data-id="' + escapeHtml(link.id) + '">' + iconSvg("trash") + 'Delete shortcut</button>' : '') +
+      '<button type="button" role="menuitem" data-action="move-up" data-id="' + escapeHtml(link.id) + '">' + iconSvg("arrowUp") + 'Move earlier</button><button type="button" role="menuitem" data-action="move-down" data-id="' + escapeHtml(link.id) + '">' + iconSvg("arrowDown") + 'Move later</button>' + (isCustom ? '<button type="button" role="menuitem" data-action="edit" data-id="' + escapeHtml(link.id) + '">' + iconSvg("edit") + 'Edit shortcut</button><button type="button" class="delete" role="menuitem" data-action="delete" data-id="' + escapeHtml(link.id) + '">' + iconSvg("trash") + 'Delete shortcut</button>' : '') +
       '</div></div>';
     var description = link.description || getHostname(link.url);
     return (
@@ -1882,7 +1884,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       var target = new Date(item.date + "T00:00:00");
       var days = Math.round((target - today) / 86400000);
       var label = days === 0 ? "Today" : days === 1 ? "Tomorrow" : days > 1 ? days + " days" : Math.abs(days) + " days ago";
-      return '<li class="countdown-item"><span>' + escapeHtml(item.name) + '</span><strong>' + label + '</strong><button type="button" data-countdown-delete="' + escapeHtml(item.id) + '" aria-label="Delete countdown ' + escapeHtml(item.name) + '">×</button></li>';
+      return '<li class="countdown-item"><span>' + escapeHtml(item.name) + '</span><strong>' + label + '</strong><button type="button" data-countdown-delete="' + escapeHtml(item.id) + '" aria-label="Delete countdown ' + escapeHtml(item.name) + '">' + iconSvg("trash") + '</button></li>';
     }).join("");
     list.querySelectorAll("[data-countdown-delete]").forEach(function (button) {
       button.addEventListener("click", function () { countdowns = countdowns.filter(function (item) { return item.id !== button.getAttribute("data-countdown-delete"); }); safeSet(STORAGE.countdowns, JSON.stringify(countdowns)); renderCountdowns(); });
@@ -2586,7 +2588,7 @@ body.force-full-motion { scroll-behavior:smooth; }
           ? '<input type="text" class="note-edit-title" data-note-edit-title maxlength="60" aria-label="Note title" value="' + escapeHtml(n.title || "") + '" placeholder="Title">'
           : (n.title ? '<h3 class="note-title">' + escapeHtml(n.title) + "</h3>" : "");
         return '<article class="note-card' + (n.pinned ? " is-pinned" : "") + '" data-note-id="' + n.id + '">' +
-          '<div class="note-card-head">' + titleHtml + '<button type="button" class="note-pin" data-note-pin="' + n.id + '" aria-label="' + (n.pinned ? "Unpin note" : "Pin note") + '" title="' + (n.pinned ? "Unpin" : "Pin") + '">' + iconSvg("pin") + "</button></div>" +
+          '<div class="note-card-head">' + titleHtml + '<button type="button" class="note-pin" data-note-pin="' + n.id + '" aria-label="' + (n.pinned ? "Unpin note" : "Pin note") + '" aria-pressed="' + (n.pinned ? "true" : "false") + '" title="' + (n.pinned ? "Unpin" : "Pin") + '">' + iconSvg("pin") + "</button></div>" +
           bodyHtml +
           '<div class="note-card-foot"><span class="note-date">' + new Date(n.updatedAt).toLocaleDateString(undefined, { month: "short", day: "numeric" }) + '</span><div class="note-card-actions">' +
           (isEditing

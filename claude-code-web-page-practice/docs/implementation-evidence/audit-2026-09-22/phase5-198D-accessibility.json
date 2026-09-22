@@ -1,0 +1,22 @@
+{
+  "item": "198D / 5.6.4",
+  "status": "VERIFIED",
+  "date": "2026-09-22",
+  "scope": "Icon-only controls on all ten current routes at desktop width, plus newly changed note/countdown/reorder/collection controls",
+  "browserAudit": {
+    "routes": ["Home", "Shortcuts", "Productivity", "Quick Notes", "Settings", "Work", "Personal", "Explore", "Games", "Movies & Series"],
+    "method": "Enumerated visible buttons with SVG and no visible text, checked accessible name and rendered target rectangle.",
+    "initialFindings": "Only Quick Notes Edit note and Delete note measured below 44 px; each was 44 x 30. Countdown delete was 40 x 30 in a separate targeted check.",
+    "afterFix": "Quick Notes pin, edit, and delete each measured 44 x 44; countdown delete measured 44 x 44. Pin button updated aria-pressed false to true when clicked, its accessible name changed to Unpin note, and keyboard focus remained on it.",
+    "otherRoutes": "No other visible unnamed or sub-44px SVG-only button was found on the ten-route desktop pass."
+  },
+  "sourceChecks": [
+    "Shared cinematic focus-visible rule gives interactive elements a 3px page-accent outline and 4px offset.",
+    "Dynamic note pin has an accessible name, aria-pressed state, and tooltip; its SVG is decorative to assistive technology.",
+    "Countdown delete has an item-specific accessible name and shared trash SVG marked aria-hidden.",
+    "Category reorder icon-only buttons have explicit accessible names and a minimum 44 x 44 target in customization mode.",
+    "Games collection cue retains its visible label and now has a minimum 44px height."
+  ],
+  "changes": ["styles/cinematic-refinement.css: 44px targets for category reorder, countdown delete, and note card actions", "games/games-cinematic.css: 44px Games collection cue", "index.html: aria-pressed on note pin"],
+  "tests": "node --test: 92 passed, 0 failed; git diff --check: exit 0"
+}

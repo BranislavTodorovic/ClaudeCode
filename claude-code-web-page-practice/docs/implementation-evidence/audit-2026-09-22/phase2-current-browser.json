@@ -1,0 +1,22 @@
+{
+  "phase": 2,
+  "at": "2026-09-22T20:41:06.4373231Z",
+  "origin": "http://localhost:18974/",
+  "browser": "Codex in-app Browser",
+  "observations": [
+    "Work navigation rendered the unified Work dashboard and Projects alias selected Projects subview.",
+    "Board, Projects, Backlog, and History controls changed their pressed state and region content.",
+    "Board showed one persisted defect with a progressbar and status; History showed 14 persisted events.",
+    "Search input QA story retained focus and value after debounce, displayed one item and a clear Search filter chip.",
+    "Open details showed a right drawer, Lifecycle selector, edit/close/delete/hide actions and task controls.",
+    "Escape closed the drawer and returned focus to the Open details button."
+  ],
+  "historicScreenshotsReinspected": [
+    "phase2/work-viewport-1440.png",
+    "phase2/work-viewport-1024.png",
+    "phase2/work-viewport-760.png",
+    "phase2/work-viewport-390.png"
+  ],
+  "sourceHashInvariant": "work/work-tracker.js, work/projects.js, work/tracker.css match acceptance commit fc4b33e exactly",
+  "limitation": "This is a current interaction spotcheck; exhaustive Work controls remain checklist item 135 in Phase 12."
+}

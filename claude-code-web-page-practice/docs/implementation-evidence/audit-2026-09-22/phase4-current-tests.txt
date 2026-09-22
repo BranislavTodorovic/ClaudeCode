@@ -1,0 +1,14 @@
+At: 2026-09-22T20:43:13.5917093Z Commit: 81105a9158dd095010db84ef9f68265255cf9b84 Command: node --test tests/settings.test.js 
+✔ complete palette tokens meet AA body, muted text and control contrast in both modes (2.9884ms)
+✔ preference reset preserves records, favorites, recents, collapsed sections and search provider (0.546ms)
+✔ preference reset rolls back on quota failure (0.9592ms)
+✔ scene intensity validates, round trips, and legacy v4 without optional preferences remains valid (1.1937ms)
+✔ settings memberships are declarative and page-accent has one stylesheet owner (1.3492ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 83.6699

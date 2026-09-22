@@ -1,0 +1,14 @@
+{
+  "item": "0.7",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "result": "PASS",
+  "currentSource": {
+    "workProjectsItemsTasksHistory": "shared/storage-utils.js:34-35,61-66",
+    "destinationsAndSavedTripData": "shared/storage-utils.js:40,57,64 and injected orbit-trip-board validator",
+    "explorePreferences": "shared/storage-utils.js:77-80",
+    "personalGoalsRoutinesHabits": "shared/storage-utils.js:67",
+    "gameResourcesAndTasks": "shared/storage-utils.js:37-39,70",
+    "movieSeriesMetadata": "shared/storage-utils.js:71"
+  },
+  "tests": "phase0-0.1-tests.txt: work schema, destination, game-template, movie/series, malformed metadata and backup regression cases pass"
+}

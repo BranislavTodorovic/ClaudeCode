@@ -501,6 +501,7 @@ body[data-page="games"]::after {
   display: flex;
   gap: 18px;
   align-items: center;
+  min-height: 44px;
   font-size: 11px;
   color: #c9ccca;
   padding: 8px 0;
@@ -509,8 +510,9 @@ body[data-page="games"]::after {
   cursor: pointer;
 }
 
-.gv-explore span {
-  font-size: 20px;
+.gv-explore .icon {
+  width: 20px;
+  height: 20px;
 }
 
 .gv-spotlight-rail {

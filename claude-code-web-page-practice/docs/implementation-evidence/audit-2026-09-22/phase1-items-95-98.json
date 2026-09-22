@@ -1,0 +1,38 @@
+{
+  "at": "2026-09-22T20:35:07.2567932Z",
+  "commit": "81105a9158dd095010db84ef9f68265255cf9b84",
+  "items": [
+    {
+      "number": 95,
+      "id": "1.6.browser-server",
+      "status": "VERIFIED",
+      "evidence": "phase1-95-missing-asset.json",
+      "result": "MISSING_ASSET=assets/destinations/azores.svg returned 404 while index returned 200 on disposable origin 18975."
+    },
+    {
+      "number": 96,
+      "id": "1.6.README",
+      "status": "VERIFIED",
+      "evidence": "README.md",
+      "result": "Current quick-start, server, test, disposable-browser commands and current project paths resolve; final content rewrite remains 13.3."
+    },
+    {
+      "number": 97,
+      "id": "1.6.VERIFICATION",
+      "status": "VERIFIED",
+      "evidence": "VERIFICATION.md",
+      "result": "Current runbook uses node --test tests/; README disposable origin is 18974; no stale 18973 reference or bare test filename remains."
+    },
+    {
+      "number": 98,
+      "id": "Gate 1",
+      "status": "VERIFIED",
+      "evidence": [
+        "phase1-gate-tests.txt",
+        "phase1-gate-http.json",
+        "phase0-0.3-routes.json"
+      ],
+      "result": "92/92 current Node tests passed, including original baseline and structural assertions. Probe JS and key JSON returned 404; Work and Games JS returned 200; Git follow reaches pre-move history; Phase 0 browser route audit had no console errors."
+    }
+  ]
+}

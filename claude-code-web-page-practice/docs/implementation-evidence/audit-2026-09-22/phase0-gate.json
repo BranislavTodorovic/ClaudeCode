@@ -1,0 +1,22 @@
+{
+  "gate": "0",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "status": "PASS",
+  "items": {
+    "0.1": "phase0-0.1-tests.txt",
+    "0.2": "phase0-0.1-tests.txt and tests/data-regression.test.js:131-145",
+    "0.3": "phase0-0.3-routes.json",
+    "0.4": "phase0-0.4-contract.json",
+    "0.5": "phase0-0.5-current-inventory.json and historical interaction-inventory.json",
+    "0.6": "phase0-0.6-storage-boundary.json",
+    "0.7": "phase0-0.7-schemas.json",
+    "0.8": "phase0-0.8-field-contracts.json",
+    "0.9–0.10": "phase0-0.9-0.10-migration.json",
+    "0.11": "phase0-0.11-before-screenshots.json",
+    "0.12": "phase0-0.12-backup-validation.json"
+  },
+  "currentNodeSuite": { "evidence": "phase0-gate-tests.txt", "passed": 92, "failed": 0 },
+  "browser": { "routeCount": 11, "visibleBrokenImages": 0, "consoleErrors": 0 },
+  "historicalBaseline": { "beforeScreenshots": 16, "liveOriginBackupVersion": 4 },
+  "phase12DeferredAcceptance": "The interaction inventory records required action outcomes; exhaustive user-flow execution remains assigned to Phase 12."
+}

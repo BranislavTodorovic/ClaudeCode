@@ -1,0 +1,13 @@
+At: 2026-09-22T20:41:39.2549833Z Commit: 81105a9158dd095010db84ef9f68265255cf9b84 Command: node --test tests/domain-boundary.test.js 
+✔ domain modules may read only their own persisted records; Home is the sole cross-domain aggregator (5.2508ms)
+✔ page subtree declarations and shell renderers respect domain boundaries (1.3287ms)
+✔ storage rejects unregistered trip records and uses the injected validator without requiring Explore (1.7216ms)
+✔ local discovery requests only the selected domain snapshot (1.9709ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 84.5621
