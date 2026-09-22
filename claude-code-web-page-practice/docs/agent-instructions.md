@@ -1,4 +1,4 @@
-# OneSpace — Combined Implementation Plan
+# OneSpace — Combined Implementation Plan V2
 
 **This is the standing plan for OneSpace.** It replaces the previous contents of this file, carrying forward **every step** of that earlier version (Part A regrouping, Part B Phases 1–8, Part C defects C.1–C.7), marking what is already delivered, correcting the errors found in it, and folding in the requirements raised since. It is self-contained: no other document is needed to execute it.
 
@@ -67,24 +67,30 @@ Every step from the previous plan is preserved below with a status marker:
 **Execution order** (phase numbers group related work; this is the order to actually run them):
 
 ```
-13.1 → 13.2   write the standing plan and the step checklist first
+13.1 → 13.2   standing plan and strict checklist authority
 0             freeze the baseline
-1             repository regrouping          [gate: 31/31, zero 404s]
-2             Development tracker UI/layout  [gate: all Work actions, 4 widths]
-3             domain boundaries + Home module[gate: boundary test]
+1             repository regrouping
+2             Development tracker UI/layout
+3             domain boundaries + Home module
 4             Settings and themes
 5             living cinematic scenes
-6             provider search and typeahead
+6             provider search and typeahead (existing titles/games contract)
 7             shortcuts add/remove
 8             games trackers
 9             movies and series
-10            explore
+10            explore curated/local work
 11            personal regression
-12            verification and delivery
-13.3          final documentation
+12            original-plan verification checkpoint
+14            provider truth audit + V2 reconciliation
+15            global destination discovery
+16            first-class provider records + integrity
+17            content-aware cinematic environment
+18            provider/media/async/security hardening
+19            complete V2 final acceptance
+13.3          final documentation (always last)
 ```
 
-Phases 4–11 are independent of one another and may be reordered or parallelised; 0 → 1 → 2 → 3 is strictly sequential, and 12 runs last.
+Execute phases in the numeric/approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. Phase 12 is now the original-plan verification checkpoint; V2 Phases 14–19 follow it, and Phase 13.3 remains the final documentation step after Gate 19.
 
 ---
 
@@ -165,6 +171,339 @@ Carried from the previous plan. These govern every phase below; where this sessi
 **Superseded:** the previous plan's Phase 1 step 11, "Do not begin provider-backed global discovery in this iteration," is replaced by the decision recorded above. Phase 6 implements it.
 
 ---
+
+---
+
+# V2 APPROVED SCOPE — GLOBAL DISCOVERY, FIRST-CLASS PROVIDER RECORDS AND CONTENT-AWARE VISUALS
+
+This V2 scope is an **extension of the complete existing OneSpace plan**, not a replacement for Work, Home, Personal, Settings, Shortcuts, Productivity, Notes, Games, Movies & Series, Explore, accessibility, responsive behavior, storage, backup, security, or the existing cinematic system.
+
+Nothing already required by Phases 0–12 is removed or weakened.
+
+## V2 product principle
+
+OneSpace remains **local-first for user-owned data**, but local-first does **not** mean local-only.
+
+The final architecture is:
+
+**local user data + curated/local fallback content + provider-backed global discovery + normalized local persistence + graceful offline/degraded behavior**
+
+Provider search expands discovery. It never becomes the source of truth for user-owned state.
+
+## V2 discovery domains
+
+Provider-backed global discovery applies to:
+
+1. **Movies & Series**
+2. **Games**
+3. **Explore / Destinations**
+
+The existing curated/local catalogs remain supported and are not replaced.
+
+### Movies & Series
+
+Global discovery must support, where available:
+
+- movies and series;
+- provider ID/source;
+- title;
+- overview/description;
+- poster;
+- backdrop/key artwork;
+- genres;
+- release/year metadata;
+- runtime and series metadata supported by the provider;
+- provider/source attribution where required.
+
+A provider result is transient until the user explicitly chooses Add/Track.
+
+After Add, the normalized record becomes a first-class local OneSpace record and participates in the existing Library, watchlist/status, details, untrack/remove, responsive, accessibility and cinematic behavior.
+
+### Games
+
+Global discovery must support, where available:
+
+- provider ID/source;
+- title;
+- description;
+- cover;
+- key/background artwork;
+- genres/tags;
+- platforms;
+- release metadata;
+- tracker-inference signals.
+
+Before saving, OneSpace infers **story/chapter** versus **weekly/live-service** tracker type and shows the inference so the user can correct it.
+
+A provider-added game becomes a first-class local game: library, spotlight, detail, resources, sessions, journal, tracker, edit/delete, theme and visual environment must work without requiring a handcrafted seed-only artwork record.
+
+### Explore / Destinations
+
+Explore retains the existing curated 12-destination catalog, deterministic recommendation system, preferences, saved destinations, trip board, Surprise Me, local imagery and fallbacks.
+
+V2 adds **provider-backed global destination discovery** beyond those 12 records.
+
+A provider-neutral destination contract must support, where available:
+
+- provider ID/source;
+- destination name;
+- city/region/country;
+- short summary;
+- substantive context/details;
+- themes/categories;
+- season/trip-character metadata where available;
+- budget/duration hints where available;
+- card image;
+- hero image;
+- source/license/attribution metadata where required.
+
+The user can open details, save/shortlist and use the trip-board flow.
+
+A saved provider destination remains meaningful when the provider is later unavailable.
+
+## Explicit local/provider separation
+
+Provider results and local/catalog results must never be silently conflated.
+
+The UI must clearly distinguish:
+
+- **In your catalog / local**
+- **Global search results / provider**
+
+When provider search is unavailable, the local catalog still works, but it must not be presented as if it were the live global result set.
+
+## Provider result identity and duplicate prevention
+
+A provider-origin record uses deterministic identity based on:
+
+**domain/kind + provider/source + provider item ID**
+
+Display title/name alone is never sufficient identity.
+
+Adding the exact same provider identity twice is idempotent and must not create duplicate records, duplicate trackers or duplicate saved-destination state.
+
+Do not fuzzy-auto-merge provider results into local records merely because names look similar. Automatic reconciliation requires deterministic identity evidence; otherwise preserve distinct records or require explicit user reconciliation.
+
+## Provider metadata vs user-owned state
+
+Provider metadata and user state have different ownership.
+
+Provider-owned/snapshot metadata may include description, genres, release data, source artwork references and attribution.
+
+User-owned state includes status, notes, favorites, watchlist/library membership, tracker choice after confirmation, tasks/objectives, progress, sessions, journal, saved/shortlist/trip-board state and custom edits supported by OneSpace.
+
+A provider refresh must never silently overwrite user-owned state.
+
+Missing upstream fields must not replace valid local values with null/empty values unless the canonical data contract explicitly defines that behavior.
+
+## Persistence and atomic writes
+
+A provider result becomes user-owned only after:
+
+1. normalization;
+2. sanitization;
+3. canonical validation;
+4. successful local persistence;
+5. UI success confirmation.
+
+Do not show a success state before storage success is known.
+
+Where one logical Add/Save operation modifies multiple owned records, use the existing transactional/rollback model so a partial write cannot leave an impossible state.
+
+## Saved provider records offline
+
+Saved/tracked provider-origin content must remain meaningful without a provider request.
+
+Persist enough normalized metadata for identification and normal local detail behavior.
+
+Remote media is handled according to provider terms. Offline rendering uses, in order where available:
+
+1. permitted local/cached media;
+2. local role-appropriate OneSpace media;
+3. deterministic domain fallback/base scene.
+
+Provider failure never deletes a user-owned record.
+
+## Browser/server/provider boundary
+
+Private provider credentials never enter browser JavaScript.
+
+Conceptual flow:
+
+```text
+Browser
+  -> OneSpace local server
+  -> provider-neutral adapter
+  -> configured external provider
+```
+
+The browser UI consumes normalized OneSpace responses, not raw TMDB/RAWG/IGDB/destination-provider payloads.
+
+## Provider request contract
+
+Provider-backed search/details must support applicable:
+
+- debounce;
+- request cancellation (`AbortController` or equivalent);
+- loading;
+- empty;
+- pagination/load-more;
+- timeout;
+- authentication/configuration failure;
+- rate-limit;
+- offline/network failure;
+- provider error;
+- malformed response handling;
+- partial metadata handling;
+- short-lived bounded caching.
+
+Older/stale success **and** error responses are ignored after a newer request owns the UI.
+
+If a detail surface is closed, another item is selected, or the user navigates away, a late details response must not reopen or mutate stale UI.
+
+## Server input validation
+
+Server endpoints validate and bound browser input.
+
+Do not blindly forward arbitrary query parameters upstream.
+
+Validate/allowlist applicable:
+
+- search query;
+- query length;
+- kind/type;
+- provider;
+- provider ID;
+- page/page-size;
+- pagination cursor;
+- supported method/route.
+
+## No open proxy / SSRF
+
+OneSpace must never become a generic network proxy.
+
+Provider adapters choose upstream hosts server-side.
+
+Do not accept an arbitrary browser-supplied URL and fetch it.
+
+This rule applies to provider data and provider media.
+
+## Provider media boundary
+
+Where the browser-network contract requires server-mediated external access, provider art uses a **safe provider media route** rather than arbitrary raw external URLs.
+
+A media route must:
+
+- accept only known provider media identities/references;
+- allowlist provider media hosts;
+- use HTTPS upstream where supported;
+- reject arbitrary URLs;
+- reject non-image content;
+- enforce timeout;
+- enforce sensible response-size limits;
+- validate content type;
+- avoid leaking credentials/tokens;
+- avoid reflecting sensitive upstream headers.
+
+Media caching must be **bounded** and provider-license/terms compliant.
+
+Clearing provider/media cache must never delete user-owned records.
+
+## Untrusted provider content / XSS
+
+All provider strings are untrusted input.
+
+Never inject provider HTML.
+
+Render titles, descriptions, genres, attribution and location strings with safe DOM/text/escaping helpers.
+
+Provider-origin links pass the existing safe-link protocol policy and retain safe external-link behavior.
+
+## Error and logging safety
+
+Browser-visible provider errors are normalized categories, not raw upstream dumps.
+
+Do not expose:
+
+- API keys;
+- client secrets;
+- Authorization headers;
+- raw secrets files;
+- secret-bearing stack traces.
+
+Server debug logging must redact credentials.
+
+## Existing cinematic system remains authoritative
+
+The existing scene lifecycle remains:
+
+**ENTRY / WAKE-UP -> SETTLE -> AMBIENT / ALIVE -> EXIT / RESET**
+
+The existing 10 distinct page scenes remain, with Projects sharing Work.
+
+The existing Full / Subtle / Off and `prefers-reduced-motion` behavior remain.
+
+V2 **extends** this system with an optional selected-content environmental art layer.
+
+### Selected-content visual enrichment
+
+Where appropriate:
+
+- selected Movie/Series backdrop influences the Movies environment;
+- selected Game key/background art influences the Games environment;
+- selected Destination hero art influences the Explore environment.
+
+The treatment is restrained and may use controlled crop, opacity, masks, gradient/scrim, vignette, depth, blur and subtle decorative parallax.
+
+It must never reduce readability, move controls, capture pointer events, create major layout shift or turn OneSpace into an uncontrolled wallpaper UI.
+
+### Internal selection is not full page entry
+
+Changing selected content inside the same tab uses a lightweight content/media transition.
+
+It must not replay the complete page ENTRY choreography.
+
+### Content-art race safety
+
+A loaded image may be applied only if route + selected record identity + content-art generation still match.
+
+Rapid A -> B -> C selection must finish on C even if A/B media completes later.
+
+### Route cleanup
+
+Movies art/theme state must not leak into Games, Explore, Work or Home; likewise for Games and Explore.
+
+The unified scene controller owns transient cleanup.
+
+## Live verification vs mock verification
+
+Mock/provider-fixture verification and live configured provider verification are separate evidence classes.
+
+Allowed status examples:
+
+- **Adapter/contract VERIFIED via deterministic mock**
+- **Live configured E2E VERIFIED**
+- **Live configured E2E NOT RUN — credentials unavailable**
+
+Never use mock success as proof that real credentials/live upstream access was tested.
+
+## Backup compatibility
+
+Existing backup format version 4 and complete v2/v3/v4 import support remain compatibility contracts.
+
+Optional provider metadata should remain backward-compatible where possible.
+
+Do not increment the backup format merely because optional provider fields are added.
+
+If a real serialized-contract change requires a version bump, stop and add an explicit migration plan, fixtures, old-import tests and new round-trip tests before proceeding.
+
+## V2 completion principle
+
+OneSpace is not complete merely because API calls work.
+
+The finished experience must preserve:
+
+**reliable local application + useful global discovery + native first-class persistence + polished OneSpace presentation + graceful provider failure**
 
 # PHASE 0 — Freeze the baseline
 
@@ -847,8 +1186,8 @@ Old Part B Phase 8, extended.
 12. **Offline pass:** provider unreachable → visible degraded state, no silent local fallback presented as global results.
 13. Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
 14. Set `MISSING_ASSET='assets/destinations/azores.svg'` on `tests/browser-server.js` to exercise the image-fallback path.
-15. Tick off every remaining box in `docs/IMPLEMENTATION-STEPS.md` and confirm none is left unchecked without a stated reason.
-16. All documentation updates are **Phase 13.3** — do not duplicate them here.
+15. Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason.
+16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint; **Phase 13.3 remains final and runs only after Gate 19**.
 
 ---
 
@@ -936,7 +1275,10 @@ Carried from the previous plan; all still apply.
 
 **Excluded unless separately approved:** server accounts; multi-user collaboration; cloud sync; true push notifications after the browser closes; full Jira integration; episode-by-episode TV tracking; scraping or unlicensed image downloading (this constrains 9.2, 9.3 and 10.1 — where no licensed high-resolution image exists, ship the deterministic fallback rather than an upscaled blur); moving `assets/` out of the repository root; any behaviour change during Phase 1.
 
-**Amended:** the old plan's "no external CDN or new runtime dependency; the app makes zero network requests today and must still make zero afterwards" now applies to the **browser bundle only**. No CDN and no new browser runtime dependency — but the local server may call configured providers, and the app must still work fully offline with a visible degraded state.
+**Amended:** the old plan's "no external CDN or new runtime dependency; the app makes zero network requests today and must still make zero afterwards" now applies to the **browser bundle's credential/provider-data access model**. External provider access is mediated through the local server/provider layer; provider media must follow the approved safe media contract. The app must still work with a visible degraded/offline state.
+
+**V2 included additions:** provider-backed global destination discovery; deterministic provider identity and duplicate prevention; first-class local persistence for provider-origin Movies/Series, Games and Destinations; provider refresh merge safety; live-vs-mock evidence separation; server input validation; no-open-proxy/SSRF protections; safe bounded provider-media handling; untrusted-provider-text/XSS protection; async query/detail/content-art race protection; selected-content environmental art integrated into the existing cinematic controller; wide-desktop media-rich acceptance; complete V2 regression before final documentation.
+
 
 ---
 
@@ -972,13 +1314,308 @@ Every defect surfaced by this inspection is assigned to a phase. Nothing is reco
 
 ---
 
+---
+
+# PHASE 14 — Provider truth audit and V2 scope reconciliation
+
+This phase does not invalidate unrelated verified Phase 0–12 work.
+
+Its purpose is to determine whether the existing Phase 6 provider implementation is mock-only, live-capable, or fully live-verified, and to reconcile the approved V2 scope.
+
+## 14.1 Movies/Series provider audit
+
+Prove separately:
+
+- provider adapter exists;
+- configured live path exists or does not exist;
+- search route;
+- details route;
+- normalized movie/series response;
+- poster/backdrop data;
+- pagination;
+- cancellation;
+- loading/empty/error states;
+- offline/unconfigured behavior;
+- mock path.
+
+If live credentials are unavailable, retain that as an explicit evidence limitation. Do not reinterpret mock verification as live E2E proof.
+
+## 14.2 Games provider audit
+
+Repeat for the configured IGDB/RAWG-equivalent path and prove:
+
+- search;
+- details;
+- normalization;
+- cover/background art;
+- genres/tags/platforms;
+- tracker signals;
+- pagination/cancellation;
+- errors/offline;
+- mock vs live status.
+
+## 14.3 Security audit
+
+Prove:
+
+- real secrets are ignored by Git;
+- no real secret is tracked;
+- no browser script references secret files;
+- config/secrets are not servable;
+- a representative otherwise-servable secret extension (for example `.js`) is denied;
+- browser/network output contains no credential.
+
+## Gate 14
+
+The exact truth of current provider capability is retained as evidence and the V2 scope is reflected consistently in the standing plan/checklist before new V2 feature work advances.
+
+---
+
+# PHASE 15 — Global destination discovery
+
+Add the missing provider-neutral destination capability while preserving all curated Explore behavior.
+
+## 15.1 Provider selection and contract
+
+Choose a legitimate destination/place provider according to:
+
+- search usefulness;
+- API practicality;
+- imagery availability;
+- licensing/attribution;
+- server-side compatibility;
+- rate limits.
+
+Do not couple Explore UI directly to the selected vendor payload.
+
+## 15.2 Server adapter
+
+Implement normalized destination search/details through the local server.
+
+Support:
+
+- success;
+- empty;
+- pagination/progressive results;
+- timeout;
+- rate limit;
+- configuration/auth failure;
+- offline/network failure;
+- provider error;
+- malformed response;
+- partial metadata.
+
+## 15.3 Destination normalizer
+
+Normalize available provider fields into the OneSpace-compatible model described in V2 scope.
+
+## 15.4 Deterministic mock destination provider
+
+Automated tests cover success, pagination, empty, timeout, auth/config, rate-limit, offline, malformed and partial-data cases without consuming live quota.
+
+## 15.5 Explore integration
+
+Present curated/local and global provider results coherently but distinctly.
+
+Support explicit details and Save/shortlist/trip-board behavior.
+
+## 15.6 Persistence
+
+A saved provider destination becomes a validated local record and remains meaningful after reload with provider access disabled.
+
+## 15.7 Curated regression
+
+Reverify all 12 curated destinations, ranking, preference explanation, images, fallbacks, Surprise Me, save/remove and trip-board flows.
+
+## Gate 15
+
+Curated Explore and global destination discovery both work without misrepresenting one as the other.
+
+---
+
+# PHASE 16 — First-class provider-origin records and integrity
+
+## 16.1 Deterministic identity / duplicates
+
+For Movies, Games and Destinations:
+
+- add provider item;
+- attempt to add the same provider identity again;
+- prove no duplicate user record or dependent state appears.
+
+## 16.2 Provider/local collision policy
+
+Do not fuzzy-auto-merge ambiguous names. Prove deterministic mapping behavior where such mapping exists.
+
+## 16.3 Movies/Series local persistence
+
+Add a provider title, disable provider access and prove normal local library/detail/status/untrack behavior still works.
+
+## 16.4 Games local persistence
+
+Add provider game, disable provider access and prove detail/tracker/sessions/journal/resources shell/edit/delete behavior remains valid.
+
+## 16.5 Tracker inference
+
+Prove one live-service example defaults to weekly and one campaign example defaults to story, with visible user correction before save.
+
+## 16.6 Destination local persistence
+
+Save provider destination, disable provider access and prove detail/saved/trip-board state remains usable.
+
+## 16.7 Provider refresh merge safety
+
+Where refresh exists, change user-owned state, return changed provider metadata, refresh, and prove provider metadata can update without overwriting user-owned state.
+
+## 16.8 Rejected-write safety
+
+Force supported persistence failure scenarios and prove UI/model/storage agree and multi-key operations roll back or enter the explicitly documented recovery state.
+
+## 16.9 Backup round trip
+
+Export/import at least one provider-origin record from each enabled rich domain and reopen them with provider access unavailable.
+
+## Gate 16
+
+Provider-origin content is first-class local OneSpace data, not temporary network-only UI.
+
+---
+
+# PHASE 17 — Content-aware cinematic environment
+
+Extend the existing unified scene controller; do not create a parallel animation system.
+
+## 17.1 Optional content-art layer
+
+Add one scene-owned optional media layer that can receive selected Movie/Game/Destination environmental art.
+
+## 17.2 Movies
+
+Selected backdrop integrates with the Movies base scene without reducing text/control readability.
+
+## 17.3 Games
+
+Selected key/background art integrates with Games, including provider-added games.
+
+## 17.4 Explore
+
+Selected destination hero integrates with Explore for both curated and provider destinations.
+
+## 17.5 Internal transition
+
+Changing selected content uses a lighter content-media transition rather than replaying full page ENTRY.
+
+## 17.6 Race safety
+
+Rapid selection changes cannot allow an older media load to replace the current selected content.
+
+## 17.7 Failure
+
+Forced media failure returns to the domain base scene/fallback while detail/actions remain usable.
+
+## 17.8 Route cleanup
+
+Navigate across Movies -> Games -> Explore -> Work -> Home and prove no content-art/theme/CSS-variable leakage.
+
+## 17.9 Motion modes
+
+Reverify Full, Subtle, Off and reduced motion. Reduced motion is genuinely still.
+
+## Gate 17
+
+Selected rich content changes atmosphere without changing usability, accessibility, domain identity or lifecycle semantics.
+
+---
+
+# PHASE 18 — Provider, media, async and security hardening
+
+## 18.1 Query/detail races
+
+Prove stale success and stale failure cannot mutate newer search/detail state or reopen closed UI.
+
+## 18.2 Server input validation
+
+Reject unsupported/oversized/malformed provider requests before upstream calls.
+
+## 18.3 No open proxy / SSRF
+
+Prove browser input cannot request arbitrary external/internal URLs through provider or media routes.
+
+## 18.4 Media proxy safety
+
+Where a local media route is used, prove provider-host allowlisting, content-type checks, timeout, size bounds and secret isolation.
+
+## 18.5 XSS
+
+Mock hostile-looking provider strings and prove they render as harmless text.
+
+## 18.6 Cache bounds
+
+Prove query/details/media caches are bounded, have an expiry/invalidation policy, and clearing cache preserves user records.
+
+## 18.7 Failure matrix
+
+For all enabled provider domains, test:
+
+- no credentials;
+- auth/config failure;
+- timeout;
+- rate limit;
+- provider failure;
+- offline/network failure;
+- malformed response;
+- partial metadata;
+- image failure.
+
+## Gate 18
+
+No tested provider/media failure corrupts, deletes, misrepresents or leaks valid local data or credentials.
+
+---
+
+# PHASE 19 — V2 final regression and acceptance
+
+Phase 19 is the final V2 acceptance gate before Phase 13.3 documentation.
+
+Run the complete automated suite and browser acceptance after the final implementation change.
+
+Verify together:
+
+- all existing Phase 0–12 behavior;
+- local and provider Movies/Series;
+- local and provider Games;
+- curated and provider Destinations;
+- duplicate prevention;
+- persistence/reload/offline;
+- backup/import;
+- tracker inference;
+- provider error states;
+- provider/live-vs-mock evidence;
+- content-art scenes;
+- route cleanup;
+- Full/Subtle/Off/reduced motion;
+- keyboard/focus/ARIA;
+- responsive layouts;
+- security;
+- media proxy safety;
+- console/network health.
+
+Required responsive coverage preserves the established widths and adds wide-desktop checks at approximately 1920×1080 and 2048×1152 for the media-rich environment.
+
+## Gate 19
+
+No V2 item remains PENDING, IMPLEMENTED / NOT VERIFIED, or BLOCKED.
+
+Only after Gate 19 passes may Phase 13.3 final documentation be completed.
+
+
 # PHASE 13 — Project documentation
 
 The repository has `README.md` (architecture and contracts), `VERIFICATION.md` (a recorded acceptance run), `REVISED-IMPLEMENTATION-PLAN.md` (the provider-era brief) and `agent-instructions.md` (the standing plan). **It has no sequenced, step-by-step execution document** — nothing an implementer can work down and tick off. Create one.
 
 > **Sequencing — this phase runs in two parts, not at the end.**
 > **13.1 and 13.2 run FIRST, before Phase 0.3**, because they are the working documents every later phase is executed against — a checklist written after the work is finished is a report, not a plan.
-> **13.3 runs LAST, after Phase 12**, because it records what was actually delivered.
+> **13.3 runs LAST, after Gate 19**, because it records what was actually delivered across both the original plan and the approved V2 scope.
 > It is numbered 13 so the documentation deliverables stay together and readable; the numbering is not the execution order.
 
 ## 13.1 Rewrite `agent-instructions.md` — **[DONE]**
@@ -1000,7 +1637,7 @@ A sequenced execution checklist — the working document, distinct from the plan
 - A "Do not break" header block listing the invariants from 1.9 — storage keys, global names, load order, entry URL, backup compatibility.
 - A status column an implementer updates as work lands, so progress is visible without reading a diff.
 
-## 13.3 Keep the rest current — runs after Phase 12
+## 13.3 Keep the rest current — runs after Gate 19
 
 - `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
 - `VERIFICATION.md` — a fresh acceptance run at the end; fix the `18973` → `18974` port error and the bare test filenames.

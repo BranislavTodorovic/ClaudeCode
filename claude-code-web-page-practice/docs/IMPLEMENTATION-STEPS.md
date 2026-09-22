@@ -1,6 +1,6 @@
 # OneSpace — Numbered implementation checklist
 
-Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
+Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 14 → 15 → 16 → 17 → 18 → 19 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
 
 **Execution authority:** completion, status, evidence, phase-gate and resume behavior are governed by the `Mandatory execution and verification contract` below. The standing plan defines **what** must be delivered; this checklist governs **how completion is proven**.
 
@@ -608,14 +608,14 @@ No final "complete" statement is allowed until these conditions are true.
 | 13.2 | Verified | 355 numbered entries; coverage reviewed before Phase 0. |
 | 0 | Verified | All Phase 0 evidence is in docs/implementation-evidence. |
 | 1 | Verified | 39/39 tests; all seven batch gates, structural assertions, secret-path denial, exact script order and git history preservation verified. |
-| 2 | Verified | Phase 2 acceptance evidence and visual audit pass; exhaustive item 135 is explicitly deferred to Phase 12. |
+| 2 | Verified | Phase 2 acceptance evidence; assigned Phase 3/12 follow-through remains pending. |
 | 3 | Verified | 44 tests; Home ownership, Work/Explore boundaries, theme cleanup and injected validators verified. |
-| 4 | Verified | Settings, palette, contrast, reset, persistence and layout checks passed; scheduled Phase 5–7 follow-through is complete. |
-| 5 | Verified | Clarified 5.3A lifecycle, mini-film, domain storytelling, replay, motion modes, icon and 120-stage responsive evidence passed; Gate 5 rerun passes with 82/82 tests. |
+| 4 | Verified; follow-through in 5–7 | Settings, palette, contrast, reset, persistence and layout checks passed. |
+| 5 | Verified; final width regression in Phase 12 | Ten distinct SVG scenes, unified motion controller; 54 tests; 40 responsive checks. |
 | 6 | Verified | TMDB/RAWG proxy, one typeahead per domain, visible degradation; local mock verified. |
 | 7 | Verified | Removable built-ins, restore panel, scoped add, persisted ordering and accessible controls. |
-| 8 | Verified | Tracker inference, game-specific templates, rollback, history preservation, spotlight and focus verified; exhaustive item 264 is explicitly deferred to Phase 12. |
-| 9 | Verified | Untrack, single watchlist truth, 15 series, shared confirmation and responsive fallback verified; items 276–278 and 284 use the documented 9.2.6 approved artwork exception, and exhaustive item 297 is deferred to Phase 12. |
+| 8 | Verified; full action matrix in Phase 12 | Tracker inference, game-specific templates, rollback, history preservation, spotlight and focus verified. |
+| 9 | Verified with documented 9.2.6 artwork exception | Untrack, single watchlist truth, 15 series, shared confirmation, responsive fallback; full action matrix in Phase 12. |
 | 10 | Not started | Pending |
 | 11 | Not started | Pending |
 | 12 | Not started | Pending |
@@ -1741,7 +1741,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | DEFERRED TO PHASE 12 | The standing plan explicitly assigns the exhaustive Work action matrix to Phase 12; Phase 2’s scoped acceptance checks remain verified. |
+   | Pending | Pending |
 
 136. [x] **Gate 2** — every Work action from the Phase 0.5 inventory still works; 31/31 green; side-by-side screenshots at all four widths show no overflow and no overlap.
 
@@ -2135,256 +2135,6 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
 
-
-## 5.3A — Mandatory live cinematic tab-entry experience [CLARIFICATION / REOPENED]
-
-> **Product intent — this is mandatory.**
->
-> “Living / cinematic” does **not** mean a static hero with a slow gradient, a barely visible fade, or continuous decorative particles.
->
-> Every distinct top-level page must feel as though a **short cinematic sequence begins when the user enters the tab**, plays for a few seconds, then settles into a quieter living ambient state.
->
-> The sequence does not have to be an MP4/video file. It may be implemented with layered local imagery, SVG, CSS and JavaScript, but the rendered result must visually read like a short domain-specific film opening.
->
-> It must remain content-first and must never block interaction.
-
-### Required lifecycle for every distinct page scene
-
-Every scene must implement these four states:
-
-1. **ENTRY / WAKE-UP**
-   - Starts on genuine navigation into the tab.
-   - Approximately 2–5 seconds in Full mode, with exact timing chosen per scene.
-   - Clearly visible without being aggressive.
-   - Uses staged visual events rather than a single opacity fade.
-   - May include camera-like depth movement, light sweep, image reveal, focus pull, parallax travel, line drawing, glow activation, particles/motes, environmental movement or domain-specific object motion.
-   - Content remains usable during the sequence.
-
-2. **SETTLE**
-   - Entry motion resolves smoothly rather than stopping abruptly.
-   - Main visual elements reach their stable positions.
-   - Contrast/readability becomes fully stable.
-
-3. **AMBIENT / ALIVE**
-   - After entry, the page remains subtly alive.
-   - Slow restrained motion may continue: depth drift, light movement, gentle atmospheric particles, image breathing/crop drift, glow changes or equivalent.
-   - Ambient motion must not distract from reading or controls.
-
-4. **EXIT / RESET**
-   - Leaving the tab must cleanly stop/listener-reset scene-specific animation.
-   - Returning to the tab must replay the entry sequence unless a specific documented UX rule intentionally suppresses immediate replay.
-   - Re-renders inside the same tab must NOT repeatedly restart the cinematic entry.
-
-### Scene intensity behavior
-
-- **Full** — complete 2–5 second cinematic entry plus living ambient state.
-- **Subtle** — shorter/lower-amplitude entry and restrained ambient movement; still visibly cinematic.
-- **Off** — no cinematic movement; retain the complete static visual composition.
-- **Reduced motion** — skip cinematic movement and ambient transforms entirely; show the final static composition immediately.
-
-`Off` and reduced motion must never remove information, imagery, contrast, labels or controls.
-
-### Domain-specific visual storytelling
-
-Each distinct page must have its own recognizable visual subject, imagery/art direction and motion language.
-
-The scenes must not feel like the same generic space background with a different title.
-
-Required directions:
-
-- **Home** — observatory / personal command deck. Wake-up may reveal orbital lines, constellation/navigation paths, command surfaces and a controlled light sweep.
-- **Work** — drafting room / development command centre. Blueprint/grid depth, work-plan lines, status/data pulses and structured panel activation; professional rather than game-like.
-- **Personal** — calm ritual / reflection space. Softer imagery, warm depth, gentle light and calm organic motion.
-- **Explore** — world atlas / travel window. Map/route movement, horizon/cloud/light travel, destination imagery or photographic layer, geographic depth.
-- **Games** — game-world spotlight. Stronger depth, game-art/image layer, scan/spotlight/energy reveal appropriate to gaming without becoming noisy.
-- **Movies & Series** — theater / streaming marquee. Projector/light-beam, marquee/poster/backdrop movement, cinematic framing and image reveal.
-- **Shortcuts** — navigable launch wall. Tiles/launch points wake in sequence with spatial depth and modern icon movement.
-- **Productivity** — focused timer studio. Timer/ring/light progression and focus-field motion.
-- **Notes** — quiet capture desk. Paper/ink/light/capture imagery with restrained writing/capture-style reveal.
-- **Settings** — control room. Panels/tokens/controls wake in an ordered system-like sequence.
-- **Projects alias** — uses the Work cinematic scene because Projects is a Work sub-view/route alias.
-
-### Imagery requirement
-
-Each distinct scene must include meaningful domain-relevant visual artwork or imagery, not only abstract gradients.
-
-Allowed sources:
-
-- existing local page art;
-- local licensed/provenance-documented images;
-- deterministic/generated artwork already permitted by the project;
-- layered SVG illustration;
-- provider imagery only where the standing plan/provider rules permit it.
-
-For pages where photographic or poster/game imagery materially improves the domain identity (especially Explore, Games, Movies & Series), use it where licensing/project rules permit.
-
-Do not:
-- scrape imagery;
-- expose remote assets in a way that violates the current offline/browser contract;
-- upscale visibly low-resolution artwork;
-- use one generic image for all tabs.
-
-### Modern icon requirement
-
-The existing inline SVG system remains the base, but “consistent” is not sufficient by itself.
-
-Icons must also be visibly modernised where the current appearance is dated or text-heavy:
-
-- coherent stroke/fill weight;
-- consistent optical size;
-- consistent corner language;
-- modern action glyphs for add, edit, delete/remove, back, more, favorite, search, filter, sort, save, restore, play/open and navigation;
-- icon + text where clarity benefits;
-- icon-only controls only with accessible names/tooltips;
-- clear hover/focus/active/pressed states;
-- no emoji/fashion-icon substitutions;
-- no broken favicon as the only visual identity.
-
-Do not replace a clear labelled action with an ambiguous icon merely for decoration.
-
-### Cinematic interaction quality
-
-Where appropriate, the same motion language should extend to:
-
-- search result arrival;
-- filter-result changes;
-- detail/drawer/modal opening;
-- save/remove confirmation;
-- task completion;
-- Work status movement;
-- shortcut reorder;
-- game tracker updates;
-- movie/watchlist changes;
-- destination save/remove;
-- image loading and fallback.
-
-These are secondary to the tab-entry cinematic sequence and must use shorter, quieter motion.
-
-### Performance and usability constraints
-
-- Do not block pointer, keyboard or form interaction while the entry sequence runs.
-- Do not delay useful content waiting for animation.
-- Prefer transform/opacity/composited effects.
-- Avoid layout-thrashing animation.
-- Avoid excessive continuous particles.
-- Avoid rapid flashes.
-- Keep text/forms/buttons/focus targets stable; parallax belongs on decorative layers.
-- Clean up event listeners/animation handles on route exit where needed.
-- Touch devices must remain stable and must not depend on hover.
-
-### Mandatory visual acceptance
-
-A scene is NOT VERIFIED merely because:
-- SVG markup exists;
-- CSS animation exists;
-- `requestAnimationFrame` runs;
-- parallax variables change;
-- screenshots show artwork;
-- Node tests are green.
-
-For **each of the 10 distinct scenes**, acceptance must verify:
-
-1. navigate away from the page;
-2. navigate into the page;
-3. observe the entry sequence from its beginning;
-4. confirm at least two visibly distinct staged changes occur during the entry, not only one fade;
-5. confirm the entry resolves after a few seconds;
-6. confirm a quieter ambient state remains alive afterward in Full mode;
-7. confirm returning to the page replays the entry;
-8. confirm internal rerender on the same page does not repeatedly restart it;
-9. confirm Subtle is visibly reduced;
-10. confirm Off is still;
-11. confirm reduced-motion is still and immediately shows final composition;
-12. confirm the imagery/art clearly represents that page’s domain;
-13. confirm the scene is clearly distinguishable from the other tabs;
-14. confirm all content/controls remain usable throughout;
-15. confirm no overflow, clipping or unreadable contrast at 1440 / 1024 / 760 / 390 px.
-
-Static screenshots alone are insufficient to prove the timed entry sequence.
-
-Retain time-sequenced evidence for each distinct page, such as:
-- beginning / mid-entry / settled screenshots with timestamps or state markers; or
-- equivalent browser-state measurements proving the staged animation lifecycle.
-
-### Phase 5 reopening rule
-
-Because this clarification is stronger and more specific than the prior generic “entry transition + ambient motion” wording:
-
-- previously recorded Phase 5 implementation evidence remains useful;
-- it does **not** by itself prove this clarified requirement;
-- Phase 5 is reopened as **IMPLEMENTED / NOT VERIFIED** until the 10-page cinematic-entry matrix passes;
-- Gate 5 must be re-run after any changes required to satisfy this section;
-- the final Phase 12 visual regression must repeat the cinematic acceptance.
-
-### New explicit checklist items
-
-199A. [x] **5.3A.1 — Implement/verify the four-state scene lifecycle (ENTRY → SETTLE → AMBIENT → EXIT/RESET) for all 10 distinct scenes.**
-
-   Status: **VERIFIED**
-
-   Acceptance: Each page visibly performs the required lifecycle; evidence maps each page to entry, settle, ambient and replay behavior.
-
-   Evidence: `docs/implementation-evidence/phase5/cinematic-lifecycle.json`; `tests/scenes.test.js`; 82/82 Node tests; browser state matrix verifies all ten scenes, exit/re-entry replay, same-page stability, Subtle, Off, reduced motion and 40 responsive route/width checks.
-
-199B. [x] **5.3A.2 — Verify each Full-mode entry reads as a 2–5 second mini-film rather than a single fade or barely visible transition.**
-
-   Status: **VERIFIED**
-
-   Acceptance: Each page has at least two staged visual changes before settling and remains fully interactive.
-
-   Evidence: `docs/implementation-evidence/phase5/cinematic-lifecycle.json`; all ten browser routes progress through entry at 0 ms, settle after 2350 ms and ambient after 3350 ms while retaining available controls; the shared sequence stages camera/depth, line/light and copy/caption changes.
-
-199C. [x] **5.3A.3 — Verify domain-specific imagery/art and motion storytelling for Home, Work, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes and Settings.**
-
-   Status: **VERIFIED**
-
-   Acceptance: A viewer can visually distinguish the domain without relying only on the heading text.
-
-   Evidence: `docs/implementation-evidence/phase5/scene-*.png` and `cinematic-lifecycle.json`; the ten route-specific drawings remain distinct, and the browser/CSS audit maps every domain to a unique camera direction plus domain subject motion.
-
-199D. [x] **5.3A.4 — Verify replay/reset semantics.**
-
-   Status: **VERIFIED**
-
-   Acceptance: Genuine tab re-entry replays the cinematic sequence; internal rerenders do not repeatedly restart it.
-
-   Evidence: `tests/scenes.test.js` and `docs/implementation-evidence/phase5/cinematic-lifecycle.json`; automated and browser checks confirm same-page stability, idle reset on exit and entry replay on genuine re-entry.
-
-199E. [x] **5.3A.5 — Verify Full / Subtle / Off / reduced-motion cinematic behavior.**
-
-   Status: **VERIFIED**
-
-   Acceptance: Full is clearly cinematic; Subtle is observably reduced; Off and reduced motion are still.
-
-   Evidence: `tests/scenes.test.js` and `docs/implementation-evidence/phase5/cinematic-lifecycle.json`; browser checks confirm Full at 2350/3350 ms, Subtle at 1050/1550 ms and immediate still state for Off and reduced motion.
-
-199F. [x] **5.3A.6 — Modernise and visually audit the shared icon language across all top-level pages.**
-
-   Status: **VERIFIED**
-
-   Acceptance: Modern, coherent icons are present for major actions/navigation; accessible labels/tooltips/focus states remain correct.
-
-   Evidence: `docs/implementation-evidence/phase5/icon-audit.json`; `tests/scenes.test.js`; browser accessibility snapshots across all ten routes found no unnamed controls, while the shared inline-SVG navigation/actions, automatic icon-only tooltips and visible focus rings remain intact.
-
-199G. [x] **5.3A.7 — Capture time-sequenced cinematic evidence for all 10 distinct scenes at the required responsive widths.**
-
-   Status: **VERIFIED**
-
-   Acceptance: Evidence proves beginning, mid-entry and settled/ambient states and responsive stability.
-
-   Evidence: `docs/implementation-evidence/phase5/cinematic-sequences.json`; 120 browser-state measurements cover beginning (0 ms), mid-entry (1200 ms) and ambient (3400 ms) for all ten scenes at 1440 / 1024 / 760 / 390 px. All 40 route/viewport sequences showed drawing, copy and caption changes with zero state, overflow or responsive-stability failures.
-
-199H. [x] **5.3A.8 — Re-run Gate 5 under the clarified cinematic criteria before Phase 10 may be considered ready for final continuation.**
-
-   Status: **VERIFIED**
-
-   Acceptance: All 5.3A items are VERIFIED and the original Phase 5 regression checks remain green.
-
-   Evidence: `docs/implementation-evidence/phase5/gate5-rerun.json`; all 5.3A items pass, 82/82 automated tests pass, the 40 route/viewport lifecycle matrix is clean, and the browser console and loaded-media checks report no failures.
-
----
-
-
 ## 5.4 Interaction rules carried from old Phase 7
 
 181. [x] **5.4.1** — Entry transition per tab — short, content-first, never delaying interaction — [OPEN]
@@ -2497,7 +2247,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | DEFERRED TO PHASE 12 | The standing plan explicitly assigns the all-width exhaustive responsive/control matrix to Phase 12; current Phase 5 evidence covers the clarified scene acceptance. |
+   | Pending | Pending |
 
 195. [x] **5.4.15** — Handle long user text safely across all domains — [OPEN]
 
@@ -2539,7 +2289,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | Verified | `docs/implementation-evidence/phase5/gate5-rerun.json`; clarified 5.3A criteria pass across all ten scenes and four required widths; 82/82 tests, clean console, no sourced broken media and no overflow. |
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
 
 ## Phase 6
 
@@ -3099,7 +2849,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | DEFERRED TO PHASE 12 | The standing plan explicitly assigns the exhaustive Games action matrix to Phase 12; Phase 8 defect acceptance remains verified. |
+   | Pending | Pending |
 
 ## 8.5 Remaining games defects [FIX]
 
@@ -3207,7 +2957,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | APPROVED EXCEPTION | No properly licensed high-resolution replacements were available. Under 9.2.6, deterministic local fallback art is used instead of scraping, unlicensed downloads or upscaling; see `assets/movie-art/SOURCES.md` and Phase 9 acceptance evidence. |
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
 
 277. [x] **9.2.2** — Keep a small variant for grid cards; serve both via `srcset` / `sizes`.
 
@@ -3215,7 +2965,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | APPROVED EXCEPTION | The large/small licensed source pair is unavailable for the affected seed art. The approved 9.2.6 fallback remains local and is guarded from intrinsic-width upscaling; see `assets/movie-art/SOURCES.md`. |
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
 
 278. [x] **9.2.3** — Bring `pulp-fiction-background.jpg` to 1920 × 1080.
 
@@ -3223,7 +2973,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | APPROVED EXCEPTION | A licensed 1920 × 1080 replacement was not available. The original raster is retained only as provenance data and the deterministic fallback is the runtime default under 9.2.6. |
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
 
 279. [x] **9.2.4** — Add a CSS guard so no image is scaled beyond its intrinsic width — a future undersized asset then looks visibly wrong rather than quietly blurry.
 
@@ -3275,7 +3025,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | APPROVED EXCEPTION | Licensed real artwork at the requested resolution was unavailable for the seeded series. Deterministic non-placeholder local covers/scenes satisfy the approved 9.2.6 fallback; see Phase 9 acceptance evidence. |
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
 
 285. [x] **9.3.3** — Populate `platforms`, `rating`, `moods`, `tags` and a substantive `blurb`.
 
@@ -3383,7 +3133,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
    | Status | Evidence |
    |---|---|
-   | DEFERRED TO PHASE 12 | The standing plan explicitly assigns the exhaustive Movies & Series action matrix to Phase 12; Phase 9 defect acceptance remains verified. |
+   | Pending | Pending |
 
 ## 9.5 Confirmation dialog consistency [FIX]
 
@@ -3409,163 +3159,163 @@ Because this clarification is stronger and more specific than the prior generic 
 
 > `explore-data.js` holds 12 destinations, each pointing at `assets/destinations/<id>.svg`. These are **conceptual SVG illustrations, not photographs** — the old REVISED plan already flagged this as a missed requirement. Each record has `summary` and `details`, but the depth is uneven.
 
-300. [x] **10.1.1** — Real, properly licensed local imagery per destination at hero and card resolutions, following the 9.2 sizing and `srcset` rules.
+300. [ ] **10.1.1** — Real, properly licensed local imagery per destination at hero and card resolutions, following the 9.2 sizing and `srcset` rules.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `assets/destinations/*-{card,hero}.webp`; `explore/explore-data.js`; `explore/discovery-ui.js`; `assets/manifest.json`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/imagery.json`. Automated: 27/27 targeted tests pass. Browser: all 12 cards plus role-correct detail hero verified at 1440×1000, 1920×1080, 2048×1152, and 390×844 with no overflow or normal-run console errors; forced missing-card request swaps only the failed image to its SVG fallback. |
+   | Pending | Pending |
 
-301. [x] **10.1.2** — A substantive description per destination: what the place is, why it suits its tagged categories, best season and why, rough trip length, budget character, and what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `explore/explore-data.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/descriptions.json`. All 12 details are 94–108 words and cover the required six topics while card summaries remain ≤80 characters. Automated: 28/28 targeted tests pass. Browser: long-form detail verified on desktop and at 390×844 with vertical scrolling, reachable actions, no horizontal overflow, and no console warnings/errors. |
-
-302. [x] **10.1.3** — Never blank: alt text always present; the deterministic fallback used only on a genuinely failed request.
+301. [ ] **10.1.2** — A substantive description per destination: what the place is, why it suits its tagged categories, best season and why, rough trip length, budget character, and what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/discovery-ui.js`; `explore/explore-data.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/fallbacks.json`. Normal browser run: 12/12 decoded cards, zero blank alts, zero fallbacks, zero console warnings/errors. Forced failures: only the missing São Miguel card or Lisbon hero swapped to its named SVG; the corresponding card/detail content and actions stayed available, with exactly one expected asset warning per run. Automated: 28/28 targeted tests pass. |
+   | Pending | Pending |
 
-303. [x] **10.1.4** — Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `assets/destinations/SOURCES.md`; `assets/manifest.json`; `explore/explore-data.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/licensing.json`. Catalog, manifest, and colocated source ledger agree for all 12 authors, Commons file pages, licenses, and license URLs. Browser: all 12 cards expose source/author and Creative Commons links. Automated: 29/29 targeted tests pass. |
-
-304. [x] **10.1.5** — **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
+302. [ ] **10.1.3** — Never blank: alt text always present; the deterministic fallback used only on a genuinely failed request.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `assets/destinations/`; `explore/explore-data.js`; `shared/storage-utils.js`; `explore/local-discovery.js`; `explore/trip-board.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/asset-paths.json`. Inventory: 12 card WebPs, 12 hero WebPs, and 12 SVG fallbacks, all under the root asset directory. Every current path passes storage, local-discovery, and trip-board validation. Automated: 29/29 targeted tests pass. |
+   | Pending | Pending |
 
-## 10.2 Resolve the `explore.js` discrepancy [RESOLVED]
+303. [ ] **10.1.4** — Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
 
-305. [x] **10.2.1** — Resolved: the obsolete auto-mounting `explore.js` was retired instead of being added to `index.html`. `explore-global.js` remains the sole browser mount owner, while browser search and regression tests now share the deterministic recommendation model in `local-discovery.js`.
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+304. [ ] **10.1.5** — **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+## 10.2 Resolve the `explore.js` discrepancy [OPEN]
+
+305. [ ] **10.2.1** — Confirmed open: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags — the browser uses `explore-global.js`. Decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree. Note `explore.js` **auto-invokes `api.mount(root)` at load**, so simply adding the tag would double-mount.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/local-discovery.js`; `explore/explore-global.js`; `tests/tracker-regression.test.js`; `tests/data-regression.test.js`; `tests/structure.test.js`; `docs/agent-instructions.md`; `docs/implementation-evidence/phase10/explore-runtime.json`. The duplicate `explore/explore.js` module was removed. Automated: 43/43 targeted tests pass, including deterministic results through the browser search path. Browser: exactly one discovery workspace, form, and trip board; nature + medium returns São Miguel and Lake Bohinj with explicit reasons; zero console warnings/errors. |
+   | Pending | Pending |
 
-## 10.3 "More to explore" is not the final section [RESOLVED]
+## 10.3 "More to explore" is not the final section [FIX]
 
-306. [x] **10.3.1** — Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 require "More to explore" be the last Explore section. It is now the final source and runtime section, with the prior DOM-reordering shim removed.
+306. [ ] **10.3.1** — Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 require "More to explore" be the last Explore section. It is currently **third of four**: Destinations → **More to explore** (`index.html:551`) → Explore shortcuts → chill strip. Move it last.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `index.html`; `explore/explore-global.js`; `tests/structure.test.js`; `docs/implementation-evidence/phase10/more-to-explore-order.json`. Source and browser order are Destinations → Explore shortcuts → chill strip → More To Explore. Automated: 44/44 targeted tests pass. Browser: the fourth and final direct Explore page-body section is More To Explore; zero console warnings/errors. |
+   | Pending | Pending |
 
 ## 10.4 Explore behaviour preserved from old Part B Phase 4
 
-307. [x] **10.4.1** — `explore-data.js` holds the curated destination catalog — [DONE]
+307. [ ] **10.4.1** — `explore-data.js` holds the curated destination catalog — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/explore-data.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/catalog-preservation.json`. The module owns 12 destinations with 12 unique IDs. Automated: 31/31 targeted tests pass. Browser: all 12 catalog destinations render across the two six-item pages and resolve into details; zero console warnings/errors. |
+   | Pending | Pending |
 
-308. [x] **10.4.2** — Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `explore/explore-data.js`; `shared/storage-utils.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/catalog-preservation.json`. Every catalog row has non-empty scalar fields plus populated categories, seasons, duration, styles, tags, and links; all 12 pass the canonical destination schema. Automated: 31/31 targeted tests pass. |
-
-309. [x] **10.4.3** — The sole `explore-global.js` runtime owns persisted destination preferences after the 10.2 duplicate-module resolution.
+308. [ ] **10.4.2** — Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/explore-global.js`; `explore/discovery-ui.js`; `shared/storage-utils.js`; `docs/implementation-evidence/phase10/preference-persistence.json`. The existing validated `orbit-explore-preferences` schema is retained. Automated: 40/40 targeted tests pass. Browser on a disposable origin: nature + medium restored after reload and automatically returned São Miguel/Lake Bohinj; Clear filters persisted an empty state across a second reload; zero console warnings/errors. |
+   | Pending | Pending |
 
-310. [x] **10.4.4** — Destination type, climate/season, trip length, budget, pace, interests, departure region — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `explore/discovery-ui.js`; `explore/explore-global.js`; `explore/local-discovery.js`; `tests/tracker-regression.test.js`; `docs/implementation-evidence/phase10/preference-controls.json`. All eight preference dimensions are present; Region and Country remain optional exact search fields. Automated: 45/45 targeted tests pass. Browser: Asia-Pacific persists across reload, ranks Ubud/Chiang Mai/Kyoto first, and displays the same-region reason; zero console warnings/errors. |
-
-311. [x] **10.4.5** — Deterministic, explainable recommendation ranking — [DONE]
+309. [ ] **10.4.3** — `explore.js` holds persisted destination preferences — [DONE] — but see 10.2
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/local-discovery.js`; `tests/tracker-regression.test.js`; `docs/implementation-evidence/phase10/ranking-and-reasons.json`. Ranking intersects selected groups, scores matched values, applies a non-exclusive departure-region boost, and breaks ties by destination ID. Automated: original and reversed catalogs produce identical ranked IDs within a 45/45 targeted pass. Browser: nature + medium and Asia-Pacific scenarios produce the expected stable order; zero console warnings/errors. |
+   | Pending | Pending |
 
-312. [x] **10.4.6** — Show why each destination was recommended — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `explore/local-discovery.js`; `explore/discovery-ui.js`; `tests/tracker-regression.test.js`; `docs/implementation-evidence/phase10/ranking-and-reasons.json`. Every browser recommendation card renders its model-produced `matchExplanation`. Browser examples: `Categories: nature · Budget: medium` and `Same broad departure region`; unfiltered cards retain a local-catalog starting-point explanation. Automated: 45/45 targeted tests pass. |
-
-313. [x] **10.4.7** — Preference controls, recommendation cards, details, save/favorite, shortlist/trip board, Explore-only shortcuts — [DONE]
+310. [ ] **10.4.4** — Destination type, climate/season, trip length, budget, pace, interests, departure region — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/discovery-ui.js`; `explore/explore-global.js`; `explore/trip-board.js`; `shared/shortcut-surface.js`; `tests/tracker-regression.test.js`; `docs/implementation-evidence/phase10/explore-surface.json`. Automated: 45/45 targeted tests pass. Browser on a disposable origin: eight preference selects, recommendations, São Miguel detail open/close, shortlist → Saved, one rendered trip-board card with all actions, Google Maps favorite/unfavorite, and six travel-only shortcuts; no cross-space leak or console warning/error. |
+   | Pending | Pending |
 
-314. [x] **10.4.8** — "Surprise me" as a filtered random recommendation — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `index.html`; `explore/discovery-ui.js`; `explore/explore-global.js`; `docs/implementation-evidence/phase10/surprise-me.json`. The hero CTA is restored and samples every page of the current filtered local result set before opening the standard detail dialog. Automated: 45/45 targeted tests pass. Browser: nature + medium opened São Miguel (one of the two valid matches); beach + cool opened no dialog and showed the explicit no-match state; zero console warnings/errors. |
-
-315. [x] **10.4.9** — Responsive destination images with fallback modelled on `visual-utils.js` — [DONE]
+311. [ ] **10.4.5** — Deterministic, explainable recommendation ranking — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `explore/discovery-ui.js`; `explore/discovery.css`; `shared/visual-utils.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/preserved-image-behavior.json` plus `imagery.json`/`fallbacks.json`. Card/hero source, size, crop, and viewport behavior were rechecked against the final runtime. Forced missing São Miguel card produced exactly one visual-utils asset warning and one decoded SVG fallback; no unrelated image changed. Automated: 45/45 targeted tests pass. |
+   | Pending | Pending |
 
-316. [x] **10.4.10** — Accessible alt text; never a blank destination card — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | VERIFIED | `explore/explore-data.js`; `explore/discovery-ui.js`; `tests/explore-imagery.test.js`; `docs/implementation-evidence/phase10/preserved-image-behavior.json`. Final normal browser run: seven visible card/board images, zero blank alts, zero fallbacks, zero incomplete images. Forced failure: fallback alt is `Illustrated fallback for São Miguel`, it decodes successfully, and card content remains present. Automated: 45/45 targeted tests pass. |
-
-317. [x] **10.4.11** — Tests for filtering, stable ranking, saved destinations, Explore-only shortcuts, malformed data — [DONE]
+312. [ ] **10.4.6** — Show why each destination was recommended — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `tests/explore-preservation.test.js`; `tests/explore-imagery.test.js`; `tests/tracker-regression.test.js`; `tests/structure.test.js`; `tests/data-regression.test.js`; `docs/implementation-evidence/phase10/explore-tests.json`. The dedicated preservation suite explicitly covers the five required areas, including reversed-input ranking and malformed path/source/preference rejection. Combined targeted run: 49/49 pass. |
+   | Pending | Pending |
 
-318. [x] **10.4.12** — Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload — completed during the Phase 10 gate run.
+313. [ ] **10.4.7** — Preference controls, recommendation cards, details, save/favorite, shortlist/trip board, Explore-only shortcuts — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+314. [ ] **10.4.8** — "Surprise me" as a filtered random recommendation — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+315. [ ] **10.4.9** — Responsive destination images with fallback modelled on `visual-utils.js` — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+316. [ ] **10.4.10** — Accessible alt text; never a blank destination card — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+317. [ ] **10.4.11** — Tests for filtering, stable ranking, saved destinations, Explore-only shortcuts, malformed data — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+318. [ ] **10.4.12** — Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload — [OPEN] — Phase 12
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `docs/implementation-evidence/phase10/interaction-matrix.json` plus `fallbacks.json` and `surprise-me.json`. Automated: 49/49 targeted tests pass. Browser on a disposable origin: Lisbon-only search; recommendation and saved-board details; shortlist/save; confirmed São Miguel removal; notes; planned status; same-column reorder; two-day trip plan; filtered Surprise Me; isolated missing-image fallback; and reload persistence of Lisbon status, notes, plan, and itinerary. Final normal console: zero warnings/errors. |
+   | Pending | Pending |
 
 319. [ ] **10.4.13** — Keep "More To Explore" last — **[OPEN]** — see 10.3
 
@@ -3819,7 +3569,7 @@ Because this clarification is stronger and more specific than the prior generic 
    |---|---|
    | Pending | Pending |
 
-349. [ ] **12.15** — Tick off every remaining box in `docs/IMPLEMENTATION-STEPS.md` and confirm none is left unchecked without a stated reason.
+349. [ ] **12.15** — Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason. V2 Phases 14–19 intentionally follow this checkpoint.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
@@ -3827,7 +3577,7 @@ Because this clarification is stronger and more specific than the prior generic 
    |---|---|
    | Pending | Pending |
 
-350. [ ] **12.16** — All documentation updates are **Phase 13.3** — do not duplicate them here.
+350. [ ] **12.16** — Do not perform final documentation here. V2 Phases 14–19 run next; final documentation remains **Phase 13.3 after Gate 19**.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
@@ -3835,13 +3585,599 @@ Because this clarification is stronger and more specific than the prior generic 
    |---|---|
    | Pending | Pending |
 
-351. [ ] **Gate 12** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+351. [ ] **Gate 12** — Complete the original-plan Phase 0–12 verification checkpoint before advancing to V2 Phase 14
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: All planned verification checks pass with retained evidence.
 
    | Status | Evidence |
    |---|---|
    | Pending | Pending |
+
+
+
+# V2 EXTENSION — Phases 14–19
+
+> These items extend the existing checklist without rewriting historical item numbers, statuses or evidence.
+>
+> The same Mandatory execution and verification contract applies. No V2 item may be skipped.
+
+## Phase 14 — Provider truth audit and V2 scope reconciliation
+
+- [ ] **14.1 — Audit Movies/Series provider truth: adapter, live configured path, search, details, normalization, poster/backdrop, pagination, cancellation, error/offline states and mock-vs-live status.**
+
+  Files: `server/`, `server/providers/`, `movies/`, provider tests, `docs/implementation-evidence/phase14/`.
+
+  Acceptance: Evidence separately states mock/contract status and live configured E2E status. Mock success is not live-provider proof.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **14.2 — Audit Games provider truth with the same live-vs-mock separation, including cover/background, genres/tags/platforms and tracker signals.**
+
+  Files: `server/`, `server/providers/`, `games/`, provider tests, `docs/implementation-evidence/phase14/`.
+
+  Acceptance: The actual delivered live capability is evidenced without invalidating unrelated prior phases.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **14.3 — Audit provider secrets/security boundary.**
+
+  Files: `.gitignore`, `config/`, `server/`, security tests, evidence.
+
+  Acceptance: No real secret is tracked or browser-readable; config/secrets paths, including a representative otherwise-servable extension such as `.js`, are denied.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **14.4 — Reconcile approved V2 scope across standing plan, checklist and architecture authority.**
+
+  Files: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`.
+
+  Acceptance: Local-first != local-only; Destinations global discovery, first-class provider records, content-art, offline/security/integrity rules are represented consistently.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 14 — Provider truth and V2 authority gate.**
+
+  Files: `docs/implementation-evidence/phase14/`, authoritative docs.
+
+  Acceptance: Actual current provider capability is known and the V2 scope is authoritative before implementation advances.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 15 — Global destination discovery
+
+- [ ] **15.1 — Select/document a legitimate provider-neutral destination source and its licensing/attribution constraints.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Provider choice is justified; Explore UI is not coupled to raw vendor payloads.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.2 — Implement destination search/details through the local server adapter.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Success, empty, pagination, timeout, rate-limit, auth/config, offline, provider-error, malformed and partial-data states are normalized.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.3 — Implement canonical destination normalization.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Available provider identity, location, summary/details, categories, trip metadata, card/hero media and attribution map into an Explore-compatible shape without inventing missing facts.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.4 — Add deterministic mock destination provider fixtures.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Automated tests cover success and all required failure states without live quota.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.5 — Integrate local + provider destination search UX.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Curated/local and global/provider results are distinct; obsolete requests are canceled/ignored; pagination/load-more works.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.6 — Implement provider destination detail and explicit Save/shortlist/trip-board actions.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Detail remains usable with partial metadata; attribution is shown where required; save is explicit.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.7 — Persist saved provider destination locally and prove offline reopen.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: A saved provider destination validates, survives reload and remains meaningful with provider access disabled.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.8 — Reverify all 12 curated destinations and existing Explore behavior.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Global discovery does not regress ranking, explanations, Surprise Me, curated images/fallbacks, save/remove or trip board.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 15 — Curated + global destination gate.**
+
+  Files: Phase 15 evidence.
+
+  Acceptance: Both Explore sources work coherently and neither is misrepresented as the other.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 16 — First-class provider records and data integrity
+
+- [ ] **16.1 — Implement deterministic provider identity and duplicate-add prevention for Movies/Series, Games and Destinations.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Adding the same provider identity twice cannot create duplicate local records or dependent state.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.2 — Define/test provider-vs-local collision policy.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: No fuzzy name-only auto-merge; deterministic mappings only, otherwise records remain distinct or require explicit reconciliation.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.3 — Prove provider Movie/Series records remain first-class offline.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: After Add and provider disable, library/detail/status/watchlist/untrack behavior remains valid from persisted local data.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.4 — Prove provider Game records remain first-class offline.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: After Add and provider disable, detail/tracker/sessions/journal/resources shell/edit/delete behavior remains valid.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.5 — Verify Game tracker inference and correction.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: A live-service example defaults weekly, a campaign example defaults story, and user correction is available before persistence.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.6 — Prove provider Destination records remain first-class offline.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Saved detail, saved/shortlist and trip-board state remain valid without provider access.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.7 — Implement/test provider refresh merge ownership.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Provider-owned metadata may update; user-owned status/notes/progress/tracker/tasks/sessions/journal/trip state never gets silently overwritten.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.8 — Verify rejected write and multi-key atomicity behavior.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: UI never reports success before persistence succeeds; partial multi-key Add/Save is rolled back or enters the explicitly documented recovery state.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.9 — Add provider-origin backup round trip.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: At least one provider-origin title, game and destination exports/imports under v4 and reopens offline; no version bump unless a real migration is required.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 16 — First-class provider-record integrity gate.**
+
+  Files: Phase 16 evidence.
+
+  Acceptance: Provider-origin content is durable local OneSpace data with duplicate, merge, storage and backup protections.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 17 — Content-aware cinematic environment
+
+- [ ] **17.1 — Extend the existing unified scene controller with one optional selected-content environmental-art layer.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: No parallel animation controller is introduced.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.2 — Integrate selected Movie/Series backdrop with Movies base scene.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Readable, non-interactive environmental art; base domain identity retained.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.3 — Integrate selected Game key/background art with Games base scene, including provider-added games.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Same quality/behavior for seed and provider-origin games.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.4 — Integrate selected Destination hero art with Explore for curated and provider destinations.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Atmospheric treatment remains subordinate to controls/content.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.5 — Use lightweight internal content transition instead of full page ENTRY.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Selecting another item does not replay route-entry choreography.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.6 — Implement content-art race ownership.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Rapid A->B->C selection always finishes on C even if older media loads later.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.7 — Verify exact-role media fallback.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Movie backdrop/Game background/Destination hero failure falls back without removing detail/actions or unnecessarily invalidating other valid media roles.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.8 — Verify route cleanup.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Movies/Games/Explore art, classes, CSS variables and transient state do not leak into other routes.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.9 — Reverify Full/Subtle/Off/reduced-motion and coarse-pointer behavior.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Reduced motion is genuinely still; touch does not depend on hover/pointer parallax.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 17 — Content-aware cinematic gate.**
+
+  Files: Phase 17 screenshots/measurements/tests.
+
+  Acceptance: Selected content enriches atmosphere without reducing usability, accessibility or lifecycle correctness.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 18 — Provider/media/async/security hardening
+
+- [ ] **18.1 — Test query and detail races including stale success and stale errors.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Older requests cannot replace newer UI, announce stale ARIA feedback, reopen closed detail or mutate another route.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.2 — Validate and bound provider server inputs.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Unsupported kind/provider/method, malformed IDs/pages/cursors and oversized queries are rejected before upstream calls.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.3 — Prove no open proxy / SSRF path exists.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Browser input cannot make the local server fetch arbitrary external, localhost or private-network URLs.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.4 — Harden provider media route where used.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Known-provider references only; host allowlist, HTTPS where supported, content-type check, timeout, size bound, no secret leakage.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.5 — Add hostile provider-text/XSS regression.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Provider markup/script-like strings render harmlessly as text; provider links use safe protocols.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.6 — Bound query/details/media caches and document policy.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Caches have finite bounds/expiry/invalidation; clearing them does not delete user records.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.7 — Run full provider failure matrix for all enabled rich domains.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: No-credentials, auth, timeout, rate-limit, provider failure, offline, malformed, partial and image-failure states preserve valid local data.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.8 — Verify logging/error sanitization.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Browser and logs do not expose credentials, Authorization headers, raw secrets or sensitive upstream dumps.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 18 — Hardening/security gate.**
+
+  Files: Phase 18 evidence.
+
+  Acceptance: No tested provider/media failure corrupts, misrepresents or leaks valid local data or credentials.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 19 — Complete V2 final acceptance
+
+- [ ] **19.1 — Run the complete current Node suite after the final implementation change.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Final current pass/fail count is recorded; historical counts are not reused.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.2 — Run browser smoke/regression across every top-level route.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: No unrelated domain regression, duplicate mount, uncaught error or failed expected local asset.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.3 — Verify complete Movies/Series local+provider flow.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Search, movie/series parity, pagination, explicit Add, detail/poster/backdrop, status/watchlist, untrack, reload, offline, errors and keyboard pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.4 — Verify complete Games local+provider flow.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Search, Add, tracker inference/correction, story+weekly, resources/sessions/journal/spotlight, reload/offline/errors pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.5 — Verify complete Explore curated+provider flow.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Curated ranking/preferences/Surprise Me plus global search/detail/save/trip-board/offline/fallback pass; More To Explore remains final.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.6 — Verify duplicate prevention, refresh ownership and rejected-write behavior.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: All integrity contracts pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.7 — Verify content-aware cinematic and route cleanup.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Movies/Games/Explore current selection owns its environmental art; stale/leaked art is absent.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.8 — Verify Full/Subtle/Off/reduced motion and keyboard/accessibility.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Focus, modal behavior, ARIA/async feedback, alt/decorative treatment, touch targets and motion contract pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.9 — Verify responsive matrix.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Existing 1440/1024/760/390 widths plus approximately 1920×1080 and 2048×1152 pass without overflow/clipping/unreadable media treatment.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.10 — Verify security and network/media behavior.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Secrets blocked, no arbitrary proxy, safe media route, bounded caches, no secret-bearing console/network output.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.11 — Verify provider-origin backup/export/import and offline reopen.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: One title, game and destination round-trip successfully under the existing backup contract.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.12 — Reconcile every V2 checklist status and retained evidence.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: No V2 item remains Pending, Implemented/Not Verified or Blocked.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 19 — Final V2 delivery gate before Phase 13.3.**
+
+  Files: `docs/IMPLEMENTATION-STEPS.md`, Phase 19 evidence, final current test/browser run.
+
+  Acceptance: All original-plan and V2 requirements pass together. Phase 13.3 may now reconcile final documentation.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
 
 ## Phase 13.3 — Final documentation
 
@@ -3871,7 +4207,7 @@ Because this clarification is stronger and more specific than the prior generic 
 
 355. [ ] **Gate 13.3** — Confirm every planned step is implemented and verified and report the actual delivery evidence
 
-   Files: `docs/IMPLEMENTATION-STEPS.md`, `VERIFICATION.md`. Acceptance: No unchecked implementation requirement remains.
+   Files: `docs/IMPLEMENTATION-STEPS.md`, `VERIFICATION.md`. Acceptance: No unchecked original-plan or V2 implementation requirement remains; Gate 19 has passed.
 
    | Status | Evidence |
    |---|---|
