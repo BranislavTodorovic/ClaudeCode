@@ -367,6 +367,8 @@
   function findSeed(id) { return untracked.find(function(m){return m.id===id;}) || (window.SEED_MOVIES || []).find(function (m) { return m.id === id; }); }
   function findLibrary(id) { return library.find(function (m) { return m.id === id; }); }
   function statusLabel(status) { return status === "watched" ? "Watched" : status === "watchlist" ? "Watchlist" : "Unwatched"; }
+  function yearLabel(year) { return year || "Year unknown"; }
+  function genreYearLabel(movie) { var genre=(movie.genre||[]).join(", "); return (genre?esc(genre)+" · ":"")+yearLabel(movie.year); }
   function durationBucket(minutes) {
     if (minutes < 90) return "Under 90 min";
     if (minutes <= 120) return "90-120 min";
@@ -581,7 +583,7 @@
           '<div class="mv-suggest-poster">' + posterHtml(m, "mv-suggest-poster-img") + "</div>" +
           '<div class="mv-suggest-body">' +
             '<div class="mv-suggest-top"><h3>' + esc(m.title) + '</h3><span class="mv-rating">' + mvIcon("star") + ratingLabel(m.rating) + "</span></div>" +
-            '<p class="mv-suggest-meta">' + esc(m.type==='series'?'Series':'Movie') + (m.type === "series" ? " · " + (m.seasons || "—") + " seasons" : "") + " · " + esc((m.genre || []).join(", ")) + " · " + m.year + " · " + durationLabel(m.durationMinutes) + "</p>" +
+            '<p class="mv-suggest-meta">' + esc(m.type==='series'?'Series':'Movie') + (m.type === "series" ? " · " + (m.seasons || "—") + " seasons" : "") + " · " + genreYearLabel(m) + " · " + durationLabel(m.durationMinutes) + "</p>" +
             '<div class="mv-tag-row">' + (m.tags || []).map(function (t) { return '<span class="mv-tag">' + esc(t) + "</span>"; }).join("") + "</div>" +
             '<p class="mv-suggest-why">' + esc(r.reasons.length ? r.reasons.join("; ") + "." : (prefs.similarTo && prefs.similarTo.length ? "Shares genres, moods or tags with your selection." : "From the complete local catalog.")) + "</p>" +
             '<div class="mv-suggest-actions">' +
@@ -610,7 +612,7 @@
       return (
         '<div class="mv-watchlist-item" data-reveal data-reveal-group="watchlist" data-reveal-key="' + esc(id) + '" style="--mv-brand:' + esc(m.accent) + '">' +
           posterHtml(m, "mv-watchlist-poster") +
-          '<span class="mv-watchlist-name"><strong>' + esc(m.title) + "</strong><small>" + esc((m.genre || []).join(", ")) + " · " + m.year + "</small></span>" +
+          '<span class="mv-watchlist-name"><strong>' + esc(m.title) + "</strong><small>" + genreYearLabel(m) + "</small></span>" +
           '<div class="mv-watchlist-actions">' +
             '<button type="button" class="btn" data-action="watchlist-watched" data-id="' + esc(m.id) + '">Mark as Watched</button>' +
             '<button type="button" class="btn btn-ghost" data-action="watchlist-remove" data-id="' + esc(m.id) + '">Remove</button>' +
@@ -635,7 +637,7 @@
         '<button type="button" class="mv-card-poster-btn" data-action="view-library-details" data-id="' + esc(movie.id) + '" aria-label="View ' + esc(movie.title) + ' details">' + posterHtml(movie, "mv-card-poster-img") + "</button>" +
         '<div class="mv-card-body">' +
           '<h3 class="mv-card-title">' + esc(movie.title) + "</h3>" +
-          '<div class="mv-card-meta"><span>' + esc((movie.genre || []).join(", ")) + " · " + movie.year + '</span><span class="mv-rating">' + mvIcon("star") + ratingLabel(movie.rating) + "</span></div>" +
+          '<div class="mv-card-meta"><span>' + genreYearLabel(movie) + '</span><span class="mv-rating">' + mvIcon("star") + ratingLabel(movie.rating) + "</span></div>" +
           '<p class="mv-card-duration">' + esc((movie.type || 'movie').charAt(0).toUpperCase()+(movie.type || 'movie').slice(1)) + (movie.type==='series' ? ' · '+(movie.seasons || '—')+' seasons · approx. ' : ' · ') + durationLabel(movie.durationMinutes) + " · " + esc(movie.language || "English") + "</p>" +
           '<div class="mv-card-status-row">' +
             '<span class="mv-status mv-status-' + esc(movie.status) + '">' + statusLabel(movie.status) + "</span>" +
@@ -686,7 +688,7 @@
     el.innerHTML =
       "<h3>Up Next</h3>" +
       '<div class="mv-next-card" style="--mv-brand:' + esc(next.accent) + '">' + posterHtml(next, "mv-next-poster") +
-        "<div><strong>" + esc(next.title) + "</strong><span>" + esc((next.genre || []).join(", ")) + " · " + next.year + "</span></div></div>" +
+        "<div><strong>" + esc(next.title) + "</strong><span>" + genreYearLabel(next) + "</span></div></div>" +
       '<button type="button" class="btn btn-primary" data-action="watchlist-watched" data-id="' + esc(next.id) + '">Mark as Watched</button>';
   }
   function renderOverviewMiniRow() {
@@ -716,7 +718,7 @@
       '<p><strong>'+esc(movie.type==='series'?'Series':'Movie')+'</strong>'+(movie.type==='series'?' · '+(movie.seasons || 'Unspecified')+' seasons · approximate episode length':'')+'</p>' +
       (movie.blurb ? "<p>" + esc(movie.blurb) + "</p>" : "") +
       "<p><strong>Genre:</strong> " + esc((movie.genre || []).join(", ")) + "</p>" +
-      "<p><strong>Year:</strong> " + movie.year + " · <strong>Duration:</strong> " + durationLabel(movie.durationMinutes) + "</p>" +
+      "<p><strong>Year:</strong> " + yearLabel(movie.year) + " · <strong>Duration:</strong> " + durationLabel(movie.durationMinutes) + "</p>" +
       "<p><strong>Language:</strong> " + esc(movie.language || "—") + " · <strong>Rating:</strong> " + ratingLabel(movie.rating) + "</p>" +
       (movie.platforms && movie.platforms.length ? "<p><strong>Platforms:</strong> " + esc(movie.platforms.join(", ")) + "</p>" : "") +
       (inLibraryEntry ? "<p><strong>Status:</strong> " + statusLabel(inLibraryEntry.status) + "</p>" : "") +
@@ -965,7 +967,7 @@
     content.innerHTML =
       '<p class="mv-hero-tagline">' + esc((movie.tags && movie.tags[0]) || "Featured Tonight") + "</p>" +
       '<h1 class="mv-hero-title">' + esc(movie.title) + "</h1>" +
-      '<div class="mv-hero-meta"><span>' + esc((movie.genre || []).join(", ")) + "</span><span>" + movie.year + "</span><span>" + durationLabel(movie.durationMinutes) + '</span><span class="mv-hero-rating">' + mvIcon("star") + ratingLabel(movie.rating) + "</span></div>" +
+      '<div class="mv-hero-meta"><span>' + esc((movie.genre || []).join(", ")) + "</span><span>" + yearLabel(movie.year) + "</span><span>" + durationLabel(movie.durationMinutes) + '</span><span class="mv-hero-rating">' + mvIcon("star") + ratingLabel(movie.rating) + "</span></div>" +
       '<p class="mv-hero-blurb">' + esc(movie.blurb || "") + "</p>" +
       '<div class="mv-hero-actions">' +
         '<button type="button" class="btn mv-hero-primary" data-action="suggest-watched" data-id="' + esc(movie.id) + '">' + mvIcon("play") + (inLib && inLib.status === "watched" ? "Watched" : "Mark as Watched") + "</button>" +

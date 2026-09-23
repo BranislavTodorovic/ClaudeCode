@@ -611,10 +611,10 @@ No final "complete" statement is allowed until these conditions are true.
 | 2 | Verified | Phase 2 acceptance evidence; assigned Phase 3/12 follow-through remains pending. |
 | 3 | Verified | 44 tests; Home ownership, Work/Explore boundaries, theme cleanup and injected validators verified. |
 | 4 | Verified; follow-through in 5–7 | Settings, palette, contrast, reset, persistence and layout checks passed. |
-| 5 | Verified; final width regression in Phase 12 | Ten distinct SVG scenes, unified motion controller; 54 tests; 40 responsive checks. |
-| 6 | Verified | TMDB/RAWG proxy, one typeahead per domain, visible degradation; local mock verified. |
-| 7 | Verified | Removable built-ins, restore panel, scoped add, persisted ordering and accessible controls. |
-| 8 | Verified; full action matrix in Phase 12 | Tracker inference, game-specific templates, rollback, history preservation, spotlight and focus verified. |
+| 5 | VERIFIED | Current Gate 5 rerun: `phase5/phase5-gate-2026-09-23.json`; 92/92 tests, ten browser scene lifecycles, four-width icon audit and six current captures. Item 194 is explicitly deferred to Phase 12. |
+| 6 | VERIFIED | Current sequential audit of items 200–217: `phase6/audit-2026-09-23.jsonl`; 92/92 tests, current mock/live browser states, four-width controls, and missing-year display fix. Live credentials remain absent and visibly reported. |
+| 7 | VERIFIED | Current sequential audit of items 218–237: `phase7/audit-2026-09-23.jsonl`; 92/92 tests, 20 current responsive views, no browser errors, hide/restore, custom CRUD and keyboard reorder. |
+| 8 | VERIFIED; item 264 deferred to Phase 12 | Current sequential audit of items 238–269: `phase8/audit-2026-09-23.jsonl`; 92/92 tests, current tracker/browser lifecycle and four-width Gate 8 passed. |
 | 9 | Verified with documented 9.2.6 artwork exception | Untrack, single watchlist truth, 15 series, shared confirmation, responsive fallback; full action matrix in Phase 12. |
 | 10 | Not started | Pending |
 | 11 | Not started | Pending |
@@ -2328,24 +2328,26 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
    |---|---|
    | VERIFIED | Ten-route SVG-only control audit, corrected 44px targets, note pin ARIA/tooltip/focus browser checks, and 92/92 tests recorded in `audit-2026-09-22/phase5-198D-accessibility.json`. |
 
-198E. [ ] **5.6.5** — Verify global icon quality across required themes and responsive widths.
+198E. [x] **5.6.5** — Verify global icon quality across required themes and responsive widths.
 
    Files: all affected UI files; `docs/implementation-evidence/phase5/`; browser verification. Acceptance: All tabs are inspected at the active required desktop/tablet/mobile widths; no broken/missing/clipped/misaligned UI icons remain; icons are crisp/readable in light/dark and supported palettes; representative visual evidence covers navigation, headings, cards, forms/dialogs and shared actions. Brand/provider/source logos and favicons remain intentionally distinct.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | `docs/implementation-evidence/phase5/phase5-198E-responsive-icon-audit.json` records 40 route/width checks, 20 light/dark route checks, 13 palette checks, corrected Notes pin dimensions, and six reviewed captures (`icons-*.jpg` in the same folder). Current 92/92 tests and diff check pass. |
 
 
-199. [ ] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+199. [x] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
 
    Files: `index.html`, `shared/`, `styles/`, affected domain files, `docs/implementation-evidence/phase5/`. Acceptance: Existing Phase 5 cinematic/motion evidence remains valid, and the newly approved 5.6 global icon-modernization requirements are also VERIFIED before Gate 5 closes again.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Gate 5 was previously Verified under the pre-5.6 scope. Prior Phase 5 evidence is retained; the gate is reopened only because the newly approved global icon-modernization requirement must now be completed and evidenced. |
+   | VERIFIED | `docs/implementation-evidence/phase5/phase5-gate-2026-09-23.json` maps the current 8/8 scene and 92/92 full tests, ten browser ENTRY→AMBIENT checks, Subtle/Off/reduced checks, 5.6 visual matrix, secret-path denial, and console health. Item 194 remains explicitly DEFERRED TO PHASE 12. |
 
 ## Phase 6
+
+Current sequential verification for every Phase 6 item and Gate 6 is recorded in `docs/implementation-evidence/phase6/audit-2026-09-23.jsonl`.
 
 ## 6.1 Server layer
 
@@ -2355,7 +2357,7 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
    | Status | Evidence |
    |---|---|
-   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. Current item-specific audit: `phase6/audit-2026-09-23.jsonl` item 200. |
 
 > Carried from the old REVISED plan's provider requirements:
 
@@ -2497,9 +2499,11 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
    | Status | Evidence |
    |---|---|
-   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+   | VERIFIED | 2026-09-23 rerun: 92/92 tests, responsive Games/Movies search at 1440/1024/760/390, no browser errors, provider and missing-credential states; see `phase6/audit-2026-09-23.jsonl` item 217. Historical 59-test evidence retained. |
 
 ## Phase 7
+
+Current sequential verification for every Phase 7 item and Gate 7 is recorded in `docs/implementation-evidence/phase7/audit-2026-09-23.jsonl`.
 
 ## 7.1 Removable built-ins [NEW]
 
@@ -2669,9 +2673,11 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
    | Status | Evidence |
    |---|---|
-   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+   | VERIFIED | 2026-09-23 rerun: 92/92 tests; 20 current responsive browser views, no errors or broken visible images; hide/restore/custom CRUD/keyboard order/Explore filter and ownership. See `phase7/audit-2026-09-23.jsonl` item 237. Historical 62-test evidence retained. |
 
 ## Phase 8
+
+Current sequential verification for every Phase 8 item and Gate 8 is recorded in `docs/implementation-evidence/phase8/audit-2026-09-23.jsonl`. The exact exhaustive Games action matrix at item 264 is explicitly assigned to Phase 12.
 
 ## 8.1 Tracker type must be correct at add time [NEW]
 
@@ -2903,7 +2909,7 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | DEFERRED TO PHASE 12 | Explicitly assigned to Phase 12 by the standing plan; current Phase 8 local audit is `phase8/audit-2026-09-23.jsonl` item 264. The exhaustive Games action matrix remains pending until Phase 12. |
 
 ## 8.5 Remaining games defects [FIX]
 
@@ -2945,7 +2951,7 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
    | Status | Evidence |
    |---|---|
-   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+   | VERIFIED | 2026-09-23 rerun: 92/92 tests; current tracker/add/reset/rollback/spotlight browser checks; four actual viewport widths with no overflow, broken visible images or console errors. See `phase8/audit-2026-09-23.jsonl` item 269. Exact item 264 action matrix remains deferred to Phase 12. |
 
 ## Phase 9
 

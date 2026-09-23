@@ -153,8 +153,8 @@
 .note-card.is-pinned { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
 .note-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
 .note-title { margin: 0; font-size: .92rem; }
-.note-pin { width: 28px; height: 28px; flex: 0 0 auto; border: 0; border-radius: 8px; background: transparent; color: var(--faint); cursor: pointer; display: grid; place-items: center; }
-.note-pin .icon { width: 15px; height: 15px; }
+.note-pin { width: 28px; height: 28px; flex: 0 0 auto; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; display: grid; place-items: center; }
+.note-pin .icon { width: 20px; height: 20px; }
 .note-card.is-pinned .note-pin { color: var(--accent); }
 .note-body { margin: 0 0 12px; color: var(--text); font-size: .82rem; line-height: 1.55; white-space: pre-wrap; max-height: 180px; overflow: auto; }
 .note-edit-title, .note-edit-body { width: 100%; margin-bottom: 8px; }
