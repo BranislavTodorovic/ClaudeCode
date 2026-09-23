@@ -91,6 +91,15 @@ test('Personal deletion waits for confirmation and storage failure preserves the
  let fail=false;const controller=ctx.window.makePersonalController('orbit-personal-goals',{safeGetJSON:()=>records,safeSet:(k,v)=>{if(fail)return false;records=JSON.parse(v);return true;},uid:()=> 'new',escapeHtml:s=>s,iconSvg:()=>'',showToast:s=>toast.push(s)});
  const list={innerHTML:''};controller.render(list);list.onclick({target:{closest:()=>({dataset:{delete:'x'}})}});assert.equal(records.length,1);assert.equal(typeof confirm,'function');fail=true;assert.equal(confirm(),false);assert.equal(records.length,1);fail=false;confirm();assert.equal(records.length,0);assert.ok(toast.includes('Personal item deleted.'));
 });
+test('habit targets remain bounded and survive backup restore',()=>{
+ const habit={id:'weekly-walk',text:'Walk',done:false,frequency:'weekly',target:3};
+ assert.equal(storage.valid('orbit-personal-habits',JSON.stringify([habit])),true);
+ for(const target of [0,366,1.5,'3'])assert.equal(storage.valid('orbit-personal-habits',JSON.stringify([{...habit,target}])),false);
+ assert.equal(storage.valid('orbit-personal-goals',JSON.stringify([habit])),false);
+ const before=memory({'orbit-personal-habits':JSON.stringify([habit])}),after=memory();
+ storage.restore(after,storage.backup(before));
+ assert.deepEqual(JSON.parse(after.getItem('orbit-personal-habits')),[habit]);
+});
 test('deleting a game removes its weekly tasks and sessions but preserves journal text',()=>{
  const initial={library:[{id:'g'},{id:'keep'}],weekly:{g:{tasks:[]},keep:{tasks:[]}},sessions:[{id:'s',gameId:'g'},{id:'k',gameId:'keep'}],journal:[{id:'j',gameId:'g',text:'Keep this memory'}]};
  const next=resources.cleanup(initial,'g');assert.deepEqual(next.library,[{id:'keep'}]);assert.equal(next.weekly.g,undefined);assert.equal(next.sessions.length,1);assert.equal(next.journal[0].gameId,null);assert.equal(next.journal[0].text,'Keep this memory');assert.equal(initial.journal[0].gameId,'g');

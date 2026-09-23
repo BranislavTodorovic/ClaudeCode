@@ -605,21 +605,33 @@ No final "complete" statement is allowed until these conditions are true.
 | Phase | Status | Evidence |
 |---|---|---|
 | 13.1 | Verified | Standing plan and user-confirmed clarifications |
-| 13.2 | Verified | 355 numbered entries; coverage reviewed before Phase 0. |
+| 13.2 | Verified | Historical original checklist established before later approved extensions; detailed checklist remains the source of truth. |
 | 0 | Verified | All Phase 0 evidence is in docs/implementation-evidence. |
 | 1 | Verified | 39/39 tests; all seven batch gates, structural assertions, secret-path denial, exact script order and git history preservation verified. |
-| 2 | Verified | Phase 2 acceptance evidence; assigned Phase 3/12 follow-through remains pending. |
+| 2 | Verified | Phase 2 acceptance evidence; assigned later follow-through remains governed by the detailed checklist. |
 | 3 | Verified | 44 tests; Home ownership, Work/Explore boundaries, theme cleanup and injected validators verified. |
 | 4 | Verified; follow-through in 5–7 | Settings, palette, contrast, reset, persistence and layout checks passed. |
-| 5 | VERIFIED | Current Gate 5 rerun: `phase5/phase5-gate-2026-09-23.json`; 92/92 tests, ten browser scene lifecycles, four-width icon audit and six current captures. Item 194 is explicitly deferred to Phase 12. |
-| 6 | VERIFIED | Current sequential audit of items 200–217: `phase6/audit-2026-09-23.jsonl`; 92/92 tests, current mock/live browser states, four-width controls, and missing-year display fix. Live credentials remain absent and visibly reported. |
-| 7 | VERIFIED | Current sequential audit of items 218–237: `phase7/audit-2026-09-23.jsonl`; 92/92 tests, 20 current responsive views, no browser errors, hide/restore, custom CRUD and keyboard reorder. |
-| 8 | VERIFIED; item 264 deferred to Phase 12 | Current sequential audit of items 238–269: `phase8/audit-2026-09-23.jsonl`; 92/92 tests, current tracker/browser lifecycle and four-width Gate 8 passed. |
-| 9 | Verified with documented 9.2.6 artwork exception | Untrack, single watchlist truth, 15 series, shared confirmation, responsive fallback; full action matrix in Phase 12. |
-| 10 | Not started | Pending |
-| 11 | Not started | Pending |
-| 12 | Not started | Pending |
-| 13.3 | Not started | Pending |
+| 5 | Verified under historical scope; later fidelity requirements are additive | Historical cinematic/scene evidence retained; final fidelity is governed by Phases 20 and 25. |
+| 6 | Verified under historical/mock scope | Historical provider contract/mock evidence retained; live configured truth is separately governed by Phases 14 and 22. |
+| 7 | Verified | Removable built-ins, restore panel, scoped add, persisted ordering and accessible controls. |
+| 8 | Verified under historical scope | Tracker inference and lifecycle evidence retained; expanded game enrichment/progression is governed by Phase 23. |
+| 9 | Verified with documented artwork exception | Historical Movies/Series behavior retained; live provider/media acceptance is governed by Phase 22. |
+| 10 | Pending / follow detailed checklist | Current status must be taken from detailed item-level evidence, not this summary alone. |
+| 11 | Pending / follow detailed checklist | Current status must be taken from detailed item-level evidence, not this summary alone. |
+| 12 | Pending / active checkpoint | Complete original-plan verification and assigned deferred matrices before advancing. |
+| 14 | Pending | Provider truth audit and V2 scope reconciliation. |
+| 15 | Pending | Global destination discovery. |
+| 16 | Pending | First-class provider records and data integrity. |
+| 17 | Pending | Content-aware cinematic environment. |
+| 18 | Pending | Provider/media/async/security hardening. |
+| 19 | Pending | Complete V2 final acceptance before additive final-fidelity work. |
+| 20 | Pending | Full-viewport cinematic fidelity. |
+| 21 | Pending | Global icon visual-quality completion. |
+| 22 | Pending | Live provider search and real media completion. |
+| 23 | Pending | Game enrichment and tracker intelligence. |
+| 24 | Pending | Global search/filter integration. |
+| 25 | Pending | Final user-visible product acceptance. |
+| 13.3 | Pending; always last | Runs only after Gate 25. |
 
 ## Phase 13.1 — Standing plan
 
@@ -671,7 +683,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 355 numbered entries reviewed against the standing plan; original phases, preserved requirements, gates and confirmed resolutions retained. |
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 7. [x] **13.2.2** — Each step names the file(s) it touches and its acceptance check.
 
@@ -679,7 +691,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 355 numbered entries reviewed against the standing plan; original phases, preserved requirements, gates and confirmed resolutions retained. |
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 8. [x] **13.2.3** — Each phase ends with its gate (tests green, no 404s, screenshots captured) as an explicit checkbox.
 
@@ -687,7 +699,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 355 numbered entries reviewed against the standing plan; original phases, preserved requirements, gates and confirmed resolutions retained. |
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 9. [x] **13.2.4** — A "Do not break" header block listing the invariants from 1.9 — storage keys, global names, load order, entry URL, backup compatibility.
 
@@ -695,7 +707,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 355 numbered entries reviewed against the standing plan; original phases, preserved requirements, gates and confirmed resolutions retained. |
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 10. [x] **13.2.5** — A status column an implementer updates as work lands, so progress is visible without reading a diff.
 
@@ -703,7 +715,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 355 numbered entries reviewed against the standing plan; original phases, preserved requirements, gates and confirmed resolutions retained. |
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 11. [x] **Gate 13.2** — Verify this checklist against the complete standing plan
 
@@ -711,7 +723,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | 355 numbered entries reviewed against the standing plan; original phases, preserved requirements, gates and confirmed resolutions retained. |
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 ## Phase 0 — Freeze the baseline
 
@@ -723,7 +735,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Historical baseline: docs/implementation-evidence/baseline-tests.txt (31/31). Current recheck at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.1-tests.txt (31/31). |
+   | Verified | docs/implementation-evidence/baseline-tests.txt: 31 pass, 0 fail; every root application JS and inline script parsed. |
 
 13. [x] **0.2** — Parse every JS file and the inline `index.html` script — [DONE] — covered by the existing parse test
 
@@ -731,7 +743,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current recursive parse test at tests/data-regression.test.js:131–145 enumerates 28 application JS files and parses inline index.html scripts; passing run: docs/implementation-evidence/audit-2026-09-22/phase0-0.1-tests.txt. Historical baseline: baseline-tests.txt. |
+   | Verified | docs/implementation-evidence/baseline-tests.txt: 31 pass, 0 fail; every root application JS and inline script parsed. |
 
 14. [x] **0.3** — Start `node _static-server.js`; inspect all 11 routes at `http://localhost:8973` — [OPEN]
 
@@ -739,7 +751,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Historical baseline: baseline-routes.json. Current 11-route browser recheck at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.3-routes.json (Projects resolves to Work subview; no visible broken images or console errors). |
+   | Verified | baseline-routes.json: all 11 route identities and rendered headings verified; no broken visible images or console errors. Existing smoke helper has an outdated Explore heading, recorded for Phase 12. |
 
 15. [x] **0.4** — Record current storage keys, backup format, router pages, script load order, and the `onespace:data-changed` / `onespace:page-changed` events — [OPEN]
 
@@ -747,7 +759,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Historical contract: baseline-contract.json. Current source recheck at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.4-contract.json records 66 keys, v4 export/v2–v4 imports, 11 routes, 25 ordered scripts, 8 styles and event payloads. |
+   | Verified | baseline-contract.json records all 62 keys, version 4 exports and 2/3/4 imports, 11 routes, 22 scripts, 8 styles and event contracts; user-confirmed correction recorded. |
 
 16. [x] **0.5** — Inventory every button, tab, link, form, checkbox, select, modal action, shortcut and page jump — recording owner, expected state change, persistence key, success feedback, error behaviour, focus return and reload behaviour — [OPEN] — this inventory is the acceptance checklist for Phase 12
 
@@ -755,7 +767,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Historical baseline: interaction-inventory.json and INTERACTION-INVENTORY.md. Current 388 source control templates across 26 browser files, with owner, action, expected state, persistence, feedback, error/focus/reload contract and Phase 12 outcome slots: docs/implementation-evidence/audit-2026-09-22/phase0-0.5-current-inventory.json. Current route rendering: phase0-0.3-routes.json. |
+   | Verified | interaction-inventory.json and INTERACTION-INVENTORY.md record source control templates and required acceptance fields; baseline-routes.json records visible route controls. Phase 12 outcomes remain pending. |
 
 17. [x] **0.6** — Treat `storage-utils.js` as the only persistence validation boundary — [DONE] — holds today; must not regress
 
@@ -763,7 +775,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current source and direct-write scan at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.6-storage-boundary.json; validation and rollback tests in phase0-0.1-tests.txt pass. |
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
 
 18. [x] **0.7** — Schemas for projects, work items, tasks, history, destinations, preferences, saved destinations, Personal records, game resources, game default tasks, movie/series metadata — [DONE] — all present and validated
 
@@ -771,7 +783,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current schema branches and matching regression tests at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.7-schemas.json and phase0-0.1-tests.txt. |
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
 
 19. [x] **0.8** — Generated IDs, timestamps, status enums, optional fields, maximum lengths in every schema — [DONE]
 
@@ -779,7 +791,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current field contracts and generators at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.8-field-contracts.json; named schema regressions pass in phase0-0.1-tests.txt. |
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
 
 20. [x] **0.9–0.10** — Migration behaviour and safe defaults for existing records and v2 backups — [DONE] — v2 and v3 accepted, v4 current
 
@@ -787,7 +799,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current v4 export and complete v2/v3/v4 import/default/rollback contract at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-0.9-0.10-migration.json; named migration tests pass in phase0-0.1-tests.txt. |
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
 
 21. [x] **0.11** — Capture "before" screenshots of Work, Games, Movies and Settings at 1440 / 1024 / 760 / 390 px — [NEW] — comparison set for the redesign
 
@@ -795,7 +807,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | All 16 historical captures remain present and readable; four representative 1440-width images visually inspected, dimensions/hashes and per-route width set recorded at 37f3e00 in docs/implementation-evidence/audit-2026-09-22/phase0-0.11-before-screenshots.json. Browser viewport measurements remain in before-layouts.json. |
+   | Verified | 16 before screenshots in docs/implementation-evidence/before; widths 1440/1024/760/390. Layout measurements in before-layouts.json. Existing Work sidebar overlap recorded for Phase 2. |
 
 22. [x] **0.12** — Export a v4 backup from the live origin before any other phase runs — [NEW] — no later phase can then lose real data
 
@@ -803,7 +815,7 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Genuine historical 62-key v4 export and Settings provenance remain in live-origin-baseline-v4.json and baseline-backup-validation.json; current 66-key storage boundary validates/restores it without disturbing unrelated storage (docs/implementation-evidence/audit-2026-09-22/phase0-0.12-backup-validation.json). |
+   | Verified | live-origin-baseline-v4.json exported using the actual Settings control; all 62 keys validate and restore round trip succeeds. See baseline-backup-validation.json. |
 
 23. [x] **Gate 0** — Verify baseline tests, all routes, contracts, interaction inventory, 16 screenshots, and live-origin v4 backup
 
@@ -811,11 +823,9 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current Gate 0 rerun at 37f3e00: docs/implementation-evidence/audit-2026-09-22/phase0-gate.json and phase0-gate-tests.txt (92/92); all item evidence mapped, 11 browser routes inspected, 16 historical screenshots and genuine v4 backup validated. |
+   | Verified | 31/31 baseline tests, 11 routes, contracts, interaction inventory, 16 screenshots and genuine live-origin backup retained. |
 
 ## Phase 1 — Repository regrouping
-
-Current-state audit (2026-09-22): items 24–98 were checked in checklist order. Per-item results are in `docs/implementation-evidence/audit-2026-09-22/phase1-items-24-78.jsonl`, `phase1-79-secrets-marker.json`, `phase1-items-80-94.jsonl`, and `phase1-items-95-98.json`. Current gate evidence includes `phase1-gate-tests.txt` (92/92), `phase1-gate-http.json`, and `phase1-95-missing-asset.json`.
 
 ### §1.8 batch 1 — shared
 
@@ -1253,7 +1263,7 @@ Current-state audit (2026-09-22): items 24–98 were checked in checklist order.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current `server/providers/catalog.js` exists and root `providers/` is absent. No provider files were tracked before Phase 1, so Git cannot show a directory rename; the historical wording was inaccurate. See `audit-2026-09-22/phase1-items-24-78.jsonl` item 76 and Phase 6 provider evidence. |
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
 
 77. [x] **1.8.7.move3** — Use git mv for `REVISED-IMPLEMENTATION-PLAN.md` → `docs/REVISED-IMPLEMENTATION-PLAN.md`, preserving its contents (§1.2)
 
@@ -1277,7 +1287,7 @@ Current-state audit (2026-09-22): items 24–98 were checked in checklist order.
 
    | Status | Evidence |
    |---|---|
-   | Verified | A later commit had removed the tracked marker. Restored the authoritative ignore exception and committed the empty `config/secrets/.gitkeep` at `81105a9`; current structure tests pass (9/9), and credential-like files remain ignored. See `audit-2026-09-22/phase1-79-secrets-marker.json`. |
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
 
 80. [x] **1.5.2** — **`config/secrets.example.json`** — committed template, placeholder values only. **[NEW]** it now documents the keys Phase 6 will actually consume: `TMDB_API_KEY`, and `IGDB_CLIENT_ID` + `IGDB_CLIENT_SECRET` or `RAWG_API_KEY`.
 
@@ -1405,7 +1415,7 @@ Current-state audit (2026-09-22): items 24–98 were checked in checklist order.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Current disposable server returned 404 for forced `assets/destinations/azores.svg` failure and 200 for the entry page; see `audit-2026-09-22/phase1-95-missing-asset.json`. |
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
 
 96. [x] **1.6.README** — Update server commands, load-order paragraph and file references listed in §1.6
 
@@ -1429,11 +1439,9 @@ Current-state audit (2026-09-22): items 24–98 were checked in checklist order.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Historical seven batch gates remain recorded. Current run: 92/92 Node tests pass; config secrets probe JS and JSON return 404; Work and Games files return 200; `git log --follow games/games.js` reaches pre-move commits; Phase 0 browser route audit had no console errors. See `audit-2026-09-22/phase1-items-95-98.json`, `phase1-gate-tests.txt`, and `phase1-gate-http.json`. |
+   | Verified | 39/39 tests pass; all seven batch HTTP/browser gates pass; config/secrets/probe.js and api-keys.json blocked; commit 6b4e27e preserves git log --follow games/games.js history. |
 
 ## Phase 2
-
-Current-state audit (2026-09-22): items 99–136 were inspected in order; per-item source checks, unchanged Phase 2 core source hashes, current 22/22 Work/domain tests, retained browser acceptance, and responsive captures are recorded in `docs/implementation-evidence/audit-2026-09-22/phase2-items.jsonl` and `phase2-current-tests.txt`. The Projects alias, four Work views, live search with preserved input focus, and detail drawer Escape focus were also rechecked in the disposable browser. Item 135 is explicitly assigned to Phase 12 by the higher-priority standing plan.
 
 > The first step of the tracker rebuild, and the first feature phase after the regroup.
 
@@ -1745,7 +1753,7 @@ Current-state audit (2026-09-22): items 99–136 were inspected in order; per-it
 
    | Status | Evidence |
    |---|---|
-   | DEFERRED TO PHASE 12 | The standing plan and this item place the exhaustive Work control matrix in Phase 12. Current partial browser checks and the historical Phase 2 interaction run are recorded in `audit-2026-09-22/phase2-items.jsonl`; do not treat this as the final all-control result. |
+   | Pending | Pending |
 
 136. [x] **Gate 2** — every Work action from the Phase 0.5 inventory still works; 31/31 green; side-by-side screenshots at all four widths show no overflow and no overlap.
 
@@ -1756,8 +1764,6 @@ Current-state audit (2026-09-22): items 99–136 were inspected in order; per-it
    | Verified | 40 tests pass; browser lifecycle and four-width geometry in phase2/acceptance.json. Viewport captures verify layout without full-page capture artifacts. |
 
 ## Phase 3
-
-Current-state audit (2026-09-22): items 137–158 were checked in order against current Work, Home, Explore, router, storage validator, and boundary-test sources. Four current domain-boundary tests and the 92-test full suite pass. Per-item findings are in `docs/implementation-evidence/audit-2026-09-22/phase3-items.jsonl`; test output is in `phase3-current-tests.txt`.
 
 > Home is the only aggregator. Every other tab renders only its own domain. Each row is a confirmed leak.
 
@@ -1945,8 +1951,6 @@ Current-state audit (2026-09-22): items 137–158 were checked in order against 
 
 ## Phase 4
 
-Current-state audit (2026-09-22): items 159–171 were checked in order against current Settings, palette token, scene, and CSS sources. The five current Settings tests and 92-test full suite pass. In the disposable browser, Sandstone survived a dark→light→dark header toggle; the retained responsive captures were visually rechecked. Per-item evidence is in `docs/implementation-evidence/audit-2026-09-22/phase4-items.jsonl` and `phase4-current-tests.txt`.
-
 ## 4.1 Fix what blocks new themes [FIX]
 
 > Not extra scope — the requested theme work cannot land without these:
@@ -2062,8 +2066,6 @@ Current-state audit (2026-09-22): items 159–171 were checked in order against 
    | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
 
 ## Phase 5
-
-Current-state audit (2026-09-22): items 172–198 were checked in order against current sources with Git hashes identical to accepted Phase 5 commit `8ca7b76`, the retained scene/lifecycle evidence, eight current scene tests, and the 92-test full suite. Per-item findings are in `docs/implementation-evidence/audit-2026-09-22/phase5-items-172-198.jsonl` and `phase5-current-scene-tests.txt`. The exhaustive all-domain width/control matrix at item 194 remains explicitly assigned to Phase 12. The new V2 icon audit starts at item 198A.
 
 > Delivers old Part B Phase 7 and old C.7, using **code-drawn animated scenes**: layered inline SVG + CSS driven by `body[data-page]`. No new binary assets, no external requests. The Games page already proves the technique with its five-layer stack (`gv-scene-art` / `-shade` / `-glow` / `-fog` / `-particles`).
 
@@ -2257,7 +2259,7 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
    | Status | Evidence |
    |---|---|
-    | DEFERRED TO PHASE 12 | The standing plan explicitly places the exhaustive all-domain width/control matrix in Phase 12. Existing Phase 5 evidence covers 40 scene/width sequences, not the final all-control matrix; see `audit-2026-09-22/phase5-items-172-198.jsonl` item 194. |
+   | Pending | Pending |
 
 195. [x] **5.4.15** — Handle long user text safely across all domains — [OPEN]
 
@@ -2296,58 +2298,56 @@ Current-state audit (2026-09-22): items 172–198 were checked in order against 
 
 ## 5.6 Global icon modernization and consistency [NEW V2]
 
-198A. [x] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
+198A. [ ] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
 
    Files: `index.html`, `shared/`, `styles/`, domain JS/CSS files as required. Acceptance: Produce an inventory/audit showing which existing icons are retained and which require improvement; content/source brand marks and favicons are identified as exceptions rather than application-control icons.
 
    | Status | Evidence |
    |---|---|
-   | Verified | `audit-2026-09-22/phase5-198A-visible-icon-inventory.json` inventories 433 visible route controls and SVG geometry/names; `phase5-198A-decisions.json` records retained icons, eight focused improvements, and brand/content exceptions. Phase 0.5 source-template inventory covers dynamic/hidden controls. |
+   | Pending | Pending |
 
-198B. [x] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
+198B. [ ] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
 
    Files: `index.html`, `shared/`, `styles/`, affected domain files. Acceptance: Shared UI icons use consistent geometry, stroke/fill philosophy, optical sizing, alignment and spacing without unrelated redesign or icon churn.
 
    | Status | Evidence |
    |---|---|
-   | Verified | Focused SVG replacements in Games collection cue, category/shortcut/trip reorder controls, Home break tile, and Explore filter disclosure. Existing clear icons and source marks retained. Current suite 92/92 passes; browser checks confirmed SVG output on Home, Games, and Explore. See `audit-2026-09-22/phase5-198B-modernization.json` and `phase5-198B-tests.txt`. |
+   | Pending | Pending |
 
-198C. [x] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
+198C. [ ] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
 
    Files: shared icon helpers/markup and affected domain surfaces. Acceptance: Add/edit/remove/back/more/favorite/search/filter/sort/save/restore/open/navigation/close/retry/expand-collapse do not use conflicting or random glyphs without an explicit reason; no accidental emoji/Unicode substitute controls remain.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | Shared action mapping, targeted fixes, and current browser checks are recorded in `audit-2026-09-22/phase5-198C-semantics.json`; 92/92 tests and diff check in `phase5-198C-tests.txt`. |
+   | Pending | Pending |
 
-198D. [x] **5.6.4** — Preserve icon accessibility and interaction quality.
+198D. [ ] **5.6.4** — Preserve icon accessibility and interaction quality.
 
    Files: affected markup/styles/shared UI helpers. Acceptance: Icon-only actions have accessible names, visible focus, adequate touch targets, correct ARIA state where applicable and tooltips where useful; decorative icons do not create redundant announcements; clear text labels are not removed merely to add icons.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | Ten-route SVG-only control audit, corrected 44px targets, note pin ARIA/tooltip/focus browser checks, and 92/92 tests recorded in `audit-2026-09-22/phase5-198D-accessibility.json`. |
+   | Pending | Pending |
 
-198E. [x] **5.6.5** — Verify global icon quality across required themes and responsive widths.
+198E. [ ] **5.6.5** — Verify global icon quality across required themes and responsive widths.
 
    Files: all affected UI files; `docs/implementation-evidence/phase5/`; browser verification. Acceptance: All tabs are inspected at the active required desktop/tablet/mobile widths; no broken/missing/clipped/misaligned UI icons remain; icons are crisp/readable in light/dark and supported palettes; representative visual evidence covers navigation, headings, cards, forms/dialogs and shared actions. Brand/provider/source logos and favicons remain intentionally distinct.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `docs/implementation-evidence/phase5/phase5-198E-responsive-icon-audit.json` records 40 route/width checks, 20 light/dark route checks, 13 palette checks, corrected Notes pin dimensions, and six reviewed captures (`icons-*.jpg` in the same folder). Current 92/92 tests and diff check pass. |
+   | Pending | Pending |
 
 
-199. [x] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+199. [ ] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
 
    Files: `index.html`, `shared/`, `styles/`, affected domain files, `docs/implementation-evidence/phase5/`. Acceptance: Existing Phase 5 cinematic/motion evidence remains valid, and the newly approved 5.6 global icon-modernization requirements are also VERIFIED before Gate 5 closes again.
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | `docs/implementation-evidence/phase5/phase5-gate-2026-09-23.json` maps the current 8/8 scene and 92/92 full tests, ten browser ENTRY→AMBIENT checks, Subtle/Off/reduced checks, 5.6 visual matrix, secret-path denial, and console health. Item 194 remains explicitly DEFERRED TO PHASE 12. |
+   | Pending | Gate 5 was previously Verified under the pre-5.6 scope. Prior Phase 5 evidence is retained; the gate is reopened only because the newly approved global icon-modernization requirement must now be completed and evidenced. |
 
 ## Phase 6
-
-Current sequential verification for every Phase 6 item and Gate 6 is recorded in `docs/implementation-evidence/phase6/audit-2026-09-23.jsonl`.
 
 ## 6.1 Server layer
 
@@ -2357,7 +2357,7 @@ Current sequential verification for every Phase 6 item and Gate 6 is recorded in
 
    | Status | Evidence |
    |---|---|
-   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. Current item-specific audit: `phase6/audit-2026-09-23.jsonl` item 200. |
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
 
 > Carried from the old REVISED plan's provider requirements:
 
@@ -2499,11 +2499,9 @@ Current sequential verification for every Phase 6 item and Gate 6 is recorded in
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | 2026-09-23 rerun: 92/92 tests, responsive Games/Movies search at 1440/1024/760/390, no browser errors, provider and missing-credential states; see `phase6/audit-2026-09-23.jsonl` item 217. Historical 59-test evidence retained. |
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
 
 ## Phase 7
-
-Current sequential verification for every Phase 7 item and Gate 7 is recorded in `docs/implementation-evidence/phase7/audit-2026-09-23.jsonl`.
 
 ## 7.1 Removable built-ins [NEW]
 
@@ -2673,11 +2671,9 @@ Current sequential verification for every Phase 7 item and Gate 7 is recorded in
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | 2026-09-23 rerun: 92/92 tests; 20 current responsive browser views, no errors or broken visible images; hide/restore/custom CRUD/keyboard order/Explore filter and ownership. See `phase7/audit-2026-09-23.jsonl` item 237. Historical 62-test evidence retained. |
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
 
 ## Phase 8
-
-Current sequential verification for every Phase 8 item and Gate 8 is recorded in `docs/implementation-evidence/phase8/audit-2026-09-23.jsonl`. The exact exhaustive Games action matrix at item 264 is explicitly assigned to Phase 12.
 
 ## 8.1 Tracker type must be correct at add time [NEW]
 
@@ -2909,7 +2905,7 @@ Current sequential verification for every Phase 8 item and Gate 8 is recorded in
 
    | Status | Evidence |
    |---|---|
-   | DEFERRED TO PHASE 12 | Explicitly assigned to Phase 12 by the standing plan; current Phase 8 local audit is `phase8/audit-2026-09-23.jsonl` item 264. The exhaustive Games action matrix remains pending until Phase 12. |
+   | Pending | Pending |
 
 ## 8.5 Remaining games defects [FIX]
 
@@ -2951,7 +2947,7 @@ Current sequential verification for every Phase 8 item and Gate 8 is recorded in
 
    | Status | Evidence |
    |---|---|
-   | VERIFIED | 2026-09-23 rerun: 92/92 tests; current tracker/add/reset/rollback/spotlight browser checks; four actual viewport widths with no overflow, broken visible images or console errors. See `phase8/audit-2026-09-23.jsonl` item 269. Exact item 264 action matrix remains deferred to Phase 12. |
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
 
 ## Phase 9
 
@@ -3637,7 +3633,7 @@ Current sequential verification for every Phase 8 item and Gate 8 is recorded in
    |---|---|
    | Pending | Pending |
 
-350. [ ] **12.16** — Do not perform final documentation here. V2 Phases 14–19 run next; final documentation remains **Phase 13.3 after Gate 19**.
+350. [ ] **12.16** — Do not perform final documentation here. V2 Phases 14–19 run next, followed by additive final-fidelity Phases 20–25; final documentation remains **Phase 13.3 after Gate 25**.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
@@ -4228,15 +4224,703 @@ Current sequential verification for every Phase 8 item and Gate 8 is recorded in
   |---|---|
   | Pending | Pending |
 
-- [ ] **Gate 19 — Final V2 delivery gate before Phase 13.3.**
+- [ ] **Gate 19 — Final V2 delivery gate before additive Phases 20–25.**
 
   Files: `docs/IMPLEMENTATION-STEPS.md`, Phase 19 evidence, final current test/browser run.
 
-  Acceptance: All original-plan and V2 requirements pass together. Phase 13.3 may now reconcile final documentation.
+  Acceptance: All original-plan and V2 requirements pass together. Phases 20–25 may now execute; Phase 13.3 remains blocked until Gate 25.
 
   | Status | Evidence |
   |---|---|
   | Pending | Pending |
+
+
+
+# Phase 20 — Full-Viewport Cinematic Fidelity
+
+## 20.1 Route-by-route visual audit
+
+Audit:
+
+- [ ] Home
+- [ ] Work / Projects
+- [ ] Personal
+- [ ] Explore
+- [ ] Games
+- [ ] Movies & Series
+- [ ] Shortcuts
+- [ ] Productivity
+- [ ] Notes
+- [ ] Settings
+
+For each route record:
+
+- [ ] domain visual subject;
+- [ ] Full entry visible at normal viewing distance;
+- [ ] settle behavior;
+- [ ] ambient state;
+- [ ] whether environment uses more than only the hero card;
+- [ ] whether route is distinguishable without relying only on title text.
+
+**Acceptance:** Technical animation presence alone is insufficient.
+
+## 20.2 Page-level environmental composition
+
+- [ ] Decouple environmental scene composition from bounded content-column width.
+- [ ] Extend route-specific environmental art/depth/light into safe unused viewport areas.
+- [ ] Keep readable content comfortably bounded.
+- [ ] Keep decorative scene layers pointer-transparent.
+- [ ] Do not enlarge forms/cards purely to consume width.
+- [ ] Avoid generic filler animation.
+
+**Acceptance:** Wide desktop must not look like a small central island surrounded by dead empty space.
+
+## 20.3 Strengthen weak route scenes
+
+For every route that fails 20.1 or 20.2:
+
+- [ ] improve domain-specific subject;
+- [ ] refine/add layered SVG or approved artwork;
+- [ ] add visible staged depth/light/reveal;
+- [ ] add restrained ambient motion;
+- [ ] preserve readability;
+- [ ] preserve accessibility;
+- [ ] preserve interaction stability.
+
+Required directions:
+
+- Home — observatory / personal command deck
+- Work — drafting room / development command centre
+- Personal — calm ritual / reflection space
+- Explore — world atlas / travel window
+- Games — game-world spotlight
+- Movies — theater / streaming marquee
+- Shortcuts — navigable launch wall
+- Productivity — focused timer studio
+- Notes — quiet capture desk
+- Settings — control room
+
+## 20.4 Full entry choreography
+
+- [ ] Genuine Full-mode route entry performs approximately 2–5 seconds of staged visual change.
+- [ ] More than one visible stage exists.
+- [ ] Sequence is not merely fade/gradient.
+- [ ] Page remains usable.
+- [ ] Internal filtering/editing/detail updates do not replay full entry.
+- [ ] Leaving and later re-entering resets/replays the route entry correctly.
+
+## 20.5 Ambient / alive state
+
+- [ ] Entry settles into restrained visible ambient movement.
+- [ ] Ambient remains subordinate to content.
+- [ ] Text/forms/buttons/focus targets do not drift.
+- [ ] Route remains recognizably alive after entry completes.
+
+## 20.6 Responsive + ultrawide matrix
+
+Verify each route at:
+
+- [ ] 390 px
+- [ ] 760 px
+- [ ] 1024 px
+- [ ] 1440 px
+- [ ] 1920 px
+- [ ] representative ultrawide, preferably about 3440×1440
+
+For every width verify:
+
+- [ ] no document overflow;
+- [ ] no unintended clipping;
+- [ ] no broken visible scene media;
+- [ ] intentional artwork crop;
+- [ ] readable content;
+- [ ] stable controls;
+- [ ] no dead-space cinematic failure;
+- [ ] no pointer-event interception by decorative layers.
+
+## 20.7 Motion-intensity matrix
+
+- [ ] Full — visibly cinematic.
+- [ ] Subtle — observably reduced but still route-specific.
+- [ ] Off — still.
+- [ ] prefers-reduced-motion — genuinely still.
+- [ ] touch/coarse pointer — no hover/parallax dependency.
+
+## 20.8 Evidence
+
+Persist:
+
+- [ ] route-by-route acceptance JSON;
+- [ ] representative screenshots at every required width;
+- [ ] Full/Subtle/Off/reduced-motion results;
+- [ ] browser observations for entry and ambient state;
+- [ ] exact fixes for every weak route.
+
+### Gate 20 — Full-Viewport Cinematic Fidelity
+
+**PASS only if every route is visually distinct, visibly alive in Full, correctly still when required, and intentionally composed at desktop and ultrawide widths.**
+
+---
+
+# Phase 21 — Global Icon Visual-Quality Completion
+
+## 21.1 Current icon inventory
+
+Audit application-control icons across:
+
+- [ ] Home
+- [ ] Work/Projects
+- [ ] Personal
+- [ ] Explore
+- [ ] Games
+- [ ] Movies & Series
+- [ ] Shortcuts
+- [ ] Productivity
+- [ ] Notes
+- [ ] Settings
+- [ ] shared navigation
+- [ ] dialogs
+- [ ] search/filter controls
+- [ ] cards
+- [ ] empty/error states
+- [ ] shared actions
+
+For each icon mark:
+
+`retain / refine / replace / source-identity exception`
+
+## 21.2 Visible modernization
+
+Refine or replace visually weak icons.
+
+Verify:
+
+- [ ] coherent geometry;
+- [ ] coherent stroke/fill philosophy;
+- [ ] optical size;
+- [ ] alignment;
+- [ ] spacing;
+- [ ] contrast;
+- [ ] crisp rendering;
+- [ ] no dated/generic treatment.
+
+## 21.3 Shared semantic consistency
+
+Verify recognizable shared glyphs for:
+
+- [ ] add
+- [ ] edit
+- [ ] delete/remove
+- [ ] back
+- [ ] more
+- [ ] favorite
+- [ ] search
+- [ ] filter
+- [ ] sort
+- [ ] save
+- [ ] restore
+- [ ] open/play
+- [ ] close
+- [ ] retry
+- [ ] expand/collapse
+- [ ] navigation
+
+No conflicting/random glyphs without a documented reason.
+
+## 21.4 Accessibility and interaction
+
+- [ ] accessible name for icon-only actions;
+- [ ] visible focus;
+- [ ] adequate touch target;
+- [ ] correct pressed/expanded/current state where applicable;
+- [ ] useful tooltip where needed;
+- [ ] decorative icons do not create redundant announcements;
+- [ ] no emoji/Unicode substitute controls.
+
+## 21.5 Visual verification matrix
+
+Inspect:
+
+- [ ] dark
+- [ ] light
+- [ ] all supported palettes
+- [ ] 1440
+- [ ] 1024
+- [ ] 760
+- [ ] 390
+
+### Gate 21 — Global Icon Visual Quality
+
+**PASS only if the application visibly reads as one polished modern icon system, not merely a technically consistent SVG implementation.**
+
+---
+
+# Phase 22 — Live Provider Search and Real Media Completion
+
+## 22.1 Configuration and secret readiness
+
+- [ ] Confirm `config/secrets.example.json` documents exactly the keys the delivered adapters consume.
+- [ ] Confirm real secret files are ignored by Git.
+- [ ] Confirm secret paths are denied by the local/static server.
+- [ ] Confirm browser code does not reference secret files.
+- [ ] Confirm browser-visible errors/logs never expose credentials.
+- [ ] Document provider setup steps.
+
+**Rule:** Never invent credentials.
+
+If required credentials are absent:
+
+- [ ] record `NOT CONFIGURED`;
+- [ ] continue unrelated implementation;
+- [ ] do not claim LIVE VERIFIED;
+- [ ] do not pass Gate 22 for that intended production provider unless the user explicitly approves an exception.
+
+## 22.2 Movies & Series live E2E
+
+With real configured production credentials:
+
+- [ ] search a movie outside reliance on local seed data;
+- [ ] search a series outside reliance on local seed data;
+- [ ] verify live provider provenance;
+- [ ] open details;
+- [ ] verify overview/description;
+- [ ] verify poster when available;
+- [ ] verify backdrop when available;
+- [ ] verify genre/year/runtime/series metadata when available;
+- [ ] verify attribution where required;
+- [ ] verify pagination/load-more;
+- [ ] verify cancellation/latest-request ownership;
+- [ ] explicit Add;
+- [ ] reload persistence;
+- [ ] provider-disabled offline reopen;
+- [ ] untrack/remove behavior.
+
+Mock evidence does not satisfy this item.
+
+## 22.3 Games live E2E
+
+With real configured production credentials:
+
+- [ ] search a game outside reliance on local seed data;
+- [ ] verify live provider provenance;
+- [ ] details;
+- [ ] description;
+- [ ] cover where available;
+- [ ] background/key art where available;
+- [ ] genres/tags;
+- [ ] platforms;
+- [ ] release metadata;
+- [ ] tracker-inference signals;
+- [ ] pagination/load-more;
+- [ ] cancellation/latest-request ownership;
+- [ ] explicit Add;
+- [ ] reload persistence;
+- [ ] provider-disabled offline reopen.
+
+## 22.4 Explore global destination live E2E
+
+- [ ] search beyond curated 12;
+- [ ] live provider provenance;
+- [ ] normalized location/context;
+- [ ] detail;
+- [ ] card/hero image where available;
+- [ ] attribution;
+- [ ] pagination/load-more;
+- [ ] cancellation/latest-request ownership;
+- [ ] explicit Save;
+- [ ] reload persistence;
+- [ ] provider-disabled offline reopen.
+
+## 22.5 Provider media boundary
+
+For every provider-media role:
+
+- [ ] only approved provider media identity is accepted;
+- [ ] arbitrary URL proxying is impossible;
+- [ ] allowed hosts are controlled server-side;
+- [ ] HTTPS used where supported;
+- [ ] content type validated;
+- [ ] response size bounded;
+- [ ] timeout enforced;
+- [ ] credential-bearing headers never leak;
+- [ ] valid available media is rendered;
+- [ ] role-specific fallback works.
+
+### Gate 22 — Live Provider / Real Media
+
+For each intended provider record one:
+
+- `LIVE VERIFIED`
+- `NOT CONFIGURED`
+- `FAILED`
+
+Final product completion requires intended production providers to be `LIVE VERIFIED`, unless the user explicitly approves a provider-specific exception.
+
+---
+
+# Phase 23 — Game Enrichment and Tracker Intelligence
+
+## 23.1 Provider-added game is immediately first-class
+
+On explicit Add:
+
+- [ ] resolve required provider detail;
+- [ ] normalize provider identity;
+- [ ] normalize title;
+- [ ] normalize description;
+- [ ] normalize cover;
+- [ ] normalize background/key art;
+- [ ] normalize genres/tags;
+- [ ] normalize platforms;
+- [ ] normalize release metadata;
+- [ ] normalize attribution where required;
+- [ ] collect tracker-inference signals;
+- [ ] validate canonical game record.
+
+Immediately after successful Add:
+
+- [ ] local library card appears;
+- [ ] available real cover appears;
+- [ ] description appears;
+- [ ] detail opens;
+- [ ] background/key art can participate in Games environment;
+- [ ] tracker exists;
+- [ ] reload preserves game and tracker;
+- [ ] no second manual metadata setup is required.
+
+If description/media is genuinely unavailable, show explicit fallback rather than fabricated data.
+
+## 23.2 Transaction correctness
+
+The logical Add operation must not report success before required local persistence succeeds.
+
+Verify:
+
+- [ ] game record persists;
+- [ ] confirmed tracker type persists;
+- [ ] tracker record persists;
+- [ ] dependent initialization succeeds;
+- [ ] failed multi-key write rolls back or enters explicitly documented safe recovery;
+- [ ] UI success appears only after persistence success.
+
+## 23.3 Tracker classification
+
+Primary inferred types:
+
+- [ ] weekly/live-service
+- [ ] story/campaign
+- [ ] custom/unknown when evidence is insufficient
+
+Inference uses actual signals, not fuzzy title similarity.
+
+The user can correct inference before save.
+
+Confirmed type becomes user-owned state.
+
+`Diablo Immortal` is a required weekly/live-service reference example.
+
+## 23.4 Select and prove progression-data source strategy
+
+Before any game is claimed to have complete campaign progression:
+
+- [ ] identify exact progression source/provider;
+- [ ] record access mode: API / curated local / approved maintained dataset;
+- [ ] document licensing/terms/attribution;
+- [ ] document source version/update strategy;
+- [ ] document completeness: complete / partial / unknown;
+- [ ] document available hierarchy depth;
+- [ ] document whether missions/quests are supplied;
+- [ ] document whether ordered objectives/steps are supplied;
+- [ ] document stable mission/objective identity strategy;
+- [ ] create deterministic test fixtures;
+- [ ] do not assume RAWG/IGDB/another catalog provider contains mission-by-mission data unless actual provider capability proves it.
+
+If no legitimate complete source exists, use the incomplete-progression path.
+
+## 23.5 Weekly/live-service tracker
+
+For recurring/live-service games:
+
+- [ ] inferred type defaults to weekly;
+- [ ] user can correct before persistence;
+- [ ] confirmed weekly tracker is created immediately;
+- [ ] approved game-specific recurring tasks are populated when available;
+- [ ] cadence/reset is explicit;
+- [ ] completion persists;
+- [ ] reload persists;
+- [ ] unrelated Diablo tasks are never copied to another game.
+
+Acceptance examples:
+
+- [ ] Diablo Immortal
+- [ ] at least one additional live-service game
+
+## 23.6 Story/campaign progression model
+
+Canonical hierarchy:
+
+`Game -> Act/Chapter/Region/Level -> Mission/Quest -> ordered Objective/Step`
+
+Implement support for:
+
+- [ ] grouping;
+- [ ] canonical ordering;
+- [ ] mission completion;
+- [ ] optional objective/step completion;
+- [ ] progress calculation;
+- [ ] reload persistence;
+- [ ] backup round trip;
+- [ ] accessibility/keyboard interaction.
+
+## 23.7 Complete supported campaign ingestion
+
+Use at least one campaign game with an approved complete progression source.
+
+For a supported complete-progression game:
+
+- [ ] load every mission/quest represented by the approved source;
+- [ ] preserve act/chapter/region/level grouping where applicable;
+- [ ] preserve canonical order;
+- [ ] load ordered objectives/steps where supplied;
+- [ ] use stable IDs;
+- [ ] record source/provenance/version;
+- [ ] populate the tracker automatically as part of the supported Add/enrichment flow;
+- [ ] do not require manual recreation of the campaign;
+- [ ] do not announce `complete` if source population fails;
+- [ ] preserve user completion during metadata refresh.
+
+Never invent mission or objective data.
+
+## 23.8 Incomplete/unsupported campaign progression
+
+Use at least one provider-added campaign game without an approved complete progression source.
+
+Verify:
+
+- [ ] OneSpace does not invent missions;
+- [ ] complete progression is not claimed;
+- [ ] UI states `full progression unavailable/incomplete` or equivalent;
+- [ ] generic/custom story tracker remains usable;
+- [ ] image/description/other metadata remain available;
+- [ ] later enrichment is possible.
+
+## 23.9 Enrichment merge safety
+
+If richer progression metadata arrives later:
+
+- [ ] preserve completed state;
+- [ ] preserve notes;
+- [ ] preserve custom tasks/objectives;
+- [ ] preserve sessions/journal;
+- [ ] preserve confirmed tracker type;
+- [ ] prevent duplicate missions via deterministic IDs;
+- [ ] unmatched user-owned content is not silently deleted.
+
+### Gate 23 — Game Enrichment and Tracker Intelligence
+
+PASS requires:
+
+- provider-added game immediately shows available image + description;
+- a tracker exists immediately;
+- Diablo Immortal/reference live-service flow produces weekly tracking;
+- at least one other live-service game proves generality;
+- campaign inference produces story tracking;
+- at least one complete supported campaign proves full chapter/mission/objective ingestion;
+- at least one unsupported campaign proves safe no-hallucination behavior;
+- refresh never erases user progress.
+
+---
+
+# Phase 24 — Global Search / Filter Integration
+
+## 24.1 Inventory every visible discovery criterion
+
+For Movies/Series, Games and Explore, list every visible search/filter control.
+
+Classify each as exactly one:
+
+- [ ] provider-side
+- [ ] canonical post-filter
+- [ ] local-only
+- [ ] unsupported globally
+
+Persist the mapping.
+
+## 24.2 Movies & Series mapping
+
+Verify applicable:
+
+- [ ] Movie / Series
+- [ ] genre
+- [ ] year/release range if exposed
+- [ ] other visible supported criteria
+
+Provider-supported criteria must participate in live global discovery.
+
+## 24.3 Games mapping
+
+Verify applicable:
+
+- [ ] genre
+- [ ] tag
+- [ ] platform
+- [ ] release criteria
+- [ ] live-service/campaign characteristics if exposed
+- [ ] other visible supported criteria
+
+## 24.4 Explore mapping
+
+Verify applicable:
+
+- [ ] theme/category
+- [ ] location/destination criteria
+- [ ] season
+- [ ] budget/duration where supported
+- [ ] other visible supported criteria
+
+## 24.5 No silent ignore
+
+- [ ] no visible selected criterion is silently discarded;
+- [ ] unsupported global criteria are explicitly represented;
+- [ ] local-only behavior is clear;
+- [ ] post-filter behavior is documented;
+- [ ] post-filtering does not falsely imply that a partially fetched provider page is exhaustive.
+
+## 24.6 Provenance in results
+
+Keep clearly distinct:
+
+- [ ] In your catalog / local
+- [ ] Global search results / provider
+
+## 24.7 Combined-selection verification
+
+For each rich domain, test representative combinations of multiple selected criteria and verify the returned set matches the documented semantics.
+
+### Gate 24 — Discovery Semantics
+
+PASS requires that a user can understand what was searched globally, what was filtered locally, and what is unsupported by the provider.
+
+---
+
+# Phase 25 — Final User-Visible Product Acceptance
+
+This is the last implementation gate before Phase 13.3.
+
+## 25.1 Route-by-route final visual acceptance
+
+Walk every route as a user.
+
+Verify:
+
+- [ ] domain visual identity;
+- [ ] Full cinematic entry;
+- [ ] ambient alive state;
+- [ ] wide/ultrawide environment;
+- [ ] modern icon quality;
+- [ ] readable content;
+- [ ] no regressions.
+
+## 25.2 Movies & Series final flow
+
+- [ ] live search
+- [ ] movie
+- [ ] series
+- [ ] real provider media where available
+- [ ] combined filters
+- [ ] details
+- [ ] explicit Add
+- [ ] persistence
+- [ ] offline reopen
+- [ ] untrack/remove
+
+## 25.3 Games final flow
+
+- [ ] live search
+- [ ] real provider cover/background where available
+- [ ] description immediately after Add
+- [ ] tracker inference
+- [ ] correction before save
+- [ ] weekly/live-service flow
+- [ ] complete supported campaign progression flow
+- [ ] unsupported progression safe fallback
+- [ ] persistence
+- [ ] offline reopen
+
+## 25.4 Explore final flow
+
+- [ ] curated search/recommendations
+- [ ] global provider discovery
+- [ ] real imagery
+- [ ] combined filters
+- [ ] detail
+- [ ] Save
+- [ ] trip board
+- [ ] notes/priority/status actions
+- [ ] offline saved detail
+
+## 25.5 Final responsive matrix
+
+Verify full product at:
+
+- [ ] 390
+- [ ] 760
+- [ ] 1024
+- [ ] 1440
+- [ ] 1920
+- [ ] ultrawide approximately 3440
+
+## 25.6 Accessibility / interaction
+
+- [ ] keyboard navigation
+- [ ] focus visibility
+- [ ] modal focus trap
+- [ ] close/cancel
+- [ ] focus return
+- [ ] ARIA states
+- [ ] aria-live feedback
+- [ ] touch/coarse pointer
+- [ ] reduced motion
+- [ ] no required hover-only behavior
+
+## 25.7 Persistence / backup / recovery / security
+
+- [ ] reload persistence
+- [ ] v2 import
+- [ ] v3 import
+- [ ] v4 import
+- [ ] current v4 export
+- [ ] provider-origin round trip
+- [ ] rejected-write rollback
+- [ ] secret boundary
+- [ ] offline degradation
+- [ ] no data loss during provider refresh
+
+## 25.8 Evidence reconciliation
+
+- [ ] every Phase 20–25 item has persistent evidence;
+- [ ] no `PENDING`;
+- [ ] no `IMPLEMENTED / NOT VERIFIED`;
+- [ ] no unresolved `BLOCKED`;
+- [ ] approved exceptions are explicit and user-authorized;
+- [ ] historical evidence remains intact;
+- [ ] current evidence reflects current code.
+
+### Gate 25 — Final Product Gate
+
+Only after Gate 25 passes may Phase 13.3 begin.
+
+---
+
+# Final documentation rule
+
+**Phase 13.3 is last.**
+
+Final tail:
+
+`Gate 19 -> Gate 20 -> Gate 21 -> Gate 22 -> Gate 23 -> Gate 24 -> Gate 25 -> Phase 13.3 FINAL`
+
+Do not move Phase 13.3 earlier.
 
 
 ## Phase 13.3 — Final documentation
@@ -4267,7 +4951,7 @@ Current sequential verification for every Phase 8 item and Gate 8 is recorded in
 
 355. [ ] **Gate 13.3** — Confirm every planned step is implemented and verified and report the actual delivery evidence
 
-   Files: `docs/IMPLEMENTATION-STEPS.md`, `VERIFICATION.md`. Acceptance: No unchecked original-plan or V2 implementation requirement remains; Gate 19 has passed.
+   Files: `docs/IMPLEMENTATION-STEPS.md`, `VERIFICATION.md`. Acceptance: No unchecked original-plan, V2, or Phase 20–25 implementation requirement remains; Gate 25 has passed.
 
    | Status | Evidence |
    |---|---|

@@ -9,7 +9,7 @@
       render: function (list) {
         var data = items(), esc = OS.escapeHtml;
         list.innerHTML = '<li class="check-summary" role="status">' + data.filter(function (x) { return x.done; }).length + ' / ' + data.length + ' complete</li>' + (data.length ? data.map(function (x) {
-          return '<li class="' + (x.done ? 'is-done' : '') + '"><input type="checkbox" data-toggle="' + esc(x.id) + '" aria-label="Complete ' + esc(x.text) + '"' + (x.done ? ' checked' : '') + '><span>' + esc(x.text) + (x.frequency ? '<small> · ' + esc(x.frequency) + '</small>' : '') + '</span><button class="btn" data-edit="' + esc(x.id) + '" title="Edit" aria-label="Edit ' + esc(x.text) + '">' + OS.iconSvg('edit') + '</button><button class="btn" data-delete="' + esc(x.id) + '" title="Delete" aria-label="Delete ' + esc(x.text) + '">' + OS.iconSvg('trash') + '</button></li>';
+          return '<li class="' + (x.done ? 'is-done' : '') + '"><input type="checkbox" data-toggle="' + esc(x.id) + '" aria-label="Complete ' + esc(x.text) + '"' + (x.done ? ' checked' : '') + '><span>' + esc(x.text) + (x.frequency ? '<small> · ' + esc(x.frequency) + '</small>' : '') + (x.target ? '<small> · target ' + esc(x.target) + '</small>' : '') + '</span><button class="btn" data-edit="' + esc(x.id) + '" title="Edit" aria-label="Edit ' + esc(x.text) + '">' + OS.iconSvg('edit') + '</button><button class="btn" data-delete="' + esc(x.id) + '" title="Delete" aria-label="Delete ' + esc(x.text) + '">' + OS.iconSvg('trash') + '</button></li>';
         }).join('') : '<li class="check-empty">Nothing here yet — add one above.</li>');
         list.onchange = function (e) {
           var id = e.target.dataset.toggle; if (!id) return;
@@ -25,10 +25,15 @@
             if (!commit(items().filter(function (x) { return x.id !== id; }))) return false;
             controller.render(list); if(OS.onChange)OS.onChange(); OS.showToast('Personal item deleted.');
           });
-          else ui.open('Edit personal item', ui.field('text', 'Text', item.text, 'text', 'required maxlength="80"') + (storageKey === 'orbit-personal-habits' ? ui.select('frequency', 'Frequency', ['', 'daily', 'weekly', 'monthly'], item.frequency || '') : ''), function (form) {
+          else ui.open('Edit personal item', ui.field('text', 'Text', item.text, 'text', 'required maxlength="80"') + (storageKey === 'orbit-personal-habits' ? ui.select('frequency', 'Frequency', ['', 'daily', 'weekly', 'monthly'], item.frequency || '') + ui.field('target', 'Target per period (optional)', item.target || '', 'number', 'min="1" max="365" step="1"') : ''), function (form) {
             var text = String(form.get('text')).trim(); if (!text) throw new Error('Enter a name.');
             var next = Object.assign({}, item, { text: text, updatedAt: new Date().toISOString() });
             if (form.has('frequency')) next.frequency = form.get('frequency');
+            if (form.has('target')) {
+              var rawTarget = String(form.get('target')).trim();
+              if (rawTarget && (!/^\d+$/.test(rawTarget) || Number(rawTarget) < 1 || Number(rawTarget) > 365)) throw new Error('Enter a target from 1 to 365.');
+              if (rawTarget) next.target = Number(rawTarget); else delete next.target;
+            }
             if (!commit(items().map(function (x) { return x.id === id ? next : x; }))) return false;
             controller.render(list); OS.showToast('Personal item updated.');
           });

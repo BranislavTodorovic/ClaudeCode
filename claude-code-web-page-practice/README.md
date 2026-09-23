@@ -4,7 +4,7 @@ OneSpace is a local-first personal dashboard that brings development work, perso
 
 The application is intentionally lightweight and uses the existing vanilla HTML/CSS/JavaScript architecture. It does not require user accounts or cloud synchronization.
 
-Movies & Series, Games, and Explore/Destinations can use optional provider-backed global discovery through the local Node server. Provider credentials remain server-side and must never be exposed to browser JavaScript. Local-first means user-owned data remains local; it does not mean discovery is limited to bundled catalogs.
+Some discovery features can use optional provider-backed search through the local Node server. Provider credentials are kept server-side and must never be exposed to browser JavaScript.
 
 > [!IMPORTANT]
 > OneSpace is actively being implemented and verified against the current standing plan.
@@ -834,32 +834,18 @@ At least one warm visual direction is part of the current design requirements.
 
 # Modern icon system
 
-OneSpace uses **one shared modern inline-SVG application icon language across every tab**.
+OneSpace uses a shared inline SVG icon language.
 
-The global icon system covers navigation, headings, cards, forms/dialogs, search/filter/sort controls and shared actions throughout:
-
-- Home;
-- Work / Projects;
-- Personal;
-- Explore;
-- Games;
-- Movies & Series;
-- Shortcuts;
-- Productivity;
-- Notes;
-- Settings.
-
-Icons are expected to be:
+Icons should be:
 
 - visually consistent;
 - modern;
 - optically balanced;
-- coherent in geometry and stroke/fill weight;
-- appropriately sized and aligned;
-- crisp at supported sizes;
+- coherent in stroke/fill weight;
+- appropriately sized;
 - accessible.
 
-Shared actions reuse recognizable glyphs where context permits, including:
+Major actions should use recognizable modern glyphs where helpful, including:
 
 - add;
 - edit;
@@ -873,118 +859,65 @@ Shared actions reuse recognizable glyphs where context permits, including:
 - save;
 - restore;
 - open/play;
-- navigation;
-- close;
-- retry;
-- expand/collapse.
+- navigation.
 
-The goal is improvement, not icon churn: existing icons that are already clear, polished and consistent are retained; dated, ambiguous, generic, misaligned or visually weak UI icons are refined/replaced.
-
-Icon-only actions retain:
+Icon-only actions must retain:
 
 - accessible names;
-- visible focus states;
-- adequate touch targets;
-- required ARIA state;
+- focus states;
 - tooltips where appropriate.
 
-OneSpace does not replace useful text with ambiguous icons merely for decoration.
+OneSpace should not replace clear text with ambiguous icons only for decoration.
 
-Random emoji/Unicode/fashion-icon substitutions are not part of the application-control design language.
-
-Legitimate website favicons, provider/source attribution marks and content/service/game/movie logos remain distinct because they represent source or brand identity rather than OneSpace application controls.
-
-The icon system is verified across supported themes and desktop/tablet/mobile widths so no broken, clipped, misaligned or low-contrast UI icons remain.
+Random emoji/fashion-icon substitutions are not part of the design language.
 
 ---
 
 # Provider-backed discovery
 
-OneSpace combines local user-owned data, curated/local fallback catalogs and optional provider-backed global discovery.
+OneSpace remains local-first, but some discovery features can use provider-backed search through the local Node server.
 
-The browser never receives private provider credentials.
+The browser must not communicate with private provider credentials directly.
 
-Architecture:
+The intended architecture is:
 
 ```text
 Browser
    ↓
 OneSpace local server / provider proxy
    ↓
-provider-neutral adapter
+provider adapter
    ↓
-configured external provider
+external provider
 ```
 
-Provider adapters normalize provider-specific responses before domain UI consumes them.
+Provider adapters normalize provider-specific responses before returning them to the UI.
 
-## Supported discovery domains
-
-### Movies & Series
-
-Global search can extend the bundled title catalog with normalized title, movie/series type, overview, poster, backdrop, genres and supported release/runtime metadata.
-
-### Games
-
-Global search can extend the bundled game catalog with normalized description, cover/background art, genres/tags, platforms and tracker-inference signals.
-
-### Explore / Destinations
-
-Explore keeps the curated 12-destination catalog and also supports configured global destination discovery beyond those records.
-
-Global destinations may include normalized place context, categories, imagery and required attribution/source metadata.
-
-## Local + provider results
-
-Local/catalog results can appear immediately.
-
-Provider/global results load asynchronously and remain visibly distinct.
-
-Provider outage never causes the local catalog to be falsely presented as successful global results.
-
-## Add/Save model
-
-A provider result is transient until the user explicitly chooses Add/Track/Save.
-
-After that action the normalized record becomes validated local OneSpace data.
-
-Re-adding the same provider identity does not create a duplicate record.
-
-Provider identity is based on provider/source + provider item ID + domain/kind, not display name alone.
-
-## Provider metadata vs user state
-
-Provider refresh may update supported provider-owned metadata.
-
-It must not silently overwrite user-owned state such as status, notes, confirmed tracker type, progress, tasks/objectives, sessions, journal, saved/shortlist or trip-board state.
+The browser-facing experience should not depend directly on the response format of one external provider.
 
 ## Provider behavior
 
-Provider-backed flows support applicable:
+Provider-backed flows should support:
 
-- debounce;
-- cancellation;
-- loading;
-- empty results;
+- search;
+- cancellation with `AbortController`;
 - pagination/load-more;
-- timeout;
+- loading state;
+- empty state;
+- timeout state;
 - authentication/configuration failure;
-- rate-limit;
-- offline/network failure;
+- rate-limit state;
+- offline state;
 - generic provider error;
-- malformed/partial response handling;
-- bounded short-lived caching.
+- short-lived caching where defined by the current implementation.
 
-Stale request results/errors are ignored after a newer request owns the UI.
+Tests must use deterministic mock providers and must not consume live provider quotas.
 
-## Mock vs live verification
+## Current scope
 
-Automated tests use deterministic mocks and do not consume live provider quota.
+Provider-backed discovery applies only where defined by the current standing plan and implementation checklist.
 
-Mock/contract verification and configured live-provider E2E verification are recorded separately.
-
-Mock success is never described as proof that real credentials/upstream access was tested.
-
+Historical requirements from `docs/REVISED-IMPLEMENTATION-PLAN.md` must not silently expand current provider scope.
 
 ---
 
@@ -1048,48 +981,22 @@ Server-denial checks should also verify that representative secret paths return 
 
 If a real credential is ever committed or pushed, rotate/revoke it immediately before continuing.
 
-
-## Provider input and proxy safety
-
-The local server validates and bounds provider request parameters.
-
-Provider adapters choose upstream hosts server-side.
-
-OneSpace must not accept arbitrary browser-supplied URLs and operate as a generic HTTP/media proxy.
-
-Where provider artwork is mediated through a local media route, it accepts only supported provider media identities, allowlists upstream hosts, validates image content type, applies timeout/size limits and never leaks provider credentials.
-
-All provider text is treated as untrusted input and rendered through safe text/escaping helpers.
-
-Browser-visible provider errors are sanitized and must not expose secrets, raw Authorization values or sensitive stack traces.
-
-Provider/query/details/media caches are bounded. Clearing them does not delete user records.
-
 ---
 
 # Offline and degraded behavior
 
-Provider functionality is optional to the core application.
+Provider failure must not damage local user data.
 
-When provider access is unavailable:
+When provider functionality is unavailable:
 
 - the application still opens;
 - existing user-owned records remain available;
-- Work, Personal, Productivity, Notes, Shortcuts and Settings continue to work;
-- local/saved Movies & Series remain usable;
-- local/saved Games remain usable;
-- Explore's curated 12-destination catalog, preferences, ranking and Surprise Me remain usable;
-- saved provider destinations and trip-board data remain usable from persisted local data;
-- provider-backed search shows a visible unavailable/configuration/error state;
-- local/cached content is not falsely presented as live global results;
-- provider failure never deletes a user-owned record.
+- provider-backed functionality shows a visible degraded/configuration/error state;
+- cached/local content must not be falsely presented as live global provider results;
+- user data must not be erased;
+- failed imagery falls back gracefully.
 
-Saved provider records persist enough normalized metadata to remain meaningful offline.
-
-Remote artwork follows provider licensing/terms. Offline visual fallback uses permitted cached/local art when available, otherwise the domain's deterministic fallback/base scene.
-
-Clearing provider/media cache must not delete user-owned records.
-
+A provider cache may be safe to clear, but clearing it must not delete user-owned records.
 
 ---
 
@@ -1154,40 +1061,6 @@ Transactional writes should leave previous valid state intact when a new write f
 Backup version 3 is historical.
 
 New backups must use version 4.
-
----
-
-# Content-aware cinematic environment
-
-The existing OneSpace cinematic lifecycle remains authoritative:
-
-```text
-ENTRY / WAKE-UP
-→ SETTLE
-→ AMBIENT / ALIVE
-→ EXIT / RESET
-```
-
-Every domain keeps its base visual identity.
-
-Movies & Series, Games and Explore can add an optional selected-content environmental-art layer:
-
-- selected Movie/Series → backdrop influences the Movies environment;
-- selected Game → key/background art influences Games;
-- selected Destination → hero/travel image influences Explore.
-
-This layer is restrained and decorative. It may use controlled crop, opacity, gradients/scrims, blur, vignette, depth and subtle parallax, but it must not reduce readability, move/capture controls or create major layout shift.
-
-Changing selected content inside the same tab uses a lightweight media transition rather than replaying full page ENTRY.
-
-Environmental art is race-safe: an older image load cannot replace a newer selection.
-
-Leaving a rich-content route clears its transient content-art state so Movies/Games/Explore visuals cannot leak into other domains.
-
-If artwork fails, the record remains usable and the base domain scene/fallback remains.
-
-Full / Subtle / Off and `prefers-reduced-motion` still govern the experience. Reduced motion removes non-essential parallax/ambient/content-art movement.
-
 
 ---
 
@@ -1326,7 +1199,7 @@ Unless explicitly changed by the standing plan:
 - OneSpace does not provide multi-user collaboration.
 - User reminders are local/in-app behavior rather than background push notifications after the page is closed.
 - Movies & Series uses title-level watch state rather than full episode-by-episode tracking.
-- Live provider functionality for Movies & Series, Games and global Destinations depends on provider availability, network access and local provider configuration.
+- Live provider functionality depends on provider availability, network access and local provider configuration.
 - Explore is planning/inspiration content, not guaranteed real-time travel inventory.
 - Local browser storage remains the primary persistence layer.
 
@@ -1355,6 +1228,257 @@ Previous chat summaries are navigation aids, not completion evidence.
 
 During final documentation reconciliation, this README must be checked against the actual delivered application.
 
-Any section that describes planned behavior not present in the final implementation must be corrected before Gate 13.3 is allowed to pass.
+Any section that describes planned behavior not present in the final implementation must be corrected before Gate 13.3 is allowed to pass. Gate 25 must pass before Phase 13.3 begins.
 
 The README must describe the product that actually exists, not an earlier plan, an older acceptance run or an intended feature that was never verified.
+
+---
+
+# Approved pending final-completion scope — Phases 20–25
+
+The approved final-fidelity execution sequence is:
+
+- **Phase 20 — Full-Viewport Cinematic Fidelity**
+- **Phase 21 — Global Icon Visual-Quality Completion**
+- **Phase 22 — Live Provider Search and Real Media Completion**
+- **Phase 23 — Game Enrichment and Tracker Intelligence**
+- **Phase 24 — Global Search / Filter Integration**
+- **Phase 25 — Final User-Visible Product Acceptance**
+
+Phase 13.3 remains the final documentation step and runs only after Gate 25.
+
+
+> **Status:** approved requirements, not automatically a statement of current delivered behavior.
+>
+> The items in this section become delivered README facts only after their corresponding implementation items are VERIFIED and Gate 25 passes. During Phase 13.3, this section must be reconciled into the normal README and any undelivered claim must remain identified as unresolved rather than silently rewritten.
+
+# 2. Wide desktop and ultrawide behavior
+
+Explain that OneSpace intentionally:
+
+- keeps content readable within appropriate bounds;
+- uses surrounding viewport space for environmental scene composition;
+- does not simply stretch forms/cards to fill width.
+
+List final verified widths, including the actual ultrawide viewport used.
+
+Do not claim acceptance for an untested width.
+
+---
+
+# 3. Icon system
+
+Document:
+
+- shared inline-SVG application-control language;
+- shared action semantics;
+- accessible names/tooltips;
+- focus/pressed/current states;
+- touch-target behavior;
+- source-identity exceptions for provider marks/brand marks/favicons.
+
+---
+
+# 4. Local-first + global provider discovery
+
+Document the final delivered architecture:
+
+```text
+Browser
+ -> local OneSpace server
+ -> provider-neutral adapter
+ -> configured external provider
+```
+
+Explain:
+
+- user-owned state remains local;
+- curated/local catalogs remain usable;
+- provider discovery expands search;
+- local and global results are visibly distinguished;
+- saved provider-origin records remain meaningful offline.
+
+---
+
+# 5. Provider configuration
+
+Document only providers actually delivered.
+
+For each domain list:
+
+- provider name;
+- expected secret/config keys;
+- where local secrets are placed;
+- setup steps;
+- required attribution;
+- offline/degraded behavior.
+
+Real credentials:
+
+- are local and ignored;
+- are never committed;
+- are never browser-visible;
+- are never served by the local/static server.
+
+Do not include real secret values in README.
+
+---
+
+# 6. Search and filter semantics
+
+For Movies/Series, Games and Explore, document which visible criteria are:
+
+- provider-side;
+- canonical post-filter;
+- local-only;
+- unsupported globally.
+
+Do not imply that a visible filter affects live global results when it does not.
+
+---
+
+# 7. Movies & Series
+
+Document actual delivered behavior for:
+
+- live search;
+- Movie / Series parity;
+- poster;
+- backdrop;
+- details;
+- combined filters;
+- explicit Add;
+- local persistence;
+- offline reopen;
+- untrack/remove;
+- fallback behavior.
+
+Do not claim every title has real artwork if fallback rules still apply.
+
+---
+
+# 8. Games — Add and enrichment
+
+Document the actual final Add flow.
+
+A successfully added provider game should become a first-class local record containing available:
+
+- provider identity/source;
+- title;
+- cover;
+- background/key art;
+- description;
+- genres/tags;
+- platforms;
+- release metadata;
+- tracker type.
+
+Explain fallback behavior when metadata is genuinely unavailable.
+
+---
+
+# 9. Games — tracker types
+
+Document delivered tracker types.
+
+## Weekly / live-service
+
+Explain:
+
+- recurring/live-service games infer weekly tracking;
+- Diablo Immortal is an acceptance reference, not a fuzzy-name rule;
+- game-specific recurring templates/data are used only when approved data exists;
+- user may correct inference before save;
+- confirmed tracker type is user-owned state.
+
+## Story / campaign
+
+Document hierarchy:
+
+```text
+Game
+ -> Act / Chapter / Region / Level
+ -> Mission / Quest
+ -> ordered Objective / Step
+```
+
+---
+
+# 10. Campaign progression sources
+
+A complete campaign tracker may be claimed only when a legitimate complete progression dataset exists.
+
+For each supported complete-progression integration document:
+
+- exact progression source/provider or curated dataset;
+- access mode;
+- licensing/attribution where required;
+- source/update version strategy;
+- hierarchy depth;
+- mission coverage;
+- objective/step coverage;
+- known limitations.
+
+State explicitly:
+
+- a normal game catalog provider is not automatically assumed to provide complete missions;
+- OneSpace does not invent missing missions;
+- partial/unavailable progression is labeled;
+- generic/custom story tracking remains available;
+- later enrichment preserves user progress.
+
+---
+
+# 11. Complete vs incomplete progression
+
+Explain the delivered states:
+
+- `complete`
+- `partial`
+- `unavailable/unknown`
+
+For complete supported games explain that the tracker can automatically populate approved:
+
+- acts/chapters/regions/levels;
+- missions/quests;
+- ordered objectives/steps where source supplies them.
+
+For unsupported games explain the safe fallback behavior.
+
+---
+
+# 12. Provider-origin offline behavior
+
+Document that after explicit Add/Save:
+
+- normalized metadata is local;
+- user state is local;
+- provider outage does not delete the record;
+- supported persisted/cached/local/fallback media behavior applies;
+- saved records remain meaningful offline.
+
+---
+
+# 13. Verification status
+
+README claims must match final evidence.
+
+Do not state:
+
+- live provider is verified when only mock provider was tested;
+- all cinematic routes are accepted when only technical animation checks passed;
+- complete campaign progression exists when source coverage is partial;
+- global filters are provider-backed when they are local-only;
+- real media is available for a record when only deterministic fallback exists.
+
+---
+
+# 14. Final documentation rule
+
+README is finalized only during Phase 13.3 after Gate 25.
+
+If actual delivered implementation differs from this amendment:
+
+- document the actual approved delivered behavior;
+- keep unresolved requirements visible in final verification;
+- do not silently rewrite a failed requirement into a weaker success criterion.

@@ -1,0 +1,326 @@
+{
+  "checkedAt": "2026-09-23T18:33:58.634Z",
+  "origin": "http://localhost:18974/",
+  "routes": [
+    {
+      "requested": 1440,
+      "route": "home",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "work",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "personal",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "explore",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "games",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "movies",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "shortcuts",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "productivity",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "notes",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1440,
+      "route": "settings",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "requested": 1024,
+      "route": "home",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "work",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "personal",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "explore",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "games",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "movies",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "shortcuts",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "productivity",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "notes",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 1024,
+      "route": "settings",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "requested": 760,
+      "route": "home",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "work",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "personal",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "explore",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "games",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "movies",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "shortcuts",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "productivity",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "notes",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 760,
+      "route": "settings",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "requested": 390,
+      "route": "home",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "work",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "personal",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "explore",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "games",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "movies",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "shortcuts",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "productivity",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "notes",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "requested": 390,
+      "route": "settings",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  ]
+}

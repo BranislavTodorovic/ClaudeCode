@@ -693,3 +693,472 @@ If every provider is unavailable:
 - global discovery becomes explicitly unavailable.
 
 That is the required definition of local-first.
+
+---
+
+# FINAL APPROVED ARCHITECTURE EXTENSION — PHASES 20–25
+
+Execution mapping:
+
+- Phase 20: page-level cinematic/wide-screen architecture
+- Phase 21: modern icon quality remains a UI-system concern governed by the standing plan/checklist
+- Phase 22: live provider and real-media architecture
+- Phase 23: game Add/enrichment/tracker/progression architecture
+- Phase 24: canonical search/filter mapping architecture
+- Phase 25: final integrated acceptance; no new parallel architecture is introduced
+- Phase 13.3: final reconciliation only after Gate 25
+
+
+# 2. Cinematic lifecycle state machine
+
+Canonical state:
+
+`ENTRY -> SETTLE -> AMBIENT -> EXIT/RESET`
+
+The controller distinguishes:
+
+- genuine route entry;
+- internal content selection;
+- filtering/search rerender;
+- modal/detail transition;
+- task/status update;
+- selected-content media transition.
+
+Only genuine route entry triggers full ENTRY choreography.
+
+Internal updates use shorter lightweight transitions.
+
+---
+
+# 3. Wide and ultrawide composition contract
+
+At >=1920 px and representative ultrawide widths:
+
+- route art/depth may occupy side fields around bounded content;
+- side fields remain visually intentional;
+- forms/cards are not stretched merely to consume width;
+- route-specific artwork uses safe anchoring/cropping;
+- readability and focus remain stable.
+
+A scene may expose conceptual route parameters such as:
+
+```js
+{
+  artAnchor,
+  wideDepthScale,
+  wideLightPosition,
+  ambientAmplitude,
+  heroSafeZone
+}
+```
+
+Names are illustrative; behavior is authoritative.
+
+---
+
+# 4. Canonical provider search options
+
+Domain UI never passes vendor-specific payload fields.
+
+Conceptual contracts:
+
+```js
+searchTitles(query, {
+  kind,
+  genres,
+  yearFrom,
+  yearTo,
+  page,
+  cursor
+})
+
+searchGames(query, {
+  genres,
+  tags,
+  platforms,
+  releaseFrom,
+  releaseTo,
+  page,
+  cursor
+})
+
+searchDestinations(query, {
+  themes,
+  season,
+  budget,
+  duration,
+  region,
+  page,
+  cursor
+})
+```
+
+Each canonical criterion maps to one classification:
+
+`provider-side | canonical-post-filter | local-only | unsupported`
+
+Provider adapters map only supported fields.
+
+Unsupported criteria are not silently ignored.
+
+Post-filtering must account for provider pagination and must not imply that one page is exhaustive global coverage.
+
+---
+
+# 5. Provider media roles
+
+Canonical roles:
+
+Movies/Series:
+
+- poster
+- backdrop
+
+Games:
+
+- cover
+- background/key art
+
+Destinations:
+
+- card
+- hero
+
+Each role has independent:
+
+- loading;
+- success;
+- failure;
+- fallback;
+- race ownership.
+
+Failure of one role does not invalidate another valid role.
+
+---
+
+# 6. Game Add transaction
+
+A provider game Add is one logical transaction.
+
+Conceptual flow:
+
+```text
+provider search result
+ -> fetch/resolve required detail
+ -> normalize metadata
+ -> sanitize
+ -> validate
+ -> infer tracker type
+ -> user confirms/corrects tracker type
+ -> resolve supported progression/template data if required
+ -> prepare game record
+ -> prepare tracker record
+ -> prepare dependent progression/template state
+ -> atomic/rollback-safe persist
+ -> UI success
+```
+
+UI success is prohibited before required persistence succeeds.
+
+If the game record persists but required dependent tracker creation fails, the logical Add has not completed successfully.
+
+---
+
+# 7. Game tracker inference architecture
+
+Inference uses signals such as:
+
+- provider genres/tags;
+- MMO/live-service tags;
+- recurring/seasonal/service model;
+- campaign/story metadata;
+- known curated mappings;
+- progression metadata;
+- explicit user correction.
+
+Do not infer by fuzzy title similarity.
+
+Canonical types:
+
+```text
+weekly
+story
+custom
+```
+
+User correction becomes user-owned state.
+
+Provider refresh cannot silently overwrite confirmed tracker type.
+
+---
+
+# 8. Weekly tracker source contract
+
+A weekly tracker template is game-specific data.
+
+Approved sources:
+
+1. provenance-documented curated local template;
+2. legitimate external recurring-activity source via dedicated adapter;
+3. user-authored custom template.
+
+Conceptual schema:
+
+```js
+{
+  gameIdentity,
+  source,
+  sourceVersion,
+  cadence: "weekly",
+  groups: [
+    {
+      id,
+      title,
+      objectives: [...]
+    }
+  ]
+}
+```
+
+Rules:
+
+- stable IDs;
+- explicit source/version;
+- no cross-game copying of unrelated objectives;
+- reset semantics are data-driven where possible.
+
+---
+
+# 9. Progression-data source boundary
+
+Full mission/quest/objective data is a separate concern from ordinary game-catalog metadata.
+
+A game-catalog provider such as RAWG/IGDB or another catalog must not be assumed to contain complete walkthrough/progression data.
+
+Before a game is marked `complete progression`, define a progression-source contract containing:
+
+```text
+source/provider
+access mode: API | curated-local | approved maintained dataset
+license/terms/attribution
+source version/update marker
+completeness: complete | partial | unknown
+available hierarchy depth
+mission/quest coverage
+objective/step coverage
+stable identity strategy
+```
+
+If progression data comes from an external service:
+
+- use a separate provider-neutral server adapter;
+- keep credentials server-side;
+- validate inputs;
+- prevent arbitrary proxy behavior;
+- respect rate/terms/licensing constraints.
+
+If progression data is curated locally:
+
+- store provenance beside the dataset;
+- use deterministic stable IDs;
+- record source/update version.
+
+No scraping or unlicensed walkthrough ingestion.
+
+No generated/hallucinated mission content.
+
+---
+
+# 10. Campaign progression manifest
+
+Conceptual schema:
+
+```js
+{
+  gameIdentity,
+  completeness: "complete|partial|unknown",
+  source,
+  sourceVersion,
+  groups: [
+    {
+      id,
+      type: "act|chapter|region|level",
+      title,
+      order,
+      missions: [
+        {
+          id,
+          title,
+          order,
+          objectives: [
+            {
+              id,
+              title,
+              order
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+A `complete` declaration is allowed only when the approved source supports that claim.
+
+Stable IDs are required so progress survives source updates.
+
+---
+
+# 11. Supported complete-progression Add behavior
+
+For a game with an approved complete progression integration:
+
+- resolve the relevant progression manifest during supported Add/enrichment;
+- populate canonical groups/missions/objectives automatically;
+- do not require the user to manually rebuild the campaign;
+- persist tracker + progression state consistently;
+- do not report the tracker as complete if manifest loading fails.
+
+If external progression retrieval is temporarily unavailable:
+
+- game metadata may still be safely persisted according to the transaction contract;
+- tracker must explicitly remain incomplete/unavailable;
+- UI must not falsely claim complete progression.
+
+---
+
+# 12. Progression ownership and merge
+
+Progression metadata may update:
+
+- source display text;
+- grouping metadata;
+- canonical order;
+- source version;
+- provider-owned descriptions.
+
+User-owned state remains protected:
+
+- completion;
+- notes;
+- custom tasks;
+- custom objectives;
+- sessions;
+- journal;
+- confirmed tracker type.
+
+Merge rules:
+
+- map by stable deterministic identity;
+- never wipe completion because source text changed;
+- unmatched user-owned entries are preserved or explicitly reconciled;
+- duplicates are prevented.
+
+---
+
+# 13. Unsupported progression state
+
+When no approved complete source exists:
+
+```text
+progressionCompleteness = unavailable | partial
+```
+
+UI behavior:
+
+- explain that complete mission data is unavailable/incomplete;
+- offer generic/custom story tracker;
+- do not present generic items as official complete campaign content;
+- permit later enrichment;
+- preserve prior user progress.
+
+---
+
+# 14. Credentials and live-verification boundary
+
+Mocks prove:
+
+- adapter contracts;
+- parsing;
+- state machines;
+- deterministic failure handling;
+- race handling;
+- normalization behavior.
+
+Live credentials prove:
+
+- real authentication;
+- real upstream compatibility;
+- real search;
+- real details;
+- real media;
+- real pagination;
+- real provider behavior.
+
+Mocks and live evidence remain separate evidence classes.
+
+The agent never fabricates credentials.
+
+---
+
+# 15. Filter mapping architecture
+
+Maintain a domain-level filter capability map.
+
+Conceptual example:
+
+```js
+{
+  movies: {
+    kind: "provider-side",
+    genre: "provider-side",
+    year: "provider-side"
+  },
+  games: {
+    platform: "provider-side",
+    genre: "provider-side",
+    someLocalPreference: "local-only"
+  }
+}
+```
+
+The exact mapping depends on the delivered provider.
+
+UI behavior must reflect the actual mapping.
+
+No silent unsupported behavior.
+
+---
+
+# 16. Media security and fallback
+
+Provider media must use the approved safe media boundary.
+
+Requirements:
+
+- allowlisted provider hosts;
+- no arbitrary browser-supplied URL fetch;
+- HTTPS where available;
+- image content-type validation;
+- response-size limits;
+- timeout;
+- bounded cache;
+- no credential/header leakage;
+- role-specific fallback.
+
+Fallback selection order follows delivered provider terms and local/offline contracts.
+
+---
+
+# 17. Final architecture reconciliation
+
+After Gate 25, Phase 13.3 must reconcile this architecture document against the actual delivered implementation.
+
+Do not leave planned-but-undelivered architecture written as delivered fact.
+
+If actual implementation differs from this plan:
+
+- document the approved delivered architecture;
+- retain unresolved requirements visibly in verification;
+- do not silently weaken the requirement after failure.

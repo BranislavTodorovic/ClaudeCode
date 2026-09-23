@@ -687,6 +687,375 @@ Result: `PASS / FAIL`
 
 ---
 
+
+# FINAL FIDELITY ACCEPTANCE EXTENSION — PHASES 20–25
+
+Gate mapping:
+
+- Gate 20 — full-viewport cinematic fidelity
+- Gate 21 — global icon visual quality
+- Gate 22 — live provider search and real media
+- Gate 23 — game enrichment and tracker intelligence
+- Gate 24 — global search/filter integration
+- Gate 25 — final user-visible product acceptance
+
+Phase 13.3 and final PASS remain blocked until Gate 25 passes.
+
+
+# A. Full cinematic acceptance
+
+For every top-level experience:
+
+- Home
+- Work/Projects
+- Personal
+- Explore
+- Games
+- Movies & Series
+- Shortcuts
+- Productivity
+- Notes
+- Settings
+
+Verify in Full mode:
+
+- visible staged entry;
+- approximately 2–5 seconds;
+- usable during entry;
+- smooth settle;
+- persistent ambient alive state;
+- distinct route visual subject;
+- not merely fade/gradient;
+- not merely central-hero animation;
+- full-page environment remains visible at wide sizes.
+
+Record per route:
+
+`PASS / IMPLEMENTED-NOT-VERIFIED / FAIL`
+
+If a normal user could reasonably describe the page as static or generic, it is not PASS.
+
+---
+
+# B. Responsive and ultrawide matrix
+
+Verify every route at:
+
+- 390
+- 760
+- 1024
+- 1440
+- 1920
+- representative ultrawide, preferably ~3440×1440
+
+Check:
+
+- no overflow;
+- no broken media;
+- no unintended clipping;
+- intentional scene crop;
+- readable content;
+- usable controls;
+- no dead side-space cinematic failure;
+- no decorative pointer interception.
+
+---
+
+# C. Scene intensity matrix
+
+Verify:
+
+- Full — visibly cinematic;
+- Subtle — observably reduced;
+- Off — still;
+- prefers-reduced-motion — genuinely still;
+- touch/coarse pointer — no hover/parallax dependency.
+
+Record actual browser evidence.
+
+---
+
+# D. Global icon quality
+
+Across all routes/themes/widths verify:
+
+- modern visual language;
+- consistent geometry;
+- optical size;
+- alignment;
+- stroke/fill philosophy;
+- contrast;
+- shared action semantics;
+- hover/focus/pressed states;
+- touch targets;
+- accessible names;
+- no emoji/Unicode substitute controls.
+
+Do not PASS solely because SVG elements exist.
+
+---
+
+# E. Secret/configuration verification
+
+Verify:
+
+```sh
+git ls-files config/secrets
+git check-ignore -v config/secrets/<representative-real-secret-file>
+```
+
+Verify:
+
+- secret JSON path denied;
+- representative `.js` secret path denied;
+- browser source does not reference secret files;
+- no API key/client secret/token appears in browser network/errors/logs.
+
+The agent must not fabricate a credential.
+
+Record each live provider:
+
+`LIVE VERIFIED / NOT CONFIGURED / FAILED`
+
+---
+
+# F. Live Movies & Series E2E
+
+Record provider and exact test titles.
+
+Verify:
+
+- live movie search;
+- live series search;
+- provenance;
+- details;
+- description;
+- poster where available;
+- backdrop where available;
+- normalized metadata;
+- pagination;
+- cancellation/latest-request ownership;
+- explicit Add;
+- reload;
+- provider-disabled offline reopen;
+- untrack/remove.
+
+Mock success is not live proof.
+
+---
+
+# G. Live Games E2E
+
+Record provider and exact test games.
+
+Verify:
+
+- live search;
+- provenance;
+- details;
+- description;
+- cover where available;
+- background/key art where available;
+- genres/tags;
+- platforms;
+- release metadata;
+- tracker signals;
+- pagination;
+- cancellation/latest-request ownership;
+- explicit Add;
+- reload;
+- provider-disabled offline reopen.
+
+---
+
+# H. Provider-added game immediate enrichment
+
+Immediately after Add verify:
+
+- local card exists;
+- available real cover is visible;
+- description is visible;
+- detail opens;
+- background/key art is available to the Games environment where supplied;
+- tracker exists;
+- no second manual metadata-setup step is required;
+- reload preserves the record.
+
+If provider metadata/media is absent, verify explicit fallback rather than fabricated content.
+
+---
+
+# I. Tracker inference
+
+Test:
+
+1. Diablo Immortal
+2. at least one additional live-service game
+3. at least one campaign game
+4. at least one insufficient-signal/custom case if supported
+
+Verify:
+
+- visible inferred type;
+- user correction before save;
+- confirmed type persistence;
+- provider refresh does not silently change confirmed type.
+
+---
+
+# J. Weekly/live-service tracker
+
+For Diablo Immortal and another live-service game verify:
+
+- weekly inferred correctly;
+- weekly tracker created;
+- game-specific recurring data used when approved source/template exists;
+- reset cadence works;
+- state persists;
+- unrelated Diablo tasks are not reused for the other game.
+
+---
+
+# K. Progression-source proof
+
+Before accepting any game as `complete progression`, record:
+
+- exact source/provider;
+- access mode;
+- licensing/terms/attribution;
+- source version/update marker;
+- declared completeness;
+- hierarchy depth;
+- mission/quest coverage;
+- objective/step coverage;
+- stable identity strategy.
+
+Do not accept a generic game catalog provider as proof of full mission data unless its delivered contract actually provides it.
+
+---
+
+# L. Complete campaign progression
+
+Use at least one campaign game with an approved complete progression source.
+
+Verify:
+
+`Act/Chapter/Region/Level -> Mission/Quest -> ordered Objective/Step`
+
+Check:
+
+- all missions represented by approved source are present;
+- canonical order;
+- grouping;
+- objectives/steps where source provides them;
+- stable IDs;
+- completion;
+- progress calculation;
+- reload;
+- backup/export/import;
+- provenance;
+- source version;
+- refresh does not erase completion.
+
+Never accept hallucinated/generated mission data.
+
+---
+
+# M. Incomplete progression behavior
+
+Use at least one campaign game without an approved complete source.
+
+Verify:
+
+- no invented missions;
+- no false `complete` claim;
+- explicit unavailable/incomplete state;
+- usable generic/custom story tracker;
+- available image/description retained;
+- later enrichment supported;
+- prior user progress preserved.
+
+---
+
+# N. Global search/filter semantics
+
+For every visible criterion in Movies/Series, Games and Explore record:
+
+- provider-side;
+- canonical post-filter;
+- local-only;
+- unsupported globally.
+
+Test representative combinations.
+
+No selected visible criterion may be silently ignored while the UI implies that it affected global results.
+
+---
+
+# O. Real media and fallback
+
+Verify exact roles:
+
+Movies:
+
+- poster
+- backdrop
+
+Games:
+
+- cover
+- background
+
+Explore:
+
+- card
+- hero
+
+For each:
+
+- valid provider media renders when available;
+- forced failure falls back;
+- details/actions remain usable;
+- one role failure does not incorrectly discard another valid role;
+- media route does not permit arbitrary URL proxying.
+
+---
+
+# P. Final Phase 20–25 reconciliation
+
+Before Phase 13.3:
+
+- [ ] Gate 20 PASS
+- [ ] Gate 21 PASS
+- [ ] Gate 22 PASS
+- [ ] Gate 23 PASS
+- [ ] Gate 24 PASS
+- [ ] Gate 25 PASS
+
+No unresolved Phase 20–25 item may remain as:
+
+- PENDING
+- IMPLEMENTED / NOT VERIFIED
+- BLOCKED
+
+unless the user explicitly approved a terminal exception.
+
+---
+
+# Q. Final documentation sequence
+
+Only after Gate 25:
+
+1. reconcile README with actual delivered behavior;
+2. reconcile `docs/agent-instructions.md`;
+3. reconcile `docs/REVISED-IMPLEMENTATION-PLAN.md`;
+4. update VERIFICATION with current final results;
+5. run Phase 13.3;
+6. record final status.
+
+`FINAL STATUS: PASS` is prohibited before Gate 25 and Phase 13.3 complete.
+
+
 # 38. Checklist reconciliation
 
 Inspect `docs/IMPLEMENTATION-STEPS.md`.
@@ -699,7 +1068,7 @@ Final delivery requires no unresolved item in:
 
 Only explicitly permitted terminal states are allowed.
 
-Gate 19 must pass before final documentation completion.
+Gate 25 must pass before final documentation completion.
 
 ---
 
@@ -716,8 +1085,8 @@ After implementation/acceptance only:
 
 # FINAL STATUS
 
-`FINAL V2 STATUS: PASS / FAIL`
+`FINAL ONESPACE STATUS: PASS / FAIL`
 
 If FAIL, list exact unresolved checklist IDs and evidence gaps.
 
-A final PASS requires both original-plan and V2 acceptance.
+A final PASS requires original-plan, V2, Phases 20–25 acceptance, Gate 25, and Phase 13.3 completion.

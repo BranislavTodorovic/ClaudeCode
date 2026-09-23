@@ -87,10 +87,16 @@ Every step from the previous plan is preserved below with a status marker:
 17            content-aware cinematic environment
 18            provider/media/async/security hardening
 19            complete V2 final acceptance
+20            full-viewport cinematic fidelity
+21            global icon visual-quality completion
+22            live provider search + real media completion
+23            game enrichment + tracker intelligence
+24            global search/filter integration
+25            final user-visible product acceptance
 13.3          final documentation (always last)
 ```
 
-Execute phases in the numeric/approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. Phase 12 is now the original-plan verification checkpoint; V2 Phases 14–19 follow it, and Phase 13.3 remains the final documentation step after Gate 19.
+Execute phases in the numeric/approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. Phase 12 is the original-plan verification checkpoint; V2 Phases 14–19 follow it; additive final-fidelity Phases 20–25 follow Gate 19; and Phase 13.3 remains the final documentation step only after Gate 25.
 
 ---
 
@@ -1309,7 +1315,7 @@ Old Part B Phase 8, extended.
 13. Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
 14. Set `MISSING_ASSET='assets/destinations/azores.svg'` on `tests/browser-server.js` to exercise the image-fallback path.
 15. Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason.
-16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint; **Phase 13.3 remains final and runs only after Gate 19**.
+16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint, followed by additive final-fidelity Phases 20–25; **Phase 13.3 remains final and runs only after Gate 25**.
 
 ---
 
@@ -1698,7 +1704,7 @@ No tested provider/media failure corrupts, deletes, misrepresents or leaks valid
 
 # PHASE 19 — V2 final regression and acceptance
 
-Phase 19 is the final V2 acceptance gate before Phase 13.3 documentation.
+Phase 19 is the final V2 acceptance gate before the additive final-fidelity Phases 20–25.
 
 Run the complete automated suite and browser acceptance after the final implementation change.
 
@@ -1729,7 +1735,566 @@ Required responsive coverage preserves the established widths and adds wide-desk
 
 No V2 item remains PENDING, IMPLEMENTED / NOT VERIFIED, or BLOCKED.
 
-Only after Gate 19 passes may Phase 13.3 final documentation be completed.
+Only after Gate 19 passes may the additive final-fidelity Phases 20–25 begin. Phase 13.3 remains blocked until Gate 25 passes.
+
+
+
+# FINAL APPROVED COMPLETION EXTENSION — Phases 20–25
+
+## 20–25 product acceptance authority
+
+# 1. Final cinematic meaning — visibly alive, not technically animated
+
+OneSpace must feel alive in normal use.
+
+A top-level route does **not** pass cinematic acceptance merely because:
+
+- an animation class exists;
+- an SVG exists;
+- a background image exists;
+- CSS keyframes run;
+- a screenshot proves that the page rendered;
+- a test measures a transform or opacity change;
+- motion exists but is too weak for a normal user to perceive;
+- only the central hero moves while the rest of the page appears empty and static.
+
+In **Full** scene mode, every top-level route must visibly read as a distinct, living, domain-specific environment.
+
+The canonical lifecycle remains:
+
+`ENTRY / WAKE-UP -> SETTLE -> AMBIENT / ALIVE -> EXIT / RESET`
+
+## 1.1 Full-mode opening
+
+A genuine route entry should behave like a short cinematic opening.
+
+Required behavior:
+
+- approximately 2–5 seconds;
+- multiple visible stages;
+- not only one fade;
+- not only one gradient transition;
+- not only generic particles;
+- not only barely perceptible parallax;
+- page remains usable during the sequence;
+- text, forms, buttons and focus targets remain stable;
+- internal rerenders do not replay the full route opening.
+
+Possible techniques include:
+
+- layered art reveals;
+- depth movement;
+- controlled crop movement;
+- focus/light changes;
+- blueprint/route drawing;
+- atmosphere;
+- motes/particles;
+- glow activation;
+- domain-specific object motion.
+
+## 1.2 Settle and ambient state
+
+After the opening finishes, the scene must **not become dead**.
+
+The ambient state may include restrained:
+
+- depth drift;
+- light movement;
+- image breathing;
+- atmospheric glow;
+- slow crop movement;
+- subtle route-specific motion.
+
+Ambient motion must remain subordinate to content.
+
+## 1.3 Failure condition
+
+If a route technically contains animation but a normal user reasonably perceives it as:
+
+- static;
+- generic;
+- almost unchanged;
+- visually empty;
+- indistinguishable from another route;
+
+then the result is:
+
+`IMPLEMENTED / NOT VERIFIED`
+
+It must be improved before final completion.
+
+---
+
+# 2. Full-page, wide-screen and ultrawide environment
+
+The cinematic environment is a **page-level environment**, not merely a hero-card decoration.
+
+The central content column may remain comfortably bounded, but unused screen space must not become visually dead.
+
+At wide desktop and ultrawide sizes:
+
+- route-specific environmental art may extend beyond the content column;
+- atmospheric light/depth may occupy otherwise unused side fields;
+- decorative environment must remain pointer-transparent;
+- readable content must not be stretched merely to fill width;
+- scene layers must crop intentionally;
+- important visual subjects must not be accidentally cut off;
+- visual activity must remain restrained and purposeful.
+
+Final visual acceptance must include:
+
+- 390 px;
+- 760 px;
+- 1024 px;
+- 1440 px;
+- 1920 px;
+- at least one representative ultrawide viewport, preferably approximately 3440×1440 or an equivalent browser width.
+
+A wide layout fails if it looks like a small central island surrounded by large meaningless dark areas and therefore no longer feels cinematic.
+
+---
+
+# 3. Required route-specific visual identity
+
+Each distinct route must have a recognizable visual subject.
+
+Required directions:
+
+- **Home** — observatory / personal command deck.
+- **Work / Projects** — drafting room / development command centre.
+- **Personal** — calm ritual / reflection space.
+- **Explore** — world atlas / travel window.
+- **Games** — game-world spotlight.
+- **Movies & Series** — theater / streaming marquee.
+- **Shortcuts** — navigable launch wall.
+- **Productivity** — focused timer studio.
+- **Notes** — quiet capture desk.
+- **Settings** — control room.
+
+Do not solve route identity by reusing one generic:
+
+- starfield;
+- gradient;
+- particle field;
+- abstract wallpaper;
+- glow treatment;
+
+with only different titles.
+
+Projects continues to share the Work scene because it is a Work sub-view/route alias.
+
+---
+
+# 4. Modern icon quality — visible improvement required
+
+The existing inline-SVG application-icon system remains the base.
+
+Final acceptance requires one polished modern visual language across the product.
+
+An existing icon may be retained only if it is already:
+
+- clear;
+- modern;
+- optically aligned;
+- semantically recognizable;
+- consistently sized;
+- consistent in stroke/fill philosophy;
+- readable in supported themes/palettes.
+
+Refine or replace icons that are:
+
+- dated;
+- generic;
+- visually weak;
+- ambiguous;
+- misaligned;
+- too small;
+- too faint;
+- inconsistent for the same shared action;
+- dependent on emoji/Unicode substitutes.
+
+Shared actions should use recognizable semantics for:
+
+- add;
+- edit;
+- delete/remove;
+- back;
+- more;
+- favorite;
+- search;
+- filter;
+- sort;
+- save;
+- restore;
+- open/play;
+- close;
+- retry;
+- expand/collapse;
+- navigation.
+
+Brand marks, provider marks, favicons and site logos remain source identity and are not forcibly converted into the OneSpace application-icon style.
+
+---
+
+# 5. Live global discovery is a real delivered capability
+
+OneSpace remains local-first for user-owned data, but local-first does not mean local-only.
+
+Final discovery architecture:
+
+`local user data + curated/local fallback content + provider-backed global discovery + normalized local persistence + graceful offline/degraded behavior`
+
+Live configured global discovery applies to:
+
+- Movies & Series;
+- Games;
+- Explore / Destinations.
+
+Mock providers remain required for deterministic automated testing.
+
+**Mock success is never evidence that live provider integration works.**
+
+When credentials are configured:
+
+- global search returns real provider results;
+- details return normalized provider metadata;
+- valid available provider imagery is used through the approved media boundary;
+- provider results can be explicitly added/saved;
+- saved records become first-class local OneSpace records;
+- saved records reopen when the provider later becomes unavailable.
+
+When credentials are not configured:
+
+- local content still works;
+- the UI must explicitly state that global provider search is unavailable;
+- local content must never be presented as if it were a successful live global result.
+
+---
+
+# 6. Credentials and secret handling
+
+Real provider credentials:
+
+- remain server-side only;
+- are stored only in ignored local secret configuration;
+- are never committed;
+- are never placed in browser JavaScript or HTML;
+- are never returned in browser-visible errors;
+- are never served by the static/local server.
+
+The agent must **never invent or fabricate API keys**.
+
+If live credentials are required but absent:
+
+1. keep mock/contract testing separate;
+2. record live E2E as `NOT CONFIGURED`;
+3. continue other work that does not require the secret;
+4. do not mark the live provider gate complete;
+5. do not insert fake credentials;
+6. only the user supplies real local credentials.
+
+Final completion requires intended production providers to be live-verified unless the user explicitly approves a provider-specific exception.
+
+---
+
+# 7. Search and filter semantics must be explicit
+
+A visible filter must never appear to affect global discovery while being silently ignored.
+
+For every Movies/Series, Games and Explore search/filter control, assign exactly one behavior:
+
+1. **Provider-side filter** — mapped into the live provider request.
+2. **Canonical post-filter** — applied to normalized provider results with correct pagination semantics.
+3. **Local-only filter** — affects only local/catalog results.
+4. **Unsupported globally** — explicitly represented as unsupported for global discovery.
+
+Where the chosen provider supports a selected criterion, that criterion must participate in global discovery.
+
+Applicable examples include:
+
+Movies & Series:
+
+- movie vs series;
+- genre;
+- year/release range;
+- other visible supported discovery criteria.
+
+Games:
+
+- genre;
+- tag;
+- platform;
+- release criteria;
+- live-service/campaign characteristics where exposed.
+
+Explore:
+
+- category/theme;
+- destination/location criteria;
+- season;
+- budget/duration where supported;
+- other provider-supported travel criteria.
+
+Unsupported criteria must never be silently discarded.
+
+---
+
+# 8. Real media and fallback rules
+
+For provider-origin content, use valid provider media when available and permitted.
+
+Canonical roles:
+
+Movies & Series:
+
+- poster;
+- backdrop.
+
+Games:
+
+- cover;
+- background/key art.
+
+Destinations:
+
+- card image;
+- hero image.
+
+A deterministic fallback is used only when:
+
+- the required media is genuinely absent;
+- the request fails;
+- the provider does not supply that media role;
+- licensing/terms prevent using it.
+
+Do not use a fallback merely because it is easier than rendering valid available provider art.
+
+Do not scrape or ship unlicensed artwork.
+
+Failure of one media role must not unnecessarily discard another valid media role.
+
+---
+
+# 9. Provider-added games become complete usable local records immediately
+
+When a user explicitly adds a game from provider/global search, successful Add means that the game becomes a first-class local OneSpace record.
+
+Before reporting success, resolve, normalize, validate and persist all provider data available under the approved contract, including where supplied:
+
+- provider/source identity;
+- title;
+- description;
+- cover image;
+- background/key art;
+- genres/tags;
+- platforms;
+- release metadata;
+- tracker-inference signals;
+- source/attribution metadata where required.
+
+Immediately after successful Add:
+
+- the game appears in the local library;
+- its available real cover is visible;
+- its description is visible;
+- its detail view works;
+- its background/key art can participate in the Games environment;
+- a tracker exists;
+- reload preserves the game and tracker;
+- a second manual metadata-setup step is not required.
+
+If description or media is genuinely unavailable, show the explicit fallback. Do not fabricate metadata.
+
+---
+
+# 10. Game tracker intelligence
+
+Tracker inference must use actual game characteristics/signals, not fuzzy name similarity.
+
+Canonical primary tracker types:
+
+- `weekly / live-service`
+- `story / campaign`
+- `custom / unknown`
+
+The inferred type must be visible and correctable before persistence.
+
+The confirmed type becomes user-owned state and must not be silently changed by later provider refresh.
+
+`Diablo Immortal` is the required reference example for weekly/live-service acceptance. It is **not** a title-name matching template.
+
+---
+
+# 11. Weekly / live-service tracker behavior
+
+Games whose progression is primarily recurring, seasonal, MMO/live-service or reset-driven should default to a weekly tracker.
+
+Where an approved game-specific recurring-data source or curated OneSpace template exists, populate applicable:
+
+- daily/weekly activities;
+- dungeons/raids;
+- contracts/bounties;
+- PvP activities;
+- reset-driven objectives;
+- seasonal/battle-pass objectives;
+- other game-specific recurring tasks.
+
+Rules:
+
+- tasks must be specific to that game;
+- Diablo-specific activities must not be copied into unrelated games;
+- recurring template/source provenance must be recorded;
+- reset cadence must be explicit;
+- tracker state persists correctly.
+
+---
+
+# 12. Story / campaign tracker behavior
+
+Games whose progression is mission/chapter/campaign based should default to a story/progression tracker.
+
+Desired canonical hierarchy:
+
+`Game -> Act / Chapter / Region / Level -> Mission / Quest -> ordered Objective / Step`
+
+For games with approved complete progression integration, adding the game should automatically populate the supported progression structure without requiring the user to manually recreate the campaign.
+
+Supported tracker behavior includes:
+
+- canonical ordering;
+- grouping by act/chapter/region/level where the game uses it;
+- mission/quest completion;
+- optional objective/step completion;
+- progress calculation;
+- reload persistence;
+- backup/export/import persistence.
+
+---
+
+# 13. Complete progression requires an explicit legitimate source
+
+A game may be described as having **complete mission tracking** only when OneSpace has a legitimate, maintainable, provenance-documented progression source.
+
+Before implementing complete progression for a game or game family, explicitly record:
+
+- progression source/provider name;
+- access mode:
+  - provider API;
+  - curated bundled local data;
+  - another approved maintained dataset;
+- licensing/terms/attribution constraints;
+- source version/update strategy;
+- available hierarchy depth;
+- whether acts/chapters/regions/levels are supplied;
+- whether missions/quests are supplied;
+- whether ordered objectives/steps are supplied;
+- whether the source is `complete`, `partial`, or `unknown`;
+- stable mission/objective identity strategy.
+
+A general game catalog provider such as RAWG, IGDB, or another catalog must **not** be assumed to provide complete mission-level progression unless its actual delivered contract proves that data exists.
+
+If the progression source is external, access it through a provider-neutral server-side adapter using the same secret/security principles as other provider integrations.
+
+If the progression source is curated locally:
+
+- record provenance beside the dataset;
+- use deterministic stable IDs;
+- record source/update version;
+- do not silently invent missing material.
+
+---
+
+# 14. Complete campaign ingestion rules
+
+For a game declared `complete progression`:
+
+- include every mission/quest represented by the approved complete source;
+- preserve canonical order;
+- preserve act/chapter/region/level grouping where applicable;
+- include ordered objectives/steps where the source supplies them;
+- give missions/objectives stable identities;
+- preserve user completion during source updates;
+- persist progress across reload;
+- include progression data in supported backup round trips.
+
+**Never hallucinate:**
+
+- mission names;
+- chapter names;
+- levels;
+- quest order;
+- objectives;
+- completion steps.
+
+For supported complete-progression games, progression population is part of successful tracker creation.
+
+If the approved progression source is temporarily unavailable during Add:
+
+- do not falsely claim a complete tracker was created;
+- show an explicit enrichment/progression-unavailable state;
+- preserve the game record and safe fallback behavior according to the implemented transaction contract.
+
+---
+
+# 15. Incomplete or unavailable progression
+
+If no legitimate complete progression dataset exists:
+
+- do not claim complete progression;
+- show an explicit `Full progression data unavailable` / equivalent state;
+- create a usable generic/custom story tracker;
+- allow the user to add/customize progression;
+- retain available image, description and metadata;
+- allow later enrichment;
+- preserve existing user progress when enrichment becomes available.
+
+`partial` data must remain visibly distinguishable from `complete` data.
+
+---
+
+# 16. Progression refresh and ownership
+
+Progression metadata and user-owned state have different ownership.
+
+Source/provider metadata may update:
+
+- grouping;
+- display text;
+- canonical order;
+- source version;
+- non-user metadata.
+
+User-owned state must remain protected:
+
+- completed state;
+- notes;
+- custom tasks;
+- custom objectives;
+- sessions;
+- journal;
+- confirmed tracker type;
+- other supported user edits.
+
+A refresh must never silently erase or reset user progress.
+
+---
+
+# 17. New mandatory final-completion gates
+
+The historical plan is extended by:
+
+- **Gate 20 — Full-Viewport Cinematic Fidelity**
+- **Gate 21 — Global Icon Visual Quality**
+- **Gate 22 — Live Provider Search and Real Media**
+- **Gate 23 — Game Enrichment and Tracker Intelligence**
+- **Gate 24 — Global Search / Filter Integration**
+- **Gate 25 — Final User-Visible Product Acceptance**
+
+Only after Gate 25 may Phase 13.3 finalize documentation.
+
+Final execution tail:
+
+`Gate 19 -> Phase 20 -> Gate 20 -> Phase 21 -> Gate 21 -> Phase 22 -> Gate 22 -> Phase 23 -> Gate 23 -> Phase 24 -> Gate 24 -> Phase 25 -> Gate 25 -> Phase 13.3 FINAL`
 
 
 # PHASE 13 — Project documentation
@@ -1738,7 +2303,7 @@ The repository has `README.md` (architecture and contracts), `VERIFICATION.md` (
 
 > **Sequencing — this phase runs in two parts, not at the end.**
 > **13.1 and 13.2 run FIRST, before Phase 0.3**, because they are the working documents every later phase is executed against — a checklist written after the work is finished is a report, not a plan.
-> **13.3 runs LAST, after Gate 19**, because it records what was actually delivered across both the original plan and the approved V2 scope.
+> **13.3 runs LAST, after Gate 25**, because it records what was actually delivered across the original plan, V2 scope and the approved final-fidelity Phases 20–25.
 > It is numbered 13 so the documentation deliverables stay together and readable; the numbering is not the execution order.
 
 ## 13.1 Rewrite `agent-instructions.md` — **[DONE]**
@@ -1760,7 +2325,7 @@ A sequenced execution checklist — the working document, distinct from the plan
 - A "Do not break" header block listing the invariants from 1.9 — storage keys, global names, load order, entry URL, backup compatibility.
 - A status column an implementer updates as work lands, so progress is visible without reading a diff.
 
-## 13.3 Keep the rest current — runs after Gate 19
+## 13.3 Keep the rest current — runs after Gate 25
 
 - `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
 - `VERIFICATION.md` — a fresh acceptance run at the end; fix the `18973` → `18974` port error and the bare test filenames.
