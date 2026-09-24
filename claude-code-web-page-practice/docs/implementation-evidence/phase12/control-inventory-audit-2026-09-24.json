@@ -21,7 +21,7 @@
   "observedSuccess": {
     "I0002": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
-      "otherFacets": "Cancel, required-field validation and reload observed; storage write failure remains."
+      "otherFacets": "Cancel, required-field validation and reload observed. Rejected storage write and dialog retry feedback verified by tests/domain-ui.test.js; current browser Add Location open/cancel remained functional after the fix. Row facets complete."
     },
     "I0004": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
@@ -29,11 +29,11 @@
     },
     "I0015": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
-      "otherFacets": "Read-only dialog cancel observed; no direct error or persistence mutation."
+      "otherFacets": "Read-only saved-card Details opened the stored location, Cancel closed the dialog, and the underlying card survived reload. No submit/write error path applies. Row facets complete."
     },
     "I0019": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
-      "otherFacets": "Boundary disable and reload observed; storage write failure remains."
+      "otherFacets": "Inverse move, boundary disable and reload observed; tests/domain-ui.test.js verifies rejected-write rollback and error feedback. Row facets complete."
     },
     "I0153": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
@@ -45,31 +45,31 @@
     },
     "I0005": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "The Explore São Miguel Details browser check in interaction-current-2026-09-24.json includes opening and Cancel; this is a read-only detail with no draft. tests/explore-preservation.test.js checks the missing-detail not-found error and unchanged trip board. The saved card's reload is covered by the same browser file. Row facets complete."
     },
     "I0006": {
-      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Shortlist success and reload observed; rejected-write status and unchanged board verified by focused tests. Atomic action has no draft to cancel. Row facets complete."
     },
     "I0014": {
-      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "The direct empty-board action focused q and loaded six results; unmatched query showed usable 0-results guidance without changing saved state; transient results reset on reload. Row facets complete."
     },
     "I0016": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "Browser save, Cancel and reload plus handler-level malformed-itinerary and rejected-write tests are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0017": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "Browser create, Cancel and reload plus handler-level malformed-itinerary and rejected-write tests are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0018": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "Direct Move earlier, inverse, boundary disable and reload plus rejected-write test are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0020": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "Browser confirmed removal, Cancel and reload plus rejected-write confirmation test are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0154": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
@@ -85,15 +85,15 @@
     },
     "I0028": {
       "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "Direct post-fix Open Progress navigation, inverse tab action and reload are mapped in control-rows-2026-09-24.json; tests/games-lifecycle.test.js verifies rejected-write navigation safety. Row facets complete."
     },
     "I0029": {
       "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "Direct Resources dialog content, Close/focus return, read-only error applicability and underlying state after reload are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0007": {
       "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "otherFacets": "A direct Add Location Close dialog button click, unchanged 3-place board and focus return to Add Location are in control-rows-2026-09-24.json. No write/provider error path applies. Row facets complete."
     },
     "I0062": {
       "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
@@ -211,35 +211,116 @@
     "I0101": {
       "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
       "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0026": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Games Delete success, Cancel/focus return and reload are recorded per row; tests/games-lifecycle.test.js verifies rejected-transaction rollback and error feedback. Row facets complete."
+    },
+    "I0027": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Spotlight selection and reload, atomic inverse behavior, and rejected-write rollback with error feedback are mapped per row. Row facets complete."
+    },
+    "I0030": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Seeded-game Edit now opens the editor; direct save, Cancel/focus, required-field error and reload plus rejected-write rollback test are mapped per row. Row facets complete."
+    },
+    "I0032": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Inline objective edit save, Cancel, blank validation and reload observed; tests/games-lifecycle.test.js verifies rejected-write safety. Row facets complete."
+    },
+    "I0033": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Objective deletion now requires confirmation. Direct confirm, Cancel/focus, reload and rejected-write test are mapped per row. Row facets complete."
+    },
+    "I0034": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct collapse/expand, focus retention and reload plus rejected-write nonmutation test are mapped per row. Row facets complete."
+    },
+    "I0038": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Weekly reset now requires confirmation. Direct confirm, Cancel/focus, reload and rejected-write nonmutation test are mapped per row. Row facets complete."
+    },
+    "I0039": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct picker select/inverse, focus and reload plus atomic transaction failure test are mapped per row. Row facets complete."
+    },
+    "I0041": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Appearance swatch select/inverse and reload plus rejected-write no-false-theme test are mapped per row. Row facets complete."
+    },
+    "I0043": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Overview Continue directly opened Mission Progress; inverse navigation, shared rejected-transaction safety and selected-tab reload are mapped per row. Row facets complete."
+    },
+    "I0046": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Suggestion add dialog confirm/cancel, shared rejected-transaction rollback and My Games reload are mapped per row. Row facets complete."
+    },
+    "I0047": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Wishlist save, inverse remove, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0048": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Suggestion dismissal, preference reset inverse, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0049": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Read-only details, Close/focus, missing-ID behavior and underlying catalog availability are mapped per row. Row facets complete."
+    },
+    "I0050": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Wishlist move dialog confirm/cancel, shared transaction failure safety and library/wishlist reload are mapped per row. Row facets complete."
+    },
+    "I0051": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Wishlist removal, inverse add, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0053": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Resource editor save/cancel/invalid URL/reload plus shared failed-write dialog behavior are mapped per row. Row facets complete."
+    },
+    "I0054": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Live session stop, no-draft behavior, rejected-write active-state rollback and completed-log reload are mapped per row. Row facets complete."
+    },
+    "I0055": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Session deletion now has direct confirm/cancel, rejected-write nonmutation and empty-log reload evidence. Row facets complete."
+    },
+    "I0056": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Journal edit save/cancel/required-field and rejected-write errors plus reload are mapped per row. Row facets complete."
+    },
+    "I0057": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Journal delete confirm/cancel, rejected-write rollback and reload are mapped per row. Row facets complete."
     }
   },
-  "observedSuccessCount": 48,
+  "observedSuccessCount": 69,
+  "retiredSuccessorMappings": {
+    "I0021": {
+      "retiredIntent": "Open an Explore destination's Details from the retired explore.js renderer.",
+      "currentControls": ["I0005", "I0015"],
+      "evidence": "Discovery-card Details and saved-board Details open/cancel/error/persistence facets are recorded in interaction-current-2026-09-24.json, control-rows-2026-09-24.json and tests/explore-preservation.test.js. The retired explore.js control was not clicked."
+    },
+    "I0022": {
+      "retiredIntent": "Save or remove a destination from the Explore shortlist in the retired renderer.",
+      "currentControls": ["I0006", "I0020"],
+      "evidence": "Current Shortlist Add and trip-board Remove success/cancel/error/persistence facets are recorded in control-rows-2026-09-24.json, interaction-current-2026-09-24.json, tests/discovery-ui-write-failure.test.js and tests/domain-ui.test.js. The retired explore.js control was not clicked."
+    },
+    "I0023": {
+      "retiredIntent": "Open Trip notes from the retired Explore destination card.",
+      "currentControls": ["I0016"],
+      "evidence": "Current Edit trip owns saved destination notes. Save, Cancel and reload are in interaction-current-2026-09-24.json; malformed itinerary and rejected write are in tests/domain-ui.test.js. The retired explore.js control was not clicked."
+    },
+    "I0042": {
+      "retiredIntent": "Open Progress from a Games Overview mini-card. The mini-card row was permanently hidden by games-cinematic.css and was absent from the accessibility tree.",
+      "currentControls": ["I0028"],
+      "evidence": "My Games Open Progress is the reachable per-game successor; direct story and weekly tracker entry, rejected-write safety and reload are in control-rows-2026-09-24.json and tests/games-lifecycle.test.js. The unreachable mini-card renderer and empty container were removed; browser Overview still showed stats and Continue Playing, with no hidden mini-card controls. The old mini-card was not clicked."
+    }
+  },
   "remainingSuccessIds": [
-    "I0021",
-    "I0022",
-    "I0023",
-    "I0026",
-    "I0027",
-    "I0030",
-    "I0032",
-    "I0033",
-    "I0034",
-    "I0038",
-    "I0039",
-    "I0041",
-    "I0042",
-    "I0043",
-    "I0046",
-    "I0047",
-    "I0048",
-    "I0049",
-    "I0050",
-    "I0051",
-    "I0053",
-    "I0054",
-    "I0055",
-    "I0056",
-    "I0057",
     "I0059",
     "I0060",
     "I0061",
@@ -415,6 +496,11 @@
       ],
       "source": "historical Work page controls",
       "reason": "Standing plan Phase 3 explicitly removed Today & Focus and General daily tasks from Work and replaced Start a focus session with a Work-domain action; see docs/agent-instructions.md Phase 3 lines 793–796. Verify the successor Productivity controls and current Work actions, and record this requirement mapping rather than claiming these retired buttons still exist."
+    },
+    {
+      "ids": ["I0042"],
+      "source": "hidden Games Overview mini-card row",
+      "reason": "games-cinematic.css hid this row unconditionally, so its generated Open Progress controls were unreachable. The dead row/container were retired and its intent maps to the reachable My Games Open Progress control I0028."
     }
   ],
   "completionRule": "Every one of 229 inventory button templates needs its own success evidence and applicable cancel/error/persistence evidence. Existing broad tests, phase acceptance summaries, and the partial observedSuccess map do not satisfy item 347 by themselves."

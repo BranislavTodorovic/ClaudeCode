@@ -368,7 +368,6 @@ body.force-full-motion { scroll-behavior:smooth; }
 
       <section class="gv-panel" data-panel="overview" role="tabpanel">
         <div class="gv-overview-stats" id="gvOverviewStats"></div>
-        <div class="gv-mini-row" id="gvOverviewMiniRow"></div>
         <div class="gv-continue-card" id="gvContinueCard"></div>
       </section>
 
@@ -434,6 +433,7 @@ body.force-full-motion { scroll-behavior:smooth; }
           <select id="gvJournalGame" aria-label="Related game (optional)"><option value="">General entry</option></select>
           <input type="text" id="gvJournalTitle" placeholder="Entry title" maxlength="80" required aria-label="Entry title">
           <textarea id="gvJournalBody" placeholder="Write your thoughts…" maxlength="2000" required aria-label="Entry body"></textarea>
+          <p class="form-error" id="gvJournalError" role="alert" aria-live="polite"></p>
           <div class="gv-journal-form-actions">
             <button type="button" class="btn" id="gvJournalCancel" hidden>Cancel edit</button>
             <button type="submit" class="btn btn-primary" id="gvJournalSave">Save Entry</button>

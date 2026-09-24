@@ -10,7 +10,14 @@
     overlay.querySelectorAll('[data-cancel]').forEach(function (b) { b.onclick = function () { OS.closeModal(overlay); }; });
     overlay.querySelector('form').onsubmit = function (e) {
       e.preventDefault();
-      try { if (submit && submit(new FormData(e.target)) !== false) OS.closeModal(overlay); }
+      try {
+        if (!submit) return;
+        if (submit(new FormData(e.target)) === false) {
+          document.getElementById('domainError').textContent = 'Changes could not be saved. Please try again.';
+          return;
+        }
+        OS.closeModal(overlay);
+      }
       catch (error) { document.getElementById('domainError').textContent = error.message; }
     };
     OS.openModal(overlay, overlay.querySelector('input, textarea, select') || overlay.querySelector('[data-cancel]'));

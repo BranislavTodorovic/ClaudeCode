@@ -54,3 +54,12 @@ test('malformed destinations and preferences are rejected', () => {
   assert.equal(storage.validDestination({ ...valid, photoSource: { ...valid.photoSource, sourceUrl: 'javascript:bad' } }), false);
   assert.equal(storage.valid('orbit-explore-preferences', JSON.stringify({ budget: ['unlimited'] })), false);
 });
+
+test('missing Explore detail reports not-found without changing saved trips', async () => {
+  const saved = trips.save([], discovery.normalize(destinations()[0], 'destinations'), 'trip-kept');
+  const before = JSON.stringify(saved);
+  const api = discovery.create(() => ({ DESTINATIONS: destinations(), trips: saved }));
+  await assert.rejects(api.request('destinations', 'details', { id: 'no-such-place' }), error =>
+    error.code === 'not-found' && /no longer in the local collection/i.test(error.message));
+  assert.equal(JSON.stringify(saved), before);
+});

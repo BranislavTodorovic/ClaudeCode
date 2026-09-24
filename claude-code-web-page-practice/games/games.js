@@ -467,19 +467,14 @@
   function goToTracker(id) {
     var game = library.find(function (g) { return g.id === id; });
     if (!game) return;
-    selectSpotlight(id, "tracker");
+    if(selectSpotlight(id, "tracker")===false)return false;
     if (game.trackerType === "weekly") {
-      selectedWeeklyGameId = id;
-      safeSet(GK.selectedWeekly, id);
-      renderWeeklyPanel();
       switchTab("weekly");
     } else {
-      selectedStoryGameId = id;
-      safeSet(GK.selectedStory, id);
-      renderMissionsPanel();
       switchTab("missions");
     }
     focusPanel(activeTab);
+    return true;
   }
 
   function findChapter(chapterId, gameId) {
@@ -491,9 +486,11 @@
   function toggleChapter(chapterId) {
     var chapter = findChapter(chapterId);
     if (!chapter) return;
-    chapter.expanded = !chapter.expanded;
-    saveLibrary();
+    var next=library.map(function(game){if(game.id!==selectedStoryGameId)return game;return Object.assign({},game,{story:Object.assign({},game.story,{chapters:game.story.chapters.map(function(c){return c.id===chapterId?Object.assign({},c,{expanded:!c.expanded}):c;})})});});
+    if(!safeSet(GK.library,JSON.stringify(next)))return false;
+    library=next;
     withFocusPreserved(renderAll);
+    return true;
   }
   function toggleObjective(chapterId, objectiveId, gameId) {
     var chapter = findChapter(chapterId, gameId);
@@ -521,12 +518,19 @@
     saveLibrary();
     renderAll();
   }
-  function deleteObjective(chapterId, objectiveId) {
+  function deleteObjective(chapterId, objectiveId, confirmed) {
     var chapter = findChapter(chapterId);
-    if (!chapter) return;
-    chapter.objectives = chapter.objectives.filter(function (o) { return o.id !== objectiveId; });
-    saveLibrary();
+    if (!chapter) return false;
+    var objective=chapter.objectives.find(function(o){return o.id===objectiveId;});
+    if(!objective)return false;
+    if(!confirmed){window.OneSpaceUI.confirm('Delete objective?', 'Remove '+objective.text+' from this chapter?',function(){return deleteObjective(chapterId,objectiveId,true);});return;}
+    var next=library.map(function(game){if(game.id!==selectedStoryGameId)return game;return Object.assign({},game,{story:Object.assign({},game.story,{chapters:game.story.chapters.map(function(c){if(c.id!==chapterId)return c;return Object.assign({},c,{objectives:c.objectives.filter(function(o){return o.id!==objectiveId;})});})})});});
+    if(!safeSet(GK.library,JSON.stringify(next)))return false;
+    library=next;
     renderAll();
+    showToast('Objective deleted.');
+    setTimeout(function(){var heading=Array.from(document.querySelectorAll('[data-action="toggle-chapter"]')).find(function(el){return el.getAttribute('data-chapter-id')===chapterId;});heading?.focus({preventScroll:true});},0);
+    return true;
   }
   function startEditObjective(chapterId, objectiveId) {
     var row = document.querySelector('.gv-objective[data-objective-id="' + CSS.escape(objectiveId) + '"]');
@@ -540,6 +544,7 @@
         '<input type="text" value="' + esc(obj.text) + '" maxlength="140" aria-label="Edit objective text">' +
         '<button type="submit" class="btn btn-icon btn-ghost" aria-label="Save">' + ICON_CHECK + "</button>" +
         '<button type="button" class="btn btn-icon btn-ghost" data-action="cancel-objective-edit" aria-label="Cancel">' + ICON_CLOSE + "</button>" +
+        '<span class="form-error" role="alert"></span>' +
       "</form>";
     var input = row.querySelector("input");
     input.focus();
@@ -547,12 +552,14 @@
   }
   function commitEditObjective(chapterId, objectiveId, text) {
     var chapter = findChapter(chapterId);
-    if (!chapter) return;
+    if (!chapter) return false;
     var obj = chapter.objectives.find(function (o) { return o.id === objectiveId; });
-    if (!obj) return;
-    obj.text = text;
-    saveLibrary();
+    if (!obj) return false;
+    var next=library.map(function(game){if(game.id!==selectedStoryGameId)return game;return Object.assign({},game,{story:Object.assign({},game.story,{chapters:game.story.chapters.map(function(c){if(c.id!==chapterId)return c;return Object.assign({},c,{objectives:c.objectives.map(function(o){return o.id===objectiveId?Object.assign({},o,{text:text}):o;})});})})});});
+    if(!safeSet(GK.library,JSON.stringify(next)))return false;
+    library=next;
     renderAll();
+    return true;
   }
 
   function toggleWeeklyTask(gameId, taskId) {
@@ -565,10 +572,16 @@
     withFocusPreserved(renderAll);
     lastCheckedTaskId = null;
   }
-  function resetWeekly(gameId) {
-    weekly[gameId] = { weekKey: getISOWeekKey(new Date()), tasks: cloneWeeklyTemplate(gameId) };
-    if(saveWeekly())showToast("Weekly tasks reset.");
+  function resetWeekly(gameId,confirmed) {
+    var game=library.find(function(g){return g.id===gameId && g.trackerType==='weekly';});
+    if(!game)return false;
+    if(!confirmed){window.OneSpaceUI.confirm('Reset weekly tasks?', 'Reset the current tasks for '+game.name+'?',function(){return resetWeekly(gameId,true);},'Reset');return;}
+    var next=Object.assign({},weekly);next[gameId]={weekKey:getISOWeekKey(new Date()),tasks:cloneWeeklyTemplate(gameId)};
+    if(!safeSet(GK.weekly,JSON.stringify(next)))return false;
+    weekly=next;
+    showToast("Weekly tasks reset.");
     renderAll();
+    return true;
   }
 
   function deleteGame(id,confirmed) {
@@ -652,11 +665,17 @@
       var id = document.getElementById("addGameId").value || uid("game");
       var platform = document.getElementById("addGamePlatform").value;
       var accent = document.getElementById("addGameAccent").value || "#7a8fff";
+      var beforeLibrary = JSON.parse(JSON.stringify(library));
+      var beforeWeekly = JSON.parse(JSON.stringify(weekly));
       var existing = library.find(function (g) { return g.id === id; });
       var logo = draftLogoDataUrl ? { kind: "upload", src: draftLogoDataUrl } : existing && existing.logo && existing.logo.kind === "asset" ? existing.logo : { kind: "cover" };
       if (existing) {
+        var previousGenre=existing.genre,previousPlatform=existing.platform;
         existing.name = name; existing.platform = platform; existing.accent = accent; existing.logo = logo;
-        window.OneSpaceGameResources.reconcile(existing,weekly,draftTrackerType,uid); existing.genre=document.getElementById("addGameGenre").value.trim() || "Custom"; existing.genres=[existing.genre]; existing.custom=true;
+        window.OneSpaceGameResources.reconcile(existing,weekly,draftTrackerType,uid); existing.genre=document.getElementById("addGameGenre").value.trim() || "Custom";
+        existing.genres=existing.genre===previousGenre?(existing.genres||[existing.genre]):[existing.genre];
+        existing.platforms=platform===previousPlatform?(existing.platforms||[platform]):[platform];
+        existing.custom=true;
         if (draftTrackerType === "story" && !existing.story) existing.story = starterStory(existing);
         if (draftTrackerType === "weekly") ensureWeekly(existing.id,false);
       } else {
@@ -665,7 +684,7 @@
         library.push(game);
         if (draftTrackerType === "weekly") ensureWeekly(game.id,false);
       }
-      if(!commitGameChanges()) return false;
+      if(!commitGameChanges()){library=beforeLibrary;weekly=beforeWeekly;renderAll();errorEl.textContent='Changes could not be saved. Please try again.';return false;}
       closeModal(document.getElementById("addGameOverlay"));
       showToast(existing ? "Game updated." : "Game added to your library.");
       renderAll();
@@ -676,7 +695,8 @@
    * Theme switcher (header pills + Appearance tab swatches)
    * ------------------------------------------------------------------- */
   document.addEventListener('onespace:subtheme-changed',function(e){if(e.detail.domain==='games')applyGamesTheme(e.detail.theme);});
-  function applyGamesTheme(theme) {
+  function applyGamesTheme(theme,persist) {
+    if(persist!==false && !safeSet(GK.theme,theme))return false;
     var gamesViewEl = document.getElementById("gamesView");
     gamesViewEl.setAttribute("data-games-theme", theme);
     if(document.body.dataset.page==="games")document.body.setAttribute("data-games-theme", theme);
@@ -685,15 +705,15 @@
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
-    safeSet(GK.theme, theme);
     renderAppearancePanel();
+    return true;
   }
   function wireThemeSwitcher() {
     document.querySelectorAll(".gv-theme-btn").forEach(function (btn) {
       btn.addEventListener("click", function () { applyGamesTheme(btn.getAttribute("data-games-theme-choice")); });
     });
     var saved = ["midnight", "neon", "crimson", "aurora"].indexOf(safeGet(GK.theme)) !== -1 ? safeGet(GK.theme) : "midnight";
-    applyGamesTheme(saved);
+    applyGamesTheme(saved,false);
   }
   function renderAppearancePanel() {
     var el = document.getElementById("gvThemeSwatches");
@@ -722,18 +742,13 @@
   }
   function renderOverview() {
     var statsEl = document.getElementById("gvOverviewStats");
-    var miniEl = document.getElementById("gvOverviewMiniRow");
     var continueEl = document.getElementById("gvContinueCard");
-    if (!statsEl || !miniEl || !continueEl) return;
+    if (!statsEl || !continueEl) return;
     var agg = aggregateStats();
     statsEl.innerHTML =
       '<div class="gv-stat-tile"><strong>' + agg.count + '</strong><span>Games tracked</span></div>' +
       '<div class="gv-stat-tile"><strong>' + agg.avg + '%</strong><span>Average completion</span></div>' +
       '<div class="gv-stat-tile"><strong>' + (agg.weeklyPercent == null ? "—" : agg.weeklyPercent + "%") + "</strong><span>Weekly game progress</span></div>";
-    miniEl.innerHTML = library.map(function (g) {
-      var stats = statsFor(g);
-      return '<button type="button" class="gv-mini-card" data-action="open-progress" data-id="' + esc(g.id) + '">' + renderLogo(g) + '<span class="gv-mini-card-body"><strong>' + esc(g.name) + "</strong><span>" + stats.percent + "% · " + esc(stats.status) + "</span></span></button>";
-    }).join("");
     var entry = findContinueGame();
     if (!entry) {
       continueEl.innerHTML = "<h3>Continue Playing</h3><p>Nothing in progress yet — open a game from My Games to get started.</p>";
@@ -836,27 +851,32 @@
     library.push(game);
     if(game.trackerType === "weekly") ensureWeekly(game.id,false);
     if(!commitGameChanges()) return false;
-    removeFromWishlist(id);
+    if (safeGetJSON(GK.wishlist, []).indexOf(id) !== -1) removeFromWishlist(id);
     showToast(g.title + " added to My Games.");
     renderAll();return true;
   }
   function addToWishlist(id) {
     var wishlist = safeGetJSON(GK.wishlist, []);
-    if (wishlist.indexOf(id) === -1) { wishlist.push(id); safeSet(GK.wishlist, JSON.stringify(wishlist)); showToast("Saved to wishlist."); }
+    if (wishlist.indexOf(id) === -1) {
+      if (!safeSet(GK.wishlist, JSON.stringify(wishlist.concat(id)))) return false;
+      showToast("Saved to wishlist.");
+    }
     renderWishlist();
+    return true;
   }
   function removeFromWishlist(id) {
     var wishlist = safeGetJSON(GK.wishlist, []).filter(function (x) { return x !== id; });
-    safeSet(GK.wishlist, JSON.stringify(wishlist));
+    if (!safeSet(GK.wishlist, JSON.stringify(wishlist))) return false;
     renderWishlist();
+    return true;
   }
   function moveWishlistToLibrary(id) { addSuggestionToLibrary(id); }
   function dismissSuggestion(id) {
     var dismissed = safeGetJSON(GK.dismissed, []);
-    if (dismissed.indexOf(id) === -1) dismissed.push(id);
-    safeSet(GK.dismissed, JSON.stringify(dismissed));
+    if (dismissed.indexOf(id) === -1 && !safeSet(GK.dismissed, JSON.stringify(dismissed.concat(id)))) return false;
     renderSuggestions();
     showToast("Suggestion dismissed.");
+    return true;
   }
   function renderWishlist() {
     var wishlist = safeGetJSON(GK.wishlist, []);
@@ -975,9 +995,16 @@
     showToast("Session logged.");
   }
   function deleteSession(id) {
-    sessions = sessions.filter(function (s) { return s.id !== id; });
-    if(!saveSessions()){renderSessionsPanel();return false;}
-    renderSessionsPanel();
+    var session=sessions.find(function(s){return s.id===id;});
+    if(!session)return;
+    window.OneSpaceUI.confirm('Delete session?', 'Remove this logged session?', function(){
+      var next=sessions.filter(function(s){return s.id!==id;});
+      if(!safeSet(GK.sessions,JSON.stringify(next)))return false;
+      sessions=next;
+      renderSessionsPanel();
+      showToast('Session deleted.');
+      return true;
+    });
   }
   function startSessionTicker() {
     stopSessionTicker();
@@ -1087,6 +1114,7 @@
     document.getElementById("gvJournalBody").value = entry.body;
     document.getElementById("gvJournalSave").textContent = "Update Entry";
     document.getElementById("gvJournalCancel").hidden = false;
+    document.getElementById("gvJournalError").textContent = "";
     document.getElementById("gvJournalTitle").focus();
   }
   function cancelJournalEdit() {
@@ -1095,6 +1123,7 @@
     document.getElementById("gvJournalId").value = "";
     document.getElementById("gvJournalSave").textContent = "Save Entry";
     document.getElementById("gvJournalCancel").hidden = true;
+    document.getElementById("gvJournalError").textContent = "";
   }
   function deleteJournalEntry(id,confirmed) {
     if(!confirmed){window.OneSpaceUI.confirm('Delete journal entry?','This entry will be removed.',function(){return deleteJournalEntry(id,true);});return;}
@@ -1108,7 +1137,13 @@
       e.preventDefault();
       var title = document.getElementById("gvJournalTitle").value.trim();
       var body = document.getElementById("gvJournalBody").value.trim();
-      if (!title || !body) return;
+      var error = document.getElementById("gvJournalError");
+      error.textContent = "";
+      if (!title || !body) {
+        error.textContent = "Enter a title and journal entry before saving.";
+        document.getElementById(!title ? "gvJournalTitle" : "gvJournalBody").focus();
+        return;
+      }
       var gameId = document.getElementById("gvJournalGame").value || null;
       if (editingJournalId) {
         var entry = journal.find(function (en) { return en.id === editingJournalId; });
@@ -1116,7 +1151,7 @@
       } else {
         journal.unshift({ id: uid("journal"), gameId: gameId, date: new Date().toISOString(), title: title, body: body });
       }
-      if(!saveJournal())return false;
+      if(!saveJournal()){error.textContent="Changes could not be saved. Please try again.";return false;}
       cancelJournalEdit();
       renderJournalPanel();
       showToast("Journal entry saved.");
@@ -1176,16 +1211,21 @@
     var game = library.find(function (g) { return g.id === id; });
     if (!game) return;
     var changed = spotlight.id !== id;
+    var selectedKey = game.trackerType === "weekly" ? GK.selectedWeekly : GK.selectedStory;
+    var writes = { "orbit-games-spotlight": id };
+    writes[selectedKey] = id;
+    try { window.OneSpaceStorage.transaction(window.localStorage, writes); }
+    catch (error) { showToast('Changes could not be saved. Please try again.'); return false; }
     spotlight.id = id;
-    safeSet("orbit-games-spotlight", id);
     if (game.trackerType === "weekly") {
-      selectedWeeklyGameId = id; safeSet(GK.selectedWeekly, id); renderWeeklyPanel();
+      selectedWeeklyGameId = id; renderWeeklyPanel();
     } else {
-      selectedStoryGameId = id; safeSet(GK.selectedStory, id); renderMissionsPanel();
+      selectedStoryGameId = id; renderMissionsPanel();
     }
     if (changed) renderSpotlight(reason);
     if (reason === "manual") document.getElementById("gvSpotlightAnnouncement").textContent = game.name + " selected. " + statsFor(game).percent + "% complete.";
     syncSpotlightPlayback();
+    return true;
   }
   function advanceSpotlight(direction, reason) {
     var games = featuredGames();
@@ -1413,13 +1453,13 @@
       var action = target.getAttribute("data-action");
       var id = target.getAttribute("data-id");
       switch (action) {
-        case "spotlight-game": selectSpotlight(id, "manual"); switchTab("overview"); document.getElementById("gvSpotlight").scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "start" }); break;
+        case "spotlight-game": if(selectSpotlight(id, "manual")===false)break; switchTab("overview"); document.getElementById("gvSpotlight").scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "start" }); break;
         case "change-spotlight": advanceSpotlight(1, "manual"); break;
         case "explore-library": switchTab("library"); focusPanel("library"); break;
         case "open-progress": goToTracker(id); break;
         case "edit-game": {
           var game = library.find(function (g) { return g.id === id; });
-          if (game && game.custom) openAddGameModal(id); else goToTracker(id);
+          if (game) openAddGameModal(id);
           break;
         }
         case "delete-game": deleteGame(id); break;
@@ -1428,8 +1468,8 @@
         case "delete-objective": deleteObjective(target.getAttribute("data-chapter-id"), target.getAttribute("data-objective-id")); break;
         case "cancel-objective-edit": renderMissionsPanel(); break;
         case "reset-weekly": resetWeekly(id); break;
-        case "pick-mission-game": selectSpotlight(id, "tracker"); selectedStoryGameId = id; safeSet(GK.selectedStory, id); renderMissionsPanel(); break;
-        case "pick-weekly-game": selectSpotlight(id, "tracker"); selectedWeeklyGameId = id; safeSet(GK.selectedWeekly, id); renderWeeklyPanel(); break;
+        case "pick-mission-game": withFocusPreserved(function(){selectSpotlight(id, "tracker");}); break;
+        case "pick-weekly-game": withFocusPreserved(function(){selectSpotlight(id, "tracker");}); break;
         case "suggest-add": addSuggestionToLibrary(id); break;
         case "suggest-wishlist": addToWishlist(id); break;
         case "suggest-dismiss": dismissSuggestion(id); break;
@@ -1470,8 +1510,8 @@
       if (editForm) {
         e.preventDefault();
         var newText = editForm.querySelector("input").value.trim();
-        if (!newText) return;
-        commitEditObjective(editForm.getAttribute("data-chapter-id"), editForm.getAttribute("data-objective-id"), newText);
+        if (!newText) {editForm.querySelector('[role="alert"]').textContent='Enter an objective before saving.';editForm.querySelector('input').focus();return;}
+        if(commitEditObjective(editForm.getAttribute("data-chapter-id"), editForm.getAttribute("data-objective-id"), newText)===false){editForm.querySelector('[role="alert"]').textContent='Changes could not be saved. Please try again.';editForm.querySelector('input').focus();}
       }
     });
   }

@@ -2,12 +2,12 @@
   "item": 347,
   "step": "12.13",
   "date": "2026-09-24",
-  "method": "Current local OneSpace build in the in-app browser at http://127.0.0.1:18974/; each named row was clicked and its visible result inspected. Browser profile is test-only.",
+  "method": "Current local OneSpace build in the in-app browser at disposable origins http://127.0.0.1:18974/ and http://127.0.0.1:18977/; each named current row was clicked and its visible result inspected. The browser profiles are test-only.",
   "rows": {
     "I0002": {
       "success": "Explore Add Location opened Add Location dialog; completing name, country, required description and Add to trip board displayed Saved to your trip board and a card named Phase 12 audit place.",
       "cancel": "Cancel closed the untouched Add Location form; trip board still showed 0 saved places.",
-      "error": "Submitting missing required fields kept the dialog open and focused the missing field; no card was added. Write-failure path remains to verify.",
+      "error": "Submitting missing required fields kept the dialog open and focused the missing field; no card was added. With a rejected storage write, tests/domain-ui.test.js confirms Explore Add Location returns false without changing the board, and the shared dialog displays 'Changes could not be saved. Please try again.' while remaining open for retry. Both focused tests passed on 2026-09-24.",
       "persistence": "The newly created card and 1 saved places count remained after browser reload."
     },
     "I0004": {
@@ -16,17 +16,197 @@
       "error": "Control is available only while more local results remain; no provider or write path is involved.",
       "persistence": "Reload returned to Search to begin, consistent with transient pagination."
     },
+    "I0006": {
+      "success": "In the disposable browser origin, a direct Shortlist click on the Ubud discovery card changed its action to disabled Saved and added Ubud to the trip board.",
+      "cancel": "This is an immediate atomic add with no draft. The trip board Remove action provides the inverse flow with its own confirmation; its cancel facet remains tracked under I0020.",
+      "error": "With actions.save rejecting the write, tests/discovery-ui-write-failure.test.js verifies an error status and no Saved state. tests/domain-ui.test.js separately verifies the underlying Explore save leaves the board unchanged when storage rejects the write.",
+      "persistence": "The Ubud trip-board card remained after browser reload."
+    },
+    "I0007": {
+      "success": "The Add Location dialog's Close dialog button hid the domain overlay.",
+      "cancel": "The dialog was closed without submitting a draft; the trip board remained at 3 saved places.",
+      "error": "This control performs no write or external request, so no write/provider error path applies.",
+      "persistence": "The trip board count stayed 3 after closing, and the previous Ubud save had survived the preceding reload. Focus returned to Add Location."
+    },
+    "I0014": {
+      "success": "On a fresh disposable origin with an empty trip board, clicking its Search destinations button loaded six discovery cards and focused the q search input.",
+      "cancel": "This is a read-only search action with no draft or record mutation.",
+      "error": "With an unmatched query, the same empty-board button showed 0 results loaded and the Broaden filters empty-state guidance while the board stayed empty.",
+      "persistence": "After reload, the transient result view returned to Search to begin; the board remained at 0 saved places."
+    },
     "I0015": {
       "success": "The saved card's Details button opened a dialog titled Phase 12 audit place with the stored description and country.",
       "cancel": "Cancel closed the details dialog and returned to the board.",
       "error": "Read-only dialog has no submit or write error path.",
       "persistence": "Read-only view; underlying saved card survived reload as checked in I0002."
     },
+    "I0016": {
+      "success": "The earlier Explore browser flow opened Edit trip for São Miguel, saved Trip notes and High priority, and showed the new values; see interaction-current-2026-09-24.json.",
+      "cancel": "The earlier browser flow changed Trip notes and canceled; the prior note remained.",
+      "error": "tests/domain-ui.test.js exercises the Edit trip handler with malformed day itinerary (rejected before write) and a rejected storage write (unchanged record). The shared dialog now keeps failed writes open and displays retry feedback.",
+      "persistence": "The saved note, priority and Researching status survived reload in interaction-current-2026-09-24.json."
+    },
+    "I0017": {
+      "success": "The earlier Explore browser flow opened Create trip plan, saved its title and Day 1 itinerary, and displayed the plan; see interaction-current-2026-09-24.json.",
+      "cancel": "The earlier browser flow canceled an edit of the plan and preserved the saved plan.",
+      "error": "tests/domain-ui.test.js exercises the Create trip plan handler with malformed day itinerary and a rejected storage write; neither changes the saved record. The shared dialog displays retry feedback after a failed write.",
+      "persistence": "Plan title and itinerary survived browser reload in interaction-current-2026-09-24.json."
+    },
+    "I0018": {
+      "success": "In the disposable browser origin, Move Ubud earlier changed trip-card order from second place / audit place / Ubud to second place / Ubud / audit place. The earlier Move Lake Bohinj earlier flow is also in interaction-current-2026-09-24.json.",
+      "cancel": "Ordering is atomic with no draft; Move later is its inverse action.",
+      "error": "The first card's Move earlier button was disabled. tests/domain-ui.test.js verifies a rejected storage write leaves the saved order unchanged and reports an error instead of shifting focus to a rerendered card.",
+      "persistence": "The new Ubud order survived browser reload."
+    },
     "I0019": {
       "success": "With two saved trip cards, Move Phase 12 audit place later reversed their displayed order; the first card's later button had been enabled while the final card's later button was disabled.",
       "cancel": "Atomic ordering action has no draft or cancel path; the inverse Move earlier action is available.",
-      "error": "Out-of-range move is disabled in the rendered board; storage write failure remains to verify.",
+      "error": "Out-of-range move is disabled in the rendered board. tests/domain-ui.test.js verifies a rejected storage write leaves the saved order unchanged and reports an error.",
       "persistence": "The reversed card order remained after browser reload."
+    },
+    "I0020": {
+      "success": "The earlier browser Remove destination confirmation removed the Lake Bohinj card and returned the board count to one; see interaction-current-2026-09-24.json.",
+      "cancel": "The earlier Remove dialog's Cancel retained the card and trip plan.",
+      "error": "tests/domain-ui.test.js verifies the removal confirmation callback returns false on a rejected storage write, leaves the board unchanged and reports an error. The shared dialog test verifies false keeps the confirmation open for retry.",
+      "persistence": "The confirmed removal remained absent after browser reload in interaction-current-2026-09-24.json."
+    },
+    "I0026": {
+      "success": "On the fresh disposable origin, Games > My Games showed Hades with its story progress. Delete Hades opened Delete game?; confirming Delete removed the Hades card and displayed Game deleted.",
+      "cancel": "Cancel closed the confirmation, retained Hades and its 0/6 objective state, and returned focus to Delete Hades.",
+      "error": "tests/games-lifecycle.test.js exercises the actual deleteGame handler with a rejected storage transaction: the callback returns false, game/weekly tasks/sessions and rendered state remain unchanged, and error feedback appears.",
+      "persistence": "After browser reload and navigation back to Games > My Games, Delete Hades remained absent."
+    },
+    "I0027": {
+      "success": "Games > My Games > Spotlight Death Stranding selected Death Stranding in the main Game spotlight, changed its pressed selector, and opened Overview. After the transaction fix, the same card action selected Alan Wake 2 with the live announcement 'Alan Wake 2 selected. 0% complete.'",
+      "cancel": "Spotlight selection is atomic with no draft; selecting another game is the inverse action.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected two-key storage transaction leaves the previously selected spotlight and story tracker unchanged, emits error feedback, and does not announce/render the unpersisted game.",
+      "persistence": "Both Death Stranding before the fix and Alan Wake 2 after the fix remained selected when Games reopened after browser reload."
+    },
+    "I0028": {
+      "success": "Games > My Games > Alan Wake 2 > Open Progress selected the Mission Progress tab, focused its panel, and showed the 12-objective Alan Wake 2 tracker. The earlier Alan Wake 2 and Diablo Immortal story/weekly tracker inspections are in domain-regression-2026-09-24.json.",
+      "cancel": "This is a navigation action with no draft; the My Games tab returns to the source view.",
+      "error": "goToTracker now returns without navigating if the required Spotlight/selected-tracker transaction fails. tests/games-lifecycle.test.js verifies no tab or focus change on failure; the Spotlight transaction test verifies unchanged selection and error feedback.",
+      "persistence": "After browser reload and Games reopen, Mission Progress remained the selected Games tab with Alan Wake 2 selected."
+    },
+    "I0029": {
+      "success": "Games > My Games > Alan Wake 2 > Resources opened the Alan Wake 2 dialog with official, platform, news, guide and community links plus three suggested tracker tasks; domain-regression-2026-09-24.json also verifies Diablo Immortal resources.",
+      "cancel": "Close dialog hid the resource dialog and returned focus to Resources.",
+      "error": "The dialog is read-only. An unavailable game is not rendered as a Resources action, and the handler returns without mutating data if its ID is absent; no write/provider request occurs.",
+      "persistence": "Opening and closing this read-only dialog did not modify library or tracker state. Its underlying Alan Wake 2 card and tracker remained available through the reload check for I0028."
+    },
+    "I0030": {
+      "success": "The My Games Edit button on seeded Alan Wake 2 previously routed to progress despite its label. It now opens Edit Game with the existing fields. Saving the name as Alan Wake 2 Audit displayed Game updated and retained its 0/12 story objectives.",
+      "cancel": "Changing the name to Temporary unsaved name and pressing Cancel closed the editor, retained Alan Wake 2, and returned focus to Edit.",
+      "error": "A whitespace-only name stayed in the editor, focused Game name and showed Please enter a game name. tests/games-lifecycle.test.js verifies a rejected write restores the prior library and weekly tracker in memory, keeps the editor open and shows retry feedback.",
+      "persistence": "Alan Wake 2 Audit and its 0/12 objectives remained after browser reload. The edited seed is marked as user-customized so startup does not overwrite the saved identity fields."
+    },
+    "I0032": {
+      "success": "Mission Progress > Alan Wake 2 Audit > Edit objective opened the inline form with the current objective selected. Saving Phase 12 audited nightmare visions replaced the visible objective while retaining 0/12 progress.",
+      "cancel": "Cancel after entering Unsaved replacement returned to the original Escape the recurring nightmare visions checkbox and discarded the draft.",
+      "error": "Submitting whitespace left the editor open, focused the input and displayed Enter an objective before saving. tests/games-lifecycle.test.js verifies a rejected storage write leaves the active story unchanged and avoids rerendering a false success.",
+      "persistence": "The new objective text survived browser reload and Games > Mission Progress reopen."
+    },
+    "I0033": {
+      "success": "Mission Progress > Delete objective now opens Delete objective? and names the selected objective. Confirming removed Phase 12 audited nightmare visions, showed 0/11 objectives and returned focus to the surviving chapter heading.",
+      "cancel": "Cancel retained Phase 12 audited nightmare visions and restored focus to its Delete objective button.",
+      "error": "tests/games-lifecycle.test.js exercises the actual deleteObjective confirmation callback with a rejected write: it returns false and leaves the objective and rendered tracker unchanged. The shared dialog displays retry feedback and stays open on false.",
+      "persistence": "The objective remained absent and the chapter showed 0/2 after browser reload."
+    },
+    "I0034": {
+      "success": "Clicking Initiation: Author's Nightmare 0/2 in Mission Progress collapsed its objective controls and set aria-expanded=false; clicking again restored them and aria-expanded=true while focus stayed on the chapter button.",
+      "cancel": "This is an immediate reversible disclosure toggle; the second click is the inverse action and does not alter objective completion.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected storage write leaves expanded=true and does not rerender a false collapsed state; the shared safeSet path shows storage error feedback.",
+      "persistence": "The collapsed state remained aria-expanded=false after browser reload; the control then expanded again successfully."
+    },
+    "I0038": {
+      "success": "With Diablo Immortal at 1/7 weekly tasks, Reset Weekly Tasks now opened a named confirmation. Confirming Reset returned Complete daily bounties to unchecked, showed 0/7 and displayed Weekly tasks reset.",
+      "cancel": "Cancel retained the checked task and 1/7 progress, and returned focus to Reset Weekly Tasks.",
+      "error": "tests/games-lifecycle.test.js verifies the confirmed reset returns false on a rejected write while retaining the completed task and avoiding false success; the shared dialog stays open and shows retry feedback.",
+      "persistence": "The reset 0/7 state remained after browser reload."
+    },
+    "I0039": {
+      "success": "Mission Progress's game picker changed the tracker and main spotlight from Alan Wake 2 Audit to Resident Evil 4; focus remained on the selected picker chip. Selecting Alan Wake 2 Audit again reversed the selection. The same picker template supplies Weekly Tasks.",
+      "cancel": "This is an atomic reversible selection; selecting the previous game is the inverse action.",
+      "error": "Picker selection now uses the shared atomic Spotlight/selected-tracker transaction, without a redundant second write. tests/games-lifecycle.test.js verifies rejected writes leave the previous selection and announcement intact; the handler retains focus on the source chip.",
+      "persistence": "Resident Evil 4 remained selected in both tracker and spotlight after browser reload before the inverse selection."
+    },
+    "I0041": {
+      "success": "Games > Appearance > Neon swatch changed the Games theme to neon; Neon became the active swatch and the header Neon control gained pressed state. The header theme control was also checked through the same handler.",
+      "cancel": "Theme selection is atomic with no draft; selecting Midnight reverses the choice.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected theme write returns false before changing visible theme attributes, pressed controls or swatch render; the shared safeSet path shows storage error feedback.",
+      "persistence": "The Neon Appearance swatch and theme remained selected after browser reload."
+    },
+    "I0043": {
+      "success": "Games Overview displayed Continue Playing for Alan Wake 2 Audit at 9% with the next objective. Clicking Continue selected Mission Progress and showed its Alan Wake 2 Audit tracker at 1/11 objectives.",
+      "cancel": "This navigation has no draft; Overview returns to the source view without altering progress.",
+      "error": "Continue uses the same open-progress action and goToTracker handler as I0028. tests/games-lifecycle.test.js verifies a rejected Spotlight/selected-tracker transaction stops navigation and leaves the previous selection intact with error feedback.",
+      "persistence": "After browser reload, Mission Progress remained the selected Games section and showed Alan Wake 2 Audit at 1/11 objectives."
+    },
+    "I0046": {
+      "success": "Suggestions > Hades > Add to My Games opened a tracker-type dialog; confirming Add game showed Hades added to My Games and created a Hades story tracker with 0/3 objectives.",
+      "cancel": "Cancel closed the Hades add dialog and left the library unchanged before the later confirmed add.",
+      "error": "The add uses commitGameChanges, whose rejected transaction rolls library and weekly state back and reports the write error; tests/games-lifecycle.test.js exercises that transaction. The shared provider dialog remains open when its save callback returns false.",
+      "persistence": "After browser reload, My Games showed the new Hades card and its 0/3 tracker."
+    },
+    "I0047": {
+      "success": "Suggestions > Hollow Knight > Save to Wishlist showed Saved to wishlist and a Hollow Knight Wishlist row.",
+      "cancel": "This is an immediate save with no draft. The wishlist Remove control is its inverse action.",
+      "error": "The handler now returns on a rejected wishlist write before success feedback or rerender. tests/games-lifecycle.test.js checks the unchanged saved list, no false toast and no false render.",
+      "persistence": "The Hollow Knight wishlist row remained after browser reload before it was later moved to My Games."
+    },
+    "I0048": {
+      "success": "Suggestions > Outer Wilds > Dismiss removed its result card and showed Suggestion dismissed.",
+      "cancel": "This is an immediate preference action with no pending draft. Reset Preferences can restore dismissed suggestions.",
+      "error": "The handler now waits for a successful dismissed-list write before removing the visible card or reporting success. tests/games-lifecycle.test.js checks rejected-write nonmutation.",
+      "persistence": "Outer Wilds remained absent from the suggestion results after browser reload."
+    },
+    "I0049": {
+      "success": "Suggestions > Forza Horizon 5 > View Details opened a dialog with its blurb, genres, platforms, play styles, mood, resources and suggested tracker tasks.",
+      "cancel": "Close dialog returned focus to the originating View Details control without adding a game.",
+      "error": "This local-catalog detail is read-only and does not write or call a live provider; the handler returns when the catalog ID is unavailable.",
+      "persistence": "The underlying Forza suggestion remained available after the prior reload; opening and closing details did not alter the library or wishlist."
+    },
+    "I0050": {
+      "success": "Wishlist > Hollow Knight > Move to My Games opened the tracker-type dialog; confirming Add game created a Hollow Knight card in My Games and removed its wishlist row.",
+      "cancel": "Cancel closed the first move dialog and retained Hollow Knight on the wishlist; the subsequent confirmed action removed it.",
+      "error": "The move delegates to the add flow. commitGameChanges rolls back a rejected library/weekly transaction and the shared dialog remains open on false. Wishlist removal now avoids a false render on rejected write.",
+      "persistence": "After browser reload, Hollow Knight remained in My Games and the wishlist row was absent."
+    },
+    "I0051": {
+      "success": "After saving Dead Cells to the wishlist, clicking its Remove button hid the Wishlist section.",
+      "cancel": "This is an immediate reversible list edit with no draft; Save to Wishlist can add the catalog game again.",
+      "error": "removeFromWishlist now returns false on a rejected storage write before rerender. tests/games-lifecycle.test.js verifies the prior wishlist remains and no false success view is rendered.",
+      "persistence": "The wishlist remained empty after browser reload."
+    },
+    "I0053": {
+      "success": "My Games > Hades > Resources > Edit resources opened the resource editor. Saving Guide | Audit guide | https://example.com/hades-guide showed Resources saved; reopening details showed the new Guide link.",
+      "cancel": "An invalid draft was canceled; the editor closed, returned focus to Edit resources and left the prior links intact.",
+      "error": "Saving a not-a-url resource kept the editor open and showed Use group | label | a valid http or https URL. The handler commits an immutable library copy through safeSet and returns false on rejected writes; the shared domain dialog keeps false submissions open with retry feedback, verified in tests/domain-ui.test.js.",
+      "persistence": "After browser reload, Hades resources showed only the saved Guide/Audit guide link."
+    },
+    "I0054": {
+      "success": "Games > Sessions > Start Session created a live Alan Wake 2 Audit session. Stop Session ended it, restored Start Session availability, showed Session logged: 1m and displayed a completed log row.",
+      "cancel": "Stop is an immediate state transition with no draft; leaving the live session running before Stop was observed through reload.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected sessions write restores the active session, keeps its timer running, avoids a logged-success toast and rerenders the stored in-progress state.",
+      "persistence": "The active session survived the first reload, and the completed 1m log row survived the reload after Stop."
+    },
+    "I0055": {
+      "success": "Delete session now opened a named confirmation. Confirming Delete removed the Alan Wake 2 Audit 1m row, showed No sessions logged yet and announced Session deleted.",
+      "cancel": "Cancel closed the confirmation and retained the completed row.",
+      "error": "tests/games-lifecycle.test.js verifies the confirmation callback returns false after a rejected write and retains the prior log without rerender or success toast; the shared dialog remains open with retry feedback on false.",
+      "persistence": "The empty sessions state survived browser reload."
+    },
+    "I0056": {
+      "success": "Games > Journal > Edit loaded Phase 12 journal audit into the form; saving a changed title and body updated the displayed entry.",
+      "cancel": "Cancel edit discarded Unsaved draft and retained the original body; the form returned to Save Entry mode.",
+      "error": "A whitespace title kept Update Entry mode open, focused Entry title and showed Enter a title and journal entry before saving. tests/games-lifecycle.test.js verifies a rejected write restores the original stored entry, retains the edit draft and shows retry feedback.",
+      "persistence": "Phase 12 journal audit updated and Updated audit body survived browser reload."
+    },
+    "I0057": {
+      "success": "Games > Journal > Delete opened Delete journal entry?; confirming Delete removed the entry and showed No journal entries yet.",
+      "cancel": "Cancel closed the confirmation and retained the entry.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected confirmed write returns false, restores the original journal from storage and avoids a false rendered deletion; the shared confirmation stays open on false.",
+      "persistence": "The empty journal state survived browser reload."
     },
     "I0153": {
       "success": "Personal Add shortcut opened a form with Personal selected; saving Audit Personal displayed its link in Personal shortcuts.",
