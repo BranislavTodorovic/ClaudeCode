@@ -1,6 +1,6 @@
 # OneSpace — Combined Implementation Plan V2
 
-**This is the standing plan for OneSpace.** It replaces the previous contents of this file, carrying forward **every step** of that earlier version (Part A regrouping, Part B Phases 1–8, Part C defects C.1–C.7), marking what is already delivered, correcting the errors found in it, and folding in the requirements raised since. It is self-contained: no other document is needed to execute it.
+**This is the standing product/scope plan for OneSpace.** It replaces the previous contents of this file, carrying forward **every step** of that earlier version (Part A regrouping, Part B Phases 1–8, Part C defects C.1–C.7), marking what is already delivered, correcting the errors found in it, and folding in the requirements raised since. It is self-contained for product scope and rationale, but execution is governed by the coordinated five-document authority set listed below; no single document should be used in isolation when resuming or declaring completion.
 
 The working checklist derived from this plan is `docs/IMPLEMENTATION-STEPS.md`. This document holds the reasoning; that one holds the boxes to tick.
 
@@ -15,8 +15,9 @@ the agent must read:
 2. `docs/IMPLEMENTATION-STEPS.md`
 3. `docs/REVISED-IMPLEMENTATION-PLAN.md`
 4. `VERIFICATION.md`
+5. `README.md`
 
-Then inspect repository state, Git state and persistent implementation evidence before editing code.
+Then inspect repository state, Git state, the actual implementation and persistent implementation evidence before editing code.
 
 Previous chat summaries are not completion evidence.
 
@@ -93,10 +94,11 @@ Every step from the previous plan is preserved below with a status marker:
 23            game enrichment + tracker intelligence
 24            global search/filter integration
 25            final user-visible product acceptance
+26            final whole-project integrity and release-readiness audit
 13.3          final documentation (always last)
 ```
 
-Execute phases in the numeric/approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. Phase 12 is the original-plan verification checkpoint; V2 Phases 14–19 follow it; additive final-fidelity Phases 20–25 follow Gate 19; and Phase 13.3 remains the final documentation step only after Gate 25.
+Execute phases in the numeric/approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. Phase 12 is the original-plan verification checkpoint; V2 Phases 14–19 follow it; additive final-fidelity Phases 20–25 follow Gate 19; Phase 26 performs the final whole-project integrity audit after Gate 25; and Phase 13.3 remains the final documentation step only after Gate 26.
 
 ---
 
@@ -1315,7 +1317,7 @@ Old Part B Phase 8, extended.
 13. Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
 14. Set `MISSING_ASSET='assets/destinations/azores-card.webp'` on `tests/browser-server.js` to exercise the current photograph-to-illustration fallback path. The historical `azores.svg` target became the fallback asset after Phase 10 replaced the primary image with licensed WebP photography; failing the SVG alone no longer triggers fallback.
 15. Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason.
-16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint, followed by additive final-fidelity Phases 20–25; **Phase 13.3 remains final and runs only after Gate 25**.
+16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint, followed by additive final-fidelity Phases 20–25 and then the Phase 26 whole-project integrity audit; **Phase 13.3 remains final and runs only after Gate 26**.
 
 ---
 
@@ -1735,7 +1737,7 @@ Required responsive coverage preserves the established widths and adds wide-desk
 
 No V2 item remains PENDING, IMPLEMENTED / NOT VERIFIED, or BLOCKED.
 
-Only after Gate 19 passes may the additive final-fidelity Phases 20–25 begin. Phase 13.3 remains blocked until Gate 25 passes.
+Only after Gate 19 passes may the additive final-fidelity Phases 20–25 begin. Gate 25 then authorizes Phase 26. Phase 13.3 remains blocked until Gate 26 passes.
 
 
 
@@ -2289,21 +2291,483 @@ The historical plan is extended by:
 - **Gate 23 — Game Enrichment and Tracker Intelligence**
 - **Gate 24 — Global Search / Filter Integration**
 - **Gate 25 — Final User-Visible Product Acceptance**
+- **Gate 26 — Whole-Project Final Integrity and Release Readiness**
 
-Only after Gate 25 may Phase 13.3 finalize documentation.
+Gate 25 does **not** authorize final documentation. It authorizes Phase 26.
+
+Only after Gate 26 may Phase 13.3 finalize documentation.
 
 Final execution tail:
 
-`Gate 19 -> Phase 20 -> Gate 20 -> Phase 21 -> Gate 21 -> Phase 22 -> Gate 22 -> Phase 23 -> Gate 23 -> Phase 24 -> Gate 24 -> Phase 25 -> Gate 25 -> Phase 13.3 FINAL`
+`Gate 19 -> Phase 20 -> Gate 20 -> Phase 21 -> Gate 21 -> Phase 22 -> Gate 22 -> Phase 23 -> Gate 23 -> Phase 24 -> Gate 24 -> Phase 25 -> Gate 25 -> Phase 26 -> Gate 26 -> Phase 13.3 FINAL`
 
+
+
+# PHASE 26 — Final Whole-Project Integrity and Release-Readiness Audit
+
+Phase 26 is the last technical and product-quality audit before final documentation.
+
+It introduces **no new feature family**. Its purpose is to inspect the fully assembled OneSpace repository and application as one finished system after every implementation and final-fidelity phase has completed.
+
+Historical VERIFIED work remains valid evidence when it still matches the final code. Phase 26 does not blindly replay the entire project. It must, however, verify the integrated final state and re-verify every area whose later changes could invalidate earlier evidence.
+
+## 26.1 Entry condition and final-candidate freeze
+
+Phase 26 begins only after Gate 25 is VERIFIED.
+
+Before any Phase 26 fix:
+
+1. confirm working directory, Git root, branch and HEAD;
+2. inspect `git status --short --untracked-files=all`;
+3. inspect `git diff`;
+4. record intentional uncommitted changes;
+5. confirm the complete Phase 0–25 checklist/evidence state;
+6. freeze unrelated feature expansion;
+7. identify the normal user-data origin and a disposable test origin; destructive reset/import/failure tests run only on the disposable origin unless the user explicitly authorizes otherwise.
+
+During Phase 26, code changes are allowed only to correct a discovered defect, regression, security issue, structural inconsistency, visual-quality failure, evidence mismatch or acceptance gap.
+
+## 26.2 Git, repository and file hygiene
+
+Audit the complete OneSpace tree.
+
+Verify:
+
+- no accidental file was created outside the OneSpace project directory;
+- no unexplained temporary, debug, copy, backup or generated artifact remains;
+- no obsolete duplicate module is unintentionally loaded;
+- no unrelated broad change is mixed into the final diff;
+- tracked and untracked files are intentional;
+- cleanup is explicit and safe rather than achieved with destructive `reset`/`clean` commands.
+
+## 26.3 `.gitignore`, secrets and credentials
+
+Verify the final credential boundary end to end.
+
+Requirements:
+
+- real credentials exist only in approved local ignored storage;
+- `config/secrets/` and approved local-secret patterns are ignored;
+- committed example/template files contain placeholders only;
+- `git ls-files` proves no real secret file is tracked;
+- `git check-ignore` proves intended local secret files are ignored;
+- Git path history is inspected for secret/config paths and any known prior exposure is evaluated without echoing raw secret values;
+- if a real credential was ever committed or pushed, rotation/revocation and the chosen history-remediation decision are explicitly recorded before final PASS;
+- browser HTML/JavaScript contains no provider credential;
+- tests/fixtures contain no real credential;
+- screenshots, evidence and logs contain no real credential;
+- server/browser error messages do not leak credentials;
+- representative `.json` and otherwise-servable `.js` secret paths are denied by the server;
+- browser Network/Sources cannot retrieve secret files;
+- server-side provider requests do not expose secret-bearing headers to the browser.
+
+Never copy a real key/token/client secret into persistent evidence.
+
+If a real credential is discovered in tracked history or published output, record the security failure and required rotation/remediation. Do not hide the finding.
+
+## 26.4 Final project structure and load order
+
+Audit the final root plus `shared/`, `home/`, `work/`, `personal/`, `explore/`, `games/`, `movies/`, `styles/`, `server/`, `config/`, `assets/`, `tests/` and `docs/`.
+
+Verify:
+
+- every loaded script exists;
+- every loaded stylesheet exists;
+- every repo-relative require/import resolves;
+- every asset path resolves or follows its approved deterministic fallback;
+- classic-script execution order remains valid;
+- there is no duplicate mount or competing controller ownership;
+- side-effect modules remain intentionally ordered;
+- Home remains the only permitted cross-domain aggregator;
+- domain boundaries remain intact.
+
+## 26.5 Final route-by-route UI quality
+
+Walk the fully assembled product through:
+
+- Home;
+- Work / Projects;
+- Personal;
+- Explore;
+- Games;
+- Movies & Series;
+- Shortcuts;
+- Productivity;
+- Notes;
+- Settings;
+- Projects compatibility alias.
+
+For every route inspect the final integrated state:
+
+- page hierarchy;
+- header/hero;
+- typography;
+- spacing;
+- cards/grids;
+- forms/controls;
+- dialogs/sheets;
+- loading;
+- empty;
+- error;
+- disabled;
+- success;
+- tooltip;
+- focus;
+- long-text handling;
+- image/media/fallback behavior;
+- visual consistency with the rest of OneSpace.
+
+A page does not pass merely because it renders without an exception. It must be usable, coherent and visually finished.
+
+## 26.6 Final application-icon audit
+
+Review all visible application-control icons across every route and shared UI.
+
+Verify:
+
+- one coherent modern SVG language;
+- the same shared action uses the same recognizable glyph where context permits;
+- no accidental emoji or unrelated Unicode control glyph remains;
+- no broken/missing icon;
+- optical size, baseline and alignment are consistent;
+- light/dark/palette contrast is correct;
+- icon-only controls retain accessible names, focus and state;
+- brand/provider/content marks remain legitimate source-identity exceptions.
+
+Do not replace already-good icons merely to create churn.
+
+## 26.7 Final cinematic audit
+
+Review every distinct OneSpace scene in its final assembled state.
+
+Verify:
+
+- domain-specific visual identity;
+- Full-mode ENTRY / WAKE-UP;
+- SETTLE;
+- AMBIENT / ALIVE;
+- EXIT / RESET;
+- visible 2–5 second staged opening where required;
+- final page-level composition, not hero-only animation;
+- meaningful desktop side fields;
+- wide/ultrawide composition;
+- selected Movie/Game/Destination environmental art;
+- internal content changes use lightweight transitions rather than replaying full ENTRY;
+- route cleanup prevents art/theme/CSS-variable leakage;
+- Full / Subtle / Off are visibly distinct;
+- reduced motion is genuinely still;
+- touch/coarse-pointer behavior is safe;
+- decorative layers never intercept controls;
+- text/control contrast remains readable.
+
+A route that is technically animated but still reasonably appears static, generic or visually empty is not VERIFIED.
+
+## 26.8 Themes and Settings integration
+
+Verify the final interaction of:
+
+- Auto/light/dark;
+- every delivered palette;
+- accents;
+- density;
+- scene intensity;
+- motion preference;
+- start page;
+- Games themes;
+- Movies themes;
+- provider status;
+- reset preferences;
+- reset all;
+- export/import entry points.
+
+Settings must survive reload correctly and must not unexpectedly erase unrelated user state or palette/theme choices.
+
+## 26.9 Core-domain integrated regression
+
+Account for final integrated behavior in:
+
+### Home
+Aggregation, Quick Access, navigation and domain summaries.
+
+### Work / Projects
+Projects, Board, stories, defects, tasks, filters, reminders, close/reopen, Backlog, History and persistence.
+
+### Personal
+Goals/routines/habits, optional target behavior, add/edit/delete/cancel and persistence.
+
+### Productivity
+Tasks, timer, countdown/reminder behavior and persistence.
+
+### Notes
+Create/edit/delete, pin/unpin, search and persistence.
+
+### Shortcuts
+Built-ins, hide/restore, custom add/edit/delete, ordering, categories including Gaming, duplicates and persistence.
+
+Use still-valid Phase 12 evidence where applicable. Re-run any path affected by later Phase 14–25 changes.
+
+## 26.10 Movies & Series final integration
+
+Verify together:
+
+- local discovery;
+- live provider discovery;
+- movie/series distinction;
+- search/typeahead;
+- provider-supported filter semantics;
+- pagination;
+- details;
+- real poster/backdrop where available;
+- explicit Add/Track;
+- watchlist/status;
+- watched state;
+- remove/untrack;
+- reload;
+- provider-disabled offline reopen;
+- provenance/attribution;
+- deterministic fallback;
+- selected-content cinematic integration.
+
+## 26.11 Games final integration
+
+Verify together:
+
+- local discovery;
+- live provider discovery;
+- provider-supported filters;
+- cover/background;
+- description and provider metadata;
+- explicit Add;
+- tracker inference;
+- user correction before persistence;
+- Diablo Immortal weekly/live-service reference behavior;
+- at least one additional live-service example proving generality;
+- campaign/story flow;
+- approved complete-progression example;
+- partial/unavailable progression behavior;
+- resources;
+- sessions;
+- journal;
+- user progress preservation through enrichment/refresh;
+- reload;
+- provider-disabled offline reopen;
+- selected-content cinematic integration.
+
+No mission, chapter, level, quest, objective or progression data may be invented.
+
+## 26.12 Explore final integration
+
+Verify together:
+
+- all curated destinations;
+- provider-backed global discovery;
+- preferences;
+- combined filters;
+- ranking/recommendation explanations;
+- Surprise Me;
+- details;
+- licensed/valid imagery and fallback;
+- Save/remove;
+- trip-board notes;
+- priority;
+- status;
+- ordering;
+- reload;
+- provider-disabled saved-destination behavior;
+- provenance/attribution;
+- selected-content cinematic integration.
+
+## 26.13 Responsive final matrix
+
+Verify every top-level route at:
+
+- 390 px;
+- 760 px;
+- 1024 px;
+- 1440 px;
+- 1920 px;
+- representative ultrawide, preferably approximately 3440×1440.
+
+For each applicable route/width verify:
+
+- no horizontal document overflow;
+- no unintended overlap;
+- no clipped control;
+- no broken visible media;
+- usable dialogs/sheets;
+- intentional environmental crop;
+- readable content;
+- coherent density;
+- usable touch targets where applicable.
+
+## 26.14 Accessibility and input audit
+
+Verify:
+
+- keyboard-only navigation;
+- logical Tab order;
+- Enter/Space;
+- Escape;
+- visible focus;
+- modal/sheet focus trap;
+- focus return;
+- accessible names;
+- `aria-live`;
+- `aria-current`;
+- `aria-expanded`;
+- `aria-pressed`;
+- checkbox/radio semantics;
+- touch targets;
+- no critical hover-only behavior;
+- reduced-motion compliance.
+
+## 26.15 Storage, backup, migration and reset integrity
+
+Verify the final data contract:
+
+- current v4 export;
+- complete v2 import;
+- complete v3 import;
+- complete v4 import;
+- malformed/invalid import rejection;
+- rejected-write/rollback safety;
+- unrelated-key preservation where required;
+- provider-origin Movies;
+- provider-origin Games;
+- provider-origin Destinations;
+- game tracker/progression state;
+- Work state;
+- Personal state;
+- Notes;
+- Explore/trip board;
+- reset preferences;
+- reset all.
+
+No final feature may silently fall outside supported persistence/backup behavior.
+
+## 26.16 Live-provider to offline transition
+
+For every intended production provider domain, using the real configured production path required by Gate 22 unless the user explicitly approved a provider-specific exception:
+
+1. start with live provider access;
+2. perform representative real search;
+3. Add/Save a representative record;
+4. reload while online;
+5. disable/fail provider access;
+6. reopen the saved record.
+
+Verify:
+
+- normalized local record remains meaningful;
+- user-owned state remains intact;
+- local/curated content still works;
+- global provider state is explicitly unavailable/degraded;
+- local results are never mislabeled as live provider results;
+- media follows the approved persisted/cached/local/fallback contract.
+
+`NOT CONFIGURED` or mock-only evidence cannot satisfy Gate 26 for an intended production provider. If credentials are missing, record `NOT CONFIGURED`, continue unrelated checks, and keep Gate 26 blocked unless the user explicitly approved a provider-specific exception.
+
+## 26.17 Console, network and runtime health
+
+During final browser passes verify:
+
+- no uncaught application exception;
+- no accidental application 404;
+- no secret leakage;
+- no duplicate mount/listener symptoms;
+- no uncontrolled provider request storm;
+- stale provider responses cannot overwrite newer UI;
+- late details cannot reopen closed/stale UI;
+- no cross-route theme/art leakage;
+- observed network behavior matches the documented server/provider boundary;
+- no runaway timers/animation loops, uncontrolled DOM growth, duplicate listeners or obviously unbounded runtime work appears during representative navigation;
+- no unnecessary full-resolution provider media is repeatedly fetched for list/card roles;
+- disposable test servers/processes opened by the audit are cleanly stopped when their evidence is complete.
+
+## 26.18 Final complete automated regression
+
+After the **last** Phase 20–26 code change:
+
+- run `node --test tests/`;
+- run every repository-required specialized structural/browser/provider/storage/tracker suite not included by that command;
+- record the actual final pass/fail counts;
+- resolve every unexpected failure before Gate 26.
+
+Historical test counts are context only. They are not final proof.
+
+## 26.19 Evidence integrity
+
+Audit `docs/implementation-evidence/`, audit JSONL and final acceptance records.
+
+Verify:
+
+- every required terminal checklist state has persistent evidence;
+- evidence matches current code;
+- mock and live provider evidence remain distinct;
+- screenshots/measurements match claimed states and widths;
+- no credential appears in evidence;
+- no stale evidence is used after a relevant implementation change;
+- asset/provider provenance, licensing/attribution manifests and source records still match the assets/data actually shipped or displayed;
+- every approved exception is explicit;
+- no unexplained PENDING, IMPLEMENTED / NOT VERIFIED or BLOCKED state remains.
+
+## 26.20 Five-authority-document consistency
+
+Compare in full:
+
+1. `docs/agent-instructions.md`;
+2. `docs/IMPLEMENTATION-STEPS.md`;
+3. `docs/REVISED-IMPLEMENTATION-PLAN.md`;
+4. `VERIFICATION.md`;
+5. `README.md`.
+
+They must agree on:
+
+- delivered scope;
+- execution order;
+- provider architecture and live-vs-mock semantics;
+- secrets policy;
+- cinematic contract;
+- icon contract;
+- Games tracker/progression contract;
+- filter semantics;
+- backup compatibility;
+- final verification truth.
+
+Do not perform final prose reconciliation here. Phase 13.3 remains responsible for final documentation.
+
+## 26.21 Final Git/diff review
+
+At the end of Phase 26:
+
+- inspect `git status --short --untracked-files=all`;
+- inspect `git diff`;
+- confirm every remaining change is intentional;
+- confirm no secret or temp artifact is included;
+- confirm no unrelated file outside OneSpace was modified;
+- persist final repository-state evidence.
+
+## Gate 26 — Whole-Project Final Integrity
+
+Gate 26 passes only when every Phase 26 requirement is VERIFIED and the fully assembled OneSpace repository/application has **no unresolved functional, visual, UI, iconographic, cinematic, responsive, accessibility, persistence, backup, provider, media, security, secrets, Git, repository-structure, runtime, console/network, testing, evidence-integrity or authority-consistency issue**. Every intended production provider must also be `LIVE VERIFIED`, unless the user explicitly approved a provider-specific terminal exception.
+
+If Phase 26 finds a defect:
+
+`identify -> minimally fix -> affected automated regression -> affected browser/visual verification -> persistent evidence -> continue Phase 26`
+
+Do not formally reopen a historical phase merely because Phase 26 found a regression. The fix is recorded in Phase 26 while retaining the original phase evidence.
+
+Only after Gate 26 passes may Phase 13.3 begin.
+
+---
 
 # PHASE 13 — Project documentation
 
-The repository has `README.md` (architecture and contracts), `VERIFICATION.md` (a recorded acceptance run), `REVISED-IMPLEMENTATION-PLAN.md` (the provider-era brief) and `agent-instructions.md` (the standing plan). **It has no sequenced, step-by-step execution document** — nothing an implementer can work down and tick off. Create one.
+When Phase 13 was introduced, the repository already had `README.md`, `VERIFICATION.md`, `REVISED-IMPLEMENTATION-PLAN.md` and the standing plan, but it lacked the sequenced execution checklist. Phase 13.2 created `docs/IMPLEMENTATION-STEPS.md`; that historical reason for the split is retained here, while the current repository now uses all five documents as one coordinated authority set.
 
 > **Sequencing — this phase runs in two parts, not at the end.**
 > **13.1 and 13.2 run FIRST, before Phase 0.3**, because they are the working documents every later phase is executed against — a checklist written after the work is finished is a report, not a plan.
-> **13.3 runs LAST, after Gate 25**, because it records what was actually delivered across the original plan, V2 scope and the approved final-fidelity Phases 20–25.
+> **13.3 runs LAST, after Gate 26**, because it records what was actually delivered across the original plan, V2 scope, approved final-fidelity Phases 20–25 and the Phase 26 whole-project integrity audit.
 > It is numbered 13 so the documentation deliverables stay together and readable; the numbering is not the execution order.
 
 ## 13.1 Rewrite `agent-instructions.md` — **[DONE]**
@@ -2325,11 +2789,15 @@ A sequenced execution checklist — the working document, distinct from the plan
 - A "Do not break" header block listing the invariants from 1.9 — storage keys, global names, load order, entry URL, backup compatibility.
 - A status column an implementer updates as work lands, so progress is visible without reading a diff.
 
-## 13.3 Keep the rest current — runs after Gate 25
+## 13.3 Keep the complete authority set current — runs after Gate 26
 
-- `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
-- `VERIFICATION.md` — a fresh acceptance run at the end; fix the `18973` → `18974` port error and the bare test filenames.
-- `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile with what Phase 6 actually delivers, so the two documents stop contradicting each other on the provider question.
+- `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits and final verified delivery status.
+- `VERIFICATION.md` — a fresh acceptance record after the final code change, including the actual final test/browser/provider/security results.
+- `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile architecture language with what was actually delivered.
+- `docs/agent-instructions.md` — reconcile standing-scope/status wording with the final delivered product without rewriting historical evidence.
+- `docs/IMPLEMENTATION-STEPS.md` — ensure detailed statuses, Progress table, Gate 26 and Gate 13.3 exactly match the final evidence set.
+
+Phase 13.3 is documentation reconciliation only. It must not silently weaken a failed requirement into a success criterion.
 
 ## Additional baseline correction confirmed by the user — September 21, 2026
 

@@ -1,6 +1,6 @@
 # OneSpace — Numbered implementation checklist
 
-Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21 → 22 → 23 → 24 → 25 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
+Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21 → 22 → 23 → 24 → 25 → 26 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
 
 **Execution authority:** completion, status, evidence, phase-gate and resume behavior are governed by the `Mandatory execution and verification contract` below. The standing plan defines **what** must be delivered; this checklist governs **how completion is proven**.
 
@@ -286,14 +286,15 @@ After any:
 do this **before editing code**:
 
 1. Read this contract.
-2. Read the active phase in `docs/agent-instructions.md`.
-3. Read the matching section in this checklist.
-4. Inspect `git status`.
+2. Re-read the current repository versions of all five authority documents in order: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`, `VERIFICATION.md`, `README.md`.
+3. Re-read the active phase and matching checklist section after the full-document pass.
+4. Inspect `git status --short --untracked-files=all`.
 5. Inspect `git diff`.
 6. Inspect the actual current implementation.
-7. Inspect existing evidence files for the active phase.
+7. Inspect existing evidence files for the active phase and the audit JSONL/checkpoint used by the current run.
 8. Identify the last checklist item whose evidence independently proves VERIFIED.
-9. Resume from that exact item.
+9. Identify the exact next unfinished item/facet from persistent evidence.
+10. Resume from that exact point without repeating already-valid evidence.
 
 Never advance to the next phase merely because a previous chat summary said the current phase was complete.
 
@@ -618,7 +619,7 @@ No final "complete" statement is allowed until these conditions are true.
 | 9 | VERIFIED | Historical Movies/Series behavior and the explicit 9.2.6 licensed-fallback acceptance are evidenced; live provider/media acceptance is governed by Phase 22. |
 | 10 | VERIFIED | Items 300–320 VERIFIED; item 318 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json and image-fallback-2026-09-24.json). |
 | 11 | VERIFIED | Items 321–334 VERIFIED; item 328 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json). |
-| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–346 and 348 VERIFIED; item 347 is next, and Gate 12 remains open. |
+| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–346 and 348 VERIFIED; item 347 remains OPEN mid-audit and must resume from its persistent control-inventory evidence; Gate 12 remains open. |
 | 14 | Pending | Provider truth audit and V2 scope reconciliation. |
 | 15 | Pending | Global destination discovery. |
 | 16 | Pending | First-class provider records and data integrity. |
@@ -631,7 +632,8 @@ No final "complete" statement is allowed until these conditions are true.
 | 23 | Pending | Game enrichment and tracker intelligence. |
 | 24 | Pending | Global search/filter integration. |
 | 25 | Pending | Final user-visible product acceptance. |
-| 13.3 | PENDING | Runs only after Gate 25. |
+| 26 | Pending | Final whole-project integrity and release-readiness audit. |
+| 13.3 | PENDING | Runs only after Gate 26. |
 
 ## Phase 13.1 — Standing plan
 
@@ -3633,7 +3635,7 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Pending | Pending |
 
-350. [ ] **12.16** — Do not perform final documentation here. V2 Phases 14–19 run next, followed by additive final-fidelity Phases 20–25; final documentation remains **Phase 13.3 after Gate 25**.
+350. [ ] **12.16** — Do not perform final documentation here. V2 Phases 14–19 run next, followed by additive final-fidelity Phases 20–25 and then the Phase 26 whole-project integrity audit; final documentation remains **Phase 13.3 after Gate 26**.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
@@ -4228,7 +4230,7 @@ No final "complete" statement is allowed until these conditions are true.
 
   Files: `docs/IMPLEMENTATION-STEPS.md`, Phase 19 evidence, final current test/browser run.
 
-  Acceptance: All original-plan and V2 requirements pass together. Phases 20–25 may now execute; Phase 13.3 remains blocked until Gate 25.
+  Acceptance: All original-plan and V2 requirements pass together. Phases 20–25 may now execute; Gate 25 then authorizes Phase 26, and Phase 13.3 remains blocked until Gate 26.
 
   | Status | Evidence |
   |---|---|
@@ -4805,7 +4807,7 @@ PASS requires that a user can understand what was searched globally, what was fi
 
 # Phase 25 — Final User-Visible Product Acceptance
 
-This is the last implementation gate before Phase 13.3.
+This is the last user-visible final-fidelity gate before the Phase 26 whole-project integrity audit.
 
 ## 25.1 Route-by-route final visual acceptance
 
@@ -4908,7 +4910,256 @@ Verify full product at:
 
 ### Gate 25 — Final Product Gate
 
-Only after Gate 25 passes may Phase 13.3 begin.
+Gate 25 completes user-visible product acceptance and authorizes Phase 26.
+
+It does **not** authorize Phase 13.3 directly.
+
+---
+
+
+# Phase 26 — Final Whole-Project Integrity and Release-Readiness Audit
+
+> **Entry condition:** Gate 25 is VERIFIED.
+>
+> Phase 26 adds no new product feature family. It audits the fully assembled final system as one release candidate. Valid prior evidence may be reused when later changes did not invalidate it, but every affected subsystem must be re-verified and the complete final automated suite must run after the last implementation change.
+>
+> Apply the Mandatory execution and verification contract to every 26.x item. No Phase 26 item may be skipped.
+
+- [ ] **26.1 — Freeze and record the final candidate before audit changes.**
+
+  Files: Git/repository state, `docs/implementation-evidence/phase26/`.
+
+  Acceptance: Record working directory, Git root, branch, HEAD, `git status --short --untracked-files=all`, `git diff`, intentional uncommitted changes and confirmation that Gate 25 is VERIFIED. Record the normal user-data origin and a disposable test origin. Destructive reset/import/failure tests must run on the disposable origin unless the user explicitly authorizes otherwise. Unrelated feature expansion is frozen.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.2 — Audit Git and repository hygiene.**
+
+  Files: entire OneSpace project tree, Git metadata relevant to the project.
+
+  Acceptance: No unexplained temp/debug/copy/backup/generated artifact, obsolete duplicate loaded module, unintended outside-project mutation or unrelated broad change remains. Cleanup is explicit and safe; no destructive reset/clean is used merely to manufacture a clean tree.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.3 — Audit `.gitignore`, local secret placement and tracked-secret state.**
+
+  Files: `.gitignore`, `config/`, Git index, provider configuration.
+
+  Acceptance: Real credentials exist only in approved local ignored storage; expected secret/local patterns are ignored; committed examples contain placeholders only; `git ls-files` shows no real secret file; `git check-ignore` confirms representative local secret files are ignored. Inspect Git path history for secret/config paths and evaluate any known prior exposure using safe path metadata/redacted fingerprints rather than printing raw values. If a real credential was ever committed/pushed, rotation/revocation and the chosen history-remediation decision must be recorded before final PASS. Evidence must never print the real value.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.4 — Prove final server/browser credential isolation.**
+
+  Files: `server/`, `config/`, browser source/network, tests/evidence/logs.
+
+  Acceptance: Representative secret `.json` and otherwise-servable `.js` paths are denied; browser HTML/JS/Network/Sources cannot retrieve credentials; errors/logs/evidence/screenshots/fixtures contain no real secret; provider Authorization data remains server-side.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.5 — Audit final source structure, references and execution/load order.**
+
+  Files: `index.html`, all source folders, CSS, assets, server, tests.
+
+  Acceptance: Every loaded script/style and repo-relative require/import resolves; assets resolve or use approved fallback; classic-script order remains valid; side-effect ownership is intentional; there is no duplicate mount/controller; Home remains the only approved cross-domain aggregator.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.6 — Perform the final route-by-route UI-quality walkthrough.**
+
+  Files: browser, all route markup/styles/modules, `docs/implementation-evidence/phase26/`.
+
+  Acceptance: Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and the Projects alias are inspected for hierarchy, hero/header, typography, spacing, cards/grids, forms/controls, dialogs/sheets, loading/empty/error/disabled/success states, tooltips, focus, long text, media/fallback and overall visual consistency. A route must be usable and visually finished, not merely error-free.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.7 — Perform the final application-icon audit across the complete UI.**
+
+  Files: all route/shared UI surfaces, icon helpers/assets.
+
+  Acceptance: One coherent modern application-control icon language remains; shared actions use consistent recognizable glyphs; no accidental emoji/unrelated Unicode control remains; no broken/missing/clipped/misaligned icon exists; icon-only controls are accessible; light/dark/palette states remain legible; legitimate brand/provider/content marks remain exceptions.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.8 — Perform the final cinematic lifecycle and composition audit on every distinct scene.**
+
+  Files: scene controller, route cinematic CSS/markup, browser visual evidence.
+
+  Acceptance: Each distinct route proves domain identity, Full ENTRY/WAKE-UP, SETTLE, AMBIENT/ALIVE and EXIT/RESET; Full entry is visibly staged, not technically-only; page-level composition uses wide/ultrawide side fields intentionally; selected Movie/Game/Destination art integrates correctly; internal updates do not replay full entry; route cleanup prevents art/theme leakage; Full/Subtle/Off/reduced-motion states are correct; decorative layers do not capture controls; readability remains intact.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.9 — Reconcile final Themes/Settings integration.**
+
+  Files: Settings UI/controller, theme tokens, cinematic preferences, storage.
+
+  Acceptance: Auto/light/dark, all delivered palettes, accents, density, scene intensity, motion, start page, Games themes, Movies themes, provider status, reset preferences, reset all and export/import entry points work together and survive reload without silently destroying unrelated user state or palette/theme choices.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.10 — Reverify final integrated Home, Work/Projects, Personal, Productivity, Notes and Shortcuts behavior.**
+
+  Files: corresponding domain modules, existing Phase 12 evidence, browser.
+
+  Acceptance: Every core domain is accounted for in the final build. Still-valid Phase 12 evidence may be referenced, but any behavior affected by later phases is re-run. Work lifecycle/history/backlog, Personal goals/routines/habits, Productivity timers/tasks, Notes CRUD/pinning/search, Home aggregation/Quick Access and Shortcut built-in/custom/hide/restore/order/category behavior remain correct and persistent.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.11 — Reverify Movies & Series as a complete final integrated flow.**
+
+  Files: `movies/`, provider/server/media layers, storage, browser.
+
+  Acceptance: Local + live discovery, movie/series distinction, search/typeahead, provider-supported filter semantics, pagination, details, poster/backdrop, explicit Add/Track, watchlist/status/watched, untrack/remove, reload, offline reopen, provenance/attribution, fallback and selected-content cinematic integration pass together.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.12 — Reverify Games as a complete final integrated flow.**
+
+  Files: `games/`, provider/progression sources, storage, browser.
+
+  Acceptance: Local + live discovery, supported filters, media/description/metadata, explicit Add, tracker inference and user correction, Diablo Immortal weekly reference, at least one additional live-service example, campaign/story flow, approved complete-progression example, incomplete/unknown progression fallback, resources, sessions, journal, progress-preserving refresh/enrichment, reload/offline and selected-content cinematic integration all pass. No progression content is invented.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.13 — Reverify Explore as a complete final integrated flow.**
+
+  Files: `explore/`, destination provider/server/media layers, storage, browser.
+
+  Acceptance: Curated destinations, global discovery, preferences, combined filters, ranking/explanations, Surprise Me, details, valid imagery/fallback, Save/remove, trip-board notes/priority/status/order, reload, provider-disabled saved records, attribution/provenance and cinematic integration pass together.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.14 — Run the final responsive and wide/ultrawide matrix across all top-level routes.**
+
+  Files: browser evidence/measurements.
+
+  Acceptance: Every top-level route is checked at 390, 760, 1024, 1440, 1920 and a representative ultrawide viewport (preferably approximately 3440×1440). No horizontal document overflow, unintended overlap, clipped control, broken visible media or unusable dialog/sheet remains; environmental crop and side-field composition are intentional and content remains readable.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.15 — Run the final accessibility and input audit.**
+
+  Files: browser, shared UI/dialog helpers, all routes.
+
+  Acceptance: Keyboard navigation, logical Tab order, Enter/Space, Escape, visible focus, modal/sheet focus trap, focus return, accessible names, `aria-live`, `aria-current`, `aria-expanded`, `aria-pressed`, checkbox/radio semantics, touch targets, hover independence and reduced-motion behavior are verified in the final build.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.16 — Run final storage, backup, migration, rollback and reset integrity.**
+
+  Files: storage/backup code, fixtures, provider-origin records, browser/tests.
+
+  Acceptance: Current v4 export, complete v2/v3/v4 import, malformed/invalid rejection, rejected-write rollback, unrelated-key preservation where required, provider-origin Movies/Games/Destinations, game tracker/progression, Work/Personal/Notes/Explore state, reset preferences and reset all behave according to contract. No final feature silently falls outside backup/persistence support.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.17 — Verify the final live-provider-to-offline transition for every intended production rich domain.**
+
+  Files: live provider configuration, server, browser, storage.
+
+  Acceptance: For Movies/Series, Games and Destinations, use the real configured production path required by Gate 22 unless the user explicitly approved a provider-specific exception. Perform real search -> Add/Save -> reload online -> provider unavailable -> reopen saved record. User-owned state and normalized local records remain usable; local/curated content remains available; global provider state is explicitly degraded; local results are not mislabeled as live; media follows approved persisted/cached/local/fallback behavior. `NOT CONFIGURED` or mock-only evidence does not satisfy this item for an intended production provider; Gate 26 remains blocked unless the user explicitly approved a provider-specific terminal exception.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.18 — Verify final console, network and runtime health.**
+
+  Files: browser console/network evidence, server/runtime logs.
+
+  Acceptance: No uncaught application exception, accidental application 404, credential leakage, duplicate mount/listener symptom, uncontrolled provider request storm, stale-response overwrite, late-detail reopen, cross-route theme/art leakage, runaway timer/animation loop, obvious unbounded DOM/runtime growth or repeated full-resolution provider-media fetch for card/list roles remains. Observed network traffic matches the documented browser -> local server -> provider boundary. Disposable test servers/processes opened by the audit are stopped after their evidence is complete.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.19 — Run the complete final automated regression after the last implementation fix.**
+
+  Files: `tests/`, specialized test commands defined by the repository, evidence.
+
+  Acceptance: `node --test tests/` plus every required specialized structural/browser/provider/storage/tracker suite not included by that command passes after the final code change. Record actual final counts; historical counts are supporting context only.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.20 — Audit persistent evidence integrity.**
+
+  Files: `docs/implementation-evidence/`, audit JSONL, screenshots/measurements, test outputs.
+
+  Acceptance: Every required terminal state has current evidence; evidence corresponds to current code; mock/live evidence is distinct; visual evidence matches claimed widths/states; no secret is exposed; no stale evidence is presented after invalidating changes; asset/provider provenance plus licensing/attribution manifests still match the assets/data actually shipped or displayed; approved exceptions are explicit; no unexplained PENDING, IMPLEMENTED / NOT VERIFIED or BLOCKED state remains.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.21 — Reconcile the five authority documents for technical consistency before final prose documentation.**
+
+  Files: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`, `VERIFICATION.md`, `README.md`.
+
+  Acceptance: All five agree on delivered scope, execution order, provider architecture/live-vs-mock semantics, secrets policy, cinematic contract, icon contract, Games tracker/progression behavior, filter semantics, backup compatibility and current verification truth. This is a technical consistency check only; Phase 13.3 remains responsible for final documentation prose.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.22 — Perform the final Git/diff review and persist final repository-state evidence.**
+
+  Files: Git status/diff, `docs/implementation-evidence/phase26/`.
+
+  Acceptance: Final `git status --short --untracked-files=all` and `git diff` are inspected; every remaining change is intentional; no secret/temp artifact or unrelated outside-project change remains; final repository state is persistently recorded.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 26 — Whole-Project Final Integrity and Release Readiness.**
+
+  Files: all Phase 26 evidence, complete checklist, final test/browser/Git results.
+
+  Acceptance: Every 26.x item is VERIFIED and the complete assembled OneSpace repository/application has no unresolved functional, visual, UI, iconographic, cinematic, responsive, accessibility, persistence, backup, provider, media, security, secrets, Git, repository-structure, runtime, console/network, testing, evidence-integrity or authority-consistency issue. Every intended production provider is `LIVE VERIFIED` unless the user explicitly approved a provider-specific terminal exception.
+
+  If a Phase 26 defect is found, use:
+
+  `identify -> minimally fix -> affected automated regression -> affected browser/visual verification -> evidence update -> continue Phase 26`
+
+  Do not formally reopen a historical phase solely because Phase 26 found a regression.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
 
 ---
 
@@ -4918,9 +5169,9 @@ Only after Gate 25 passes may Phase 13.3 begin.
 
 Final tail:
 
-`Gate 19 -> Gate 20 -> Gate 21 -> Gate 22 -> Gate 23 -> Gate 24 -> Gate 25 -> Phase 13.3 FINAL`
+`Gate 19 -> Gate 20 -> Gate 21 -> Gate 22 -> Gate 23 -> Gate 24 -> Gate 25 -> Phase 26 -> Gate 26 -> Phase 13.3 FINAL`
 
-Do not move Phase 13.3 earlier.
+Do not move Phase 13.3 earlier than Gate 26.
 
 
 ## Phase 13.3 — Final documentation
@@ -4941,7 +5192,7 @@ Do not move Phase 13.3 earlier.
    |---|---|
    | Pending | Pending |
 
-354. [ ] **13.3.3** — `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile with what Phase 6 actually delivers, so the two documents stop contradicting each other on the provider question.
+354. [ ] **13.3.3** — `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile the architecture/rationale with the actual delivered implementation.
 
    Files: The document named in this step. Acceptance: Documentation matches actual delivered behavior and recorded verification.
 
@@ -4949,9 +5200,25 @@ Do not move Phase 13.3 earlier.
    |---|---|
    | Pending | Pending |
 
+- [ ] **13.3.4** — Reconcile `docs/agent-instructions.md` with the final delivered scope and status without rewriting historical evidence.
+
+   Files: `docs/agent-instructions.md`. Acceptance: Standing product/scope wording, final sequence, Gate 26 result and any approved exceptions match the final evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+- [ ] **13.3.5** — Reconcile `docs/IMPLEMENTATION-STEPS.md` with the final evidence set.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Detailed statuses, Progress table, Gate 26, Phase 13.3 items and all evidence references agree; no stale Pending/Verified contradiction remains.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
 355. [ ] **Gate 13.3** — Confirm every planned step is implemented and verified and report the actual delivery evidence
 
-   Files: `docs/IMPLEMENTATION-STEPS.md`, `VERIFICATION.md`. Acceptance: No unchecked original-plan, V2, or Phase 20–25 implementation requirement remains; Gate 25 has passed.
+   Files: all five authority documents, `docs/implementation-evidence/`, audit records. Acceptance: No unchecked original-plan, V2, Phase 20–25, or Phase 26 implementation/verification requirement remains; Gate 26 has passed; all five authority documents match the actual final delivered product and evidence.
 
    | Status | Evidence |
    |---|---|
