@@ -1,0 +1,21 @@
+{
+  "item": 343,
+  "step": "12.9",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "browser": {
+    "origin": "Disposable local browser server on 127.0.0.1:18974",
+    "export": "Settings > Download backup displayed 'Backup downloaded. Your OneSpace data stayed on this device.' and 'Last downloaded 9/24/2026'.",
+    "import": "Settings > Restore backup loaded tests/fixtures/complete-backup.json (OneSpace version 4, 62 data keys). Browser then rendered 'Imported acceptance note' in Quick Notes, 'Imported acceptance project' in Work, and the 'Walk · daily' habit in Personal.",
+    "reset": "Settings > Reset all data returned to the Welcome dialog. After it closed, Work no longer showed Imported acceptance project, Personal Habits showed the 0/0 empty state, and Quick Notes no longer showed Imported acceptance note. The note remained absent after reload."
+  },
+  "automated": [
+    "node --test tests/: 93 passed, 0 failed, 0 skipped on 2026-09-24",
+    "tests/data-regression.test.js -> complete backups round-trip projects, preferences, trackers and unrelated data",
+    "tests/data-regression.test.js -> complete browser-import fixture restores all keys and preserves unrelated storage",
+    "tests/data-regression.test.js -> restore rejects unknown keys and incomplete backups without changing state",
+    "tests/data-regression.test.js -> reset removes only known OneSpace keys",
+    "tests/data-regression.test.js -> storage failure rolls back previously written values"
+  ],
+  "boundary": "The browser UI does not expose unrelated localStorage entries; exact preservation and rollback were verified by the named storage tests."
+}

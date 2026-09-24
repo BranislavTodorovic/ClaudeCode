@@ -1,0 +1,11 @@
+{
+  "item": 346,
+  "step": "12.12",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "server": "PORT=18977 PROVIDER_MODE=mock node tests/browser-server.js; disposable 127.0.0.1 origin; no external provider call",
+  "gamesBrowser": "My Games search combobox entered 'offline'. Its listbox showed 'In your catalog No local matches. Search results Offline: Mock offline response.' The status repeated 'Offline: Mock offline response.' Only an explicitly labeled Add custom game action remained.",
+  "moviesBrowser": "My Movies & Series search combobox entered 'offline'. Its listbox showed 'In your catalog No local matches. Search results Offline: Mock offline response.' The status repeated 'Offline: Mock offline response.' Only an explicitly labeled Add custom title action remained.",
+  "automated": "tests/providers.test.js -> mock search exposes all degraded states; real transport maps thrown socket failure to offline, timeout, rate-limit and authentication errors; current node --test tests/ passed 93/93.",
+  "result": "Both product surfaces visibly distinguish local catalog from global search and show the offline provider failure; no local result is relabeled as a provider result."
+}

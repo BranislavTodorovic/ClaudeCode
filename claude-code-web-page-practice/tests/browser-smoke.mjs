@@ -29,3 +29,23 @@ export async function workLifecycle(tab){
 export async function layout(tab){
  return tab.playwright.evaluate(()=>({width:innerWidth,bodyWidth:document.documentElement.scrollWidth,overflow:document.documentElement.scrollWidth>innerWidth+1,brokenImages:Array.from(document.images).filter(i=>i.getBoundingClientRect().width>0 && i.complete && !i.naturalWidth).map(i=>i.getAttribute('src'))}));
 }
+
+export async function themeOverride(tab){
+ await tab.playwright.getByRole('button',{name:'Settings view',exact:true}).click();
+ await tab.playwright.getByRole('radio',{name:'Auto Follow your device'}).click();
+ await tab.playwright.getByRole('button',{name:'Home view',exact:true}).click();
+ const toggle=tab.playwright.getByRole('button',{name:'Change color theme',exact:true});
+ const before=await toggle.getAttribute('aria-pressed');
+ await toggle.click();
+ const chosen=await toggle.getAttribute('aria-pressed');
+ assert(chosen!==before,'Manual theme toggle did not change the page theme');
+ await tab.reload();
+ assert(await toggle.getAttribute('aria-pressed')===chosen,'Manual theme toggle did not survive reload from Auto');
+ await tab.playwright.getByRole('button',{name:'Settings view',exact:true}).click();
+ const automatic=tab.playwright.getByRole('radio',{name:'Auto Follow your device'});
+ assert(await automatic.getAttribute('aria-checked')==='true','Theme toggle changed the selected palette');
+ await automatic.click();
+ await tab.playwright.getByRole('button',{name:'Home view',exact:true}).click();
+ assert(await toggle.getAttribute('aria-pressed')===before,'Selecting Auto did not restore the device theme');
+ return {changed:true,persisted:true,appearance:'auto',deviceRestored:true};
+}

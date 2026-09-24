@@ -1,0 +1,44 @@
+{
+  "item": 347,
+  "step": "12.13",
+  "date": "2026-09-24",
+  "method": "Current local OneSpace build in the in-app browser at http://127.0.0.1:18974/; each named row was clicked and its visible result inspected. Browser profile is test-only.",
+  "rows": {
+    "I0002": {
+      "success": "Explore Add Location opened Add Location dialog; completing name, country, required description and Add to trip board displayed Saved to your trip board and a card named Phase 12 audit place.",
+      "cancel": "Cancel closed the untouched Add Location form; trip board still showed 0 saved places.",
+      "error": "Submitting missing required fields kept the dialog open and focused the missing field; no card was added. Write-failure path remains to verify.",
+      "persistence": "The newly created card and 1 saved places count remained after browser reload."
+    },
+    "I0004": {
+      "success": "Searching Explore places for a returned 6 results loaded; clicking Load more changed the live status to 12 results loaded and rendered the next batch.",
+      "cancel": "No edit or draft exists; pagination is a transient read-only view action.",
+      "error": "Control is available only while more local results remain; no provider or write path is involved.",
+      "persistence": "Reload returned to Search to begin, consistent with transient pagination."
+    },
+    "I0015": {
+      "success": "The saved card's Details button opened a dialog titled Phase 12 audit place with the stored description and country.",
+      "cancel": "Cancel closed the details dialog and returned to the board.",
+      "error": "Read-only dialog has no submit or write error path.",
+      "persistence": "Read-only view; underlying saved card survived reload as checked in I0002."
+    },
+    "I0019": {
+      "success": "With two saved trip cards, Move Phase 12 audit place later reversed their displayed order; the first card's later button had been enabled while the final card's later button was disabled.",
+      "cancel": "Atomic ordering action has no draft or cancel path; the inverse Move earlier action is available.",
+      "error": "Out-of-range move is disabled in the rendered board; storage write failure remains to verify.",
+      "persistence": "The reversed card order remained after browser reload."
+    },
+    "I0153": {
+      "success": "Personal Add shortcut opened a form with Personal selected; saving Audit Personal displayed its link in Personal shortcuts.",
+      "cancel": "Cancel closed a form with an unsaved invalid URL; the unsaved draft was not in the list.",
+      "error": "Submitting not-a-url displayed Please enter a valid URL, starting with http:// or https:// and kept the form open; write failure remains to verify.",
+      "persistence": "Audit Personal link remained in Personal shortcuts after browser reload."
+    },
+    "I0158": {
+      "success": "Explore Add shortcut opened the form with Explore selected and disabled against switching spaces; saving Audit Explore displayed its link under Explore shortcuts.",
+      "cancel": "Cancel closed the empty form without adding a link.",
+      "error": "An invalid URL displayed Please enter a valid URL, starting with http:// or https://; the dialog stayed open. Storage write failure remains to verify.",
+      "persistence": "Audit Explore link remained after browser reload."
+    }
+  }
+}

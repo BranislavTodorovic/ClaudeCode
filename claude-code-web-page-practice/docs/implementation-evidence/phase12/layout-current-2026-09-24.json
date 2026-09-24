@@ -1,0 +1,330 @@
+{
+  "item": 345,
+  "step": "12.11",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "origin": "http://localhost:18974/",
+  "checks": [
+    {
+      "requested": 1440,
+      "route": "Home view",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Work Build & focus",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Personal Life & home",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Explore Travel & play",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Games Play & track",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Movies & Series Watch & discover",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Shortcuts view",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Productivity view",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Quick Notes view",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1440,
+      "route": "Settings view",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Home view",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Work Build & focus",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Personal Life & home",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Explore Travel & play",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Games Play & track",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Movies & Series Watch & discover",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Shortcuts view",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Productivity view",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Quick Notes view",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 1024,
+      "route": "Settings view",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Home view",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Work Build & focus",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Personal Life & home",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Explore Travel & play",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Games Play & track",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Movies & Series Watch & discover",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Shortcuts view",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Productivity view",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Quick Notes view",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 760,
+      "route": "Settings view",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "width": 760,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Home view",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Work Build & focus",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Personal Life & home",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Explore Travel & play",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Games Play & track",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Movies & Series Watch & discover",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Shortcuts view",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Productivity view",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Quick Notes view",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "requested": 390,
+      "route": "Settings view",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "summary": "40 route/width measurements at actual 1440, 1024, 760, 390; no horizontal overflow and no completed visible image with zero natural width; screenshots retained for Settings, Explore, Games mobile and Work desktop."
+}

@@ -1,0 +1,421 @@
+{
+  "item": 347,
+  "step": "12.13",
+  "status": "IMPLEMENTED / NOT VERIFIED",
+  "date": "2026-09-24",
+  "inventory": "docs/implementation-evidence/interaction-inventory.json",
+  "buttonRows": 229,
+  "byOwner": {
+    "explore": 21,
+    "shell": 30,
+    "games": 47,
+    "home": 11,
+    "shortcuts": 11,
+    "productivity": 3,
+    "work": 7,
+    "personal": 3,
+    "settings": 55,
+    "movies": 36,
+    "projects": 5
+  },
+  "observedSuccess": {
+    "I0002": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Cancel, required-field validation and reload observed; storage write failure remains."
+    },
+    "I0004": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Transient pagination; availability and reload observed."
+    },
+    "I0015": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Read-only dialog cancel observed; no direct error or persistence mutation."
+    },
+    "I0019": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Boundary disable and reload observed; storage write failure remains."
+    },
+    "I0153": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Cancel, invalid URL and reload observed; storage write failure remains."
+    },
+    "I0158": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Cancel, invalid URL and reload observed; storage write failure remains."
+    },
+    "I0005": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0006": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0014": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0016": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0017": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0018": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0020": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0154": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0282": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0283": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0028": {
+      "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0029": {
+      "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0007": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0062": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0064": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0066": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0067": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0068": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0069": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0070": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0071": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0072": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0073": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0074": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0179": {
+      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0180": {
+      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0182": {
+      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0065": {
+      "successEvidence": "docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 339",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0115": {
+      "successEvidence": "docs/implementation-evidence/phase12/productivity-controls-2026-09-24.json",
+      "otherFacets": "Transient timer action; no stored-record cancel/error/persistence facet applies. See named row result."
+    },
+    "I0116": {
+      "successEvidence": "docs/implementation-evidence/phase12/productivity-controls-2026-09-24.json",
+      "otherFacets": "Transient timer action; no stored-record cancel/error/persistence facet applies. See named row result."
+    },
+    "I0117": {
+      "successEvidence": "docs/implementation-evidence/phase12/productivity-controls-2026-09-24.json",
+      "otherFacets": "Transient timer action; no stored-record cancel/error/persistence facet applies. See named row result."
+    },
+    "I0090": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-theme-regression-2026-09-24.json",
+      "persistenceEvidence": "tests/browser-smoke.mjs -> themeOverride(tab)",
+      "otherFacets": "Storage-failure feedback still needs explicit browser or test evidence before row completion."
+    },
+    "I0091": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0092": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0093": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0094": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0096": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0097": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0098": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0099": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0100": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    },
+    "I0101": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "See row detail for transient/persistent behavior; map applicable error/cancel facets before declaring the inventory row complete."
+    }
+  },
+  "observedSuccessCount": 48,
+  "remainingSuccessIds": [
+    "I0021",
+    "I0022",
+    "I0023",
+    "I0026",
+    "I0027",
+    "I0030",
+    "I0032",
+    "I0033",
+    "I0034",
+    "I0038",
+    "I0039",
+    "I0041",
+    "I0042",
+    "I0043",
+    "I0046",
+    "I0047",
+    "I0048",
+    "I0049",
+    "I0050",
+    "I0051",
+    "I0053",
+    "I0054",
+    "I0055",
+    "I0056",
+    "I0057",
+    "I0059",
+    "I0060",
+    "I0061",
+    "I0063",
+    "I0075",
+    "I0076",
+    "I0077",
+    "I0078",
+    "I0079",
+    "I0080",
+    "I0081",
+    "I0082",
+    "I0083",
+    "I0084",
+    "I0085",
+    "I0086",
+    "I0087",
+    "I0088",
+    "I0089",
+    "I0102",
+    "I0103",
+    "I0104",
+    "I0105",
+    "I0106",
+    "I0107",
+    "I0108",
+    "I0109",
+    "I0111",
+    "I0112",
+    "I0113",
+    "I0120",
+    "I0121",
+    "I0122",
+    "I0123",
+    "I0124",
+    "I0125",
+    "I0126",
+    "I0127",
+    "I0128",
+    "I0129",
+    "I0130",
+    "I0131",
+    "I0132",
+    "I0133",
+    "I0134",
+    "I0135",
+    "I0136",
+    "I0138",
+    "I0139",
+    "I0140",
+    "I0144",
+    "I0145",
+    "I0146",
+    "I0147",
+    "I0148",
+    "I0155",
+    "I0156",
+    "I0157",
+    "I0160",
+    "I0161",
+    "I0165",
+    "I0166",
+    "I0167",
+    "I0168",
+    "I0169",
+    "I0170",
+    "I0171",
+    "I0172",
+    "I0181",
+    "I0183",
+    "I0184",
+    "I0185",
+    "I0186",
+    "I0187",
+    "I0188",
+    "I0189",
+    "I0190",
+    "I0192",
+    "I0193",
+    "I0195",
+    "I0197",
+    "I0198",
+    "I0200",
+    "I0201",
+    "I0203",
+    "I0204",
+    "I0207",
+    "I0208",
+    "I0209",
+    "I0210",
+    "I0211",
+    "I0212",
+    "I0213",
+    "I0214",
+    "I0215",
+    "I0216",
+    "I0217",
+    "I0218",
+    "I0219",
+    "I0220",
+    "I0221",
+    "I0222",
+    "I0224",
+    "I0226",
+    "I0228",
+    "I0229",
+    "I0230",
+    "I0233",
+    "I0234",
+    "I0235",
+    "I0236",
+    "I0237",
+    "I0240",
+    "I0241",
+    "I0242",
+    "I0243",
+    "I0244",
+    "I0245",
+    "I0246",
+    "I0247",
+    "I0248",
+    "I0250",
+    "I0251",
+    "I0252",
+    "I0253",
+    "I0254",
+    "I0256",
+    "I0257",
+    "I0258",
+    "I0259",
+    "I0260",
+    "I0261",
+    "I0262",
+    "I0263",
+    "I0264",
+    "I0265",
+    "I0266",
+    "I0267",
+    "I0268",
+    "I0269",
+    "I0270",
+    "I0272",
+    "I0273",
+    "I0274",
+    "I0275",
+    "I0278",
+    "I0279",
+    "I0280",
+    "I0284",
+    "I0286",
+    "I0287",
+    "I0288",
+    "I0289",
+    "I0290",
+    "I0291",
+    "I0292"
+  ],
+  "retiredSourceRows": [
+    {
+      "ids": [
+        "I0021",
+        "I0022",
+        "I0023"
+      ],
+      "source": "explore.js",
+      "reason": "Phase 10 retired the duplicate auto-mounting module; current Explore controls are owned by discovery-ui.js and explore-global.js. Map each former intent to the current control and evidence rather than claiming the deleted button can be clicked."
+    },
+    {
+      "ids": [
+        "I0144",
+        "I0145",
+        "I0148"
+      ],
+      "source": "historical Work page controls",
+      "reason": "Standing plan Phase 3 explicitly removed Today & Focus and General daily tasks from Work and replaced Start a focus session with a Work-domain action; see docs/agent-instructions.md Phase 3 lines 793–796. Verify the successor Productivity controls and current Work actions, and record this requirement mapping rather than claiming these retired buttons still exist."
+    }
+  ],
+  "completionRule": "Every one of 229 inventory button templates needs its own success evidence and applicable cancel/error/persistence evidence. Existing broad tests, phase acceptance summaries, and the partial observedSuccess map do not satisfy item 347 by themselves."
+}

@@ -1,6 +1,6 @@
 # OneSpace — Numbered implementation checklist
 
-Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 14 → 15 → 16 → 17 → 18 → 19 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
+Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21 → 22 → 23 → 24 → 25 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
 
 **Execution authority:** completion, status, evidence, phase-gate and resume behavior are governed by the `Mandatory execution and verification contract` below. The standing plan defines **what** must be delivered; this checklist governs **how completion is proven**.
 
@@ -610,15 +610,15 @@ No final "complete" statement is allowed until these conditions are true.
 | 1 | Verified | 39/39 tests; all seven batch gates, structural assertions, secret-path denial, exact script order and git history preservation verified. |
 | 2 | Verified | Phase 2 acceptance evidence; assigned later follow-through remains governed by the detailed checklist. |
 | 3 | Verified | 44 tests; Home ownership, Work/Explore boundaries, theme cleanup and injected validators verified. |
-| 4 | Verified; follow-through in 5–7 | Settings, palette, contrast, reset, persistence and layout checks passed. |
-| 5 | Verified under historical scope; later fidelity requirements are additive | Historical cinematic/scene evidence retained; final fidelity is governed by Phases 20 and 25. |
-| 6 | Verified under historical/mock scope | Historical provider contract/mock evidence retained; live configured truth is separately governed by Phases 14 and 22. |
+| 4 | VERIFIED | Settings, palette, contrast, reset, persistence and layout checks passed; distinct later-phase requirements retain their own gates. |
+| 5 | VERIFIED | Historical cinematic/scene acceptance evidence retained; additive final fidelity is governed by Phases 20 and 25. |
+| 6 | VERIFIED | Historical provider contract/mock acceptance evidence retained; live configured truth is separately governed by Phases 14 and 22. |
 | 7 | Verified | Removable built-ins, restore panel, scoped add, persisted ordering and accessible controls. |
-| 8 | Verified under historical scope | Tracker inference and lifecycle evidence retained; expanded game enrichment/progression is governed by Phase 23. |
-| 9 | Verified with documented artwork exception | Historical Movies/Series behavior retained; live provider/media acceptance is governed by Phase 22. |
-| 10 | Pending / follow detailed checklist | Current status must be taken from detailed item-level evidence, not this summary alone. |
-| 11 | Pending / follow detailed checklist | Current status must be taken from detailed item-level evidence, not this summary alone. |
-| 12 | Pending / active checkpoint | Complete original-plan verification and assigned deferred matrices before advancing. |
+| 8 | VERIFIED | Tracker inference and lifecycle evidence retained; expanded game enrichment/progression is governed by Phase 23. |
+| 9 | VERIFIED | Historical Movies/Series behavior and the explicit 9.2.6 licensed-fallback acceptance are evidenced; live provider/media acceptance is governed by Phase 22. |
+| 10 | VERIFIED | Items 300–320 VERIFIED; item 318 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json and image-fallback-2026-09-24.json). |
+| 11 | VERIFIED | Items 321–334 VERIFIED; item 328 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json). |
+| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–346 and 348 VERIFIED; item 347 is next, and Gate 12 remains open. |
 | 14 | Pending | Provider truth audit and V2 scope reconciliation. |
 | 15 | Pending | Global destination discovery. |
 | 16 | Pending | First-class provider records and data integrity. |
@@ -631,7 +631,7 @@ No final "complete" statement is allowed until these conditions are true.
 | 23 | Pending | Game enrichment and tracker intelligence. |
 | 24 | Pending | Global search/filter integration. |
 | 25 | Pending | Final user-visible product acceptance. |
-| 13.3 | Pending; always last | Runs only after Gate 25. |
+| 13.3 | PENDING | Runs only after Gate 25. |
 
 ## Phase 13.1 — Standing plan
 
@@ -2253,13 +2253,13 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
 
-194. [ ] **5.4.14** — Test at 1440 / 1024 / 760 / 390 px — no overlap or overflow — [OPEN] — Phase 12
+194. [x] **5.4.14** — Test at 1440 / 1024 / 760 / 390 px — no overlap or overflow — [OPEN] — Phase 12
 
    Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/layout-current-2026-09-24.json -> 40 route/width checks; representative rendered screenshots in same folder |
 
 195. [x] **5.4.15** — Handle long user text safely across all domains — [OPEN]
 
@@ -3215,399 +3215,399 @@ No final "complete" statement is allowed until these conditions are true.
 
 > `explore-data.js` holds 12 destinations, each pointing at `assets/destinations/<id>.svg`. These are **conceptual SVG illustrations, not photographs** — the old REVISED plan already flagged this as a missed requirement. Each record has `summary` and `details`, but the depth is uneven.
 
-300. [ ] **10.1.1** — Real, properly licensed local imagery per destination at hero and card resolutions, following the 9.2 sizing and `srcset` rules.
+300. [x] **10.1.1** — Real, properly licensed local imagery per destination at hero and card resolutions, following the 9.2 sizing and `srcset` rules.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 300 |
 
-301. [ ] **10.1.2** — A substantive description per destination: what the place is, why it suits its tagged categories, best season and why, rough trip length, budget character, and what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-302. [ ] **10.1.3** — Never blank: alt text always present; the deterministic fallback used only on a genuinely failed request.
+301. [x] **10.1.2** — A substantive description per destination: what the place is, why it suits its tagged categories, best season and why, rough trip length, budget character, and what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 301 |
 
-303. [ ] **10.1.4** — Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-304. [ ] **10.1.5** — **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
+302. [x] **10.1.3** — Never blank: alt text always present; the deterministic fallback used only on a genuinely failed request.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 302 |
+
+303. [x] **10.1.4** — Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 303 |
+
+304. [x] **10.1.5** — **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 304 |
 
 ## 10.2 Resolve the `explore.js` discrepancy [OPEN]
 
-305. [ ] **10.2.1** — Confirmed open: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags — the browser uses `explore-global.js`. Decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree. Note `explore.js` **auto-invokes `api.mount(root)` at load**, so simply adding the tag would double-mount.
+305. [x] **10.2.1** — Confirmed open: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags — the browser uses `explore-global.js`. Decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree. Note `explore.js` **auto-invokes `api.mount(root)` at load**, so simply adding the tag would double-mount.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 305 |
 
 ## 10.3 "More to explore" is not the final section [FIX]
 
-306. [ ] **10.3.1** — Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 require "More to explore" be the last Explore section. It is currently **third of four**: Destinations → **More to explore** (`index.html:551`) → Explore shortcuts → chill strip. Move it last.
+306. [x] **10.3.1** — Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 require "More to explore" be the last Explore section. It is currently **third of four**: Destinations → **More to explore** (`index.html:551`) → Explore shortcuts → chill strip. Move it last.
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 306 |
 
 ## 10.4 Explore behaviour preserved from old Part B Phase 4
 
-307. [ ] **10.4.1** — `explore-data.js` holds the curated destination catalog — [DONE]
+307. [x] **10.4.1** — `explore-data.js` holds the curated destination catalog — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 307 |
 
-308. [ ] **10.4.2** — Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-309. [ ] **10.4.3** — `explore.js` holds persisted destination preferences — [DONE] — but see 10.2
+308. [x] **10.4.2** — Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 308 |
 
-310. [ ] **10.4.4** — Destination type, climate/season, trip length, budget, pace, interests, departure region — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-311. [ ] **10.4.5** — Deterministic, explainable recommendation ranking — [DONE]
+309. [x] **10.4.3** — `explore.js` holds persisted destination preferences — [DONE] — but see 10.2
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 309 |
 
-312. [ ] **10.4.6** — Show why each destination was recommended — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-313. [ ] **10.4.7** — Preference controls, recommendation cards, details, save/favorite, shortlist/trip board, Explore-only shortcuts — [DONE]
+310. [x] **10.4.4** — Destination type, climate/season, trip length, budget, pace, interests, departure region — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 310 |
 
-314. [ ] **10.4.8** — "Surprise me" as a filtered random recommendation — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-315. [ ] **10.4.9** — Responsive destination images with fallback modelled on `visual-utils.js` — [DONE]
+311. [x] **10.4.5** — Deterministic, explainable recommendation ranking — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 311 |
 
-316. [ ] **10.4.10** — Accessible alt text; never a blank destination card — [DONE]
-
-   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-317. [ ] **10.4.11** — Tests for filtering, stable ranking, saved destinations, Explore-only shortcuts, malformed data — [DONE]
+312. [x] **10.4.6** — Show why each destination was recommended — [DONE]
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 312 |
 
-318. [ ] **10.4.12** — Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload — [OPEN] — Phase 12
+313. [x] **10.4.7** — Preference controls, recommendation cards, details, save/favorite, shortlist/trip board, Explore-only shortcuts — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 313 |
+
+314. [x] **10.4.8** — "Surprise me" as a filtered random recommendation — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 314 |
+
+315. [x] **10.4.9** — Responsive destination images with fallback modelled on `visual-utils.js` — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 315 |
+
+316. [x] **10.4.10** — Accessible alt text; never a blank destination card — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 316 |
+
+317. [x] **10.4.11** — Tests for filtering, stable ranking, saved destinations, Explore-only shortcuts, malformed data — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 317 |
+
+318. [x] **10.4.12** — Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload — [OPEN] — Phase 12
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/interaction-current-2026-09-24.json -> Explore checks; image-fallback-2026-09-24.json |
 
-319. [ ] **10.4.13** — Keep "More To Explore" last — **[OPEN]** — see 10.3
+319. [x] **10.4.13** — Keep "More To Explore" last — **[OPEN]** — see 10.3
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 319 |
 
-320. [ ] **Gate 10** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+320. [x] **Gate 10** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
 
    Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 320 |
 
 ## Phase 11
 
 > Old Part B Phase 3, personal half. All delivered; must not regress.
 
-321. [ ] **11.1** — `makeCheckListController()` refactored into reusable add / edit / toggle / delete — [DONE]
+321. [x] **11.1** — `makeCheckListController()` refactored into reusable add / edit / toggle / delete — [DONE]
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 321 |
 
-322. [ ] **11.2** — Deletion routed through the existing modal/confirmation pattern — [DONE]
-
-   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-323. [ ] **11.3** — Toast and `aria-live` message after successful deletion — [DONE]
+322. [x] **11.2** — Deletion routed through the existing modal/confirmation pattern — [DONE]
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 322 |
 
-324. [ ] **11.4** — Separate storage for goals, routines and habits — [DONE]
-
-   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-325. [ ] **11.5** — Completion counts and progress summaries — [DONE]
+323. [x] **11.3** — Toast and `aria-live` message after successful deletion — [DONE]
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 323 |
 
-326. [ ] **11.6** — Optional habit frequency / target metadata — [DONE]
-
-   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-327. [ ] **11.7** — Clear empty states — [DONE]
+324. [x] **11.4** — Separate storage for goals, routines and habits — [DONE]
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 324 |
 
-328. [ ] **11.8** — Verify add / edit / check / delete / cancel after rerender and reload — [OPEN] — Phase 12
+325. [x] **11.5** — Completion counts and progress summaries — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 325 |
+
+326. [x] **11.6** — Optional habit frequency / target metadata — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 326 |
+
+327. [x] **11.7** — Clear empty states — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 327 |
+
+328. [x] **11.8** — Verify add / edit / check / delete / cancel after rerender and reload — [OPEN] — Phase 12
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/interaction-current-2026-09-24.json -> Personal goals; tests/tracker-regression.test.js |
 
 > **[NEW] Where Work's removed content lands.** Phase 3 strips five non-work surfaces from the Work page. None of them moves to Personal:
 
-329. [ ] **11.9** — Next-up tasks (`orbit-tasks`) — Productivity — Productivity owns that key
+329. [x] **11.9** — Next-up tasks (`orbit-tasks`) — Productivity — Productivity owns that key
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 329 |
 
-330. [ ] **11.10** — Pomodoro timer mirror — Productivity — Already lives there
-
-   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-331. [ ] **11.11** — Countdowns (`orbit-countdowns`) — Productivity — Already rendered there
+330. [x] **11.10** — Pomodoro timer mirror — Productivity — Already lives there
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 330 |
 
-332. [ ] **11.12** — Quick note (`orbit-notes-list`) — Notes — Notes owns that key
-
-   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-333. [ ] **11.13** — Recently-opened shortcuts — Shortcuts / Home — Space-scoped surface
+331. [x] **11.11** — Countdowns (`orbit-countdowns`) — Productivity — Already rendered there
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 331 |
+
+332. [x] **11.12** — Quick note (`orbit-notes-list`) — Notes — Notes owns that key
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 332 |
+
+333. [x] **11.13** — Recently-opened shortcuts — Shortcuts / Home — Space-scoped surface
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 333 |
 
 > Personal's own goals, routines and habits are unchanged. Nothing is deleted — each surface already exists on its owning page, so this is removal from Work, not a migration.
 
-334. [ ] **Gate 11** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+334. [x] **Gate 11** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
 
    Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 334 |
 
 ## Phase 12
 
 > Old Part B Phase 8, extended.
 
-335. [ ] **12.1** — Run the complete recursive JavaScript parse test and all Node tests: `node --test tests/`.
+335. [x] **12.1** — Run the complete recursive JavaScript parse test and all Node tests: `node --test tests/`.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 335 |
 
-336. [ ] **12.2** — **New tests** added by this plan: structural assertions (1.7); domain-boundary assertions (Phase 3); hidden-shortcut round trip (7.1); tracker-type inference and the toggle-involution regression (8.1, 8.3); untrack behaviour (9.1); provider normalisation, error, timeout, rate-limit and offline states against the mock provider (6.1).
-
-   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-337. [ ] **12.3** — Expand Node tests for pure Work, Explore, shortcut, game, movie, visual-state and migration helpers.
+336. [x] **12.2** — **New tests** added by this plan: structural assertions (1.7); domain-boundary assertions (Phase 3); hidden-shortcut round trip (7.1); tracker-type inference and the toggle-involution regression (8.1, 8.3); untrack behaviour (9.1); provider normalisation, error, timeout, rate-limit and offline states against the mock provider (6.1).
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 336 |
 
-338. [ ] **12.4** — Test schema validation, migration defaults, backup/restore, reset and storage rollback.
-
-   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-339. [ ] **12.5** — Browser-level smoke tests for every top-level route; `tests/browser-smoke.mjs` exports `routes(tab)`, `layout(tab)` and `workLifecycle(tab)`.
+337. [x] **12.3** — Expand Node tests for pure Work, Explore, shortcut, game, movie, visual-state and migration helpers.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 337 |
 
-340. [ ] **12.6** — Test navigation, add/edit/delete, modal close/cancel, persistence after reload, filters, task checkboxes, close/reopen, backlog/history, reminders, image fallback and external links.
-
-   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-341. [ ] **12.7** — Start the static server and inspect the console for uncaught errors and failed local assets.
+338. [x] **12.4** — Test schema validation, migration defaults, backup/restore, reset and storage rollback.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 338 |
 
-342. [ ] **12.8** — Verify Work hierarchy and close-all behaviour; Personal delete confirmation; Explore recommendation explanations and image fallback; game-specific links and default tasks across multiple genres and **both tracker types**; movie and series genre views.
-
-   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-343. [ ] **12.9** — Verify backup export/import with all new data; reset behaviour and unrelated `localStorage` preservation.
+339. [x] **12.5** — Browser-level smoke tests for every top-level route; `tests/browser-smoke.mjs` exports `routes(tab)`, `layout(tab)` and `workLifecycle(tab)`.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 339 |
 
-344. [ ] **12.10** — Verify keyboard-only navigation and reduced-motion mode — every route genuinely still.
-
-   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
-
-   | Status | Evidence |
-   |---|---|
-   | Pending | Pending |
-
-345. [ ] **12.11** — Verify desktop, tablet and mobile layouts at 1440 / 1024 / 760 / 390 px.
+340. [x] **12.6** — Test navigation, add/edit/delete, modal close/cancel, persistence after reload, filters, task checkboxes, close/reopen, backlog/history, reminders, image fallback and external links.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/interaction-current-2026-09-24.json; image-fallback-2026-09-24.json |
 
-346. [ ] **12.12** — **Offline pass:** provider unreachable → visible degraded state, no silent local fallback presented as global results.
+341. [x] **12.7** — Start the static server and inspect the console for uncaught errors and failed local assets.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/static-server-2026-09-24.json |
+
+342. [x] **12.8** — Verify Work hierarchy and close-all behaviour; Personal delete confirmation; Explore recommendation explanations and image fallback; game-specific links and default tasks across multiple genres and **both tracker types**; movie and series genre views.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/domain-regression-2026-09-24.json |
+
+343. [x] **12.9** — Verify backup export/import with all new data; reset behaviour and unrelated `localStorage` preservation.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/backup-reset-2026-09-24.json |
+
+344. [x] **12.10** — Verify keyboard-only navigation and reduced-motion mode — every route genuinely still.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json |
+
+345. [x] **12.11** — Verify desktop, tablet and mobile layouts at 1440 / 1024 / 760 / 390 px.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/layout-current-2026-09-24.json; settings/explore/games 390 and Work 1440 screenshots |
+
+346. [x] **12.12** — **Offline pass:** provider unreachable → visible degraded state, no silent local fallback presented as global results.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/provider-offline-2026-09-24.json |
 
 347. [ ] **12.13** — Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
 
@@ -3615,15 +3615,15 @@ No final "complete" statement is allowed until these conditions are true.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | IMPLEMENTED / NOT VERIFIED | docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json -> 229 button templates, partial mapped observations and remaining IDs; complete each applicable outcome before checking this box |
 
-348. [ ] **12.14** — Set `MISSING_ASSET='assets/destinations/azores.svg'` on `tests/browser-server.js` to exercise the image-fallback path.
+348. [x] **12.14** — Set `MISSING_ASSET='assets/destinations/azores-card.webp'` on `tests/browser-server.js` to exercise the current photograph-to-illustration fallback path. Phase 10 made `azores.svg` the fallback asset, so failing that old target alone no longer triggers fallback.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/image-fallback-2026-09-24.json |
 
 349. [ ] **12.15** — Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason. V2 Phases 14–19 intentionally follow this checkpoint.
 

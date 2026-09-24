@@ -1313,7 +1313,7 @@ Old Part B Phase 8, extended.
 11. Verify desktop, tablet and mobile layouts at 1440 / 1024 / 760 / 390 px.
 12. **Offline pass:** provider unreachable → visible degraded state, no silent local fallback presented as global results.
 13. Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
-14. Set `MISSING_ASSET='assets/destinations/azores.svg'` on `tests/browser-server.js` to exercise the image-fallback path.
+14. Set `MISSING_ASSET='assets/destinations/azores-card.webp'` on `tests/browser-server.js` to exercise the current photograph-to-illustration fallback path. The historical `azores.svg` target became the fallback asset after Phase 10 replaced the primary image with licensed WebP photography; failing the SVG alone no longer triggers fallback.
 15. Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason.
 16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint, followed by additive final-fidelity Phases 20–25; **Phase 13.3 remains final and runs only after Gate 25**.
 

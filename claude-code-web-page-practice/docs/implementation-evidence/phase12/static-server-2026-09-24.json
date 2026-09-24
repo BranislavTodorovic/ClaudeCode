@@ -1,0 +1,11 @@
+{
+  "item": 341,
+  "step": "12.7",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "server": "node tests/browser-server.js; disposable 127.0.0.1:18974",
+  "browserRoutes": ["Home", "Work", "Personal", "Explore", "Games", "Movies & Series", "Shortcuts", "Productivity", "Quick Notes", "Settings"],
+  "browserResults": "Each route rendered nonempty DOM (snapshot lengths 5129, 7652, 8414, 9337, 7392, 2180, 5196, 3526, 1780, 7516). The browser error log after the full route sequence was empty. No visible completed image had zero natural width on any route.",
+  "localAssetCheck": "tests/structure.test.js, included in the current 93/93 Node suite, verifies literal artwork and stylesheet URLs resolve. docs/implementation-evidence/phase12/layout-2026-09-23.json records zero broken visible images across 40 route/width checks.",
+  "intentionalMissingAsset": "The separate MISSING_ASSET test and its expected 404 are documented in image-fallback-2026-09-24.json; they are not an ordinary static-server failure."
+}

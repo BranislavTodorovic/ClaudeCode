@@ -1,0 +1,15 @@
+{
+  "item": 342,
+  "step": "12.8",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "checks": {
+    "workHierarchyAndCloseAll": "In the disposable browser origin, QA Development project contained QA story lifecycle item and QA task one. Close item & tasks reported 'Item closed. All tasks completed'; item moved to Backlog and History recorded closed event. Reopening preserved 1/1 task history after reload. See interaction-current-2026-09-24.json and tests/tracker-regression.test.js.",
+    "personalDeleteConfirmation": "Goal delete opened 'Delete personal item?' dialog. Cancel retained the goal. Confirmed Delete restored the 0/0 empty state after reload. See interaction-current-2026-09-24.json and tests/tracker-regression.test.js.",
+    "exploreReasonsAndFallback": "Nature plus Medium returned two cards with 'Why this fits · Categories: nature · Budget: medium'. Missing São Miguel card WebP produced is-fallback is-loaded with illustrated alt and SVG source; destination details remained available. See interaction-current-2026-09-24.json and image-fallback-2026-09-24.json.",
+    "gamesLinksAndTasksAcrossGenres": "Alan Wake 2 (Survival Horror, story tracker) resource detail showed official site, Steam, news, guide and community links plus three suggested tracker tasks. Mission Progress showed a 12-objective chapter outline. Diablo Immortal (Action RPG, weekly tracker) resource detail showed Blizzard official/news, Icy Veins guides, Battle.net and community links plus seven suggested tracker tasks. Weekly Tasks showed the seven tasks for current week. tests/games-lifecycle.test.js verifies genre resource and template logic.",
+    "movieAndSeriesGenreViews": "In My Movies & Series, Title type Movie plus Library genre Crime returned The Godfather (Movie, Crime/Drama); Title type Series plus Library genre Drama returned Audit Custom Series (Series, Drama, 2 seasons). tests/movies-lifecycle.test.js covers type and genre intersection."
+  },
+  "automated": "Current node --test tests/: 93 passed, 0 failed, 0 skipped.",
+  "browserConsole": "No errors in the current static-server route pass (static-server-2026-09-24.json)."
+}

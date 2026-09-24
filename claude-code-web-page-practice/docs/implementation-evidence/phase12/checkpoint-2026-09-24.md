@@ -1,0 +1,9 @@
+# Phase 12 current checkpoint — 2026-09-24
+
+- Project: `claude-code-web-page-practice`; Git root is its parent; branch `main`; base HEAD `af4925e`. This pass has uncommitted project-scoped changes.
+- Current detailed checklist: items 335–346 and 348 VERIFIED, with item-level evidence in this folder. Items 318 and 328 were resolved during Phase 12. Historical item 194 was resolved by the current four-width layout pass. Gate 10 and Gate 11 are reconciled to their 2026-09-23 audits.
+- Exact next item: **347 / 12.13**, currently IMPLEMENTED / NOT VERIFIED. `control-inventory-audit-2026-09-24.json` partitions all 229 baseline button templates: 42 have mapped success observations, 187 still lack them, and applicable cancel/error/persistence facets require row-by-row resolution. Historical controls removed by approved Phase 3/10 changes need explicit successor mappings, not fictitious clicks.
+- Phase 12 source deferrals still open: item 135 (Work full button matrix), item 264 (Games full action matrix), item 297 (Movies & Series full action matrix). Item 349 and Gate 12 cannot close until these and item 347 pass.
+- A Home theme toggle persistence defect was reproduced and fixed; `home-theme-regression-2026-09-24.json` and `tests/browser-smoke.mjs:themeOverride(tab)` retain the failure, fix, and browser pass. The current full Node suite is 93/93.
+- Phase 12's obsolete `MISSING_ASSET=assets/destinations/azores.svg` instruction was updated to fail the current primary `azores-card.webp`. The old SVG is now the illustrated fallback; the control and actual browser fallback are recorded in `image-fallback-2026-09-24.json`.
+- Execution order remains Phase 12 Gate 12, V2 Phases 14–19, approved Phases 20–25, Gate 25, then Phase 13.3 last. None of those later implementation gates has been claimed complete here.

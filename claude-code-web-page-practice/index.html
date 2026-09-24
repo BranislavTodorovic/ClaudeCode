@@ -1487,7 +1487,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   });
   if (window.matchMedia) {
     var systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    systemThemeQuery.addEventListener("change", function (event) { if (paletteChoice === "auto") applyTheme(event.matches ? "dark" : "light"); });
+    systemThemeQuery.addEventListener("change", function (event) { if (paletteChoice === "auto" && !safeGet(STORAGE.theme)) applyTheme(event.matches ? "dark" : "light"); });
   }
 
   /* =====================================================================
@@ -1513,7 +1513,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   function applyDashboardPreferences() {
     if (paletteChoice === "classic" || paletteChoice === "auto") root.removeAttribute("data-palette"); else root.setAttribute("data-palette", paletteChoice);
     if (paletteChoice !== "auto") applyTheme(safeGet(STORAGE.theme) || root.getAttribute("data-theme") || "light");
-    if (paletteChoice === "auto") applyTheme(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (paletteChoice === "auto") applyTheme(safeGet(STORAGE.theme) || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
     document.body.setAttribute("data-background", backgroundChoice);
     root.setAttribute("data-accent", accentChoice);
     root.setAttribute("data-density", densityChoice);
@@ -1529,12 +1529,20 @@ body.force-full-motion { scroll-behavior:smooth; }
   });
   document.getElementById("settingsDone").addEventListener("click", function () { goToPage("home"); });
 
-  paletteSetting.addEventListener("change", function () {
-    paletteChoice = paletteSetting.value;
-    safeSet(STORAGE.palette, paletteChoice);
+  function choosePalette(next) {
+    if (next === "auto") {
+      var changes = {};
+      changes[STORAGE.palette] = "auto";
+      changes[STORAGE.theme] = null;
+      try { window.OneSpaceStorage.transaction(window.localStorage, changes); }
+      catch (error) { showToast("Changes could not be saved. Storage is full, unavailable, or needs recovery. Export a backup before closing."); return; }
+    } else if (!safeSet(STORAGE.palette, next)) return;
+    paletteChoice = next;
+    paletteSetting.value = next;
     applyDashboardPreferences();
-  });
-  document.querySelectorAll("[data-theme-choice]").forEach(function (button) { button.addEventListener("click", function () { paletteChoice = button.getAttribute("data-theme-choice"); paletteSetting.value = paletteChoice; safeSet(STORAGE.palette, paletteChoice); applyDashboardPreferences(); }); });
+  }
+  paletteSetting.addEventListener("change", function () { choosePalette(paletteSetting.value); });
+  document.querySelectorAll("[data-theme-choice]").forEach(function (button) { button.addEventListener("click", function () { choosePalette(button.getAttribute("data-theme-choice")); }); });
   document.querySelectorAll("[data-background-choice]").forEach(function (button) { button.addEventListener("click", function () { backgroundChoice = button.getAttribute("data-background-choice"); safeSet(STORAGE.background, backgroundChoice); applyDashboardPreferences(); }); });
   startupSetting.addEventListener("change", function () { startupChoice = startupSetting.value; safeSet(STORAGE.startup, startupChoice); applyMinimalMode(startupChoice === "minimal"); if (startupChoice === "minimal") goToPage("home"); });
 

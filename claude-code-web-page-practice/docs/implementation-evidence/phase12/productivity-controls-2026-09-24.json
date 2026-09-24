@@ -1,0 +1,12 @@
+{
+  "item": 347,
+  "status": "PARTIAL CONTROL EVIDENCE",
+  "date": "2026-09-24",
+  "origin": "Disposable browser server on 127.0.0.1:18974",
+  "rows": {
+    "I0115": "Start changed timer from Ready/05:00 to Break/05:00 and button to Pause with pressed state; Reset then returned to Ready. This timer action is transient; no cancellation or stored-record error path applies.",
+    "I0116": "Reset while the short-break timer was running returned status to Ready, restored 05:00, and returned the button to Start. This is a transient timer reset with no record deletion.",
+    "I0117": "The 25 min mode button changed timer to Short break/05:00 and relabeled to 5 min; clicking 5 min returned to Ready/25:00 and relabeled to 25 min. Mode selection is transient."
+  },
+  "remaining": "The other inventory button templates still need per-row facet reconciliation; this file does not verify checklist item 347."
+}
