@@ -198,5 +198,40 @@ test('Journal deletion keeps the entry when the confirmed write is rejected',()=
  context.deleteJournalEntry('j');assert.equal(context.journal.length,1);assert.equal(confirm(),false);assert.equal(context.journal.length,1);assert.equal(rendered,false);
 });
 test('objective lookup honors the rendered game even when another tracker is selected',()=>{
- const context={selectedStoryGameId:'a',library:['a','b'].map(id=>({id,story:{chapters:[{id:'c',title:id,objectives:[]}]}}))};vm.runInNewContext(fn('findChapter'),context);assert.equal(context.findChapter('c','b').title,'b');assert.equal(context.findChapter('c').title,'a');
+  const context={selectedStoryGameId:'a',library:['a','b'].map(id=>({id,story:{chapters:[{id:'c',title:id,objectives:[]}]}}))};vm.runInNewContext(fn('findChapter'),context);assert.equal(context.findChapter('c','b').title,'b');assert.equal(context.findChapter('c').title,'a');
+});
+test('spotlight autoplay keeps its visible state when storage rejects the preference',()=>{
+ const source=read('games/games.js').match(/    document\.getElementById\("gvAutoplay"\)\.addEventListener\("click", function \(\) \{[\s\S]*?\n    \}\);/)?.[0];
+ assert(source,'autoplay handler exists');
+ let click,accepted=false,synced=0;
+ const context={spotlight:{paused:false},document:{getElementById:()=>({addEventListener:(type,handler)=>{click=handler;}})},
+  safeSet:(key,value)=>{assert.equal(key,'orbit-games-autoplay');assert.equal(value,'paused');return accepted;},syncSpotlightPlayback:()=>{synced++;}};
+ vm.runInNewContext(source,context);
+ click();assert.equal(context.spotlight.paused,false);assert.equal(synced,0);
+ accepted=true;click();assert.equal(context.spotlight.paused,true);assert.equal(synced,1);
+});
+test('Games tab selection does not advance the panel when storage rejects the tab',()=>{
+ let accepted=false,applied=0,animated=0;
+ const context={TABS:['overview','library'],activeTab:'overview',GK:{activeTab:'orbit-games-tab'},
+  safeSet:(key,value)=>{assert.equal(key,'orbit-games-tab');assert.equal(value,'library');return accepted;},
+  applyTabVisibility:()=>{applied++;},playPanelAnimation:()=>{animated++;},wireReveal:()=>{},
+  document:{querySelector:()=>({})}};
+ vm.runInNewContext(fn('switchTab'),context);
+ assert.equal(context.switchTab('library'),false);
+ assert.equal(context.activeTab,'overview');assert.equal(applied,0);assert.equal(animated,0);
+ accepted=true;assert.equal(context.switchTab('library'),true);
+ assert.equal(context.activeTab,'library');assert.equal(applied,1);assert.equal(animated,1);
+});
+test('Games suggestion clear and reset keep preferences when storage rejects writes',()=>{
+ const elements={};for(const id of ['gvGetSuggestions','gvClearFilters','gvResetPreferences','gameDetailsClose'])elements[id]={addEventListener:(type,handler)=>{elements[id].click=handler;}};
+ const original={platforms:['PC'],genres:[],playstyles:[],moods:[]};
+ let accepted=false,renders=0,toasts=[];
+ const context={document:{getElementById:id=>elements[id]},prefs:original,GK:{prefs:'prefs',dismissed:'dismissed'},
+  safeSet:()=>accepted,window:{localStorage:{},OneSpaceStorage:{transaction:()=>{if(!accepted)throw Error('Quota');}}},
+  renderPrefGroups:()=>{renders++;},renderSuggestions:()=>{renders++;},showToast:message=>toasts.push(message),closeModal:()=>{}};
+ vm.runInNewContext(fn('wireSuggestions'),context);context.wireSuggestions();
+ elements.gvClearFilters.click();elements.gvResetPreferences.click();
+ assert.equal(context.prefs,original);assert.equal(renders,0);assert.match(toasts[0],/could not be reset/i);
+ accepted=true;elements.gvClearFilters.click();assert.deepEqual([...context.prefs.platforms],[]);assert.equal(renders,2);
+ context.prefs=original;elements.gvResetPreferences.click();assert.deepEqual([...context.prefs.platforms],[]);assert.equal(renders,4);
 });

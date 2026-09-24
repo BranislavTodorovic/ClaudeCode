@@ -469,9 +469,9 @@
     if (!game) return;
     if(selectSpotlight(id, "tracker")===false)return false;
     if (game.trackerType === "weekly") {
-      switchTab("weekly");
+      if (switchTab("weekly") === false) return false;
     } else {
-      switchTab("missions");
+      if (switchTab("missions") === false) return false;
     }
     focusPanel(activeTab);
     return true;
@@ -779,19 +779,27 @@
     var el = document.getElementById("gvPrefGroups");
     if (el) {
       el.innerHTML = '<label class="catalog-source-label">More like this<select id="gvSimilarTo"><option value="">All games</option>' + gameCatalog().map(function (g) { return '<option value="' + esc(g.id) + '"' + ((prefs.similarTo || [])[0] === g.id ? " selected" : "") + '>' + esc(g.title) + "</option>"; }).join("") + "</select></label>" + html;
-      document.getElementById("gvSimilarTo").addEventListener("change", function () { prefs.similarTo = this.value ? [this.value] : []; safeSet(GK.prefs, JSON.stringify(prefs)); renderSuggestions(); });
+      document.getElementById("gvSimilarTo").addEventListener("change", function () {
+        var nextPrefs = Object.assign({}, prefs, { similarTo: this.value ? [this.value] : [] });
+        if (!safeSet(GK.prefs, JSON.stringify(nextPrefs))) { this.value = (prefs.similarTo || [])[0] || ""; return; }
+        prefs = nextPrefs;
+        renderSuggestions();
+      });
     }
   }
   function handlePrefChange(input) {
     var group = input.getAttribute("data-pref-group");
     var value = input.getAttribute("data-pref-value");
-    var arr = prefs[group];
+    var nextPrefs = Object.assign({}, prefs);
+    var arr = prefs[group].slice();
     var idx = arr.indexOf(value);
     if (input.checked && idx === -1) arr.push(value);
     if (!input.checked && idx !== -1) arr.splice(idx, 1);
+    nextPrefs[group] = arr;
+    if (!safeSet(GK.prefs, JSON.stringify(nextPrefs))) { input.checked = !input.checked; return; }
+    prefs = nextPrefs;
     var chip = input.closest(".gv-pref-chip");
     if (chip) chip.classList.toggle("is-checked", input.checked);
-    safeSet(GK.prefs, JSON.stringify(prefs));
     renderSuggestions();
   }
   function gameCatalog() { return window.OneSpaceCatalog.merge([library, window.SUGGESTION_CATALOG || [], window.DEFAULT_GAMES || []], window.OneSpaceCatalog.game); }
@@ -923,17 +931,20 @@
   function wireSuggestions() {
     document.getElementById("gvGetSuggestions").addEventListener("click", function () { renderSuggestions(); });
     document.getElementById("gvClearFilters").addEventListener("click", function () {
-      prefs = { platforms: [], genres: [], playstyles: [], moods: [] };
-      safeSet(GK.prefs, JSON.stringify(prefs));
+      var nextPrefs = { platforms: [], genres: [], playstyles: [], moods: [] };
+      if (!safeSet(GK.prefs, JSON.stringify(nextPrefs))) return;
+      prefs = nextPrefs;
       renderPrefGroups();
       renderSuggestions();
       showToast("Filters cleared.");
     });
     document.getElementById("gvResetPreferences").addEventListener("click", function () {
-      prefs = { platforms: [], genres: [], playstyles: [], moods: [] };
-      safeSet(GK.prefs, JSON.stringify(prefs));
+      var nextPrefs = { platforms: [], genres: [], playstyles: [], moods: [] };
+      try {
+        window.OneSpaceStorage.transaction(window.localStorage, { [GK.prefs]: JSON.stringify(nextPrefs), [GK.dismissed]: "[]" });
+      } catch (e) { showToast("Preferences could not be reset. Please try again."); return; }
+      prefs = nextPrefs;
       renderPrefGroups();
-      safeSet(GK.dismissed, "[]");
       renderSuggestions();
       showToast("Preferences reset.");
     });
@@ -1323,7 +1334,12 @@
     document.getElementById("gvNext").innerHTML = gvIcon("next");
     document.getElementById("gvPrevious").addEventListener("click", function () { advanceSpotlight(-1, "manual"); });
     document.getElementById("gvNext").addEventListener("click", function () { advanceSpotlight(1, "manual"); });
-    document.getElementById("gvAutoplay").addEventListener("click", function () { spotlight.paused = !spotlight.paused; safeSet("orbit-games-autoplay", spotlight.paused ? "paused" : "playing"); syncSpotlightPlayback(); });
+    document.getElementById("gvAutoplay").addEventListener("click", function () {
+      var nextPaused = !spotlight.paused;
+      if (!safeSet("orbit-games-autoplay", nextPaused ? "paused" : "playing")) return;
+      spotlight.paused = nextPaused;
+      syncSpotlightPlayback();
+    });
     document.getElementById("gamesView").addEventListener("click", function (e) {
       var button = e.target.closest("[data-spotlight-id]");
       if (button) selectSpotlight(button.dataset.spotlightId, "manual");
@@ -1407,11 +1423,12 @@
   }
   function switchTab(tab) {
     if (TABS.indexOf(tab) === -1) tab = "overview";
+    if (!safeSet(GK.activeTab, tab)) return false;
     activeTab = tab;
-    safeSet(GK.activeTab, tab);
     applyTabVisibility(tab);
     playPanelAnimation(tab);
     wireReveal(document.querySelector('.gv-panel[data-panel="' + tab + '"]'));
+    return true;
   }
   function wireTabs() {
     document.querySelectorAll(".gv-tab").forEach(function (btn) {
@@ -1423,8 +1440,8 @@
         else if (e.key === "Home") index = 0;
         else if (e.key === "End") index = TABS.length - 1;
         else return;
-        e.preventDefault(); switchTab(TABS[index]);
-        document.querySelector('[data-gv-tab="' + TABS[index] + '"]').focus();
+        e.preventDefault();
+        if (switchTab(TABS[index]) !== false) document.querySelector('[data-gv-tab="' + TABS[index] + '"]').focus();
       });
     });
   }
@@ -1453,9 +1470,9 @@
       var action = target.getAttribute("data-action");
       var id = target.getAttribute("data-id");
       switch (action) {
-        case "spotlight-game": if(selectSpotlight(id, "manual")===false)break; switchTab("overview"); document.getElementById("gvSpotlight").scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "start" }); break;
+        case "spotlight-game": if(selectSpotlight(id, "manual")===false || switchTab("overview")===false)break; document.getElementById("gvSpotlight").scrollIntoView({ behavior: motionQuery.matches ? "auto" : "smooth", block: "start" }); break;
         case "change-spotlight": advanceSpotlight(1, "manual"); break;
-        case "explore-library": switchTab("library"); focusPanel("library"); break;
+        case "explore-library": if (switchTab("library") !== false) focusPanel("library"); break;
         case "open-progress": goToTracker(id); break;
         case "edit-game": {
           var game = library.find(function (g) { return g.id === id; });
