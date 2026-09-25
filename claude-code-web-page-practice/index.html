@@ -2106,8 +2106,10 @@ body.force-full-motion { scroll-behavior:smooth; }
     }).join("");
     providersEl.querySelectorAll(".provider-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        currentProvider = btn.getAttribute("data-provider");
-        safeSet(STORAGE.searchProvider, currentProvider);
+        var nextProvider = btn.getAttribute("data-provider");
+        if (nextProvider === currentProvider) { searchInput.focus(); return; }
+        if (!safeSet(STORAGE.searchProvider, nextProvider)) return;
+        currentProvider = nextProvider;
         renderProviders();
         searchInput.focus();
       });
@@ -2713,7 +2715,20 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
   var notesSearchQuery = "";
   var notesEditingId = null;
-  function saveNotesList() { safeSet(STORAGE.notesList, JSON.stringify(notesList)); }
+  function saveNotesList(next) {
+    if (!safeSet(STORAGE.notesList, JSON.stringify(next))) return false;
+    notesList = next;
+    return true;
+  }
+  function deleteNote(id, confirmed) {
+    var note = notesList.filter(function (n) { return n.id === id; })[0];
+    if (!note) return false;
+    if (!confirmed) { window.OneSpaceUI.confirm("Delete note?", note.title || note.body.slice(0, 80), function () { return deleteNote(id, true); }); return; }
+    if (!saveNotesList(notesList.filter(function (n) { return n.id !== id; }))) return false;
+    renderNotes();
+    showToast("Note deleted.");
+    return true;
+  }
   function renderNotes() {
     var grid = document.getElementById("notesGrid");
     if (!grid) return;
@@ -2745,8 +2760,9 @@ body.force-full-motion { scroll-behavior:smooth; }
       btn.addEventListener("click", function () {
         var note = notesList.filter(function (n) { return n.id === btn.getAttribute("data-note-pin"); })[0];
         if (!note) return;
-        note.pinned = !note.pinned;
-        saveNotesList(); renderNotes(); 
+        var next = notesList.map(function (n) { return n.id === note.id ? Object.assign({}, n, { pinned: !n.pinned }) : n; });
+        if (!saveNotesList(next)) return;
+        renderNotes();
         grid.querySelector('[data-note-pin="' + note.id + '"]').focus();
       });
     });
@@ -2764,21 +2780,21 @@ body.force-full-motion { scroll-behavior:smooth; }
         if (!note || !card) return;
         var titleInput = card.querySelector("[data-note-edit-title]");
         var bodyInput = card.querySelector("[data-note-edit-body]");
-        note.title = titleInput ? titleInput.value.trim().slice(0, 60) : note.title;
-        note.body = bodyInput ? bodyInput.value.trim() : note.body;
-        note.updatedAt = Date.now();
+        var next = notesList.map(function (n) { return n.id === id ? Object.assign({}, n, {
+          title: titleInput ? titleInput.value.trim().slice(0, 60) : n.title,
+          body: bodyInput ? bodyInput.value.trim() : n.body,
+          updatedAt: Date.now()
+        }) : n; });
+        if (!saveNotesList(next)) return;
         notesEditingId = null;
-        saveNotesList(); renderNotes(); 
+        renderNotes();
         showToast("Note saved.");
         (grid.querySelector('[data-note-edit="' + id + '"]') || document.getElementById("notesSearchInput")).focus();
       });
     });
     grid.querySelectorAll("[data-note-delete]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var id = btn.getAttribute("data-note-delete");
-        if (!window.confirm("Delete this note?")) return;
-        notesList = notesList.filter(function (n) { return n.id !== id; });
-        saveNotesList(); renderNotes(); 
+        deleteNote(btn.getAttribute("data-note-delete"));
       });
     });
   }
@@ -2790,9 +2806,10 @@ body.force-full-motion { scroll-behavior:smooth; }
       var bodyInput = document.getElementById("notesNewBody");
       var body = bodyInput.value.trim();
       if (!body) { showToast("Write something before adding a note."); return; }
-      notesList.unshift({ id: uid("note"), title: titleInput.value.trim().slice(0, 60), body: body, pinned: false, createdAt: Date.now(), updatedAt: Date.now() });
+      var next = [{ id: uid("note"), title: titleInput.value.trim().slice(0, 60), body: body, pinned: false, createdAt: Date.now(), updatedAt: Date.now() }].concat(notesList);
+      if (!saveNotesList(next)) return;
       titleInput.value = ""; bodyInput.value = "";
-      saveNotesList(); renderNotes(); 
+      renderNotes();
       showToast("Note added.");
     });
   }

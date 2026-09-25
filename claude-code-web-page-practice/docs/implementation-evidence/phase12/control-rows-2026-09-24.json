@@ -767,6 +767,120 @@
       "cancel": "Home view reverses the navigation; no draft or record mutation exists.",
       "error": "The shared goToPage rejected-write test verifies a failed route save leaves the current page visible.",
       "persistence": "Shortcuts remained the selected route after browser reload."
+    },
+    "I0228": {
+      "success": "On the disposable Productivity origin, Delete Audit delete task opened Delete task? with the task text. Confirming Delete removed the row and changed Today to 0 tasks.",
+      "cancel": "Cancel closed the confirmation and retained Audit delete task in Today.",
+      "error": "tests/productivity-write-failure.test.js verifies a rejected confirmed task delete returns false and retains the task; an accepted retry removes it.",
+      "persistence": "After confirming Delete and reloading the disposable browser page, Today still showed 0 tasks and the deleted task was absent."
+    },
+    "I0229": {
+      "success": "On the disposable Productivity origin, Add date created Audit countdown for 2026-10-01; Delete countdown Audit countdown opened Delete countdown? and confirming Delete removed the row.",
+      "cancel": "Cancel closed the confirmation and retained Audit countdown.",
+      "error": "tests/productivity-write-failure.test.js verifies a rejected confirmed countdown delete returns false and retains the prior record; an accepted retry removes it.",
+      "persistence": "After confirming Delete and reloading, Audit countdown remained absent from Planner."
+    },
+    "I0230": {
+      "success": "On Home, selecting YouTube in the Search provider group changed its pressed state to true and focused search.",
+      "cancel": "Selecting Google reversed the choice and restored Google's pressed state.",
+      "error": "The handler now saves before changing currentProvider or the pressed state. tests/home-control-write-failure.test.js verifies a rejected search-provider write leaves Google selected and an accepted retry selects YouTube; all six focused tests passed.",
+      "persistence": "After selecting YouTube and reloading the disposable browser page, YouTube remained pressed."
+    },
+    "I0233": {
+      "success": "On Quick Notes, Pin note changed the Audit note control to Unpin note with aria-pressed=true; reload retained the pin.",
+      "cancel": "Unpin note reversed the state to Pin note with aria-pressed=false.",
+      "error": "Pin now creates an immutable replacement and calls saveNotesList before rerendering. tests/notes-write-failure.test.js verifies the shared save boundary retains the old list on rejected storage.",
+      "persistence": "The pinned state survived a disposable-browser reload before the inverse action."
+    },
+    "I0234": {
+      "success": "In Quick Notes edit mode, Save changed Audit note/Original body to Saved title/Saved body and reported Note saved.",
+      "cancel": "Before saving, Cancel with Unsaved title/Unsaved body preserved the original note; the later save used a new edit.",
+      "error": "Save now builds a replacement note, checks saveNotesList before closing edit mode or claiming success, and leaves the draft visible on rejected storage; the focused save-boundary regression passes.",
+      "persistence": "Saved title and Saved body remained after browser reload."
+    },
+    "I0235": {
+      "success": "Cancel exited the Audit note editor and returned the original note card after changing both draft fields.",
+      "cancel": "The discard action is itself the cancellation path; Edit note reopened the stored values for a subsequent save.",
+      "error": "Cancel performs no storage write and therefore has no rejected-write path; the prior record remained visible.",
+      "persistence": "A reload after Cancel still showed Audit note and Original body."
+    },
+    "I0236": {
+      "success": "Edit note opened the card editor with its saved Note title and Note body values and focused the title field.",
+      "cancel": "Cancel discarded draft title/body changes and returned to the unchanged card.",
+      "error": "Opening edit mode performs no write; rejected Save now keeps the draft in edit mode via the shared save boundary, covered by tests/notes-write-failure.test.js.",
+      "persistence": "After saving a later edit and reloading, the card displayed Saved title and Saved body."
+    },
+    "I0237": {
+      "success": "Delete note opened the shared Delete note? dialog for a disposable Deletion check note; confirming Delete removed the card and reported Note deleted.",
+      "cancel": "Cancel closed the shared dialog and kept the note and body visible.",
+      "error": "tests/notes-write-failure.test.js verifies delete waits for confirmation and rejected persistence leaves the note and rendered list unchanged; both focused tests pass.",
+      "persistence": "After confirmed deletion and reload, the note remained absent."
+    },
+    "I0240": {
+      "success": "A Suggestions card's View Details opened The Shawshank Redemption dialog with its overview, genre, year, duration, language, rating, platforms and actions.",
+      "cancel": "Close dialog returned to Suggestions without adding or changing the title.",
+      "error": "This local catalog detail open is read-only and makes no storage or provider request; there is no write failure path.",
+      "persistence": "After closing and reloading, Suggestions remained selected and the detail dialog stayed closed."
+    },
+    "I0241": {
+      "success": "The Shawshank Redemption Suggestions card Add to Watchlist reported it added to the library; Watchlist displayed the title and actions.",
+      "cancel": "Watchlist Remove reversed membership, left the title tracked as Unwatched, and showed an empty Watchlist.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected transactional library write leaves the prior library and storage empty; an accepted retry adds the title as Watchlist. All six focused tests pass.",
+      "persistence": "Reload retained the title on Watchlist after Add; after Remove, reload retained the empty Watchlist."
+    },
+    "I0242": {
+      "success": "The Suggestions card Mark as Watched for The Shawshank Redemption reported marked as Watched; My Movies & Series showed its status as Watched.",
+      "cancel": "The library's Change status control reversed it to Unwatched.",
+      "error": "tests/movies-lifecycle.test.js verifies both Watchlist and Watched suggestion actions reject partial transactional writes without advancing the library; all six focused tests pass.",
+      "persistence": "Reload retained Watched after the action, and retained Unwatched after the reversal."
+    },
+    "I0243": {
+      "success": "The Shawshank Redemption Suggestions card Dismiss reported Suggestion dismissed and removed that card from the suggestion panel.",
+      "cancel": "Reset Preferences restored the dismissed card; this immediate action has no draft-stage Cancel.",
+      "error": "Dismiss now saves a replacement ID list before changing memory, rerendering or claiming success. tests/movies-lifecycle.test.js verifies rejected persistence leaves the card/list unchanged; all seven focused tests pass.",
+      "persistence": "The card remained absent after reload while dismissed, and remained present after Reset Preferences and a further reload."
+    },
+    "I0244": {
+      "success": "Watchlist Mark as Watched moved The Shawshank Redemption off Watchlist and showed Watched in My Movies & Series.",
+      "cancel": "The library Change status selector restored Watchlist membership.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected transaction restores the prior Watchlist status in memory and storage; all eight focused tests pass.",
+      "persistence": "Watched survived browser reload, and the restored Watchlist membership also survived a later reload."
+    },
+    "I0245": {
+      "success": "Watchlist Remove immediately removed The Shawshank Redemption from the Watchlist while retaining it as an Unwatched library title.",
+      "cancel": "The library Change status selector restored Watchlist membership; the immediate action has no draft-stage Cancel.",
+      "error": "tests/movies-lifecycle.test.js verifies rejected persistence restores the prior Watchlist status in memory and storage; all nine focused tests pass.",
+      "persistence": "The Watchlist remained empty after Remove and reload, then showed the title again after the inverse status change."
+    },
+    "I0246": {
+      "success": "For a disposable Audit custom film, Delete opened Delete custom title?; confirming Delete removed the custom library card.",
+      "cancel": "Cancel kept Audit custom film in My Movies & Series.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected transactional custom Delete restores the library title in memory and storage; all ten focused tests pass.",
+      "persistence": "After confirmed Delete and browser reload, Audit custom film remained absent."
+    },
+    "I0247": {
+      "success": "Edit Audit edit film opened the prefilled Edit Title form. Saving Audit edited film changed the library card and reported Movie updated.",
+      "cancel": "Changing the title to Unsaved film then Cancel kept Audit edit film unchanged.",
+      "error": "Clearing the required Title field with keyboard Select All/Backspace and submitting kept Edit Title open with Please enter a movie title. tests/movies-lifecycle.test.js also verifies a rejected transactional metadata edit restores the previous title in memory and storage; all eleven focused tests pass.",
+      "persistence": "Audit edited film remained on the library card after reload."
+    },
+    "I0248": {
+      "success": "The Audit edited film library poster's View details control opened a dialog with its saved type, genre, year, duration, language, status and actions.",
+      "cancel": "Close dialog returned to the library card without mutating it.",
+      "error": "Opening saved local details makes no storage or provider request; there is no write failure path.",
+      "persistence": "After closing and reloading, the custom library card remained and the dialog stayed closed."
+    },
+    "I0250": {
+      "success": "With an empty Watchlist, Overview Get Suggestions selected the Suggestions tab and focused its panel.",
+      "cancel": "Selecting Overview reversed the navigation without changing tracked titles.",
+      "error": "switchTab now saves before changing the selected panel and Get Suggestions focuses the panel only after a successful save. tests/movies-lifecycle.test.js verifies rejected route storage keeps Overview selected; all twelve focused tests pass.",
+      "persistence": "Suggestions remained selected after reload; after returning to Overview, a later reload showed Overview selected."
+    },
+    "I0251": {
+      "success": "Overview Up Next Mark as Watched moved The Shawshank Redemption from Watchlist to Watched and replaced Up Next with the empty prompt.",
+      "cancel": "The library Change status selector restored Watchlist status.",
+      "error": "The Up Next action calls the same addSeedToLibrary transactional path as I0244. tests/movies-lifecycle.test.js verifies a rejected transaction restores the previous Watchlist status in memory and storage.",
+      "persistence": "Watched survived reload; after the inverse status change, Watchlist also survived a later reload."
     }
   }
 }

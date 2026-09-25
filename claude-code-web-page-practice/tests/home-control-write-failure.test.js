@@ -16,6 +16,23 @@ test('Home theme toggle does not display an unsaved theme',()=>{
   accepted=true;click();assert.equal(applied,'light');
 });
 
+test('Home search provider keeps its pressed state when storage rejects selection',()=>{
+  const source=html.match(/  function renderProviders\(\) \{[\s\S]*?\n  \}/)?.[0];
+  assert(source,'Home provider renderer exists');
+  let accepted=false,focuses=0,saved='';
+  const buttons=['google','youtube'].map(id=>({getAttribute:()=>id,addEventListener(type,handler){this.click=handler;}}));
+  const providersEl={innerHTML:'',querySelectorAll:()=>buttons};
+  const context={providersEl,SEARCH_PROVIDERS:[{id:'google',icon:'a',label:'Google'},{id:'youtube',icon:'b',label:'YouTube'}],
+    currentProvider:'google',STORAGE:{searchProvider:'orbit-search-provider'},iconSvg:()=>'',escapeHtml:value=>value,
+    searchInput:{focus:()=>{focuses++;}},safeSet:(key,value)=>{assert.equal(key,'orbit-search-provider');saved=value;return accepted;}};
+  vm.runInNewContext(source,context);
+  context.renderProviders();
+  buttons[1].click();
+  assert.equal(saved,'youtube');assert.equal(context.currentProvider,'google');assert.match(providersEl.innerHTML,/aria-pressed="true">Google/);
+  accepted=true;buttons[1].click();
+  assert.equal(context.currentProvider,'youtube');assert.match(providersEl.innerHTML,/aria-pressed="true">YouTube/);assert.equal(focuses,1);
+});
+
 test('Quick Access selection commits both preference keys before changing the view',()=>{
   const source=html.match(/  function selectQuickAccessTab\(nextTab\) \{[\s\S]*?\n  \}/)?.[0];
   assert(source,'Quick Access selection handler exists');

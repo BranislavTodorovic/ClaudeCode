@@ -357,7 +357,11 @@
     return library.filter(function(item){return item.status==='watchlist';});
   }
   function saveWatchlist() { safeSet(MK.watchlist, JSON.stringify(watchlist)); }
-  function saveDismissed() { safeSet(MK.dismissed, JSON.stringify(dismissed)); }
+  function saveDismissed(next) {
+    if (!safeSet(MK.dismissed, JSON.stringify(next))) return false;
+    dismissed = next;
+    return true;
+  }
   function savePrefs() { safeSet(MK.prefs, JSON.stringify(prefs)); }
   saveLibrary();
 
@@ -485,10 +489,11 @@
   }
   function moveWatchlistToWatched(id) { addSeedToLibrary(id, "watched"); removeFromWatchlist(id); }
   function dismissSuggestion(id) {
-    if (dismissed.indexOf(id) === -1) dismissed.push(id);
-    saveDismissed();
+    var next = dismissed.indexOf(id) === -1 ? dismissed.concat(id) : dismissed;
+    if (!saveDismissed(next)) return false;
     renderSuggestions();
     showToast("Suggestion dismissed.");
+    return true;
   }
 
   /* ---------------------------------------------------------------------
@@ -1103,11 +1108,13 @@
   }
   function switchTab(tab) {
     if (TABS.indexOf(tab) === -1) tab = "overview";
+    if (tab === activeTab) return true;
+    if (!safeSet(MK.activeTab, tab)) return false;
     activeTab = tab;
-    safeSet(MK.activeTab, tab);
     applyTabVisibility(tab);
     playPanelAnimation(tab);
     wireReveal(document.querySelector('.mv-panel[data-panel="' + tab + '"]'));
+    return true;
   }
   function focusPanel(name) {
     var panel = document.querySelector('.mv-panel[data-panel="' + name + '"]');
@@ -1126,8 +1133,8 @@
         else if (e.key === "Home") index = 0;
         else if (e.key === "End") index = TABS.length - 1;
         else return;
-        e.preventDefault(); switchTab(TABS[index]);
-        document.querySelector('[data-mv-tab="' + TABS[index] + '"]').focus();
+        e.preventDefault();
+        if (switchTab(TABS[index])) document.querySelector('[data-mv-tab="' + TABS[index] + '"]').focus();
       });
     });
   }
@@ -1169,7 +1176,7 @@
         case "delete-movie": deleteMovie(id); break;
         case "untrack-movie": untrackMovie(id); break;
         case "apply-movies-theme": applyMoviesTheme(target.getAttribute("data-theme")); break;
-        case "goto-suggestions": switchTab("suggestions"); focusPanel("suggestions"); break;
+        case "goto-suggestions": if (switchTab("suggestions")) focusPanel("suggestions"); break;
       }
     });
     root.addEventListener("change", function (e) {
@@ -1198,8 +1205,7 @@
       prefs = defaultPrefs();
       savePrefs();
       renderPrefGroups();
-      dismissed = [];
-      saveDismissed();
+      if (!saveDismissed([])) return;
       renderSuggestions();
       showToast("Preferences reset.");
     });
