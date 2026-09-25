@@ -1162,9 +1162,9 @@ body.force-full-motion { scroll-behavior:smooth; }
   function activeLinks() { return allLinks().filter(function (link) { return linkSpace(link) === currentSpace && hiddenShortcutIds.indexOf(link.id) === -1; }); }
   function linksForSpace(space) { return allLinks().filter(function (link) { return linkSpace(link) === space && hiddenShortcutIds.indexOf(link.id) === -1; }); }
   function visibleCategories() {
-    if (currentSpace === "work") return ["Development"].concat(customCategories.filter(function (cat) { return ["Shopping & Home", "Daily", "Smart Home"].indexOf(cat) === -1; }));
-    if (currentSpace === "personal") return ["Daily", "Shopping & Home", "Smart Home"];
-    return ["Travel", "Gaming", "Relax & Play"];
+    var allowed = currentSpace === "work" ? ["Development"].concat(customCategories) :
+      currentSpace === "personal" ? ["Daily", "Shopping & Home", "Smart Home"] : ["Travel", "Gaming", "Relax & Play"];
+    return CATEGORIES.filter(function (category) { return allowed.indexOf(category) !== -1; });
   }
 
   /* =====================================================================
@@ -1303,9 +1303,12 @@ body.force-full-motion { scroll-behavior:smooth; }
   document.addEventListener("keydown", function (event) { if (event.key === "Escape") closeCardMenus(); });
 
   function recordUsage(id) {
-    usageCounts[id] = Math.min(999999, (Number(usageCounts[id]) || 0) + 1);
-    safeSet(STORAGE.usage, JSON.stringify(usageCounts));
+    var next = Object.assign({}, usageCounts);
+    next[id] = Math.min(999999, (Number(next[id]) || 0) + 1);
+    if (!safeSet(STORAGE.usage, JSON.stringify(next))) return false;
+    usageCounts = next;
     if (quickAccessTab === "used") renderPersonalSections();
+    return true;
   }
 
   function findLink(id) { return allLinks().filter(function (link) { return link.id === id; })[0]; }
@@ -1318,11 +1321,11 @@ body.force-full-motion { scroll-behavior:smooth; }
       navigator.clipboard.writeText(link.url).then(copied).catch(function () { fallbackCopy(link.url); });
     } else fallbackCopy(link.url);
   }
-  function fallbackCopy(value) {
+  function fallbackCopy(value, copiedMessage, failedMessage) {
     var area = document.createElement("textarea");
     area.value = value; area.setAttribute("readonly", ""); area.style.position = "fixed"; area.style.opacity = "0";
     document.body.appendChild(area); area.select();
-    try { document.execCommand("copy"); showToast("Address copied to clipboard."); } catch (e) { showToast("Copy failed. Select the address manually."); }
+    try { if (!document.execCommand("copy")) throw new Error("Copy rejected"); showToast(copiedMessage || "Address copied to clipboard."); } catch (e) { showToast(failedMessage || "Copy failed. Select the address manually."); }
     area.remove();
   }
 
@@ -1366,17 +1369,21 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
 
   function rememberRecent(id) {
-    recentIds = [id].concat(recentIds.filter(function (savedId) { return savedId !== id; })).slice(0, 5);
-    safeSet(STORAGE.recent, JSON.stringify(recentIds));
+    var next = [id].concat(recentIds.filter(function (savedId) { return savedId !== id; })).slice(0, 5);
+    if (!safeSet(STORAGE.recent, JSON.stringify(next))) return false;
+    recentIds = next;
     renderPersonalSections();
+    return true;
   }
 
   function toggleCategory(category) {
     var index = collapsedCategories.indexOf(category);
-    if (index === -1) collapsedCategories.push(category); else collapsedCategories.splice(index, 1);
-    safeSet(STORAGE.collapsed, JSON.stringify(collapsedCategories));
+    var next = index === -1 ? collapsedCategories.concat(category) : collapsedCategories.filter(function (item) { return item !== category; });
+    if (!safeSet(STORAGE.collapsed, JSON.stringify(next))) return false;
+    collapsedCategories = next;
     buildSectionShells();
     renderLinks();
+    return true;
   }
 
   function rebuildCategories(persist) {
@@ -1395,12 +1402,17 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
 
   function moveCategory(name, direction) {
-    var index = CATEGORIES.indexOf(name);
-    var target = direction === "up" ? index - 1 : index + 1;
-    if (index < 0 || target < 0 || target >= CATEGORIES.length) { showToast("That category is already at the edge."); return; }
-    var moved = CATEGORIES.splice(index, 1)[0]; CATEGORIES.splice(target, 0, moved);
-    safeSet(STORAGE.categoryOrder, JSON.stringify(CATEGORIES));
+    var visible = visibleCategories();
+    var position = visible.indexOf(name);
+    var adjacent = visible[position + (direction === "up" ? -1 : 1)];
+    if (position < 0 || !adjacent) { showToast("That category is already at the edge."); return false; }
+    var next = CATEGORIES.slice();
+    var index = next.indexOf(name), target = next.indexOf(adjacent);
+    next[index] = adjacent; next[target] = name;
+    if (!safeSet(STORAGE.categoryOrder, JSON.stringify(next))) return false;
+    CATEGORIES = next;
     buildSectionShells(); renderLinks(); showToast(name + " moved " + direction + ".");
+    return true;
   }
 
   function addCategory() {
@@ -1440,29 +1452,47 @@ body.force-full-motion { scroll-behavior:smooth; }
   });
 
   function renameCategory(oldName) {
-    var name = window.prompt("Rename this category:", oldName);
-    if (!name) return;
-    name = name.trim().slice(0, 30);
-    if (!name || CATEGORIES.some(function (category) { return category !== oldName && category.toLowerCase() === name.toLowerCase(); })) {
-      showToast("Please choose a unique category name."); return;
-    }
-    customCategories[customCategories.indexOf(oldName)] = name;
-    customLinks.forEach(function (link) { if (link.category === oldName) link.category = name; });
-    collapsedCategories = collapsedCategories.map(function (category) { return category === oldName ? name : category; });
-    saveCustomLinks();
-    safeSet(STORAGE.collapsed, JSON.stringify(collapsedCategories));
-    rebuildCategories();
-    showToast("Category renamed.");
+    if (customCategories.indexOf(oldName) === -1) return;
+    window.OneSpaceUI.open("Rename category", window.OneSpaceUI.field("name", "Name", oldName, "text", 'maxlength="30" required'), function (form) {
+      var name = String(form.get("name") || "").trim().slice(0, 30);
+      if (!name || CATEGORIES.some(function (category) { return category !== oldName && category.toLowerCase() === name.toLowerCase(); })) throw new Error("Please choose a unique category name.");
+      var nextCategories = customCategories.map(function (category) { return category === oldName ? name : category; });
+      var nextOrder = CATEGORIES.map(function (category) { return category === oldName ? name : category; });
+      var nextLinks = customLinks.map(function (link) { return link.category === oldName ? Object.assign({}, link, { category: name }) : link; });
+      var nextCollapsed = collapsedCategories.map(function (category) { return category === oldName ? name : category; });
+      var changes = {};
+      changes[STORAGE.customCategories] = JSON.stringify(nextCategories);
+      changes[STORAGE.categoryOrder] = JSON.stringify(nextOrder);
+      changes[STORAGE.customLinks] = JSON.stringify(nextLinks);
+      changes[STORAGE.collapsed] = JSON.stringify(nextCollapsed);
+      try { window.OneSpaceStorage.transaction(window.localStorage, changes); }
+      catch (error) { throw new Error("Category could not be saved. Please try again."); }
+      customCategories = nextCategories; CATEGORIES = nextOrder; customLinks = nextLinks; collapsedCategories = nextCollapsed;
+      rebuildCategories(false);
+      showToast("Category renamed.");
+      return true;
+    }, "Rename");
   }
 
   function deleteCategory(name) {
-    if (!window.confirm('Delete "' + name + '"? Its shortcuts will move to Development.')) return;
-    customLinks.forEach(function (link) { if (link.category === name) link.category = "Development"; });
-    customCategories = customCategories.filter(function (category) { return category !== name; });
-    collapsedCategories = collapsedCategories.filter(function (category) { return category !== name; });
-    saveCustomLinks();
-    rebuildCategories();
-    showToast("Category deleted; its shortcuts moved to Development.");
+    if (customCategories.indexOf(name) === -1) return;
+    window.OneSpaceUI.confirm("Delete category?", 'Delete "' + name + '"? Its shortcuts will move to Development.', function () {
+      var nextCategories = customCategories.filter(function (category) { return category !== name; });
+      var nextOrder = CATEGORIES.filter(function (category) { return category !== name; });
+      var nextLinks = customLinks.map(function (link) { return link.category === name ? Object.assign({}, link, { category: "Development" }) : link; });
+      var nextCollapsed = collapsedCategories.filter(function (category) { return category !== name; });
+      var changes = {};
+      changes[STORAGE.customCategories] = JSON.stringify(nextCategories);
+      changes[STORAGE.categoryOrder] = JSON.stringify(nextOrder);
+      changes[STORAGE.customLinks] = JSON.stringify(nextLinks);
+      changes[STORAGE.collapsed] = JSON.stringify(nextCollapsed);
+      try { window.OneSpaceStorage.transaction(window.localStorage, changes); }
+      catch (error) { throw new Error("Category could not be deleted. Please try again."); }
+      customCategories = nextCategories; CATEGORIES = nextOrder; customLinks = nextLinks; collapsedCategories = nextCollapsed;
+      rebuildCategories(false);
+      showToast("Category deleted; its shortcuts moved to Development.");
+      return true;
+    });
   }
 
   /* =====================================================================
@@ -1595,8 +1625,8 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
   paletteSetting.addEventListener("change", function () { choosePalette(paletteSetting.value); });
   document.querySelectorAll("[data-theme-choice]").forEach(function (button) { button.addEventListener("click", function () { choosePalette(button.getAttribute("data-theme-choice")); }); });
-  document.querySelectorAll("[data-background-choice]").forEach(function (button) { button.addEventListener("click", function () { backgroundChoice = button.getAttribute("data-background-choice"); safeSet(STORAGE.background, backgroundChoice); applyDashboardPreferences(); }); });
-  startupSetting.addEventListener("change", function () { startupChoice = startupSetting.value; safeSet(STORAGE.startup, startupChoice); applyMinimalMode(startupChoice === "minimal"); if (startupChoice === "minimal") goToPage("home"); });
+  document.querySelectorAll("[data-background-choice]").forEach(function (button) { button.addEventListener("click", function () { var next = button.getAttribute("data-background-choice"); if (!safeSet(STORAGE.background, next)) return; backgroundChoice = next; applyDashboardPreferences(); }); });
+  startupSetting.addEventListener("change", function () { setStartupMode(startupSetting.value); });
 
   accentSetting.addEventListener("change", function () {
     accentChoice = accentSetting.value;
@@ -1755,10 +1785,22 @@ body.force-full-motion { scroll-behavior:smooth; }
     document.dispatchEvent(new CustomEvent("onespace:page-changed", { detail: { page: currentPage, previous: previous } }));
     return true;
   }
-  function applyMinimalMode(enabled) {
+  function applyMinimalMode(enabled, skipSave) {
+    if (!skipSave && !safeSet(STORAGE.minimal, enabled ? "true" : "false")) return false;
     document.body.classList.toggle("minimal-mode", !!enabled);
-    safeSet(STORAGE.minimal, enabled ? "true" : "false");
     renderPersonalSections();
+    return true;
+  }
+  function setStartupMode(next) {
+    var changes = {};
+    changes[STORAGE.startup] = next;
+    changes[STORAGE.minimal] = next === "minimal" ? "true" : "false";
+    try { window.OneSpaceStorage.transaction(window.localStorage, changes); }
+    catch (error) { startupSetting.value = startupChoice; showToast("Changes could not be saved. Storage is full, unavailable, or needs recovery. Export a backup before closing."); return false; }
+    startupChoice = next;
+    applyMinimalMode(next === "minimal", true);
+    if (next === "minimal") goToPage("home");
+    return true;
   }
   function applySidebarState() {
     root.setAttribute("data-sidebar", sidebarCollapsed ? "collapsed" : "expanded");
@@ -1779,13 +1821,13 @@ body.force-full-motion { scroll-behavior:smooth; }
   });
   document.querySelectorAll("[data-page-button]").forEach(function (button) {
     button.addEventListener("click", function () {
-      applyMinimalMode(false);
-      goToPage(button.getAttribute("data-page-button"));
+      if (!applyMinimalMode(false)) return;
+      if (!goToPage(button.getAttribute("data-page-button"))) return;
       closeMobileSidebar();
     });
   });
-  document.getElementById("minimalExit").addEventListener("click", function () { startupChoice = "full"; safeSet(STORAGE.startup, startupChoice); applyMinimalMode(false); });
-  document.getElementById("mobileSearch").addEventListener("click", function () { applyMinimalMode(false); goToPage("home"); searchInput.scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(function () { searchInput.focus(); }, 250); });
+  document.getElementById("minimalExit").addEventListener("click", function () { setStartupMode("full"); });
+  document.getElementById("mobileSearch").addEventListener("click", function () { if (!applyMinimalMode(false) || !goToPage("home")) return; searchInput.scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(function () { searchInput.focus(); }, 250); });
   document.getElementById("mobileMore").addEventListener("click", function () { var open = document.body.classList.toggle("sidebar-open"); document.getElementById("mobileMore").setAttribute("aria-expanded", String(open)); document.getElementById("mobileSidebarToggle").setAttribute("aria-expanded", String(open)); });
 
   document.getElementById("sideCommand").addEventListener("click", function () { openPalette(); closeMobileSidebar(); });
@@ -1908,6 +1950,12 @@ body.force-full-motion { scroll-behavior:smooth; }
     if (due) parts.push("Due " + due);
     return parts.join(" · ");
   }
+  function deleteTask(id, confirmed) {
+    var task = tasks.filter(function (item) { return item.id === id; })[0];
+    if (!task) return false;
+    if (!confirmed) { window.OneSpaceUI.confirm("Delete task?", task.text, function () { return deleteTask(id, true); }); return; }
+    return saveTasks(tasks.filter(function (item) { return item.id !== id; }));
+  }
   function renderTasks() {
     document.getElementById("taskCount").textContent = tasks.length + (tasks.length === 1 ? " task" : " tasks");
     if (!tasks.length) { taskListEl.innerHTML = '<li class="task-empty">Nothing here yet. Add one small next step.</li>'; return; }
@@ -1926,7 +1974,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     });
     taskListEl.querySelectorAll("[data-task-delete]").forEach(function (button) {
       button.addEventListener("click", function () {
-        saveTasks(tasks.filter(function (item) { return item.id !== button.getAttribute("data-task-delete"); }));
+        deleteTask(button.getAttribute("data-task-delete"));
       });
     });
   }
@@ -1943,6 +1991,19 @@ body.force-full-motion { scroll-behavior:smooth; }
   var countdowns = safeGetJSON(STORAGE.countdowns, []).filter(function (item) {
     return item && typeof item.id === "string" && typeof item.name === "string" && /^\d{4}-\d{2}-\d{2}$/.test(item.date);
   }).slice(0, 20);
+
+  function saveCountdowns(next) {
+    if (!safeSet(STORAGE.countdowns, JSON.stringify(next))) return false;
+    countdowns = next;
+    renderCountdowns();
+    return true;
+  }
+  function deleteCountdown(id, confirmed) {
+    var item = countdowns.filter(function (entry) { return entry.id === id; })[0];
+    if (!item) return false;
+    if (!confirmed) { window.OneSpaceUI.confirm("Delete countdown?", item.name, function () { return deleteCountdown(id, true); }); return; }
+    return saveCountdowns(countdowns.filter(function (entry) { return entry.id !== id; }));
+  }
 
   function renderCalendar() {
     var now = new Date();
@@ -1969,7 +2030,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       return '<li class="countdown-item"><span>' + escapeHtml(item.name) + '</span><strong>' + label + '</strong><button type="button" data-countdown-delete="' + escapeHtml(item.id) + '" aria-label="Delete countdown ' + escapeHtml(item.name) + '">' + iconSvg("trash") + '</button></li>';
     }).join("");
     list.querySelectorAll("[data-countdown-delete]").forEach(function (button) {
-      button.addEventListener("click", function () { countdowns = countdowns.filter(function (item) { return item.id !== button.getAttribute("data-countdown-delete"); }); safeSet(STORAGE.countdowns, JSON.stringify(countdowns)); renderCountdowns(); });
+      button.addEventListener("click", function () { deleteCountdown(button.getAttribute("data-countdown-delete")); });
     });
   }
 
@@ -1979,9 +2040,10 @@ body.force-full-motion { scroll-behavior:smooth; }
     var dateInput = document.getElementById("countdownDate");
     var name = nameInput.value.trim();
     if (!name || !dateInput.value) { showToast("Add a countdown name and date."); return; }
-    countdowns.unshift({ id: "countdown-" + Date.now(), name: name.slice(0, 40), date: dateInput.value });
+    var next = [{ id: "countdown-" + Date.now(), name: name.slice(0, 40), date: dateInput.value }].concat(countdowns).slice(0, 20);
+    if (!saveCountdowns(next)) return;
     nameInput.value = ""; dateInput.value = "";
-    safeSet(STORAGE.countdowns, JSON.stringify(countdowns)); renderCountdowns(); showToast("Countdown added.");
+    showToast("Countdown added.");
   });
   renderCalendar();
   renderCountdowns();
@@ -2002,7 +2064,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   });
   document.getElementById("randomPick").addEventListener("click", function () {
     var choices = linksForSpace("explore").filter(function(link){return link.category === "Travel";});
-    if (!choices.length) return;
+    if (!choices.length) { showToast("No travel shortcuts available yet."); return; }
     var choice = choices[Math.floor(Math.random() * choices.length)];
     rememberRecent(choice.id); recordUsage(choice.id);
     window.open(choice.url, "_blank", "noopener,noreferrer");
@@ -2013,7 +2075,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   });
 
   document.getElementById("welcomeDone").addEventListener("click", function () {
-    safeSet(STORAGE.onboarding, "true");
+    if (!safeSet(STORAGE.onboarding, "true")) return;
     closeModal(document.getElementById("welcomeOverlay"));
   });
 
@@ -2754,20 +2816,23 @@ body.force-full-motion { scroll-behavior:smooth; }
   document.getElementById("generatePassword").addEventListener("click", function () {
     var chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*?";
     var values = new Uint32Array(18);
-    window.crypto.getRandomValues(values);
+    try { window.crypto.getRandomValues(values); }
+    catch (error) { showToast("Password generator unavailable. Please try again in a secure browser."); return; }
     document.getElementById("passwordOutput").value = Array.from(values).map(function (value) { return chars[value % chars.length]; }).join("");
   });
   document.getElementById("copyPassword").addEventListener("click", function () {
     var value = document.getElementById("passwordOutput").value;
     if (!value) { showToast("Generate a password first."); return; }
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(value).then(function () { showToast("Password copied."); }).catch(function () { fallbackCopy(value); }); else fallbackCopy(value);
+    function fallback() { fallbackCopy(value, "Password copied.", "Copy failed. Select the password manually."); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(value).then(function () { showToast("Password copied."); }).catch(fallback); else fallback(); }
+    catch (error) { fallback(); }
   });
   document.getElementById("counterInput").addEventListener("input", function () {
     var value = this.value;
     var words = value.trim() ? value.trim().split(/\s+/).length : 0;
     document.getElementById("counterResult").textContent = words + (words === 1 ? " word" : " words") + " · " + value.length + (value.length === 1 ? " character" : " characters");
   });
-  document.getElementById("encodeUrl").addEventListener("click", function () { var input = document.getElementById("urlToolInput"); input.value = encodeURIComponent(input.value); });
+  document.getElementById("encodeUrl").addEventListener("click", function () { var input = document.getElementById("urlToolInput"); try { input.value = encodeURIComponent(input.value); } catch (e) { showToast("That text cannot be encoded as a URL."); } });
   document.getElementById("decodeUrl").addEventListener("click", function () { var input = document.getElementById("urlToolInput"); try { input.value = decodeURIComponent(input.value); } catch (e) { showToast("That text is not valid encoded URL data."); } });
 
   /* =====================================================================

@@ -59,3 +59,21 @@ test('Shortcuts space selection retains its prior space after a rejected write',
   assert.equal(context.applySpace('personal',true),false);
   assert.equal(context.currentSpace,'work');assert.equal(changed,false);
 });
+
+test('mobile page buttons and Search stop after rejected navigation writes',()=>{
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  const pageSource=html.match(/\n  document\.querySelectorAll\("\[data-page-button\]"\)\.forEach\(function \(button\) \{[\s\S]*?\n  \}\);/)?.[0];
+  const searchSource=html.split('\n').find(line=>line.includes('document.getElementById("mobileSearch").addEventListener'));
+  assert(pageSource&&searchSource);
+  let pageClick,searchClick,allowMinimal=false,allowRoute=false,routes=0,closed=0,scrolled=0,focused=0;
+  const pageButton={getAttribute:()=> 'games',addEventListener:(type,handler)=>{pageClick=handler;}};
+  const searchButton={addEventListener:(type,handler)=>{searchClick=handler;}};
+  const context={document:{querySelectorAll:()=>[pageButton],getElementById:()=>searchButton},
+    applyMinimalMode:()=>allowMinimal,goToPage:()=>{routes++;return allowRoute;},
+    closeMobileSidebar:()=>{closed++;},searchInput:{scrollIntoView:()=>{scrolled++;},focus:()=>{focused++;}},
+    setTimeout:handler=>handler()};
+  vm.runInNewContext(pageSource+'\n'+searchSource,context);
+  pageClick();searchClick();assert.equal(routes,0);assert.equal(closed,0);assert.equal(scrolled,0);
+  allowMinimal=true;pageClick();searchClick();assert.equal(routes,2);assert.equal(closed,0);assert.equal(scrolled,0);
+  allowRoute=true;pageClick();searchClick();assert.equal(closed,1);assert.equal(scrolled,1);assert.equal(focused,1);
+});

@@ -497,6 +497,276 @@
       "cancel": "Cancel closed the empty form without adding a link.",
       "error": "An invalid URL displayed Please enter a valid URL, starting with http:// or https://; the dialog stayed open. Storage write failure remains to verify.",
       "persistence": "Audit Explore link remained after browser reload."
+    },
+    "I0160": {
+      "success": "On the disposable Explore browser origin with Chill Mode on, successive break-duration clicks changed 5 to 10 to 20 minutes.",
+      "cancel": "A further click wrapped 20 back to 5 minutes, reversing the transient choice; no draft or timer session is created.",
+      "error": "This local duration cycle makes no storage or provider request and has no input validation path.",
+      "persistence": "After selecting 10 minutes and reloading, Chill Mode remained on but the transient duration returned to its 5-minute default."
+    },
+    "I0161": {
+      "success": "In the disposable Explore browser origin, Random Pick selected Tripadvisor and displayed OneSpace picked Tripadvisor. The current handler chooses only Travel shortcuts and requests a new tab for the selected public URL.",
+      "cancel": "The pick is immediate with no draft or confirmation. The user can return to Explore; the control does not alter the shortcut collection.",
+      "error": "If no Travel shortcuts exist, the handler now reports No travel shortcuts available yet without opening a URL; the focused test verifies this. Rejected recent/usage storage writes now leave the in-memory collections unchanged, verified by tests/home-control-write-failure.test.js. The shared safeSet path reports storage failure.",
+      "persistence": "Home Quick Access Recent displayed the picked Tripadvisor link before and after browser reload."
+    },
+    "I0165": {
+      "success": "Settings Auto radio selected Auto and removed the explicit palette attribute after switching from Graphite.",
+      "cancel": "Returning to a manually chosen theme reverses Auto; no draft exists.",
+      "error": "tests/settings.test.js verifies rejected atomic palette/theme storage leaves the prior visible preference and reports failure.",
+      "persistence": "Auto remained checked after browser reload."
+    },
+    "I0166": {
+      "success": "Settings Classic Light radio selected classic and cleared the custom palette attribute.",
+      "cancel": "Selecting Auto reversed the choice; no draft exists.",
+      "error": "tests/settings.test.js verifies rejected palette write leaves the prior theme in place.",
+      "persistence": "Classic Light remained checked after browser reload."
+    },
+    "I0167": {
+      "success": "Settings Deep Space radio selected midnight and applied data-palette=midnight.",
+      "cancel": "Selecting another theme reverses the choice; no draft exists.",
+      "error": "The shared choosePalette rejected-write test verifies no false visible change.",
+      "persistence": "Deep Space remained checked with data-palette=midnight after browser reload."
+    },
+    "I0168": {
+      "success": "Settings Aurora radio selected aurora and applied data-palette=aurora.",
+      "cancel": "Selecting another theme reverses the choice; no draft exists.",
+      "error": "The shared choosePalette rejected-write test verifies no false visible change.",
+      "persistence": "Aurora remained checked with data-palette=aurora after browser reload."
+    },
+    "I0169": {
+      "success": "Settings Graphite radio selected graphite and applied data-palette=graphite.",
+      "cancel": "Selecting Auto reversed the choice; no draft exists.",
+      "error": "The shared choosePalette rejected-write test verifies no false visible change.",
+      "persistence": "Graphite remained checked with data-palette=graphite after browser reload."
+    },
+    "I0170": {
+      "success": "Settings Clean radio applied data-background=clean and selected Clean.",
+      "cancel": "Selecting another background reverses the choice; no draft exists.",
+      "error": "The handler now saves before changing the visible preference; tests/settings.test.js verifies rejected storage leaves the prior background in place.",
+      "persistence": "Clean remained selected with data-background=clean after browser reload."
+    },
+    "I0171": {
+      "success": "Settings Gradient radio applied data-background=gradient and selected Gradient.",
+      "cancel": "Selecting another background reverses the choice; no draft exists.",
+      "error": "The shared rejected-write test verifies no false background change.",
+      "persistence": "Gradient remained selected with data-background=gradient after browser reload."
+    },
+    "I0172": {
+      "success": "Settings Atmosphere radio applied data-background=orbit and selected Atmosphere.",
+      "cancel": "Selecting another background reverses the choice; no draft exists.",
+      "error": "The shared rejected-write test verifies no false background change.",
+      "persistence": "Atmosphere remained selected with data-background=orbit after browser reload."
+    },
+    "I0181": {
+      "success": "With Graphite selected, Settings Reset preferences opened its scoped confirmation; confirming reset reloaded Settings with Auto selected and no explicit custom palette.",
+      "cancel": "Cancel closed the confirmation and retained Graphite and its palette attribute.",
+      "error": "tests/settings.test.js verifies an atomic preference-reset transaction rolls back on quota failure; the dialog callback throws a scoped error and remains available for retry.",
+      "persistence": "After reset/reload, Auto remained selected while Home Quick Access Recent still displayed the previously picked Tripadvisor link. The reset unit test confirms favorites, records and search provider are preserved."
+    },
+    "I0182": {
+      "success": "The prior disposable-origin Settings Reset all data browser flow returned to Welcome; imported Work project, Personal habit and Quick Note were absent. See backup-reset-2026-09-24.json.",
+      "cancel": "tests/settings.test.js invokes the current Reset all data handler with confirmation declined and verifies no reset, toast or reload occurs. The in-app browser's native confirmation stalled automation on 2026-09-25, so no new browser cancel claim is made.",
+      "error": "tests/data-regression.test.js verifies reset preserves unrelated storage and transaction rollback on failed writes. The focused handler test verifies reset failure shows its error without scheduling reload or claiming success.",
+      "persistence": "The imported note remained absent after browser reload in backup-reset-2026-09-24.json; the reset storage test checks known OneSpace keys are removed while unrelated data remains."
+    },
+    "I0183": {
+      "success": "Settings Done returned to the Home dashboard on the disposable browser origin.",
+      "cancel": "Done leaves Settings without a draft; theme and background changes are individually committed before this action, so there is no pending edit to discard.",
+      "error": "The shared goToPage rejected-write test verifies a failed route save leaves the current page visible.",
+      "persistence": "Home remained the selected route after browser reload."
+    },
+    "I0184": {
+      "success": "After setting Start page to Minimal Mode, Return to full OneSpace removed the minimal body state and restored full Home navigation.",
+      "cancel": "Selecting Minimal Mode again from Settings reverses the choice; the exit action has no draft.",
+      "error": "The startup and minimal preferences now commit in one transaction before the visible state changes. tests/settings.test.js verifies a rejected transaction retains Minimal Mode and shows failure.",
+      "persistence": "Full Home remained visible after browser reload; both startup and minimal keys were committed together."
+    },
+    "I0185": {
+      "success": "At a 390px viewport, mobile Home selected the Home dashboard from Settings.",
+      "cancel": "Another mobile route reverses this navigation; no draft exists.",
+      "error": "tests/sidebar-write-failure.test.js verifies mobile buttons stop when minimal or route persistence fails, leaving the prior page visible.",
+      "persistence": "Home remained selected after browser reload."
+    },
+    "I0186": {
+      "success": "At 390px, mobile Shortcuts selected the Shortcuts dashboard from Home.",
+      "cancel": "Mobile Home reverses the navigation; no draft exists.",
+      "error": "The shared mobile rejected-write test verifies no false route advance.",
+      "persistence": "Shortcuts remained selected after browser reload."
+    },
+    "I0187": {
+      "success": "At 390px, mobile Search returned from Shortcuts to Home and focused the Search query field.",
+      "cancel": "Focus can be moved away without a query or record change; the control has no draft.",
+      "error": "The mobile Search handler now stops before scrolling or focusing when minimal or Home route persistence fails, verified by tests/sidebar-write-failure.test.js.",
+      "persistence": "Home remained selected after reload; focus returned to the normal page state because it is transient."
+    },
+    "I0188": {
+      "success": "At 390px, mobile Productivity selected the Productivity dashboard.",
+      "cancel": "Mobile Games or Home reverses route selection; no draft exists.",
+      "error": "The shared mobile rejected-write test verifies no false route advance.",
+      "persistence": "Productivity remained selected after browser reload."
+    },
+    "I0189": {
+      "success": "At 390px, mobile Games selected the Games dashboard.",
+      "cancel": "Mobile Home reverses route selection; no draft exists.",
+      "error": "The shared mobile rejected-write test verifies no false route advance.",
+      "persistence": "Games remained selected after browser reload."
+    },
+    "I0190": {
+      "success": "At 390px, mobile More opened the sidebar and set aria-expanded=true.",
+      "cancel": "A second More click closed the sidebar and set aria-expanded=false.",
+      "error": "This local drawer toggle has no storage, provider or validation path.",
+      "persistence": "Reload returned to the closed drawer with aria-expanded=false, as expected for transient UI state."
+    },
+    "I0192": {
+      "success": "Close command palette hid the open Ctrl+K dialog after entering an unsaved query.",
+      "cancel": "The graphite query was discarded; reopening the palette showed an empty query.",
+      "error": "Closing this transient local dialog makes no storage or provider request.",
+      "persistence": "Games remained the selected route and the palette was hidden after browser reload."
+    },
+    "I0193": {
+      "success": "The Add shortcut dialog's Close dialog button hid the form after typing an unsaved name.",
+      "cancel": "Reopening the form showed a blank Name field; the unsaved audit shortcut was absent.",
+      "error": "Closing without submission performs no write or validation; the separate save handler owns error feedback.",
+      "persistence": "The unsaved shortcut remained absent after browser reload."
+    },
+    "I0195": {
+      "success": "The Add Game dialog's Close dialog button hid the form after an unsaved name was entered.",
+      "cancel": "Reopening showed addGameName empty; no Unsaved game audit record was created.",
+      "error": "Closing without submission performs no storage or provider request.",
+      "persistence": "The unsaved game remained absent after browser reload."
+    },
+    "I0197": {
+      "success": "The game suggestion View Details dialog for Alan Wake 2 closed from its Close dialog button.",
+      "cancel": "Closing this read-only detail did not add or change a tracked game; focus returned to View Details.",
+      "error": "The close handler makes no write or provider request.",
+      "persistence": "After reload, the Games route remained and gameDetailsOverlay was hidden."
+    },
+    "I0198": {
+      "success": "The Add Movie dialog's Close dialog button hid the Add Title form after an unsaved title was entered.",
+      "cancel": "Reopening showed a blank Title field; the unsaved movie was absent.",
+      "error": "Closing without submission performs no storage or provider request.",
+      "persistence": "The unsaved movie remained absent after browser reload."
+    },
+    "I0200": {
+      "success": "The movie suggestion details dialog for The Shawshank Redemption closed from its Close dialog button.",
+      "cancel": "Closing this read-only detail did not add a library title; focus returned to View Details.",
+      "error": "The close handler makes no write or provider request.",
+      "persistence": "After reload, the Movies route remained and movieDetailsOverlay was hidden."
+    },
+    "I0201": {
+      "success": "Local toolbox Close toolbox hid its dialog after opening it through the command palette.",
+      "cancel": "No utility operation or record edit was pending; closing left Movies Suggestions unchanged.",
+      "error": "The close handler makes no write or provider request.",
+      "persistence": "The toolbox remained closed after browser reload."
+    },
+    "I0203": {
+      "success": "Browser Generate created a nonempty local password, evidenced by the Copy action reaching Password copied rather than the empty-output warning. tests/toolbox-controls.test.js verifies an 18-character allowed-alphabet output from successful crypto values without exposing a password in evidence.",
+      "cancel": "Generation is immediate with no draft or confirmation. Reload clears the transient output.",
+      "error": "The handler now catches unavailable crypto and reports Password generator unavailable without replacing the prior output; the focused test verifies this.",
+      "persistence": "After reload, Copy showed Generate a password first, confirming the generated output is transient."
+    },
+    "I0204": {
+      "success": "In the disposable browser, Copy after Generate reported Password copied. No password value was printed in the audit evidence.",
+      "cancel": "Copy is an immediate local clipboard action with no draft or stored record to cancel.",
+      "error": "Copy before Generate displayed Generate a password first. The fallback now reports password-specific success and checks the browser copy result; tests/toolbox-controls.test.js verifies rejected clipboard writes and failed fallback report Copy failed instead of claiming success.",
+      "persistence": "The generated password and copy action do not persist; after reload, Copy returned the empty-output warning."
+    },
+    "I0207": {
+      "success": "In the local toolbox, Encode changed A & B/Č to A%20%26%20B%2F%C4%8C; the post-fix browser check produced the same result.",
+      "cancel": "Decode reversed the encoded value to A & B/Č; no record draft is created.",
+      "error": "Malformed Unicode now reports That text cannot be encoded as a URL while retaining the input, verified by tests/toolbox-controls.test.js.",
+      "persistence": "After browser reload, reopening the toolbox showed a blank URL field."
+    },
+    "I0208": {
+      "success": "Decode restored A%20%26%20B%2F%C4%8C to A & B/Č in the browser.",
+      "cancel": "Encode reverses the decoded text; no record draft is created.",
+      "error": "The browser displayed That text is not valid encoded URL data for %broken and left it available for correction; the focused test also verifies this.",
+      "persistence": "After browser reload, reopening the toolbox showed a blank URL field."
+    },
+    "I0209": {
+      "success": "On a fresh disposable localhost:18978 origin, Welcome Start exploring closed the onboarding dialog.",
+      "cancel": "Escape closed Welcome without completion; browser reload reopened it, proving cancellation did not persist onboarding.",
+      "error": "The handler now leaves Welcome open when onboarding storage rejects the write, verified by tests/home-control-write-failure.test.js.",
+      "persistence": "After Start exploring, browser reload did not reopen Welcome."
+    },
+    "I0210": {
+      "success": "In Personal Shortcuts Customize mode, Move Daily up changed visible order from Shopping & Home / Smart Home / Daily to Shopping & Home / Daily / Smart Home. The old handler had reported a move without changing visible order; visibleCategories and moveCategory were fixed.",
+      "cancel": "Move Daily down reversed the order. The first visible category's Move up reported the edge and kept order unchanged.",
+      "error": "tests/category-save-failure.test.js verifies rejected category-order storage leaves CATEGORIES and rendered order unchanged; edge moves return false with feedback.",
+      "persistence": "The changed order remained after browser reload."
+    },
+    "I0211": {
+      "success": "Move Daily down changed the visible Personal order from Shopping & Home / Daily / Smart Home back to Shopping & Home / Smart Home / Daily.",
+      "cancel": "Move Daily up is the inverse; last-category Move down is bounded with an edge message.",
+      "error": "The shared rejected-write test verifies an unsaved move cannot advance the order in memory or UI.",
+      "persistence": "The reordered Personal category sequence was stored and observed after reload in the same move-control block."
+    },
+    "I0212": {
+      "success": "A custom Work category was renamed Audit Category to Audit Renamed in the accessible Rename category dialog.",
+      "cancel": "Typing Cancelled Rename then Cancel retained Audit Category.",
+      "error": "Trying duplicate Development kept the dialog open with Please choose a unique category name. The focused atomic-transaction test verifies failed storage retains category, shortcut and collapsed state.",
+      "persistence": "Audit Renamed remained the category after browser reload."
+    },
+    "I0213": {
+      "success": "After adding an Audit category link under Audit Renamed, Delete category confirmation moved that shortcut to Development and removed the custom category.",
+      "cancel": "Cancel retained Audit Renamed and its link.",
+      "error": "The delete now uses the shared confirmation dialog and one storage transaction. tests/category-save-failure.test.js verifies rejected writes leave category and link unchanged with retry feedback.",
+      "persistence": "After browser reload, Audit Renamed stayed absent and Audit category link remained under Development."
+    },
+    "I0214": {
+      "success": "Collapse Development set the category collapsed class and aria-expanded=false.",
+      "cancel": "Expand Development reversed the state and set aria-expanded=true.",
+      "error": "The handler now saves before changing the UI; tests/category-save-failure.test.js verifies rejected storage retains the prior expanded state.",
+      "persistence": "Collapsed state survived browser reload; after Expand, expanded state also survived reload."
+    },
+    "I0215": {
+      "success": "Shortcuts Add GitHub to Quick Access changed its action to Remove and displayed GitHub on Home Favorites.",
+      "cancel": "Remove GitHub from Quick Access reversed the favorite; Home no longer showed it.",
+      "error": "tests/shortcut-save-failure.test.js verifies rejected favorite storage leaves the prior list and view unchanged.",
+      "persistence": "GitHub remained in Favorites after reload while favorited, and remained absent after removal and another reload."
+    },
+    "I0216": {
+      "success": "More actions for GitHub opened the card menu and set aria-expanded=true.",
+      "cancel": "Escape closed the menu; clicking the same toggle reopened then closed it with aria-expanded=false.",
+      "error": "This local menu toggle makes no storage or provider request.",
+      "persistence": "After browser reload, the menu remained closed with aria-expanded=false."
+    },
+    "I0217": {
+      "success": "The GitHub menu's Copy address reported Address copied to clipboard; browser clipboard text equaled its public https://github.com URL.",
+      "cancel": "Copy is immediate with no draft or record mutation.",
+      "error": "The shared fallbackCopy now checks the browser copy result before reporting success; tests/toolbox-controls.test.js exercises a rejected clipboard path through that helper.",
+      "persistence": "Reload kept the Shortcuts route and unchanged GitHub card; clipboard content is external transient state."
+    },
+    "I0218": {
+      "success": "Oracle Documentation Move earlier changed the Development order from GitHub / Oracle Documentation / Stack Overflow to Oracle Documentation / GitHub / Stack Overflow.",
+      "cancel": "Move later returned Oracle Documentation to its prior position.",
+      "error": "The order setter saves before rerendering; tests/shortcuts.test.js verifies reorder is immutable and category-scoped. Edge moves report a boundary rather than changing order.",
+      "persistence": "The earlier position survived browser reload."
+    },
+    "I0219": {
+      "success": "Oracle Documentation Move later returned Development order to GitHub / Oracle Documentation / Stack Overflow.",
+      "cancel": "Move earlier is the inverse and was directly clicked in the same block.",
+      "error": "The shared move/setShortcutOrder path rejects failed storage before UI mutation; category boundaries are checked before reorder.",
+      "persistence": "The later position survived browser reload."
+    },
+    "I0221": {
+      "success": "The custom Work shortcut Edit shortcut menu opened a prefilled form; saving Audit category link edited updated the visible card.",
+      "cancel": "Typing Unsaved edit then Cancel preserved the prior Audit category link name when reopened.",
+      "error": "An invalid URL kept the edit dialog open with URL validation. tests/shortcut-save-failure.test.js verifies a rejected write restores the entire prior custom record without closing or rerendering.",
+      "persistence": "Audit category link edited remained after browser reload."
+    },
+    "I0222": {
+      "success": "The custom shortcut's Delete shortcut menu opened a confirmation; confirming Delete removed Audit category link edited.",
+      "cancel": "Cancel kept the link in Development.",
+      "error": "tests/shortcut-save-failure.test.js verifies rejected persistence retains the record, avoids rerender and reports Shortcut could not be deleted.",
+      "persistence": "The confirmed deletion remained absent after browser reload."
+    },
+    "I0226": {
+      "success": "On Home with an empty Favorites panel, Browse shortcuts selected the Shortcuts dashboard.",
+      "cancel": "Home view reverses the navigation; no draft or record mutation exists.",
+      "error": "The shared goToPage rejected-write test verifies a failed route save leaves the current page visible.",
+      "persistence": "Shortcuts remained the selected route after browser reload."
     }
   }
 }
