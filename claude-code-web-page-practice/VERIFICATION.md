@@ -2,7 +2,7 @@
 
 **## Authority**
 
-This file records final acceptance within the coordinated five-document authority set: \`docs/agent-instructions.md\`, \`docs/IMPLEMENTATION-STEPS.md\`, \`docs/REVISED-IMPLEMENTATION-PLAN.md\`, \`VERIFICATION.md\`, and \`README.md\`.
+This file records final acceptance within the coordinated redesign authority set: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`, `docs/REDESIGN-INTEGRATION-GATE.md`, `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`, `docs/ui-reference/MANIFEST.md`, the eight actual reference images, `VERIFICATION.md`, and `README.md`.
 
 It does not replace requirement-level evidence under \`docs/implementation-evidence/\` and does not override the execution/status authority in \`docs/IMPLEMENTATION-STEPS.md\`.
 
@@ -11,6 +11,27 @@ Do not pre-mark a result as passing.
 A green automated suite alone is not final acceptance.
 
 \---
+
+
+**## Redesign integration verification amendment**
+
+- Gate 12 must pass before R0 starts.
+- R0 must pass before post-Gate-12 redesign implementation.
+- R0 is transition/classification only; it does not implement Home/world/submodule UI.
+- Redesign execution is strictly `R1 shared foundation -> R2 Home -> R3 main worlds -> R4 Work->Projects pilot -> R5 submodules -> R6 cross-world integration/regression`. Phase 14 may not start before Gate R6.
+- Credential-free local/bundled catalogues are the default production path. Optional providers are tested only when explicitly approved/configured and are not required for final PASS.
+- The historical “SVG/CSS only / no new binary assets” restriction is superseded: properly licensed repository-local scene/media assets are allowed and must have provenance plus fallbacks.
+- Before a world can pass visual/cinematic acceptance, the matching reference image must have been **opened and inspected**, with image-specific observations recorded. Filename/manifest review alone is insufficient.
+- Cinematic acceptance must prove `ENTRY / WAKE-UP -> SETTLE -> AMBIENT / ALIVE -> EXIT / RESET`, approximately 2–5s Full entry, Full/Subtle/Off/reduced-motion behavior, and world-specific motion derived from the corresponding reference rather than generic space treatment.
+- Static fidelity must be accepted before cinematic motion for every main world; motion cannot hide structural/layout drift.
+- Main-world and submodule responsive acceptance includes **200% browser zoom** in addition to the viewport matrix; no clipping, hidden actions or horizontal overflow is accepted.
+- Gate R1 proves shared architecture/UI/asset primitives before Home.
+- Gate R2 proves Home before any other world rollout.
+- Gate R3 proves every remaining main world individually.
+- Gate R4 proves the Work -> Projects nested pattern before broad submodule replication.
+- Gate R5 proves every required portal has a dedicated functional target UI and applicable detail/task surfaces.
+- Gate R6 proves redesign-wide integration/regression before reclassified Phase 14–25 hardening/acceptance.
+- R6/final redesign verification also covers deterministic clock/date-boundary fixtures, canonical test data, migration backup/rollback, first-run/empty state, multi-tab storage collisions, large-data stress, malformed preferences/import schemas, animation cancellation, duplicate listeners/timers/RAF, repeated-navigation memory/CPU growth, module-registration failure isolation, long translations/RTL, portrait/landscape where relevant, and console/unhandled-rejection health.
 
 **# 1. Run metadata**
 
@@ -160,9 +181,9 @@ Result: \`PASS / FAIL\`
 
 \---
 
-**# 7. Mock provider matrix**
+**# 7. Optional-provider contract matrix — conditional**
 
-For Movies, Games and Destinations test deterministic:
+Run this section only when provider adapter code is retained or an optional provider was explicitly approved. Otherwise record `NOT APPLICABLE / NOT REQUIRED` and continue. For each applicable Movies, Games and Destinations provider contract test deterministic:
 
 \- success;
 
@@ -190,9 +211,9 @@ Result: \`PASS / FAIL\`
 
 \---
 
-**# 8. Live configured provider smoke**
+**# 8. Optional live provider smoke — conditional**
 
-This is separate from mock verification.
+This is separate from mock verification and runs only for providers explicitly approved/configured by the user. If none are configured, record `NOT CONFIGURED / NOT REQUIRED` and continue; this does not block final acceptance.
 
 For each configured provider record one status:
 
@@ -248,9 +269,9 @@ Mock success must never be reported as live verification.
 
 \---
 
-**# 9. Local/provider result separation**
+**# 9. Local/provider result separation — conditional provider checks**
 
-For Movies, Games and Explore verify:
+For Movies, Games and Explore always verify the local/bundled source is truthful. If an optional provider is configured, additionally verify:
 
 \- local results can appear immediately;
 
@@ -264,9 +285,9 @@ Result: \`PASS / FAIL\`
 
 \---
 
-**# 10. Duplicate prevention**
+**# 10. Duplicate prevention — optional-provider records**
 
-For each provider domain:
+For each configured/retained provider domain (otherwise `NOT APPLICABLE`):
 
 1\. add one provider item;
 
@@ -812,6 +833,22 @@ Result: \`PASS / FAIL\`
 
 \---
 
+**# 33A. Approved reference-image fidelity**
+
+For Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes and Settings:
+
+- open the actual corresponding image file under `docs/ui-reference/`;
+- verify the delivered world belongs to the same shared OneSpace visual family;
+- verify its world-specific scene subject, props, composition, depth, lighting and motion opportunities come from that image;
+- verify the image itself is not shipped as a baked-in composite UI background;
+- verify no generic starfield/space treatment has replaced the approved scene;
+- verify no stale legacy screenshot target overrides the approved reference;
+- record the exact reference filename used in evidence.
+
+Result: `PASS / FAIL`
+
+---
+
 **# 34. Responsive matrix**
 
 Preserve existing acceptance widths:
@@ -906,11 +943,13 @@ With providers unavailable verify:
 
 \- curated Explore works;
 
-\- saved provider destinations/trip board work;
+\- saved local/imported destinations and trip board work;
 
-\- global search shows explicit unavailable/degraded state;
+\- local/bundled discovery remains available;
 
-\- local content is not mislabeled as live global results.
+\- any explicitly approved optional provider shows an explicit unavailable/degraded state when offline;
+
+\- local content is not mislabeled as live provider results.
 
 Result: \`PASS / FAIL\`
 
@@ -926,7 +965,7 @@ Gate mapping:
 
 \- Gate 21 — global icon visual quality
 
-\- Gate 22 — live provider search and real media
+\- Gate 22 — credential-free catalogue/real media completion + optional-provider boundary
 
 \- Gate 23 — game enrichment and tracker intelligence
 
@@ -942,13 +981,13 @@ Gate 25 authorizes Phase 26. Phase 13.3 and final PASS remain blocked until Gate
 
 **# A. Full cinematic acceptance**
 
-For every top-level experience:
+Full reference-led cinematic acceptance applies to exactly eight redesigned main worlds:
 
 \- Home
 
-\- Work/Projects
+\- Work
 
-\- Personal
+\- Personal / Fitness
 
 \- Explore
 
@@ -956,13 +995,11 @@ For every top-level experience:
 
 \- Movies & Series
 
-\- Shortcuts
-
-\- Productivity
-
-\- Notes
+\- Projects & Notes
 
 \- Settings
+
+For each, the actual corresponding reference image must be opened and visually inspected. Shortcuts, Productivity, Notes and the legacy Projects alias remain mandatory compatibility/functionality surfaces and receive the visual treatment assigned by R0; they are not automatically extra cinematic worlds.
 
 Verify in Full mode:
 
@@ -1100,15 +1137,17 @@ Verify:
 
 The agent must not fabricate a credential.
 
-Record each live provider:
+For each optional provider explicitly approved/configured, record:
 
 \`LIVE VERIFIED / NOT CONFIGURED / FAILED\`
 
+If no provider is approved/configured, record `NOT CONFIGURED / NOT REQUIRED`; this is not a failure.
+
 \---
 
-**# F. Live Movies & Series E2E**
+**# F. Optional live Movies & Series E2E — conditional**
 
-Record provider and exact test titles.
+Run only if the Movies & Series provider is explicitly approved/configured; otherwise record `NOT CONFIGURED / NOT REQUIRED`. When run, record provider and exact test titles.
 
 Verify:
 
@@ -1136,7 +1175,9 @@ Verify:
 
 \- reload;
 
-\- provider-disabled offline reopen;
+\- offline reopen;
+
+\- optional-provider-disabled saved-record reopen when applicable;
 
 \- untrack/remove.
 
@@ -1144,9 +1185,9 @@ Mock success is not live proof.
 
 \---
 
-**# G. Live Games E2E**
+**# G. Optional live Games E2E — conditional**
 
-Record provider and exact test games.
+Run only if the Games provider is explicitly approved/configured; otherwise record `NOT CONFIGURED / NOT REQUIRED`. When run, record provider and exact test games.
 
 Verify:
 
@@ -1182,9 +1223,9 @@ Verify:
 
 \---
 
-**# H. Provider-added game immediate enrichment**
+**# H. Added/imported game immediate enrichment**
 
-Immediately after Add verify:
+Run against the normal local/bundled Add flow. If a provider-origin record exists, include it as an additional conditional case. Immediately after Add verify:
 
 \- local card exists;
 
@@ -1202,7 +1243,7 @@ Immediately after Add verify:
 
 \- reload preserves the record.
 
-If provider metadata/media is absent, verify explicit fallback rather than fabricated content.
+If optional-provider metadata/media is absent, or the record is local/bundled, verify explicit local media/fallback rather than fabricated content.
 
 \---
 
@@ -1609,7 +1650,9 @@ Result: `PASS / FAIL`
 
 **## Q8. Final cinematic audit**
 
-For every distinct route scene verify:
+For each main world, record the exact reference filename that was opened and at least one image-specific composition/lighting/depth/motion observation before accepting its cinematic implementation. A generic route checklist without actual-image inspection fails Q8.
+
+For each of the eight reference-led main-world scenes verify:
 
 \- domain identity;
 
@@ -1709,21 +1752,17 @@ Result: `PASS / FAIL`
 
 Verify:
 
-\- local discovery;
-
-\- live provider discovery;
+\- bundled/local discovery;
 
 \- movie/series distinction;
 
 \- search/typeahead;
 
-\- provider-supported filter semantics;
-
-\- pagination;
+\- local filter semantics;
 
 \- details;
 
-\- real poster/backdrop where available;
+\- valid local poster/backdrop or deterministic fallback;
 
 \- explicit Add/Track;
 
@@ -1731,15 +1770,13 @@ Verify:
 
 \- untrack/remove;
 
-\- reload;
-
-\- provider-disabled offline reopen;
+\- reload/offline reopen;
 
 \- provenance/attribution;
 
-\- fallback;
+\- selected-content cinematic integration;
 
-\- selected-content cinematic integration.
+\- if an optional provider is explicitly approved/configured: discovery, supported filters/pagination/details/media and provider-available -> unavailable -> saved-record reopen.
 
 Result: `PASS / FAIL`
 
@@ -1747,11 +1784,11 @@ Result: `PASS / FAIL`
 
 Verify:
 
-\- local discovery;
+\- bundled/local discovery;
 
-\- live provider discovery;
+\- supported local filters;
 
-\- provider-supported filters;
+\- optional provider discovery/filters only when explicitly approved/configured;
 
 \- cover/background;
 
@@ -1783,7 +1820,9 @@ Verify:
 
 \- reload;
 
-\- provider-disabled offline reopen;
+\- offline reopen;
+
+\- optional-provider-disabled saved-record reopen when applicable;
 
 \- selected-content cinematic integration.
 
@@ -1795,9 +1834,9 @@ Result: `PASS / FAIL`
 
 Verify:
 
-\- curated destinations;
+\- curated/bundled destination discovery;
 
-\- global provider discovery;
+\- optional global provider discovery only when explicitly approved/configured;
 
 \- preferences;
 
@@ -1833,7 +1872,9 @@ Result: `PASS / FAIL`
 
 **## Q14. Responsive final matrix**
 
-Verify every top-level route at:
+Verify all eight reference-led main worlds at the full matrix below. Also verify every retained compatibility route/surface at every applicable width required by its R0 classification; compatibility does not imply a separate reference-led cinematic world.
+
+Widths:
 
 \- 390;
 
@@ -1935,37 +1976,22 @@ Verify final:
 
 Result: `PASS / FAIL`
 
-**## Q17. Live provider -> offline transition**
+**## Q17. Local-first persistence and optional-provider offline transition**
 
-For every intended production rich domain, using the real configured production path unless the user explicitly approved a provider-specific terminal exception:
+For Movies/Series, Games and Destinations first verify the normal credential-free path:
 
-1\. perform real live search;
+1. search/browse bundled or local data;
+2. Add/Save a representative record;
+3. reload;
+4. reopen the saved record.
 
-2\. Add/Save a representative record;
+Verify normalized local records remain meaningful, user-owned state remains intact, media/fallback behavior is correct, and no network provider is required.
 
-3\. reload while provider is available;
+If an optional provider is explicitly configured, additionally test provider available -> Add/Save -> reload -> provider unavailable -> reopen saved record, and verify truthful degraded state with preserved local data.
 
-4\. disable/fail provider access;
+`NOT CONFIGURED` is an allowed terminal state for optional providers and does not block Gate 26.
 
-5\. reopen the saved record.
-
-Verify:
-
-\- normalized local record remains meaningful;
-
-\- user-owned state remains intact;
-
-\- local/curated content remains usable;
-
-\- global provider state is explicitly degraded/unavailable;
-
-\- local results are not mislabeled as live global results;
-
-\- media follows the approved persisted/cached/local/fallback contract.
-
-`NOT CONFIGURED` or mock-only evidence does not satisfy Gate 26 for an intended production provider. Keep the provider result explicit and Gate 26 blocked unless the user explicitly approved a provider-specific terminal exception.
-
-Result: `PASS / FAIL / NOT CONFIGURED per provider`
+Result: `PASS / FAIL`
 
 **## Q18. Console, network and runtime health**
 
@@ -2043,19 +2069,19 @@ Verify:
 
 Result: `PASS / FAIL`
 
-**## Q21. Five-authority-document synchronization**
+**## Q21. Full redesign-authority synchronization**
 
 Compare in full:
 
-\- `docs/agent-instructions.md`;
-
-\- `docs/IMPLEMENTATION-STEPS.md`;
-
-\- `docs/REVISED-IMPLEMENTATION-PLAN.md`;
-
-\- `VERIFICATION.md`;
-
-\- `README.md`.
+- `docs/agent-instructions.md`;
+- `docs/IMPLEMENTATION-STEPS.md`;
+- `docs/REVISED-IMPLEMENTATION-PLAN.md`;
+- `docs/REDESIGN-INTEGRATION-GATE.md`;
+- `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`;
+- `docs/ui-reference/MANIFEST.md`;
+- the eight actual images under `docs/ui-reference/`;
+- `VERIFICATION.md`;
+- `README.md`.
 
 Verify agreement on:
 
@@ -2063,11 +2089,11 @@ Verify agreement on:
 
 \- execution order;
 
-\- provider architecture and live-vs-mock semantics;
+- local-first/optional-provider architecture and conditional live-vs-mock semantics;
 
 \- secrets policy;
 
-\- cinematic contract;
+- reference-led cinematic contract and scene-asset rules;
 
 \- icon contract;
 
@@ -2101,7 +2127,7 @@ Result: `PASS / FAIL`
 
 **## Gate 26 — Whole-Project Final Integrity**
 
-Gate 26 is PASS only when every Q1–Q22 check is satisfied and there is no unresolved functional, visual/UI, icon, cinematic, responsive, accessibility, persistence/backup, provider/media, secret/security, Git/repository, runtime/console/network, automated-test, evidence or authority-consistency issue. Every intended production provider must be `LIVE VERIFIED` unless the user explicitly approved a provider-specific terminal exception.
+Gate 26 is PASS only when every Q1–Q22 check is satisfied and there is no unresolved functional, visual/UI, icon, cinematic, responsive, accessibility, persistence/backup, provider/media, secret/security, Git/repository, runtime/console/network, automated-test, evidence or authority-consistency issue. Every explicitly approved/configured provider must satisfy its declared verification scope. Optional providers may remain `NOT CONFIGURED / NOT REQUIRED` without blocking the credential-free product.
 
 If Phase 26 finds a defect:
 

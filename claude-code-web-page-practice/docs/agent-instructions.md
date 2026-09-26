@@ -6,6 +6,106 @@ The working checklist derived from this plan is `docs/IMPLEMENTATION-STEPS.md`. 
 
 ---
 
+# 2026-09-25 — LIVE EXPERIENCE REDESIGN AUTHORITY AMENDMENT
+
+This amendment is authoritative for all work after the current Phase 12 audit reaches Gate 12. It exists to remove ambiguity between the historical provider/fidelity plan and the approved Live Experience Redesign. Historical evidence remains valid; conflicting future-facing requirements are superseded only where this section says so.
+
+## Exact transition / resume rule
+
+The current persisted resume point remains **Phase 12, item 347, IMPLEMENTED / NOT VERIFIED**. Gate 12 is still open. Continue item 347 and the remaining Phase 12 verification in the existing order. Do not begin redesign implementation before Gate 12 passes.
+
+Immediately after Gate 12, before R1 begins, execute **R0 — Redesign Integration Gate** from `docs/REDESIGN-INTEGRATION-GATE.md`. R0 is the only authorized transition point; historical Phase 14 waits until Gates R1–R6 complete. The post-Gate-12 sequence is:
+
+`Phase 12 item 347 -> remaining Phase 12 -> Gate 12 -> R0 transition/classification -> R1 shared foundation -> R2 Home fidelity -> R3 main worlds -> R4 Work->Projects nested pilot -> R5 submodule families -> R6 redesign integration regression -> reclassified Phase 14–25 hardening/acceptance obligations -> Phase 26 -> Gate 26 -> Phase 13.3 FINAL`
+
+No later historical phase may silently reactivate an obsolete old-layout, old-cinematic-composition, mandatory-live-provider, or no-binary-asset requirement that R0 has superseded.
+
+## Expanded authority set
+
+From R0 onward, the coordinated authority set is:
+
+1. `docs/agent-instructions.md` — HOW work is performed and standing product constraints;
+2. `docs/IMPLEMENTATION-STEPS.md` — exact execution order, state and evidence ledger;
+3. `docs/REVISED-IMPLEMENTATION-PLAN.md` — technical architecture contracts;
+4. `docs/REDESIGN-INTEGRATION-GATE.md` — transition/classification authority;
+5. `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md` — redesign product/UI/submodule requirements;
+6. `docs/ui-reference/MANIFEST.md` plus the actual eight reference images — visual authority;
+7. `VERIFICATION.md` — proof/acceptance authority;
+8. `README.md` — delivered-product documentation, reconciled last.
+
+Where a historical sentence conflicts with the post-R0 rules below, this amendment and the named redesign authorities win. The conflict must be recorded at R0 instead of being left for the agent to guess.
+
+
+## Canonical redesigned world and ownership model
+
+There are exactly **eight reference-led redesigned main worlds**: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes, Settings. `Today` and `AI Assistant/Command` are utility/subview concepts unless separately approved as full worlds. Shortcuts, Productivity, Notes and the legacy Projects route remain compatibility/functionality obligations and must stay reachable.
+
+## Redesign hierarchy — landing pages are not enough
+
+The approved redesign is a **four-level application hierarchy**:
+
+1. **Level 1 — Global OneSpace shell:** shared brand, canonical navigation, command/search access, utilities, tokens, accessibility and responsive behavior.
+2. **Level 2 — Eight reference-led main worlds:** Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes and Settings.
+3. **Level 3 — Dedicated submodule surfaces:** every major portal shown by the redesign spec/reference must open a real dedicated UI; no decorative-only/dead portal is accepted.
+4. **Level 4 — Detail/task surfaces:** meaningful objects/workflows expose the appropriate detail/create/edit/task UI.
+
+`Work -> Projects` is the canonical nested pilot. It must be VERIFIED before broad submodule replication. Static fidelity is accepted before motion; motion may not hide structural/layout drift.
+
+UI aggregation must not duplicate storage ownership: Work owns Work-project lifecycle data; Notes owns note records; Productivity owns generic task/timer/countdown data; Shortcuts owns shortcut records. Home and Projects & Notes can aggregate/route to those owners but do not silently create parallel stores. The Home `Media & Games` reference tile groups two destinations and must expose separate Games and Movies & Series access rather than create a third media domain. Preserve the existing `movies` route/storage compatibility; `/media` may only be an alias, never a silent replacement.
+
+## Reference-image inspection is mandatory
+
+Before implementing **each** main world, the agent must physically open and inspect the matching image under `docs/ui-reference/`; reading the filename, manifest text, alt text, or a prior description is not sufficient. The agent must extract composition, hierarchy, depth, lighting, material treatment, scene subject, portal/card proportions, information density, responsive risks and motion opportunities from the actual pixels, then record that analysis in evidence.
+
+The eight canonical references are:
+
+- `00-home.png`;
+- `01-work.png`;
+- `02-personal-fitness.png`;
+- `03-explore.png`;
+- `04-games.png`;
+- `05-movies-series.png`;
+- `06-projects-notes.png`;
+- `07-settings.png`.
+
+If real filenames differ, `docs/ui-reference/MANIFEST.md` must map them explicitly before implementation. Do not guess.
+
+## Cinematic contract after R0
+
+Preserve the existing lifecycle:
+
+`ENTRY / WAKE-UP -> SETTLE -> AMBIENT / ALIVE -> EXIT / RESET`
+
+Full-mode entry remains approximately 2–5 seconds, with Full/Subtle/Off and `prefers-reduced-motion` behavior preserved. The cinematic is now **reference-led and world-specific**: animate the atmosphere implied by the relevant approved image, not a generic starfield/space motif. Each world must have a distinct scene identity and must remain usable before motion completes. Hidden/stale scenes pause or stop; route changes must not leak RAF/timers/listeners.
+
+## Local-first / credential-free default
+
+Core OneSpace is **local-first and credential-free by default**. Bundled/local catalogues and user-owned data are the normal production path for Movies & Series, Games and Explore. No TMDB, RAWG, IGDB, destination API, telemetry, analytics, remote AI, cloud account, or hidden network dependency may become mandatory merely because older text mentions provider-backed discovery.
+
+Remote providers are **optional integrations only** and require explicit user approval. If approved, they must stay behind the local-server/provider-adapter security boundary and fail safely. Their absence is not a release blocker for the credential-free product. Tests may use deterministic provider mocks only when testing provider contracts; mock success must never be presented as proof of a live provider.
+
+Therefore, any historical live-provider credential blocker at Gate 22/Gate 26 is **SUPERSEDED after R0** unless the user explicitly opts into that provider as required scope.
+
+## Scene/media asset rule after R0
+
+The historical rule **“code-drawn SVG + CSS only / no new binary assets” is SUPERSEDED BY APPROVED REDESIGN**. The redesign may use properly licensed, repository-local scene artwork, posters, textures, illustrations and raster/vector media when they materially improve fidelity to the approved references.
+
+Rules:
+
+- never use the composite reference screenshot itself as a production background;
+- production assets must be clean scene/media assets without baked-in OneSpace UI;
+- keep source/provenance/license/attribution records;
+- size/crop/compress assets for their role;
+- provide deterministic missing-asset fallbacks;
+- no remote hotlink dependency for core scenes;
+- CSS/SVG/procedural layers may still be used where they are the best solution.
+
+## Historical phase reconciliation rule
+
+R0 must classify every remaining legacy requirement as exactly `KEEP`, `REVERIFY AFTER REDESIGN`, `SUPERSEDED BY APPROVED REDESIGN`, or `BLOCKED`. Functional/data/security/persistence/migration/accessibility requirements are never silently discarded. Visual acceptance tied to the old composition is replaced by redesign acceptance. Provider-specific requirements become conditional unless explicitly approved as required scope.
+
+R0 itself is a **transition/classification gate only**. It may define architecture deltas and the exact post-gate execution map, but it must not implement Home/world/submodule UI. After Gate R0, the redesign executes as R1 shared foundation -> R2 Home fidelity -> R3 main worlds -> R4 Work->Projects nested pilot -> R5 submodule rollout -> R6 cross-world integration/regression. Only after Gate R6 may historical Phase 14 begin.
+
 ## Required startup procedure
 
 At the beginning of every new agent session or after context compaction/interruption,
@@ -82,23 +182,30 @@ Every step from the previous plan is preserved below with a status marker:
 10            explore curated/local work
 11            personal regression
 12            original-plan verification checkpoint
-14            provider truth audit + V2 reconciliation
-15            global destination discovery
-16            first-class provider records + integrity
+R0            redesign integration/classification gate (mandatory after Gate 12; no UI implementation inside the gate)
+R1            architecture lock + shared redesign foundation
+R2            Home fidelity checkpoint
+R3            seven remaining reference-led main worlds, one by one
+R4            nested UI pilot: Work -> Projects
+R5            dedicated submodule rollout by world family
+R6            cross-world systems + redesign integration regression
+14            data-source truth audit + local-first / optional-provider reconciliation
+15            credential-free destination expansion + optional-provider boundary
+16            first-class added/imported records + integrity
 17            content-aware cinematic environment
-18            provider/media/async/security hardening
+18            media/async/security hardening + optional-provider isolation
 19            complete V2 final acceptance
 20            full-viewport cinematic fidelity
 21            global icon visual-quality completion
-22            live provider search + real media completion
+22            credential-free catalogue/real-media completion + optional-provider boundary
 23            game enrichment + tracker intelligence
-24            global search/filter integration
+24            local search/filter integration + optional-provider mapping when configured
 25            final user-visible product acceptance
 26            final whole-project integrity and release-readiness audit
 13.3          final documentation (always last)
 ```
 
-Execute phases in the numeric/approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. Phase 12 is the original-plan verification checkpoint; V2 Phases 14–19 follow it; additive final-fidelity Phases 20–25 follow Gate 19; Phase 26 performs the final whole-project integrity audit after Gate 25; and Phase 13.3 remains the final documentation step only after Gate 26.
+Execute the approved order shown above. Existing Phases 0–12 retain their historical meaning and evidence. **Gate 12 must pass, then R0 must pass, then R1–R6 must execute in order before Phase 14 begins.** Phases 14–25 execute only through their R0 classifications; Gate 25 authorizes Phase 26; Gate 26 authorizes Phase 13.3, which remains the final documentation step.
 
 ---
 
@@ -146,12 +253,12 @@ All other factual claims in the old plan were independently re-verified and are 
 | Repository regrouping | **Execute first**, before any feature work |
 | Home page scope | **Home is the only aggregator**; every other tab is strictly single-domain |
 | Work / Projects / Productivity | **One Work tab with sub-views**; generic daily tasks leave Work |
-| Typeahead suggestion source | **Provider-backed global search** (TMDB; IGDB or RAWG) via a local server proxy |
-| New tab artwork | **Code-drawn animated scenes** — layered inline SVG + CSS, no new binary assets |
+| Typeahead suggestion source | **Bundled/local search by default**; an approved provider adapter is optional and never required for core operation |
+| New tab artwork | **Reference-led local scene system** — properly licensed local raster/vector assets plus CSS/SVG/procedural layers as appropriate |
 | Built-in shortcut removal | **Hide per-user, with a restore list** in Settings |
 | Extra defect approved | **Silent save failures in `games.js`** |
 
-**Scope amendment this forces:** provider-backed search breaks the "zero network requests" guarantee asserted in the old plan's Scope Boundaries and C.7 point 5. The app must therefore still work fully offline with a **visible** degraded state — never a silent fallback to the local seed list presented as global results. This is an intentional amendment, recorded here so it is not mistaken for an oversight.
+**Post-R0 scope correction:** the credential-free local catalogue is the normal production path. Optional provider integrations may create network requests only when explicitly approved/configured. Core local operation and truthful offline behavior remain mandatory.
 
 ---
 
@@ -159,7 +266,7 @@ All other factual claims in the old plan were independently re-verified and are 
 
 Carried from the previous plan. These govern every phase below; where this session changed one, the change is marked.
 
-- **Local-first for user data.** No accounts, no cloud sync, no multi-user. **Amended:** provider credentials now exist, server-side only, for search (Phase 6) — user records remain entirely local.
+- **Local-first and credential-free by default.** No accounts, no cloud sync, no multi-user. Optional provider credentials may exist server-side only when the user explicitly approves/configures that integration; user records remain entirely local.
 - Core Work hierarchy is `project → work item → task`. A work item is a `story` or a `defect`.
 - Work item statuses: `open`, `in-progress`, `blocked`, `closed`.
 - Tasks have independent completion state, but closing a work item closes all remaining child tasks.
@@ -176,13 +283,13 @@ Carried from the previous plan. These govern every phase below; where this sessi
 - Keep the current cinematic direction and use **one coherent modern inline SVG icon language across the entire OneSpace UI**. Existing good icons may be retained; dated, inconsistent, generic, misaligned or visually weak UI icons must be improved during the global icon audit in Phase 5.6. Brand marks, provider attribution marks and site favicons/logos are content/source identity and are not forced into the OneSpace UI-icon style.
 - **Every visible label starts with an uppercase first word** — `City break`, `Nature`, `Series`, `Action`, `Winter`. Never expose raw lowercase enum values.
 
-**Superseded:** the previous plan's Phase 1 step 11, "Do not begin provider-backed global discovery in this iteration," is replaced by the decision recorded above. Phase 6 implements it.
+**Post-R0 correction:** provider-backed global discovery is not mandatory. Keep bundled/local discovery as the default; optional provider work occurs only when explicitly approved and must not block the credential-free release.
 
 ---
 
 ---
 
-# V2 APPROVED SCOPE — GLOBAL DISCOVERY, FIRST-CLASS PROVIDER RECORDS AND CONTENT-AWARE VISUALS
+# V2 APPROVED SCOPE — LOCAL/BUNDLED DISCOVERY, FIRST-CLASS SAVED RECORDS, OPTIONAL PROVIDERS AND CONTENT-AWARE VISUALS
 
 This V2 scope is an **extension of the complete existing OneSpace plan**, not a replacement for Work, Home, Personal, Settings, Shortcuts, Productivity, Notes, Games, Movies & Series, Explore, accessibility, responsive behavior, storage, backup, security, or the existing cinematic system.
 
@@ -194,23 +301,25 @@ OneSpace remains **local-first for user-owned data**, but local-first does **not
 
 The final architecture is:
 
-**local user data + curated/local fallback content + provider-backed global discovery + normalized local persistence + graceful offline/degraded behavior**
+**local user data + bundled/curated discovery + normalized local persistence + optional approved provider enrichment + graceful offline/degraded behavior**
 
 Provider search expands discovery. It never becomes the source of truth for user-owned state.
 
 ## V2 discovery domains
 
-Provider-backed global discovery applies to:
+If an optional provider is explicitly approved/configured, provider-backed global discovery may apply to:
 
 1. **Movies & Series**
 2. **Games**
 3. **Explore / Destinations**
 
+Without that approval/configuration, the bundled/local catalogues are the complete supported production discovery path and no missing provider capability is a defect.
+
 The existing curated/local catalogs remain supported and are not replaced.
 
 ### Movies & Series
 
-Global discovery must support, where available:
+When the optional Movies & Series provider path is enabled, its normalized discovery contract should support, where available:
 
 - movies and series;
 - provider ID/source;
@@ -229,7 +338,7 @@ After Add, the normalized record becomes a first-class local OneSpace record and
 
 ### Games
 
-Global discovery must support, where available:
+When the optional Games provider path is enabled, its normalized discovery contract should support, where available:
 
 - provider ID/source;
 - title;
@@ -243,13 +352,13 @@ Global discovery must support, where available:
 
 Before saving, OneSpace infers **story/chapter** versus **weekly/live-service** tracker type and shows the inference so the user can correct it.
 
-A provider-added game becomes a first-class local game: library, spotlight, detail, resources, sessions, journal, tracker, edit/delete, theme and visual environment must work without requiring a handcrafted seed-only artwork record.
+An optional-provider-added game, when such integration is configured, becomes a first-class local game: library, spotlight, detail, resources, sessions, journal, tracker, edit/delete, theme and visual environment must work without requiring a handcrafted seed-only artwork record.
 
 ### Explore / Destinations
 
 Explore retains the existing curated 12-destination catalog, deterministic recommendation system, preferences, saved destinations, trip board, Surprise Me, local imagery and fallbacks.
 
-V2 adds **provider-backed global destination discovery** beyond those 12 records.
+V2 permits **optional provider-backed global destination discovery** beyond those 12 records only when explicitly approved/configured. The curated/local destination catalogue remains the default production capability.
 
 A provider-neutral destination contract must support, where available:
 
@@ -441,17 +550,17 @@ Do not expose:
 
 Server debug logging must redact credentials.
 
-## Existing cinematic system remains authoritative
+## Cinematic system — preserved lifecycle, redesigned scene authority
 
 The existing scene lifecycle remains:
 
 **ENTRY / WAKE-UP -> SETTLE -> AMBIENT / ALIVE -> EXIT / RESET**
 
-The existing 10 distinct page scenes remain, with Projects sharing Work.
+Historical pre-R0 work created 10 route scenes with Projects sharing Work. That remains valid historical evidence and reusable implementation material, but it is **not** the post-R0 visual target. After R0/R1, full reference-led cinematic acceptance applies to exactly eight redesigned main worlds: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes and Settings. Shortcuts, Productivity, Notes and the legacy Projects alias keep their functionality and receive only the visual/cinematic treatment assigned by R0/R6 compatibility decisions.
 
-The existing Full / Subtle / Off and `prefers-reduced-motion` behavior remain.
+Full / Subtle / Off and `prefers-reduced-motion` behavior remain mandatory. The redesign replaces generic/legacy scene composition with world-specific atmosphere derived from the matching approved reference image.
 
-V2 **extends** this system with an optional selected-content environmental art layer.
+Selected-content environmental art may extend Movies, Games and Explore only where it remains truthful, local-first and visually subordinate to the approved world composition.
 
 ### Selected-content visual enrichment
 
@@ -511,7 +620,7 @@ OneSpace is not complete merely because API calls work.
 
 The finished experience must preserve:
 
-**reliable local application + useful global discovery + native first-class persistence + polished OneSpace presentation + graceful provider failure**
+**reliable local application + useful bundled/local discovery + native first-class persistence + polished OneSpace presentation + graceful optional-provider failure when such an integration is configured**
 
 # PHASE 0 — Freeze the baseline
 
@@ -632,7 +741,7 @@ Note that `work-tracker.js` **auto-invokes `api.mount(root)` at load** in the br
 Nothing exists today — no `.gitignore`, no `package.json`, and `providers/` is empty. Create:
 
 - **`config/secrets/`** with a committed `.gitkeep`; everything else in it is ignored.
-- **`config/secrets.example.json`** — committed template, placeholder values only. **[NEW]** it now documents the keys Phase 6 will actually consume: `TMDB_API_KEY`, and `IGDB_CLIENT_ID` + `IGDB_CLIENT_SECRET` or `RAWG_API_KEY`.
+- **`config/secrets.example.json`** — committed template, placeholder values only. Provider keys are optional examples only and are consumed only when that provider is explicitly approved/configured; the credential-free local product must not require them.
 - **`.gitignore`** at the repository root:
 
 ```
@@ -859,17 +968,19 @@ Existing settings (palette, background, start page, accent, density, productivit
 
 # PHASE 5 — Living cinematic scenes for every tab
 
-Delivers old Part B Phase 7 and old C.7, using **code-drawn animated scenes**: layered inline SVG + CSS driven by `body[data-page]`. No new binary assets, no external requests. The Games page already proves the technique with its five-layer stack (`gv-scene-art` / `-shade` / `-glow` / `-fog` / `-particles`).
+Delivers old Part B Phase 7 and old C.7 through the **reference-led cinematic scene system**. Properly licensed repository-local raster/vector scene assets may be combined with layered SVG/CSS/procedural effects. Core scenes must not depend on external requests. The existing Games five-layer stack (`gv-scene-art` / `-shade` / `-glow` / `-fog` / `-particles`) remains useful implementation context, not an asset-format restriction.
 
 ## 5.1 One scene system, replacing three [FIX]
 
 Three uncoordinated entry-animation systems run today: `.is-page-entering` (`index.html:1797-1799`), `.scene-enter` (`discovery-integration.js:14`), and the CSS `osEnter` keyframe (`cinematic-refinement.css:131-132`). Two independent parallax variable sets exist — `--px` / `--py` (`index.html:2961-2970`, with **no consumer in the stylesheets**) and `--scene-x` / `--scene-y` (`discovery-integration.js:15`). Collapse into one scene controller owning entry transition, parallax, ambient motion and reveal, exposed on `window.OneSpace`.
 
-## 5.2 Per-tab scenes [NEW]
+## 5.2 Per-tab scenes [NEW] — historical pre-R0 requirement
 
-Each of the 10 distinct pages gets a layered scene; the 11th route, Projects, redirects to Work and shares its scene (user-confirmed). Each page has a scene whose subject matches its domain, following the visual directions already agreed: **Home** = observatory / personal command deck; **Work** = drafting room / command centre; **Personal** = calm ritual space; **Explore** = world atlas / travel window; **Games** = game-world spotlight; **Movies & Series** = theater / streaming marquee; **Shortcuts** = navigable launch wall; **Productivity** = focused timer studio; **Notes** = quiet capture desk; **Settings** = control room.
+This section records the **pre-R0** ten-page cinematic requirement and its evidence. It must not be used after R0 to invent additional reference-led worlds. Historically, Home, Work, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes and Settings each had route-specific scene treatment, while Projects redirected to Work.
 
-Every scene composes: a drawn SVG backdrop; a depth layer with pointer parallax; a slow ambient layer (drifting light, motes, gradient shift); and a shade scrim guaranteeing text contrast. The nine existing `assets/page-art/*` stills are retained as an optional art slot behind the drawn layers, so a real render can replace a drawn backdrop later without code changes.
+**Post-R0 interpretation:** the approved redesign has exactly eight reference-led main worlds: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes and Settings. Shortcuts, Productivity, Notes and the legacy Projects alias remain functional compatibility surfaces and receive the visual/cinematic treatment assigned by R0; they are not automatically additional redesign worlds. Existing scene work may be preserved/reused where useful.
+
+The historical scene stack (backdrop, depth/parallax, ambient layer and contrast scrim) remains implementation context. Post-R0 assets follow the approved reference-led asset contract and may use properly licensed local raster/vector media as well as SVG/CSS/procedural layers.
 
 ## 5.3 Close the gaps [FIX]
 
@@ -1030,7 +1141,7 @@ Acceptance requires:
 Retain visual evidence covering representative navigation, page headings, cards, forms/dialogs and shared actions.
 
 
-# PHASE 6 — Provider-backed search with typeahead [NEW]
+# PHASE 6 — Historical provider-backed search/typeahead work [VERIFIED; POST-R0 OPTIONAL PROVIDER ONLY]
 
 ## 6.1 Server layer
 
@@ -1317,7 +1428,7 @@ Old Part B Phase 8, extended.
 13. Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
 14. Set `MISSING_ASSET='assets/destinations/azores-card.webp'` on `tests/browser-server.js` to exercise the current photograph-to-illustration fallback path. The historical `azores.svg` target became the fallback asset after Phase 10 replaced the primary image with licensed WebP photography; failing the SVG alone no longer triggers fallback.
 15. Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason.
-16. Do not perform final documentation here. V2 Phases 14–19 execute after this checkpoint, followed by additive final-fidelity Phases 20–25 and then the Phase 26 whole-project integrity audit; **Phase 13.3 remains final and runs only after Gate 26**.
+16. Do not perform final documentation here. After Gate 12, execute R0, then R1–R6, then the R0-classified Phase 14–19 obligations, additive/final-fidelity Phases 20–25 and the Phase 26 whole-project integrity audit; **Phase 13.3 remains final and runs only after Gate 26**.
 
 ---
 
@@ -1391,7 +1502,7 @@ This machine is Windows with PowerShell as the primary shell, so `PORT=18974 nod
 
 Carried from the previous plan; all still apply.
 
-1. The Explore catalog is local and curated, so content and images are maintained in code and assets. Phase 6's provider layer reuses the same recommendation interface, and now has `config/secrets/` and `server/providers/` waiting for it.
+1. The Explore catalog is local and curated, so content and images are maintained in code and assets. Any optional provider layer must reuse compatible normalized interfaces without becoming required for Explore or for release.
 2. A full Jira clone is too broad for a single-page local app. The hierarchy and lifecycle already built deliver the requested development workflow while staying maintainable — Phase 2 improves its presentation, not its scope.
 3. **The inline `index.html` script must not grow further.** New domain behaviour belongs in the domain folders, with only small markup and router hooks in `index.html`. This constrains Phases 2, 4, 5 and 7, all of which touch shell-owned code today.
 4. The app should feel cinematic through layered scenes, restrained motion, depth and responsive state changes — not decorative animation everywhere.
@@ -1402,13 +1513,13 @@ Carried from the previous plan; all still apply.
 
 ## Scope boundaries
 
-**Included:** repository regrouping into domain folders; a git-ignored, non-servable secrets folder with a committed template; Work/Projects consolidation and the tracker redesign; domain boundary cleanup; theme system repair and new palettes; code-drawn animated scenes for all 11 routes; provider-backed search with typeahead; removable built-in shortcuts; games tracker-type correctness and the silent-save fix; Part C defects C.1, C.2, C.3, C.5, C.6, C.7; **every defect in the table above — none are deferred**; local-first data, CRUD, filters, in-page reminders, persistence, backup, restore, reset; automated and browser verification; and the documentation rewrite in Phase 13, including a new step-by-step execution checklist.
+**Included:** repository regrouping into domain folders; a git-ignored, non-servable secrets folder with a committed template; Work/Projects consolidation and tracker redesign; domain boundary cleanup; theme system repair and new palettes; reference-led animated scenes for the eight approved main worlds plus compatibility-surface treatment defined by R0/R6; credential-free bundled/local search and typeahead; optional provider adapters only when explicitly approved; removable built-in shortcuts; games tracker-type correctness and silent-save fixes; all listed defects; local-first data, CRUD, filters, in-page reminders, persistence, backup, restore, reset; automated/browser verification; and coordinated documentation.
 
 **Excluded unless separately approved:** server accounts; multi-user collaboration; cloud sync; true push notifications after the browser closes; full Jira integration; episode-by-episode TV tracking; scraping or unlicensed image downloading (this constrains 9.2, 9.3 and 10.1 — where no licensed high-resolution image exists, ship the deterministic fallback rather than an upscaled blur); moving `assets/` out of the repository root; any behaviour change during Phase 1.
 
-**Amended:** the old plan's "no external CDN or new runtime dependency; the app makes zero network requests today and must still make zero afterwards" now applies to the **browser bundle's credential/provider-data access model**. External provider access is mediated through the local server/provider layer; provider media must follow the approved safe media contract. The app must still work with a visible degraded/offline state.
+**Post-R0 network rule:** core OneSpace must remain fully usable without external-provider requests. Optional provider access, when explicitly approved/configured, is mediated through the local server/provider layer and must follow the approved safe media/security contract. No hidden network dependency is allowed.
 
-**V2 included additions:** global modernization/audit of the OneSpace UI icon system across every tab; provider-backed global destination discovery; deterministic provider identity and duplicate prevention; first-class local persistence for provider-origin Movies/Series, Games and Destinations; provider refresh merge safety; live-vs-mock evidence separation; server input validation; no-open-proxy/SSRF protections; safe bounded provider-media handling; untrusted-provider-text/XSS protection; async query/detail/content-art race protection; selected-content environmental art integrated into the existing cinematic controller; wide-desktop media-rich acceptance; complete V2 regression before final documentation.
+**V2 included additions after R0:** global modernization/audit of the OneSpace UI icon system across every tab; richer credential-free local destination discovery; deterministic identity/duplicate prevention for added/imported records; first-class local persistence; safe merge ownership; optional-provider live-vs-mock separation only where configured; server/media security for routes that exist; untrusted external/user text protection; async race protection; selected-content environmental art integrated into the existing cinematic controller; wide-desktop media-rich acceptance; complete V2 regression before final documentation.
 
 
 ---
@@ -1447,15 +1558,15 @@ Every defect surfaced by this inspection is assigned to a phase. Nothing is reco
 
 ---
 
-# PHASE 14 — Provider truth audit and V2 scope reconciliation
+# PHASE 14 — Data-source truth audit and local-first / optional-provider scope reconciliation
 
 This phase does not invalidate unrelated verified Phase 0–12 work.
 
-Its purpose is to determine whether the existing Phase 6 provider implementation is mock-only, live-capable, or fully live-verified, and to reconcile the approved V2 scope.
+Its purpose is to establish the truth of the current bundled/local data paths and any existing optional-provider code, then reconcile the approved post-R0 scope. It must not create or require a provider merely to satisfy historical wording.
 
-## 14.1 Movies/Series provider audit
+## 14.1 Movies/Series data-source audit
 
-Prove separately:
+Prove the bundled/local path first. Then, only if provider adapter code exists or the user explicitly approved it, prove separately:
 
 - provider adapter exists;
 - configured live path exists or does not exist;
@@ -1469,11 +1580,11 @@ Prove separately:
 - offline/unconfigured behavior;
 - mock path.
 
-If live credentials are unavailable, retain that as an explicit evidence limitation. Do not reinterpret mock verification as live E2E proof.
+If an optional provider exists but live credentials are unavailable, record `NOT CONFIGURED / NOT REQUIRED` unless the user explicitly made that provider required. Never reinterpret mock verification as live E2E proof.
 
-## 14.2 Games provider audit
+## 14.2 Games data-source audit
 
-Repeat for the configured IGDB/RAWG-equivalent path and prove:
+Prove the bundled/local Games path. If an optional IGDB/RAWG-equivalent path exists or is explicitly approved, additionally prove:
 
 - search;
 - details;
@@ -1498,17 +1609,17 @@ Prove:
 
 ## Gate 14
 
-The exact truth of current provider capability is retained as evidence and the V2 scope is reflected consistently in the standing plan/checklist before new V2 feature work advances.
+The exact truth of current local/bundled capability and any optional-provider capability is retained as evidence, and all authorities agree before new V2/redesign work advances.
 
 ---
 
-# PHASE 15 — Global destination discovery
+# PHASE 15 — Credential-free destination expansion and optional-provider boundary
 
-Add the missing provider-neutral destination capability while preserving all curated Explore behavior.
+Expand credential-free local/bundled destination discovery while preserving all curated Explore behavior. Optional remote discovery may be added only if explicitly approved/configured.
 
-## 15.1 Provider selection and contract
+## 15.1 Local/bundled source contract and optional-provider selection
 
-Choose a legitimate destination/place provider according to:
+Choose/document a legitimate local/bundled destination source and licensing model. If the user explicitly approves an optional destination provider, evaluate it according to:
 
 - search usefulness;
 - API practicality;
@@ -1519,9 +1630,9 @@ Choose a legitimate destination/place provider according to:
 
 Do not couple Explore UI directly to the selected vendor payload.
 
-## 15.2 Server adapter
+## 15.2 Credential-free destination search/details
 
-Implement normalized destination search/details through the local server.
+Implement normalized local/bundled destination search/details. Add a local-server provider adapter only for an explicitly approved optional provider.
 
 Support:
 
@@ -1540,19 +1651,19 @@ Support:
 
 Normalize available provider fields into the OneSpace-compatible model described in V2 scope.
 
-## 15.4 Deterministic mock destination provider
+## 15.4 Optional-provider contract fixtures
 
-Automated tests cover success, pagination, empty, timeout, auth/config, rate-limit, offline, malformed and partial-data cases without consuming live quota.
+If an optional destination provider contract exists, deterministic tests cover success/failure cases without consuming live quota. Otherwise this provider-specific item is `NOT APPLICABLE`; local/bundled search tests remain mandatory.
 
 ## 15.5 Explore integration
 
-Present curated/local and global provider results coherently but distinctly.
+Present curated/local results as the default. If optional provider results exist, present them coherently but distinctly.
 
 Support explicit details and Save/shortlist/trip-board behavior.
 
 ## 15.6 Persistence
 
-A saved provider destination becomes a validated local record and remains meaningful after reload with provider access disabled.
+Every saved destination becomes a validated local record and remains meaningful after reload/offline. Optional-provider-origin records must also survive provider disable when present.
 
 ## 15.7 Curated regression
 
@@ -1560,11 +1671,11 @@ Reverify all 12 curated destinations, ranking, preference explanation, images, f
 
 ## Gate 15
 
-Curated Explore and global destination discovery both work without misrepresenting one as the other.
+Credential-free curated/local Explore works end-to-end. If optional global discovery is configured, both sources work without misrepresenting one as the other.
 
 ---
 
-# PHASE 16 — First-class provider-origin records and integrity
+# PHASE 16 — First-class added/imported records and integrity
 
 ## 16.1 Deterministic identity / duplicates
 
@@ -1608,7 +1719,7 @@ Export/import at least one provider-origin record from each enabled rich domain 
 
 ## Gate 16
 
-Provider-origin content is first-class local OneSpace data, not temporary network-only UI.
+Added/imported content is first-class local OneSpace data. Optional-provider-origin content, when present, is never temporary network-only UI.
 
 ---
 
@@ -1626,11 +1737,11 @@ Selected backdrop integrates with the Movies base scene without reducing text/co
 
 ## 17.3 Games
 
-Selected key/background art integrates with Games, including provider-added games.
+Selected key/background art integrates with Games, including added/imported games and optional-provider-origin games when present.
 
 ## 17.4 Explore
 
-Selected destination hero integrates with Explore for both curated and provider destinations.
+Selected destination hero integrates with Explore for curated/local destinations and optional-provider destinations when present.
 
 ## 17.5 Internal transition
 
@@ -1658,7 +1769,7 @@ Selected rich content changes atmosphere without changing usability, accessibili
 
 ---
 
-# PHASE 18 — Provider, media, async and security hardening
+# PHASE 18 — Media/async/security hardening and optional-provider isolation
 
 ## 18.1 Query/detail races
 
@@ -1686,7 +1797,7 @@ Prove query/details/media caches are bounded, have an expiry/invalidation policy
 
 ## 18.7 Failure matrix
 
-For all enabled provider domains, test:
+For all configured optional-provider domains, test; if none are configured, record this provider-specific matrix `NOT CONFIGURED / NOT REQUIRED`:
 
 - no credentials;
 - auth/config failure;
@@ -1700,7 +1811,7 @@ For all enabled provider domains, test:
 
 ## Gate 18
 
-No tested provider/media failure corrupts, deletes, misrepresents or leaks valid local data or credentials.
+No tested local/media failure corrupts valid data; where optional providers exist, no provider/media failure corrupts, deletes, misrepresents or leaks local data or credentials.
 
 ---
 
@@ -1713,15 +1824,16 @@ Run the complete automated suite and browser acceptance after the final implemen
 Verify together:
 
 - all existing Phase 0–12 behavior;
-- local and provider Movies/Series;
-- local and provider Games;
-- curated and provider Destinations;
+- credential-free local/bundled Movies/Series;
+- credential-free local/bundled Games;
+- curated/local Destinations;
+- optional-provider flows only for providers actually approved/configured;
 - duplicate prevention;
 - persistence/reload/offline;
 - backup/import;
 - tracker inference;
-- provider error states;
-- provider/live-vs-mock evidence;
+- optional-provider error states where applicable;
+- provider/live-vs-mock evidence only where applicable;
 - content-art scenes;
 - route cleanup;
 - Full/Subtle/Off/reduced motion;
@@ -1760,7 +1872,7 @@ A top-level route does **not** pass cinematic acceptance merely because:
 - motion exists but is too weak for a normal user to perceive;
 - only the central hero moves while the rest of the page appears empty and static.
 
-In **Full** scene mode, every top-level route must visibly read as a distinct, living, domain-specific environment.
+In **Full** scene mode, each of the eight reference-led main worlds must visibly read as a distinct, living, domain-specific environment. Retained compatibility routes/surfaces (Shortcuts, Productivity, Notes and the legacy Projects alias) must satisfy the R0 classification: preserve functionality and coherent visual integration, but do not require a separate full-world cinematic scene unless R0 explicitly keeps one.
 
 The canonical lifecycle remains:
 
@@ -1856,24 +1968,22 @@ A wide layout fails if it looks like a small central island surrounded by large 
 
 ---
 
-# 3. Required route-specific visual identity
+# 3. Required reference-led world identity
 
-Each distinct route must have a recognizable visual subject.
+The eight approved reference-led worlds must each have a recognizable subject while remaining members of the same premium warm-interior visual family. Their **actual approved images** under `docs/ui-reference/` are the primary visual authority; the labels below are shorthand only:
 
-Required directions:
+- **Home** — intentional premium living hub / city-view command space.
+- **Work** — focused productivity studio / development workspace.
+- **Personal / Fitness** — calm wellness and training environment.
+- **Explore** — travel studio / maps, cameras and destination vista.
+- **Games** — premium gaming room.
+- **Movies & Series** — premium home cinema.
+- **Projects & Notes** — creative studio / planning and knowledge workspace.
+- **Settings** — calm control-oriented living/system environment.
 
-- **Home** — observatory / personal command deck.
-- **Work / Projects** — drafting room / development command centre.
-- **Personal** — calm ritual / reflection space.
-- **Explore** — world atlas / travel window.
-- **Games** — game-world spotlight.
-- **Movies & Series** — theater / streaming marquee.
-- **Shortcuts** — navigable launch wall.
-- **Productivity** — focused timer studio.
-- **Notes** — quiet capture desk.
-- **Settings** — control room.
+Shortcuts, Productivity, Notes and legacy Projects are compatibility/functionality obligations. If retained as dedicated routes after R0, their existing visual identity may be kept and refined; if mapped into subviews/portals, they must integrate coherently without being treated as extra reference-led worlds.
 
-Do not solve route identity by reusing one generic:
+Do not solve world identity by reusing one generic:
 
 - starfield;
 - gradient;
@@ -1938,21 +2048,23 @@ Brand marks, provider marks, favicons and site logos remain source identity and 
 
 ---
 
-# 5. Live global discovery is a real delivered capability
+# 5. Optional live global discovery capability
 
-OneSpace remains local-first for user-owned data, but local-first does not mean local-only.
+OneSpace is local-first and credential-free by default. Remote discovery is an optional enrichment path, not a release requirement.
 
 Final discovery architecture:
 
-`local user data + curated/local fallback content + provider-backed global discovery + normalized local persistence + graceful offline/degraded behavior`
+`local user data + bundled/curated discovery + normalized local persistence + optional approved provider enrichment + graceful offline/degraded behavior`
 
-Live configured global discovery applies to:
+If explicitly approved/configured, live global discovery may apply to:
 
 - Movies & Series;
 - Games;
 - Explore / Destinations.
 
-Mock providers remain required for deterministic automated testing.
+If no provider is approved/configured, the bundled/local product is complete and no provider UI or credential prompt is required.
+
+If optional-provider adapter code is retained or an optional provider is explicitly approved, deterministic mock providers are required for its automated contract testing. No provider adapter needs to be created merely to satisfy a test requirement.
 
 **Mock success is never evidence that live provider integration works.**
 
@@ -1965,11 +2077,13 @@ When credentials are configured:
 - saved records become first-class local OneSpace records;
 - saved records reopen when the provider later becomes unavailable.
 
-When credentials are not configured:
+When an optional provider feature exists but credentials are not configured:
 
 - local content still works;
-- the UI must explicitly state that global provider search is unavailable;
-- local content must never be presented as if it were a successful live global result.
+- any surfaced provider affordance must explicitly state that remote search is unavailable/not configured;
+- local content must never be presented as if it were successful live provider results.
+
+If no provider feature is part of the approved scope, no provider prompt or degraded-state UI is required at all.
 
 ---
 
@@ -1986,16 +2100,16 @@ Real provider credentials:
 
 The agent must **never invent or fabricate API keys**.
 
-If live credentials are required but absent:
+If an optional provider has been explicitly approved but its credentials are absent:
 
 1. keep mock/contract testing separate;
 2. record live E2E as `NOT CONFIGURED`;
 3. continue other work that does not require the secret;
-4. do not mark the live provider gate complete;
-5. do not insert fake credentials;
-6. only the user supplies real local credentials.
+4. do not insert fake credentials;
+5. only the user supplies real local credentials;
+6. mark that optional provider `NOT CONFIGURED` and continue the credential-free release path.
 
-Final completion requires intended production providers to be live-verified unless the user explicitly approves a provider-specific exception.
+Final completion requires live verification only for optional providers that the user explicitly approved/configured as part of delivered scope. Unconfigured optional providers do not block release.
 
 ---
 
@@ -2077,7 +2191,7 @@ Failure of one media role must not unnecessarily discard another valid media rol
 
 ---
 
-# 9. Provider-added games become complete usable local records immediately
+# 9. Added/imported games become complete usable local records immediately
 
 When a user explicitly adds a game from provider/global search, successful Add means that the game becomes a first-class local OneSpace record.
 
@@ -2287,7 +2401,7 @@ The historical plan is extended by:
 
 - **Gate 20 — Full-Viewport Cinematic Fidelity**
 - **Gate 21 — Global Icon Visual Quality**
-- **Gate 22 — Live Provider Search and Real Media**
+- **Gate 22 — Credential-Free Catalogue / Real Media and Optional-Provider Boundary**
 - **Gate 23 — Game Enrichment and Tracker Intelligence**
 - **Gate 24 — Global Search / Filter Integration**
 - **Gate 25 — Final User-Visible Product Acceptance**
@@ -2299,7 +2413,7 @@ Only after Gate 26 may Phase 13.3 finalize documentation.
 
 Final execution tail:
 
-`Gate 19 -> Phase 20 -> Gate 20 -> Phase 21 -> Gate 21 -> Phase 22 -> Gate 22 -> Phase 23 -> Gate 23 -> Phase 24 -> Gate 24 -> Phase 25 -> Gate 25 -> Phase 26 -> Gate 26 -> Phase 13.3 FINAL`
+`Gate 12 -> R0 -> R1 -> R2 -> R3 -> R4 -> R5 -> R6 -> reclassified Phase 14–25 obligations -> Gate 25 -> Phase 26 -> Gate 26 -> Phase 13.3 FINAL`
 
 
 
@@ -2510,31 +2624,28 @@ Use still-valid Phase 12 evidence where applicable. Re-run any path affected by 
 
 Verify together:
 
-- local discovery;
-- live provider discovery;
+- bundled/local discovery;
 - movie/series distinction;
 - search/typeahead;
-- provider-supported filter semantics;
-- pagination;
+- local filter semantics;
 - details;
-- real poster/backdrop where available;
+- valid local poster/backdrop or deterministic fallback;
 - explicit Add/Track;
 - watchlist/status;
 - watched state;
 - remove/untrack;
-- reload;
-- provider-disabled offline reopen;
+- reload/offline reopen;
 - provenance/attribution;
-- deterministic fallback;
-- selected-content cinematic integration.
+- selected-content cinematic integration;
+- if an optional provider is explicitly approved/configured: its discovery, supported filters/pagination/details/media, and provider-available -> unavailable -> saved-record reopen transition.
 
 ## 26.11 Games final integration
 
 Verify together:
 
 - local discovery;
-- live provider discovery;
-- provider-supported filters;
+- bundled/local discovery;
+- optional provider discovery/filters only when explicitly approved/configured;
 - cover/background;
 - description and provider metadata;
 - explicit Add;
@@ -2560,7 +2671,8 @@ No mission, chapter, level, quest, objective or progression data may be invented
 Verify together:
 
 - all curated destinations;
-- provider-backed global discovery;
+- bundled/local destination discovery;
+- optional provider-backed discovery only when explicitly approved/configured;
 - preferences;
 - combined filters;
 - ranking/recommendation explanations;
@@ -2573,7 +2685,8 @@ Verify together:
 - status;
 - ordering;
 - reload;
-- provider-disabled saved-destination behavior;
+- local/offline saved-destination behavior;
+- optional-provider-disabled saved-destination behavior when applicable;
 - provenance/attribution;
 - selected-content cinematic integration.
 
@@ -2632,9 +2745,9 @@ Verify the final data contract:
 - malformed/invalid import rejection;
 - rejected-write/rollback safety;
 - unrelated-key preservation where required;
-- provider-origin Movies;
-- provider-origin Games;
-- provider-origin Destinations;
+- provider-origin Movies, if optional provider records exist;
+- provider-origin Games, if optional provider records exist;
+- provider-origin Destinations, if optional provider records exist;
 - game tracker/progression state;
 - Work state;
 - Personal state;
@@ -2645,9 +2758,9 @@ Verify the final data contract:
 
 No final feature may silently fall outside supported persistence/backup behavior.
 
-## 26.16 Live-provider to offline transition
+## 26.16 Optional-provider to offline transition
 
-For every intended production provider domain, using the real configured production path required by Gate 22 unless the user explicitly approved a provider-specific exception:
+Run this only for an optional provider that the user explicitly approved/configured. If no provider is configured, record `NOT CONFIGURED / NOT REQUIRED` and continue without blocking Gate 26. For each configured provider domain:
 
 1. start with live provider access;
 2. perform representative real search;
@@ -2665,7 +2778,7 @@ Verify:
 - local results are never mislabeled as live provider results;
 - media follows the approved persisted/cached/local/fallback contract.
 
-`NOT CONFIGURED` or mock-only evidence cannot satisfy Gate 26 for an intended production provider. If credentials are missing, record `NOT CONFIGURED`, continue unrelated checks, and keep Gate 26 blocked unless the user explicitly approved a provider-specific exception.
+For an explicitly configured provider, mock-only evidence cannot substitute for the declared live verification scope. For an optional unconfigured provider, `NOT CONFIGURED / NOT REQUIRED` is an allowed terminal state and does not block Gate 26.
 
 ## 26.17 Console, network and runtime health
 
@@ -2711,15 +2824,21 @@ Verify:
 - every approved exception is explicit;
 - no unexplained PENDING, IMPLEMENTED / NOT VERIFIED or BLOCKED state remains.
 
-## 26.20 Five-authority-document consistency
+## 26.20 Complete redesign authority-set consistency
 
 Compare in full:
 
 1. `docs/agent-instructions.md`;
 2. `docs/IMPLEMENTATION-STEPS.md`;
 3. `docs/REVISED-IMPLEMENTATION-PLAN.md`;
-4. `VERIFICATION.md`;
-5. `README.md`.
+4. `docs/REDESIGN-INTEGRATION-GATE.md`;
+5. `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`;
+6. `docs/ui-reference/MANIFEST.md`;
+7. all eight actual reference images under `docs/ui-reference/`;
+8. `VERIFICATION.md`;
+9. `README.md`.
+
+The eight images must be opened/inspected, not checked by filename alone.
 
 They must agree on:
 
@@ -2749,7 +2868,7 @@ At the end of Phase 26:
 
 ## Gate 26 — Whole-Project Final Integrity
 
-Gate 26 passes only when every Phase 26 requirement is VERIFIED and the fully assembled OneSpace repository/application has **no unresolved functional, visual, UI, iconographic, cinematic, responsive, accessibility, persistence, backup, provider, media, security, secrets, Git, repository-structure, runtime, console/network, testing, evidence-integrity or authority-consistency issue**. Every intended production provider must also be `LIVE VERIFIED`, unless the user explicitly approved a provider-specific terminal exception.
+Gate 26 passes only when every applicable Phase 26 requirement is VERIFIED and the fully assembled OneSpace repository/application has **no unresolved functional, visual, UI, iconographic, cinematic, responsive, accessibility, persistence, backup, media, security, secrets, Git, repository-structure, runtime, console/network, testing, evidence-integrity or authority-consistency issue**. Optional-provider checks are applicable only when that integration exists or was explicitly approved; an unconfigured optional provider is `NOT CONFIGURED / NOT REQUIRED` and does not block the credential-free release.
 
 If Phase 26 finds a defect:
 
