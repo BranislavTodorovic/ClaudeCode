@@ -5,7 +5,7 @@ const path=require('node:path');
 const vm=require('node:vm');
 
 test('Add category keeps its draft and prior categories when storage rejects the transaction',()=>{
-  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8').replace(/\r\n/g,'\n');
   const source=html.match(/  function addCategory\(\) \{[\s\S]*?\n  \}\);\n\n  function renameCategory/)?.[0].replace(/\n\n  function renameCategory$/,'');
   assert(source,'category form handler exists');
   const handlers={};

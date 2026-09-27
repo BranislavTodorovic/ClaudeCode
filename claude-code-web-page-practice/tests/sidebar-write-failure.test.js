@@ -5,7 +5,7 @@ const path=require('node:path');
 const vm=require('node:vm');
 
 test('sidebar toggle waits for storage before changing the visible expansion state',()=>{
-  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8').replace(/\r\n/g,'\n');
   const source=html.match(/  function toggleSidebar\(\) \{[\s\S]*?\n  \}/)?.[0];
   assert(source,'sidebar toggle handler exists');
   let accepted=false,applied=0,saved='';
@@ -21,7 +21,7 @@ test('sidebar toggle waits for storage before changing the visible expansion sta
 });
 
 test('route navigation keeps the current page when storage rejects the new page',()=>{
-  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8').replace(/\r\n/g,'\n');
   const source=html.match(/  function goToPage\(page, persist\) \{[\s\S]*?\n  \}\n  function applyMinimalMode/)?.[0].replace(/\n  function applyMinimalMode$/,'');
   assert(source,'route navigation handler exists');
   let attempted='',changed=false;

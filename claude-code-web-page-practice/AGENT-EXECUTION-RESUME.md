@@ -1,20 +1,17 @@
-Treat this folder as the OneSpace project root.
+Continue the existing OneSpace project from the exact repository state left by the previous agent run.
+
+Project working directory:
 
 C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice
 
-Before reading or editing anything:
+Before editing anything:
 
 1. confirm the current working directory;
-2. confirm the resolved Git root;
-3. confirm that the repository is the expected OneSpace project.
+2. confirm the resolved Git root and expected OneSpace repository/project structure;
+3. inspect the current branch, HEAD, `git status --short --untracked-files=all`, and current diff;
+4. preserve all valid work left by the previous run — do not reset, clean, discard, or overwrite existing changes.
 
-If the working directory or Git root does not match the expected project, correct the working directory before continuing.
-
-All paths below are relative to that project root.
-
-Continue the existing OneSpace project from the current repository state.
-
-Before changing code, read the complete current authority/documentation set from the beginning and in the documented order:
+Then read the COMPLETE current authority/documentation set FROM THE BEGINNING and in this exact order:
 
 1. `docs/agent-instructions.md`
 2. `docs/IMPLEMENTATION-STEPS.md`
@@ -25,110 +22,66 @@ Before changing code, read the complete current authority/documentation set from
 7. `VERIFICATION.md`
 8. `README.md`
 
-Do not skim only headings or rely on previous chat summaries.
+Do not skim headings and do not rely on this handoff, previous chat summaries, or remembered state instead of the documents.
 
-Also inspect:
+Also inspect the current implementation, persistent checklist/progress state, implementation evidence, tests, and all files changed by the previous run.
 
-- current Git/repository state;
-- implementation evidence;
-- current checklist/progress state;
-- current implementation;
-- approved UI references under `docs/ui-reference/`.
+The previous run determined that the active work was still Phase 12, item 347, with Gate 12 not yet complete.
 
-Read the documents from the beginning, but do not restart already VERIFIED implementation from Phase 0.
+Treat that only as a resume hint.
 
-Use the repository, checklist and persistent evidence to identify the exact first unresolved item and resume implementation from that point.
+Do not assume it is still the exact current position until you verify it against the repository, current checklist, persisted evidence, and current implementation state.
 
-The current synchronized plan intentionally places all newly added Live Experience redesign work after the remaining Phase 12 work and Gate 12, so follow `docs/IMPLEMENTATION-STEPS.md` exactly and do not skip ahead.
+The previous run performed substantial control/button verification across Movies, Projects and Work, then continued into shortcut verification before usage expired.
 
-After reconstructing the current state:
+The last visible activity was around shortcut controls, including Favorite/inverse behavior, reorder, Remove, custom shortcut create/edit/delete, reload/persistence behavior, and related save-failure coverage.
 
-- continue with the exact first unresolved checklist item;
-- complete and verify it according to its acceptance criteria;
-- persist required evidence;
-- update its status correctly;
-- then continue to the next unresolved checklist item;
-- proceed phase by phase and gate by gate in the documented order.
+Again, treat that only as context for reconstruction.
 
-Do not stop merely to ask whether you should continue to the next normal checklist item or phase.
+Do NOT assume any row, facet, test, fix, or evidence item is complete merely because the previous run started, mentioned, or tested it.
 
-However, if a real permission is required — for example file-system access, launching or using a local server/local IP, browser/tool access, credential access, or another action that explicitly requires user approval — request that permission normally.
+Use the current repository, checklist and persisted evidence to:
 
-Also stop and report if you encounter:
+1. reconstruct the exact current Phase 12 state;
+2. reconcile the current state of item 347;
+3. determine exactly what was actually completed and persisted;
+4. identify any incomplete changes, evidence, or regression work left by the previous run;
+5. identify the exact first genuinely unresolved row/facet in documented order;
+6. resume from that exact point.
 
-- a genuine authority contradiction that cannot be resolved by the documented precedence rules;
-- a missing required reference/file;
+Do not repeat already VERIFIED work unless later changes invalidated its evidence or acceptance state.
+
+If the previous run left test failures, incomplete regression coverage, partial evidence, unfinished implementation, or an incomplete fix, resolve that within the active checklist item according to the authority documents before advancing.
+
+When testing reveals a real defect, fix the underlying issue, add or update the required focused regression coverage, perform the required verification, persist the evidence, and continue.
+
+Do not mark item 347 complete until its documented acceptance criteria and evidence requirements are fully satisfied.
+
+Once item 347 is genuinely complete:
+
+1. update its status and evidence exactly as required;
+2. derive the next unresolved item directly from the authoritative checklist and persisted project state;
+3. continue immediately in documented order.
+
+Do not skip ahead.
+
+Do not begin Gate 12 until all preceding required Phase 12 work is complete.
+
+Do not begin Live Experience redesign work until Gate 12 has passed and the authority documents make redesign the exact active next work.
+
+When redesign eventually becomes active, follow the authority documents and the actual approved references under `docs/ui-reference/` exactly.
+
+Do not create a parallel plan, replacement authority set, or alternate execution sequence.
+
+Do not stop merely to ask whether to continue to the next normal checklist item or phase.
+
+Stop only for:
+
+- a genuine permission requirement;
+- a missing required authority/reference/evidence file;
 - a hard technical blocker;
-- an action that requires explicit user permission.
+- an irreconcilable authority contradiction after applying the documented precedence rules.
 
-Do not create a new parallel plan, replacement authority set, or alternate execution sequence unless the current authority documents explicitly require it.
+Otherwise continue item by item, phase by phase and gate by gate according to the repository’s authoritative workflow.
 
-Do not rewrite synchronized planning documents simply to simplify them. Only update documentation when the active checklist or a real discovered contradiction requires it.
-
-For redesign work, follow the authority documents and approved images exactly.
-
-The approved references are under:
-
-`docs/ui-reference/`
-
-When a redesigned world becomes active, open and visually inspect the actual relevant reference image file itself.
-
-Do not rely only on:
-- filenames;
-- MANIFEST text;
-- previous notes;
-- textual descriptions of the image.
-
-Use the approved images as visual authority for:
-
-- composition;
-- hierarchy;
-- scene identity;
-- lighting;
-- depth;
-- surfaces/materials;
-- hero proportions;
-- search/capture placement;
-- quick actions;
-- summary cards;
-- portal/submodule cards;
-- information density;
-- responsive implications;
-- cinematic/motion direction.
-
-Build the real UI and clean production scene assets from those references.
-
-Do not use the composite screenshots themselves as baked-in page backgrounds because their UI is already embedded in the images.
-
-Follow the documented hierarchy completely:
-
-- main world;
-- required portal/submodule;
-- required detail/edit/task surfaces.
-
-Do not stop at attractive main landing pages.
-
-For example, Work must have its full world presentation, and Projects, Kanban Board, Team, Documents, Meetings and Templates must lead to their required dedicated UI surfaces.
-
-Apply the same rule to every other main world and every required portal/submodule.
-
-Follow the cinematic lifecycle and motion rules from the documents.
-
-Each world must derive its cinematic behavior from its own approved scene/reference rather than using one generic effect for every page.
-
-Static visual fidelity must be established before cinematic motion is used as final acceptance.
-
-Follow the no-skip, verification, evidence, responsive, accessibility, persistence, routing, deep-link/reload, fallback, offline, security and regression requirements exactly as documented.
-
-Do not mark an item VERIFIED merely because code exists, a broad test suite is green, or the page looks approximately correct.
-
-Begin now:
-
-1. read the full authority set from the beginning;
-2. inspect Git/repository/evidence;
-3. inspect the current implementation;
-4. inspect the UI reference folder;
-5. open the relevant approved reference images when required;
-6. determine the exact first unresolved checklist item;
-7. confirm the current phase/gate state;
-8. then immediately continue implementation from that item in the documented order.
+Begin now by reconstructing the repository state, reading the full authority set, reconciling Phase 12 item 347, identifying the exact first unresolved point, and continuing from there without skipping.

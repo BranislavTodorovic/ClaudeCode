@@ -881,6 +881,156 @@
       "cancel": "The library Change status selector restored Watchlist status.",
       "error": "The Up Next action calls the same addSeedToLibrary transactional path as I0244. tests/movies-lifecycle.test.js verifies a rejected transaction restores the previous Watchlist status in memory and storage.",
       "persistence": "Watched survived reload; after the inverse status change, Watchlist also survived a later reload."
+    },
+    "I0252": {
+      "success": "On Movies Overview, the Jurassic Park mini-card opened its saved-title dialog with metadata, status, and library actions.",
+      "cancel": "Close dialog returned focus to the mini-card and left the title Watched.",
+      "error": "Opening local saved details performs no write or provider request, so there is no rejected-write path.",
+      "persistence": "After closing and reloading, the mini-card remained Watched and the dialog remained closed."
+    },
+    "I0253": {
+      "success": "In Jurassic Park details, Add to Watchlist closed the dialog and changed the Overview mini-card and Up Next to Watchlist.",
+      "cancel": "Closing the dialog before choosing an action left the prior Watched status; Mark as Watched reversed a later Watchlist change.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected library transaction preserves the prior status, and a rejected detail action keeps the dialog open for retry.",
+      "persistence": "Reload retained Jurassic Park on Watchlist after the detail action."
+    },
+    "I0254": {
+      "success": "In Jurassic Park details, Mark as Watched closed the dialog, changed the mini-card to Watched, and removed the title from Up Next.",
+      "cancel": "Closing details without choosing an action preserved Watchlist; Add to Watchlist reversed the later Watched change.",
+      "error": "tests/movies-lifecycle.test.js verifies rejected persistence retains the prior status and keeps the detail dialog open for retry.",
+      "persistence": "Reload retained Jurassic Park as Watched; a later Add to Watchlist also survived reload."
+    },
+    "I0256": {
+      "success": "On Movies Appearance, choosing the Noir swatch changed the root theme attribute to noir, made Noir the active swatch, and pressed the matching header theme button.",
+      "cancel": "Choosing Marquee reversed the selection; the swatch action has no draft-stage Cancel.",
+      "error": "applyMoviesTheme now saves before changing DOM state. tests/movies-lifecycle.test.js verifies a rejected theme write retains Marquee in the root, body, and pressed button, while an accepted retry selects Noir.",
+      "persistence": "After choosing Noir and reloading, the root theme remained noir and Noir stayed pressed; Marquee was then selected as the inverse action."
+    },
+    "I0257": {
+      "success": "On the Jurassic Park featured title, Mark as Watched reported Jurassic Park marked as Watched, updated the hero button to Watched, and showed one Watched title on Overview.",
+      "cancel": "The detail Add to Watchlist action restored Watchlist status before this hero action; the hero action itself has no draft-stage Cancel.",
+      "error": "The hero uses the same addSeedToLibrary transaction as the verified Suggestions Watched action. tests/movies-lifecycle.test.js verifies rejected library writes preserve the prior status and stored record.",
+      "persistence": "After the hero action and reload, Jurassic Park remained Watched and the featured button read Watched."
+    },
+    "I0258": {
+      "success": "The featured View Details action opened the current title dialog with catalog metadata and library actions; The Matrix was observed with overview, genre, year, duration, language, rating and platforms.",
+      "cancel": "Close dialog returned to the featured view and restored focus to the View Details trigger.",
+      "error": "Opening local seed details performs no storage write or provider request; no rejected-write path applies.",
+      "persistence": "After closing and reloading, no detail dialog was open; the selected featured title remained available."
+    },
+    "I0259": {
+      "success": "Next Feature advanced the featured title from Back to the Future to Pulp Fiction and announced Pulp Fiction selected.",
+      "cancel": "A later explicit featured-title selection changed the title again; this immediate navigation has no draft-stage Cancel.",
+      "error": "selectSpotlight now saves before changing the featured title. tests/movies-lifecycle.test.js verifies a rejected write keeps the former title and suppresses rendering and announcement.",
+      "persistence": "Reload immediately after Next Feature showed Pulp Fiction still selected and its rail card pressed."
+    },
+    "I0260": {
+      "success": "Selecting Show The Godfather in the featured-title rail changed the hero heading to The Godfather and announced its selection.",
+      "cancel": "Selecting Show The Matrix changed the hero again; there is no draft-stage Cancel.",
+      "error": "The rail uses selectSpotlight; tests/movies-lifecycle.test.js verifies rejected storage keeps the prior spotlight, render, and announcement unchanged.",
+      "persistence": "After selecting The Godfather and reloading, The Godfather remained featured and its rail card stayed pressed."
+    },
+    "I0261": {
+      "success": "In the Movies header theme group, selecting Noir changed the root and body theme to noir and pressed Noir.",
+      "cancel": "Selecting Marquee restored the previous theme; this immediate choice has no draft-stage Cancel.",
+      "error": "Header buttons use applyMoviesTheme; tests/movies-lifecycle.test.js verifies rejected theme persistence leaves the former root, body, and pressed button unchanged.",
+      "persistence": "After selecting Noir and reloading, Noir remained pressed and the root theme remained noir."
+    },
+    "I0262": {
+      "success": "The Movies header Add Movie opened Add Title with focus in Title. Saving Phase 12 header film closed the dialog, reported Movie added to your library, and raised the Overview tracked count to two.",
+      "cancel": "Cancel closed Add Title and returned focus to Add Movie without creating a title.",
+      "error": "Submitting an empty Title kept Add Title open with Please enter a movie title. The submit handler checks saveLibrary before closing; tests/movies-lifecycle.test.js verifies the shared transactional save boundary rolls back rejected custom-title writes.",
+      "persistence": "After saving and reloading, Phase 12 header film remained on Overview as Unwatched."
+    },
+    "I0263": {
+      "success": "Previous title moved the paused featured carousel from The Haunting of Hill House to Over the Garden Wall and announced the newly selected title.",
+      "cancel": "Next title returned to The Haunting of Hill House; this navigation has no draft-stage Cancel.",
+      "error": "Previous uses selectSpotlight; tests/movies-lifecycle.test.js verifies rejected spotlight persistence leaves title, render, and announcement unchanged.",
+      "persistence": "Reload after Previous title retained Over the Garden Wall."
+    },
+    "I0264": {
+      "success": "Next title moved the paused featured carousel from Over the Garden Wall to The Haunting of Hill House and announced the newly selected title.",
+      "cancel": "Previous title is the inverse navigation; this action has no draft-stage Cancel.",
+      "error": "Next uses selectSpotlight; tests/movies-lifecycle.test.js verifies rejected spotlight persistence leaves title, render, and announcement unchanged.",
+      "persistence": "Reload after Next title retained The Haunting of Hill House."
+    },
+    "I0265": {
+      "success": "Pause automatic rotation changed the control to Start automatic rotation and set the featured scene to playing=false.",
+      "cancel": "Start automatic rotation reversed the setting and restored Pause automatic rotation.",
+      "error": "Playback now saves before changing paused state. tests/movies-lifecycle.test.js verifies rejected persistence leaves playback unchanged and accepted retry pauses it.",
+      "persistence": "Reload retained the paused Start automatic rotation state; after resuming, reload showed Pause automatic rotation again."
+    },
+    "I0266": {
+      "success": "Movies Overview selected the Overview tab and displayed the tracked, Watched, and Watchlist summary with Up Next.",
+      "cancel": "Another Movies tab reverses this navigation without changing library data.",
+      "error": "All Movies tabs use switchTab, which saves before updating selection; tests/movies-lifecycle.test.js verifies a rejected route write retains the previous selected panel.",
+      "persistence": "After clicking Overview and reloading, Overview remained selected and its panel visible."
+    },
+    "I0267": {
+      "success": "My Movies & Series selected the library panel with tracked title cards.",
+      "cancel": "Overview returned to the summary panel without changing the library.",
+      "error": "The shared switchTab rejected-route regression in tests/movies-lifecycle.test.js applies to this tab.",
+      "persistence": "Reload retained My Movies & Series selected and the library panel visible."
+    },
+    "I0268": {
+      "success": "Suggestions selected the Suggestions panel with its recommendation controls.",
+      "cancel": "Another Movies tab reversed the navigation without changing the library.",
+      "error": "tests/movies-lifecycle.test.js directly verifies a rejected switchTab to Suggestions leaves Overview selected.",
+      "persistence": "Reload retained Suggestions selected and its panel visible."
+    },
+    "I0269": {
+      "success": "Watchlist selected the Watchlist panel.",
+      "cancel": "Another Movies tab reversed the navigation without changing the library.",
+      "error": "The shared switchTab rejected-route regression in tests/movies-lifecycle.test.js applies to this tab.",
+      "persistence": "Reload retained Watchlist selected and its panel visible."
+    },
+    "I0270": {
+      "success": "Appearance selected the theme-swatch panel.",
+      "cancel": "Overview returned to the summary panel without changing the theme.",
+      "error": "The shared switchTab rejected-route regression in tests/movies-lifecycle.test.js applies to this tab.",
+      "persistence": "Reload retained Appearance selected and its panel visible."
+    },
+    "I0272": {
+      "success": "All restored both Jurassic Park and Phase 12 header film to My Movies & Series after status filtering.",
+      "cancel": "Selecting Watched, Unwatched or Watchlist immediately replaces All with that status view.",
+      "error": "Status filtering reads the in-memory library and performs no provider or storage write; no rejected-write path applies.",
+      "persistence": "All is the default transient filter after reload; both saved titles remained visible."
+    },
+    "I0273": {
+      "success": "Watched selected the Watched filter and showed Jurassic Park while excluding the Unwatched custom film.",
+      "cancel": "All restored both saved titles.",
+      "error": "This local view filter makes no storage or provider request; no write failure path applies.",
+      "persistence": "The filter itself resets to All on reload by design, while the saved Watched status remains on Jurassic Park."
+    },
+    "I0274": {
+      "success": "Unwatched selected the Unwatched filter and showed Phase 12 header film while excluding Jurassic Park.",
+      "cancel": "All restored both saved titles.",
+      "error": "This local view filter makes no storage or provider request; no write failure path applies.",
+      "persistence": "The filter itself resets to All on reload by design, while the custom film remains Unwatched."
+    },
+    "I0275": {
+      "success": "Watchlist first showed the empty-filter message with no matching titles; after moving Jurassic Park to Watchlist, the same filter showed Jurassic Park only.",
+      "cancel": "All restored both saved titles.",
+      "error": "This local view filter makes no storage or provider request; no write failure path applies.",
+      "persistence": "The transient filter resets to All after reload, while Jurassic Park retained its saved Watchlist status."
+    },
+    "I0278": {
+      "success": "With Drama checked, Get Title Suggestions rendered 12 matching titles and retained focus on the button.",
+      "cancel": "Clear Filters removed Drama and restored the full local catalog.",
+      "error": "Get Title Suggestions renders from the local catalog and saved preferences without making a write or provider request; no rejected-write path applies.",
+      "persistence": "After Drama was chosen, its preference and matching results were present until Clear Filters; reload after clearing showed the full 32-title catalog."
+    },
+    "I0279": {
+      "success": "Clear Filters unchecked Drama and expanded Suggestions from 12 matching titles to the full 32-title local catalog.",
+      "cancel": "Checking Drama again restored the narrower results; this immediate action has no draft-stage Cancel.",
+      "error": "Clear Filters now saves default preferences before rerendering or reporting success. tests/movies-lifecycle.test.js verifies a rejected save preserves the previous preferences and skips rerender/toast.",
+      "persistence": "Reload after Clear Filters kept Drama unchecked and the full 32-title catalog visible."
+    },
+    "I0280": {
+      "success": "After checking Drama and dismissing The Shawshank Redemption, Reset Preferences cleared Drama and restored the dismissed title to the 32-title catalog.",
+      "cancel": "Drama can be checked and a title dismissed again; this immediate action has no draft-stage Cancel.",
+      "error": "Reset Preferences now commits preferences and dismissed IDs in one transaction. tests/movies-lifecycle.test.js verifies a rejected transaction retains both old states and skips rerender, while an accepted retry clears both.",
+      "persistence": "Reload after Reset Preferences kept Drama unchecked and The Shawshank Redemption visible."
     }
   }
 }

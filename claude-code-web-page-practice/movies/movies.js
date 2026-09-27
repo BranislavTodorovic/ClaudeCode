@@ -362,7 +362,22 @@
     dismissed = next;
     return true;
   }
-  function savePrefs() { safeSet(MK.prefs, JSON.stringify(prefs)); }
+  function savePrefs(next) {
+    if (!safeSet(MK.prefs, JSON.stringify(next))) return false;
+    prefs = next;
+    return true;
+  }
+  function resetSuggestionPrefs() {
+    var next = defaultPrefs();
+    var data = {};
+    data[MK.prefs] = JSON.stringify(next);
+    data[MK.dismissed] = '[]';
+    try { window.OneSpaceStorage.transaction(window.localStorage, data); }
+    catch (error) { showToast(error.message); return false; }
+    prefs = next;
+    dismissed = [];
+    return true;
+  }
   saveLibrary();
 
   /* ---------------------------------------------------------------------
@@ -442,7 +457,7 @@
       if(!saveLibrary()){renderAll();return false;}
       showToast(seed.title + " marked as " + statusLabel(status) + ".");
       renderAll();
-      return;
+      return true;
     }
     var clone = JSON.parse(JSON.stringify(seed));
     clone.status = status;
@@ -452,6 +467,7 @@
     if(!saveLibrary()){renderAll();return false;}
     showToast(status === "watched" ? (seed.title + " marked as watched.") : (seed.title + " added to your library."));
     renderAll();
+    return true;
   }
   function changeStatus(id, status) {
     var m = findLibrary(id);
@@ -482,7 +498,7 @@
     renderAll();return true;
   }
   function addToWatchlist(id) {
-    addSeedToLibrary(id, "watchlist");
+    return addSeedToLibrary(id, "watchlist");
   }
   function removeFromWatchlist(id) {
     var item = findLibrary(id); if (item && item.status === "watchlist") { item.status = "unwatched"; if(saveLibrary())showToast(item.title+' removed from watchlist.'); } renderAll();
@@ -561,18 +577,24 @@
       }).join("");
       return '<fieldset class="mv-pref-group"><legend>' + esc(group.label) + "</legend><div class=\"mv-pref-options\">" + opts + "</div></fieldset>";
     }).join("");
-    document.getElementById("mvSimilarTo").addEventListener("change", function () { prefs.similarTo = this.value ? [this.value] : []; savePrefs(); renderSuggestions(); });
+    document.getElementById("mvSimilarTo").addEventListener("change", function () {
+      var previous = (prefs.similarTo || [])[0] || '';
+      if (!savePrefs(Object.assign({}, prefs, {similarTo: this.value ? [this.value] : []}))) { this.value = previous; return; }
+      renderSuggestions();
+    });
   }
   function handlePrefChange(input) {
     var group = input.getAttribute("data-pref-group");
     var value = input.getAttribute("data-pref-value");
-    var arr = prefs[group] || (prefs[group] = []);
+    var arr = (prefs[group] || []).slice();
     var idx = arr.indexOf(value);
     if (input.checked && idx === -1) arr.push(value);
     if (!input.checked && idx !== -1) arr.splice(idx, 1);
+    var next = Object.assign({}, prefs);
+    next[group] = arr;
+    if (!savePrefs(next)) { input.checked = !input.checked; return; }
     var chip = input.closest(".mv-pref-chip");
     if (chip) chip.classList.toggle("is-checked", input.checked);
-    savePrefs();
     renderSuggestions();
   }
   function renderSuggestions() {
@@ -876,10 +898,11 @@
   /* ---------------------------------------------------------------------
    * Theme switcher (header pills + Appearance tab swatches)
    * ------------------------------------------------------------------- */
-  document.addEventListener('onespace:subtheme-changed',function(e){if(e.detail.domain==='movies')applyMoviesTheme(e.detail.theme);});
-  function applyMoviesTheme(theme) {
+  document.addEventListener('onespace:subtheme-changed',function(e){if(e.detail.domain==='movies')applyMoviesTheme(e.detail.theme, true);});
+  function applyMoviesTheme(theme, alreadySaved) {
     var root = document.getElementById("moviesRoot");
-    if (!root) return;
+    if (!root || !THEME_DEFS.some(function (definition) { return definition.key === theme; })) return false;
+    if (!alreadySaved && !safeSet(MK.theme, theme)) return false;
     root.setAttribute("data-movies-theme", theme);
     if(document.body.dataset.page==="movies")document.body.setAttribute("data-movies-theme", theme);
     document.querySelectorAll(".mv-theme-btn").forEach(function (btn) {
@@ -887,8 +910,8 @@
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
-    safeSet(MK.theme, theme);
     renderAppearancePanel();
+    return true;
   }
   function wireThemeSwitcher() {
     document.querySelectorAll(".mv-theme-btn").forEach(function (btn) {
@@ -896,7 +919,7 @@
     });
     var validThemes = THEME_DEFS.map(function (t) { return t.key; });
     var saved = validThemes.indexOf(safeGet(MK.theme)) !== -1 ? safeGet(MK.theme) : "marquee";
-    applyMoviesTheme(saved);
+    applyMoviesTheme(saved, true);
   }
   function renderAppearancePanel() {
     var el = document.getElementById("mvThemeSwatches");
@@ -945,13 +968,14 @@
   }
   function selectSpotlight(id, reason) {
     var movie = featuredMovies().find(function (m) { return m.id === id; });
-    if (!movie) return;
+    if (!movie) return false;
     var changed = spotlight.id !== id;
+    if (!safeSet(MK.spotlight, id)) return false;
     spotlight.id = id;
-    safeSet(MK.spotlight, id);
     if (changed) renderSpotlight(reason);
     if (reason === "manual") { var ann = document.getElementById("mvSpotlightAnnouncement"); if (ann) ann.textContent = movie.title + " selected."; }
     syncSpotlightPlayback();
+    return true;
   }
   function advanceSpotlight(direction, reason) {
     var list = featuredMovies();
@@ -1041,6 +1065,13 @@
       if(OS.scene)OS.scene.resetPointer(hero);
     }
   }
+  function toggleSpotlightPlayback() {
+    var nextPaused = !spotlight.paused;
+    if (!safeSet(MK.autoplay, nextPaused ? "paused" : "playing")) return false;
+    spotlight.paused = nextPaused;
+    syncSpotlightPlayback();
+    return true;
+  }
   function initSpotlight() {
     var hero = document.getElementById("mvSpotlight");
     if (!hero) return;
@@ -1048,7 +1079,7 @@
     document.getElementById("mvNext").innerHTML = mvIcon("next");
     document.getElementById("mvPrevious").addEventListener("click", function () { advanceSpotlight(-1, "manual"); });
     document.getElementById("mvNext").addEventListener("click", function () { advanceSpotlight(1, "manual"); });
-    document.getElementById("mvAutoplay").addEventListener("click", function () { spotlight.paused = !spotlight.paused; safeSet(MK.autoplay, spotlight.paused ? "paused" : "playing"); syncSpotlightPlayback(); });
+    document.getElementById("mvAutoplay").addEventListener("click", toggleSpotlightPlayback);
     document.getElementById("moviesMount").addEventListener("click", function (e) {
       var button = e.target.closest("[data-spotlight-id]");
       if (button) selectSpotlight(button.getAttribute("data-spotlight-id"), "manual");
@@ -1152,9 +1183,8 @@
       if(action==='untrack-movie'){untrackMovie(button.dataset.id);return;}
       if(action==='delete-movie'){deleteMovie(button.dataset.id);return;}
       if (action !== 'details-watchlist' && action !== 'details-watched') return;
-      if (action === 'details-watchlist') addToWatchlist(button.dataset.id);
-      else addSeedToLibrary(button.dataset.id, 'watched');
-      closeModal(document.getElementById('movieDetailsOverlay'));
+      var saved = action === 'details-watchlist' ? addToWatchlist(button.dataset.id) : addSeedToLibrary(button.dataset.id, 'watched');
+      if (saved) closeModal(document.getElementById('movieDetailsOverlay'));
     });
     root.addEventListener("click", function (e) {
       var target = e.target.closest("[data-action]");
@@ -1170,8 +1200,8 @@
         case "suggest-dismiss": dismissSuggestion(id); break;
         case "watchlist-watched": moveWatchlistToWatched(id); break;
         case "watchlist-remove": removeFromWatchlist(id); break;
-        case "details-watchlist": addToWatchlist(id); closeModal(document.getElementById("movieDetailsOverlay")); break;
-        case "details-watched": addSeedToLibrary(id, "watched"); closeModal(document.getElementById("movieDetailsOverlay")); break;
+        case "details-watchlist": if (addToWatchlist(id)) closeModal(document.getElementById("movieDetailsOverlay")); break;
+        case "details-watched": if (addSeedToLibrary(id, "watched")) closeModal(document.getElementById("movieDetailsOverlay")); break;
         case "edit-movie": openAddMovieModal(id); break;
         case "delete-movie": deleteMovie(id); break;
         case "untrack-movie": untrackMovie(id); break;
@@ -1195,17 +1225,14 @@
   function wireSuggestionsButtons() {
     document.getElementById("mvGetSuggestions").addEventListener("click", function () { renderSuggestions(); });
     document.getElementById("mvClearFilters").addEventListener("click", function () {
-      prefs = defaultPrefs();
-      savePrefs();
+      if (!savePrefs(defaultPrefs())) return;
       renderPrefGroups();
       renderSuggestions();
       showToast("Filters cleared.");
     });
     document.getElementById("mvResetPreferences").addEventListener("click", function () {
-      prefs = defaultPrefs();
-      savePrefs();
+      if (!resetSuggestionPrefs()) return;
       renderPrefGroups();
-      if (!saveDismissed([])) return;
       renderSuggestions();
       showToast("Preferences reset.");
     });

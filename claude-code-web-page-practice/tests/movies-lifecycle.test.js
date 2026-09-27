@@ -80,3 +80,105 @@ test('Movies Get Suggestions keeps the current tab after a rejected route write'
  assert.equal(ctx.switchTab('suggestions'),false);assert.equal(ctx.activeTab,'overview');assert.equal(visible,'');assert.equal(animations,0);
  accept=true;assert.equal(ctx.switchTab('suggestions'),true);assert.equal(ctx.activeTab,'suggestions');assert.equal(visible,'suggestions');assert.equal(reveals,1);
 });
+test('movie details stays open when Watchlist or Watched save fails',()=>{
+ let overlayClick,closes=0,accepted=false;
+ const overlay={addEventListener:(type,listener)=>{if(type==='click')overlayClick=listener;}};
+ const root={addEventListener:()=>{}};
+ const ctx={document:{getElementById:id=>id==='moviesMount'?root:overlay},
+  addToWatchlist:()=>accepted,addSeedToLibrary:()=>accepted,closeModal:()=>{closes++;}};
+ vm.runInNewContext(fn('wireDelegatedEvents'),ctx);
+ ctx.wireDelegatedEvents();
+ for(const action of ['details-watchlist','details-watched']){
+  overlayClick({target:{closest:()=>({dataset:{action,id:'seed'}})}});
+  assert.equal(closes,0,action+' must leave details open after rejected persistence');
+ }
+ accepted=true;
+ overlayClick({target:{closest:()=>({dataset:{action:'details-watched',id:'seed'}})}});
+ assert.equal(closes,1,'successful save closes details');
+});
+test('Movies theme changes only after its preference saves',()=>{
+ let accept=false,writes=0,rerenders=0;
+ const root={attributes:{'data-movies-theme':'marquee'},setAttribute(key,value){this.attributes[key]=value;}};
+ const body={dataset:{page:'movies'},attributes:{'data-movies-theme':'marquee'},setAttribute(key,value){this.attributes[key]=value;}};
+ const buttons=['marquee','noir'].map(key=>({key,attributes:{'aria-pressed':key==='marquee'?'true':'false'},
+  getAttribute:()=>key,setAttribute(name,value){this.attributes[name]=value;},classList:{toggle(){}}}));
+ const ctx={document:{getElementById:()=>root,body,querySelectorAll:()=>buttons},
+  THEME_DEFS:[{key:'marquee'},{key:'noir'}],MK:{theme:'orbit-movies-theme'},
+  safeSet:(key,value)=>{writes++;assert.equal(key,'orbit-movies-theme');assert.equal(value,'noir');return accept;},
+  renderAppearancePanel:()=>{rerenders++;}};
+ vm.runInNewContext(fn('applyMoviesTheme'),ctx);
+ assert.equal(ctx.applyMoviesTheme('noir'),false);
+ assert.equal(root.attributes['data-movies-theme'],'marquee');
+ assert.equal(body.attributes['data-movies-theme'],'marquee');
+ assert.equal(buttons[0].attributes['aria-pressed'],'true');
+ assert.equal(rerenders,0);
+ accept=true;
+ assert.equal(ctx.applyMoviesTheme('noir'),true);
+ assert.equal(root.attributes['data-movies-theme'],'noir');
+ assert.equal(body.attributes['data-movies-theme'],'noir');
+ assert.equal(buttons[1].attributes['aria-pressed'],'true');
+ assert.equal(rerenders,1);
+ assert.equal(writes,2);
+});
+test('spotlight selection waits for persistence before changing the featured title',()=>{
+ let accept=false,renders=0,playback=0;
+ const announcement={textContent:''};
+ const movies=[{id:'first',title:'First'},{id:'second',title:'Second'}];
+ const ctx={featuredMovies:()=>movies,
+  spotlight:{id:'first'},MK:{spotlight:'orbit-movies-spotlight'},
+  safeSet:(key,value)=>{assert.equal(key,'orbit-movies-spotlight');assert.equal(value,'second');return accept;},
+  renderSpotlight:()=>{renders++;},syncSpotlightPlayback:()=>{playback++;},
+  document:{getElementById:()=>announcement}};
+ vm.runInNewContext(fn('selectSpotlight'),ctx);
+ assert.equal(ctx.selectSpotlight('second','manual'),false);
+ assert.equal(ctx.spotlight.id,'first');assert.equal(renders,0);assert.equal(playback,0);
+ assert.equal(announcement.textContent,'');
+ accept=true;
+ assert.equal(ctx.selectSpotlight('second','manual'),true);
+ assert.equal(ctx.spotlight.id,'second');assert.equal(renders,1);assert.equal(playback,1);
+ assert.equal(announcement.textContent,'Second selected.');
+});
+test('automatic rotation pause waits for persistence',()=>{
+ let accept=false,syncs=0;
+ const ctx={spotlight:{paused:false},MK:{autoplay:'orbit-movies-autoplay'},
+  safeSet:(key,value)=>{assert.equal(key,'orbit-movies-autoplay');assert.equal(value,'paused');return accept;},
+  syncSpotlightPlayback:()=>{syncs++;}};
+ vm.runInNewContext(fn('toggleSpotlightPlayback'),ctx);
+ assert.equal(ctx.toggleSpotlightPlayback(),false);
+ assert.equal(ctx.spotlight.paused,false);assert.equal(syncs,0);
+ accept=true;
+ assert.equal(ctx.toggleSpotlightPlayback(),true);
+ assert.equal(ctx.spotlight.paused,true);assert.equal(syncs,1);
+});
+test('Clear Filters retains existing preferences after rejected storage',()=>{
+ let accept=false,renders=0;
+ const previous={genres:['Drama']};
+ const ctx={prefs:previous,MK:{prefs:'orbit-movies-preferences'},
+  safeSet:()=>accept,defaultPrefs:()=>({genres:[]}),renderPrefGroups:()=>{renders++;},
+  renderSuggestions:()=>{renders++;},showToast:()=>{renders++;}};
+ const buttons={mvGetSuggestions:{addEventListener:()=>{}},mvClearFilters:{addEventListener:(type,listener)=>{buttons.clear=listener;}},
+  mvResetPreferences:{addEventListener:()=>{}}};
+ ctx.document={getElementById:id=>buttons[id]};
+ for(const name of ['savePrefs','wireSuggestionsButtons'])vm.runInNewContext(fn(name),ctx);
+ ctx.wireSuggestionsButtons();buttons.clear();
+ assert.equal(ctx.prefs,previous);assert.equal(renders,0);
+ accept=true;buttons.clear();
+ assert.deepEqual(Array.from(ctx.prefs.genres),[]);assert.equal(renders,3);
+});
+test('Reset Preferences saves filters and dismissed titles atomically',()=>{
+ let accept=false,renders=0;
+ const previous={genres:['Drama']};
+ const ctx={prefs:previous,dismissed:['seed'],MK:{prefs:'orbit-movies-preferences',dismissed:'orbit-movies-dismissed'},saveLibrary:()=>{},
+  defaultPrefs:()=>({genres:[]}),window:{localStorage:{},OneSpaceStorage:{transaction:(store,data)=>{
+    assert.deepEqual(JSON.parse(data['orbit-movies-preferences']),{genres:[]});
+    assert.equal(data['orbit-movies-dismissed'],'[]');
+    if(!accept)throw Error('Quota exceeded');
+  }}},showToast:()=>{},renderPrefGroups:()=>{renders++;},renderSuggestions:()=>{renders++;}};
+ const buttons={mvGetSuggestions:{addEventListener:()=>{}},mvClearFilters:{addEventListener:()=>{}},mvResetPreferences:{addEventListener:(type,listener)=>{buttons.reset=listener;}}};
+ ctx.document={getElementById:id=>buttons[id]};
+ for(const name of ['resetSuggestionPrefs','wireSuggestionsButtons'])vm.runInNewContext(fn(name),ctx);
+ ctx.wireSuggestionsButtons();buttons.reset();
+ assert.equal(ctx.prefs,previous);assert.deepEqual(ctx.dismissed,['seed']);assert.equal(renders,0);
+ accept=true;buttons.reset();
+ assert.deepEqual(Array.from(ctx.prefs.genres),[]);assert.deepEqual(Array.from(ctx.dismissed),[]);assert.equal(renders,2);
+});

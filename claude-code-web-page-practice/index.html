@@ -2899,7 +2899,13 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
   document.addEventListener("click", function (e) {
     var button = e.target.closest("[data-page-jump]");
-    if (button) { applyMinimalMode(false); goToPage(button.getAttribute("data-page-jump")); }
+    if (button) {
+      applyMinimalMode(false);
+      if (goToPage(button.getAttribute("data-page-jump"))) {
+        if (button.hasAttribute("data-project-start")) document.querySelector("#projectForm [name='name']").focus();
+        if (button.hasAttribute("data-project-list-target")) { var projectList = document.getElementById("projectList"); projectList.tabIndex = -1; projectList.focus(); }
+      }
+    }
     var anchor = e.target.closest(".mini-card[data-link-id]");
     if (anchor) { var id = anchor.getAttribute("data-link-id"); rememberRecent(id); recordUsage(id); }
   });
