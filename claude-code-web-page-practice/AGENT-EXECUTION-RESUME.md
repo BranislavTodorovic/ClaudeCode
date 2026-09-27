@@ -1,6 +1,6 @@
 Work only in this repository:
 
-C:/Users/banek/Documents/Projects/ClaudeCode/claude-code-web-page-practice
+C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice
 
 Treat that folder as the OneSpace project root.
 
