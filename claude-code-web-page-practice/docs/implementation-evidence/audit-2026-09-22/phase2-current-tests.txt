@@ -1,0 +1,31 @@
+At: 2026-09-22T20:39:12.6424886Z Commit: 81105a9158dd095010db84ef9f68265255cf9b84 Command: node --test tests/tracker-regression.test.js tests/work-layout.test.js tests/domain-boundary.test.js 
+✔ domain modules may read only their own persisted records; Home is the sole cross-domain aggregator (5.5038ms)
+✔ page subtree declarations and shell renderers respect domain boundaries (1.636ms)
+✔ storage rejects unregistered trip records and uses the injected validator without requiring Explore (1.9912ms)
+✔ local discovery requests only the selected domain snapshot (2.1036ms)
+✔ close completes every unfinished task, logs a snapshot, and is idempotent (1.1439ms)
+✔ reopen keeps task completion history and removes the item completion timestamp (0.1755ms)
+✔ active/backlog and combined filters do not lose closed records (0.764ms)
+✔ deadlines use the local end of day and distinguish due soon from overdue (0.8884ms)
+✔ work schema rejects invalid status, type, URLs, dates, estimates and lengths (2.0612ms)
+✔ hierarchy rejects orphan items/tasks and incomplete tasks below closed items before writes (1.251ms)
+✔ atomic lifecycle transaction rolls back all keys after quota failure (0.9177ms)
+✔ version 2 migrates missing domain keys to null, while version 3 requires completeness (0.9778ms)
+✔ complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values (1.6604ms)
+✔ all curated destinations validate and ranking is stable, explained and intersects groups (11.6885ms)
+✔ shortcut normalization preserves descriptions and explicit ownership; duplicate and unsafe URLs rejected (0.3971ms)
+✔ game resources and default tasks work for several genres without sharing mutable task state (0.6709ms)
+✔ movie/series type and genre filtering, legacy compatibility and series validation (1.3069ms)
+✔ Personal deletion waits for confirmation and storage failure preserves the item (1.1525ms)
+✔ deleting a game removes its weekly tasks and sessions but preserves journal text (0.2089ms)
+✔ series watchlist and enriched game resources survive backup restore (0.6147ms)
+✔ malformed destination metadata and game templates are rejected, and tracker templates stay independent (0.2684ms)
+✔ Work sorting is selectable without mutating persisted order or hiding undated records (13.2225ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 126.5958

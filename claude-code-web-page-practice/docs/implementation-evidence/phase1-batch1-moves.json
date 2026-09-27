@@ -1,0 +1,34 @@
+[
+  {
+    "from": "storage-utils.js",
+    "to": "shared/storage-utils.js"
+  },
+  {
+    "from": "catalog-utils.js",
+    "to": "shared/catalog-utils.js"
+  },
+  {
+    "from": "shortcut-utils.js",
+    "to": "shared/shortcut-utils.js"
+  },
+  {
+    "from": "shortcut-surface.js",
+    "to": "shared/shortcut-surface.js"
+  },
+  {
+    "from": "domain-ui.js",
+    "to": "shared/domain-ui.js"
+  },
+  {
+    "from": "tooltip-utils.js",
+    "to": "shared/tooltip-utils.js"
+  },
+  {
+    "from": "visual-utils.js",
+    "to": "shared/visual-utils.js"
+  },
+  {
+    "from": "cinematic-scenes.js",
+    "to": "shared/cinematic-scenes.js"
+  }
+]

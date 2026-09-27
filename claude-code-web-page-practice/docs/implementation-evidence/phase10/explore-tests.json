@@ -1,0 +1,25 @@
+{
+  "checklistItem": "10.4.11",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "dedicatedSuite": "tests/explore-preservation.test.js",
+  "coverage": [
+    "filter groups intersect",
+    "ranking remains stable when catalog input order is reversed",
+    "visible reasons describe matched preferences",
+    "saved destinations validate and deduplicate",
+    "trip-board notes survive model updates",
+    "travel shortcuts remain owned by Explore",
+    "work shortcuts remain owned by Work",
+    "malformed IDs, asset paths, source URLs and preference values are rejected"
+  ],
+  "supportingSuites": [
+    "tests/explore-imagery.test.js",
+    "tests/tracker-regression.test.js",
+    "tests/structure.test.js",
+    "tests/data-regression.test.js"
+  ],
+  "command": "node --test tests/explore-preservation.test.js tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js tests/data-regression.test.js",
+  "passed": 49,
+  "failed": 0
+}

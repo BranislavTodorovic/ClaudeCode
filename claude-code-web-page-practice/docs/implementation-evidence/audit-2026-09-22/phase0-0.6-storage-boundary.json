@@ -1,0 +1,14 @@
+{
+  "item": "0.6",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "result": "PASS",
+  "source": [
+    "shared/storage-utils.js:6-8 defines known keys and typed key families",
+    "shared/storage-utils.js:49-89 validates owned values",
+    "shared/storage-utils.js:91-120 validates, transacts, rolls back, exports, restores and resets",
+    "index.html:904-915 validates through OneSpaceStorage.valid before the shell writes",
+    "movies/movies.js:354, games/games.js:166, work/work-tracker.js:39 route multi-key writes through OneSpaceStorage.transaction"
+  ],
+  "writeSiteScan": "Current browser-facing index/home/work/personal/explore/games/movies/settings/shared source scan found no direct localStorage.setItem except index.html:910 after OneSpaceStorage.valid; direct transaction storage.setItem/removeItem sites are confined to shared/storage-utils.js.",
+  "tests": "phase0-0.1-tests.txt: validation, backup and rollback tests pass"
+}

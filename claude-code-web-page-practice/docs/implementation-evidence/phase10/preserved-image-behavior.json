@@ -1,0 +1,37 @@
+{
+  "checklistItems": ["10.4.9", "10.4.10"],
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "responsiveImplementation": {
+    "card": "640x420 WebP, 640w srcset, card-specific sizes, 32:21 crop",
+    "hero": "1600x900 WebP, 1600w srcset, hero-specific sizes, 16:9 crop",
+    "fit": "object-fit: cover",
+    "loading": "lazy and async decoding"
+  },
+  "fallbackModel": {
+    "globalPattern": "visual-utils.js logs the failed source and honors data-fallback-src.",
+    "destinationPattern": "discovery-ui.js removes the failed srcset/sizes and swaps only the failed image to its deterministic SVG.",
+    "terminalState": "If no image remains, the unavailable state leaves destination details and actions intact."
+  },
+  "finalBrowserRun": {
+    "normalRenderedImages": 7,
+    "normalBlankAlts": 0,
+    "normalFallbacks": 0,
+    "normalIncomplete": 0,
+    "forcedMissingCard": "assets/destinations/azores-card.webp",
+    "forcedFallback": "assets/destinations/azores.svg",
+    "forcedFallbackAlt": "Illustrated fallback for São Miguel",
+    "forcedFallbackDecoded": true,
+    "expectedAssetWarnings": 1,
+    "unexpectedWarningsOrErrors": 0
+  },
+  "crossReferences": [
+    "docs/implementation-evidence/phase10/imagery.json",
+    "docs/implementation-evidence/phase10/fallbacks.json"
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/data-regression.test.js tests/structure.test.js tests/tracker-regression.test.js tests/explore-imagery.test.js",
+    "passed": 45,
+    "failed": 0
+  }
+}

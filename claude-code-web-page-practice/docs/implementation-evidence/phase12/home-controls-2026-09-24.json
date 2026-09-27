@@ -1,0 +1,20 @@
+{
+  "item": 347,
+  "status": "PARTIAL CONTROL EVIDENCE",
+  "date": "2026-09-24",
+  "origin": "Disposable browser server on 127.0.0.1:18974",
+  "rows": {
+    "I0091": "Enter your workspace opened Work and showed Development tracker.",
+    "I0092": "Find something new opened Explore and showed Find your next horizon.",
+    "I0093": "Search web selected web mode, restored Search the web placeholder, and displayed the Search action without changing saved records.",
+    "I0094": "Find in OneSpace selected local mode, changed placeholder/action to local Find, and GitHub query returned one local shortcut under an explicit '1 shortcut found' status. Switching back restored web mode. After reload, the transient search mode returned to web as specified by the inventory contract.",
+    "I0096": "Plan today opened Productivity and showed Stay in focus.",
+    "I0097": "Favorites Quick Access tab became selected; later selection of Recent survived reload.",
+    "I0098": "Recent Quick Access tab became selected and remained selected after reload.",
+    "I0099": "Most Used Quick Access tab became selected and rendered its panel.",
+    "I0100": "GAMEVAULT / PLAY hero action opened Games and showed Worlds worth returning to.",
+    "I0101": "MOVIES / UNWIND hero action opened Movies & Series and showed Set the evening scene."
+  },
+  "theme": "I0090 is separately documented by home-theme-regression-2026-09-24.json, including failure reproduction, fix, reload and palette preservation.",
+  "remaining": "This is button-level success evidence for the named rows. Applicable error/cancel/persistence facets must still be reconciled row by row before item 347 can close."
+}

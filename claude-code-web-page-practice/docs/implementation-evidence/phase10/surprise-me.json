@@ -1,0 +1,32 @@
+{
+  "checklistItem": "10.4.8",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "implementation": {
+    "cta": "Surprise me",
+    "scope": "Every page of the current filtered destination result set",
+    "selection": "Uniform Math.random selection from matching local results",
+    "outcome": "Open the selected destination in the standard detail dialog",
+    "emptyState": "No matching destinations. Clear a preference to broaden the surprise."
+  },
+  "automatedChecks": {
+    "command": "node --test tests/data-regression.test.js tests/structure.test.js tests/tracker-regression.test.js tests/explore-imagery.test.js",
+    "passed": 45,
+    "failed": 0
+  },
+  "browserChecks": [
+    {
+      "filters": { "category": "nature", "budget": "medium" },
+      "allowedResults": ["São Miguel", "Lake Bohinj"],
+      "selected": "São Miguel",
+      "detailOpened": true
+    },
+    {
+      "filters": { "category": "beach", "climate": "cool" },
+      "matchingResults": 0,
+      "dialogOpened": false,
+      "emptyStatusShown": true
+    }
+  ],
+  "consoleWarningsOrErrors": 0
+}

@@ -1,0 +1,16 @@
+{
+  "item": 348,
+  "step": "12.14",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "reasonForCurrentPrimaryPath": "Phase 10 changed São Miguel's primary card image to assets/destinations/azores-card.webp and retained assets/destinations/azores.svg as its illustrated fallback. Failing only the old SVG target cannot trigger the fallback because the WebP still loads.",
+  "obsoleteTargetControl": {
+    "server": "PORT=18975 MISSING_ASSET=assets/destinations/azores.svg node tests/browser-server.js",
+    "requests": ["azores.svg: 404", "azores-card.webp: 200"]
+  },
+  "currentPrimaryFailure": {
+    "server": "PORT=18976 MISSING_ASSET=assets/destinations/azores-card.webp node tests/browser-server.js",
+    "requests": ["azores-card.webp: 404", "azores.svg: 200"],
+    "browser": "Fresh disposable origin; Explore search for São Miguel showed the destination card. Its .discovery-photo figure had classes is-fallback is-loaded; image src was assets/destinations/azores.svg and alt was 'Illustrated fallback for São Miguel'. The card and details remained available. Browser console error log was empty."
+  }
+}

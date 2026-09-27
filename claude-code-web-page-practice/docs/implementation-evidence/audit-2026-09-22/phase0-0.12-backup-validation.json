@@ -1,0 +1,21 @@
+{
+  "item": "0.12",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "result": "PASS",
+  "historicalExport": "docs/implementation-evidence/live-origin-baseline-v4.json",
+  "historicalOrigin": "http://localhost:8973/",
+  "historicalExportedThrough": "Settings > Download backup",
+  "historicalExportedAt": "2026-09-21T09:28:05Z",
+  "historicalEvidence": "docs/implementation-evidence/baseline-backup-validation.json",
+  "sha256": "8ED76E28287C91BE5029B46DD23DD5E0F9CC8EB6BE123FEF16266F823D6D0468",
+  "currentValidation": {
+    "command": "Current shared/storage-utils.js validate + restore into isolated in-memory storage",
+    "app": "OneSpace",
+    "version": 4,
+    "historicalKeyCount": 62,
+    "currentKnownKeyCount": 66,
+    "restoreSucceeded": true,
+    "unrelatedStoragePreserved": true
+  },
+  "privacy": "Backup field values were not copied into this audit evidence."
+}

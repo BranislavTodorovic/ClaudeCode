@@ -1,0 +1,17 @@
+At: 2026-09-22T20:49:06.0076890Z Commit: 81105a9158dd095010db84ef9f68265255cf9b84 Command: node --test tests/scenes.test.js 
+✔ ten distinct drawn scenes and static Games/Movies heroes cover all route domains (2.222ms)
+✔ scene depth is bounded and applied only to decorative drawing/art layers (3.5031ms)
+✔ reduced motion and per-page Off eliminate scene drift rather than slowing it (0.4317ms)
+✔ drawn scenes use no external requests or binary assets (0.2878ms)
+✔ pointer depth clamps, resets and ignores touch, reduced and Off input (1.2187ms)
+✔ scene lifecycle stages entry, settle and ambient; exit resets without same-page replay (1.4562ms)
+✔ each domain entry has its own camera direction and subject motion (0.4173ms)
+✔ top-level navigation keeps a coherent accessible outline-icon language (1.2651ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.4829

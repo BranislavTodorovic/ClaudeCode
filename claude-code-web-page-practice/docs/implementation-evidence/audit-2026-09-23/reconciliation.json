@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-23",
+  "headAtReconciliation": "306ae25ac878ce1d752b0c4ad0a714c3bb341474",
+  "scope": "Current-pass requirement-level audit reconciliation for Phase 0 through 198D / 5.6.4",
+  "result": "PASS",
+  "itemCount": 191,
+  "sequentialCoverage": "12–198, 198A–198D",
+  "verified": 189,
+  "deferredToPhase12": [
+    {
+      "item": 135,
+      "step": "2.6.21"
+    },
+    {
+      "item": 194,
+      "step": "5.4.14"
+    }
+  ],
+  "blocked": [],
+  "itemEvidence": "audit-2026-09-23/phase0-5.jsonl",
+  "currentChecks": [
+    "31/31 baseline tests",
+    "92/92 full Node suite",
+    "22/22 focused Work/domain tests",
+    "4/4 domain-boundary tests",
+    "5/5 Settings tests",
+    "8/8 cinematic tests",
+    "Live 8973 and disposable 18974 route navigation, ten visible routes plus Projects alias",
+    "Current Work and Settings layout at actual 1440/1024/760/390",
+    "Current note actions at actual 390: 44x44 controls and 20px SVG",
+    "Current secret-path HTTP denial and Git ignore probes"
+  ],
+  "preservedEvidence": [
+    "audit-2026-09-22/",
+    "phase2/",
+    "phase4/",
+    "phase5/phase5-gate-2026-09-23.json"
+  ],
+  "laterCurrentPass": {
+    "item198E": "phase5/phase5-198E-responsive-icon-audit.json",
+    "gate5": "phase5/phase5-gate-2026-09-23.json",
+    "phase6": "phase6/audit-2026-09-23.jsonl",
+    "phase7": "phase7/audit-2026-09-23.jsonl",
+    "phase8": "phase8/audit-2026-09-23.jsonl",
+    "items200To269": 70,
+    "coverageGaps": []
+  },
+  "phase9": {
+    "lastVerifiedCurrentPass": 299,
+    "step": "Gate 9",
+    "evidence": "phase9/audit-2026-09-23.jsonl",
+    "nextItem": 300,
+    "nextStep": "10.1.1",
+    "approvedExceptions": [
+      276,
+      277,
+      278,
+      284
+    ],
+    "deferredToPhase12": [
+      297
+    ]
+  },
+  "note": "Historical VERIFIED markers were not treated as current-pass results. Each earlier item has a current source, test, browser or artifact-integrity check alongside its item-specific prior evidence. Existing September 23 work from 198E through Gate 8 was retained.",
+  "phase10": {
+    "lastVerifiedCurrentPass": 320,
+    "step": "Gate 10",
+    "evidence": "phase10/audit-2026-09-23.jsonl",
+    "nextItem": 321,
+    "nextStep": "11.1.1",
+    "deferredToPhase12": [
+      318
+    ]
+  },
+  "phase11": {
+    "lastVerifiedCurrentPass": 334,
+    "step": "Gate 11",
+    "evidence": "phase11/audit-2026-09-23.jsonl",
+    "nextItem": 335,
+    "nextStep": "12.1",
+    "deferredToPhase12": [
+      328
+    ]
+  }
+}

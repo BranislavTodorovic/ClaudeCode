@@ -1,7 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
-const storage=require('../storage-utils'),work=require('../work-tracker'),explore=require('../explore'),shortcuts=require('../shortcut-utils'),resources=require('../game-resources');
+const storage=require('./storage-setup'),work=require('../work/work-tracker'),explore=require('../explore/local-discovery'),shortcuts=require('../shared/shortcut-utils'),resources=require('../games/game-resources');
 const root=path.resolve(__dirname,'..'),at='2026-09-17T12:00:00.000Z';
 const project={id:'p',name:'Project',status:'active',progress:0};
 const item={id:'i',projectId:'p',name:'Story',type:'story',status:'open',priority:'high',createdAt:at,updatedAt:at,deadline:'2026-09-19'};
@@ -9,7 +9,7 @@ const task={id:'t',itemId:'i',title:'Task',done:false,priority:'medium',createdA
 function memory(initial={}){const values=new Map(Object.entries(initial));return {getItem:k=>values.has(k)?values.get(k):null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};}
 function state(){return {items:[{...item}],tasks:[{...task}],history:[]};}
 function fixture(name){return JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures',name),'utf8'));}
-const context={window:{}};vm.createContext(context);['game-resources.js','games-data.js','movies-data.js','explore-data.js'].forEach(f=>vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),context));
+const context={window:{}};vm.createContext(context);['games/game-resources.js','games/games-data.js','movies/movies-data.js','explore/explore-data.js'].forEach(f=>vm.runInContext(fs.readFileSync(path.join(root,f),'utf8'),context));
 
 test('close completes every unfinished task, logs a snapshot, and is idempotent',()=>{
  const initial=state(),closed=work.lifecycle(initial,'i','closed',at,'event');
@@ -53,7 +53,7 @@ test('version 2 migrates missing domain keys to null, while version 3 requires c
  const current=storage.backup(store);assert.equal(current.version,4);delete current.data['orbit-work-items'];assert.throws(()=>storage.restore(store,current),/Incomplete/);
 });
 test('complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values',()=>{
- const store=memory({'other-app':'keep'}),complete=fixture('complete-backup.json');storage.restore(store,complete);assert.deepEqual(storage.snapshot(store),complete.data);
+ const store=memory({'other-app':'keep'}),complete=fixture('complete-backup.json');storage.restore(store,complete);assert.deepEqual(storage.snapshot(store),Object.assign({'orbit-scene-intensity':null,'orbit-hidden-links':null,'orbit-shortcut-order':null,'orbit-movies-untracked':null},complete.data));
  const before=storage.snapshot(store);assert.throws(()=>storage.restore(store,fixture('invalid-work-backup.json')),/Invalid backup field/);assert.deepEqual(storage.snapshot(store),before);
  storage.reset(store);assert.ok(Object.values(storage.snapshot(store)).every(v=>v===null));assert.equal(store.getItem('other-app'),'keep');
 });
@@ -61,6 +61,9 @@ test('all curated destinations validate and ranking is stable, explained and int
  const destinations=context.window.DESTINATIONS;assert.ok(destinations.every(storage.validDestination));
  const prefs={categories:['nature'],budget:['medium']},a=explore.recommend(destinations,prefs,storage.validDestination),b=explore.recommend([...destinations].reverse(),prefs,storage.validDestination);
  assert.deepEqual(Array.from(a,x=>x.destination.id),Array.from(b,x=>x.destination.id));assert.ok(a.length);assert.ok(a.every(x=>x.destination.categories.includes('nature')&&x.destination.budget==='medium'&&x.reasons.length===2));
+ const browserA=explore.search('destinations',{category:'nature',budget:'medium'},{DESTINATIONS:destinations,trips:[]}),browserB=explore.search('destinations',{category:'nature',budget:'medium'},{DESTINATIONS:[...destinations].reverse(),trips:[]});
+ assert.deepEqual(Array.from(browserA.items,x=>x.id),Array.from(browserB.items,x=>x.id));assert.ok(browserA.items.every(x=>x.matchExplanation.includes('Categories: nature')&&x.matchExplanation.includes('Budget: medium')));
+ const departure=explore.search('destinations',{departure:'Asia-Pacific'},{DESTINATIONS:destinations,trips:[]});assert.deepEqual(Array.from(departure.items.slice(0,3),x=>x.id),['bali','chiang-mai','kyoto']);assert.ok(departure.items.slice(0,3).every(x=>x.matchExplanation.includes('Same broad departure region')));
  assert.equal(explore.recommend([{name:'broken'}],{},storage.validDestination).length,0);
  assert.equal(storage.valid('orbit-explore-preferences',JSON.stringify({budget:['unlimited']})),false);
  assert.equal(storage.valid('orbit-explore-saved',JSON.stringify([{id:'s',destinationId:'azores',createdAt:'bad'}])),false);
@@ -77,16 +80,25 @@ test('game resources and default tasks work for several genres without sharing m
  assert.ok(resources.weekly({name:'Custom',trackerType:'weekly'}).every(t=>!t.label.includes('Diablo')));
 });
 test('movie/series type and genre filtering, legacy compatibility and series validation',()=>{
- const catalog=require('../catalog-utils'),pool=context.window.SEED_MOVIES;
- assert.equal(catalog.search(pool,'series').length,4);assert.ok(catalog.search(pool,'Dark').some(m=>m.id==='tv-dark'));
+ const catalog=require('../shared/catalog-utils'),pool=context.window.SEED_MOVIES;
+ assert.equal(catalog.search(pool,'series').length,15);assert.ok(catalog.search(pool,'Dark').some(m=>m.id==='tv-dark'));
  assert.equal(pool.filter(m=>catalog.matches(m,{type:['series'],genre:['Comedy']}))[0].id,'tv-good-place');
  const series=pool.find(m=>m.type==='series');assert.equal(storage.valid('orbit-movies-library',JSON.stringify([series])),true);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,seasons:1.5}])),false);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,type:'podcast'}])),false);assert.equal(storage.valid('orbit-movies-library',JSON.stringify([{...series,type:'Series'}])),true);
 });
 test('Personal deletion waits for confirmation and storage failure preserves the item',()=>{
  let records=[{id:'x',text:'Keep me',done:false}],confirm,toast=[];
- const ctx={window:{OneSpaceUI:{confirm:(title,message,action)=>{confirm=action;}}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'personal-controller.js'),'utf8'),ctx);
+ const ctx={window:{OneSpaceUI:{confirm:(title,message,action)=>{confirm=action;}}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'personal/personal-controller.js'),'utf8'),ctx);
  let fail=false;const controller=ctx.window.makePersonalController('orbit-personal-goals',{safeGetJSON:()=>records,safeSet:(k,v)=>{if(fail)return false;records=JSON.parse(v);return true;},uid:()=> 'new',escapeHtml:s=>s,iconSvg:()=>'',showToast:s=>toast.push(s)});
  const list={innerHTML:''};controller.render(list);list.onclick({target:{closest:()=>({dataset:{delete:'x'}})}});assert.equal(records.length,1);assert.equal(typeof confirm,'function');fail=true;assert.equal(confirm(),false);assert.equal(records.length,1);fail=false;confirm();assert.equal(records.length,0);assert.ok(toast.includes('Personal item deleted.'));
+});
+test('habit targets remain bounded and survive backup restore',()=>{
+ const habit={id:'weekly-walk',text:'Walk',done:false,frequency:'weekly',target:3};
+ assert.equal(storage.valid('orbit-personal-habits',JSON.stringify([habit])),true);
+ for(const target of [0,366,1.5,'3'])assert.equal(storage.valid('orbit-personal-habits',JSON.stringify([{...habit,target}])),false);
+ assert.equal(storage.valid('orbit-personal-goals',JSON.stringify([habit])),false);
+ const before=memory({'orbit-personal-habits':JSON.stringify([habit])}),after=memory();
+ storage.restore(after,storage.backup(before));
+ assert.deepEqual(JSON.parse(after.getItem('orbit-personal-habits')),[habit]);
 });
 test('deleting a game removes its weekly tasks and sessions but preserves journal text',()=>{
  const initial={library:[{id:'g'},{id:'keep'}],weekly:{g:{tasks:[]},keep:{tasks:[]}},sessions:[{id:'s',gameId:'g'},{id:'k',gameId:'keep'}],journal:[{id:'j',gameId:'g',text:'Keep this memory'}]};
@@ -102,4 +114,3 @@ test('malformed destination metadata and game templates are rejected, and tracke
  const g=context.window.DEFAULT_GAMES[0];assert.equal(storage.valid('orbit-games-library',JSON.stringify([{...g,defaultTaskTemplates:{weekly:[42]}}])),false);
  const story=resources.tasks({...g,trackerType:'story'}),weekly=resources.tasks({...g,trackerType:'weekly'});assert.notDeepEqual(story,weekly);assert.equal(weekly.length,3);
 });
-

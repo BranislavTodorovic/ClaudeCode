@@ -1,0 +1,575 @@
+{
+  "item": 347,
+  "step": "12.13",
+  "status": "IMPLEMENTED / NOT VERIFIED",
+  "date": "2026-09-24",
+  "inventory": "docs/implementation-evidence/interaction-inventory.json",
+  "buttonRows": 229,
+  "byOwner": {
+    "explore": 21,
+    "shell": 30,
+    "games": 47,
+    "home": 11,
+    "shortcuts": 11,
+    "productivity": 3,
+    "work": 7,
+    "personal": 3,
+    "settings": 55,
+    "movies": 36,
+    "projects": 5
+  },
+  "observedSuccess": {
+    "I0002": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Cancel, required-field validation and reload observed. Rejected storage write and dialog retry feedback verified by tests/domain-ui.test.js; current browser Add Location open/cancel remained functional after the fix. Row facets complete."
+    },
+    "I0004": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Transient pagination; availability and reload observed."
+    },
+    "I0015": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Read-only saved-card Details opened the stored location, Cancel closed the dialog, and the underlying card survived reload. No submit/write error path applies. Row facets complete."
+    },
+    "I0019": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Inverse move, boundary disable and reload observed; tests/domain-ui.test.js verifies rejected-write rollback and error feedback. Row facets complete."
+    },
+    "I0153": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Cancel, invalid URL and reload observed; storage write failure remains."
+    },
+    "I0158": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Cancel, invalid URL and reload observed; storage write failure remains."
+    },
+    "I0005": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "The Explore São Miguel Details browser check in interaction-current-2026-09-24.json includes opening and Cancel; this is a read-only detail with no draft. tests/explore-preservation.test.js checks the missing-detail not-found error and unchanged trip board. The saved card's reload is covered by the same browser file. Row facets complete."
+    },
+    "I0006": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Shortlist success and reload observed; rejected-write status and unchanged board verified by focused tests. Atomic action has no draft to cancel. Row facets complete."
+    },
+    "I0014": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "The direct empty-board action focused q and loaded six results; unmatched query showed usable 0-results guidance without changing saved state; transient results reset on reload. Row facets complete."
+    },
+    "I0016": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Browser save, Cancel and reload plus handler-level malformed-itinerary and rejected-write tests are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0017": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Browser create, Cancel and reload plus handler-level malformed-itinerary and rejected-write tests are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0018": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Direct Move earlier, inverse, boundary disable and reload plus rejected-write test are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0020": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Browser confirmed removal, Cancel and reload plus rejected-write confirmation test are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0154": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0282": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0283": {
+      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0028": {
+      "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
+      "otherFacets": "Direct post-fix Open Progress navigation, inverse tab action and reload are mapped in control-rows-2026-09-24.json; tests/games-lifecycle.test.js verifies rejected-write navigation safety. Row facets complete."
+    },
+    "I0029": {
+      "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
+      "otherFacets": "Direct Resources dialog content, Close/focus return, read-only error applicability and underlying state after reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0007": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "A direct Add Location Close dialog button click, unchanged 3-place board and focus return to Add Location are in control-rows-2026-09-24.json. No write/provider error path applies. Row facets complete."
+    },
+    "I0062": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct 390px open, Escape/cancel/focus return and closed-after-reload state are mapped in control-rows-2026-09-24.json. No write/provider error applies. Row facets complete."
+    },
+    "I0064": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Work navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0066": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Personal navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0067": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Explore navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0068": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Games navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0069": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Movies navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0070": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Home navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0071": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Shortcuts navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0072": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Productivity navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0073": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Notes navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0074": {
+      "successEvidence": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "otherFacets": "Direct Settings navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0179": {
+      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0180": {
+      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+    },
+    "I0182": {
+      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "otherFacets": "Prior disposable-origin browser reset/reload, current-handler declined-confirmation and error tests, and storage reset/rollback tests are mapped in control-rows-2026-09-24.json. Native browser confirm stalled the new cancel attempt, so the cancel facet is a focused handler test, not a new browser observation. Row facets complete."
+    },
+    "I0115": {
+      "successEvidence": "docs/implementation-evidence/phase12/productivity-controls-2026-09-24.json",
+      "otherFacets": "Transient timer action; no stored-record cancel/error/persistence facet applies. See named row result."
+    },
+    "I0116": {
+      "successEvidence": "docs/implementation-evidence/phase12/productivity-controls-2026-09-24.json",
+      "otherFacets": "Transient timer action; no stored-record cancel/error/persistence facet applies. See named row result."
+    },
+    "I0117": {
+      "successEvidence": "docs/implementation-evidence/phase12/productivity-controls-2026-09-24.json",
+      "otherFacets": "Transient timer action; no stored-record cancel/error/persistence facet applies. See named row result."
+    },
+    "I0090": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-theme-regression-2026-09-24.json",
+      "persistenceEvidence": "tests/browser-smoke.mjs -> themeOverride(tab)",
+      "otherFacets": "Theme toggle/inverse/reload and rejected-write no-false-theme test are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0091": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Home-to-Work navigation, inverse, rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0092": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Home-to-Explore navigation, inverse, rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0093": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Web mode/inverse, read-only error applicability and transient reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0094": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "OneSpace local mode/inverse, unmatched-query empty state and transient reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0096": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Home-to-Productivity navigation, inverse, rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0097": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Favorites selection/inverse, atomic rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0098": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Recent selection/inverse, atomic rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0099": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Most Used selection/inverse, atomic rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0100": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Home GameVault navigation, inverse, rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0101": {
+      "successEvidence": "docs/implementation-evidence/phase12/home-controls-2026-09-24.json",
+      "otherFacets": "Home Movies navigation, inverse, rejected-write safety and reload are mapped in control-rows-2026-09-24.json. Row facets complete."
+    },
+    "I0026": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Games Delete success, Cancel/focus return and reload are recorded per row; tests/games-lifecycle.test.js verifies rejected-transaction rollback and error feedback. Row facets complete."
+    },
+    "I0027": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Spotlight selection and reload, atomic inverse behavior, and rejected-write rollback with error feedback are mapped per row. Row facets complete."
+    },
+    "I0030": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Seeded-game Edit now opens the editor; direct save, Cancel/focus, required-field error and reload plus rejected-write rollback test are mapped per row. Row facets complete."
+    },
+    "I0032": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Inline objective edit save, Cancel, blank validation and reload observed; tests/games-lifecycle.test.js verifies rejected-write safety. Row facets complete."
+    },
+    "I0033": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Objective deletion now requires confirmation. Direct confirm, Cancel/focus, reload and rejected-write test are mapped per row. Row facets complete."
+    },
+    "I0034": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct collapse/expand, focus retention and reload plus rejected-write nonmutation test are mapped per row. Row facets complete."
+    },
+    "I0038": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Weekly reset now requires confirmation. Direct confirm, Cancel/focus, reload and rejected-write nonmutation test are mapped per row. Row facets complete."
+    },
+    "I0039": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct picker select/inverse, focus and reload plus atomic transaction failure test are mapped per row. Row facets complete."
+    },
+    "I0041": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Appearance swatch select/inverse and reload plus rejected-write no-false-theme test are mapped per row. Row facets complete."
+    },
+    "I0043": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Overview Continue directly opened Mission Progress; inverse navigation, shared rejected-transaction safety and selected-tab reload are mapped per row. Row facets complete."
+    },
+    "I0046": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Suggestion add dialog confirm/cancel, shared rejected-transaction rollback and My Games reload are mapped per row. Row facets complete."
+    },
+    "I0047": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Wishlist save, inverse remove, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0048": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Suggestion dismissal, preference reset inverse, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0049": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Read-only details, Close/focus, missing-ID behavior and underlying catalog availability are mapped per row. Row facets complete."
+    },
+    "I0050": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Wishlist move dialog confirm/cancel, shared transaction failure safety and library/wishlist reload are mapped per row. Row facets complete."
+    },
+    "I0051": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Wishlist removal, inverse add, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0053": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Resource editor save/cancel/invalid URL/reload plus shared failed-write dialog behavior are mapped per row. Row facets complete."
+    },
+    "I0054": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Live session stop, no-draft behavior, rejected-write active-state rollback and completed-log reload are mapped per row. Row facets complete."
+    },
+    "I0055": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Session deletion now has direct confirm/cancel, rejected-write nonmutation and empty-log reload evidence. Row facets complete."
+    },
+    "I0056": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Journal edit save/cancel/required-field and rejected-write errors plus reload are mapped per row. Row facets complete."
+    },
+    "I0057": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Journal delete confirm/cancel, rejected-write rollback and reload are mapped per row. Row facets complete."
+    },
+    "I0059": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Main spotlight Open Progress, inverse navigation, shared rejected-transaction safety and selected-tab reload are mapped per row. Row facets complete."
+    },
+    "I0060": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Change Game selection, inverse, shared rejected-transaction safety and spotlight reload are mapped per row. Row facets complete."
+    },
+    "I0061": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Spotlight dot and featured rail selection/inverse, rejected-transaction safety and reload are mapped per row. Row facets complete."
+    },
+    "I0063": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Sidebar collapse/inverse, rejected-write no-false-view test and collapsed-state reload are mapped per row. Row facets complete."
+    },
+    "I0102": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Work selection, inverse, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0103": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Personal selection, inverse, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0104": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Explore selection, inverse, rejected-write nonmutation and reload are mapped per row. Row facets complete."
+    },
+    "I0105": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct palette open/close, no-write error applicability and closed-after-reload state are mapped per row. Row facets complete."},
+    "I0106": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Notes navigation, inverse, rejected-write safety and reload are mapped per row. Row facets complete."},
+    "I0109": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Settings navigation, inverse, rejected-write safety and reload are mapped per row. Row facets complete."},
+    "I0111": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct form open/save/cancel/reload, invalid URL and rejected-write safety are mapped per row. Row facets complete."},
+    "I0112": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct category create/cancel/empty and duplicate validation/reload plus rejected-write retry test are mapped per row. Row facets complete."},
+    "I0113": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Done close, inverse Customize command, no-write error applicability and reload are mapped per row. Row facets complete."},
+    "I0075": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct mobile sidebar palette open/close, no-write error applicability and transient reload are mapped per row. Row facets complete."},
+    "I0076": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct mobile sidebar toolbox open/close, no-write error applicability and transient state are mapped per row. Row facets complete."},
+    "I0077": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct mobile sidebar form open/cancel and shared form save/validation/rejected-write/reload are mapped per row. Row facets complete."},
+    "I0078": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct mobile sidebar Customize entry, Done inverse, no-write error applicability and transient reload are mapped per row. Row facets complete."},
+    "I0081": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct mobile sidebar guide click after overlap fix, dismissal, read-only error applicability and closed-after-reload state are mapped per row. Row facets complete."},
+    "I0120": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct theme selection/inverse/reload and shared rejected-write safety are mapped per row. Row facets complete."},
+    "I0121": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct theme selection/inverse/reload and shared rejected-write safety are mapped per row. Row facets complete."},
+    "I0122": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct theme selection/inverse/reload and shared rejected-write safety are mapped per row. Row facets complete."},
+    "I0123": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct theme selection/inverse/reload and shared rejected-write safety are mapped per row. Row facets complete."},
+    "I0124": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Add Game save/cancel/required-name validation/reload plus rejected-write handler test are mapped per row. Row facets complete."},
+    "I0125": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct previous selection/inverse/reload and rejected spotlight transaction test are mapped per row. Row facets complete."},
+    "I0126": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct next selection/inverse/reload and rejected spotlight transaction test are mapped per row. Row facets complete."},
+    "I0127": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct autoplay toggle/inverse/reload and rejected-write nonmutation test are mapped per row. Row facets complete."},
+    "I0128": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct library navigation/inverse/reload and rejected tab-write test are mapped per row. Row facets complete."},
+    "I0129": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0130": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0131": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0132": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0133": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0134": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0135": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0136": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct tab selection/inverse/reload and shared rejected-write panel safety are mapped per row. Row facets complete."},
+    "I0138": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct filtered local result refresh, inverse filters, read-only error applicability and reload are mapped per row. Row facets complete."},
+    "I0139": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Clear Filters, inverse, rejected-write nonmutation and reload are mapped per row. Row facets complete."},
+    "I0140": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct dismissed-suggestion reset, immediate-action cancel applicability, atomic rejected-write test and reload are mapped per row. Row facets complete."},
+    "I0146": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Work Projects subview navigation/inverse, rejected route-write safety and reload are mapped per row. Row facets complete."},
+    "I0079": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct read-only Workday summary, no-draft/error applicability and unchanged Work state are mapped per row. Row facets complete."
+    },
+    "I0080": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Chill Mode on/off, rejected-write nonmutation and route/reload persistence are mapped per row. Row facets complete."
+    },
+    "I0160": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 5-to-10-to-20-to-5 browser cycle, inverse and transient reload default; no error-producing input or write path. Row facets complete."},
+    "I0161": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct browser pick and Recent reload plus empty-collection and rejected-write focused tests. Immediate action has no draft. Row facets complete."},
+    "I0165": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Auto selection/reload, inverse and rejected-write test. Row facets complete."},
+    "I0166": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Classic selection/reload, inverse and rejected-write test. Row facets complete."},
+    "I0167": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Deep Space selection/reload, inverse and rejected-write test. Row facets complete."},
+    "I0168": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Aurora selection/reload, inverse and rejected-write test. Row facets complete."},
+    "I0169": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Graphite selection/reload, inverse and rejected-write test. Row facets complete."},
+    "I0170": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Clean selection/reload, inverse and rejected-write test after save-first fix. Row facets complete."},
+    "I0171": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Gradient selection/reload, inverse and rejected-write test after save-first fix. Row facets complete."},
+    "I0172": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Atmosphere selection/reload, inverse and rejected-write test after save-first fix. Row facets complete."},
+    "I0181": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Browser cancel/confirm/reload, Recent preservation and atomic rejected-write test. Row facets complete."},
+    "I0183": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Done navigation/reload, no-draft applicability and rejected-route test. Row facets complete."},
+    "I0184": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Minimal-to-full browser action/reload, inverse choice and atomic rejected-write test. Row facets complete."},
+    "I0185": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 390px Home navigation/reload, inverse and shared rejected-route test. Row facets complete."},
+    "I0186": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 390px Shortcuts navigation/reload, inverse and shared rejected-route test. Row facets complete."},
+    "I0187": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 390px Home Search focus/reload, no-draft applicability and rejected-route test. Row facets complete."},
+    "I0188": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 390px Productivity navigation/reload, inverse and shared rejected-route test. Row facets complete."},
+    "I0189": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 390px Games navigation/reload, inverse and shared rejected-route test. Row facets complete."},
+    "I0190": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct 390px drawer open/close, no write path and transient reload. Row facets complete."},
+    "I0192": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct palette close, discarded query, no write path and reload. Row facets complete."},
+    "I0193": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Add shortcut close, discarded draft, no write path and reload. Row facets complete."},
+    "I0195": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Add Game close, discarded draft, no write path and reload. Row facets complete."},
+    "I0197": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct read-only game details close/focus return/reload. Row facets complete."},
+    "I0198": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Add Movie close, discarded draft, no write path and reload. Row facets complete."},
+    "I0200": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct read-only movie details close/focus return/reload. Row facets complete."},
+    "I0201": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct toolbox close, no-draft/error applicability and reload. Row facets complete."},
+    "I0203": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Browser Generate/Copy/reload plus crypto-failure focused test; no secret output in evidence. Row facets complete."},
+    "I0204": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Browser empty/normal Copy and reload plus rejected clipboard/fallback focused test. Row facets complete."},
+    "I0207": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct encode/decode/reload plus malformed Unicode focused test. Row facets complete."},
+    "I0208": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct decode/inverse/reload, invalid percent browser status and focused test. Row facets complete."},
+    "I0209": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Fresh-origin Welcome Escape/reload and Start exploring/reload, plus rejected-write focused test. Row facets complete."},
+    "I0210": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Reproduced false move feedback, fixed visible order, then direct up/inverse/edge/reload and rejected-write test. Row facets complete."},
+    "I0211": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct down/inverse/boundary/reload and shared rejected-write test. Row facets complete."},
+    "I0212": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Rename cancel/duplicate validation/save/reload and atomic rejected-write test. Row facets complete."},
+    "I0213": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Delete cancel/confirm/reassignment/reload and atomic rejected-write test. Row facets complete."},
+    "I0214": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct collapse/expand/reload and rejected-write test. Row facets complete."},
+    "I0215": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct favorite/unfavorite/reload and rejected-write test. Row facets complete."},
+    "I0216": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct menu open/Escape/toggle-close/reload, no write path. Row facets complete."},
+    "I0217": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct public URL clipboard copy, no-draft applicability, fallback failure test and unchanged route reload. Row facets complete."},
+    "I0218": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct shortcut earlier/inverse/reload and scoped immutable-order test. Row facets complete."},
+    "I0219": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct shortcut later/inverse/reload and shared save-before-render path. Row facets complete."},
+    "I0221": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Edit save/cancel/validation/reload and rejected-write record rollback test. Row facets complete."},
+    "I0222": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Delete cancel/confirm/reload and rejected-write rollback test. Row facets complete."},
+    "I0226": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct empty-Favorites Browse navigation/inverse/reload and rejected-route test. Row facets complete."},
+    "I0228": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct disposable-browser Delete confirmation/cancel/success/reload plus rejected-write test. Row facets complete."},
+    "I0229": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct disposable-browser countdown Delete confirmation/cancel/success/reload plus rejected-write test. Row facets complete."},
+    "I0230": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct provider selection/reversal/reload and focused rejected-write regression. Row facets complete."},
+    "I0233": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Pin/Unpin/reload and save-boundary rejected-write regression. Row facets complete."},
+    "I0234": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Save/cancel/reload and save-boundary rejected-write regression. Row facets complete."},
+    "I0235": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct editor Cancel/discard/reload; no write path applies. Row facets complete."},
+    "I0236": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Edit open/cancel/Save/reload and shared rejected-write regression. Row facets complete."},
+    "I0237": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct shared Delete confirmation/cancel/success/reload and focused rejected-write regression. Row facets complete."},
+    "I0240": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct suggestion detail open/close/reload; read-only local detail has no write failure path. Row facets complete."},
+    "I0241": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct suggestion Add/Watchlist/reload/inverse Remove/reload plus rejected-transaction regression. Row facets complete."},
+    "I0242": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct suggestion Watched/reload/inverse status/reload plus rejected-transaction regression. Row facets complete."},
+    "I0243": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct suggestion Dismiss/reload/inverse Reset/reload plus rejected-write regression. Row facets complete."},
+    "I0244": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Watchlist-to-Watched/reload/inverse/reload plus rejected-transaction regression. Row facets complete."},
+    "I0245": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Watchlist Remove/reload/inverse plus rejected-transaction regression. Row facets complete."},
+    "I0246": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct custom title Delete confirmation/cancel/success/reload plus rejected-transaction regression. Row facets complete."},
+    "I0247": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct custom title Edit/cancel/validation/save/reload plus rejected-transaction regression. Row facets complete."},
+    "I0248": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct local library detail open/close/reload; no write failure path. Row facets complete."},
+    "I0250": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Overview-to-Suggestions/inverse/reload plus rejected-route regression. Row facets complete."},
+    "I0251": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Up Next Watched/reload/inverse/reload and shared rejected-transaction regression. Row facets complete."}
+  },
+  "observedSuccessCount": 172,
+  "retiredSuccessorMappings": {
+    "I0021": {
+      "retiredIntent": "Open an Explore destination's Details from the retired explore.js renderer.",
+      "currentControls": ["I0005", "I0015"],
+      "evidence": "Discovery-card Details and saved-board Details open/cancel/error/persistence facets are recorded in interaction-current-2026-09-24.json, control-rows-2026-09-24.json and tests/explore-preservation.test.js. The retired explore.js control was not clicked."
+    },
+    "I0022": {
+      "retiredIntent": "Save or remove a destination from the Explore shortlist in the retired renderer.",
+      "currentControls": ["I0006", "I0020"],
+      "evidence": "Current Shortlist Add and trip-board Remove success/cancel/error/persistence facets are recorded in control-rows-2026-09-24.json, interaction-current-2026-09-24.json, tests/discovery-ui-write-failure.test.js and tests/domain-ui.test.js. The retired explore.js control was not clicked."
+    },
+    "I0023": {
+      "retiredIntent": "Open Trip notes from the retired Explore destination card.",
+      "currentControls": ["I0016"],
+      "evidence": "Current Edit trip owns saved destination notes. Save, Cancel and reload are in interaction-current-2026-09-24.json; malformed itinerary and rejected write are in tests/domain-ui.test.js. The retired explore.js control was not clicked."
+    },
+    "I0042": {
+      "retiredIntent": "Open Progress from a Games Overview mini-card. The mini-card row was permanently hidden by games-cinematic.css and was absent from the accessibility tree.",
+      "currentControls": ["I0028"],
+      "evidence": "My Games Open Progress is the reachable per-game successor; direct story and weekly tracker entry, rejected-write safety and reload are in control-rows-2026-09-24.json and tests/games-lifecycle.test.js. The unreachable mini-card renderer and empty container were removed; browser Overview still showed stats and Continue Playing, with no hidden mini-card controls. The old mini-card was not clicked."
+    },
+    "I0065": {
+      "retiredIntent": "Navigate via the historical Projects sidebar button, removed when Projects became a Work subview in the approved domain regrouping.",
+      "currentControls": ["I0064"],
+      "evidence": "Current Work sidebar navigation was clicked and survived reload (I0064). Within Work, the current Open Projects button selected the Projects tracker subview; browser reload returned to the persisted Work route and its default Board subview. The historical Projects sidebar button was not clicked. The Work/Projects alias had prior route evidence in phase12/audit-2026-09-23.jsonl item 339."
+    },
+    "I0082": {
+      "retiredIntent": "Download a backup from the hidden legacy sidebar data action.",
+      "currentControls": ["I0179"],
+      "evidence": "Settings Download backup is the reachable successor; its actual browser download/status and backup tests are in backup-reset-2026-09-24.json. I0179 retains outstanding row-facet reconciliation before item 347 can pass. The hidden sideExport button was not clicked."
+    },
+    "I0083": {
+      "retiredIntent": "Restore a backup from the hidden legacy sidebar data action.",
+      "currentControls": ["I0180"],
+      "evidence": "Settings Restore backup is the reachable successor; its actual disposable-origin v4 import and storage rollback tests are in backup-reset-2026-09-24.json. I0180 retains outstanding row-facet reconciliation before item 347 can pass. The hidden sideImport button was not clicked."
+    },
+    "I0107": {"retiredIntent": "Download a backup from the permanently hidden Shortcuts toolbar button.", "currentControls": ["I0179"], "evidence": "The exportDataBtn exists in legacy markup but CSS sets display:none. Settings Download backup is the reachable visible successor. Its success and remaining facets are tracked under I0179; this hidden button was not clicked."},
+    "I0108": {"retiredIntent": "Restore a backup from the permanently hidden Shortcuts toolbar button.", "currentControls": ["I0180"], "evidence": "The importDataBtn exists in legacy markup but CSS sets display:none. Settings Restore backup is the reachable visible successor. Its success and remaining facets are tracked under I0180; this hidden button was not clicked."},
+    "I0144": {"retiredIntent": "Open the historical Today & Focus mobile rail in Work, removed by approved Phase 3 domain regrouping.", "currentControls": ["I0072", "I0115", "Productivity: Today task checkbox"], "evidence": "At 390px on Work, mobileTodayToggle and todayRail are absent from the current DOM. Productivity route/timer and task-toggle successor evidence is in control-rows-2026-09-24.json, productivity-controls-2026-09-24.json and tests/productivity-write-failure.test.js. The historical button was not clicked."},
+    "I0145": {"retiredIntent": "Start a generic focus session from the old Work rail, replaced under approved Phase 3 Work-domain regrouping.", "currentControls": ["Work: New work item", "I0072", "I0115"], "evidence": "The current Work hero offers New work item and no old focus-session button. Generic timer Start lives in Productivity with direct browser evidence in productivity-controls-2026-09-24.json. The removed Work button was not clicked."},
+    "I0147": {"retiredIntent": "Open the project management view from a redundant Manage all projects button inside that same view.", "currentControls": ["I0146", "Work views: Projects"], "evidence": "The historical button was nested inside workProjectsPanel, which was already the Projects view, and had no further destination. It was removed. Current Work Open Projects directly selected the Projects subview with its form; reload returned to Work Board. The redundant button was not clicked."},
+    "I0148": {"retiredIntent": "Open General daily tasks from the old Work focus rail, removed by approved Phase 3 domain regrouping.", "currentControls": ["I0072", "Productivity: Today task checkbox"], "evidence": "At 390px on Work, the old rail and General daily tasks button are absent. Productivity Today tasks are the current successor; creation, check/uncheck, reload and rejected-write rollback are in the prior browser observation and tests/productivity-write-failure.test.js. The old button was not clicked."},
+    "I0155": {"retiredIntent": "Navigate from the historical Explore More To Explore Games card, removed when Phase 10 kept the ending section travel focused.", "currentControls": ["I0068", "I0100"], "evidence": "Current Explore More To Explore contains only Travel inspiration; the old Games cross-domain card is absent. Games is directly reachable through the Games sidebar and Home GameVault card, both clicked with route reload evidence in control-rows-2026-09-24.json. The removed card was not clicked."},
+    "I0156": {"retiredIntent": "Navigate from the historical Explore More To Explore Movies card, removed by the Phase 10 travel-only Explore ending.", "currentControls": ["I0069", "I0101"], "evidence": "Current Explore ending contains only Travel inspiration; Movies & Series is reachable through its sidebar and Home card, with direct route/reload evidence in control-rows-2026-09-24.json. The removed card was not clicked."},
+    "I0157": {"retiredIntent": "Start a break from the historical Explore More To Explore productivity card, removed by Phase 10 domain separation.", "currentControls": ["I0080", "I0072", "I0115"], "evidence": "Current Explore has Chill Mode and a break timer; Productivity has the verified Focus timer route and Start action. The old cross-domain card is absent from More To Explore, which now contains only Travel inspiration. The removed card was not clicked."},
+    "I0084": {
+      "retiredIntent": "Hide the historical Work focus rail. Phase 2.2.3 and 3.row4 removed that cross-domain rail from Work.",
+      "currentControls": ["I0064", "I0072", "I0073"],
+      "evidence": "The current index.html has no focusRailToggle or rail panel in the DOM. Work now uses its full-width tracker; generic tasks/timer and Notes live on their own verified routes. Hiding the removed rail has no current action. The old button was not clicked."
+    },
+    "I0085": {
+      "retiredIntent": "Open the generic timer from the historical Work focus rail.",
+      "currentControls": ["I0072", "I0115"],
+      "evidence": "The Productivity sidebar route is directly verified with reload under I0072. The current Focus timer Start/Reset/mode actions have actual browser evidence in productivity-controls-2026-09-24.json. The removed rail button was not clicked."
+    },
+    "I0086": {
+      "retiredIntent": "Complete the next generic task from the removed focus rail.",
+      "currentControls": ["Productivity: Today task checkbox"],
+      "evidence": "On the disposable origin, a named Productivity task was created, checked, reloaded checked, unchecked, and reloaded unchecked. tests/productivity-write-failure.test.js verifies task state does not advance in memory after rejected persistence. The removed rail Complete button was not clicked."
+    },
+    "I0087": {
+      "retiredIntent": "Open Productivity from the historical Work focus rail.",
+      "currentControls": ["I0072"],
+      "evidence": "The current Productivity sidebar route was clicked and persisted through reload in I0072. It exposes the Focus timer, Today tasks and Planner. The removed rail button was not clicked."
+    },
+    "I0088": {
+      "retiredIntent": "Open Quick Notes from the historical Work focus rail.",
+      "currentControls": ["I0073"],
+      "evidence": "The current Quick Notes sidebar route was clicked and persisted through reload in I0073. The removed rail button was not clicked."
+    },
+    "I0089": {
+      "retiredIntent": "Reopen the historical Work focus rail, removed by approved Phase 2.2.3 and 3.row4 domain changes.",
+      "currentControls": ["I0064", "I0072", "I0073"],
+      "evidence": "There is no current rail to reopen. Work tracker and the separate Productivity/Notes routes cover its former content; the current index.html contains no openFocusRail control or focusRail DOM. The historical button was not clicked."
+    },
+    "I0220": {
+      "retiredIntent": "Duplicate shortcut was a historical toast-only stub. Verified item 225 / 7.2.4 explicitly allowed implementation or removal; the stub and its menu item were removed.",
+      "currentControls": ["I0111", "I0221"],
+      "evidence": "Current card menus have Copy address, Remove, Move earlier/later and custom Edit/Delete, with no Duplicate action. tests/shortcuts.test.js asserts no duplicateShortcut or data-action=duplicate stub. Shortcuts Add shortcut (I0111) is the reachable create path with browser save/cancel/reload and rejected-write evidence. The removed stub was not clicked."
+    },
+    "I0224": {
+      "retiredIntent": "Open a category from the historical sidebar category-jump rail, now permanently hidden by the current navigation design.",
+      "currentControls": ["I0071", "I0226", "I0214"],
+      "evidence": "The current browser DOM still contains a templated category-jump button, but getComputedStyle(categoryJump).display is none and the visible Shortcuts category headings are rendered in the page. Shortcuts sidebar and empty-Favorites Browse shortcuts were directly clicked with route reload evidence; category Collapse/Expand is verified under I0214. The hidden category-jump button was not clicked."
+    }
+  },
+  "remainingSuccessIds": [
+    "I0252",
+    "I0253",
+    "I0254",
+    "I0256",
+    "I0257",
+    "I0258",
+    "I0259",
+    "I0260",
+    "I0261",
+    "I0262",
+    "I0263",
+    "I0264",
+    "I0265",
+    "I0266",
+    "I0267",
+    "I0268",
+    "I0269",
+    "I0270",
+    "I0272",
+    "I0273",
+    "I0274",
+    "I0275",
+    "I0278",
+    "I0279",
+    "I0280",
+    "I0284",
+    "I0286",
+    "I0287",
+    "I0288",
+    "I0289",
+    "I0290",
+    "I0291",
+    "I0292"
+  ],
+  "retiredSourceRows": [
+    {
+      "ids": [
+        "I0021",
+        "I0022",
+        "I0023"
+      ],
+      "source": "explore.js",
+      "reason": "Phase 10 retired the duplicate auto-mounting module; current Explore controls are owned by discovery-ui.js and explore-global.js. Map each former intent to the current control and evidence rather than claiming the deleted button can be clicked."
+    },
+    {
+      "ids": [
+        "I0144",
+        "I0145",
+        "I0148"
+      ],
+      "source": "historical Work page controls",
+      "reason": "Standing plan Phase 3 explicitly removed Today & Focus and General daily tasks from Work and replaced Start a focus session with a Work-domain action; see docs/agent-instructions.md Phase 3 lines 793–796. Verify the successor Productivity controls and current Work actions, and record this requirement mapping rather than claiming these retired buttons still exist."
+    },
+    {
+      "ids": ["I0042"],
+      "source": "hidden Games Overview mini-card row",
+      "reason": "games-cinematic.css hid this row unconditionally, so its generated Open Progress controls were unreachable. The dead row/container were retired and its intent maps to the reachable My Games Open Progress control I0028."
+    }
+  ],
+  "completionRule": "Every one of 229 inventory button templates needs its own success evidence and applicable cancel/error/persistence evidence. Existing broad tests, phase acceptance summaries, and the partial observedSuccess map do not satisfy item 347 by themselves."
+}

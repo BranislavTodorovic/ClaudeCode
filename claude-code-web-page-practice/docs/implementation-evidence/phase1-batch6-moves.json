@@ -1,0 +1,18 @@
+[
+  {
+    "from": "projects.js",
+    "to": "work/projects.js"
+  },
+  {
+    "from": "work-tracker.js",
+    "to": "work/work-tracker.js"
+  },
+  {
+    "from": "tracker.css",
+    "to": "work/tracker.css"
+  },
+  {
+    "from": "personal-controller.js",
+    "to": "personal/personal-controller.js"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "item": "0.9–0.10",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "result": "PASS",
+  "currentSource": "shared/storage-utils.js:114 exports v4; lines 115-119 accept complete v2/v3/v4 backups with version-specific required key lists, add null defaults for newer keys and transact atomically.",
+  "currentContract": { "exportVersion": 4, "completeImportVersions": [2, 3, 4], "storageKeyCount": 66 },
+  "tests": [
+    "phase0-0.1-tests.txt: complete backups round-trip projects, preferences, trackers and unrelated data",
+    "phase0-0.1-tests.txt: version 2 migrates missing domain keys to null, while version 3 requires completeness",
+    "phase0-0.1-tests.txt: malformed/incomplete backups are rejected without changing prior state",
+    "phase0-0.1-tests.txt: storage failure rolls back previously written values"
+  ]
+}

@@ -1,0 +1,43 @@
+# =========================================================
+# OneSpace - Git ignore rules
+# =========================================================
+
+# ---------------------------------------------------------
+# Secrets / local credentials
+# ---------------------------------------------------------
+# Keep only the empty directory marker; ignore all local credentials.
+config/secrets/*
+!config/secrets/.gitkeep
+
+# Environment files
+.env
+.env.*
+*.local.json
+
+# ---------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------
+node_modules/
+
+# ---------------------------------------------------------
+# Local / generated implementation evidence
+# ---------------------------------------------------------
+docs/implementation-evidence/live-origin-*.json
+
+# ---------------------------------------------------------
+# Local implementation support / temporary working files
+# ---------------------------------------------------------
+work/implementation-support/
+
+# ---------------------------------------------------------
+# Common local OS / editor artifacts
+# ---------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# VS Code local workspace settings may be committed intentionally,
+# so .vscode/ is NOT ignored here.

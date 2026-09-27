@@ -1,0 +1,12 @@
+{
+  "item": 347,
+  "inventoryId": "I0090",
+  "date": "2026-09-24",
+  "status": "VERIFIED AFTER FIX",
+  "browserOrigin": "Disposable 127.0.0.1:18974",
+  "reproduction": "After Reset all data, Settings Appearance was Auto. On Home, Change color theme initially showed Light mode with aria-pressed=true (the button offers the opposite mode). Clicking it showed Dark mode with aria-pressed absent/false, indicating the page switched to light. After reload, it again showed Light mode with aria-pressed=true, indicating a return to dark. The manual toggle did not persist.",
+  "cause": "The toggle stores orbit-theme, but applyDashboardPreferences() ignores that value whenever orbit-palette is auto and reapplies the device color scheme on load.",
+  "fix": "Home toggling now persists orbit-theme while leaving orbit-palette unchanged. The Auto palette uses a stored manual theme when present; selecting Auto in Settings clears that override atomically and restores device-following behavior.",
+  "postFixBrowser": "From Auto/device dark, Home toggle changed to light and remained light after reload while Settings still showed Auto. Selecting Auto again returned to device dark. tests/browser-smoke.mjs themeOverride(tab) returned {changed:true,persisted:true,appearance:'auto',deviceRestored:true}. With Deep Space selected, Home toggle changed aria-pressed from true to false; after reload, Settings still showed Deep Space selected.",
+  "automated": "node --test tests/: 93 passed, 0 failed after the fix; the existing settings regression also confirms the header theme toggle does not mutate paletteChoice."
+}

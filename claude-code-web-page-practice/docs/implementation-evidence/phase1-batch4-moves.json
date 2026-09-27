@@ -1,0 +1,18 @@
+[
+  {
+    "from": "movies.js",
+    "to": "movies/movies.js"
+  },
+  {
+    "from": "movies-data.js",
+    "to": "movies/movies-data.js"
+  },
+  {
+    "from": "movies.css",
+    "to": "movies/movies.css"
+  },
+  {
+    "from": "movies-cinematic.css",
+    "to": "movies/movies-cinematic.css"
+  }
+]

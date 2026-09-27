@@ -1,0 +1,418 @@
+{
+  "scenes": [
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "01 / THE OBSERVATORYA little perspective changes everything.",
+      "overflow": false,
+      "page": "home",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "02 / THE DRAFTING ROOMOne meaningful step at a time.",
+      "overflow": false,
+      "page": "work",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "03 / THE RITUAL GARDENSmall rituals. A richer everyday.",
+      "overflow": false,
+      "page": "personal",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "04 / THE ATLAS WINDOWLet curiosity lead.",
+      "overflow": false,
+      "page": "explore",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "05 / THE NEXT WORLDEvery adventure leaves a mark.",
+      "overflow": false,
+      "page": "games",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "06 / THE PRIVATE THEATERTonight belongs to a good story.",
+      "overflow": false,
+      "page": "movies",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "07 / THE LAUNCH WALLA shorter path to your everyday.",
+      "overflow": false,
+      "page": "shortcuts",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "08 / THE FOCUS STUDIOGive one thing your full attention.",
+      "overflow": false,
+      "page": "productivity",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "09 / THE CAPTURE DESKLeave a little of your mind on the page.",
+      "overflow": false,
+      "page": "notes",
+      "svg": true
+    },
+    {
+      "ambientAnimation": "sceneLight",
+      "caption": "10 / THE CONTROL ROOMMake this space feel like you.",
+      "overflow": false,
+      "page": "settings",
+      "svg": true
+    }
+  ],
+  "reduced": [
+    {
+      "animations": [],
+      "page": "home",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "work",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "personal",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "explore",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "games",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "movies",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "shortcuts",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "productivity",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "notes",
+      "parallax": [],
+      "still": true
+    },
+    {
+      "animations": [],
+      "page": "settings",
+      "parallax": [],
+      "still": true
+    }
+  ],
+  "layouts": [
+    {
+      "page": "home",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "home",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "home",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "home",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "work",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "work",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "work",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "work",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "personal",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "personal",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "personal",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "personal",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "explore",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "explore",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "explore",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "explore",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "games",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "games",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "games",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "games",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "movies",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "movies",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "movies",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "movies",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "shortcuts",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "shortcuts",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "shortcuts",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "shortcuts",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "productivity",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "productivity",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "productivity",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "productivity",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "notes",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "notes",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "notes",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "notes",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "page": "settings",
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    },
+    {
+      "page": "settings",
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "page": "settings",
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    },
+    {
+      "page": "settings",
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  ]
+}

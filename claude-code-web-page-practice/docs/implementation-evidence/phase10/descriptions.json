@@ -1,0 +1,38 @@
+{
+  "checklistItem": "10.1.2",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "catalog": {
+    "destinations": 12,
+    "minimumDetailWords": 94,
+    "maximumDetailWords": 108,
+    "summaryMaximumCharacters": 80,
+    "requiredTopics": [
+      "place character",
+      "category fit",
+      "best season and rationale",
+      "rough trip length",
+      "budget character",
+      "concrete traveller activities"
+    ]
+  },
+  "automatedChecks": {
+    "command": "node --test tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js",
+    "passed": 28,
+    "failed": 0
+  },
+  "browserChecks": {
+    "destination": "Lisbon",
+    "detailWordCount": 94,
+    "desktop": "PASS",
+    "mobileViewport": "390x844",
+    "mobileDialog": {
+      "clientWidth": 338,
+      "scrollWidth": 338,
+      "clientHeight": 818,
+      "scrollHeight": 1251
+    },
+    "result": "Long-form copy remains readable, vertically scrollable, and free of horizontal overflow; actions remain reachable.",
+    "consoleWarningsOrErrors": 0
+  }
+}

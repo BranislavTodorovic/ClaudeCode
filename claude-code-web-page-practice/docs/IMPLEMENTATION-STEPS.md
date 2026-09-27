@@ -1,331 +1,5446 @@
-# OneSpace — Implementation Steps
+# OneSpace — Numbered implementation checklist
 
-The working checklist for the plan in `agent-instructions.md`. That document holds the reasoning and the evidence; this one holds the boxes to tick.
+Authority: `agent-instructions.md` (moves to `docs/agent-instructions.md` in Phase 1). Original step references are retained. Execution order: **13.1 → 13.2 → 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10 → 11 → 12 → Gate 12 → R0 → R1 → R2 → R3 → R4 → R5 → R6 → 14 → 15 → 16 → 17 → 18 → 19 → 20 → 21 → 22 → 23 → 24 → 25 → 26 → Gate 26 → 13.3**. Subordinate requirements retain their source order, except the explicitly prescribed Phase 1 move-batch order.
 
-Tick a box only when its **Check** actually passes. If a step is skipped, replace its `[ ]` with `[~]` and write the reason on the line — an unexplained unchecked box at the end of Phase 12 blocks delivery.
+**Execution authority:** completion, status, evidence, phase-gate and resume behavior are governed by the `Mandatory execution and verification contract` below. The standing plan defines **what** must be delivered; this checklist governs **how completion is proven**.
+
+## Do not break
+
+- Entry URL stays `http://localhost:8973/` serving root `index.html`.
+- All `localStorage` keys unchanged. A folder move must never touch a storage key.
+- All public browser globals keep their names: `OneSpace` (inline), `OneSpaceStorage`, `OneSpaceCatalog`, `OneSpaceShortcuts`, `OneSpaceShortcutUI`, `OneSpaceUI`, `OneSpaceVisual`, `makePersonalController`, `OneSpaceWork`, `OneSpaceTrips`, `DESTINATIONS`, `OneSpaceLocalDiscovery`, `OneSpaceDiscovery`, `OneSpaceExplore`, `OneSpaceGameResources`, `DEFAULT_GAMES` / `SUGGESTION_CATALOG` / `DIABLO_WEEKLY_TEMPLATE` / `GAMES_*`, `OneSpaceGameDiscovery` + `OneSpace.playGamesEntryAnimation`, `SEED_MOVIES` / `MOVIE_*`, `OneSpaceTitleDiscovery`.
+- `work/projects.js`, `shared/tooltip-utils.js`, `shared/cinematic-scenes.js`, `explore/explore-global.js` and `explore/discovery-integration.js` export nothing — pure side-effect modules that must keep their exact load position.
+- The UMD dual-export pattern stays in every file that has it.
+- Backup format version 4 (and v2/v3 acceptance) and all existing fixtures remain valid.
+- **No behaviour change of any kind in Phase 1.** If a bug is found mid-move, note it and fix it in a later phase.
+
+The three user-confirmed clarifications in the standing plan apply. Existing DONE markers describe the old implementation, not verification in this run. Do not mark a requirement verified without evidence. No step may be skipped. Repeated requirements remain separately traceable to their original phases.
+
+
+## Mandatory execution and verification contract
+
+These rules apply to **every checklist item, every phase, every gate, every resume after interruption, and every final verification step**.
+
+They override any weaker or ambiguous completion wording elsewhere in this checklist.
+
+### 1. Completion rule
+
+A phase is **NOT** complete merely because:
+
+- code exists;
+- a feature appears to work;
+- a total test count is green;
+- screenshots exist;
+- a previous chat summary says the phase is complete;
+- a phase-level `acceptance.json` exists;
+- an earlier run marked the phase `Verified`;
+- or the implementation "looks close enough".
+
+A phase is complete **ONLY** when every phase-local checklist item is in one of these terminal states:
+
+- **VERIFIED**
+- **DEFERRED TO PHASE 12** — only when the standing plan explicitly assigns that exact acceptance check to Phase 12
+- **APPROVED EXCEPTION** — only when the requirement cannot be delivered as written and the approved alternative, reason and evidence are permanently recorded
+
+A phase gate must remain open if any item in that phase is:
+
+- **PENDING**
+- **IMPLEMENTED / NOT VERIFIED**
+- **BLOCKED**
+
+Phase 12 is **final regression and delivery verification**. It does not replace phase-local verification unless the standing plan explicitly assigns that exact check to Phase 12.
 
 ---
 
-## DO NOT BREAK
+### 2. Allowed statuses
 
-These hold through every phase. Any change that violates one is wrong, however good it looks.
+Use **only** these statuses:
 
-- **Entry URL** stays `http://localhost:8973/` serving root `index.html`.
-- **Every `localStorage` key is unchanged.** A refactor must never rename, drop or re-shape a key. The canonical list is in `storage-utils.js:7-18`.
-- **Every public browser global keeps its name:** `OneSpace`, `OneSpaceStorage`, `OneSpaceCatalog`, `OneSpaceShortcuts`, `OneSpaceShortcutUI`, `OneSpaceUI`, `OneSpaceVisual`, `makePersonalController`, `OneSpaceWork`, `OneSpaceTrips`, `DESTINATIONS`, `OneSpaceLocalDiscovery`, `OneSpaceDiscovery`, `OneSpaceExplore`, `OneSpaceGameResources`, `DEFAULT_GAMES`, `SUGGESTION_CATALOG`, `DIABLO_WEEKLY_TEMPLATE`, `GAMES_*`, `OneSpaceGameDiscovery`, `OneSpace.playGamesEntryAnimation`, `SEED_MOVIES`, `MOVIE_*`, `OneSpaceTitleDiscovery`.
-- **Script load order is load-bearing.** All 22 `<script src>` tags are classic scripts with no `defer`; they execute in document order. Never reorder, merge, split or add `defer`.
-- **`storage-utils.js` is the only persistence validation boundary.** New keys get validators there, not ad-hoc checks in domain code.
-- **Backup compatibility:** v3 is current, complete v2 backups stay accepted, all existing fixtures stay valid.
-- **No behaviour change during Phase 1.** Found a bug mid-move? Write it down, fix it in a later phase.
-- **No CDN and no new browser runtime dependency.** The server may call configured providers; the browser bundle may not.
+- **PENDING** — work has not started.
+- **IMPLEMENTED / NOT VERIFIED** — implementation exists, but the exact acceptance criterion has not yet passed.
+- **VERIFIED** — implementation exists and the exact acceptance criterion has passed with persistent evidence.
+- **DEFERRED TO PHASE 12** — allowed only when the standing plan explicitly assigns that exact acceptance check to Phase 12.
+- **BLOCKED** — work cannot proceed; the exact blocker must be recorded.
+- **APPROVED EXCEPTION** — the requirement cannot be delivered as written and the approved alternative/reason/evidence is recorded.
 
-**Commands** — PowerShell is the shell on this machine, so `PORT=x cmd` is a parse error:
+Do not invent hybrid statuses such as:
 
-```powershell
-node --test tests/
-node server/_static-server.js          # after Phase 1; before it, node _static-server.js
-$env:PORT = '18974'; node tests/browser-server.js
+- `Verified; mostly complete`
+- `Verified except...`
+- `Verified with follow-through...`
+- `Verified pending...`
+- `Done enough`
+- `Implemented and probably correct`
+
+If required follow-through remains and that follow-through is not explicitly assigned to a later phase by the standing plan, the item is **IMPLEMENTED / NOT VERIFIED**, not VERIFIED.
+
+---
+
+### 3. Checkbox rule
+
+A checked box `[x]` means one of only two things:
+
+- **VERIFIED**
+- **APPROVED EXCEPTION**
+
+If implementation exists but verification is incomplete:
+
+- keep `[ ]`
+- set status to **IMPLEMENTED / NOT VERIFIED**
+
+If an acceptance check is explicitly assigned to Phase 12:
+
+- the implementation item may be VERIFIED when its own phase-local acceptance passes;
+- the separate Phase 12 regression item remains pending until Phase 12.
+
+Never check a box merely because code was written.
+
+---
+
+### 4. Requirement-level evidence rule
+
+Evidence must be **specific to the checklist item**.
+
+A total test count is supporting evidence only. It is not sufficient evidence by itself.
+
+If a phase-level file such as `acceptance.json` is used, it must contain a named result that maps directly to:
+
+- this checklist step ID; or
+- this exact acceptance criterion.
+
+Good evidence examples:
+
+- `docs/implementation-evidence/phase8/acceptance.json -> 8.5.2 selectorEscaping: PASS`
+- `tests/games-lifecycle.test.js -> "focus restoration handles quoted ids"`
+- `phase5/work-1440-after.png`
+- `phase6/provider-unconfigured.json -> status: PASS`
+- browser measurement showing exact width / overflow / focus / persistence result
+
+Not sufficient by itself:
+
+- `71 tests pass`
+- `browser checks passed`
+- `acceptance.json`
+- `looks correct`
+- `verified in previous session`
+
+Every VERIFIED item must have persistent evidence that another session can inspect without relying on chat memory.
+
+---
+
+### 5. Phase gate rule
+
+Before marking any `Gate X` VERIFIED:
+
+1. Re-read every checklist item belonging to that phase.
+2. Confirm there are zero **PENDING**, **IMPLEMENTED / NOT VERIFIED**, or **BLOCKED** items in that phase.
+3. Confirm every **DEFERRED TO PHASE 12** item is explicitly assigned there by the standing plan.
+4. Re-run the phase gate automated tests.
+5. Re-run the phase's required browser/manual acceptance checks.
+6. Confirm required persistence/reload/error/cancel/focus behavior where applicable.
+7. Confirm required responsive checks where applicable.
+8. Confirm required visual acceptance where applicable.
+9. Store persistent evidence in `docs/implementation-evidence/`.
+10. Update the `Progress` table so it exactly matches the detailed checklist.
+
+The `Progress` table must never contradict the detailed checklist.
+
+If it does, the detailed evidence wins and the Progress table must be corrected immediately.
+
+---
+
+### 6. Visual acceptance rule
+
+For requirements whose purpose includes:
+
+- visual redesign;
+- cinematic quality;
+- "alive" interaction;
+- hierarchy improvement;
+- modernisation;
+- motion;
+- artwork quality;
+- responsive presentation;
+
+structural implementation is **not sufficient**.
+
+Verification must include rendered before/after evidence where a baseline exists.
+
+At the required widths:
+
+- **1440 px**
+- **1024 px**
+- **760 px**
+- **390 px**
+
+verify all applicable criteria:
+
+- the intended visual difference is clearly observable;
+- hierarchy is visibly improved;
+- the feature does not merely exist in DOM/CSS;
+- required Full-mode motion is visibly perceptible without being distracting;
+- Subtle mode is observably reduced;
+- Off mode is still;
+- reduced-motion mode is genuinely still;
+- no overlap exists;
+- no clipping exists;
+- no horizontal overflow exists;
+- no broken artwork exists;
+- no unreadable contrast exists;
+- touch targets remain usable;
+- keyboard focus remains visible.
+
+If the implementation technically exists but the visible difference is negligible, mark:
+
+**IMPLEMENTED / NOT VERIFIED**
+
+and improve it before closing the phase.
+
+---
+
+### 7. Functional acceptance rule
+
+For CRUD, persistence, tracker, shortcut, movie, game, Work, Personal, Explore and Settings functionality, verification must test the actual user path where applicable:
+
+1. open the correct route;
+2. perform the action;
+3. verify immediate UI state;
+4. verify success feedback;
+5. verify persisted storage state;
+6. reload;
+7. verify state remains correct;
+8. verify cancel behavior where applicable;
+9. verify validation/error behavior where applicable;
+10. verify focus return / keyboard behavior where applicable.
+
+A helper/unit test alone does not replace the browser/user-flow acceptance check when the checklist requires browser behavior.
+
+---
+
+### 8. Defect verification rule
+
+For a defect fix:
+
+1. reproduce the defect before the fix whenever practical;
+2. retain failing evidence or a regression test that fails against the old behavior;
+3. implement the fix;
+4. make the regression test pass;
+5. verify the actual browser/user flow;
+6. verify persistence/reload if the defect involves stored state;
+7. record the result against the exact defect checklist ID.
+
+A defect is not VERIFIED merely because the changed function appears correct by inspection.
+
+---
+
+### 9. Cross-phase requirement rule
+
+Some requirements originate in one phase but are completed in another.
+
+For every such requirement:
+
+- record the owning source step;
+- record the implementation phase;
+- record the verification phase;
+- never mark the source requirement VERIFIED until its own acceptance condition is actually satisfied.
+
+Do not hide unfinished work behind phrases such as `follow-through in Phase X`.
+
+If later-phase work is required and not explicitly deferred by the standing plan, use **IMPLEMENTED / NOT VERIFIED**.
+
+---
+
+### 10. Phase 12 deferral rule
+
+`DEFERRED TO PHASE 12` is valid only when the standing plan explicitly assigns the exact check to Phase 12.
+
+Phase 12 may repeat:
+
+- full action matrices;
+- complete route smoke regression;
+- all-width regression;
+- keyboard-only regression;
+- reduced-motion regression;
+- backup/import/reset regression;
+- offline provider regression;
+- full button inventory regression.
+
+Phase 12 may **not** be used to avoid a phase-local gate.
+
+If Phase X requires a specific action to work before advancing, verify it in Phase X and re-verify it in Phase 12.
+
+---
+
+### 11. Resume-after-interruption rule
+
+After any:
+
+- context compaction;
+- usage-limit interruption;
+- permission interruption;
+- agent restart;
+- new session;
+- long pause;
+- manual user interruption;
+
+do this **before editing code**:
+
+1. Read this contract.
+2. Re-read the current authority set in order: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`, `VERIFICATION.md`, `docs/REDESIGN-INTEGRATION-GATE.md`, `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`, `docs/ui-reference/MANIFEST.md`, then inspect the actual reference images when redesign work is active; read `README.md` for delivered-product context.
+3. Re-read the active phase and matching checklist section after the full-document pass.
+4. Inspect `git status --short --untracked-files=all`.
+5. Inspect `git diff`.
+6. Inspect the actual current implementation.
+7. Inspect existing evidence files for the active phase and the audit JSONL/checkpoint used by the current run.
+8. Identify the last checklist item whose evidence independently proves VERIFIED.
+9. Identify the exact next unfinished item/facet from persistent evidence.
+10. Resume from that exact point without repeating already-valid evidence.
+
+Never advance to the next phase merely because a previous chat summary said the current phase was complete.
+
+Chat summaries are navigation aids, not verification evidence.
+
+---
+
+### 12. Context-compaction safety rule
+
+Important implementation facts must survive outside conversation context.
+
+Do not keep any of these only in chat:
+
+- unresolved defects;
+- approved exceptions;
+- skipped acceptance checks;
+- current blockers;
+- failed checks;
+- phase evidence;
+- changed plan interpretation;
+- changed file ownership;
+- deferred requirements.
+
+Persist them in:
+
+- this checklist;
+- `docs/implementation-evidence/`;
+- the standing plan when the plan itself changes.
+
+---
+
+### 13. No-skip rule
+
+Every numbered checklist entry is mandatory.
+
+The agent must not:
+
+- silently skip an item;
+- collapse several distinct items into one generic verification claim;
+- mark a later gate VERIFIED while earlier items remain unresolved;
+- interpret a broad passing test suite as proof for every item;
+- rewrite the checklist to hide missing work;
+- remove requirements simply because implementation became difficult.
+
+If a requirement becomes impossible or contradictory:
+
+1. stop that requirement;
+2. mark **BLOCKED**;
+3. document the exact contradiction;
+4. resolve it against the standing plan and confirmed user decisions;
+5. then continue.
+
+---
+
+### 14. Acceptance-file mapping rule
+
+Each phase evidence folder should contain enough information to reconstruct verification without chat history.
+
+Recommended structure:
+
+```text
+docs/implementation-evidence/
+  phaseX/
+    acceptance.json
+    tests.txt
+    browser-checks.json
+    screenshots/
+    notes.md
 ```
 
-If a sandboxed Windows Node install reports EPERM during path resolution, prefix with `--preserve-symlinks --preserve-symlinks-main`.
+`acceptance.json` should map checklist IDs to explicit results, for example:
+
+```json
+{
+  "phase": 8,
+  "results": {
+    "8.1.1": {
+      "status": "PASS",
+      "evidence": [
+        "tests/games-lifecycle.test.js: tracker type inference",
+        "browser-checks.json: add-live-service-game"
+      ]
+    }
+  }
+}
+```
+
+The exact file format may differ, but the mapping from checklist ID to evidence must remain explicit.
 
 ---
+
+### 15. Progress-table rule
+
+The `Progress` table is a summary only.
+
+It must be updated immediately whenever:
+
+- a phase gate changes;
+- an audit downgrades a previously Verified item;
+- an Approved Exception is added;
+- a Blocked item appears;
+- a phase is completed.
+
+The Progress table must never claim:
+
+- `Verified`
+- `Complete`
+- or equivalent
+
+when the detailed phase gate is not VERIFIED.
+
+---
+
+### 16. Mandatory audit before Phase 10
+
+Before beginning **Phase 10**, stop feature implementation and perform a strict audit of **Phases 0 through 9**.
+
+Do not trust:
+
+- existing `[x]` boxes;
+- existing `Verified` labels;
+- previous chat summaries;
+- previous total test counts.
+
+Reinspect the actual repository and evidence.
+
+For every checklist item in Phases 0–9 classify it as exactly one of:
+
+- VERIFIED
+- IMPLEMENTED / NOT VERIFIED
+- DEFERRED TO PHASE 12
+- BLOCKED
+- APPROVED EXCEPTION
+
+During this audit:
+
+1. verify every checked box against actual evidence;
+2. downgrade any item whose evidence is insufficient;
+3. correct any Progress-table contradiction;
+4. re-run every phase gate from 0 through 9;
+5. re-check visual phases visually;
+6. re-check defect acceptance criteria;
+7. confirm secrets/server-denial requirements;
+8. confirm storage/backup invariants;
+9. confirm route/load-order/domain-boundary invariants;
+10. confirm no requirement was skipped during context compaction or interruption.
+
+Do **not** start Phase 10 until this audit is clean.
+
+At the end, persist an audit report under:
+
+```text
+docs/implementation-evidence/audit-phase0-9/
+```
+
+The report must list:
+
+- VERIFIED items;
+- IMPLEMENTED / NOT VERIFIED items;
+- DEFERRED TO PHASE 12 items;
+- BLOCKED items;
+- APPROVED EXCEPTION items;
+- corrected checkboxes;
+- corrected Progress-table entries;
+- every phase gate result;
+- visual before/after findings;
+- any implementation that technically exists but does not meaningfully satisfy the intended UX.
+
+Any required Phase 0–9 item found incomplete must be finished and verified before Phase 10 begins.
+
+---
+
+### 17. Specific visual audit requirements before Phase 10
+
+Re-audit at minimum these phases:
+
+#### Phase 2 — Work redesign
+
+The result must visibly read as a modern development tool.
+
+Verify:
+
+- Board, Projects, Backlog and History feel like one coherent Work surface;
+- Work cards have clear hierarchy;
+- status labels are readable/capitalised;
+- priority treatment is visible;
+- progress bars are meaningful;
+- the responsive detail drawer/sheet is clearly improved;
+- filters feel live and usable;
+- no old Work rail overlap remains;
+- before/after difference is clearly visible at all four widths.
+
+If the user-visible difference is negligible, Phase 2 is not visually VERIFIED.
+
+#### Phase 4 — Settings/themes
+
+Verify:
+
+- new palettes are visibly distinct;
+- warm palette direction is clearly visible;
+- light/dark is orthogonal to palette;
+- Deep Space is actually visually distinct;
+- Games and Movies sub-theme controls are visible;
+- reset behavior is correct;
+- controls persist after reload.
+
+#### Phase 5 — Living scenes (historical pre-R0 audit)
+
+This section verifies the old Phase 5 contract as historical evidence. It does not define the post-R0 eight-world redesign target.
+
+Verify:
+
+- 10 distinct pages have distinct scenes;
+- Projects alias uses Work scene;
+- every scene matches its domain;
+- Full mode is visibly alive;
+- Subtle is observably reduced;
+- Off is still;
+- reduced-motion is still;
+- Games and Movies visibly have proper page heroes;
+- the scene is more than a barely perceptible opacity/gradient change;
+- no scene compromises content readability or interaction.
+
+If the scenes technically exist but the user-visible difference is weak, mark Phase 5 visual items **IMPLEMENTED / NOT VERIFIED** and improve them before continuing.
+
+#### Phase 7 — Shortcuts
+
+Verify:
+
+- every built-in and custom shortcut has the correct remove behavior;
+- removed built-ins restore from Settings;
+- add-space ownership is correct;
+- drag reorder works;
+- keyboard reorder works;
+- focus is preserved;
+- icons never break at all four widths.
+
+#### Phase 8 — Games
+
+Verify the explicit defect acceptance checks, including:
+
+- live-service add -> weekly tracker;
+- campaign add -> chapters;
+- inferred tracker type visible/correctable;
+- story and weekly toggles survive ten alternations;
+- two toggles return original state;
+- rejected writes rollback UI/model/storage consistently;
+- Diablo reset preserves its full game-specific task list;
+- user/provider/custom games can reach spotlight;
+- tracker-type changes preserve required history.
+
+#### Phase 9 — Movies & Series
+
+Verify:
+
+- catalog movie untrack;
+- series untrack;
+- custom title untrack;
+- custom permanent delete remains distinct;
+- tracked count changes correctly;
+- watchlist has one source of truth;
+- reload preserves untracked state;
+- Series filter returns the required seeded set;
+- placeholder series records are gone where required;
+- artwork exception is explicit and compliant;
+- confirmation uses shared modal behavior.
+
+---
+
+### 18. Security and secret-protection rule
+
+Before every phase gate after Phase 1 and again in Phase 12, confirm:
+
+- no real secret is tracked;
+- `git ls-files config/secrets` contains only allowed placeholder/`.gitkeep` content;
+- `git check-ignore` confirms real secret paths are ignored;
+- `config/` is not referenced by browser code;
+- secret paths are not servable by the production/local server;
+- no API key/token/password is hard-coded in browser-facing source;
+- provider credentials remain server-side only.
+
+If a real secret is ever found in Git history or a pushed commit:
+
+1. stop;
+2. rotate/revoke the credential;
+3. remove it from tracking/history as appropriate;
+4. only then continue.
+
+---
+
+### 19. Final delivery rule
+
+Before `Gate 13.3` can pass:
+
+- every implementation item must be VERIFIED, DEFERRED-then-VERIFIED in Phase 12, or APPROVED EXCEPTION;
+- Phase 12 must pass;
+- no unchecked implementation requirement may remain without an explicit allowed terminal state;
+- README must match actual delivered behavior;
+- VERIFICATION must describe the fresh final run;
+- REVISED-IMPLEMENTATION-PLAN must no longer contradict the delivered provider architecture;
+- Progress table must match final detailed status;
+- repository evidence must be sufficient to reconstruct what was delivered.
+
+No final "complete" statement is allowed until these conditions are true.
+
+---
+
 
 ## Progress
 
-| Phase | Title | Status |
+| Phase | Status | Evidence |
 |---|---|---|
-| 13.1–13.2 | Standing plan + this checklist | Done |
-| 0 | Freeze the baseline | Not started |
-| 1 | Repository regrouping | Not started |
-| 2 | Development tracker UI and layout | Not started |
-| 3 | Domain boundaries + Home module | Not started |
-| 4 | Settings and themes | Not started |
-| 5 | Living cinematic scenes | Not started |
-| 6 | Provider search and typeahead | Not started |
-| 7 | Shortcuts add/remove | Not started |
-| 8 | Games trackers | Not started |
-| 9 | Movies and series | Not started |
-| 10 | Explore | Not started |
-| 11 | Personal regression | Not started |
-| 12 | Verification and delivery | Not started |
-| 13.3 | Final documentation | Not started |
+| 13.1 | Verified | Standing plan and user-confirmed clarifications |
+| 13.2 | Verified | Historical original checklist established before later approved extensions; detailed checklist remains the source of truth. |
+| 0 | Verified | All Phase 0 evidence is in docs/implementation-evidence. |
+| 1 | Verified | 39/39 tests; all seven batch gates, structural assertions, secret-path denial, exact script order and git history preservation verified. |
+| 2 | Verified | Phase 2 acceptance evidence; assigned later follow-through remains governed by the detailed checklist. |
+| 3 | Verified | 44 tests; Home ownership, Work/Explore boundaries, theme cleanup and injected validators verified. |
+| 4 | VERIFIED | Settings, palette, contrast, reset, persistence and layout checks passed; distinct later-phase requirements retain their own gates. |
+| 5 | VERIFIED | Historical cinematic/scene acceptance evidence retained; additive final fidelity is governed by Phases 20 and 25. |
+| 6 | VERIFIED | Historical provider contract/mock evidence retained. Post-R0, bundled/local search is the default; optional-provider truth is conditional in Phases 14 and 22. |
+| 7 | Verified | Removable built-ins, restore panel, scoped add, persisted ordering and accessible controls. |
+| 8 | VERIFIED | Tracker inference and lifecycle evidence retained; expanded game enrichment/progression is governed by Phase 23. |
+| 9 | VERIFIED | Historical Movies/Series behavior and 9.2.6 licensed-fallback acceptance are evidenced; post-R0 local media is mandatory and optional-provider media is conditional in Phase 22. |
+| 10 | VERIFIED | Items 300–320 VERIFIED; item 318 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json and image-fallback-2026-09-24.json). |
+| 11 | VERIFIED | Items 321–334 VERIFIED; item 328 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json). |
+| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–346 and 348 VERIFIED; item 347 remains OPEN mid-audit and must resume from its persistent control-inventory evidence; Gate 12 remains open. |
+| R0 | PENDING | Transition/classification gate immediately after Gate 12; no redesign UI implementation is allowed until Gate R0 passes. |
+| R1 | PENDING | Redesign architecture lock + shared shell/design/asset foundation. |
+| R2 | PENDING | Home reference-fidelity checkpoint; proves the new visual system before rollout. |
+| R3 | PENDING | Seven remaining reference-led main worlds, one at a time. |
+| R4 | PENDING | Nested UI pilot: Work -> Projects. |
+| R5 | PENDING | Dedicated submodule rollout by world family. |
+| R6 | PENDING | Cross-world systems + redesign regression/integration gate before reclassified legacy hardening. |
+| 14 | Pending | Data-source truth audit, local-first reconciliation and optional-provider boundary. |
+| 15 | Pending | Credential-free destination expansion and optional-provider boundary. |
+| 16 | Pending | First-class added/imported records and data integrity; provider-origin cases conditional. |
+| 17 | Pending | Content-aware cinematic environment. |
+| 18 | Pending | Media/async/security hardening and optional-provider isolation. |
+| 19 | Pending | Complete V2 final acceptance before additive final-fidelity work. |
+| 20 | Pending | Full-viewport cinematic fidelity. |
+| 21 | Pending | Global icon visual-quality completion. |
+| 22 | Pending | Credential-free catalogue/real-media completion plus optional-provider boundary. |
+| 23 | Pending | Game enrichment and tracker intelligence. |
+| 24 | Pending | Search/filter semantics for local discovery plus optional-provider mapping when configured. |
+| 25 | Pending | Final user-visible product acceptance. |
+| 26 | Pending | Final whole-project integrity and release-readiness audit. |
+| 13.3 | PENDING | Runs only after Gate 26. |
 
-Phases 0 → 1 → 2 → 3 are strictly sequential. Phases 4–11 are independent and may be reordered or run in parallel. Phase 12 runs last.
+## Phase 13.1 — Standing plan
 
----
+1. [x] **13.1.1** — Replace the stale "Current Findings" section with the verified baseline and the `[DONE]`/`[OPEN]`/`[NEW]`/`[FIX]` status model.
 
-## Phase 13.1–13.2 — Documents first
+   Files: `agent-instructions.md`. Acceptance: All specified content exists in the standing plan.
 
-- [x] **13.1** Replace `agent-instructions.md` with the combined standing plan.
-      *Files:* `agent-instructions.md`. *Check:* the file contains Part A in full, Part B as status tables, Part C, Product Decisions, Further Considerations, Scope Boundaries and the defect table.
-- [x] **13.2** Create this checklist.
-      *Files:* `docs/IMPLEMENTATION-STEPS.md`. *Check:* every actionable step below names its files and its acceptance check.
+   | Status | Evidence |
+   |---|---|
+   | Verified | Standing plan inspected; user confirmed the three clarifications. |
 
----
+2. [x] **13.1.2** — Apply the five corrections listed at the top of this document (the 17-vs-16 movie count, the fourth series record, the missing C.4 root cause, the file count, and the completion status of Part B).
+
+   Files: `agent-instructions.md`. Acceptance: All specified content exists in the standing plan.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Standing plan inspected; user confirmed the three clarifications. |
+
+3. [x] **13.1.3** — Carry the Product Decisions, Further Considerations, Scope Boundaries and defect-acceptance table verbatim.
+
+   Files: `agent-instructions.md`. Acceptance: All specified content exists in the standing plan.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Standing plan inspected; user confirmed the three clarifications. |
+
+4. [x] **13.1.4** — Record the scope amendment: provider-backed search replaces the zero-network-requests guarantee for the server, while the browser bundle keeps it.
+
+   Files: `agent-instructions.md`. Acceptance: All specified content exists in the standing plan.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Standing plan inspected; user confirmed the three clarifications. |
+
+5. [x] **Gate 13.1** — Verify the standing plan incorporates the three confirmed resolutions
+
+   Files: `agent-instructions.md`. Acceptance: The confirmed decisions are explicit.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Standing plan inspected; user confirmed the three clarifications. |
+
+## Phase 13.2 — Checklist
+
+6. [x] **13.2.1** — One checkbox per actionable step, in execution order, phase by phase.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Inspect checklist coverage, ordering, file references and acceptance fields.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
+
+7. [x] **13.2.2** — Each step names the file(s) it touches and its acceptance check.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Inspect checklist coverage, ordering, file references and acceptance fields.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
+
+8. [x] **13.2.3** — Each phase ends with its gate (tests green, no 404s, screenshots captured) as an explicit checkbox.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Inspect checklist coverage, ordering, file references and acceptance fields.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
+
+9. [x] **13.2.4** — A "Do not break" header block listing the invariants from 1.9 — storage keys, global names, load order, entry URL, backup compatibility.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Inspect checklist coverage, ordering, file references and acceptance fields.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
+
+10. [x] **13.2.5** — A status column an implementer updates as work lands, so progress is visible without reading a diff.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Inspect checklist coverage, ordering, file references and acceptance fields.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
+
+11. [x] **Gate 13.2** — Verify this checklist against the complete standing plan
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`, `agent-instructions.md`. Acceptance: Every actionable source requirement is traceable in execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | The original 355 numbered entries were reviewed against the standing plan; later V2 and final-fidelity extensions are appended without rewriting that historical checklist. |
 
 ## Phase 0 — Freeze the baseline
 
-- [ ] **0.1** Run the suite and record the result with a timestamp.
-      *Check:* `node --test tests/data-regression.test.js tests/tracker-regression.test.js` → 31 pass, 0 fail.
-- [ ] **0.2** Note the file count the parse test covers.
-      *Check:* recorded, for comparison after Phase 1 makes the walk recursive.
-- [ ] **0.3** Start the server and walk all 11 routes.
-      *Check:* zero console errors and zero failed requests on home, work, projects, personal, explore, games, movies, shortcuts, productivity, notes, settings.
-- [ ] **0.4** Record storage keys, backup version, router pages, script load order, and the `onespace:data-changed` / `onespace:page-changed` / `onespace:motion-changed` events.
-      *Check:* written down durably, not just observed.
-- [ ] **0.5** Build the interaction inventory — every button, tab, link, form, checkbox, select, modal action and page jump, with owner, expected state change, persistence key, success feedback, error behaviour, focus return and reload behaviour.
-      *Check:* this list is the acceptance checklist for Phase 12; step 12.11 tests against it.
-- [ ] **0.6** Capture "before" screenshots of Work, Games, Movies and Settings at 1440 / 1024 / 760 / 390 px.
-      *Check:* 16 images stored for side-by-side comparison.
-- [ ] **0.7** Export a v3 backup from the live origin.
-      *Check:* the file exists on disk and re-imports cleanly into a disposable origin.
-- [ ] **GATE 0:** green baseline recorded, inventory written, backup taken.
+> Carried from old Part B Phase 1 (Baseline and Contracts).
 
----
+12. [x] **0.1** — Run the two test files; record the 31/31 result with a timestamp — [DONE] — re-run before starting
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/baseline-tests.txt: 31 pass, 0 fail; every root application JS and inline script parsed. |
+
+13. [x] **0.2** — Parse every JS file and the inline `index.html` script — [DONE] — covered by the existing parse test
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/baseline-tests.txt: 31 pass, 0 fail; every root application JS and inline script parsed. |
+
+14. [x] **0.3** — Start `node _static-server.js`; inspect all 11 routes at `http://localhost:8973` — [OPEN]
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | baseline-routes.json: all 11 route identities and rendered headings verified; no broken visible images or console errors. Existing smoke helper has an outdated Explore heading, recorded for Phase 12. |
+
+15. [x] **0.4** — Record current storage keys, backup format, router pages, script load order, and the `onespace:data-changed` / `onespace:page-changed` events — [OPEN]
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | baseline-contract.json records all 62 keys, version 4 exports and 2/3/4 imports, 11 routes, 22 scripts, 8 styles and event contracts; user-confirmed correction recorded. |
+
+16. [x] **0.5** — Inventory every button, tab, link, form, checkbox, select, modal action, shortcut and page jump — recording owner, expected state change, persistence key, success feedback, error behaviour, focus return and reload behaviour — [OPEN] — this inventory is the acceptance checklist for Phase 12
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | interaction-inventory.json and INTERACTION-INVENTORY.md record source control templates and required acceptance fields; baseline-routes.json records visible route controls. Phase 12 outcomes remain pending. |
+
+17. [x] **0.6** — Treat `storage-utils.js` as the only persistence validation boundary — [DONE] — holds today; must not regress
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+
+18. [x] **0.7** — Schemas for projects, work items, tasks, history, destinations, preferences, saved destinations, Personal records, game resources, game default tasks, movie/series metadata — [DONE] — all present and validated
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+
+19. [x] **0.8** — Generated IDs, timestamps, status enums, optional fields, maximum lengths in every schema — [DONE]
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+
+20. [x] **0.9–0.10** — Migration behaviour and safe defaults for existing records and v2 backups — [DONE] — v2 and v3 accepted, v4 current
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Storage boundary and schemas inspected; baseline-tests.txt verifies validation, IDs, dates, migration defaults, backup compatibility and rollback. Existing version 4 output is preserved by the confirmed correction. |
+
+21. [x] **0.11** — Capture "before" screenshots of Work, Games, Movies and Settings at 1440 / 1024 / 760 / 390 px — [NEW] — comparison set for the redesign
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 16 before screenshots in docs/implementation-evidence/before; widths 1440/1024/760/390. Layout measurements in before-layouts.json. Existing Work sidebar overlap recorded for Phase 2. |
+
+22. [x] **0.12** — Export a v4 backup from the live origin before any other phase runs — [NEW] — no later phase can then lose real data
+
+   Files: `index.html`, `storage-utils.js`, application modules, `tests/`, `docs/implementation-evidence/`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | live-origin-baseline-v4.json exported using the actual Settings control; all 62 keys validate and restore round trip succeeds. See baseline-backup-validation.json. |
+
+23. [x] **Gate 0** — Verify baseline tests, all routes, contracts, interaction inventory, 16 screenshots, and live-origin v4 backup
+
+   Files: `docs/implementation-evidence/`. Acceptance: Phase 0 evidence exists before any application change.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 31/31 baseline tests, 11 routes, contracts, interaction inventory, 16 screenshots and genuine live-origin backup retained. |
 
 ## Phase 1 — Repository regrouping
 
-Move in batches. Re-run the suite after **every** batch — not at the end. Use `git mv` throughout so history survives.
+### §1.8 batch 1 — shared
 
-- [ ] **1.1** Batch 1 — `shared/`: move `storage-utils.js`, `catalog-utils.js`, `shortcut-utils.js`, `shortcut-surface.js`, `domain-ui.js`, `tooltip-utils.js`, `visual-utils.js`, `cinematic-scenes.js`. Repoint `storage-utils.js:49` to `../explore/trip-board`. Update `index.html` and both test files.
-      *Check:* suite green; app loads with no 404s.
-- [ ] **1.2** Batch 2 — `styles/`: move `pages.css`, `cinematic-refinement.css`; prefix all five `url()` paths in `cinematic-refinement.css` (lines 72, 73, 100, 101, 102) with `../`.
-      *Check:* all five background images still render in the browser.
-- [ ] **1.3** Batch 3 — `games/`: move `games.js`, `games-data.js`, `game-resources.js`, `games.css`, `games-cinematic.css`.
-      *Check:* suite green; Games page renders with art.
-- [ ] **1.4** Batch 4 — `movies/`: move `movies.js`, `movies-data.js`, `movies.css`, `movies-cinematic.css`.
-      *Check:* suite green; Movies page mounts.
-- [ ] **1.5** Batch 5 — `explore/`: move `explore.js`, `explore-data.js`, `explore-global.js`, `discovery-integration.js`, `discovery-ui.js`, `local-discovery.js`, `trip-board.js`, `discovery.css`.
-      *Check:* the `storage-utils` → `trip-board` require resolves; suite green. **Do not** add `explore.js` to `index.html` — that is step 10.3.
-- [ ] **1.6** Batch 6 — `work/` + `personal/`: move `projects.js`, `work-tracker.js`, `tracker.css`, `personal-controller.js`. **In the same batch**, change the server block list at `_static-server.js:11` to `['tests','node_modules','outputs','api','server','config','secrets']`.
-      *Check:* `work/projects.js`, `work/work-tracker.js` and `work/tracker.css` all load with no 404 — this is the proof the block-list fix landed.
-- [ ] **1.7** Batch 7 — `server/`, `config/`, `docs/`, `.gitignore`: move `_static-server.js` and the empty `providers/`; move `REVISED-IMPLEMENTATION-PLAN.md` and `agent-instructions.md` into `docs/`; create `config/secrets/.gitkeep`, `config/secrets.example.json` (placeholders for `TMDB_API_KEY`, `IGDB_CLIENT_ID`, `IGDB_CLIENT_SECRET`, `RAWG_API_KEY`) and the root `.gitignore`.
-      *Check:* `curl -I http://localhost:8973/config/secrets/probe.js` returns 404 — the `.js` case is the one that matters, since `.js` is in the MIME allowlist. Also `git check-ignore -v config/secrets/api-keys.json`.
-- [ ] **1.8** Batch 8 — make the parse loop recursive at `tests/data-regression.test.js:132`, excluding `tests/`, `node_modules/`, `config/` and `assets/`.
-      *Check:* the parse test reports a file count matching step 0.2 — **not ~0**. A passing test covering zero files is the exact failure this guards against.
-- [ ] **1.9** Add `tests/structure.test.js` asserting: every `<script src>` and `<link href>` resolves; every repo-relative `require` resolves; every `assets/...` literal and CSS `url()` resolves; the parse walk visits the expected count; no `config/` file is referenced from any browser script; the 22 script tags appear in exactly the expected order; every `assets/...` literal still satisfies the three `^assets/` validators in `shared/storage-utils.js:36`, `explore/local-discovery.js:5` and `explore/trip-board.js:6`.
-      *Check:* the new test passes, and fails when a path is deliberately broken.
-- [ ] **1.10** Update `README.md` (server command at L8 and L14, load-order paragraph at L67, file refs at L35/43/54/65/67) and `VERIFICATION.md` (full test paths at L8; correct the port **18973 → 18974**).
-      *Check:* every command in both files runs as written.
-- [ ] **GATE 1:** `node --test tests/` green; all 11 routes load with zero 404s and zero console errors; no duplicate script execution; `git log --follow games/games.js` shows history across the move.
+24. [x] **1.8.1.move1** — Use git mv for `storage-utils.js` → `shared/storage-utils.js`, preserving its contents (§1.2)
+
+   Files: `storage-utils.js`, `shared/storage-utils.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+25. [x] **1.8.1.move2** — Use git mv for `catalog-utils.js` → `shared/catalog-utils.js`, preserving its contents (§1.2)
+
+   Files: `catalog-utils.js`, `shared/catalog-utils.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+26. [x] **1.8.1.move3** — Use git mv for `shortcut-utils.js` → `shared/shortcut-utils.js`, preserving its contents (§1.2)
+
+   Files: `shortcut-utils.js`, `shared/shortcut-utils.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+27. [x] **1.8.1.move4** — Use git mv for `shortcut-surface.js` → `shared/shortcut-surface.js`, preserving its contents (§1.2)
+
+   Files: `shortcut-surface.js`, `shared/shortcut-surface.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+28. [x] **1.8.1.move5** — Use git mv for `domain-ui.js` → `shared/domain-ui.js`, preserving its contents (§1.2)
+
+   Files: `domain-ui.js`, `shared/domain-ui.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+29. [x] **1.8.1.move6** — Use git mv for `tooltip-utils.js` → `shared/tooltip-utils.js`, preserving its contents (§1.2)
+
+   Files: `tooltip-utils.js`, `shared/tooltip-utils.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+30. [x] **1.8.1.move7** — Use git mv for `visual-utils.js` → `shared/visual-utils.js`, preserving its contents (§1.2)
+
+   Files: `visual-utils.js`, `shared/visual-utils.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+31. [x] **1.8.1.move8** — Use git mv for `cinematic-scenes.js` → `shared/cinematic-scenes.js`, preserving its contents (§1.2)
+
+   Files: `cinematic-scenes.js`, `shared/cinematic-scenes.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+32. [x] **1.8.1.require** — Set the temporary storage validator require to ../trip-board (confirmed resolution)
+
+   Files: `shared/storage-utils.js`. Acceptance: The validator dependency resolves before Explore moves.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+33. [x] **1.8.1.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+34. [x] **1.8.1.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch1-tests.txt and phase1-batch1-http.json; browser reloaded with expected page and no console errors. |
+
+### §1.8 batch 2 — styles
+
+35. [x] **1.8.2.move1** — Use git mv for `pages.css` → `styles/pages.css`, preserving its contents (§1.2)
+
+   Files: `pages.css`, `styles/pages.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+36. [x] **1.8.2.move2** — Use git mv for `cinematic-refinement.css` → `styles/cinematic-refinement.css`, preserving its contents (§1.2)
+
+   Files: `cinematic-refinement.css`, `styles/cinematic-refinement.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+37. [x] **1.3.url1** — Prefix CSS assets/game-art/cyberpunk-2077-hero.jpg with ../
+
+   Files: `styles/cinematic-refinement.css`. Acceptance: The CSS URL resolves and the background renders.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+38. [x] **1.3.url2** — Prefix CSS assets/movie-art/inception-background.jpg with ../
+
+   Files: `styles/cinematic-refinement.css`. Acceptance: The CSS URL resolves and the background renders.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+39. [x] **1.3.url3** — Prefix CSS assets/game-art/hades-hero.jpg with ../
+
+   Files: `styles/cinematic-refinement.css`. Acceptance: The CSS URL resolves and the background renders.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+40. [x] **1.3.url4** — Prefix CSS assets/movie-art/matrix-background.jpg with ../
+
+   Files: `styles/cinematic-refinement.css`. Acceptance: The CSS URL resolves and the background renders.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+41. [x] **1.3.url5** — Prefix CSS assets/page-art/personal-cinematic.webp with ../
+
+   Files: `styles/cinematic-refinement.css`. Acceptance: The CSS URL resolves and the background renders.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+42. [x] **1.8.2.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+43. [x] **1.8.2.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch2-tests.txt and phase1-batch2-http.json; browser reloaded with expected page and no console errors. |
+
+### §1.8 batch 3 — games
+
+44. [x] **1.8.3.move1** — Use git mv for `games.js` → `games/games.js`, preserving its contents (§1.2)
+
+   Files: `games.js`, `games/games.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+45. [x] **1.8.3.move2** — Use git mv for `games-data.js` → `games/games-data.js`, preserving its contents (§1.2)
+
+   Files: `games-data.js`, `games/games-data.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+46. [x] **1.8.3.move3** — Use git mv for `game-resources.js` → `games/game-resources.js`, preserving its contents (§1.2)
+
+   Files: `game-resources.js`, `games/game-resources.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+47. [x] **1.8.3.move4** — Use git mv for `games.css` → `games/games.css`, preserving its contents (§1.2)
+
+   Files: `games.css`, `games/games.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+48. [x] **1.8.3.move5** — Use git mv for `games-cinematic.css` → `games/games-cinematic.css`, preserving its contents (§1.2)
+
+   Files: `games-cinematic.css`, `games/games-cinematic.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+49. [x] **1.8.3.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+50. [x] **1.8.3.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch3-tests.txt and phase1-batch3-http.json; browser reloaded with expected page and no console errors. |
+
+### §1.8 batch 4 — movies
+
+51. [x] **1.8.4.move1** — Use git mv for `movies.js` → `movies/movies.js`, preserving its contents (§1.2)
+
+   Files: `movies.js`, `movies/movies.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch4-tests.txt and phase1-batch4-http.json; browser reloaded with expected page and no console errors. |
+
+52. [x] **1.8.4.move2** — Use git mv for `movies-data.js` → `movies/movies-data.js`, preserving its contents (§1.2)
+
+   Files: `movies-data.js`, `movies/movies-data.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch4-tests.txt and phase1-batch4-http.json; browser reloaded with expected page and no console errors. |
+
+53. [x] **1.8.4.move3** — Use git mv for `movies.css` → `movies/movies.css`, preserving its contents (§1.2)
+
+   Files: `movies.css`, `movies/movies.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch4-tests.txt and phase1-batch4-http.json; browser reloaded with expected page and no console errors. |
+
+54. [x] **1.8.4.move4** — Use git mv for `movies-cinematic.css` → `movies/movies-cinematic.css`, preserving its contents (§1.2)
+
+   Files: `movies-cinematic.css`, `movies/movies-cinematic.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch4-tests.txt and phase1-batch4-http.json; browser reloaded with expected page and no console errors. |
+
+55. [x] **1.8.4.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch4-tests.txt and phase1-batch4-http.json; browser reloaded with expected page and no console errors. |
+
+56. [x] **1.8.4.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch4-tests.txt and phase1-batch4-http.json; browser reloaded with expected page and no console errors. |
+
+### §1.8 batch 5 — explore
+
+57. [x] **1.8.5.move1** — Use git mv for `explore.js` → `explore/explore.js`, preserving its contents (§1.2)
+
+   Files: `explore.js`, `explore/explore.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+58. [x] **1.8.5.move2** — Use git mv for `explore-data.js` → `explore/explore-data.js`, preserving its contents (§1.2)
+
+   Files: `explore-data.js`, `explore/explore-data.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+59. [x] **1.8.5.move3** — Use git mv for `explore-global.js` → `explore/explore-global.js`, preserving its contents (§1.2)
+
+   Files: `explore-global.js`, `explore/explore-global.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+60. [x] **1.8.5.move4** — Use git mv for `discovery-integration.js` → `explore/discovery-integration.js`, preserving its contents (§1.2)
+
+   Files: `discovery-integration.js`, `explore/discovery-integration.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+61. [x] **1.8.5.move5** — Use git mv for `discovery-ui.js` → `explore/discovery-ui.js`, preserving its contents (§1.2)
+
+   Files: `discovery-ui.js`, `explore/discovery-ui.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+62. [x] **1.8.5.move6** — Use git mv for `local-discovery.js` → `explore/local-discovery.js`, preserving its contents (§1.2)
+
+   Files: `local-discovery.js`, `explore/local-discovery.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+63. [x] **1.8.5.move7** — Use git mv for `trip-board.js` → `explore/trip-board.js`, preserving its contents (§1.2)
+
+   Files: `trip-board.js`, `explore/trip-board.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+64. [x] **1.8.5.move8** — Use git mv for `discovery.css` → `explore/discovery.css`, preserving its contents (§1.2)
+
+   Files: `discovery.css`, `explore/discovery.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+65. [x] **1.8.5.require** — Set the final storage validator require to ../explore/trip-board
+
+   Files: `shared/storage-utils.js`. Acceptance: The moved dependency resolves.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+66. [x] **1.8.5.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+67. [x] **1.8.5.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch5-tests.txt and phase1-batch5-http.json; browser reloaded with expected page and no console errors. |
+
+### §1.8 batch 6 — work
+
+68. [x] **1.8.6.move1** — Use git mv for `projects.js` → `work/projects.js`, preserving its contents (§1.2)
+
+   Files: `projects.js`, `work/projects.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+69. [x] **1.8.6.move2** — Use git mv for `work-tracker.js` → `work/work-tracker.js`, preserving its contents (§1.2)
+
+   Files: `work-tracker.js`, `work/work-tracker.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+70. [x] **1.8.6.move3** — Use git mv for `tracker.css` → `work/tracker.css`, preserving its contents (§1.2)
+
+   Files: `tracker.css`, `work/tracker.css`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+71. [x] **1.8.6.move4** — Use git mv for `personal-controller.js` → `personal/personal-controller.js`, preserving its contents (§1.2)
+
+   Files: `personal-controller.js`, `personal/personal-controller.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+72. [x] **1.4.1** — In this same batch, replace the static-server blocked segments with tests, node_modules, outputs, api, server, config, secrets
+
+   Files: `_static-server.js`. Acceptance: Work files are served and sensitive directories remain inaccessible.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+73. [x] **1.8.6.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+74. [x] **1.8.6.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch6-tests.txt and phase1-batch6-http.json; browser reloaded with expected page and no console errors. |
+
+### §1.8 batch 7 — server
+
+75. [x] **1.8.7.move1** — Use git mv for `_static-server.js` → `server/_static-server.js`, preserving its contents (§1.2)
+
+   Files: `_static-server.js`, `server/_static-server.js`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+76. [x] **1.8.7.move2** — Use git mv for `providers/` → `server/providers/`, preserving its contents (§1.2)
+
+   Files: `providers/`, `server/providers/`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+77. [x] **1.8.7.move3** — Use git mv for `REVISED-IMPLEMENTATION-PLAN.md` → `docs/REVISED-IMPLEMENTATION-PLAN.md`, preserving its contents (§1.2)
+
+   Files: `REVISED-IMPLEMENTATION-PLAN.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+78. [x] **1.8.7.move4** — Use git mv for `agent-instructions.md` → `docs/agent-instructions.md`, preserving its contents (§1.2)
+
+   Files: `agent-instructions.md`, `docs/agent-instructions.md`. Acceptance: The tracked move matches §1.2; assets stay at root.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+79. [x] **1.5.1** — **`config/secrets/`** with a committed `.gitkeep`; everything else in it is ignored.
+
+   Files: `config/`, `.gitignore`, `server/_static-server.js`. Acceptance: Template contains placeholders only; ignore and server-block checks pass.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+80. [x] **1.5.2** — **`config/secrets.example.json`** — committed template, placeholder values only. **[NEW]** it now documents the keys Phase 6 will actually consume: `TMDB_API_KEY`, and `IGDB_CLIENT_ID` + `IGDB_CLIENT_SECRET` or `RAWG_API_KEY`.
+
+   Files: `config/`, `.gitignore`, `server/_static-server.js`. Acceptance: Template contains placeholders only; ignore and server-block checks pass.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+81. [x] **1.5.3** — **`.gitignore`** at the repository root:
+
+   Files: `config/`, `.gitignore`, `server/_static-server.js`. Acceptance: Template contains placeholders only; ignore and server-block checks pass.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+82. [x] **1.5.4** — **Server-only.** No file under `config/` may be referenced by `index.html` or any browser script. Browser JS is fully readable, so a key placed there is a published key.
+
+   Files: `config/`, `.gitignore`, `server/_static-server.js`. Acceptance: Template contains placeholders only; ignore and server-block checks pass.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+83. [x] **1.5.5** — **Not servable.** `config` and `secrets` are in the block list (1.4 item 1). The extension allowlist is a useful second layer but **not sufficient alone** — `_static-server.js` serves only its MIME-mapped extensions, so `secrets.json` would 404 incidentally, but a credential file named `.js` **would be served in full**. The segment block is the real control. `tests/browser-server.js` has *no* deny list and does serve `.json`, so it must never point at a tree containing real credentials.
+
+   Files: `config/`, `.gitignore`, `server/_static-server.js`. Acceptance: Template contains placeholders only; ignore and server-block checks pass.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+84. [x] **1.5.6** — **Not used in this phase.** Phase 1 creates the folder, template and ignore rules only.
+
+   Files: `config/`, `.gitignore`, `server/_static-server.js`. Acceptance: Template contains placeholders only; ignore and server-block checks pass.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+85. [x] **1.8.7.references** — Apply the §1.6 reference updates for this batch, preserving script order, globals, root entry URL, document-relative assets and behavior
+
+   Files: `index.html`, `tests/data-regression.test.js`, `tests/tracker-regression.test.js`, affected source files. Acceptance: All moved references resolve; unchanged script execution order.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+86. [x] **1.8.7.gate** — Run node --test tests/ and inspect the live app after this batch
+
+   Files: `tests/`, live http://localhost:8973. Acceptance: Tests pass; no 404s, console errors, duplicate script execution or init-order changes.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+87. [x] **1.8.8.parse** — Replace the flat parse loop with a recursive source walk excluding tests, node_modules, config and assets (§1.4.2)
+
+   Files: `tests/data-regression.test.js`. Acceptance: The recursive file count matches the source inventory.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+88. [x] **1.7.1** — every `<script src>` and `<link href>` in `index.html` resolves to a file on disk
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+89. [x] **1.7.2** — every repo-relative `require(...)` in every source and test file resolves
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+90. [x] **1.7.3** — every `assets/...` string literal in JS and every `url(...)` in CSS resolves
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+91. [x] **1.7.4** — the recursive parse walk visits a file count matching the expected source inventory (guards 1.4 item 2 from regressing)
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+92. [x] **1.7.5** — no file under `config/` is referenced from `index.html` or any browser script
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+93. [x] **1.7.6** — the 22 `<script src>` values appear in exactly the expected order (guards 1.4 item 4)
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+94. [x] **1.7.7** — every `assets/...` literal still satisfies the three `^assets/` validators (guards the 1.3 decision against a later accidental asset move)
+
+   Files: `tests/structure.test.js`. Acceptance: This assertion passes against the regrouped repository.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+95. [x] **1.6.browser-server** — Confirm the disposable server resolves the repository root and retains its MISSING_ASSET hook
+
+   Files: `tests/browser-server.js`. Acceptance: The forced assets/destinations/azores.svg failure still works.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-final-tests.txt: 39 pass, 0 fail; 24 application scripts recursively parsed, exact 22-script order, references/assets/validators and server denial checks pass. Disposable server MISSING_ASSET hook retained. |
+
+96. [x] **1.6.README** — Update server commands, load-order paragraph and file references listed in §1.6
+
+   Files: `README.md`. Acceptance: Commands and paths match the regrouped files; final content rewrite remains §13.3.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+97. [x] **1.6.VERIFICATION** — Correct bare test filenames and the 18973 → 18974 port error listed in §1.6
+
+   Files: `VERIFICATION.md`. Acceptance: Documented paths and port match the test server.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | phase1-batch7-tests.txt and phase1-batch7-http.json; browser reloaded with expected page and no console errors. |
+
+98. [x] **Gate 1** — 31 baseline tests remain green; structural assertions pass; zero 404s; follow history across games/games.js; probe.js under config/secrets returns 404
+
+   Files: `tests/`, `server/_static-server.js`, Git history. Acceptance: Record every §1.9 gate result.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 39/39 tests pass; all seven batch HTTP/browser gates pass; config/secrets/probe.js and api-keys.json blocked; commit 6b4e27e preserves git log --follow games/games.js history. |
+
+## Phase 2
+
+> The first step of the tracker rebuild, and the first feature phase after the regroup.
+
+## 2.1 Route consolidation [NEW]
+
+99. [x] **2.1.1** — Merge Projects into Work as a sub-view. `projects` stays in the `PAGES` array as a **redirect alias** to `work` with the Projects sub-view selected, so existing `orbit-page` values and the 14 hardcoded `goToPage` / `data-page-jump` call sites keep working. Storage keys untouched.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+100. [x] **2.1.2** — One route, four sub-views under a single header:
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+101. [x] **2.1.3** — **Board** (default) — active stories and defects
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+102. [x] **2.1.4** — **Projects** — project CRUD, moved wholesale from the Projects route
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+103. [x] **2.1.5** — **Backlog** — closed items
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+104. [x] **2.1.6** — **History** — the event log
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+105. [x] **2.1.7** — `work/projects.js` keeps owning `orbit-work-projects` CRUD and its card component; only its mount target changes. Its two foreign responsibilities move out: `#homeOverview` rendering (`projects.js:40-43`) goes to a Home aggregator module, and the Work-overview fallback (`projects.js:44-47`) is deleted — `work-tracker.js:51` already overwrites it, and it is a domain leak (Phase 3).
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+## 2.2 Layout [NEW]
+
+106. [x] **2.2.1** — **Results region** — `.domain-grid` is locked to 2 columns until 1440px (`tracker.css:2`). Becomes `repeat(auto-fill, minmax(320px, 1fr))`.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+107. [x] **2.2.2** — **Detail region** — `#workDetail` renders full-width *below* the grid as one long prose column (`work-tracker.js:52,66-69`). Becomes a right-side drawer at ≥1100px and a full-screen sheet below, reusing the existing `OneSpaceUI` modal stack, focus trap, Escape handling and inert background from `shared/domain-ui.js` — not a new dialog implementation.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+108. [x] **2.2.3** — **Focus rail** — the fixed 352px `#focusRail` costs Work ~170px of content width versus every other page (`index.html:93`). Its contents are non-work-domain (Phase 3 empties it), so the rail leaves Work and the width clamp is normalised.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+## 2.3 Filters [NEW]
+
+109. [x] **2.3.1** — `.domain-filters` puts 5 selects + a search field + a submit button into a fixed 3-column grid, and filtering requires pressing "Apply filters". Rebuild as one responsive filter bar with **live filtering** (debounced text, immediate selects), a dismissible active-filter chip row, and a result count. Add the **sort control that does not exist today** — sorting is hardcoded priority→deadline→createdAt at `work-tracker.js:29`.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify every stated criterion and retain the visual or automated evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+## 2.4 Card and tile quality [NEW]
+
+110. [x] **2.4.1** — **Overview tiles**: `work-tracker.js:51` emits bare `<div><span>…</span><strong>n</strong></div>`, omitting `.overview-tile-top` / `.overview-tile-bottom`, so none of the icon-slot and arrow styling in `pages.css:248-251` applies — three unstyled labels over oversized serif numerals. Emit the same structure as every other overview tile, as `<button data-page-jump>` like `projects.js:29`.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+111. [x] **2.4.2** — **Work item cards**: a flat gradient rectangle printing raw lowercase `esc(i.status)` / `esc(i.priority)` (`work-tracker.js:59`). Add a type glyph (story vs defect) from the existing inline SVG set, priority as a colour-coded rail rather than a word, **capitalised status labels** per the standing labelling rule, and a real task progress bar replacing the "n / m tasks complete" text.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+112. [x] **2.4.3** — **Section heading**: emit the `.page-section-head h2 > .icon` tile that `cinematic-refinement.css:76-77` already styles and the tracker alone never provides.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+113. [x] **2.4.4** — `#workTracker` (`index.html:484`) has no `data-reveal` unlike its siblings — add it.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+## 2.5 Render mechanics [NEW]
+
+114. [x] **2.5.1** — `work-tracker.js:52` rewrites the whole section's `innerHTML` on every mutation, forcing the manual focus-restoration hack at `:50,64` and a cosmetic "is-updating" pulse. Scope re-renders to the changed region (results list, detail drawer, filter bar) so focus, scroll position and the caret survive naturally. Keep `OneSpaceUI.confirm` for destructive actions.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+## 2.6 Behaviour preserved from old Part B Phase 2
+
+> All already built; must not regress. Re-verify each after the redesign.
+
+115. [x] **2.6.1** — Stabilise `work-tracker.js` as the module home instead of growing the inline script — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+116. [x] **2.6.2** — Keep `projects.js` compatible with Home/Work project summaries — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+117. [x] **2.6.3** — Storage keys and validation for projects, items, tasks, history — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+118. [x] **2.6.4** — Backup / restore / reset / complete / invalid / legacy / current fixtures updated — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+119. [x] **2.6.5** — Project CRUD: name, description, link, tags, status, progress, deadline — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+120. [x] **2.6.6** — Story/defect CRUD under a selected project — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+121. [x] **2.6.7** — Item fields: name, type, status, priority, analysis, plan, execution, labels, deadline, reminder, links — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+122. [x] **2.6.8** — Validate required name, project, type and status fields — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+123. [x] **2.6.9** — Reject invalid URLs and invalid dates — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+124. [x] **2.6.10** — Task CRUD: title, details, priority, due date, estimate, done — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+125. [x] **2.6.11** — Accessible task checkboxes with completion styling and progress counts — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+126. [x] **2.6.12** — Open / reopen / in-progress / blocked / close lifecycle — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+127. [x] **2.6.13** — Closing an item completes all child tasks, stores completion time, creates a log entry, removes it from active views — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+128. [x] **2.6.14** — Closed items persist in backlog and reopen without losing task history — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+129. [x] **2.6.15** — Views: active projects, active items, due soon, overdue, blocked, backlog, history — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+130. [x] **2.6.16** — Filters by project, type, status, priority, deadline, search text — [DONE] — upgraded to live in 2.3
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+131. [x] **2.6.17** — Replace the generic Work timeline with real item and task priorities — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+132. [x] **2.6.18** — Keep a link to Productivity for general daily tasks — **[FIX] reversed** — this is a domain leak; removed in Phase 3
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+133. [x] **2.6.19** — Due-soon / overdue badges, reminder panels, page-entry toasts — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+134. [x] **2.6.20** — Respect reduced motion for reminder and state-change animations — [DONE]
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
+
+135. [ ] **2.6.21** — Verify every Work button end to end — [OPEN] — Phase 12
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+136. [x] **Gate 2** — every Work action from the Phase 0.5 inventory still works; 31/31 green; side-by-side screenshots at all four widths show no overflow and no overlap.
+
+   Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Record the stated gate results.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 40 tests pass; browser lifecycle and four-width geometry in phase2/acceptance.json. Viewport captures verify layout without full-page capture artifacts. |
+
+## Phase 3
+
+> Home is the only aggregator. Every other tab renders only its own domain. Each row is a confirmed leak.
+
+137. [x] **3.row1** — 1 — Work overview tile counts `orbit-tasks` (generic daily tasks) — `projects.js:44-47` — Delete the fallback path
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+138. [x] **3.row2** — 2 — "General daily tasks" button in Work's timeline head — `index.html:482` — Remove
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+139. [x] **3.row3** — 3 — Work hero CTA "Start a focus session" → Productivity — `index.html:471` — Replace with a work-domain action
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+140. [x] **3.row4** — 4 — Work-only focus rail renders `orbit-tasks`, countdowns, `orbit-notes-list`, recents — `index.html:153-159`, fed `1980-1985`, `2049-2053`, `2761-2765` — Rail leaves Work (2.2); its content belongs to Productivity and Notes. Note `index.html:61` already hides three of its five sections, leaving dead markup
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+141. [x] **3.row5** — 5 — Mobile "Today & Focus" toggle on Work — `index.html:466` — Remove with the rail
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+142. [x] **3.row6** — 6 — Project deadlines pushed into Work reminders *after* the timeline list is already written — `work-tracker.js:75` — Fold into the Projects sub-view consistently
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+143. [x] **3.row7** — 7 — Home Quick Access mixes all three spaces unfiltered — `index.html:1354-1365` — Allowed — Home is the aggregator. Label each tile with its space
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+144. [x] **3.row8** — 8 — Home's "Shortcuts available" count follows the *Shortcuts page's* selected space — `index.html:1368` via `activeLinks()` — Count all spaces, or state which space
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+145. [x] **3.row9** — 9 — 8 Gaming built-ins + `youtube` / `maps` routed into Explore, then relabelled "Relax & Play" — `shortcut-utils.js:3`, `index.html:1167` — Make Gaming a real category (Phase 7)
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+146. [x] **3.row10** — 10 — `Gaming` exists in `CATEGORIES` but `visibleCategories()` never returns it — `index.html:1117`, `1172-1176` — Make reachable
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+147. [x] **3.row11** — 11 — Explore tiles jump to Games / Movies / Productivity; the Productivity tile uses **Personal's** hero art — `index.html:553-555`, `cinematic-refinement.css:102` — Remove cross-domain tiles from Explore; they belong on Home
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+148. [x] **3.row12** — 12 — `#endWorkdayBtn` (a Work control) calls `applySpace("explore")` + `goToPage("explore")` — `index.html:2100-2109` — Stop relocating the user out of Work
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+149. [x] **3.row13** — 13 — Games and Movies write `data-games-theme` / `data-movies-theme` to `<body>` and never clear them — `games.js:693`, `movies.js:954` — Scope to the view root, or clear in `goToPage`
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+150. [x] **3.row14** — 14 — Dead pre-router CSS hiding nodes that now live inside `[data-page-when]` sections — `index.html:89-90` — Delete
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+151. [x] **3.row15** — 15 — **The shared storage boundary reaches into a domain** — `shared/storage-utils.js:49` calls `require('../explore/trip-board')` inside the `orbit-trip-board` validator — `storage-utils.js:49` — Inject domain validators instead of requiring across domains. Phase 1 only repoints the path because it forbids behaviour change; the real fix lands here
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+> **Productivity keeps** the generic `orbit-tasks` list, the timer and countdowns — it is their owning domain. Nothing is deleted from the app; content moves to the tab that owns it.
+
+## 3.1 The Home aggregator module [NEW]
+
+> Home is the only page allowed to read across domains, so it needs a real owner rather than being rendered from inside `work/projects.js`.
+
+152. [x] **3.1.1** — Create `home/home-overview.js` (a new top-level domain folder, following the Phase 1 structure) which:
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+153. [x] **3.1.2** — Takes over `#homeOverview` from `projects.js:40-43`, reading `orbit-work-projects`, `orbit-tasks` and `orbit-notes-list` as it does today.
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+154. [x] **3.1.3** — Becomes the single place cross-domain aggregation is permitted, so the Phase 3 boundary test can allow exactly this one module and forbid everything else.
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+155. [x] **3.1.4** — Gains the cross-domain destination tiles removed from Explore (row 11) and the space labels required by rows 7 and 8.
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+156. [x] **3.1.5** — Is a pure side-effect module in the load order, placed after the inline shell and after `work/projects.js` (it reads `window.OneSpace` and the same storage helpers).
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+157. [x] **3.1.6** — Its `<script src>` tag is added to `index.html` in this phase, not in Phase 1 — Phase 1 forbids behaviour change, and the structural test from 1.7 asserts an exact script count and order, so that expectation is updated here alongside the new tag.
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+158. [x] **Gate 3** — a new test asserting each page's DOM subtree reads only its own domain's storage keys, with `home/home-overview.js` the single allowed exception.
+
+   Files: `index.html`, `home/home-overview.js`, `work/projects.js`, `work/work-tracker.js`, `shared/storage-utils.js`, `shared/shortcut-utils.js`, `games/games.js`, `movies/movies.js`, boundary tests. Acceptance: Record the stated gate results.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase3-acceptance.json; 44 tests pass including four domain-boundary tests. |
+
+## Phase 4
+
+## 4.1 Fix what blocks new themes [FIX]
+
+> Not extra scope — the requested theme work cannot land without these:
+
+159. [x] **4.1.1** — **`cinematic-scenes.js:26-34` groups the Settings card by field *index*** (slices `[0,2)`, `[2,7)`, `[7,]`). Adding any new setting silently files controls under the wrong heading. Replace index slicing with declared membership (a `data-settings-group` attribute per field) **before** adding settings.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+160. [x] **4.1.2** — **The header theme toggle destroys the palette** — `index.html:1574-1581` forcibly resets `paletteChoice` to `"classic"` and removes `data-palette`, wiping a selected Aurora / Graphite / Deep Space choice. Make light/dark orthogonal to palette.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+161. [x] **4.1.3** — **"Deep Space" (`midnight`) has no CSS variable block** — it appears only in the dark-mode selector lists at `index.html:21` and `34-36`, so it renders identically to plain dark. Give it real tokens.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+162. [x] **4.1.4** — **`--page-accent` is defined twice and fights over cascade order** — `cinematic-refinement.css:4-15` sets per-page hex values; `pages.css:193-195` sets a different set then `body { --page-accent: var(--accent) }`. Establish one owner.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+163. [x] **4.1.5** — **Reset correctness** — `index.html:1656-1689` "Reset preferences" also wipes favorites, recents, collapsed sections and search provider, and does **not** reset `orbit-theme`, so a dark theme survives a reset while unrelated user data is destroyed. Reset preferences only.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+## 4.2 New themes [NEW]
+
+164. [x] **4.2.1** — Extend the `data-palette` system (tokens `--bg`, `--bg-2`, `--surface`, `--surface-2`, `--surface-3`, `--accent`, `--accent-2`, `--accent-soft`, `--line`, `--text`, `--muted`, `--faint`) with new palettes beside the existing five (Auto, Classic Light, Deep Space, Aurora, Graphite) and four accents (blue, purple, green, amber).
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+165. [x] **4.2.2** — Each new palette must: define the complete token set in both light and dark; pass WCAG AA contrast for body text and controls; ship a swatch preview in the existing `.theme-choices` radiogroup. Per old C.7 point 1, at least one is a **warm** direction — today's `--os-*` tokens run cool.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify every stated criterion and retain the visual or automated evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+## 4.3 New settings [NEW]
+
+166. [x] **4.3.1** — **Per-tab scene intensity** — Full / Subtle / Off, governing Phase 5 ambient motion independently of the motion override.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+167. [x] **4.3.2** — **Surface the Games and Movies sub-themes.** `games.js:168-173` (midnight / neon / crimson / aurora) and `movies.js:162-167` (marquee / noir / velvet / golden) are real theme systems with their own storage keys that Settings never exposes.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+168. [x] **4.3.3** — **Removed shortcuts** restore list (Phase 7).
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+169. [x] **4.3.4** — **Provider status** panel (Phase 6) — configured / not configured / offline.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+## 4.4 Preserved settings behaviour
+
+170. [x] **4.4.1** — Existing settings (palette, background, start page, accent, density, productivity area, clock format, motion) and the Data block (export / import / backup status / reset preferences / reset all data) keep their storage keys and behaviour. [DONE] — must not regress.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+171. [x] **Gate 4** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `shared/storage-utils.js`, `styles/pages.css`, `styles/cinematic-refinement.css`, Settings module. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | docs/implementation-evidence/phase4/acceptance.json; 49 tests. Cross-phase controls remain assigned to Phases 5–7. |
+
+## Phase 5
+
+> Delivers old Part B Phase 7 and old C.7. **Post-R0:** scenes are reference-led and may combine properly licensed repository-local raster/vector media with SVG/CSS/procedural layers. Core scenes remain local and must not depend on external requests. Historical SVG/CSS-only wording is superseded by R0.
+
+## 5.1 One scene system, replacing three [FIX]
+
+172. [x] **5.1.1** — Three uncoordinated entry-animation systems run today: `.is-page-entering` (`index.html:1797-1799`), `.scene-enter` (`discovery-integration.js:14`), and the CSS `osEnter` keyframe (`cinematic-refinement.css:131-132`). Two independent parallax variable sets exist — `--px` / `--py` (`index.html:2961-2970`, with **no consumer in the stylesheets**) and `--scene-x` / `--scene-y` (`discovery-integration.js:15`). Collapse into one scene controller owning entry transition, parallax, ambient motion and reveal, exposed on `window.OneSpace`.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+## 5.2 Per-tab scenes [NEW] — historical pre-R0 evidence
+
+> This VERIFIED item records the pre-R0 ten-route scene requirement. After R0 it is historical evidence, not authority to invent additional reference-led worlds. The post-R0 redesign has exactly eight reference-led main worlds; Shortcuts/Productivity/Notes/legacy Projects follow their R0 compatibility classification.
+
+173. [x] **5.2.1** — Historically, each of the 10 distinct pages got a layered scene; the 11th route, Projects, redirects to Work and shares its scene (user-confirmed). Each page has a scene whose subject matches its domain, following the visual directions already agreed: **Home** = observatory / personal command deck; **Work** = drafting room / command centre; **Personal** = calm ritual space; **Explore** = world atlas / travel window; **Games** = game-world spotlight; **Movies & Series** = theater / streaming marquee; **Shortcuts** = navigable launch wall; **Productivity** = focused timer studio; **Notes** = quiet capture desk; **Settings** = control room.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+174. [x] **5.2.2** — Every scene composes: a drawn SVG backdrop; a depth layer with pointer parallax; a slow ambient layer (drifting light, motes, gradient shift); and a shade scrim guaranteeing text contrast. The nine existing `assets/page-art/*` stills are retained as an optional art slot behind the drawn layers, so a real render can replace a drawn backdrop later without code changes.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+## 5.3 Close the gaps [FIX]
+
+175. [x] **5.3.1** — **Games and Movies get a `.page-hero`** with eyebrow, headline and scene caption, and join the scene numbering — currently 01–09 with both absent from the `scenes` map in `cinematic-scenes.js:5`.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+176. [x] **5.3.2** — `#moviesView` is an empty `<div id="moviesMount">` (`index.html:570-572`) until `movies.js` mounts, so it renders nothing cinematic on first paint. Ship hero markup in the document.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+177. [x] **5.3.3** — `index.html:494` uses class `projects-scene`, which **has no matching selector anywhere** — a dead class.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+178. [x] **5.3.4** — Games `world` values `neon` and `aurora` exist in `games-data.js` with **no CSS rule** and silently fall back to the amber default.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+179. [x] **5.3.5** — `cinematic-scenes.js:13-22` injects heading icons by brittle `nth-child` position — move to explicit markup hooks.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+180. [x] **5.3.6** — Gradient-only fallback heroes now dead behind the art layer (`pages.css:81, 113, 136, 148, 171`) — remove or repurpose.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+## 5.4 Interaction rules carried from old Phase 7
+
+181. [x] **5.4.1** — Entry transition per tab — short, content-first, never delaying interaction — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+182. [x] **5.4.2** — Hero scene movement / parallax on pointer, stable on touch — [DONE] — unify in 5.1
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+183. [x] **5.4.3** — Parallax only on explicitly marked decorative layers; clamp values, use `translate3d`, never move text, forms, buttons or focus targets — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+184. [x] **5.4.4** — Scroll-linked depth only where it improves hierarchy, via IntersectionObserver with a fallback — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+185. [x] **5.4.5** — Staggered reveal for primary cards — visible content only, modest durations — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+186. [x] **5.4.6** — Meaningful transitions for search results, filter changes, detail open, save/remove, board status, task completion, tab change, image load and fallback — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+187. [x] **5.4.7** — Cinematic loading states matched to the section, not generic spinners — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+188. [x] **5.4.8** — Real image crossfades and sensible crop positioning — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+189. [x] **5.4.9** — Fallback art only on failed media requests; broken media still leaves a usable card — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+190. [x] **5.4.10** — One consistent inline SVG icon system, accessible labels retained — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+191. [x] **5.4.11** — Hover, focus, active, empty, loading, error, disabled, success states for every interactive surface — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+192. [x] **5.4.12** — Accessible labels, tooltips, `aria-pressed` / `aria-expanded` / `aria-current`, `aria-live` for saves, reminders, completion, close/reopen, deletion — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+193. [x] **5.4.13** — Touch targets sized for mobile; hover-only behaviour disabled on coarse pointers — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+194. [x] **5.4.14** — Test at 1440 / 1024 / 760 / 390 px — no overlap or overflow — [OPEN] — Phase 12
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/layout-current-2026-09-24.json -> 40 route/width checks; representative rendered screenshots in same folder |
+
+195. [x] **5.4.15** — Handle long user text safely across all domains — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+196. [x] **5.4.16** — Modal focus return and focus preservation after dynamic rerenders — [DONE]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+197. [x] **5.4.17** — Capture visual evidence that effects are visible, stable on touch, and disabled in reduced motion — [OPEN]
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+## 5.5 Motion contract [FIX]
+
+198. [x] **5.5.1** — All motion routes through `prefersReducedMotion()` (`index.html:1705-1709`, exported at `:3084`). Four paths re-query `matchMedia` directly and therefore **ignore the user's "Full motion" override**: `index.html:1183`, `games.js:97`, `games.js:468`, `movies.js:87`. Route them through the helper. Reduced motion removes parallax, ambient drift, stagger and scroll-linked transforms **entirely** — genuinely still, not slowed.
+
+   Files: `index.html`, `shared/cinematic-scenes.js`, `styles/`, `games/`, `movies/`, `explore/discovery-integration.js`. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 54 Node tests pass; ten scene screenshots and 40 viewport measurements in docs/implementation-evidence/phase5; reduced motion leaves all ten routes still; pointer regression covers clamp/reset/touch/Off. Final complete control matrix remains in Phase 12. |
+
+
+## 5.6 Global icon modernization and consistency [NEW V2]
+
+198A. [ ] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
+
+   Files: `index.html`, `shared/`, `styles/`, domain JS/CSS files as required. Acceptance: Produce an inventory/audit showing which existing icons are retained and which require improvement; content/source brand marks and favicons are identified as exceptions rather than application-control icons.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198B. [ ] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
+
+   Files: `index.html`, `shared/`, `styles/`, affected domain files. Acceptance: Shared UI icons use consistent geometry, stroke/fill philosophy, optical sizing, alignment and spacing without unrelated redesign or icon churn.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198C. [ ] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
+
+   Files: shared icon helpers/markup and affected domain surfaces. Acceptance: Add/edit/remove/back/more/favorite/search/filter/sort/save/restore/open/navigation/close/retry/expand-collapse do not use conflicting or random glyphs without an explicit reason; no accidental emoji/Unicode substitute controls remain.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198D. [ ] **5.6.4** — Preserve icon accessibility and interaction quality.
+
+   Files: affected markup/styles/shared UI helpers. Acceptance: Icon-only actions have accessible names, visible focus, adequate touch targets, correct ARIA state where applicable and tooltips where useful; decorative icons do not create redundant announcements; clear text labels are not removed merely to add icons.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+198E. [ ] **5.6.5** — Verify global icon quality across required themes and responsive widths.
+
+   Files: all affected UI files; `docs/implementation-evidence/phase5/`; browser verification. Acceptance: All tabs are inspected at the active required desktop/tablet/mobile widths; no broken/missing/clipped/misaligned UI icons remain; icons are crisp/readable in light/dark and supported palettes; representative visual evidence covers navigation, headings, cards, forms/dialogs and shared actions. Brand/provider/source logos and favicons remain intentionally distinct.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+
+199. [ ] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `index.html`, `shared/`, `styles/`, affected domain files, `docs/implementation-evidence/phase5/`. Acceptance: Existing Phase 5 cinematic/motion evidence remains valid, and the newly approved 5.6 global icon-modernization requirements are also VERIFIED before Gate 5 closes again.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Gate 5 was previously Verified under the pre-5.6 scope. Prior Phase 5 evidence is retained; the gate is reopened only because the newly approved global icon-modernization requirement must now be completed and evidenced. |
+
+## Phase 6
+
+## 6.1 Server layer
+
+200. [x] **6.1.1** — Extend `server/_static-server.js` (or add `server/api.js`) with a proxy reading credentials from `config/secrets/` — **server-side only, never in browser JS**. Routes: `/api/search/titles`, `/api/search/games`, `/api/details/:kind/:id`.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+> Carried from the old REVISED plan's provider requirements:
+
+201. [x] **6.1.2** — Provider-neutral contract for title search, game search, and details.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+202. [x] **6.1.3** — Normalise every provider response into the app's existing record shapes, so the UI never sees a TMDB or IGDB payload.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+203. [x] **6.1.4** — `AbortController` cancellation when the query changes quickly.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+204. [x] **6.1.5** — Explicit loading, empty, timeout, rate-limit, offline, authentication and provider-error states.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+205. [x] **6.1.6** — Short-TTL response cache; cache must be clearable without deleting user records.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+206. [x] **6.1.7** — Pagination / load-more — never silently cap results.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+207. [x] **6.1.8** — Attribution and source links in details where the provider requires it.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+208. [x] **6.1.9** — A **local mock provider** so automated tests never need network access or quota.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+209. [x] **6.1.10** — A clear configuration-error state when credentials are missing — the UI explains what is unavailable rather than showing the local catalog as if it were global.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+## 6.2 Typeahead
+
+210. [x] **6.2.1** — Both Games (`#gvGameSearch`, wired `games.js:1009-1028`) and Movies (`#mvMovieSearch`, wired `movies.js:802-821`) **already have real ARIA combobox typeaheads** over the local catalog, with arrow-key navigation, Escape, click-outside close, and an "Add Custom" row. [DONE] Keep both and extend:
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+211. [x] **6.2.2** — **Debounce input** — both currently fire on every keystroke.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+212. [x] **6.2.3** — **Two result groups** in one dropdown: "In your catalog" (local, instant) then "Search results" (provider, async) with a loading row.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+213. [x] **6.2.4** — **Explicit add affordance.** Selecting a row currently calls `addSuggestionToLibrary` / `addSeedToLibrary` **immediately**, with no confirmation and no status choice (`games.js:1004`, `movies.js:797`). Add an explicit add control, and for titles a status choice — matching the Discover panel (`discovery-ui.js:31`), which already does this properly.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+214. [x] **6.2.5** — **Series parity** — series are first-class in the same search; the type filter (`movies.js:1396`) gets capitalised `Movie` / `Series` labels.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+215. [x] **6.2.6** — **Offline / unconfigured state** is visible and explicit.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+## 6.3 Reconcile the two search experiences [FIX]
+
+216. [x] **6.3.1** — `discovery-integration.js:3-9` mounts a second, unrelated Discover panel into Movies, renames the tab, wraps the existing preference chips into a `<details>`, and rewrites the typeahead placeholder. Games has the same split. Reconcile into one search experience per domain with one result-card design.
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+217. [x] **Gate 6** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `server/_static-server.js`, `server/providers/`, `config/secrets.example.json`, `games/games.js`, `movies/movies.js`, `explore/discovery-integration.js`, provider tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 59 tests pass; browser add/cancel/pagination/status/reload/keyboard/error/4-width checks in docs/implementation-evidence/phase6. Live credentials absent and visibly reported; provider tests use mocks. |
+
+## Phase 7
+
+## 7.1 Removable built-ins [NEW]
+
+> All 47 built-ins (`index.html:1060-1112`) have **no delete and no edit control** — `cardHtml` (`index.html:1223`) and `shortcut-surface.js:6` both gate those on `custom`. The only removal mechanism is the hardcoded `HIDDEN_DEFAULT_IDS = ["hm","zara","maxmara"]` (`index.html:1163`).
+
+218. [x] **7.1.1** — Add an `orbit-hidden-links` array key with a validator in `shared/storage-utils.js`, a fixture, and a backup round-trip test.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+219. [x] **7.1.2** — Every shortcut card — built-in or custom, full (`index.html:1215-1237`) and compact (`shortcut-surface.js:4-7`) — gets a Remove control. Custom keeps destructive delete; built-in hides.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+220. [x] **7.1.3** — A **Removed shortcuts** panel in Settings restores any of them.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+221. [x] **7.1.4** — Replace `HIDDEN_DEFAULT_IDS` with real user data, seeding those three ids on first run so nothing visibly changes for existing users.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+## 7.2 Add-control fixes [FIX]
+
+222. [x] **7.2.1** — **Work has no add-shortcut control at all**, unlike Personal (`index.html:528`) and Explore (`index.html:559`). Add one.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+223. [x] **7.2.2** — **`index.html:2498` binds every `[data-add-space]` button to `openShortcutModal(null)` and never reads the attribute**, so the declared space is discarded and the modal guesses from `currentPage` / `currentSpace` (`:2478`). Honour the attribute.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+224. [x] **7.2.3** — `shortcut-surface.js:9` calls `renderExplorePage()` with no argument, silently clearing the Explore search filter whenever any shortcut is favorited.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+225. [x] **7.2.4** — "Duplicate" (`index.html:2585`) is a stub that only shows a toast. Implement or remove.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+## 7.3 Modernisation — old C.6
+
+226. [x] **7.3.1** — Rebuild the card and launch wall on the inline SVG icon system with a favicon/hostname fallback chain that never renders a broken image.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+227. [x] **7.3.2** — Modern grid with proper hover, focus, active, empty, loading and error states; mobile-sized touch targets.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+228. [x] **7.3.3** — Drag-to-reorder **with a keyboard-accessible equivalent**; favorites and recents visually distinct rather than text-labelled.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+229. [x] **7.3.4** — Name, description and hostname in a clear hierarchy, with `rel="noopener noreferrer"` preserved.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+230. [x] **7.3.5** — Explore-owned shortcuts stay visually consistent but strictly scoped.
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+## 7.4 Ownership rules preserved from old Part B Phase 3
+
+231. [x] **7.4.1** — Shortcut modal has a description field and explicit space ownership — [DONE]
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+232. [x] **7.4.2** — Adding from Personal defaults to Personal; adding from Explore forces Explore — [DONE] — but see the 7.2 attribute bug
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+233. [x] **7.4.3** — Enforce ownership in sanitization and `linkSpace()` so links cannot leak between spaces — [DONE]
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+234. [x] **7.4.4** — Edit and delete confirmation for custom shortcuts — [DONE]
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+235. [x] **7.4.5** — Show name, description, hostname, icon fallback, favorite, recent, safe external-link behaviour — [OPEN] — hostname is not shown on the compact card
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+236. [x] **7.4.6** — Regression tests for deletion, descriptions, space filtering, duplicate URLs, backup round trips — [DONE]
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+237. [x] **Gate 7** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `index.html`, `shared/shortcut-utils.js`, `shared/shortcut-surface.js`, `shared/storage-utils.js`, Settings module, shortcut tests and fixtures. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | 62 tests; hide/restore/custom CRUD/keyboard order/reload/Explore filter and 20 responsive checks in docs/implementation-evidence/phase7. New preference keys are optional for legacy v4 imports. |
+
+## Phase 8
+
+## 8.1 Tracker type must be correct at add time [NEW]
+
+> A tracker **is** already created at add time — `starterStory()` at `games.js:846`, `:676`, `:1641`, and `ensureWeekly()` for weekly. The real defect is that **the type is almost always wrong**: `SUGGESTION_CATALOG` (`games-data.js:182-195`) carries **no `trackerType`**, and `games.js:843` defaults to `g.trackerType || "story"`. Every one of the 12 suggestions — and every future provider result — becomes a story game with one generic 3-objective chapter.
+
+238. [x] **8.1.1** — Add `trackerType` to every catalog record and to the provider normaliser.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+239. [x] **8.1.2** — Infer the default from genre and tags (live-service, MMO, looter, gacha, battle-royale → **weekly**; campaign, story-rich, single-player → **story**), and **show the inferred choice in the add flow so it can be corrected before saving**. The two `.gv-tracker-choice` pills (`index.html:729-732`) already exist for custom games.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+240. [x] **8.1.3** — Mission-based games get **real chapters**, not one catch-all. `OneSpaceGameResources.story` (`game-resources.js:25`) currently always produces a single `"Your first milestones"` chapter; extend the catalog so story games ship a chapter outline.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+241. [x] **8.1.4** — Editing a game from weekly → story leaves the old `story` object orphaned (`games.js:669-673`). Reconcile on type change.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+## 8.2 De-Diablo-ify the weekly tracker [FIX]
+
+> Old Phase 5 step 3 required the resource model be data-driven "so Diablo Immortal is only one example". The weekly system is generic in its toggle logic but hardcodes Diablo in four places:
+
+242. [x] **8.2.1** — `cloneWeeklyTemplate` special-cases `game.id === "game-diablo-immortal"` (`games.js:208`)
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+243. [x] **8.2.2** — `defaultTasks` / `defaultTaskTemplates.weekly` injection (`games-data.js:202,204`)
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+244. [x] **8.2.3** — the Overview stat tile (`games.js:724-725,744`)
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+245. [x] **8.2.4** — the literal heading `"Diablo Weekly Tasks"` (`games.js:1422`)
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+246. [x] **8.2.5** — Make all four data-driven so any weekly game behaves identically. Also fix the cascade order in `game-resources.js:24`, where the `defaultTasks` check precedes the `trackerType === 'weekly'` branch, so a record with story-flavoured `defaultTasks` reuses them as weekly tasks.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+247. [x] **8.2.6** — **[FIX] `resetWeekly()` destroys Diablo's task list.** `games.js:581` calls `cloneWeeklyTemplate()` with **no argument**, so `library.find(g => g.id === undefined)` yields `{}`, the Diablo special case does not match, and `OneSpaceGameResources.weekly({})` returns 3 generic tasks. Pressing "Reset Weekly Tasks" on Diablo Immortal replaces its 7 real tasks with 3 generic ones until the next ISO-week rollover restores them. Pass the game id. This phase already rewrites `cloneWeeklyTemplate`, so fix it in the same pass and add a test asserting reset preserves the game's own template.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+## 8.3 C.4 — checkboxes that will not un-check (approved root cause)
+
+> `saveLibrary()` (`games.js:175`) and `saveWeekly()` (`:180`) **discard the boolean return from `safeSet`**, which returns `false` and toasts on a quota or validation failure (`index.html:927-939`). In-memory state flips, the UI re-renders checked, storage is unchanged — and the state reverts on reload. This is the most probable mechanism behind the report, and it was missing from the old plan's suspect list.
+
+248. [x] **8.3.1** — **Fix.** Route both through the same read-back-and-rollback pattern as `commitGameChanges()` (`games.js:176-179`), surface a real error, and add regression tests asserting (a) the toggle is an involution — two toggles return the original state — and (b) a rejected write never leaves the UI showing a state storage does not hold.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+> **Secondary contributors to check during reproduction, in order:**
+
+249. [x] **8.3.2** — **Week rollover mid-interaction.** `ensureWeekly` (`:211-220`) discards all `done` flags and re-clones the template whenever the ISO week key changes, and it is reached from **every render** via `weeklyStats` (`:238`).
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+250. [x] **8.3.3** — **`findChapter` is scoped to `selectedStoryGameId`** (`:498-502`), so an objective rendered for any other game silently no-ops.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+251. [x] **8.3.4** — `toggleWeeklyTask` depends on an ancestor `.gv-tracker[data-game-id]` (`:1565`); a weekly checkbox rendered elsewhere gets no handler.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+252. [x] **8.3.5** — Ruled out by inspection: the click delegate's `switch` (`:1522-1557`) has **no** case for `toggle-objective` or `toggle-weekly-task`, so they are handled only by the `change` listener (`:1558`) and are not double-fired.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+253. [x] **8.3.6** — Also ruled out: `is-just-checked` styling is applied only when the new state is `done === true` (`:351`, `:396-397`), so it cannot make an unchecked box look checked.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+## 8.4 Games behaviour preserved from old Part B Phase 5
+
+254. [x] **8.4.1** — Records carry official, news, build, guide, update, community and platform links — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+255. [x] **8.4.2** — Default task/objective templates on game records — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+256. [x] **8.4.3** — Resource model data-driven, Diablo only one example — **[OPEN]** — see 8.2
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+257. [x] **8.4.4** — Per-game detail/resource panel — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+258. [x] **8.4.5** — Resources grouped into news/updates, builds/guides, official, community, game-specific tasks — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+259. [x] **8.4.6** — Catalog, suggestions, wishlist and custom flows initialise the correct story or weekly tasks — **[OPEN]** — see 8.1
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+260. [x] **8.4.7** — No duplicate task initialisation after rerender or reload — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+261. [x] **8.4.8** — Every built-in and custom game discoverable via genre filter, search, add, edit, delete, progress, resources — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+262. [x] **8.4.9** — Sessions, journal, themes, story objectives and weekly behaviour preserved — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+263. [x] **8.4.10** — Tests for resource mapping, default task creation, genre filtering, deletion cleanup — [DONE]
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+264. [ ] **8.4.11** — Verify every Games tab, filter, search, suggestion, library, wishlist, details, resource link, task, session, journal, theme, add, edit, delete and confirmation action — [OPEN] — Phase 12
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+## 8.5 Remaining games defects [FIX]
+
+265. [x] **8.5.1** — **User-added games can never reach the spotlight.** `featuredGames()` (`games.js:1261-1263`) filters the spotlight rail to games that have `artwork`, and custom or provider-added games have none. Fall back to the deterministic `gameScene(game)` generator (`games.js:264-274`) that cards already use, so every tracked game is eligible.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+266. [x] **8.5.2** — **Unescaped selector in focus restoration.** `withFocusPreserved` (`games.js:1608`) concatenates attribute values into a `querySelector` string without escaping. Ids come from `uid()` today so it is safe, but a `data-id` containing a quote throws out of `querySelector` and aborts refocus. Use `CSS.escape`, or match by element reference rather than by selector.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+267. [x] **8.5.3** — **Reveal state bleeds between games.** Weekly task ids are `default-0..n` for every non-Diablo game (`game-resources.js:26`) and default chapter ids are `c1..c4` across games (`games-data.js`), while `revealedKeys` (`games.js:71`, `:104`) is a flat map. A freshly-rendered row therefore skips its reveal animation because another game already claimed that key. Namespace the reveal key by game id.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+268. [x] **8.5.4** — **Games `world` values `neon` and `aurora` have no CSS rule** and silently fall back to the amber default — also listed in Phase 5.3; fix in whichever phase runs first.
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+269. [x] **Gate 8** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
+
+## Phase 9
+
+## 9.1 C.1 — a tracked title can never be untracked (confirmed defect)
+
+> **Root cause, verified.** Every seed-add path — search dropdown (`movies.js:797`), suggestion cards (`:1247-1249`), hero (`:1048`), watchlist (`:1250-1251`), details modal (`:1234-1235`) — flows through `addSeedToLibrary`, which hard-sets `clone.custom = false` (`:442`). That single flag both suppresses the delete button (`:619`) and makes `deleteMovie` return early (`:458`). Line 460 is the **only** place anything is removed from `library`. The three status options are `unwatched | watched | watchlist` — none means "not tracked" — and `renderOverviewStats` counts `library.length` as "Titles tracked" (`:661`).
+
+270. [x] **9.1.1** — **Fix.** Separate two concepts currently conflated under `custom`:
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+271. [x] **9.1.2** — **Untrack / Remove from library** — available for **every** tracked title, catalog or custom. Removes the record from `library` and the watchlist, returning it to an untracked catalog entry that can be re-added. `OneSpaceUI.confirm` then a toast.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+272. [x] **9.1.3** — **Delete custom title** — unchanged, still `custom`-only, since a custom record has no catalog entry to fall back to.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+273. [x] **9.1.4** — Drop the `!m.custom` guard from the untrack path, render the untrack control unconditionally on library cards and in the details panel, and make "Titles tracked" drop when a title is untracked.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+274. [x] **9.1.5** — **Also fix [FIX]:** the watchlist is derived from two sources at once — the legacy `watchlist` id array **and** `status === 'watchlist'` (`watchlistItems()` `:360-363`) — while `addToWatchlist` (`:465-467`) only ever writes the status. Reconcile to one source of truth.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+275. [x] **9.1.6** — **Verify.** Track a catalog movie → untrack it → it leaves Library, the tracked count decreases, it reappears as an untracked suggestion, and it is still untracked after reload. Repeat for a series and for a custom title, which must still offer permanent delete.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+## 9.2 C.2 — large movie images are blurred (confirmed cause)
+
+> Not a CSS `blur()` — there is none on movie artwork. Per `assets/manifest.json`, every poster in `assets/movie-art/` is **300 × 450** (13–29 KB). Backdrops are 1920 × 1080 except `pulp-fiction-background.jpg` at 1280 × 720. A 300px source shown at 400–600 CSS px on a 2× display is upscaled 3–4×.
+
+276. [x] **9.2.1** — Re-source posters at a minimum of **1000 × 1500** for detail/hero use, keeping the 2:3 ratio and file naming.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+277. [x] **9.2.2** — Keep a small variant for grid cards; serve both via `srcset` / `sizes`.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+278. [x] **9.2.3** — Bring `pulp-fiction-background.jpg` to 1920 × 1080.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+279. [x] **9.2.4** — Add a CSS guard so no image is scaled beyond its intrinsic width — a future undersized asset then looks visibly wrong rather than quietly blurry.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+280. [x] **9.2.5** — Update `assets/manifest.json` dimensions and bytes; record provenance in `assets/movie-art/SOURCES.md`.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+281. [x] **9.2.6** — Licensing constraint holds: no scraping, no unlicensed downloads. Where no licensed high-resolution image exists, render the deterministic fallback rather than shipping an upscaled blur.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+282. [x] **9.2.7** — Note `.mv-poster-img { object-fit: contain }` (`movies.css:97`) letterboxes posters rather than filling — review alongside the resolution change.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify every stated criterion and retain the visual or automated evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+## 9.3 C.3 — series are effectively invisible
+
+> `MOVIE_TYPES = ["movie","series"]` exists (`movies-data.js:17`) and there are exactly **4** series (`movies-data.js:137-142`: `tv-dark`, `tv-queens-gambit`, `tv-good-place`, `tv-chernobyl`) against 16 movies. All four carry `poster:{kind:'placeholder'}` and `backdrop:{kind:'placeholder'}`, plus `platforms:[]` and `rating:0` — so they render as generated SVG next to fully-illustrated movies, and `ratingLabel` prints `—`. They also land in the hero carousel as pure generated SVG, since the featured pool is all of `SEED_MOVIES` (`movies.js:1004`).
+
+283. [x] **9.3.1** — Expand to at least 12–15 series spanning the same genre range, so type filtering returns a useful set.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+284. [x] **9.3.2** — Real local artwork at the 9.2 resolutions; remove every `kind:'placeholder'` from seed data.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+285. [x] **9.3.3** — Populate `platforms`, `rating`, `moods`, `tags` and a substantive `blurb`.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+286. [x] **9.3.4** — Make the `movie` / `series` filter first-class and visible, with capitalised `Movie` / `Series` labels.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+287. [x] **9.3.5** — Keep series cards honest about shape — seasons and approximate episode length, which `libraryCardHtml` already formats — **without** episode-by-episode tracking, which stays out of scope.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+> Phase 6's provider search makes catalog size far less critical, but the seeded set must still look credible offline.
+
+## 9.4 Movies behaviour preserved from old Part B Phase 6
+
+288. [x] **9.4.1** — First-class `type: movie\|series` in `movies-data.js` — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+289. [x] **9.4.2** — Series metadata, explanations, seasons — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+290. [x] **9.4.3** — Type and genre filters — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+291. [x] **9.4.4** — Cards, search, details, suggestions, watchlist views updated — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+292. [x] **9.4.5** — `movies` route and storage keys preserved — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+293. [x] **9.4.6** — Episode tracking stays lightweight — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+294. [x] **9.4.7** — Series-specific validation in `storage-utils.js` — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+295. [x] **9.4.8** — Backup fixtures and migration handling — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+296. [x] **9.4.9** — Tests for mixed search, type/genre filtering, suggestion explanations, watchlist, malformed series data — [DONE]
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+297. [ ] **9.4.10** — Verify every Movies & Series tab, type filter, genre filter, search, suggestion, detail, add/remove, watched state, watchlist, library and reload flow — [OPEN] — Phase 12
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+## 9.5 Confirmation dialog consistency [FIX]
+
+298. [x] **9.5.1** — `deleteMovie` (`movies.js:459`) uses native `window.confirm`, while every other domain uses `OneSpaceUI.confirm` (`shared/domain-ui.js:26`) with the shell's modal stack, focus trap, Escape handling and inert background. A native dialog cannot be styled, ignores reduced-motion and theme, and breaks the focus-return contract the rest of the app honours. Move it to `OneSpaceUI.confirm`, which the new untrack flow in 9.1 already requires.
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+299. [x] **Gate 9** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
+
+## Phase 10
+
+## 10.1 C.5 — real imagery and substantive descriptions
+
+> `explore-data.js` holds 12 destinations, each pointing at `assets/destinations/<id>.svg`. These are **conceptual SVG illustrations, not photographs** — the old REVISED plan already flagged this as a missed requirement. Each record has `summary` and `details`, but the depth is uneven.
+
+300. [x] **10.1.1** — Real, properly licensed local imagery per destination at hero and card resolutions, following the 9.2 sizing and `srcset` rules.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 300 |
+
+301. [x] **10.1.2** — A substantive description per destination: what the place is, why it suits its tagged categories, best season and why, rough trip length, budget character, and what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 301 |
+
+302. [x] **10.1.3** — Never blank: alt text always present; the deterministic fallback used only on a genuinely failed request.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 302 |
+
+303. [x] **10.1.4** — Licensing constraint maintained; attribution in a `SOURCES.md` beside the assets.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 303 |
+
+304. [x] **10.1.5** — **All destination art stays under root `assets/destinations/`** so the three `^assets/` validators (`storage-utils.js:36`, `local-discovery.js:5`, `trip-board.js:6`) keep accepting previously-saved user records.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 304 |
+
+## 10.2 Resolve the `explore.js` discrepancy [OPEN]
+
+305. [x] **10.2.1** — Confirmed open: `explore.js` is required by `tests/tracker-regression.test.js:4` but is **not** among the 22 `<script src>` tags — the browser uses `explore-global.js`. Decide whether `explore.js` is loaded by `index.html` or whether its logic belongs in `explore-global.js`, and make the test and the browser agree. Note `explore.js` **auto-invokes `api.mount(root)` at load**, so simply adding the tag would double-mount.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 305 |
+
+## 10.3 "More to explore" is not the final section [FIX]
+
+306. [x] **10.3.1** — Both the old REVISED plan (non-negotiable #6) and old Part B Phase 4 step 13 require "More to explore" be the last Explore section. It is currently **third of four**: Destinations → **More to explore** (`index.html:551`) → Explore shortcuts → chill strip. Move it last.
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the complete stated behavior and applicable acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 306 |
+
+## 10.4 Explore behaviour preserved from old Part B Phase 4
+
+307. [x] **10.4.1** — `explore-data.js` holds the curated destination catalog — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 307 |
+
+308. [x] **10.4.2** — Destination fields: ID, name, country/region, categories, budget, duration, season, style, tags, summary, details, links, image, fallback — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 308 |
+
+309. [x] **10.4.3** — `explore.js` holds persisted destination preferences — [DONE] — but see 10.2
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 309 |
+
+310. [x] **10.4.4** — Destination type, climate/season, trip length, budget, pace, interests, departure region — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 310 |
+
+311. [x] **10.4.5** — Deterministic, explainable recommendation ranking — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 311 |
+
+312. [x] **10.4.6** — Show why each destination was recommended — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 312 |
+
+313. [x] **10.4.7** — Preference controls, recommendation cards, details, save/favorite, shortlist/trip board, Explore-only shortcuts — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 313 |
+
+314. [x] **10.4.8** — "Surprise me" as a filtered random recommendation — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 314 |
+
+315. [x] **10.4.9** — Responsive destination images with fallback modelled on `visual-utils.js` — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 315 |
+
+316. [x] **10.4.10** — Accessible alt text; never a blank destination card — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 316 |
+
+317. [x] **10.4.11** — Tests for filtering, stable ranking, saved destinations, Explore-only shortcuts, malformed data — [DONE]
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 317 |
+
+318. [x] **10.4.12** — Verify preference controls, search/filter submission, recommendation cards, detail open/close, save/remove, notes, trip-board actions, Surprise Me, image fallback and reload — [OPEN] — Phase 12
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/interaction-current-2026-09-24.json -> Explore checks; image-fallback-2026-09-24.json |
+
+319. [x] **10.4.13** — Keep "More To Explore" last — **[OPEN]** — see 10.3
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 319 |
+
+320. [x] **Gate 10** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `explore/`, `index.html`, `assets/destinations/`, `assets/manifest.json`, Explore tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase10/audit-2026-09-23.jsonl -> item 320 |
+
+## Phase 11
+
+> Old Part B Phase 3, personal half. All delivered; must not regress.
+
+321. [x] **11.1** — `makeCheckListController()` refactored into reusable add / edit / toggle / delete — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 321 |
+
+322. [x] **11.2** — Deletion routed through the existing modal/confirmation pattern — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 322 |
+
+323. [x] **11.3** — Toast and `aria-live` message after successful deletion — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 323 |
+
+324. [x] **11.4** — Separate storage for goals, routines and habits — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 324 |
+
+325. [x] **11.5** — Completion counts and progress summaries — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 325 |
+
+326. [x] **11.6** — Optional habit frequency / target metadata — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 326 |
+
+327. [x] **11.7** — Clear empty states — [DONE]
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Re-verify this preserved requirement through the applicable regression and browser checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 327 |
+
+328. [x] **11.8** — Verify add / edit / check / delete / cancel after rerender and reload — [OPEN] — Phase 12
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/interaction-current-2026-09-24.json -> Personal goals; tests/tracker-regression.test.js |
+
+> **[NEW] Where Work's removed content lands.** Phase 3 strips five non-work surfaces from the Work page. None of them moves to Personal:
+
+329. [x] **11.9** — Next-up tasks (`orbit-tasks`) — Productivity — Productivity owns that key
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 329 |
+
+330. [x] **11.10** — Pomodoro timer mirror — Productivity — Already lives there
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 330 |
+
+331. [x] **11.11** — Countdowns (`orbit-countdowns`) — Productivity — Already rendered there
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 331 |
+
+332. [x] **11.12** — Quick note (`orbit-notes-list`) — Notes — Notes owns that key
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 332 |
+
+333. [x] **11.13** — Recently-opened shortcuts — Shortcuts / Home — Space-scoped surface
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Verify the stated behavior and retain evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 333 |
+
+> Personal's own goals, routines and habits are unchanged. Nothing is deleted — each surface already exists on its owning page, so this is removal from Work, not a migration.
+
+334. [x] **Gate 11** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+
+   Files: `personal/personal-controller.js`, `index.html`, Personal tests. Acceptance: Applicable regression tests pass and specified UI behavior is verified.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase11/audit-2026-09-23.jsonl -> item 334 |
+
+## Phase 12
+
+> Old Part B Phase 8, extended.
+
+335. [x] **12.1** — Run the complete recursive JavaScript parse test and all Node tests: `node --test tests/`.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 335 |
+
+336. [x] **12.2** — **New tests** added by this plan: structural assertions (1.7); domain-boundary assertions (Phase 3); hidden-shortcut round trip (7.1); tracker-type inference and the toggle-involution regression (8.1, 8.3); untrack behaviour (9.1); provider normalisation, error, timeout, rate-limit and offline states against the mock provider (6.1).
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 336 |
+
+337. [x] **12.3** — Expand Node tests for pure Work, Explore, shortcut, game, movie, visual-state and migration helpers.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 337 |
+
+338. [x] **12.4** — Test schema validation, migration defaults, backup/restore, reset and storage rollback.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 338 |
+
+339. [x] **12.5** — Browser-level smoke tests for every top-level route; `tests/browser-smoke.mjs` exports `routes(tab)`, `layout(tab)` and `workLifecycle(tab)`.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 339 |
+
+340. [x] **12.6** — Test navigation, add/edit/delete, modal close/cancel, persistence after reload, filters, task checkboxes, close/reopen, backlog/history, reminders, image fallback and external links.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/interaction-current-2026-09-24.json; image-fallback-2026-09-24.json |
+
+341. [x] **12.7** — Start the static server and inspect the console for uncaught errors and failed local assets.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/static-server-2026-09-24.json |
+
+342. [x] **12.8** — Verify Work hierarchy and close-all behaviour; Personal delete confirmation; Explore recommendation explanations and image fallback; game-specific links and default tasks across multiple genres and **both tracker types**; movie and series genre views.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/domain-regression-2026-09-24.json |
+
+343. [x] **12.9** — Verify backup export/import with all new data; reset behaviour and unrelated `localStorage` preservation.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/backup-reset-2026-09-24.json |
+
+344. [x] **12.10** — Verify keyboard-only navigation and reduced-motion mode — every route genuinely still.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json |
+
+345. [x] **12.11** — Verify desktop, tablet and mobile layouts at 1440 / 1024 / 760 / 390 px.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/layout-current-2026-09-24.json; settings/explore/games 390 and Work 1440 screenshots |
+
+346. [x] **12.12** — **Offline pass:** provider unreachable → visible degraded state, no silent local fallback presented as global results.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/provider-offline-2026-09-24.json |
+
+347. [ ] **12.13** — Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | IMPLEMENTED / NOT VERIFIED | docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json -> 229 button templates, partial mapped observations and remaining IDs; complete each applicable outcome before checking this box |
+
+348. [x] **12.14** — Set `MISSING_ASSET='assets/destinations/azores-card.webp'` on `tests/browser-server.js` to exercise the current photograph-to-illustration fallback path. Phase 10 made `azores.svg` the fallback asset, so failing that old target alone no longer triggers fallback.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | VERIFIED | docs/implementation-evidence/phase12/image-fallback-2026-09-24.json |
+
+349. [ ] **12.15** — Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason. After Gate 12, R0 intentionally runs before any Phase 14–19 work.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+350. [ ] **12.16** — Do not perform final documentation here. After Gate 12, run R0 first; after Gate R0 execute redesign phases R1–R6 in order; only then continue the reclassified Phase 14–19 obligations, additive/final-fidelity Phases 20–25, and Phase 26. Final documentation remains **Phase 13.3 after Gate 26**.
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+351. [ ] **Gate 12** — Complete the original-plan Phase 0–12 verification checkpoint before R0; after Gate 12, R0 and then R1–R6 must pass before Phase 14 may start
+
+   Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: All planned verification checks pass with retained evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+
+
+
+# R0 — REDESIGN INTEGRATION GATE (MANDATORY AFTER GATE 12, BEFORE R1; PHASE 14 WAITS UNTIL GATE R6)
+
+> **Exact placement:** This gate runs immediately after Gate 12 passes. It is not optional and it must complete before any Phase 14+ work. It exists because the approved Live Experience Redesign changes the visual target, information architecture, scene-asset rules and provider default.
+>
+> **Current resume point:** continue Phase 12 item 347 and the remaining Phase 12 audit first. Do not jump here early.
+
+## R0.1 — Repository/evidence recovery
+
+- [ ] Record working directory, Git root, branch, HEAD, staged/modified/untracked files.
+- [ ] Record latest automated result, latest browser result, latest VERIFIED item, current IN PROGRESS item, first unresolved item and blockers.
+- [ ] Preserve unknown local work; no destructive reset/history rewrite.
+
+## R0.2 — Read the full coordinated authority set
+
+Read in order:
+
+1. `docs/agent-instructions.md`;
+2. `docs/IMPLEMENTATION-STEPS.md`;
+3. `docs/REVISED-IMPLEMENTATION-PLAN.md`;
+4. `VERIFICATION.md`;
+5. `docs/REDESIGN-INTEGRATION-GATE.md`;
+6. `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`;
+7. `docs/ui-reference/MANIFEST.md`;
+8. `README.md`.
+
+Then open and inspect all eight actual reference images under `docs/ui-reference/`. Filename-only or text-only review is not accepted.
+
+## R0.3 — Classify every remaining Phase 14–25 requirement
+
+Each remaining requirement becomes exactly one of:
+
+- `KEEP`;
+- `REVERIFY AFTER REDESIGN`;
+- `SUPERSEDED BY APPROVED REDESIGN`;
+- `BLOCKED`.
+
+Persist item/phase, reason, retained evidence, replacement requirement and required post-redesign proof. No item may disappear silently.
+
+## R0.4 — Provider/default reconciliation
+
+- [ ] Record that bundled/local catalogues are the normal production path.
+- [ ] Record that core OneSpace is credential-free by default.
+- [ ] Reclassify mandatory TMDB/RAWG/IGDB/destination-provider requirements as optional-provider checks unless the user explicitly approves that provider as required scope.
+- [ ] Record that missing provider credentials do **not** block Gate 22, Gate 25, Gate 26 or Phase 13.3 for the credential-free product.
+- [ ] Preserve provider-adapter/security tests conditionally for any approved optional provider.
+
+## R0.5 — Asset-rule reconciliation
+
+- [ ] Mark the historical “SVG/CSS only / no new binary assets” constraint `SUPERSEDED BY APPROVED REDESIGN`.
+- [ ] Permit properly licensed repository-local scene/media assets plus CSS/SVG/procedural layers.
+- [ ] Prohibit using the composite UI reference screenshot as the actual production background.
+- [ ] Require provenance/license/attribution and deterministic missing-asset fallbacks.
+
+## R0.6 — Protected functional baseline
+
+- [ ] Current automated regression is green or every failure is understood/recorded.
+- [ ] Storage/schema/backup versions are recorded.
+- [ ] Critical CRUD, persistence, migration, import/export, action, security and navigation behavior is known.
+- [ ] Stable rollback point and canonical test-data snapshot are recorded.
+
+## R0.7 — Redesign architecture delta and execution classification
+
+Before Gate R0 can pass, define/confirm the **planned** post-gate contracts only; do not implement the redesign UI inside R0:
+
+- [ ] canonical global shell/navigation model;
+- [ ] eight-world registry and retained compatibility surfaces;
+- [ ] submodule registry and canonical data ownership;
+- [ ] scene/asset registry and provenance model;
+- [ ] data-source classifications and unsupported/future-data policy;
+- [ ] route/deep-link/back-forward strategy;
+- [ ] storage/migration impact, if any;
+- [ ] failure boundaries and feature flags, if needed;
+- [ ] exact R1–R6 execution map;
+- [ ] exact mapping of every remaining Phase 14–25 item to KEEP / REVERIFY / SUPERSEDED / BLOCKED.
+
+R0 is a **change-control gate**, not the redesign implementation phase. Do not build Home, worlds or submodules here.
+
+## R0.8 — Gate R0
+
+Gate R0 passes only when repository recovery, authority reading, legacy classification, provider reconciliation, asset reconciliation, protected baseline, all-eight-image inspection, architecture delta and the exact R1–R6 handoff are persisted.
+
+After Gate R0, execute **R1 → R2 → R3 → R4 → R5 → R6**. Phase 14 may not begin before Gate R6.
 
 ---
 
-## Phase 2 — Development tracker UI and layout
+# LIVE EXPERIENCE REDESIGN EXECUTION — R1–R6
 
-- [ ] **2.1** Consolidate Projects into Work as sub-views (Board / Projects / Backlog / History). Keep `projects` in `PAGES` as a redirect alias so the 14 existing `goToPage` and `data-page-jump` call sites keep working.
-      *Files:* `index.html`, `work/work-tracker.js`, `work/projects.js`. *Check:* every existing jump to `projects` lands on Work's Projects sub-view; saved `orbit-page` values still resolve.
-- [ ] **2.2** Move `#homeOverview` rendering out of `work/projects.js:40-43` (it lands in step 3.1) and delete the Work-overview fallback at `projects.js:44-47`.
-      *Check:* Home still renders its overview; Work never shows an `orbit-tasks` count.
-- [ ] **2.3** Results grid: replace the 2-column lock in `tracker.css:2` with `repeat(auto-fill, minmax(320px, 1fr))`.
-      *Check:* at 1440 px the grid uses three or more columns; no overflow at 390 px.
-- [ ] **2.4** Detail region: move `#workDetail` from a full-width block below the grid into a right-side drawer at ≥1100 px and a full-screen sheet below, reusing the `OneSpaceUI` modal stack, focus trap, Escape handling and inert background.
-      *Files:* `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. *Check:* Escape closes it and focus returns to the invoking card; no second dialog implementation was added.
-- [ ] **2.5** Remove the 352 px focus rail from Work and normalise the width clamp at `index.html:93` to match other pages.
-      *Check:* Work's content width equals other pages' at ≥1280 px.
-- [ ] **2.6** Rebuild the filter bar: live filtering (debounced text, immediate selects), dismissible active-filter chips, a result count, and a **sort control** — none exists today; sorting is hardcoded priority→deadline→createdAt at `work-tracker.js:29`.
-      *Check:* results update without a submit button; sort order changes visibly and survives a re-render.
-- [ ] **2.7** Fix the overview tiles at `work-tracker.js:51` — emit `.overview-tile-top` / `.overview-tile-bottom` and render as `<button data-page-jump>` like `projects.js:29`.
-      *Check:* Work's tiles match Home's structurally and are clickable.
-- [ ] **2.8** Rebuild work item cards: type glyph (story vs defect), priority as a colour-coded rail, **capitalised** status labels (raw lowercase today at `work-tracker.js:59`), and a task progress bar replacing the "n / m tasks complete" text.
-      *Check:* no lowercase enum value is visible anywhere on the card.
-- [ ] **2.9** Emit the `.page-section-head h2 > .icon` tile the tracker never provides, and add the missing `data-reveal` to `#workTracker` (`index.html:484`).
-      *Check:* the tracker heading matches every other section heading in the app.
-- [ ] **2.10** Scope re-renders to the changed region instead of rewriting the whole section's `innerHTML` (`work-tracker.js:52`); remove the focus-restoration hack at `:50,64`.
-      *Check:* typing in the filter keeps the caret; the detail drawer keeps scroll position; a task toggle does not rebuild the filter bar.
-- [ ] **2.11** Re-verify all 21 preserved Phase 2 behaviours listed in `agent-instructions.md` §2.6.
-      *Check:* each still works after the redesign.
-- [ ] **GATE 2:** every Work action from inventory 0.5 works; suite green; screenshots at all four widths show no overflow and no overlap versus the 0.6 baseline.
+> These phases implement the approved redesign after R0 has classified the remaining historical work. They preserve the old ledger/history while preventing obsolete visual/provider requirements from steering the new UI.
 
----
+## R1 — Architecture Lock + Shared Redesign Foundation
 
-## Phase 3 — Domain boundaries and the Home module
+### R1.1 — Freeze canonical architecture before visual rollout
 
-- [ ] **3.1** Create `home/home-overview.js` — the only module permitted to read across domains. It takes over `#homeOverview`, gains the cross-domain tiles removed from Explore, and adds space labels to Quick Access.
-      *Files:* new `home/home-overview.js`, `index.html` (new script tag), `tests/structure.test.js` (the expected script count and order change **here**, not in Phase 1).
-      *Check:* the structural test passes with the updated expectation.
-- [ ] **3.2** Remove leaks 1–6 from Work: the `orbit-tasks` overview tile, the "General daily tasks" button (`index.html:482`), the Productivity hero CTA (`:471`), the focus rail and its mobile toggle (`:153-159`, `:466`), and the asymmetric project-deadline push at `work-tracker.js:75`.
-      *Check:* no Work DOM node reads `orbit-tasks`, `orbit-countdowns` or `orbit-notes-list`.
-- [ ] **3.3** Fix leaks 7–8 on Home: label Quick Access tiles with their space; make "Shortcuts available" count all spaces rather than following the Shortcuts page's selection (`index.html:1368`).
-      *Check:* changing the space picker on Shortcuts no longer changes a number on Home.
-- [ ] **3.4** Fix leaks 9–10: make `Gaming` reachable in `visibleCategories()` (`index.html:1172-1176`) and stop relabelling every non-Travel explore link as "Relax & Play" (`:1167`).
-      *Check:* Gaming shortcuts appear under Gaming.
-- [ ] **3.5** Fix leaks 11–12: remove the Games / Movies / Productivity tiles from Explore (`index.html:553-555`) — they move to Home — and stop `#endWorkdayBtn` relocating the user to Explore (`:2100-2109`).
-      *Check:* the Productivity tile no longer renders Personal's hero art (`cinematic-refinement.css:102`).
-- [ ] **3.6** Fix leaks 13–14: scope `data-games-theme` / `data-movies-theme` to their view roots or clear them in `goToPage` (`games.js:693`, `movies.js:954`); delete the dead pre-router CSS at `index.html:89-90`.
-      *Check:* visiting Games then Settings leaves no `data-games-theme` on `<body>`.
-- [ ] **3.7** Leak 15: inject domain validators into `shared/storage-utils.js` instead of `require`-ing across into `explore/trip-board.js` (`:49`).
-      *Check:* `storage-utils.js` contains no cross-domain `require`; the `orbit-trip-board` validator still rejects malformed records.
-- [ ] **GATE 3:** a new test asserts each page's DOM subtree reads only its own domain's storage keys, with `home/home-overview.js` the single allowed exception.
+- [ ] Confirm one canonical shell/navigation model.
+- [ ] Confirm exactly eight reference-led main worlds: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes, Settings.
+- [ ] Confirm `Today` and `AI Assistant / Command` as utility/subview surfaces unless separately approved as full worlds.
+- [ ] Confirm retained Shortcuts/Productivity/Notes/legacy Projects compatibility behavior.
+- [ ] Confirm world/submodule/detail route ownership and active-parent behavior.
+- [ ] Confirm Work owns Work/project lifecycle records; Notes owns notes; Productivity owns generic task/timer/countdown state; Shortcuts owns shortcut records.
+- [ ] Confirm Projects & Notes is an aggregation/presentation surface over canonical owners, not a parallel datastore.
+- [ ] Preserve `movies` compatibility; any `/media` route is alias-only if deliberately added.
+
+### R1.2 — Shared visual foundation
+
+Implement and verify reusable primitives only: shell; brand/header; canonical navigation; typography; spacing/grid; glass/surface tokens; buttons/chips/cards/portal primitives; icon language; focus/hover/pressed/disabled states; responsive primitives; scene-host lifecycle interface; local scene/media asset loading and deterministic fallbacks. Do not mass-build world pages yet.
+
+### R1.3 — Asset reconstruction contract
+
+For all eight references, prepare/verify clean production scene families without baked-in UI. Record provenance/license/attribution and fallback behavior. The composite concept screenshots remain documentation references only.
+
+### Gate R1
+
+PASS only when architecture contracts and shared primitives are stable enough that Home can be built without inventing new route/storage/design rules. Persist evidence.
 
 ---
 
-## Phase 4 — Settings and themes
+## R2 — Home Fidelity Checkpoint
 
-- [ ] **4.1** Replace the index-based Settings grouping at `cinematic-scenes.js:26-34` with a declared `data-settings-group` attribute per field. **Do this before adding any setting.**
-      *Check:* adding a field mid-card does not move other controls between headings.
-- [ ] **4.2** Make light/dark orthogonal to palette — `index.html:1574-1581` currently resets `paletteChoice` to `"classic"` and strips `data-palette`.
-      *Check:* select Aurora, toggle dark, toggle light — Aurora survives both.
-- [ ] **4.3** Give "Deep Space" (`midnight`) a real CSS variable block; today it appears only in the dark selector lists at `index.html:21` and `34-36`.
-      *Check:* Deep Space and plain dark are visibly different.
-- [ ] **4.4** Resolve the duplicate `--page-accent` definition between `cinematic-refinement.css:4-15` and `pages.css:193-195`; one owner only.
-      *Check:* per-page accent is stable regardless of stylesheet order.
-- [ ] **4.5** Fix "Reset preferences" (`index.html:1656-1689`) — stop it wiping favorites, recents, collapsed sections and search provider, and make it reset `orbit-theme` too.
-      *Check:* after a reset, favorites survive and the theme returns to default.
-- [ ] **4.6** Add new palettes beside the existing five, including at least one **warm** direction.
-      *Check:* each defines the full token set in light and dark, passes WCAG AA for body text and controls, and shows a swatch in `.theme-choices`.
-- [ ] **4.7** Add the new settings: per-tab scene intensity (Full / Subtle / Off), the Games and Movies sub-theme pickers, the Removed-shortcuts restore list, and the provider status panel.
-      *Check:* each persists across reload and appears under the correct group heading.
-- [ ] **GATE 4:** every pre-existing setting still works and keeps its storage key.
+Home is the first complete proof. Do not propagate the new visual language to other worlds until Gate R2 passes.
 
----
+Execute in this exact order:
 
-## Phase 5 — Living cinematic scenes
+1. open `docs/ui-reference/00-home.png` and inspect the actual pixels;
+2. record image-specific observations: composition, depth, lighting, material treatment, hierarchy, hero/search/quick-action/card/portal proportions, density, responsive risks and plausible motion cues;
+3. inventory every visible control/region;
+4. classify every visible value as real local action/data, local derived, user entered, optional provider, illustrative sample, or future-disabled;
+5. resolve reference-vs-architecture conflicts before coding;
+6. build clean background/scene assets — never ship the composite screenshot as the page background;
+7. build static structure;
+8. bind preserved real OneSpace behavior;
+9. implement any genuinely required missing behavior;
+10. achieve static fidelity at **2048×1152**;
+11. verify 1920, 1440, 1024, 760, 390 and 200% zoom;
+12. verify keyboard/focus/ARIA/touch/no-hover;
+13. only after static fidelity passes, add `ENTRY / WAKE-UP -> SETTLE -> AMBIENT / ALIVE -> EXIT / RESET`;
+14. verify Full/Subtle/Off and `prefers-reduced-motion`;
+15. verify missing/corrupt asset, empty/unavailable data and performance behavior;
+16. run targeted regression;
+17. capture item-specific evidence.
 
-- [ ] **5.1** Collapse the three entry-animation systems (`index.html:1797-1799`, `discovery-integration.js:14`, `cinematic-refinement.css:131-132`) and the two parallax variable sets (`--px`/`--py`, which currently has no consumer, and `--scene-x`/`--scene-y`) into one scene controller on `window.OneSpace`.
-      *Check:* one code path owns entry, parallax, ambient motion and reveal.
-- [ ] **5.2** Build a layered animated scene for each of the 11 routes: drawn SVG backdrop, parallax depth layer, slow ambient layer, contrast scrim. Keep the nine existing `assets/page-art/*` stills as an optional art slot behind the drawn layers.
-      *Check:* every route is visibly in motion at rest and visually distinct from its neighbours.
-- [ ] **5.3** Give Games and Movies a `.page-hero` with eyebrow, headline and caption, and add them to the `scenes` map at `cinematic-scenes.js:5` — currently 01–09 with both absent.
-      *Check:* both pages carry a scene number like every other route.
-- [ ] **5.4** Ship hero markup for `#moviesView` in the document — it is an empty `<div id="moviesMount">` (`index.html:570-572`) until `movies.js` mounts.
-      *Check:* the Movies hero is visible on first paint, before scripts run.
-- [ ] **5.5** Clean up the dead visual code: the `projects-scene` class with no matching selector (`index.html:494`), the unstyled `neon` / `aurora` game worlds, the `nth-child` icon injection (`cinematic-scenes.js:13-22`), and the gradient-only fallback heroes (`pages.css:81, 113, 136, 148, 171`).
-      *Check:* no class in the markup lacks a matching rule.
-- [ ] **5.6** Route `index.html:1183`, `games.js:97`, `games.js:468` and `movies.js:87` through `prefersReducedMotion()` instead of querying `matchMedia` directly.
-      *Check:* setting Motion to "Full motion" is honoured on every page, Games and Movies included.
-- [ ] **5.7** Work the [OPEN] rows of `agent-instructions.md` §5.4: entry transitions, meaningful state transitions, section-matched loading states, full interactive-state coverage, ARIA live regions, and long-text handling.
-      *Check:* each row has visible evidence.
-- [ ] **GATE 5:** every route captured in normal motion, in reduced motion and at 390 px; reduced motion is genuinely still, not slowed; the browser bundle still issues zero external requests.
+### Gate R2
+
+Home is VERIFIED only when structure, function, static fidelity, responsive behavior, accessibility, cinematic lifecycle, fallbacks, persistence/navigation and evidence all pass.
 
 ---
 
-## Phase 6 — Provider search and typeahead
+## R3 — Main-World Rollout
 
-- [ ] **6.1** Add the server proxy reading credentials from `config/secrets/` — `/api/search/titles`, `/api/search/games`, `/api/details/:kind/:id`. Never expose a key to the browser.
-      *Check:* no credential string appears in any file the server will serve.
-- [ ] **6.2** Normalise provider responses into the app's existing record shapes; add `AbortController` cancellation, a short-TTL cache clearable without touching user records, and pagination.
-      *Check:* the UI never receives a raw TMDB or IGDB payload.
-- [ ] **6.3** Add the local mock provider used by all automated tests.
-      *Check:* the full suite runs with networking disabled.
-- [ ] **6.4** Extend both typeaheads (`games.js:1009-1028`, `movies.js:802-821`): debounce, two result groups ("In your catalog" then "Search results" with a loading row), and an **explicit** add control — today selecting a row adds immediately with no confirmation (`games.js:1004`, `movies.js:797`).
-      *Check:* typing adds nothing until the add control is used.
-- [ ] **6.5** Give series parity in search and capitalise the type filter labels to `Movie` / `Series` (`movies.js:1396`).
-      *Check:* one query returns both movies and series, correctly labelled.
-- [ ] **6.6** Reconcile the two competing search experiences — `discovery-integration.js:3-9` mounts a second Discover panel into Movies and rewrites the typeahead placeholder; Games has the same split.
-      *Check:* one search experience per domain, one result-card design.
-- [ ] **6.7** Add explicit loading, empty, timeout, rate-limit, offline, authentication and configuration-error states.
-      *Check:* with credentials removed, the UI says what is unavailable — it does **not** show the local catalog as if it were global.
-- [ ] **GATE 6:** with the network disabled the app is fully usable and honestly labelled.
+Implement **one world at a time** in this mandatory order:
 
----
+1. Work — `01-work.png`;
+2. Personal / Fitness — `02-personal-fitness.png`;
+3. Explore — `03-explore.png`;
+4. Games — `04-games.png`;
+5. Movies & Series — `05-movies-series.png`;
+6. Projects & Notes — `06-projects-notes.png`;
+7. Settings — `07-settings.png`.
 
-## Phase 7 — Shortcuts
+For **each** world, complete this exact sequence before starting the next:
 
-- [ ] **7.1** Add the `orbit-hidden-links` key with a validator in `shared/storage-utils.js`, plus a fixture and a backup round-trip test.
-      *Check:* a hidden list survives export and import.
-- [ ] **7.2** Add a Remove control to **every** shortcut card, built-in and custom, on both the full card (`index.html:1215-1237`) and the compact card (`shortcut-surface.js:4-7`). Custom deletes; built-in hides.
-      *Check:* all 47 built-ins can be removed.
-- [ ] **7.3** Add the Removed-shortcuts restore panel in Settings, and replace the hardcoded `HIDDEN_DEFAULT_IDS` (`index.html:1163`) with real user data — seeding those three ids on first run so nothing visibly changes for existing users.
-      *Check:* a removed built-in restores to its original position.
-- [ ] **7.4** Add an add-shortcut control to Work; it has none, unlike Personal (`index.html:528`) and Explore (`:559`).
-      *Check:* a shortcut added from Work defaults to the work space.
-- [ ] **7.5** Make `index.html:2498` read the `[data-add-space]` attribute it currently ignores; fix `shortcut-surface.js:9` calling `renderExplorePage()` with no argument; implement or remove the "Duplicate" stub (`index.html:2585`).
-      *Check:* favoriting a shortcut on Explore no longer clears the Explore search filter.
-- [ ] **7.6** Modernise the card and launch wall: inline SVG icons with a favicon/hostname fallback chain, full interactive states, mobile touch targets, keyboard-accessible reordering, hostname shown on the compact card, `rel="noopener noreferrer"` preserved.
-      *Check:* add, edit, favorite, reorder and delete all work by keyboard alone; no broken icons at any of the four widths.
-- [ ] **GATE 7:** ownership isolation between work / personal / explore is unchanged.
+1. physically open the matching image;
+2. persist image-specific visual/cinematic observations;
+3. inventory hero, contextual search/capture, quick actions, summaries and every portal;
+4. map every portal to a real submodule requirement;
+5. reconcile sample labels/data with canonical architecture and data ownership;
+6. classify dynamic values as `LOCAL_CORE`, `LOCAL_DERIVED`, `USER_ENTERED`, `OPTIONAL_PROVIDER` or `FUTURE_DISABLED`;
+7. build static structure and clean local scene assets;
+8. bind preserved functionality;
+9. implement required missing real behavior;
+10. reach static fidelity at 2048×1152;
+11. verify 1920/1440/1024/760/390 + 200% zoom;
+12. verify keyboard/focus/ARIA/touch/no-hover;
+13. add reference-derived cinematic/micro-motion only after static fidelity;
+14. verify Full/Subtle/Off/reduced motion;
+15. verify empty/loading/error/unavailable/missing-asset states;
+16. verify route/deep-link/reload/Back/Forward;
+17. run targeted regression + performance checks;
+18. persist evidence;
+19. mark that world VERIFIED.
 
----
+Do not batch-mark several worlds from one generic test or shared screenshot.
 
-## Phase 8 — Games trackers
+### Gate R3
 
-- [ ] **8.1** Add `trackerType` to every `SUGGESTION_CATALOG` record (`games-data.js:182-195`) and to the provider normaliser — today `games.js:843` defaults everything to `"story"`.
-      *Check:* no catalog entry relies on the default.
-- [ ] **8.2** Infer the tracker type from genre and tags (live-service / MMO / looter / gacha / battle-royale → weekly; campaign / story-rich / single-player → story) and show the inferred choice in the add flow so it can be corrected before saving.
-      *Check:* adding a live-service game yields a weekly tracker; adding a campaign game yields chapters.
-- [ ] **8.3** Give story games real chapter outlines — `game-resources.js:25` always produces one `"Your first milestones"` chapter today.
-      *Check:* a mission game arrives with a multi-chapter outline.
-- [ ] **8.4** Reconcile `story` data when a game's type changes; `games.js:669-673` leaves it orphaned.
-      *Check:* weekly → story → weekly round-trips without duplicate or stale objectives.
-- [ ] **8.5** Remove the four Diablo hardcodes: `cloneWeeklyTemplate` (`games.js:208`), the `defaultTasks` injection (`games-data.js:202,204`), the Overview stat tile (`games.js:724-725,744`) and the `"Diablo Weekly Tasks"` heading (`games.js:1422`). Fix the cascade order at `game-resources.js:24`, where the `defaultTasks` check wrongly precedes the `trackerType === 'weekly'` branch.
-      *Check:* a second weekly game behaves identically to Diablo Immortal.
-- [ ] **8.6** Fix `resetWeekly()` (`games.js:581`) calling `cloneWeeklyTemplate()` with no argument.
-      *Check:* "Reset Weekly Tasks" on Diablo Immortal restores its 7 tasks, not 3 generic ones. Add a test.
-- [ ] **8.7** Make `saveLibrary()` (`games.js:175`) and `saveWeekly()` (`:180`) honour `safeSet`'s failure return, using the read-back-and-rollback pattern from `commitGameChanges()` (`:176-179`).
-      *Check:* a forced write failure surfaces an error and the UI never shows a state storage does not hold.
-- [ ] **8.8** Reproduce C.4 in the browser before assuming 8.7 fixed it. Secondary suspects in order: ISO-week rollover discarding `done` flags via `ensureWeekly` (`:211-220`, reached from every render); `findChapter` scoped to `selectedStoryGameId` (`:498-502`); `toggleWeeklyTask` requiring an ancestor `.gv-tracker[data-game-id]` (`:1565`).
-      *Check:* toggle an objective and a weekly task ten times each — model, percentage and DOM agree every time, and after reload. Add an involution regression test.
-- [ ] **8.9** Fix the remaining games defects: `featuredGames()` excluding artwork-less games from the spotlight (`:1261-1263`); the unescaped selector in `withFocusPreserved` (`:1608`); `revealedKeys` bleeding between games via colliding `default-0..n` and `c1..c4` ids (`:71`, `:104`).
-      *Check:* a custom game can appear in the spotlight; reveal animations do not skip.
-- [ ] **GATE 8:** all preserved Phase 5 behaviours in `agent-instructions.md` §8.4 still pass.
+PASS only when all seven post-Home main worlds are individually VERIFIED and the eight-world shell is coherent without collapsing into one generic space/starfield theme.
 
 ---
 
-## Phase 9 — Movies and series
+## R4 — Nested UI Pilot: Work -> Projects
 
-- [ ] **9.1** Separate Untrack from Delete. Drop the `!m.custom` guard on the untrack path (`movies.js:458`), render the untrack control unconditionally (`:619`), and keep permanent delete restricted to `custom`.
-      *Check:* track a catalog movie, untrack it — it leaves Library, "Titles tracked" decreases, it returns to Suggestions, and it is still untracked after reload.
-- [ ] **9.2** Reconcile the watchlist's two sources — the legacy id array and `status === 'watchlist'` (`movies.js:360-363`) — while `addToWatchlist` (`:465-467`) only writes the status.
-      *Check:* one source of truth; the watchlist count matches the rendered list.
-- [ ] **9.3** Move `deleteMovie`'s native `window.confirm` (`movies.js:459`) to `OneSpaceUI.confirm`.
-      *Check:* the dialog is themed, Escape-closable and returns focus.
-- [ ] **9.4** Re-source posters at ≥1000×1500, keep a small card variant, serve both via `srcset`/`sizes`, bring `pulp-fiction-background.jpg` to 1920×1080, and add a CSS guard against upscaling past intrinsic width. Review `.mv-poster-img { object-fit: contain }` (`movies.css:97`), which letterboxes rather than fills.
-      *Check:* at 1440 px / 2× DPR no `<img>` renders wider than its `naturalWidth`; posters report `naturalWidth >= 1000`.
-- [ ] **9.5** Update `assets/manifest.json` and `assets/movie-art/SOURCES.md` with new dimensions, bytes and provenance.
-      *Check:* the manifest matches the files on disk.
-- [ ] **9.6** Expand the series catalog to 12–15 titles with real artwork; remove every `kind:'placeholder'`; populate `platforms`, `rating`, `moods`, `tags` and a substantive `blurb`.
-      *Check:* the Series filter returns a full illustrated grid; zero placeholder records remain in `movies-data.js`.
-- [ ] **GATE 9:** all preserved Phase 6 behaviours in `agent-instructions.md` §9.4 still pass.
+Before broad submodule rollout, implement **Work -> Projects** end-to-end as the canonical nested pattern. It must prove dedicated Projects UI, Work parent active state, deterministic nested route/subview identity, canonical Work/project data ownership, overview/list, project detail, create/edit/status/task behavior where supported, empty/loading/error/invalid/orphan states, persistence/storage rejection, reload/deep-link/Back/Forward, responsive matrix + 200% zoom, keyboard/focus/ARIA/touch, parent-world visual DNA, restrained motion/reduced motion, regression and item-specific evidence.
+
+### Gate R4
+
+Do not begin broad submodule rollout until this pilot is VERIFIED. Shared nested-navigation/submodule primitives discovered here must be documented before replication.
 
 ---
 
-## Phase 10 — Explore
+## R5 — Dedicated Submodule Rollout
 
-- [ ] **10.1** Replace the 12 conceptual destination SVGs with real licensed photography at hero and card resolutions, following the 9.4 sizing rules. Keep everything under root `assets/destinations/` so the three `^assets/` validators keep accepting saved records.
-      *Check:* every destination shows a photograph; a forced 404 still leaves a usable card; previously-saved destinations still validate.
-- [ ] **10.2** Write substantive per-destination descriptions: what the place is, why it suits its categories, best season and why, trip length, budget character, what a traveller actually does there. `summary` stays short for cards; `details` carries the long form.
-      *Check:* no destination has a thin `details` field.
-- [ ] **10.3** Resolve the `explore.js` discrepancy — required by `tests/tracker-regression.test.js:4`, absent from `index.html`'s 22 scripts. It auto-mounts on load, so simply adding a tag would double-mount.
-      *Check:* the test and the browser agree; exactly one mount occurs.
-- [ ] **10.4** Move "More to explore" (`index.html:551`) to be the **last** Explore section; it is currently third of four.
-      *Check:* section order ends with More to explore.
-- [ ] **GATE 10:** all preserved Phase 4 behaviours in `agent-instructions.md` §10.4 still pass.
+Implement families in this order; complete one family before starting the next:
+
+1. **Work:** Projects -> Kanban Board -> Team -> Documents -> Meetings -> Templates.
+2. **Personal / Fitness:** Mindfulness -> Fitness -> Nutrition -> Recovery -> Personal Life -> Home Wellbeing.
+3. **Explore:** Destinations -> Experiences -> Travel Guides -> Bucket List -> Discover More.
+4. **Games:** My Games -> Missions & Quests -> Game Library -> Game Sessions -> Discover Games -> Game Settings.
+5. **Movies & Series:** Continue Watching -> Watchlist & Library -> supported discovery/new-release/recommendation/genre surfaces -> Title Detail.
+6. **Projects & Notes:** All Projects -> Notes & Knowledge -> Documents -> Idea Inbox -> Templates -> Archive.
+7. **Settings:** Appearance & Theme -> Connected Devices -> Notifications -> Privacy & Security -> Quick Settings -> Routines & Automation -> System Health -> Account/Profile.
+
+For every submodule:
+
+1. identify parent world and canonical data owner;
+2. define deterministic route/subview identity;
+3. define supported actions and detail/task surfaces;
+4. build dedicated static UI;
+5. bind/implement real behavior;
+6. implement honest empty/loading/error/disabled/unavailable states;
+7. verify applicable create/edit/delete/archive/restore/reorder/complete/reopen workflows;
+8. verify persistence and rejected-write behavior;
+9. verify reload/direct route/Back/Forward/deleted target;
+10. verify responsive widths + 200% zoom + long text;
+11. verify keyboard/focus/ARIA/touch/no-hover;
+12. preserve parent-world visual identity without inventing a new full cinematic world;
+13. apply restrained motion only after static UI is accepted;
+14. verify reduced motion and asset failure;
+15. run targeted/adjacent regression;
+16. capture persistent evidence;
+17. mark VERIFIED only when the target UI works end-to-end.
+
+A portal card is never complete merely because clicking it navigates somewhere.
+
+### Gate R5
+
+PASS only when every required portal/submodule has a dedicated functional target surface and every required Level-4 detail/task flow is implemented/verified or explicitly classified not applicable/future-disabled by the approved spec.
+
+---
+
+## R6 — Cross-World Systems + Redesign Integration Regression
+
+Integrate/reverify without weakening already VERIFIED worlds/submodules:
+
+- Flow / Continue where approved by the standing redesign scope;
+- Quick Capture and Command Palette/command access;
+- central Shortcuts integration;
+- personalization/theme/motion settings;
+- localization, long-string readiness and RTL;
+- Personal/Fitness profile, Exercise Library and Workout Builder where specified;
+- Routines & Automation;
+- Weekly Review and Pulse using only real/derived canonical data;
+- import/export and schema validation;
+- offline behavior;
+- compatibility routes: Shortcuts, Productivity, Notes, legacy Projects alias;
+- Home aggregation across canonical owners.
+
+Then run redesign-wide integration regression across all eight worlds, every required portal/submodule, representative detail flows, routing/history/reload, persistence/rejected writes, 2048/1920/1440/1024/760/390 + 200% zoom, keyboard/touch/accessibility, Full/Subtle/Off/reduced motion, asset failure, race cleanup, listener/timer/RAF cleanup, offline/local-first, security/secrets and evidence integrity.
+
+Also verify: deterministic clock/date-boundary fixtures; canonical deterministic test dataset; pre-migration backup/rollback; first-run/empty state; malformed preference/data recovery; import schema rejection/corrupt-import isolation; multi-tab/localStorage collisions; large-data stress; animation cancellation; repeated-navigation memory/CPU growth; module-registration failure isolation; console/unhandled-rejection health; portrait/landscape where relevant; long translations/RTL; destructive-action confirmation/undo/restore semantics where supported.
+
+### Gate R6
+
+PASS authorizes continuation into the R0-classified historical Phase 14–25 hardening/acceptance obligations. Phase 14 may not begin before Gate R6.
 
 ---
 
-## Phase 11 — Personal regression
+# V2 EXTENSION — Phases 14–19
 
-- [ ] **11.1** Confirm Work's five removed surfaces landed correctly: next-up tasks, timer mirror and countdowns on **Productivity**; quick note on **Notes**; recents on **Shortcuts/Home**. None goes to Personal.
-      *Check:* each surface exists exactly once, on its owning page.
-- [ ] **11.2** Re-verify Personal add / edit / check / delete / cancel after re-render and reload.
-      *Check:* deletion still shows the confirm modal, the toast and the `aria-live` message.
-- [ ] **GATE 11:** goals, routines and habits are unchanged in behaviour and storage.
+> These items extend the existing checklist without rewriting historical item numbers, statuses or evidence.
+>
+> The same Mandatory execution and verification contract applies. No V2 item may be skipped.
+>
+> **Post-R0 interpretation:** the item remains in the ledger, but R0 classification controls whether its legacy target is KEEP, REVERIFY, SUPERSEDED or BLOCKED. Bundled/local catalogues are the default production path. Provider-specific work is conditional on explicit approval/configuration and may not block the credential-free product.
+
+## Phase 14 — Data-source truth audit and V2 scope reconciliation
+
+- [ ] **14.1 — Audit Movies/Series data-source truth and optional-provider boundary.**
+
+  Files: `server/`, `server/providers/`, `movies/`, provider tests, `docs/implementation-evidence/phase14/`.
+
+  Acceptance: Confirm bundled/local Movies & Series is the default production path. If provider adapter code exists or was explicitly approved, separately record its contract/mock status and any configured live E2E status; otherwise record `NOT CONFIGURED / NOT REQUIRED`. Mock success is never live-provider proof.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **14.2 — Audit Games data-source truth and optional-provider boundary, including cover/background, genres/tags/platforms and tracker signals.**
+
+  Files: `server/`, `server/providers/`, `games/`, provider tests, `docs/implementation-evidence/phase14/`.
+
+  Acceptance: The actual delivered local/bundled capability is evidenced. If an optional provider exists or is approved, its mock/live status is recorded separately without invalidating unrelated prior phases.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **14.3 — Audit provider secrets/security boundary.**
+
+  Files: `.gitignore`, `config/`, `server/`, security tests, evidence.
+
+  Acceptance: No real secret is tracked or browser-readable; config/secrets paths, including a representative otherwise-servable extension such as `.js`, are denied.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **14.4 — Reconcile approved V2 scope across standing plan, checklist and architecture authority.**
+
+  Files: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`.
+
+  Acceptance: Credential-free local-first is the default; bundled/local discovery, first-class local/imported records, content art, offline/security/integrity rules and any explicitly approved optional-provider path are represented consistently.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 14 — Provider truth and V2 authority gate.**
+
+  Files: `docs/implementation-evidence/phase14/`, authoritative docs.
+
+  Acceptance: Actual data-source capability is known; local/bundled scope is authoritative by default; optional providers are separately classified before implementation advances.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 15 — Local destination discovery/expansion and optional-provider boundary
+
+- [ ] **15.1 — Select/document the credential-free local/bundled destination source and its licensing/attribution constraints; document any optional provider separately if explicitly approved.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Local/bundled source choice is justified and sufficient for the default product. If an optional provider is approved, its source/licensing is documented separately and Explore UI is not coupled to raw vendor payloads.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.2 — Implement credential-free local/bundled destination search/details; optional server/provider adapter only if explicitly approved.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Local/bundled search/details works without credentials. If an optional provider is approved, its success/empty/pagination/timeout/rate-limit/auth/offline/provider-error/malformed/partial states are normalized separately.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.3 — Implement canonical destination normalization for local/bundled records and any optional provider records.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Local/bundled destination identity, location, summary/details, categories, trip metadata, card/hero media and attribution map into an Explore-compatible shape without inventing facts. Optional-provider identity/provenance fields are added only when such records exist.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.4 — Add deterministic provider fixtures only if an optional destination provider contract exists.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: If applicable, automated provider-contract tests cover success and required failure states without live quota; otherwise record `NOT APPLICABLE / NOT REQUIRED`. Local/bundled destination tests remain mandatory.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.5 — Integrate credential-free destination search UX and, only if configured, optional-provider results.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Curated/local discovery is complete and truthful. If an optional provider is configured, remote results are clearly distinct, obsolete requests are canceled/ignored, and pagination/load-more works without changing local behavior.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.6 — Implement destination detail and explicit Save/shortlist/trip-board actions for local/bundled records; extend to optional-provider records if configured.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Detail remains usable with partial metadata; attribution is shown where required; save is explicit.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.7 — Persist saved destinations locally and prove offline reopen; include optional-provider-origin destinations only if they exist.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: Saved destinations validate, survive reload and remain meaningful offline. If optional-provider-origin destinations exist, they also reopen correctly with provider access disabled.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **15.8 — Reverify all 12 curated destinations and existing Explore behavior.**
+
+  Files: `explore/`, `server/`, `server/providers/`, `shared/storage-utils.js`, tests, evidence.
+
+  Acceptance: New discovery work does not regress ranking, explanations, Surprise Me, curated images/fallbacks, save/remove or trip board.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 15 — Credential-free destination discovery + optional-provider boundary gate.**
+
+  Files: Phase 15 evidence.
+
+  Acceptance: Credential-free Explore works end-to-end. If an optional provider is configured, both sources work coherently and neither is misrepresented as the other.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 16 — First-class discovered/imported records and data integrity
+
+- [ ] **16.1 — Implement deterministic identity and duplicate-add prevention for added/imported rich-domain records; include provider identity only where optional-provider records exist.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Re-adding the same canonical record cannot create duplicate local records or dependent state; provider source+ID is used only for provider-origin records.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.2 — Define/test collision policy between bundled/local records and imported/optional-provider records.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: No fuzzy name-only auto-merge; deterministic mappings only, otherwise records remain distinct or require explicit reconciliation.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.3 — Prove added/imported Movie/Series records remain first-class offline; provider-origin is conditional.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: After Add and provider disable, library/detail/status/watchlist/untrack behavior remains valid from persisted local data.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.4 — Prove added/imported Game records remain first-class offline; provider-origin is conditional.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: After Add and provider disable, detail/tracker/sessions/journal/resources shell/edit/delete behavior remains valid.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.5 — Verify Game tracker inference and correction.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: A live-service example defaults weekly, a campaign example defaults story, and user correction is available before persistence.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.6 — Prove saved/imported Destination records remain first-class offline; provider-origin is conditional.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Saved detail, saved/shortlist and trip-board state remain valid without provider access.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.7 — Implement/test metadata refresh merge ownership only where an optional provider refresh exists.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Provider-owned metadata may update; user-owned status/notes/progress/tracker/tasks/sessions/journal/trip state never gets silently overwritten.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.8 — Verify rejected write and multi-key atomicity behavior.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: UI never reports success before persistence succeeds; partial multi-key Add/Save is rolled back or enters the explicitly documented recovery state.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **16.9 — Add backup round trip for representative added/imported rich-domain records; include provider-origin cases only if configured.**
+
+  Files: `movies/`, `games/`, `explore/`, `shared/storage-utils.js`, fixtures/tests, evidence.
+
+  Acceptance: Representative added/imported rich-domain records export/import under v4 and reopen offline; provider-origin examples are required only for configured optional-provider domains; no version bump unless a real migration is required.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 16 — First-class discovered/imported record integrity gate.**
+
+  Files: Phase 16 evidence.
+
+  Acceptance: Added/imported content is durable local OneSpace data with duplicate, merge, storage and backup protections; optional-provider-origin records follow the same contract when present.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 17 — Content-aware cinematic environment
+
+- [ ] **17.1 — Extend the existing unified scene controller with one optional selected-content environmental-art layer.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: No parallel animation controller is introduced.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.2 — Integrate selected Movie/Series backdrop with Movies base scene.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Readable, non-interactive environmental art; base domain identity retained.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.3 — Integrate selected Game key/background art with Games base scene, including added/imported games and optional-provider-origin games when present.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Same quality/behavior for seed and provider-origin games.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.4 — Integrate selected Destination hero art with Explore for curated/local destinations and optional-provider destinations when present.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Atmospheric treatment remains subordinate to controls/content.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.5 — Use lightweight internal content transition instead of full page ENTRY.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Selecting another item does not replay route-entry choreography.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.6 — Implement content-art race ownership.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Rapid A->B->C selection always finishes on C even if older media loads later.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.7 — Verify exact-role media fallback.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Movie backdrop/Game background/Destination hero failure falls back without removing detail/actions or unnecessarily invalidating other valid media roles.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.8 — Verify route cleanup.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Movies/Games/Explore art, classes, CSS variables and transient state do not leak into other routes.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **17.9 — Reverify Full/Subtle/Off/reduced-motion and coarse-pointer behavior.**
+
+  Files: `shared/cinematic-scenes.js`, rich-domain UI/styles, visual helpers, tests/evidence.
+
+  Acceptance: Reduced motion is genuinely still; touch does not depend on hover/pointer parallax.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 17 — Content-aware cinematic gate.**
+
+  Files: Phase 17 screenshots/measurements/tests.
+
+  Acceptance: Selected content enriches atmosphere without reducing usability, accessibility or lifecycle correctness.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 18 — Media/async/security hardening and optional-provider isolation
+
+- [ ] **18.1 — Test query and detail races including stale success and stale errors.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Older requests cannot replace newer UI, announce stale ARIA feedback, reopen closed detail or mutate another route.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.2 — If optional provider/server routes exist, validate and bound their inputs; otherwise mark provider-specific portion NOT APPLICABLE.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Unsupported kind/provider/method, malformed IDs/pages/cursors and oversized queries are rejected before upstream calls.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.3 — If any external-fetch/provider/media proxy route exists, prove no open proxy / SSRF path exists.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Browser input cannot make the local server fetch arbitrary external, localhost or private-network URLs.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.4 — Harden optional-provider media route where used; otherwise NOT APPLICABLE.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Known-provider references only; host allowlist, HTTPS where supported, content-type check, timeout, size bound, no secret leakage.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.5 — Add hostile external/provider-text XSS regression where such input exists; always treat imported/user text as untrusted.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Provider markup/script-like strings render harmlessly as text; provider links use safe protocols.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.6 — Bound query/details/media caches and document policy for every cache actually present.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Caches have finite bounds/expiry/invalidation; clearing them does not delete user records.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.7 — Run full optional-provider failure matrix for all configured rich domains; otherwise record NOT CONFIGURED / NOT REQUIRED.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: No-credentials, auth, timeout, rate-limit, provider failure, offline, malformed, partial and image-failure states preserve valid local data.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **18.8 — Verify logging/error sanitization.**
+
+  Files: `server/`, provider adapters/media route, rich-domain UI, tests/evidence.
+
+  Acceptance: Browser and logs do not expose credentials, Authorization headers, raw secrets or sensitive upstream dumps.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 18 — Hardening/security gate.**
+
+  Files: Phase 18 evidence.
+
+  Acceptance: No tested local/media failure corrupts valid data; if optional providers are configured, no provider/media failure corrupts, misrepresents or leaks local data or credentials.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+## Phase 19 — Complete V2 final acceptance
+
+- [ ] **19.1 — Run the complete current Node suite after the final implementation change.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Final current pass/fail count is recorded; historical counts are not reused.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.2 — Run browser smoke/regression across every top-level route.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: No unrelated domain regression, duplicate mount, uncaught error or failed expected local asset.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.3 — Verify complete credential-free Movies/Series flow; add optional-provider flow only if configured.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Search, movie/series parity, pagination, explicit Add, detail/poster/backdrop, status/watchlist, untrack, reload, offline, errors and keyboard pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.4 — Verify complete credential-free Games flow; add optional-provider flow only if configured.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Search, Add, tracker inference/correction, story+weekly, resources/sessions/journal/spotlight, reload/offline/errors pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.5 — Verify complete curated/local Explore flow; add optional-provider flow only if configured.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Curated/local ranking/preferences/Surprise Me/search/detail/save/trip-board/offline/fallback pass; if an optional provider is configured, its remote search/detail/save flow also passes; More To Explore remains final.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.6 — Verify duplicate prevention, refresh ownership and rejected-write behavior.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: All integrity contracts pass.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.7 — Verify content-aware cinematic and route cleanup.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Movies/Games/Explore current selection owns its environmental art; stale/leaked art is absent.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.8 — Verify Full/Subtle/Off/reduced motion, keyboard/accessibility and the global modern icon system.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Focus, modal behavior, ARIA/async feedback, alt/decorative treatment, touch targets and motion contract pass; all tabs retain the verified coherent modern application-icon language with no broken, clipped, inconsistent or inaccessible icon-only controls.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.9 — Verify responsive matrix.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Existing 1440/1024/760/390 widths plus approximately 1920×1080 and 2048×1152 pass without overflow/clipping/unreadable media treatment.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.10 — Verify security and network/media behavior.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Secrets blocked, no arbitrary proxy, safe media route, bounded caches, no secret-bearing console/network output.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.11 — Verify added/imported rich-domain backup/export/import and offline reopen; provider-origin cases are conditional.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: Representative title, game and destination records round-trip successfully under the existing backup contract; configured optional-provider-origin records are included when present.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **19.12 — Reconcile every V2 checklist status and retained evidence.**
+
+  Files: `tests/`, all domains, `docs/implementation-evidence/phase19/`, authoritative docs.
+
+  Acceptance: No V2 item remains Pending, Implemented/Not Verified or Blocked.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 19 — Final V2 delivery gate before additive Phases 20–25.**
+
+  Files: `docs/IMPLEMENTATION-STEPS.md`, Phase 19 evidence, final current test/browser run.
+
+  Acceptance: All original-plan and V2 requirements pass together. Phases 20–25 may now execute; Gate 25 then authorizes Phase 26, and Phase 13.3 remains blocked until Gate 26.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+
+
+# Phase 20 — Reference-Led Full-Viewport Cinematic Fidelity
+
+> **Scope rule:** Full reference-led cinematic acceptance applies to exactly eight redesigned main worlds: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes and Settings. Shortcuts, Productivity, Notes and the legacy Projects alias remain mandatory compatibility/functionality surfaces, but receive only the visual treatment assigned by R0. Do not invent extra redesign worlds merely because they existed as historical top-level routes.
+
+## 20.1 World-by-world visual audit
+
+Audit the actual approved reference image and the implementation for:
+
+- [ ] Home
+- [ ] Work
+- [ ] Personal / Fitness
+- [ ] Explore
+- [ ] Games
+- [ ] Movies & Series
+- [ ] Projects & Notes
+- [ ] Settings
+
+For each world record:
+
+- [ ] exact reference image opened and visually inspected;
+- [ ] shared OneSpace visual-family traits;
+- [ ] world-specific subject/atmosphere;
+- [ ] Full entry visible at normal viewing distance;
+- [ ] settle behavior;
+- [ ] ambient state;
+- [ ] whether environment uses more than only the hero card;
+- [ ] whether the world is distinguishable without relying only on title text;
+- [ ] whether implementation preserves canonical route/data ownership rather than copying illustrative screenshot semantics literally.
+
+Also audit retained Shortcuts/Productivity/Notes/Projects compatibility surfaces for their R0-assigned visual treatment, routing and usability.
+
+**Acceptance:** Technical animation presence alone is insufficient; screenshot filename/manifest reading alone is not proof that the reference was inspected.
+
+## 20.2 Page-level environmental composition
+
+- [ ] Decouple environmental scene composition from bounded content-column width.
+- [ ] Extend world-specific environmental art/depth/light into safe unused viewport areas.
+- [ ] Keep readable content comfortably bounded.
+- [ ] Keep decorative scene layers pointer-transparent.
+- [ ] Do not enlarge forms/cards purely to consume width.
+- [ ] Avoid generic filler animation.
+- [ ] Preserve the common premium warm-interior OneSpace family while keeping each world's scene recognizable.
+
+**Acceptance:** Wide desktop must not look like a small central island surrounded by dead empty space.
+
+## 20.3 Strengthen weak world scenes
+
+For every reference-led world that fails 20.1 or 20.2:
+
+- [ ] improve reference-specific subject/composition;
+- [ ] refine/add approved licensed local artwork or procedural layers;
+- [ ] add visible staged depth/light/reveal;
+- [ ] add restrained ambient motion derived from the scene;
+- [ ] preserve readability;
+- [ ] preserve accessibility;
+- [ ] preserve interaction stability.
+
+Required shorthand directions (the pixels in the approved references remain authoritative):
+
+- Home — premium living hub / city-view command space
+- Work — focused productivity studio
+- Personal / Fitness — wellness and training environment
+- Explore — travel studio / destination vista
+- Games — premium gaming room
+- Movies & Series — premium home cinema
+- Projects & Notes — creative planning/knowledge studio
+- Settings — calm control/system environment
+
+## 20.4 Full entry choreography
+
+- [ ] Genuine Full-mode main-world entry performs approximately 2–5 seconds of staged visual change.
+- [ ] More than one visible stage exists.
+- [ ] Sequence is not merely fade/gradient.
+- [ ] Page remains usable.
+- [ ] Internal filtering/editing/detail updates do not replay full entry.
+- [ ] Leaving and later re-entering resets/replays the main-world entry correctly.
+
+## 20.5 Ambient / alive state
+
+- [ ] Entry settles into restrained visible ambient movement.
+- [ ] Ambient remains subordinate to content.
+- [ ] Text/forms/buttons/focus targets do not drift.
+- [ ] Main world remains recognizably alive after entry completes.
+- [ ] Ambient motion is plausible for the actual approved scene instead of generic starfield/particle reuse.
+
+## 20.6 Responsive + ultrawide matrix
+
+Verify each of the eight reference-led worlds at:
+
+- [ ] 390 px
+- [ ] 760 px
+- [ ] 1024 px
+- [ ] 1440 px
+- [ ] 1920 px
+- [ ] representative ultrawide, preferably about 3440×1440
+
+For every width verify:
+
+- [ ] no document overflow;
+- [ ] no unintended clipping;
+- [ ] no broken visible scene media;
+- [ ] intentional artwork crop;
+- [ ] readable content;
+- [ ] stable controls;
+- [ ] no dead-space cinematic failure;
+- [ ] no pointer-event interception by decorative layers.
+
+Retained compatibility routes/surfaces must still pass their applicable responsive/accessibility checks even when they do not have independent world-level reference fidelity.
+
+## 20.7 Motion-intensity matrix
+
+- [ ] Full — visibly cinematic on the eight main worlds.
+- [ ] Subtle — observably reduced but still world-specific.
+- [ ] Off — still.
+- [ ] prefers-reduced-motion — genuinely still.
+- [ ] touch/coarse pointer — no hover/parallax dependency.
+
+## 20.8 Evidence
+
+Persist:
+
+- [ ] world-by-world acceptance JSON;
+- [ ] explicit reference-image inspection record for all eight worlds;
+- [ ] representative screenshots at every required width;
+- [ ] Full/Subtle/Off/reduced-motion results;
+- [ ] browser observations for entry and ambient state;
+- [ ] exact fixes for every weak world;
+- [ ] compatibility-surface classification/results.
+
+### Gate 20 — Reference-Led Full-Viewport Cinematic Fidelity
+
+**PASS only if all eight reference-led worlds are visually distinct within one coherent OneSpace family, visibly alive in Full, correctly still when required, and intentionally composed at desktop/ultrawide widths; retained compatibility surfaces must satisfy their R0 classification without being forced into invented extra worlds.**
 
 ---
 
-## Phase 12 — Verification and delivery
+# Phase 21 — Global Icon Visual-Quality Completion
 
-- [ ] **12.1** `node --test tests/` — all suites, including `structure.test.js`.
-- [ ] **12.2** New tests present and passing: structural (1.9), domain boundaries (Gate 3), hidden-shortcut round trip (7.1), tracker-type inference (8.2), weekly reset (8.6), toggle involution (8.8), untrack (9.1), provider normalisation and error/offline states (6.3).
-- [ ] **12.3** Browser smoke over all 11 routes via `tests/browser-smoke.mjs` — `routes(tab)`, `layout(tab)`, `workLifecycle(tab)`.
-- [ ] **12.4** Navigation, add/edit/delete, modal cancel, reload persistence, filters, checkboxes, close/reopen, backlog/history, reminders, image fallback, external links.
-- [ ] **12.5** Work hierarchy and close-all; Personal delete confirmation; Explore explanations and fallback; game links and defaults across genres **and both tracker types**; movie and series genre views.
-- [ ] **12.6** Backup export/import with all new data; reset behaviour; unrelated `localStorage` keys preserved.
-- [ ] **12.7** Keyboard-only pass and reduced-motion pass — every route genuinely still.
-- [ ] **12.8** Layout pass at 1440 / 1024 / 760 / 390 px against the 0.6 baseline — no overflow, no overlap, no broken images.
-- [ ] **12.9** Offline pass — provider unreachable gives a visible degraded state, never a silent local fallback presented as global results.
-- [ ] **12.10** Image-fallback pass: `$env:MISSING_ASSET = 'assets/destinations/azores.svg'` on the disposable server.
-- [ ] **12.11** Every button from inventory 0.5 has a success test and an applicable cancel / error / persistence test.
-- [ ] **12.12** Every box in this file is ticked, or carries a `[~]` and a written reason.
-- [ ] **GATE 12:** zero uncaught console errors on every tested route.
+## 21.1 Current icon inventory
+
+Audit application-control icons across:
+
+- [ ] Home
+- [ ] Work/Projects
+- [ ] Personal
+- [ ] Explore
+- [ ] Games
+- [ ] Movies & Series
+- [ ] Shortcuts
+- [ ] Productivity
+- [ ] Notes
+- [ ] Settings
+- [ ] shared navigation
+- [ ] dialogs
+- [ ] search/filter controls
+- [ ] cards
+- [ ] empty/error states
+- [ ] shared actions
+
+For each icon mark:
+
+`retain / refine / replace / source-identity exception`
+
+## 21.2 Visible modernization
+
+Refine or replace visually weak icons.
+
+Verify:
+
+- [ ] coherent geometry;
+- [ ] coherent stroke/fill philosophy;
+- [ ] optical size;
+- [ ] alignment;
+- [ ] spacing;
+- [ ] contrast;
+- [ ] crisp rendering;
+- [ ] no dated/generic treatment.
+
+## 21.3 Shared semantic consistency
+
+Verify recognizable shared glyphs for:
+
+- [ ] add
+- [ ] edit
+- [ ] delete/remove
+- [ ] back
+- [ ] more
+- [ ] favorite
+- [ ] search
+- [ ] filter
+- [ ] sort
+- [ ] save
+- [ ] restore
+- [ ] open/play
+- [ ] close
+- [ ] retry
+- [ ] expand/collapse
+- [ ] navigation
+
+No conflicting/random glyphs without a documented reason.
+
+## 21.4 Accessibility and interaction
+
+- [ ] accessible name for icon-only actions;
+- [ ] visible focus;
+- [ ] adequate touch target;
+- [ ] correct pressed/expanded/current state where applicable;
+- [ ] useful tooltip where needed;
+- [ ] decorative icons do not create redundant announcements;
+- [ ] no emoji/Unicode substitute controls.
+
+## 21.5 Visual verification matrix
+
+Inspect:
+
+- [ ] dark
+- [ ] light
+- [ ] all supported palettes
+- [ ] 1440
+- [ ] 1024
+- [ ] 760
+- [ ] 390
+
+### Gate 21 — Global Icon Visual Quality
+
+**PASS only if the application visibly reads as one polished modern icon system, not merely a technically consistent SVG implementation.**
 
 ---
+
+# Phase 22 — Local Catalogue / Real Media Completion and Optional-Provider Boundary
+
+## 22.1 Credential-free production readiness
+
+- [ ] Movies & Series search/details work from bundled/local data.
+- [ ] Games search/details work from bundled/local data.
+- [ ] Explore discovery/details work from bundled/local data.
+- [ ] Real repository-local media renders where supplied and licensed.
+- [ ] Missing fields/media have truthful deterministic fallbacks.
+- [ ] No secret file or network provider is required to start/use the core product.
+- [ ] Browser code contains no provider credential dependency.
+
+## 22.2 Optional provider contract — conditional only
+
+Run only for a provider explicitly approved/configured by the user. Verify server-side credential isolation, normalization, cancellation/latest-request ownership, error/offline state, provenance/attribution and local persistence. Deterministic mocks may test contract behavior; mocks never prove live access.
+
+If no provider is configured, record `OPTIONAL PROVIDER — NOT CONFIGURED / NOT REQUIRED` and continue. This is a valid terminal state for the credential-free product.
+
+## 22.3 Media boundary
+
+For every local or optional-provider media role verify approved source identity, safe type/size handling, role-appropriate sizing/cropping, fallback, attribution/provenance where required and no arbitrary unsafe URL proxying.
+
+### Gate 22 — Credential-Free Catalogue / Media Readiness
+
+PASS requires the local/bundled product and real local media/fallback contract to work end-to-end. Optional providers must be secure if configured, but live credentials are **not** required for Gate 22.
+
+---
+
+# Phase 23 — Game Enrichment and Tracker Intelligence
+
+## 23.1 Added/imported game is immediately first-class
+
+On explicit Add:
+
+- [ ] resolve required available detail from the local/imported canonical source; if an optional provider is explicitly configured, provider detail may enrich it;
+- [ ] normalize source identity (provider identity only when the record actually originates from an optional provider);
+- [ ] normalize title;
+- [ ] normalize description;
+- [ ] normalize cover;
+- [ ] normalize background/key art;
+- [ ] normalize genres/tags;
+- [ ] normalize platforms;
+- [ ] normalize release metadata;
+- [ ] normalize attribution where required;
+- [ ] collect tracker-inference signals;
+- [ ] validate canonical game record.
+
+Immediately after successful Add:
+
+- [ ] local library card appears;
+- [ ] available real cover appears;
+- [ ] description appears;
+- [ ] detail opens;
+- [ ] background/key art can participate in Games environment;
+- [ ] tracker exists;
+- [ ] reload preserves game and tracker;
+- [ ] no second manual metadata setup is required.
+
+If description/media is genuinely unavailable, show explicit fallback rather than fabricated data.
+
+## 23.2 Transaction correctness
+
+The logical Add operation must not report success before required local persistence succeeds.
+
+Verify:
+
+- [ ] game record persists;
+- [ ] confirmed tracker type persists;
+- [ ] tracker record persists;
+- [ ] dependent initialization succeeds;
+- [ ] failed multi-key write rolls back or enters explicitly documented safe recovery;
+- [ ] UI success appears only after persistence success.
+
+## 23.3 Tracker classification
+
+Primary inferred types:
+
+- [ ] weekly/live-service
+- [ ] story/campaign
+- [ ] custom/unknown when evidence is insufficient
+
+Inference uses actual signals, not fuzzy title similarity.
+
+The user can correct inference before save.
+
+Confirmed type becomes user-owned state.
+
+`Diablo Immortal` is a required weekly/live-service reference example.
+
+## 23.4 Select and prove progression-data source strategy
+
+Before any game is claimed to have complete campaign progression:
+
+- [ ] identify exact progression source/provider;
+- [ ] record access mode: API / curated local / approved maintained dataset;
+- [ ] document licensing/terms/attribution;
+- [ ] document source version/update strategy;
+- [ ] document completeness: complete / partial / unknown;
+- [ ] document available hierarchy depth;
+- [ ] document whether missions/quests are supplied;
+- [ ] document whether ordered objectives/steps are supplied;
+- [ ] document stable mission/objective identity strategy;
+- [ ] create deterministic test fixtures;
+- [ ] do not assume RAWG/IGDB/another catalog provider contains mission-by-mission data unless actual provider capability proves it.
+
+If no legitimate complete source exists, use the incomplete-progression path.
+
+## 23.5 Weekly/live-service tracker
+
+For recurring/live-service games:
+
+- [ ] inferred type defaults to weekly;
+- [ ] user can correct before persistence;
+- [ ] confirmed weekly tracker is created immediately;
+- [ ] approved game-specific recurring tasks are populated when available;
+- [ ] cadence/reset is explicit;
+- [ ] completion persists;
+- [ ] reload persists;
+- [ ] unrelated Diablo tasks are never copied to another game.
+
+Acceptance examples:
+
+- [ ] Diablo Immortal
+- [ ] at least one additional live-service game
+
+## 23.6 Story/campaign progression model
+
+Canonical hierarchy:
+
+`Game -> Act/Chapter/Region/Level -> Mission/Quest -> ordered Objective/Step`
+
+Implement support for:
+
+- [ ] grouping;
+- [ ] canonical ordering;
+- [ ] mission completion;
+- [ ] optional objective/step completion;
+- [ ] progress calculation;
+- [ ] reload persistence;
+- [ ] backup round trip;
+- [ ] accessibility/keyboard interaction.
+
+## 23.7 Complete supported campaign ingestion
+
+Use at least one campaign game with an approved complete progression source.
+
+For a supported complete-progression game:
+
+- [ ] load every mission/quest represented by the approved source;
+- [ ] preserve act/chapter/region/level grouping where applicable;
+- [ ] preserve canonical order;
+- [ ] load ordered objectives/steps where supplied;
+- [ ] use stable IDs;
+- [ ] record source/provenance/version;
+- [ ] populate the tracker automatically as part of the supported Add/enrichment flow;
+- [ ] do not require manual recreation of the campaign;
+- [ ] do not announce `complete` if source population fails;
+- [ ] preserve user completion during metadata refresh.
+
+Never invent mission or objective data.
+
+## 23.8 Incomplete/unsupported campaign progression
+
+Use at least one provider-added campaign game without an approved complete progression source.
+
+Verify:
+
+- [ ] OneSpace does not invent missions;
+- [ ] complete progression is not claimed;
+- [ ] UI states `full progression unavailable/incomplete` or equivalent;
+- [ ] generic/custom story tracker remains usable;
+- [ ] image/description/other metadata remain available;
+- [ ] later enrichment is possible.
+
+## 23.9 Enrichment merge safety
+
+If richer progression metadata arrives later:
+
+- [ ] preserve completed state;
+- [ ] preserve notes;
+- [ ] preserve custom tasks/objectives;
+- [ ] preserve sessions/journal;
+- [ ] preserve confirmed tracker type;
+- [ ] prevent duplicate missions via deterministic IDs;
+- [ ] unmatched user-owned content is not silently deleted.
+
+### Gate 23 — Game Enrichment and Tracker Intelligence
+
+PASS requires:
+
+- added/imported game immediately shows available local image + description; optional-provider-origin game follows the same rule when present;
+- a tracker exists immediately;
+- Diablo Immortal/reference live-service flow produces weekly tracking;
+- at least one other live-service game proves generality;
+- campaign inference produces story tracking;
+- at least one complete supported campaign proves full chapter/mission/objective ingestion;
+- at least one unsupported campaign proves safe no-hallucination behavior;
+- refresh never erases user progress.
+
+---
+
+# Phase 24 — Global Search / Filter Integration
+
+## 24.1 Inventory every visible discovery criterion
+
+For Movies/Series, Games and Explore, list every visible search/filter control.
+
+Classify each as exactly one:
+
+- [ ] provider-side
+- [ ] canonical post-filter
+- [ ] local-only
+- [ ] unsupported globally
+
+Persist the mapping.
+
+## 24.2 Movies & Series mapping
+
+Verify applicable:
+
+- [ ] Movie / Series
+- [ ] genre
+- [ ] year/release range if exposed
+- [ ] other visible supported criteria
+
+If an optional provider is configured, provider-supported criteria must participate in that provider search. Without a provider, the same visible criteria must either work against bundled/local data or be truthfully marked unsupported for global/remote search; no criterion may be silently ignored.
+
+## 24.3 Games mapping
+
+Verify applicable:
+
+- [ ] genre
+- [ ] tag
+- [ ] platform
+- [ ] release criteria
+- [ ] live-service/campaign characteristics if exposed
+- [ ] other visible supported criteria
+
+## 24.4 Explore mapping
+
+Verify applicable:
+
+- [ ] theme/category
+- [ ] location/destination criteria
+- [ ] season
+- [ ] budget/duration where supported
+- [ ] other visible supported criteria
+
+## 24.5 No silent ignore
+
+- [ ] no visible selected criterion is silently discarded;
+- [ ] unsupported global criteria are explicitly represented;
+- [ ] local-only behavior is clear;
+- [ ] post-filter behavior is documented;
+- [ ] post-filtering does not falsely imply that a partially fetched provider page is exhaustive.
+
+## 24.6 Provenance in results
+
+Keep clearly distinct:
+
+- [ ] In your catalog / local
+- [ ] Global search results / provider
+
+## 24.7 Combined-selection verification
+
+For each rich domain, test representative combinations of multiple selected criteria and verify the returned set matches the documented semantics.
+
+### Gate 24 — Discovery Semantics
+
+PASS requires that a user can understand what was searched locally, what was filtered locally, and—only if an optional provider is configured—what was searched remotely or is unsupported by that provider.
+
+---
+
+# Phase 25 — Final User-Visible Product Acceptance
+
+This is the last user-visible final-fidelity gate before the Phase 26 whole-project integrity audit.
+
+## 25.1 Route-by-route final visual acceptance
+
+Walk every route as a user.
+
+Verify:
+
+- [ ] domain visual identity;
+- [ ] Full cinematic entry;
+- [ ] ambient alive state;
+- [ ] wide/ultrawide environment;
+- [ ] modern icon quality;
+- [ ] readable content;
+- [ ] no regressions.
+
+## 25.2 Movies & Series final flow
+
+- [ ] live search
+- [ ] movie
+- [ ] series
+- [ ] real provider media where available
+- [ ] combined filters
+- [ ] details
+- [ ] explicit Add
+- [ ] persistence
+- [ ] offline reopen
+- [ ] untrack/remove
+
+## 25.3 Games final flow
+
+- [ ] live search
+- [ ] real provider cover/background where available
+- [ ] description immediately after Add
+- [ ] tracker inference
+- [ ] correction before save
+- [ ] weekly/live-service flow
+- [ ] complete supported campaign progression flow
+- [ ] unsupported progression safe fallback
+- [ ] persistence
+- [ ] offline reopen
+
+## 25.4 Explore final flow
+
+- [ ] curated search/recommendations
+- [ ] global provider discovery
+- [ ] real imagery
+- [ ] combined filters
+- [ ] detail
+- [ ] Save
+- [ ] trip board
+- [ ] notes/priority/status actions
+- [ ] offline saved detail
+
+## 25.5 Final responsive matrix
+
+Verify full product at:
+
+- [ ] 390
+- [ ] 760
+- [ ] 1024
+- [ ] 1440
+- [ ] 1920
+- [ ] ultrawide approximately 3440
+
+## 25.6 Accessibility / interaction
+
+- [ ] keyboard navigation
+- [ ] focus visibility
+- [ ] modal focus trap
+- [ ] close/cancel
+- [ ] focus return
+- [ ] ARIA states
+- [ ] aria-live feedback
+- [ ] touch/coarse pointer
+- [ ] reduced motion
+- [ ] no required hover-only behavior
+
+## 25.7 Persistence / backup / recovery / security
+
+- [ ] reload persistence
+- [ ] v2 import
+- [ ] v3 import
+- [ ] v4 import
+- [ ] current v4 export
+- [ ] provider-origin round trip
+- [ ] rejected-write rollback
+- [ ] secret boundary
+- [ ] offline degradation
+- [ ] no data loss during provider refresh
+
+## 25.8 Evidence reconciliation
+
+- [ ] every Phase 20–25 item has persistent evidence;
+- [ ] no `PENDING`;
+- [ ] no `IMPLEMENTED / NOT VERIFIED`;
+- [ ] no unresolved `BLOCKED`;
+- [ ] approved exceptions are explicit and user-authorized;
+- [ ] historical evidence remains intact;
+- [ ] current evidence reflects current code.
+
+### Gate 25 — Final Product Gate
+
+Gate 25 completes user-visible product acceptance and authorizes Phase 26.
+
+It does **not** authorize Phase 13.3 directly.
+
+---
+
+
+# Phase 26 — Final Whole-Project Integrity and Release-Readiness Audit
+
+> **Entry condition:** Gate 25 is VERIFIED.
+>
+> Phase 26 adds no new product feature family. It audits the fully assembled final system as one release candidate. Valid prior evidence may be reused when later changes did not invalidate it, but every affected subsystem must be re-verified and the complete final automated suite must run after the last implementation change.
+>
+> Apply the Mandatory execution and verification contract to every 26.x item. No Phase 26 item may be skipped.
+
+- [ ] **26.1 — Freeze and record the final candidate before audit changes.**
+
+  Files: Git/repository state, `docs/implementation-evidence/phase26/`.
+
+  Acceptance: Record working directory, Git root, branch, HEAD, `git status --short --untracked-files=all`, `git diff`, intentional uncommitted changes and confirmation that Gate 25 is VERIFIED. Record the normal user-data origin and a disposable test origin. Destructive reset/import/failure tests must run on the disposable origin unless the user explicitly authorizes otherwise. Unrelated feature expansion is frozen.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.2 — Audit Git and repository hygiene.**
+
+  Files: entire OneSpace project tree, Git metadata relevant to the project.
+
+  Acceptance: No unexplained temp/debug/copy/backup/generated artifact, obsolete duplicate loaded module, unintended outside-project mutation or unrelated broad change remains. Cleanup is explicit and safe; no destructive reset/clean is used merely to manufacture a clean tree.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.3 — Audit `.gitignore`, local secret placement and tracked-secret state.**
+
+  Files: `.gitignore`, `config/`, Git index, provider configuration.
+
+  Acceptance: Real credentials exist only in approved local ignored storage; expected secret/local patterns are ignored; committed examples contain placeholders only; `git ls-files` shows no real secret file; `git check-ignore` confirms representative local secret files are ignored. Inspect Git path history for secret/config paths and evaluate any known prior exposure using safe path metadata/redacted fingerprints rather than printing raw values. If a real credential was ever committed/pushed, rotation/revocation and the chosen history-remediation decision must be recorded before final PASS. Evidence must never print the real value.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.4 — Prove final server/browser credential isolation.**
+
+  Files: `server/`, `config/`, browser source/network, tests/evidence/logs.
+
+  Acceptance: Representative secret `.json` and otherwise-servable `.js` paths are denied; browser HTML/JS/Network/Sources cannot retrieve credentials; errors/logs/evidence/screenshots/fixtures contain no real secret; provider Authorization data remains server-side.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.5 — Audit final source structure, references and execution/load order.**
+
+  Files: `index.html`, all source folders, CSS, assets, server, tests.
+
+  Acceptance: Every loaded script/style and repo-relative require/import resolves; assets resolve or use approved fallback; classic-script order remains valid; side-effect ownership is intentional; there is no duplicate mount/controller; Home remains the only general all-domain aggregator, while Projects & Notes may be a constrained portal/aggregation surface over canonical Work-project and Notes ownership without parallel stores.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.6 — Perform the final route-by-route UI-quality walkthrough.**
+
+  Files: browser, all route markup/styles/modules, `docs/implementation-evidence/phase26/`.
+
+  Acceptance: All eight reference-led worlds (Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes, Settings) plus every retained compatibility surface/alias (including Shortcuts, Productivity, Notes and legacy Projects as classified by R0) are inspected for hierarchy, hero/header, typography, spacing, cards/grids, forms/controls, dialogs/sheets, loading/empty/error/disabled/success states, tooltips, focus, long text, media/fallback and overall visual consistency. Reference fidelity applies to the eight worlds; compatibility surfaces must be coherent, usable and visually finished.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.7 — Perform the final application-icon audit across the complete UI.**
+
+  Files: all route/shared UI surfaces, icon helpers/assets.
+
+  Acceptance: One coherent modern application-control icon language remains; shared actions use consistent recognizable glyphs; no accidental emoji/unrelated Unicode control remains; no broken/missing/clipped/misaligned icon exists; icon-only controls are accessible; light/dark/palette states remain legible; legitimate brand/provider/content marks remain exceptions.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.8 — Perform the final cinematic lifecycle and composition audit on every distinct scene.**
+
+  Files: scene controller, route cinematic CSS/markup, browser visual evidence.
+
+  Acceptance: Each of the eight reference-led main worlds proves its approved reference-derived identity, Full ENTRY/WAKE-UP, SETTLE, AMBIENT/ALIVE and EXIT/RESET; Full entry is visibly staged, not technically-only; page-level composition uses wide/ultrawide side fields intentionally; selected Movie/Game/Destination art integrates correctly; internal updates do not replay full entry; route cleanup prevents art/theme leakage; Full/Subtle/Off/reduced-motion states are correct; decorative layers do not capture controls; readability remains intact. Retained compatibility surfaces satisfy only the cinematic/visual treatment assigned by R0 and are not forced into separate world scenes.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.9 — Reconcile final Themes/Settings integration.**
+
+  Files: Settings UI/controller, theme tokens, cinematic preferences, storage.
+
+  Acceptance: Auto/light/dark, all delivered palettes, accents, density, scene intensity, motion, start page, Games themes, Movies themes, provider status, reset preferences, reset all and export/import entry points work together and survive reload without silently destroying unrelated user state or palette/theme choices.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.10 — Reverify final integrated Home, Work/Projects, Personal, Productivity, Notes and Shortcuts behavior.**
+
+  Files: corresponding domain modules, existing Phase 12 evidence, browser.
+
+  Acceptance: Every core domain is accounted for in the final build. Still-valid Phase 12 evidence may be referenced, but any behavior affected by later phases is re-run. Work lifecycle/history/backlog, Personal goals/routines/habits, Productivity timers/tasks, Notes CRUD/pinning/search, Home aggregation/Quick Access and Shortcut built-in/custom/hide/restore/order/category behavior remain correct and persistent.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.11 — Reverify Movies & Series as a complete final integrated flow.**
+
+  Files: `movies/`, provider/server/media layers, storage, browser.
+
+  Acceptance: Bundled/local discovery, movie/series distinction, search/typeahead, local filter semantics, details, valid local poster/backdrop/fallback, explicit Add/Track, watchlist/status/watched, untrack/remove, reload, offline reopen, provenance/attribution and selected-content cinematic integration pass together. If an optional provider is explicitly approved/configured, additionally verify its supported filters/pagination/details/media and provider-to-offline transition without making that path a credential-free release requirement.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.12 — Reverify Games as a complete final integrated flow.**
+
+  Files: `games/`, provider/progression sources, storage, browser.
+
+  Acceptance: Bundled/local discovery, supported local filters, media/description/metadata, explicit Add, tracker inference and user correction, Diablo Immortal weekly reference, at least one additional live-service example from legitimate local/test data, campaign/story flow, approved complete-progression example, incomplete/unknown progression fallback, resources, sessions, journal, progress preservation, reload/offline and selected-content cinematic integration all pass. If an optional provider is explicitly approved/configured, additionally verify provider enrichment/refresh without overwriting user progress. No progression content is invented.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.13 — Reverify Explore as a complete final integrated flow.**
+
+  Files: `explore/`, destination provider/server/media layers, storage, browser.
+
+  Acceptance: Curated/bundled destination discovery, preferences, combined filters, ranking/explanations, Surprise Me, details, valid imagery/fallback, Save/remove, trip-board notes/priority/status/order, reload, offline saved records, attribution/provenance and cinematic integration pass together. If an optional destination provider is explicitly approved/configured, additionally verify its global discovery and provider-disabled saved-record behavior.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.14 — Run the final responsive and wide/ultrawide matrix across all top-level routes.**
+
+  Files: browser evidence/measurements.
+
+  Acceptance: Every top-level route is checked at 390, 760, 1024, 1440, 1920 and a representative ultrawide viewport (preferably approximately 3440×1440). No horizontal document overflow, unintended overlap, clipped control, broken visible media or unusable dialog/sheet remains; environmental crop and side-field composition are intentional and content remains readable.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.15 — Run the final accessibility and input audit.**
+
+  Files: browser, shared UI/dialog helpers, all routes.
+
+  Acceptance: Keyboard navigation, logical Tab order, Enter/Space, Escape, visible focus, modal/sheet focus trap, focus return, accessible names, `aria-live`, `aria-current`, `aria-expanded`, `aria-pressed`, checkbox/radio semantics, touch targets, hover independence and reduced-motion behavior are verified in the final build.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.16 — Run final storage, backup, migration, rollback and reset integrity.**
+
+  Files: storage/backup code, fixtures, local/imported rich-domain records and any configured optional-provider-origin records, browser/tests.
+
+  Acceptance: Current v4 export, complete v2/v3/v4 import, malformed/invalid rejection, rejected-write rollback, unrelated-key preservation where required, local/imported Movies/Games/Destinations, game tracker/progression, Work/Personal/Notes/Explore state, reset preferences and reset all behave according to contract. If optional-provider-origin records exist, include them as conditional cases. No final feature silently falls outside backup/persistence support.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.17 — Verify the final live-provider-to-offline transition for every intended production rich domain.**
+
+  Files: live provider configuration, server, browser, storage.
+
+  Acceptance: For Movies/Series, Games and Destinations, perform the credential-free local/bundled search -> Add/Save -> reload -> reopen flow and prove user-owned state, local records and media/fallback behavior. If an optional provider is explicitly configured, additionally test provider available -> provider unavailable -> reopen saved record. `NOT CONFIGURED` is an allowed terminal state for an optional provider and does not block Gate 26.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.18 — Verify final console, network and runtime health.**
+
+  Files: browser console/network evidence, server/runtime logs.
+
+  Acceptance: No uncaught application exception, accidental application 404, credential leakage, duplicate mount/listener symptom, uncontrolled provider request storm, stale-response overwrite, late-detail reopen, cross-route theme/art leakage, runaway timer/animation loop, obvious unbounded DOM/runtime growth or repeated full-resolution provider-media fetch for card/list roles remains. Observed network traffic matches the documented browser -> local server -> provider boundary. Disposable test servers/processes opened by the audit are stopped after their evidence is complete.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.19 — Run the complete final automated regression after the last implementation fix.**
+
+  Files: `tests/`, specialized test commands defined by the repository, evidence.
+
+  Acceptance: `node --test tests/` plus every required specialized structural/browser/provider/storage/tracker suite not included by that command passes after the final code change. Record actual final counts; historical counts are supporting context only.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.20 — Audit persistent evidence integrity.**
+
+  Files: `docs/implementation-evidence/`, audit JSONL, screenshots/measurements, test outputs.
+
+  Acceptance: Every required terminal state has current evidence; evidence corresponds to current code; mock/live evidence is distinct; visual evidence matches claimed widths/states; no secret is exposed; no stale evidence is presented after invalidating changes; asset/provider provenance plus licensing/attribution manifests still match the assets/data actually shipped or displayed; approved exceptions are explicit; no unexplained PENDING, IMPLEMENTED / NOT VERIFIED or BLOCKED state remains.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.21 — Reconcile the full redesign authority set for technical consistency before final prose documentation.**
+
+  Files: `docs/agent-instructions.md`, `docs/IMPLEMENTATION-STEPS.md`, `docs/REVISED-IMPLEMENTATION-PLAN.md`, `docs/REDESIGN-INTEGRATION-GATE.md`, `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`, `docs/ui-reference/MANIFEST.md`, all eight reference images, `VERIFICATION.md`, `README.md`.
+
+  Acceptance: The full redesign authority set agrees on delivered scope, execution order, local-first/optional-provider semantics, secrets policy, scene-asset rules, reference-image mapping, cinematic lifecycle, world/submodule hierarchy, icon contract, Games tracker/progression behavior, filter semantics, backup compatibility and current verification truth. The actual images have been opened and matched to their worlds. This is a technical consistency check only; Phase 13.3 remains responsible for final documentation prose.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **26.22 — Perform the final Git/diff review and persist final repository-state evidence.**
+
+  Files: Git status/diff, `docs/implementation-evidence/phase26/`.
+
+  Acceptance: Final `git status --short --untracked-files=all` and `git diff` are inspected; every remaining change is intentional; no secret/temp artifact or unrelated outside-project change remains; final repository state is persistently recorded.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+- [ ] **Gate 26 — Whole-Project Final Integrity and Release Readiness.**
+
+  Files: all Phase 26 evidence, complete checklist, final test/browser/Git results.
+
+  Acceptance: Every 26.x item is VERIFIED and the complete assembled OneSpace repository/application has no unresolved functional, visual, UI, iconographic, cinematic, responsive, accessibility, persistence, backup, provider, media, security, secrets, Git, repository-structure, runtime, console/network, testing, evidence-integrity or authority-consistency issue. Every explicitly approved/configured provider is verified to its declared scope; absence of optional provider credentials is not a release blocker for the credential-free product.
+
+  If a Phase 26 defect is found, use:
+
+  `identify -> minimally fix -> affected automated regression -> affected browser/visual verification -> evidence update -> continue Phase 26`
+
+  Do not formally reopen a historical phase solely because Phase 26 found a regression.
+
+  | Status | Evidence |
+  |---|---|
+  | Pending | Pending |
+
+---
+
+# Final documentation rule
+
+**Phase 13.3 is last.**
+
+Final tail:
+
+`Gate 12 -> R0 -> R1 -> R2 -> R3 -> R4 -> R5 -> R6 -> reclassified Phase 14–25 obligations -> Gate 25 -> Phase 26 -> Gate 26 -> Phase 13.3 FINAL`
+
+Do not move Phase 13.3 earlier than Gate 26.
+
 
 ## Phase 13.3 — Final documentation
 
-- [ ] **13.3a** `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
-- [ ] **13.3b** `VERIFICATION.md` — a fresh acceptance run recording what was actually tested and what was not.
-- [ ] **13.3c** `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile with what Phase 6 actually delivered, so the two documents stop contradicting each other on the provider question.
-- [ ] **13.3d** Update the Progress table at the top of this file.
+352. [ ] **13.3.1** — `README.md` — folder structure, data model, provider setup and offline behaviour, server command, test commands, backup compatibility, cinematic interaction rules, accessibility behaviour, scope limits.
+
+   Files: The document named in this step. Acceptance: Documentation matches actual delivered behavior and recorded verification.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+353. [ ] **13.3.2** — `VERIFICATION.md` — a fresh acceptance run at the end; fix the `18973` → `18974` port error and the bare test filenames.
+
+   Files: The document named in this step. Acceptance: Documentation matches actual delivered behavior and recorded verification.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+354. [ ] **13.3.3** — `docs/REVISED-IMPLEMENTATION-PLAN.md` — reconcile the architecture/rationale with the actual delivered implementation.
+
+   Files: The document named in this step. Acceptance: Documentation matches actual delivered behavior and recorded verification.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+- [ ] **13.3.4** — Reconcile `docs/agent-instructions.md` with the final delivered scope and status without rewriting historical evidence.
+
+   Files: `docs/agent-instructions.md`. Acceptance: Standing product/scope wording, final sequence, Gate 26 result and any approved exceptions match the final evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+- [ ] **13.3.5** — Reconcile `docs/IMPLEMENTATION-STEPS.md` with the final evidence set.
+
+   Files: `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Detailed statuses, Progress table, Gate 26, Phase 13.3 items and all evidence references agree; no stale Pending/Verified contradiction remains.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+- [ ] **13.3.6** — Reconcile redesign support authorities and visual manifest with the final delivered product.
+
+   Files: `docs/REDESIGN-INTEGRATION-GATE.md`, `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`, `docs/ui-reference/MANIFEST.md`, actual reference images. Acceptance: Transition rules, local-first/optional-provider semantics, scene-asset rules, world/submodule hierarchy, reference mapping and final verified implementation agree; no stale proposed/draft instruction remains active.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |
+
+355. [ ] **Gate 13.3** — Confirm every planned step is implemented and verified and report the actual delivery evidence
+
+   Files: the full redesign authority set, all eight reference images, `docs/implementation-evidence/`, audit records. Acceptance: No unchecked original-plan, redesign/reclassified Phase 14–25, or Phase 26 implementation/verification requirement remains; Gate 26 has passed; all authority documents, manifest/reference mapping and README match the actual final delivered product and evidence.
+
+   | Status | Evidence |
+   |---|---|
+   | Pending | Pending |

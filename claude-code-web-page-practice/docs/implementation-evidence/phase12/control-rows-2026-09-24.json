@@ -1,0 +1,886 @@
+{
+  "item": 347,
+  "step": "12.13",
+  "date": "2026-09-24",
+  "method": "Current local OneSpace build in the in-app browser at disposable origins http://127.0.0.1:18974/ and http://127.0.0.1:18977/; each named current row was clicked and its visible result inspected. The browser profiles are test-only.",
+  "rows": {
+    "I0002": {
+      "success": "Explore Add Location opened Add Location dialog; completing name, country, required description and Add to trip board displayed Saved to your trip board and a card named Phase 12 audit place.",
+      "cancel": "Cancel closed the untouched Add Location form; trip board still showed 0 saved places.",
+      "error": "Submitting missing required fields kept the dialog open and focused the missing field; no card was added. With a rejected storage write, tests/domain-ui.test.js confirms Explore Add Location returns false without changing the board, and the shared dialog displays 'Changes could not be saved. Please try again.' while remaining open for retry. Both focused tests passed on 2026-09-24.",
+      "persistence": "The newly created card and 1 saved places count remained after browser reload."
+    },
+    "I0004": {
+      "success": "Searching Explore places for a returned 6 results loaded; clicking Load more changed the live status to 12 results loaded and rendered the next batch.",
+      "cancel": "No edit or draft exists; pagination is a transient read-only view action.",
+      "error": "Control is available only while more local results remain; no provider or write path is involved.",
+      "persistence": "Reload returned to Search to begin, consistent with transient pagination."
+    },
+    "I0006": {
+      "success": "In the disposable browser origin, a direct Shortlist click on the Ubud discovery card changed its action to disabled Saved and added Ubud to the trip board.",
+      "cancel": "This is an immediate atomic add with no draft. The trip board Remove action provides the inverse flow with its own confirmation; its cancel facet remains tracked under I0020.",
+      "error": "With actions.save rejecting the write, tests/discovery-ui-write-failure.test.js verifies an error status and no Saved state. tests/domain-ui.test.js separately verifies the underlying Explore save leaves the board unchanged when storage rejects the write.",
+      "persistence": "The Ubud trip-board card remained after browser reload."
+    },
+    "I0007": {
+      "success": "The Add Location dialog's Close dialog button hid the domain overlay.",
+      "cancel": "The dialog was closed without submitting a draft; the trip board remained at 3 saved places.",
+      "error": "This control performs no write or external request, so no write/provider error path applies.",
+      "persistence": "The trip board count stayed 3 after closing, and the previous Ubud save had survived the preceding reload. Focus returned to Add Location."
+    },
+    "I0014": {
+      "success": "On a fresh disposable origin with an empty trip board, clicking its Search destinations button loaded six discovery cards and focused the q search input.",
+      "cancel": "This is a read-only search action with no draft or record mutation.",
+      "error": "With an unmatched query, the same empty-board button showed 0 results loaded and the Broaden filters empty-state guidance while the board stayed empty.",
+      "persistence": "After reload, the transient result view returned to Search to begin; the board remained at 0 saved places."
+    },
+    "I0015": {
+      "success": "The saved card's Details button opened a dialog titled Phase 12 audit place with the stored description and country.",
+      "cancel": "Cancel closed the details dialog and returned to the board.",
+      "error": "Read-only dialog has no submit or write error path.",
+      "persistence": "Read-only view; underlying saved card survived reload as checked in I0002."
+    },
+    "I0016": {
+      "success": "The earlier Explore browser flow opened Edit trip for São Miguel, saved Trip notes and High priority, and showed the new values; see interaction-current-2026-09-24.json.",
+      "cancel": "The earlier browser flow changed Trip notes and canceled; the prior note remained.",
+      "error": "tests/domain-ui.test.js exercises the Edit trip handler with malformed day itinerary (rejected before write) and a rejected storage write (unchanged record). The shared dialog now keeps failed writes open and displays retry feedback.",
+      "persistence": "The saved note, priority and Researching status survived reload in interaction-current-2026-09-24.json."
+    },
+    "I0017": {
+      "success": "The earlier Explore browser flow opened Create trip plan, saved its title and Day 1 itinerary, and displayed the plan; see interaction-current-2026-09-24.json.",
+      "cancel": "The earlier browser flow canceled an edit of the plan and preserved the saved plan.",
+      "error": "tests/domain-ui.test.js exercises the Create trip plan handler with malformed day itinerary and a rejected storage write; neither changes the saved record. The shared dialog displays retry feedback after a failed write.",
+      "persistence": "Plan title and itinerary survived browser reload in interaction-current-2026-09-24.json."
+    },
+    "I0018": {
+      "success": "In the disposable browser origin, Move Ubud earlier changed trip-card order from second place / audit place / Ubud to second place / Ubud / audit place. The earlier Move Lake Bohinj earlier flow is also in interaction-current-2026-09-24.json.",
+      "cancel": "Ordering is atomic with no draft; Move later is its inverse action.",
+      "error": "The first card's Move earlier button was disabled. tests/domain-ui.test.js verifies a rejected storage write leaves the saved order unchanged and reports an error instead of shifting focus to a rerendered card.",
+      "persistence": "The new Ubud order survived browser reload."
+    },
+    "I0019": {
+      "success": "With two saved trip cards, Move Phase 12 audit place later reversed their displayed order; the first card's later button had been enabled while the final card's later button was disabled.",
+      "cancel": "Atomic ordering action has no draft or cancel path; the inverse Move earlier action is available.",
+      "error": "Out-of-range move is disabled in the rendered board. tests/domain-ui.test.js verifies a rejected storage write leaves the saved order unchanged and reports an error.",
+      "persistence": "The reversed card order remained after browser reload."
+    },
+    "I0020": {
+      "success": "The earlier browser Remove destination confirmation removed the Lake Bohinj card and returned the board count to one; see interaction-current-2026-09-24.json.",
+      "cancel": "The earlier Remove dialog's Cancel retained the card and trip plan.",
+      "error": "tests/domain-ui.test.js verifies the removal confirmation callback returns false on a rejected storage write, leaves the board unchanged and reports an error. The shared dialog test verifies false keeps the confirmation open for retry.",
+      "persistence": "The confirmed removal remained absent after browser reload in interaction-current-2026-09-24.json."
+    },
+    "I0026": {
+      "success": "On the fresh disposable origin, Games > My Games showed Hades with its story progress. Delete Hades opened Delete game?; confirming Delete removed the Hades card and displayed Game deleted.",
+      "cancel": "Cancel closed the confirmation, retained Hades and its 0/6 objective state, and returned focus to Delete Hades.",
+      "error": "tests/games-lifecycle.test.js exercises the actual deleteGame handler with a rejected storage transaction: the callback returns false, game/weekly tasks/sessions and rendered state remain unchanged, and error feedback appears.",
+      "persistence": "After browser reload and navigation back to Games > My Games, Delete Hades remained absent."
+    },
+    "I0027": {
+      "success": "Games > My Games > Spotlight Death Stranding selected Death Stranding in the main Game spotlight, changed its pressed selector, and opened Overview. After the transaction fix, the same card action selected Alan Wake 2 with the live announcement 'Alan Wake 2 selected. 0% complete.'",
+      "cancel": "Spotlight selection is atomic with no draft; selecting another game is the inverse action.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected two-key storage transaction leaves the previously selected spotlight and story tracker unchanged, emits error feedback, and does not announce/render the unpersisted game.",
+      "persistence": "Both Death Stranding before the fix and Alan Wake 2 after the fix remained selected when Games reopened after browser reload."
+    },
+    "I0028": {
+      "success": "Games > My Games > Alan Wake 2 > Open Progress selected the Mission Progress tab, focused its panel, and showed the 12-objective Alan Wake 2 tracker. The earlier Alan Wake 2 and Diablo Immortal story/weekly tracker inspections are in domain-regression-2026-09-24.json.",
+      "cancel": "This is a navigation action with no draft; the My Games tab returns to the source view.",
+      "error": "goToTracker now returns without navigating if the required Spotlight/selected-tracker transaction fails. tests/games-lifecycle.test.js verifies no tab or focus change on failure; the Spotlight transaction test verifies unchanged selection and error feedback.",
+      "persistence": "After browser reload and Games reopen, Mission Progress remained the selected Games tab with Alan Wake 2 selected."
+    },
+    "I0029": {
+      "success": "Games > My Games > Alan Wake 2 > Resources opened the Alan Wake 2 dialog with official, platform, news, guide and community links plus three suggested tracker tasks; domain-regression-2026-09-24.json also verifies Diablo Immortal resources.",
+      "cancel": "Close dialog hid the resource dialog and returned focus to Resources.",
+      "error": "The dialog is read-only. An unavailable game is not rendered as a Resources action, and the handler returns without mutating data if its ID is absent; no write/provider request occurs.",
+      "persistence": "Opening and closing this read-only dialog did not modify library or tracker state. Its underlying Alan Wake 2 card and tracker remained available through the reload check for I0028."
+    },
+    "I0030": {
+      "success": "The My Games Edit button on seeded Alan Wake 2 previously routed to progress despite its label. It now opens Edit Game with the existing fields. Saving the name as Alan Wake 2 Audit displayed Game updated and retained its 0/12 story objectives.",
+      "cancel": "Changing the name to Temporary unsaved name and pressing Cancel closed the editor, retained Alan Wake 2, and returned focus to Edit.",
+      "error": "A whitespace-only name stayed in the editor, focused Game name and showed Please enter a game name. tests/games-lifecycle.test.js verifies a rejected write restores the prior library and weekly tracker in memory, keeps the editor open and shows retry feedback.",
+      "persistence": "Alan Wake 2 Audit and its 0/12 objectives remained after browser reload. The edited seed is marked as user-customized so startup does not overwrite the saved identity fields."
+    },
+    "I0032": {
+      "success": "Mission Progress > Alan Wake 2 Audit > Edit objective opened the inline form with the current objective selected. Saving Phase 12 audited nightmare visions replaced the visible objective while retaining 0/12 progress.",
+      "cancel": "Cancel after entering Unsaved replacement returned to the original Escape the recurring nightmare visions checkbox and discarded the draft.",
+      "error": "Submitting whitespace left the editor open, focused the input and displayed Enter an objective before saving. tests/games-lifecycle.test.js verifies a rejected storage write leaves the active story unchanged and avoids rerendering a false success.",
+      "persistence": "The new objective text survived browser reload and Games > Mission Progress reopen."
+    },
+    "I0033": {
+      "success": "Mission Progress > Delete objective now opens Delete objective? and names the selected objective. Confirming removed Phase 12 audited nightmare visions, showed 0/11 objectives and returned focus to the surviving chapter heading.",
+      "cancel": "Cancel retained Phase 12 audited nightmare visions and restored focus to its Delete objective button.",
+      "error": "tests/games-lifecycle.test.js exercises the actual deleteObjective confirmation callback with a rejected write: it returns false and leaves the objective and rendered tracker unchanged. The shared dialog displays retry feedback and stays open on false.",
+      "persistence": "The objective remained absent and the chapter showed 0/2 after browser reload."
+    },
+    "I0034": {
+      "success": "Clicking Initiation: Author's Nightmare 0/2 in Mission Progress collapsed its objective controls and set aria-expanded=false; clicking again restored them and aria-expanded=true while focus stayed on the chapter button.",
+      "cancel": "This is an immediate reversible disclosure toggle; the second click is the inverse action and does not alter objective completion.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected storage write leaves expanded=true and does not rerender a false collapsed state; the shared safeSet path shows storage error feedback.",
+      "persistence": "The collapsed state remained aria-expanded=false after browser reload; the control then expanded again successfully."
+    },
+    "I0038": {
+      "success": "With Diablo Immortal at 1/7 weekly tasks, Reset Weekly Tasks now opened a named confirmation. Confirming Reset returned Complete daily bounties to unchecked, showed 0/7 and displayed Weekly tasks reset.",
+      "cancel": "Cancel retained the checked task and 1/7 progress, and returned focus to Reset Weekly Tasks.",
+      "error": "tests/games-lifecycle.test.js verifies the confirmed reset returns false on a rejected write while retaining the completed task and avoiding false success; the shared dialog stays open and shows retry feedback.",
+      "persistence": "The reset 0/7 state remained after browser reload."
+    },
+    "I0039": {
+      "success": "Mission Progress's game picker changed the tracker and main spotlight from Alan Wake 2 Audit to Resident Evil 4; focus remained on the selected picker chip. Selecting Alan Wake 2 Audit again reversed the selection. The same picker template supplies Weekly Tasks.",
+      "cancel": "This is an atomic reversible selection; selecting the previous game is the inverse action.",
+      "error": "Picker selection now uses the shared atomic Spotlight/selected-tracker transaction, without a redundant second write. tests/games-lifecycle.test.js verifies rejected writes leave the previous selection and announcement intact; the handler retains focus on the source chip.",
+      "persistence": "Resident Evil 4 remained selected in both tracker and spotlight after browser reload before the inverse selection."
+    },
+    "I0041": {
+      "success": "Games > Appearance > Neon swatch changed the Games theme to neon; Neon became the active swatch and the header Neon control gained pressed state. The header theme control was also checked through the same handler.",
+      "cancel": "Theme selection is atomic with no draft; selecting Midnight reverses the choice.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected theme write returns false before changing visible theme attributes, pressed controls or swatch render; the shared safeSet path shows storage error feedback.",
+      "persistence": "The Neon Appearance swatch and theme remained selected after browser reload."
+    },
+    "I0043": {
+      "success": "Games Overview displayed Continue Playing for Alan Wake 2 Audit at 9% with the next objective. Clicking Continue selected Mission Progress and showed its Alan Wake 2 Audit tracker at 1/11 objectives.",
+      "cancel": "This navigation has no draft; Overview returns to the source view without altering progress.",
+      "error": "Continue uses the same open-progress action and goToTracker handler as I0028. tests/games-lifecycle.test.js verifies a rejected Spotlight/selected-tracker transaction stops navigation and leaves the previous selection intact with error feedback.",
+      "persistence": "After browser reload, Mission Progress remained the selected Games section and showed Alan Wake 2 Audit at 1/11 objectives."
+    },
+    "I0046": {
+      "success": "Suggestions > Hades > Add to My Games opened a tracker-type dialog; confirming Add game showed Hades added to My Games and created a Hades story tracker with 0/3 objectives.",
+      "cancel": "Cancel closed the Hades add dialog and left the library unchanged before the later confirmed add.",
+      "error": "The add uses commitGameChanges, whose rejected transaction rolls library and weekly state back and reports the write error; tests/games-lifecycle.test.js exercises that transaction. The shared provider dialog remains open when its save callback returns false.",
+      "persistence": "After browser reload, My Games showed the new Hades card and its 0/3 tracker."
+    },
+    "I0047": {
+      "success": "Suggestions > Hollow Knight > Save to Wishlist showed Saved to wishlist and a Hollow Knight Wishlist row.",
+      "cancel": "This is an immediate save with no draft. The wishlist Remove control is its inverse action.",
+      "error": "The handler now returns on a rejected wishlist write before success feedback or rerender. tests/games-lifecycle.test.js checks the unchanged saved list, no false toast and no false render.",
+      "persistence": "The Hollow Knight wishlist row remained after browser reload before it was later moved to My Games."
+    },
+    "I0048": {
+      "success": "Suggestions > Outer Wilds > Dismiss removed its result card and showed Suggestion dismissed.",
+      "cancel": "This is an immediate preference action with no pending draft. Reset Preferences can restore dismissed suggestions.",
+      "error": "The handler now waits for a successful dismissed-list write before removing the visible card or reporting success. tests/games-lifecycle.test.js checks rejected-write nonmutation.",
+      "persistence": "Outer Wilds remained absent from the suggestion results after browser reload."
+    },
+    "I0049": {
+      "success": "Suggestions > Forza Horizon 5 > View Details opened a dialog with its blurb, genres, platforms, play styles, mood, resources and suggested tracker tasks.",
+      "cancel": "Close dialog returned focus to the originating View Details control without adding a game.",
+      "error": "This local-catalog detail is read-only and does not write or call a live provider; the handler returns when the catalog ID is unavailable.",
+      "persistence": "The underlying Forza suggestion remained available after the prior reload; opening and closing details did not alter the library or wishlist."
+    },
+    "I0050": {
+      "success": "Wishlist > Hollow Knight > Move to My Games opened the tracker-type dialog; confirming Add game created a Hollow Knight card in My Games and removed its wishlist row.",
+      "cancel": "Cancel closed the first move dialog and retained Hollow Knight on the wishlist; the subsequent confirmed action removed it.",
+      "error": "The move delegates to the add flow. commitGameChanges rolls back a rejected library/weekly transaction and the shared dialog remains open on false. Wishlist removal now avoids a false render on rejected write.",
+      "persistence": "After browser reload, Hollow Knight remained in My Games and the wishlist row was absent."
+    },
+    "I0051": {
+      "success": "After saving Dead Cells to the wishlist, clicking its Remove button hid the Wishlist section.",
+      "cancel": "This is an immediate reversible list edit with no draft; Save to Wishlist can add the catalog game again.",
+      "error": "removeFromWishlist now returns false on a rejected storage write before rerender. tests/games-lifecycle.test.js verifies the prior wishlist remains and no false success view is rendered.",
+      "persistence": "The wishlist remained empty after browser reload."
+    },
+    "I0053": {
+      "success": "My Games > Hades > Resources > Edit resources opened the resource editor. Saving Guide | Audit guide | https://example.com/hades-guide showed Resources saved; reopening details showed the new Guide link.",
+      "cancel": "An invalid draft was canceled; the editor closed, returned focus to Edit resources and left the prior links intact.",
+      "error": "Saving a not-a-url resource kept the editor open and showed Use group | label | a valid http or https URL. The handler commits an immutable library copy through safeSet and returns false on rejected writes; the shared domain dialog keeps false submissions open with retry feedback, verified in tests/domain-ui.test.js.",
+      "persistence": "After browser reload, Hades resources showed only the saved Guide/Audit guide link."
+    },
+    "I0054": {
+      "success": "Games > Sessions > Start Session created a live Alan Wake 2 Audit session. Stop Session ended it, restored Start Session availability, showed Session logged: 1m and displayed a completed log row.",
+      "cancel": "Stop is an immediate state transition with no draft; leaving the live session running before Stop was observed through reload.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected sessions write restores the active session, keeps its timer running, avoids a logged-success toast and rerenders the stored in-progress state.",
+      "persistence": "The active session survived the first reload, and the completed 1m log row survived the reload after Stop."
+    },
+    "I0055": {
+      "success": "Delete session now opened a named confirmation. Confirming Delete removed the Alan Wake 2 Audit 1m row, showed No sessions logged yet and announced Session deleted.",
+      "cancel": "Cancel closed the confirmation and retained the completed row.",
+      "error": "tests/games-lifecycle.test.js verifies the confirmation callback returns false after a rejected write and retains the prior log without rerender or success toast; the shared dialog remains open with retry feedback on false.",
+      "persistence": "The empty sessions state survived browser reload."
+    },
+    "I0056": {
+      "success": "Games > Journal > Edit loaded Phase 12 journal audit into the form; saving a changed title and body updated the displayed entry.",
+      "cancel": "Cancel edit discarded Unsaved draft and retained the original body; the form returned to Save Entry mode.",
+      "error": "A whitespace title kept Update Entry mode open, focused Entry title and showed Enter a title and journal entry before saving. tests/games-lifecycle.test.js verifies a rejected write restores the original stored entry, retains the edit draft and shows retry feedback.",
+      "persistence": "Phase 12 journal audit updated and Updated audit body survived browser reload."
+    },
+    "I0057": {
+      "success": "Games > Journal > Delete opened Delete journal entry?; confirming Delete removed the entry and showed No journal entries yet.",
+      "cancel": "Cancel closed the confirmation and retained the entry.",
+      "error": "tests/games-lifecycle.test.js verifies a rejected confirmed write returns false, restores the original journal from storage and avoids a false rendered deletion; the shared confirmation stays open on false.",
+      "persistence": "The empty journal state survived browser reload."
+    },
+    "I0059": {
+      "success": "Games Overview main spotlight > Open Progress on Alan Wake 2 Audit selected Mission Progress and showed its 1/11 story tracker with the next objective.",
+      "cancel": "This is navigation with no draft; Overview returns to the spotlight without changing tracker progress.",
+      "error": "This uses the same open-progress/goToTracker handler as I0028 and I0043. tests/games-lifecycle.test.js verifies a rejected selected-game transaction prevents navigation, focus change and false selection.",
+      "persistence": "Mission Progress and the Alan Wake 2 Audit tracker remained selected after browser reload."
+    },
+    "I0060": {
+      "success": "Games Overview > Change Game advanced the main spotlight from Alan Wake 2 Audit (01/07) to Resident Evil 4 (02/07), including the hero identity, tracker summary and pressed selector.",
+      "cancel": "This immediate selection has no draft; Previous game or a named spotlight selector reverses it.",
+      "error": "Change Game delegates to advanceSpotlight/selectSpotlight. tests/games-lifecycle.test.js verifies a rejected two-key transaction keeps the previous spotlight/selected tracker and avoids false announcement or render.",
+      "persistence": "Resident Evil 4 remained the spotlight after browser reload."
+    },
+    "I0061": {
+      "success": "The Choose spotlight game selector selected Diablo Immortal (03/07) and switched the hero to its weekly tracker. The Featured games rail selector then selected Resident Evil 4 (02/07) as the inverse, after automatic rotation was paused for stable observation.",
+      "cancel": "This is an immediate reversible selection with no draft; selecting another named game is the inverse action.",
+      "error": "Both selector instances use selectSpotlight, whose rejected transaction leaves the previous spotlight and tracker unchanged with error feedback in tests/games-lifecycle.test.js.",
+      "persistence": "Diablo Immortal survived the first reload, and the inverse Resident Evil 4 selection survived the next reload."
+    },
+    "I0063": {
+      "success": "The shell Collapse sidebar button condensed the navigation and changed its accessible name to Expand sidebar with collapsed state. Clicking Expand sidebar restored the full navigation.",
+      "cancel": "The toggle has no draft; Expand sidebar is the immediate inverse action.",
+      "error": "The handler now persists the next state before changing the visible sidebar. tests/sidebar-write-failure.test.js verifies a rejected write retains the prior expanded state and avoids applying a false collapsed view.",
+      "persistence": "After browser reload, the sidebar remained collapsed with Expand sidebar available before the inverse click."
+    },
+    "I0062": {
+      "success": "At a 390px viewport, Open navigation exposed the OneSpace sidebar and set aria-expanded=true.",
+      "cancel": "Escape closed the sidebar, restored focus to Open navigation and reset its expanded state; the button itself also toggles the temporary menu.",
+      "error": "This mobile disclosure performs no storage write or provider request; it only toggles the sidebar-open class and synchronized expanded attributes.",
+      "persistence": "After reopening the menu and reloading, it returned to its closed transient state."
+    },
+    "I0064": {
+      "success": "Work sidebar navigation selected the Work dashboard; the existing keyboard-motion route evidence also verifies Enter activation and visible focus.",
+      "cancel": "Navigation has no draft; another route button provides the inverse view change.",
+      "error": "goToPage now commits orbit-page before rendering. tests/sidebar-write-failure.test.js verifies rejected storage keeps the previous route and Work/Projects view state.",
+      "persistence": "The Work route remained selected after browser reload in the current route matrix."
+    },
+    "I0066": {
+      "success": "Personal sidebar navigation selected the Personal dashboard; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "The Personal route remained selected after browser reload in the current route matrix."
+    },
+    "I0067": {
+      "success": "Explore sidebar navigation selected the Explore dashboard; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "The Explore route remained selected after browser reload in the current route matrix."
+    },
+    "I0068": {
+      "success": "Games sidebar navigation selected the Games dashboard; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "The Games route remained selected after browser reload in the current route matrix."
+    },
+    "I0069": {
+      "success": "Movies & Series sidebar navigation selected the Movies dashboard; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "The Movies route remained selected after browser reload in the current route matrix."
+    },
+    "I0070": {
+      "success": "Home view sidebar navigation selected Home; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "Home remained selected after browser reload in the current route matrix."
+    },
+    "I0071": {
+      "success": "Shortcuts view sidebar navigation selected Shortcuts; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "Shortcuts remained selected after browser reload in the current route matrix."
+    },
+    "I0072": {
+      "success": "Productivity view sidebar navigation selected Productivity; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "Productivity remained selected after browser reload in the current route matrix."
+    },
+    "I0073": {
+      "success": "Quick Notes view sidebar navigation selected Notes; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "Notes remained selected after browser reload in the current route matrix."
+    },
+    "I0074": {
+      "success": "Settings view sidebar navigation selected Settings; keyboard activation and focus were previously recorded in keyboard-motion-2026-09-24.json.",
+      "cancel": "Navigation has no draft; another route button reverses the view change.",
+      "error": "The shared goToPage rejected-write test verifies no route/UI advance when orbit-page cannot be saved.",
+      "persistence": "Settings remained selected after browser reload in the current route matrix."
+    },
+    "I0075": {
+      "success": "At 390px mobile width, Dashboard actions Command Palette opened the command palette and focused its search input.",
+      "cancel": "Close command palette dismissed it and restored the underlying Shortcuts view.",
+      "error": "Opening the palette makes no storage write or provider request; unmatched search remains available for retry.",
+      "persistence": "The transient palette remained closed after reload; saved Shortcuts remained intact."
+    },
+    "I0076": {
+      "success": "At 390px mobile width, Dashboard actions Open local toolbox opened its dialog with password, text counter and URL utilities.",
+      "cancel": "Close toolbox dismissed the dialog without changing saved data.",
+      "error": "Opening this local utility dialog makes no storage write or provider request.",
+      "persistence": "The transient toolbox does not persist; underlying Shortcuts and saved data remained available."
+    },
+    "I0077": {
+      "success": "At 390px mobile width, Dashboard actions Add shortcut opened the shared Add shortcut form. Its successful save path is directly verified through I0111 on the same form.",
+      "cancel": "Cancel closed the mobile-opened form without saving a new link.",
+      "error": "Shared form invalid URL and rejected-write paths are verified under I0111 and tests/shortcut-save-failure.test.js.",
+      "persistence": "The canceled dialog stayed closed; the shared form's saved shortcut remained after reload in I0111."
+    },
+    "I0078": {
+      "success": "At 390px mobile width, Dashboard actions Customize dashboard enabled Customize mode and revealed Add category and Done.",
+      "cancel": "Done closed Customize mode and hid its edit controls.",
+      "error": "Entering this transient mode makes no storage write or provider request.",
+      "persistence": "Reload returned to the ordinary Shortcuts view with Customize mode closed."
+    },
+    "I0079": {
+      "success": "On Work, End Workday announced Workday closed: 0 closed, 0 active work items for the empty disposable workspace.",
+      "cancel": "This is a read-only summary action with no draft, timer shutdown or record mutation to cancel.",
+      "error": "The Work listener reads stored items and reports counts; it makes no write or provider request. The empty-state result was coherent rather than failing silently.",
+      "persistence": "No record changes are made; Work remained available and the zero-item board state was unchanged after the action."
+    },
+    "I0080": {
+      "success": "On Explore, Chill Mode revealed its calmer strip and set the Explore-only chill visual state; clicking again turned it off.",
+      "cancel": "This is a reversible preference toggle with no draft; the second click is the inverse action.",
+      "error": "The handler now writes the preference before changing visible state. tests/sidebar-write-failure.test.js verifies rejected storage retains the old visual state, strip visibility and no false toast.",
+      "persistence": "Chill Mode survived reload on Explore, hid when navigating to Work, and restored on returning to Explore. The inverse off state was observed before leaving."
+    },
+    "I0081": {
+      "success": "At 390px, Getting started in the open mobile sidebar opened Welcome to OneSpace while keeping the Shortcuts route. The first click exposed a sidebar/mobile-nav overlap; raising the open sidebar above the bottom navigation fixed the mouse path, and the post-fix click opened the dialog.",
+      "cancel": "Start exploring closed Welcome to OneSpace and returned to Shortcuts; the prior command-palette path also verified Escape dismissal.",
+      "error": "Opening the guide is read-only and makes no storage write or provider request.",
+      "persistence": "After reload, Welcome remained closed and Shortcuts remained the route."
+    },
+    "I0090": {
+      "success": "Home Change color theme switched the displayed root theme from dark to light. home-theme-regression-2026-09-24.json records the earlier Auto-palette persistence defect and its fix.",
+      "cancel": "This is an immediate reversible toggle with no draft; a second click returns to the prior light/dark mode.",
+      "error": "The handler now calls safeSet before applyTheme. tests/home-control-write-failure.test.js verifies rejected storage leaves the visible theme unchanged.",
+      "persistence": "The light theme remained after browser reload; the prior regression evidence verifies Auto/manual override and palette preservation."
+    },
+    "I0091": {
+      "success": "Home Enter your workspace opened Work and its Development tracker, matching prior home-controls-2026-09-24.json evidence.",
+      "cancel": "Navigation has no draft; Home view returns to the source page.",
+      "error": "The shared goToPage rejected-write test verifies no page/UI advance when orbit-page cannot be saved.",
+      "persistence": "Work remained the route after browser reload in the post-fix Home action matrix."
+    },
+    "I0092": {
+      "success": "Home Find something new opened Explore and its destination discovery section, matching prior Home evidence.",
+      "cancel": "Navigation has no draft; Home view returns to the source page.",
+      "error": "The shared goToPage rejected-write test verifies no page/UI advance when orbit-page cannot be saved. The inventory's generic create classification does not describe this navigation button.",
+      "persistence": "Explore remained the route after browser reload in the post-fix Home action matrix."
+    },
+    "I0093": {
+      "success": "Home Search web selected web mode, its pressed state, Search the web placeholder and Search action; prior home-controls-2026-09-24.json records the direct control observation.",
+      "cancel": "Find in OneSpace reverses the transient mode without submitting a query.",
+      "error": "Mode selection makes no storage write or provider request; an unmatched local query in the inverse mode showed 0 shortcuts found without changing records.",
+      "persistence": "After reload, search mode returned to web and the unsent query was cleared."
+    },
+    "I0094": {
+      "success": "Home Find in OneSpace selected local mode and its Find action; the prior browser evidence found GitHub under an explicit 1 shortcut found status.",
+      "cancel": "Search web reverses the transient mode without a record edit.",
+      "error": "A new unmatched local query displayed 0 shortcuts found and retained the input for retry; mode switching made no storage write or external request.",
+      "persistence": "Reload returned the transient mode to web and cleared the query, while saved shortcuts stayed intact."
+    },
+    "I0096": {
+      "success": "Home Plan today opened Productivity and its Focus timer and Today tasks, matching prior Home evidence.",
+      "cancel": "Navigation has no draft; Home view returns to the source page.",
+      "error": "The shared goToPage rejected-write test verifies no page/UI advance when orbit-page cannot be saved.",
+      "persistence": "Productivity remained selected after browser reload in the post-fix Home action matrix."
+    },
+    "I0097": {
+      "success": "Home Quick Access Favorites became the selected tab and displayed its empty-state panel.",
+      "cancel": "Recent or Most Used reverses this immediate selection; there is no draft.",
+      "error": "selectQuickAccessTab now commits both global and per-space preference keys atomically before changing selection. tests/home-control-write-failure.test.js verifies rejected transaction leaves the old tab and panel rendered.",
+      "persistence": "Favorites remained selected after the inverse Most Used selection was tested; earlier Home evidence also records its selection."
+    },
+    "I0098": {
+      "success": "Home Quick Access Recent became the selected tab.",
+      "cancel": "Favorites or Most Used reverses this immediate selection; there is no draft.",
+      "error": "The shared atomic Quick Access selection test verifies rejected persistence leaves both preference keys and the visible tab unchanged.",
+      "persistence": "Recent remained selected after browser reload in the post-fix check."
+    },
+    "I0099": {
+      "success": "Home Quick Access Most Used became the selected tab and displayed its panel.",
+      "cancel": "Favorites or Recent reverses this immediate selection; there is no draft.",
+      "error": "The shared atomic Quick Access selection test verifies rejected persistence leaves both preference keys and the visible tab unchanged.",
+      "persistence": "Most Used remained selected after browser reload in the post-fix check."
+    },
+    "I0100": {
+      "success": "Home GAMEVAULT / PLAY card opened Games and its Worlds worth returning to dashboard, matching prior Home evidence.",
+      "cancel": "Navigation has no draft; Home view returns to the source page.",
+      "error": "The shared goToPage rejected-write test verifies no page/UI advance when orbit-page cannot be saved.",
+      "persistence": "Games remained the route after browser reload in the post-fix Home action matrix."
+    },
+    "I0101": {
+      "success": "Home MOVIES / UNWIND card opened Movies & Series and its Set the evening scene dashboard, matching prior Home evidence.",
+      "cancel": "Navigation has no draft; Home view returns to the source page.",
+      "error": "The shared goToPage rejected-write test verifies no page/UI advance when orbit-page cannot be saved.",
+      "persistence": "Movies remained the route after browser reload in the post-fix Home action matrix."
+    },
+    "I0102": {
+      "success": "Shortcuts Browse Work selected the Work shortcut space and its visible selected state.",
+      "cancel": "Personal or Explore reverses the immediate space selection; no draft exists.",
+      "error": "applySpace now saves the space preference before changing the UI. tests/sidebar-write-failure.test.js verifies a rejected storage write leaves the prior space visible.",
+      "persistence": "The Work browsing space remained selected after browser reload in the post-fix three-space matrix."
+    },
+    "I0103": {
+      "success": "Shortcuts Browse Personal selected the Personal shortcut space and its visible selected state.",
+      "cancel": "Work or Explore reverses the immediate space selection; no draft exists.",
+      "error": "The shared applySpace rejected-write test verifies that selection does not advance on storage failure.",
+      "persistence": "The Personal browsing space remained selected after browser reload in the post-fix three-space matrix."
+    },
+    "I0104": {
+      "success": "Shortcuts Browse Explore selected the Explore shortcut space and its visible selected state.",
+      "cancel": "Work or Personal reverses the immediate space selection; no draft exists.",
+      "error": "The shared applySpace rejected-write test verifies that selection does not advance on storage failure.",
+      "persistence": "The Explore browsing space remained selected after browser reload in the post-fix three-space matrix."
+    },
+    "I0105": {
+      "success": "Shortcuts Quick open Ctrl + K opened Command palette with its search combobox focused.",
+      "cancel": "Close command palette dismissed the dialog and returned to Shortcuts.",
+      "error": "Opening the read-only palette makes no storage write or provider request; an unmatched search leaves the palette available for retry.",
+      "persistence": "Reload left the transient palette closed while the Shortcuts route remained available."
+    },
+    "I0106": {
+      "success": "Shortcuts Quick notes navigated to the Quick Notes page and showed its title and note composer.",
+      "cancel": "Shortcuts view reverses the route change; no draft was created.",
+      "error": "The shared goToPage rejected-write test verifies that a failed route write does not advance the displayed page.",
+      "persistence": "Notes remained the selected page after browser reload."
+    },
+    "I0109": {
+      "success": "Shortcuts Settings navigated to the Settings page and showed Look & atmosphere and other settings groups.",
+      "cancel": "Shortcuts view reverses the route change; no draft was created.",
+      "error": "The shared goToPage rejected-write test verifies that a failed route write does not advance the displayed page.",
+      "persistence": "Settings remained the selected page after browser reload."
+    },
+    "I0111": {
+      "success": "Shortcuts Add shortcut opened its form; saving Phase 12 Toolbar Link with a valid URL displayed the new link in Explore shortcuts.",
+      "cancel": "A separate Add shortcut opening was canceled; the dialog closed and stayed closed after reload.",
+      "error": "Invalid URL validation is observed on the same shared form under I0153/I0158. tests/shortcut-save-failure.test.js verifies rejected-write rollback, retained draft and retry feedback.",
+      "persistence": "Phase 12 Toolbar Link remained visible in Explore shortcuts after browser reload."
+    },
+    "I0112": {
+      "success": "In Shortcuts Customize mode, Add category opened an accessible dialog; saving Audit Tools created a new category visible in Work browsing space.",
+      "cancel": "Cancel closed an untouched Add category dialog. A second Cancel after duplicate-name validation kept the saved category and discarded the draft.",
+      "error": "Empty and duplicate category names displayed inline validation and kept the dialog open. tests/category-save-failure.test.js verifies a rejected atomic storage transaction keeps the prior categories, draft and dialog, then accepts a retry.",
+      "persistence": "Audit Tools remained visible in Work browsing space after reload; Customize mode itself reset to closed."
+    },
+    "I0113": {
+      "success": "Shortcuts Customize mode Done hid the customize banner and category movement controls.",
+      "cancel": "Done is the close/inverse control; the palette Toggle Customize mode command reopens the transient mode.",
+      "error": "Closing Customize mode makes no storage write or provider request.",
+      "persistence": "Reload left Customize mode closed while saved shortcuts remained intact."
+    },
+    "I0120": {"success": "Games theme Midnight became pressed and changed the Games appearance.", "cancel": "Selecting Neon reversed the immediate preference; no draft exists.", "error": "tests/games-lifecycle.test.js verifies rejected theme storage leaves the displayed choice unchanged.", "persistence": "Midnight remained pressed after browser reload."},
+    "I0121": {"success": "Games theme Neon became pressed and changed the Games appearance.", "cancel": "Selecting another theme reversed the immediate preference; no draft exists.", "error": "The shared Games theme rejected-write test verifies no false visible selection.", "persistence": "Neon remained pressed after browser reload."},
+    "I0122": {"success": "Games theme Crimson became pressed and changed the Games appearance.", "cancel": "Selecting another theme reversed the immediate preference; no draft exists.", "error": "The shared Games theme rejected-write test verifies no false visible selection.", "persistence": "Crimson remained pressed after browser reload."},
+    "I0123": {"success": "Games theme Aurora became pressed and changed the Games appearance.", "cancel": "Selecting another theme reversed the immediate preference; no draft exists.", "error": "The shared Games theme rejected-write test verifies no false visible selection.", "persistence": "Aurora remained pressed after browser reload."},
+    "I0124": {
+      "success": "Games Add Game opened its form; saving Phase 12 Audit Game with Strategy genre added it to the library and spotlight collection.",
+      "cancel": "Cancel closed an untouched Add Game form without adding a game.",
+      "error": "Submitting without a name displayed Please enter a game name and kept the form open. tests/games-lifecycle.test.js exercises the same save handler on rejected storage and verifies unchanged library/tracker, retained dialog and retry feedback.",
+      "persistence": "Phase 12 Audit Game remained in the library after browser reload."
+    },
+    "I0125": {"success": "Previous game changed the spotlight from Resident Evil 4 to Alan Wake 2 Audit.", "cancel": "Next game reversed the spotlight selection; no draft exists.", "error": "The shared selectSpotlight rejected-transaction test in tests/games-lifecycle.test.js verifies selection does not advance on failed persistence.", "persistence": "Alan Wake 2 Audit remained selected after browser reload."},
+    "I0126": {"success": "Next game changed the spotlight from Alan Wake 2 Audit to Resident Evil 4.", "cancel": "Previous game reversed the spotlight selection; no draft exists.", "error": "The shared selectSpotlight rejected-transaction test verifies selection does not advance on failed persistence.", "persistence": "Resident Evil 4 remained selected after browser reload."},
+    "I0127": {"success": "Games spotlight automatic rotation changed from Start to Pause and back to Start through its toggle control.", "cancel": "The second toggle is the inverse action; no draft exists.", "error": "The handler now saves the preference before changing playback. tests/games-lifecycle.test.js verifies rejected storage leaves playback state and control unchanged.", "persistence": "Playing and paused control states were each checked after browser reload; the final paused state showed Start automatic rotation."},
+    "I0128": {"success": "Explore your collection selected the My Games panel from Overview.", "cancel": "Overview tab reverses the navigation; no draft exists.", "error": "switchTab now saves before changing the panel. tests/games-lifecycle.test.js verifies failed persistence leaves the prior tab and panel visible.", "persistence": "My Games remained selected after browser reload."},
+    "I0129": {"success": "Games Overview tab selected the overview panel and its play summary.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies the panel and selected tab do not advance on failure.", "persistence": "Overview remained selected after browser reload in the post-fix tab matrix."},
+    "I0130": {"success": "Games My Games tab selected the library panel and game cards.", "cancel": "Overview reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "My Games remained selected after browser reload in the post-fix tab matrix."},
+    "I0131": {"success": "Games Mission Progress tab selected the story tracker panel.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "Mission Progress remained selected after browser reload in the post-fix tab matrix."},
+    "I0132": {"success": "Games Weekly Tasks tab selected the weekly tracker panel.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "Weekly Tasks remained selected after browser reload in the post-fix tab matrix."},
+    "I0133": {"success": "Games Suggestions tab selected the suggestions panel.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "Suggestions remained selected after browser reload in the post-fix tab matrix."},
+    "I0134": {"success": "Games Sessions tab selected the sessions panel.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "Sessions remained selected after browser reload in the post-fix tab matrix."},
+    "I0135": {"success": "Games Journal tab selected the Journal panel.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "Journal remained selected after browser reload in the post-fix tab matrix."},
+    "I0136": {"success": "Games Appearance tab selected the theme and appearance panel.", "cancel": "Another Games tab reverses the panel selection; no draft exists.", "error": "The shared switchTab rejected-write test verifies no false panel selection.", "persistence": "Appearance remained selected after browser reload in the post-fix tab matrix."},
+    "I0138": {"success": "With PC and Horror selected, Games Get Suggestions refreshed the local results to 1 matching game under an explicit status.", "cancel": "This is a read-only refresh with no draft; changing or clearing the filters reverses the result set.", "error": "The action uses the local catalog and makes no write or provider request. Existing filter mismatch guidance remains available in the results area.", "persistence": "PC and Horror selections and the matching result remained after browser reload."},
+    "I0139": {"success": "Games Clear Filters removed PC and Horror selections and expanded the local result status to 17 games.", "cancel": "Filter clearing is immediate with no draft; reselecting the checkboxes restores the narrow results.", "error": "The handler now saves the empty preferences before changing the UI. tests/games-lifecycle.test.js verifies rejected storage leaves the prior preferences and filters intact.", "persistence": "PC stayed unchecked after browser reload."},
+    "I0140": {"success": "After dismissing one suggestion (16 visible), Games Reset Preferences cleared filters and restored dismissed suggestions, showing 18 local games, including an item dismissed before this test.", "cancel": "Reset is immediate with no draft. Filters can be reselected and individual suggestions can be dismissed again.", "error": "The handler now commits filter preferences and dismissed IDs in one storage transaction. tests/games-lifecycle.test.js verifies a rejected transaction leaves prior preferences and results unchanged.", "persistence": "The 18-game restored result set remained after browser reload."},
+    "I0146": {"success": "On mobile Work, Open Projects selected the Projects subview and exposed the Create a project form and project list.", "cancel": "The Board work-view button reverses the transient subview change; no draft was started.", "error": "The shared goToPage rejected-write test verifies the Work route does not falsely advance on failed persistence; opening the Projects subview itself makes no record write.", "persistence": "Reload retained Work as the route and returned the transient Projects subview to its default Board, with stored projects untouched."},
+    "I0153": {
+      "success": "Personal Add shortcut opened a form with Personal selected; saving Audit Personal displayed its link in Personal shortcuts.",
+      "cancel": "Cancel closed a form with an unsaved invalid URL; the unsaved draft was not in the list.",
+      "error": "Submitting not-a-url displayed Please enter a valid URL, starting with http:// or https:// and kept the form open; write failure remains to verify.",
+      "persistence": "Audit Personal link remained in Personal shortcuts after browser reload."
+    },
+    "I0158": {
+      "success": "Explore Add shortcut opened the form with Explore selected and disabled against switching spaces; saving Audit Explore displayed its link under Explore shortcuts.",
+      "cancel": "Cancel closed the empty form without adding a link.",
+      "error": "An invalid URL displayed Please enter a valid URL, starting with http:// or https://; the dialog stayed open. Storage write failure remains to verify.",
+      "persistence": "Audit Explore link remained after browser reload."
+    },
+    "I0160": {
+      "success": "On the disposable Explore browser origin with Chill Mode on, successive break-duration clicks changed 5 to 10 to 20 minutes.",
+      "cancel": "A further click wrapped 20 back to 5 minutes, reversing the transient choice; no draft or timer session is created.",
+      "error": "This local duration cycle makes no storage or provider request and has no input validation path.",
+      "persistence": "After selecting 10 minutes and reloading, Chill Mode remained on but the transient duration returned to its 5-minute default."
+    },
+    "I0161": {
+      "success": "In the disposable Explore browser origin, Random Pick selected Tripadvisor and displayed OneSpace picked Tripadvisor. The current handler chooses only Travel shortcuts and requests a new tab for the selected public URL.",
+      "cancel": "The pick is immediate with no draft or confirmation. The user can return to Explore; the control does not alter the shortcut collection.",
+      "error": "If no Travel shortcuts exist, the handler now reports No travel shortcuts available yet without opening a URL; the focused test verifies this. Rejected recent/usage storage writes now leave the in-memory collections unchanged, verified by tests/home-control-write-failure.test.js. The shared safeSet path reports storage failure.",
+      "persistence": "Home Quick Access Recent displayed the picked Tripadvisor link before and after browser reload."
+    },
+    "I0165": {
+      "success": "Settings Auto radio selected Auto and removed the explicit palette attribute after switching from Graphite.",
+      "cancel": "Returning to a manually chosen theme reverses Auto; no draft exists.",
+      "error": "tests/settings.test.js verifies rejected atomic palette/theme storage leaves the prior visible preference and reports failure.",
+      "persistence": "Auto remained checked after browser reload."
+    },
+    "I0166": {
+      "success": "Settings Classic Light radio selected classic and cleared the custom palette attribute.",
+      "cancel": "Selecting Auto reversed the choice; no draft exists.",
+      "error": "tests/settings.test.js verifies rejected palette write leaves the prior theme in place.",
+      "persistence": "Classic Light remained checked after browser reload."
+    },
+    "I0167": {
+      "success": "Settings Deep Space radio selected midnight and applied data-palette=midnight.",
+      "cancel": "Selecting another theme reverses the choice; no draft exists.",
+      "error": "The shared choosePalette rejected-write test verifies no false visible change.",
+      "persistence": "Deep Space remained checked with data-palette=midnight after browser reload."
+    },
+    "I0168": {
+      "success": "Settings Aurora radio selected aurora and applied data-palette=aurora.",
+      "cancel": "Selecting another theme reverses the choice; no draft exists.",
+      "error": "The shared choosePalette rejected-write test verifies no false visible change.",
+      "persistence": "Aurora remained checked with data-palette=aurora after browser reload."
+    },
+    "I0169": {
+      "success": "Settings Graphite radio selected graphite and applied data-palette=graphite.",
+      "cancel": "Selecting Auto reversed the choice; no draft exists.",
+      "error": "The shared choosePalette rejected-write test verifies no false visible change.",
+      "persistence": "Graphite remained checked with data-palette=graphite after browser reload."
+    },
+    "I0170": {
+      "success": "Settings Clean radio applied data-background=clean and selected Clean.",
+      "cancel": "Selecting another background reverses the choice; no draft exists.",
+      "error": "The handler now saves before changing the visible preference; tests/settings.test.js verifies rejected storage leaves the prior background in place.",
+      "persistence": "Clean remained selected with data-background=clean after browser reload."
+    },
+    "I0171": {
+      "success": "Settings Gradient radio applied data-background=gradient and selected Gradient.",
+      "cancel": "Selecting another background reverses the choice; no draft exists.",
+      "error": "The shared rejected-write test verifies no false background change.",
+      "persistence": "Gradient remained selected with data-background=gradient after browser reload."
+    },
+    "I0172": {
+      "success": "Settings Atmosphere radio applied data-background=orbit and selected Atmosphere.",
+      "cancel": "Selecting another background reverses the choice; no draft exists.",
+      "error": "The shared rejected-write test verifies no false background change.",
+      "persistence": "Atmosphere remained selected with data-background=orbit after browser reload."
+    },
+    "I0181": {
+      "success": "With Graphite selected, Settings Reset preferences opened its scoped confirmation; confirming reset reloaded Settings with Auto selected and no explicit custom palette.",
+      "cancel": "Cancel closed the confirmation and retained Graphite and its palette attribute.",
+      "error": "tests/settings.test.js verifies an atomic preference-reset transaction rolls back on quota failure; the dialog callback throws a scoped error and remains available for retry.",
+      "persistence": "After reset/reload, Auto remained selected while Home Quick Access Recent still displayed the previously picked Tripadvisor link. The reset unit test confirms favorites, records and search provider are preserved."
+    },
+    "I0182": {
+      "success": "The prior disposable-origin Settings Reset all data browser flow returned to Welcome; imported Work project, Personal habit and Quick Note were absent. See backup-reset-2026-09-24.json.",
+      "cancel": "tests/settings.test.js invokes the current Reset all data handler with confirmation declined and verifies no reset, toast or reload occurs. The in-app browser's native confirmation stalled automation on 2026-09-25, so no new browser cancel claim is made.",
+      "error": "tests/data-regression.test.js verifies reset preserves unrelated storage and transaction rollback on failed writes. The focused handler test verifies reset failure shows its error without scheduling reload or claiming success.",
+      "persistence": "The imported note remained absent after browser reload in backup-reset-2026-09-24.json; the reset storage test checks known OneSpace keys are removed while unrelated data remains."
+    },
+    "I0183": {
+      "success": "Settings Done returned to the Home dashboard on the disposable browser origin.",
+      "cancel": "Done leaves Settings without a draft; theme and background changes are individually committed before this action, so there is no pending edit to discard.",
+      "error": "The shared goToPage rejected-write test verifies a failed route save leaves the current page visible.",
+      "persistence": "Home remained the selected route after browser reload."
+    },
+    "I0184": {
+      "success": "After setting Start page to Minimal Mode, Return to full OneSpace removed the minimal body state and restored full Home navigation.",
+      "cancel": "Selecting Minimal Mode again from Settings reverses the choice; the exit action has no draft.",
+      "error": "The startup and minimal preferences now commit in one transaction before the visible state changes. tests/settings.test.js verifies a rejected transaction retains Minimal Mode and shows failure.",
+      "persistence": "Full Home remained visible after browser reload; both startup and minimal keys were committed together."
+    },
+    "I0185": {
+      "success": "At a 390px viewport, mobile Home selected the Home dashboard from Settings.",
+      "cancel": "Another mobile route reverses this navigation; no draft exists.",
+      "error": "tests/sidebar-write-failure.test.js verifies mobile buttons stop when minimal or route persistence fails, leaving the prior page visible.",
+      "persistence": "Home remained selected after browser reload."
+    },
+    "I0186": {
+      "success": "At 390px, mobile Shortcuts selected the Shortcuts dashboard from Home.",
+      "cancel": "Mobile Home reverses the navigation; no draft exists.",
+      "error": "The shared mobile rejected-write test verifies no false route advance.",
+      "persistence": "Shortcuts remained selected after browser reload."
+    },
+    "I0187": {
+      "success": "At 390px, mobile Search returned from Shortcuts to Home and focused the Search query field.",
+      "cancel": "Focus can be moved away without a query or record change; the control has no draft.",
+      "error": "The mobile Search handler now stops before scrolling or focusing when minimal or Home route persistence fails, verified by tests/sidebar-write-failure.test.js.",
+      "persistence": "Home remained selected after reload; focus returned to the normal page state because it is transient."
+    },
+    "I0188": {
+      "success": "At 390px, mobile Productivity selected the Productivity dashboard.",
+      "cancel": "Mobile Games or Home reverses route selection; no draft exists.",
+      "error": "The shared mobile rejected-write test verifies no false route advance.",
+      "persistence": "Productivity remained selected after browser reload."
+    },
+    "I0189": {
+      "success": "At 390px, mobile Games selected the Games dashboard.",
+      "cancel": "Mobile Home reverses route selection; no draft exists.",
+      "error": "The shared mobile rejected-write test verifies no false route advance.",
+      "persistence": "Games remained selected after browser reload."
+    },
+    "I0190": {
+      "success": "At 390px, mobile More opened the sidebar and set aria-expanded=true.",
+      "cancel": "A second More click closed the sidebar and set aria-expanded=false.",
+      "error": "This local drawer toggle has no storage, provider or validation path.",
+      "persistence": "Reload returned to the closed drawer with aria-expanded=false, as expected for transient UI state."
+    },
+    "I0192": {
+      "success": "Close command palette hid the open Ctrl+K dialog after entering an unsaved query.",
+      "cancel": "The graphite query was discarded; reopening the palette showed an empty query.",
+      "error": "Closing this transient local dialog makes no storage or provider request.",
+      "persistence": "Games remained the selected route and the palette was hidden after browser reload."
+    },
+    "I0193": {
+      "success": "The Add shortcut dialog's Close dialog button hid the form after typing an unsaved name.",
+      "cancel": "Reopening the form showed a blank Name field; the unsaved audit shortcut was absent.",
+      "error": "Closing without submission performs no write or validation; the separate save handler owns error feedback.",
+      "persistence": "The unsaved shortcut remained absent after browser reload."
+    },
+    "I0195": {
+      "success": "The Add Game dialog's Close dialog button hid the form after an unsaved name was entered.",
+      "cancel": "Reopening showed addGameName empty; no Unsaved game audit record was created.",
+      "error": "Closing without submission performs no storage or provider request.",
+      "persistence": "The unsaved game remained absent after browser reload."
+    },
+    "I0197": {
+      "success": "The game suggestion View Details dialog for Alan Wake 2 closed from its Close dialog button.",
+      "cancel": "Closing this read-only detail did not add or change a tracked game; focus returned to View Details.",
+      "error": "The close handler makes no write or provider request.",
+      "persistence": "After reload, the Games route remained and gameDetailsOverlay was hidden."
+    },
+    "I0198": {
+      "success": "The Add Movie dialog's Close dialog button hid the Add Title form after an unsaved title was entered.",
+      "cancel": "Reopening showed a blank Title field; the unsaved movie was absent.",
+      "error": "Closing without submission performs no storage or provider request.",
+      "persistence": "The unsaved movie remained absent after browser reload."
+    },
+    "I0200": {
+      "success": "The movie suggestion details dialog for The Shawshank Redemption closed from its Close dialog button.",
+      "cancel": "Closing this read-only detail did not add a library title; focus returned to View Details.",
+      "error": "The close handler makes no write or provider request.",
+      "persistence": "After reload, the Movies route remained and movieDetailsOverlay was hidden."
+    },
+    "I0201": {
+      "success": "Local toolbox Close toolbox hid its dialog after opening it through the command palette.",
+      "cancel": "No utility operation or record edit was pending; closing left Movies Suggestions unchanged.",
+      "error": "The close handler makes no write or provider request.",
+      "persistence": "The toolbox remained closed after browser reload."
+    },
+    "I0203": {
+      "success": "Browser Generate created a nonempty local password, evidenced by the Copy action reaching Password copied rather than the empty-output warning. tests/toolbox-controls.test.js verifies an 18-character allowed-alphabet output from successful crypto values without exposing a password in evidence.",
+      "cancel": "Generation is immediate with no draft or confirmation. Reload clears the transient output.",
+      "error": "The handler now catches unavailable crypto and reports Password generator unavailable without replacing the prior output; the focused test verifies this.",
+      "persistence": "After reload, Copy showed Generate a password first, confirming the generated output is transient."
+    },
+    "I0204": {
+      "success": "In the disposable browser, Copy after Generate reported Password copied. No password value was printed in the audit evidence.",
+      "cancel": "Copy is an immediate local clipboard action with no draft or stored record to cancel.",
+      "error": "Copy before Generate displayed Generate a password first. The fallback now reports password-specific success and checks the browser copy result; tests/toolbox-controls.test.js verifies rejected clipboard writes and failed fallback report Copy failed instead of claiming success.",
+      "persistence": "The generated password and copy action do not persist; after reload, Copy returned the empty-output warning."
+    },
+    "I0207": {
+      "success": "In the local toolbox, Encode changed A & B/Č to A%20%26%20B%2F%C4%8C; the post-fix browser check produced the same result.",
+      "cancel": "Decode reversed the encoded value to A & B/Č; no record draft is created.",
+      "error": "Malformed Unicode now reports That text cannot be encoded as a URL while retaining the input, verified by tests/toolbox-controls.test.js.",
+      "persistence": "After browser reload, reopening the toolbox showed a blank URL field."
+    },
+    "I0208": {
+      "success": "Decode restored A%20%26%20B%2F%C4%8C to A & B/Č in the browser.",
+      "cancel": "Encode reverses the decoded text; no record draft is created.",
+      "error": "The browser displayed That text is not valid encoded URL data for %broken and left it available for correction; the focused test also verifies this.",
+      "persistence": "After browser reload, reopening the toolbox showed a blank URL field."
+    },
+    "I0209": {
+      "success": "On a fresh disposable localhost:18978 origin, Welcome Start exploring closed the onboarding dialog.",
+      "cancel": "Escape closed Welcome without completion; browser reload reopened it, proving cancellation did not persist onboarding.",
+      "error": "The handler now leaves Welcome open when onboarding storage rejects the write, verified by tests/home-control-write-failure.test.js.",
+      "persistence": "After Start exploring, browser reload did not reopen Welcome."
+    },
+    "I0210": {
+      "success": "In Personal Shortcuts Customize mode, Move Daily up changed visible order from Shopping & Home / Smart Home / Daily to Shopping & Home / Daily / Smart Home. The old handler had reported a move without changing visible order; visibleCategories and moveCategory were fixed.",
+      "cancel": "Move Daily down reversed the order. The first visible category's Move up reported the edge and kept order unchanged.",
+      "error": "tests/category-save-failure.test.js verifies rejected category-order storage leaves CATEGORIES and rendered order unchanged; edge moves return false with feedback.",
+      "persistence": "The changed order remained after browser reload."
+    },
+    "I0211": {
+      "success": "Move Daily down changed the visible Personal order from Shopping & Home / Daily / Smart Home back to Shopping & Home / Smart Home / Daily.",
+      "cancel": "Move Daily up is the inverse; last-category Move down is bounded with an edge message.",
+      "error": "The shared rejected-write test verifies an unsaved move cannot advance the order in memory or UI.",
+      "persistence": "The reordered Personal category sequence was stored and observed after reload in the same move-control block."
+    },
+    "I0212": {
+      "success": "A custom Work category was renamed Audit Category to Audit Renamed in the accessible Rename category dialog.",
+      "cancel": "Typing Cancelled Rename then Cancel retained Audit Category.",
+      "error": "Trying duplicate Development kept the dialog open with Please choose a unique category name. The focused atomic-transaction test verifies failed storage retains category, shortcut and collapsed state.",
+      "persistence": "Audit Renamed remained the category after browser reload."
+    },
+    "I0213": {
+      "success": "After adding an Audit category link under Audit Renamed, Delete category confirmation moved that shortcut to Development and removed the custom category.",
+      "cancel": "Cancel retained Audit Renamed and its link.",
+      "error": "The delete now uses the shared confirmation dialog and one storage transaction. tests/category-save-failure.test.js verifies rejected writes leave category and link unchanged with retry feedback.",
+      "persistence": "After browser reload, Audit Renamed stayed absent and Audit category link remained under Development."
+    },
+    "I0214": {
+      "success": "Collapse Development set the category collapsed class and aria-expanded=false.",
+      "cancel": "Expand Development reversed the state and set aria-expanded=true.",
+      "error": "The handler now saves before changing the UI; tests/category-save-failure.test.js verifies rejected storage retains the prior expanded state.",
+      "persistence": "Collapsed state survived browser reload; after Expand, expanded state also survived reload."
+    },
+    "I0215": {
+      "success": "Shortcuts Add GitHub to Quick Access changed its action to Remove and displayed GitHub on Home Favorites.",
+      "cancel": "Remove GitHub from Quick Access reversed the favorite; Home no longer showed it.",
+      "error": "tests/shortcut-save-failure.test.js verifies rejected favorite storage leaves the prior list and view unchanged.",
+      "persistence": "GitHub remained in Favorites after reload while favorited, and remained absent after removal and another reload."
+    },
+    "I0216": {
+      "success": "More actions for GitHub opened the card menu and set aria-expanded=true.",
+      "cancel": "Escape closed the menu; clicking the same toggle reopened then closed it with aria-expanded=false.",
+      "error": "This local menu toggle makes no storage or provider request.",
+      "persistence": "After browser reload, the menu remained closed with aria-expanded=false."
+    },
+    "I0217": {
+      "success": "The GitHub menu's Copy address reported Address copied to clipboard; browser clipboard text equaled its public https://github.com URL.",
+      "cancel": "Copy is immediate with no draft or record mutation.",
+      "error": "The shared fallbackCopy now checks the browser copy result before reporting success; tests/toolbox-controls.test.js exercises a rejected clipboard path through that helper.",
+      "persistence": "Reload kept the Shortcuts route and unchanged GitHub card; clipboard content is external transient state."
+    },
+    "I0218": {
+      "success": "Oracle Documentation Move earlier changed the Development order from GitHub / Oracle Documentation / Stack Overflow to Oracle Documentation / GitHub / Stack Overflow.",
+      "cancel": "Move later returned Oracle Documentation to its prior position.",
+      "error": "The order setter saves before rerendering; tests/shortcuts.test.js verifies reorder is immutable and category-scoped. Edge moves report a boundary rather than changing order.",
+      "persistence": "The earlier position survived browser reload."
+    },
+    "I0219": {
+      "success": "Oracle Documentation Move later returned Development order to GitHub / Oracle Documentation / Stack Overflow.",
+      "cancel": "Move earlier is the inverse and was directly clicked in the same block.",
+      "error": "The shared move/setShortcutOrder path rejects failed storage before UI mutation; category boundaries are checked before reorder.",
+      "persistence": "The later position survived browser reload."
+    },
+    "I0221": {
+      "success": "The custom Work shortcut Edit shortcut menu opened a prefilled form; saving Audit category link edited updated the visible card.",
+      "cancel": "Typing Unsaved edit then Cancel preserved the prior Audit category link name when reopened.",
+      "error": "An invalid URL kept the edit dialog open with URL validation. tests/shortcut-save-failure.test.js verifies a rejected write restores the entire prior custom record without closing or rerendering.",
+      "persistence": "Audit category link edited remained after browser reload."
+    },
+    "I0222": {
+      "success": "The custom shortcut's Delete shortcut menu opened a confirmation; confirming Delete removed Audit category link edited.",
+      "cancel": "Cancel kept the link in Development.",
+      "error": "tests/shortcut-save-failure.test.js verifies rejected persistence retains the record, avoids rerender and reports Shortcut could not be deleted.",
+      "persistence": "The confirmed deletion remained absent after browser reload."
+    },
+    "I0226": {
+      "success": "On Home with an empty Favorites panel, Browse shortcuts selected the Shortcuts dashboard.",
+      "cancel": "Home view reverses the navigation; no draft or record mutation exists.",
+      "error": "The shared goToPage rejected-write test verifies a failed route save leaves the current page visible.",
+      "persistence": "Shortcuts remained the selected route after browser reload."
+    },
+    "I0228": {
+      "success": "On the disposable Productivity origin, Delete Audit delete task opened Delete task? with the task text. Confirming Delete removed the row and changed Today to 0 tasks.",
+      "cancel": "Cancel closed the confirmation and retained Audit delete task in Today.",
+      "error": "tests/productivity-write-failure.test.js verifies a rejected confirmed task delete returns false and retains the task; an accepted retry removes it.",
+      "persistence": "After confirming Delete and reloading the disposable browser page, Today still showed 0 tasks and the deleted task was absent."
+    },
+    "I0229": {
+      "success": "On the disposable Productivity origin, Add date created Audit countdown for 2026-10-01; Delete countdown Audit countdown opened Delete countdown? and confirming Delete removed the row.",
+      "cancel": "Cancel closed the confirmation and retained Audit countdown.",
+      "error": "tests/productivity-write-failure.test.js verifies a rejected confirmed countdown delete returns false and retains the prior record; an accepted retry removes it.",
+      "persistence": "After confirming Delete and reloading, Audit countdown remained absent from Planner."
+    },
+    "I0230": {
+      "success": "On Home, selecting YouTube in the Search provider group changed its pressed state to true and focused search.",
+      "cancel": "Selecting Google reversed the choice and restored Google's pressed state.",
+      "error": "The handler now saves before changing currentProvider or the pressed state. tests/home-control-write-failure.test.js verifies a rejected search-provider write leaves Google selected and an accepted retry selects YouTube; all six focused tests passed.",
+      "persistence": "After selecting YouTube and reloading the disposable browser page, YouTube remained pressed."
+    },
+    "I0233": {
+      "success": "On Quick Notes, Pin note changed the Audit note control to Unpin note with aria-pressed=true; reload retained the pin.",
+      "cancel": "Unpin note reversed the state to Pin note with aria-pressed=false.",
+      "error": "Pin now creates an immutable replacement and calls saveNotesList before rerendering. tests/notes-write-failure.test.js verifies the shared save boundary retains the old list on rejected storage.",
+      "persistence": "The pinned state survived a disposable-browser reload before the inverse action."
+    },
+    "I0234": {
+      "success": "In Quick Notes edit mode, Save changed Audit note/Original body to Saved title/Saved body and reported Note saved.",
+      "cancel": "Before saving, Cancel with Unsaved title/Unsaved body preserved the original note; the later save used a new edit.",
+      "error": "Save now builds a replacement note, checks saveNotesList before closing edit mode or claiming success, and leaves the draft visible on rejected storage; the focused save-boundary regression passes.",
+      "persistence": "Saved title and Saved body remained after browser reload."
+    },
+    "I0235": {
+      "success": "Cancel exited the Audit note editor and returned the original note card after changing both draft fields.",
+      "cancel": "The discard action is itself the cancellation path; Edit note reopened the stored values for a subsequent save.",
+      "error": "Cancel performs no storage write and therefore has no rejected-write path; the prior record remained visible.",
+      "persistence": "A reload after Cancel still showed Audit note and Original body."
+    },
+    "I0236": {
+      "success": "Edit note opened the card editor with its saved Note title and Note body values and focused the title field.",
+      "cancel": "Cancel discarded draft title/body changes and returned to the unchanged card.",
+      "error": "Opening edit mode performs no write; rejected Save now keeps the draft in edit mode via the shared save boundary, covered by tests/notes-write-failure.test.js.",
+      "persistence": "After saving a later edit and reloading, the card displayed Saved title and Saved body."
+    },
+    "I0237": {
+      "success": "Delete note opened the shared Delete note? dialog for a disposable Deletion check note; confirming Delete removed the card and reported Note deleted.",
+      "cancel": "Cancel closed the shared dialog and kept the note and body visible.",
+      "error": "tests/notes-write-failure.test.js verifies delete waits for confirmation and rejected persistence leaves the note and rendered list unchanged; both focused tests pass.",
+      "persistence": "After confirmed deletion and reload, the note remained absent."
+    },
+    "I0240": {
+      "success": "A Suggestions card's View Details opened The Shawshank Redemption dialog with its overview, genre, year, duration, language, rating, platforms and actions.",
+      "cancel": "Close dialog returned to Suggestions without adding or changing the title.",
+      "error": "This local catalog detail open is read-only and makes no storage or provider request; there is no write failure path.",
+      "persistence": "After closing and reloading, Suggestions remained selected and the detail dialog stayed closed."
+    },
+    "I0241": {
+      "success": "The Shawshank Redemption Suggestions card Add to Watchlist reported it added to the library; Watchlist displayed the title and actions.",
+      "cancel": "Watchlist Remove reversed membership, left the title tracked as Unwatched, and showed an empty Watchlist.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected transactional library write leaves the prior library and storage empty; an accepted retry adds the title as Watchlist. All six focused tests pass.",
+      "persistence": "Reload retained the title on Watchlist after Add; after Remove, reload retained the empty Watchlist."
+    },
+    "I0242": {
+      "success": "The Suggestions card Mark as Watched for The Shawshank Redemption reported marked as Watched; My Movies & Series showed its status as Watched.",
+      "cancel": "The library's Change status control reversed it to Unwatched.",
+      "error": "tests/movies-lifecycle.test.js verifies both Watchlist and Watched suggestion actions reject partial transactional writes without advancing the library; all six focused tests pass.",
+      "persistence": "Reload retained Watched after the action, and retained Unwatched after the reversal."
+    },
+    "I0243": {
+      "success": "The Shawshank Redemption Suggestions card Dismiss reported Suggestion dismissed and removed that card from the suggestion panel.",
+      "cancel": "Reset Preferences restored the dismissed card; this immediate action has no draft-stage Cancel.",
+      "error": "Dismiss now saves a replacement ID list before changing memory, rerendering or claiming success. tests/movies-lifecycle.test.js verifies rejected persistence leaves the card/list unchanged; all seven focused tests pass.",
+      "persistence": "The card remained absent after reload while dismissed, and remained present after Reset Preferences and a further reload."
+    },
+    "I0244": {
+      "success": "Watchlist Mark as Watched moved The Shawshank Redemption off Watchlist and showed Watched in My Movies & Series.",
+      "cancel": "The library Change status selector restored Watchlist membership.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected transaction restores the prior Watchlist status in memory and storage; all eight focused tests pass.",
+      "persistence": "Watched survived browser reload, and the restored Watchlist membership also survived a later reload."
+    },
+    "I0245": {
+      "success": "Watchlist Remove immediately removed The Shawshank Redemption from the Watchlist while retaining it as an Unwatched library title.",
+      "cancel": "The library Change status selector restored Watchlist membership; the immediate action has no draft-stage Cancel.",
+      "error": "tests/movies-lifecycle.test.js verifies rejected persistence restores the prior Watchlist status in memory and storage; all nine focused tests pass.",
+      "persistence": "The Watchlist remained empty after Remove and reload, then showed the title again after the inverse status change."
+    },
+    "I0246": {
+      "success": "For a disposable Audit custom film, Delete opened Delete custom title?; confirming Delete removed the custom library card.",
+      "cancel": "Cancel kept Audit custom film in My Movies & Series.",
+      "error": "tests/movies-lifecycle.test.js verifies a rejected transactional custom Delete restores the library title in memory and storage; all ten focused tests pass.",
+      "persistence": "After confirmed Delete and browser reload, Audit custom film remained absent."
+    },
+    "I0247": {
+      "success": "Edit Audit edit film opened the prefilled Edit Title form. Saving Audit edited film changed the library card and reported Movie updated.",
+      "cancel": "Changing the title to Unsaved film then Cancel kept Audit edit film unchanged.",
+      "error": "Clearing the required Title field with keyboard Select All/Backspace and submitting kept Edit Title open with Please enter a movie title. tests/movies-lifecycle.test.js also verifies a rejected transactional metadata edit restores the previous title in memory and storage; all eleven focused tests pass.",
+      "persistence": "Audit edited film remained on the library card after reload."
+    },
+    "I0248": {
+      "success": "The Audit edited film library poster's View details control opened a dialog with its saved type, genre, year, duration, language, status and actions.",
+      "cancel": "Close dialog returned to the library card without mutating it.",
+      "error": "Opening saved local details makes no storage or provider request; there is no write failure path.",
+      "persistence": "After closing and reloading, the custom library card remained and the dialog stayed closed."
+    },
+    "I0250": {
+      "success": "With an empty Watchlist, Overview Get Suggestions selected the Suggestions tab and focused its panel.",
+      "cancel": "Selecting Overview reversed the navigation without changing tracked titles.",
+      "error": "switchTab now saves before changing the selected panel and Get Suggestions focuses the panel only after a successful save. tests/movies-lifecycle.test.js verifies rejected route storage keeps Overview selected; all twelve focused tests pass.",
+      "persistence": "Suggestions remained selected after reload; after returning to Overview, a later reload showed Overview selected."
+    },
+    "I0251": {
+      "success": "Overview Up Next Mark as Watched moved The Shawshank Redemption from Watchlist to Watched and replaced Up Next with the empty prompt.",
+      "cancel": "The library Change status selector restored Watchlist status.",
+      "error": "The Up Next action calls the same addSeedToLibrary transactional path as I0244. tests/movies-lifecycle.test.js verifies a rejected transaction restores the previous Watchlist status in memory and storage.",
+      "persistence": "Watched survived reload; after the inverse status change, Watchlist also survived a later reload."
+    }
+  }
+}

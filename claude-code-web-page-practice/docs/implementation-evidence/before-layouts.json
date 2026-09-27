@@ -1,0 +1,162 @@
+[
+  {
+    "name": "work-1440",
+    "width": 1440,
+    "layout": {
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    }
+  },
+  {
+    "name": "work-1024",
+    "width": 1024,
+    "layout": {
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    }
+  },
+  {
+    "name": "work-760",
+    "width": 760,
+    "layout": {
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    }
+  },
+  {
+    "name": "work-390",
+    "width": 390,
+    "layout": {
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  },
+  {
+    "name": "games-1440",
+    "width": 1440,
+    "layout": {
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    }
+  },
+  {
+    "name": "games-1024",
+    "width": 1024,
+    "layout": {
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    }
+  },
+  {
+    "name": "games-760",
+    "width": 760,
+    "layout": {
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    }
+  },
+  {
+    "name": "games-390",
+    "width": 390,
+    "layout": {
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  },
+  {
+    "name": "movies-1440",
+    "width": 1440,
+    "layout": {
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    }
+  },
+  {
+    "name": "movies-1024",
+    "width": 1024,
+    "layout": {
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    }
+  },
+  {
+    "name": "movies-760",
+    "width": 760,
+    "layout": {
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    }
+  },
+  {
+    "name": "movies-390",
+    "width": 390,
+    "layout": {
+      "bodyWidth": 375,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  },
+  {
+    "name": "settings-1440",
+    "width": 1440,
+    "layout": {
+      "bodyWidth": 1425,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1440
+    }
+  },
+  {
+    "name": "settings-1024",
+    "width": 1024,
+    "layout": {
+      "bodyWidth": 1009,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 1024
+    }
+  },
+  {
+    "name": "settings-760",
+    "width": 760,
+    "layout": {
+      "bodyWidth": 745,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 760
+    }
+  },
+  {
+    "name": "settings-390",
+    "width": 390,
+    "layout": {
+      "bodyWidth": 385,
+      "brokenImages": [],
+      "overflow": false,
+      "width": 390
+    }
+  }
+]

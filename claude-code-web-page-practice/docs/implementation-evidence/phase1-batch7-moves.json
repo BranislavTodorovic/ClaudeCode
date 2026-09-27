@@ -1,0 +1,14 @@
+[
+  {
+    "from": "_static-server.js",
+    "to": "server/_static-server.js"
+  },
+  {
+    "from": "REVISED-IMPLEMENTATION-PLAN.md",
+    "to": "docs/REVISED-IMPLEMENTATION-PLAN.md"
+  },
+  {
+    "from": "agent-instructions.md",
+    "to": "docs/agent-instructions.md"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "item": "5.6.1",
+  "status": "VERIFIED",
+  "at": "2026-09-22T20:48:38.1070560Z",
+  "method": [
+    "In-app Browser inspected all ten route view roots at 1280px: every visible button/link/role-button with SVG geometry, name, glyph, and target size.",
+    "Phase 0.5 source-template inventory covers dynamic/hidden controls absent from initial route states.",
+    "Source scan isolated Unicode/text-glyph application controls and ambiguous pin glyph."
+  ],
+  "visibleControls": 433,
+  "controlsWithSvg": 302,
+  "svgInstances": 387,
+  "unnamedSvgOnlyControls": 0,
+  "retained": [
+    "Shared 24x24 currentColor outline glyphs for navigation, add, edit, trash, close, favorite, search, and page headings.",
+    "Domain-specific game/movie outline glyphs with 1.75 stroke retain their style while meeting the same optical family.",
+    "Text-labelled controls without icons remain readable; no decorative icon is added solely for density."
+  ],
+  "improve": [
+    "index.html:352 Games collection down-arrow text glyph",
+    "index.html:1174 category move up/down text glyphs and 32px icon-only targets",
+    "index.html:1193 shortcut move earlier/later text glyphs",
+    "index.html:1885 countdown delete × text glyph should use trash semantics",
+    "home/home-overview.js:22 Take a break ✓ text glyph should use timer",
+    "explore/explore-global.js:12 trip move earlier/later text glyphs",
+    "explore/discovery.css:1 filter disclosure plus/minus pseudo glyphs",
+    "index.html:1002 note pin glyph is a location pin and is ambiguous for pinning"
+  ],
+  "exceptions": [
+    "Built-in website/service marks and favicons represent source identity.",
+    "TMDB/RAWG attribution marks represent providers.",
+    "Scene/media SVG art with non-24 viewBoxes is content, not an application control."
+  ],
+  "evidence": [
+    "audit-2026-09-22/phase5-198A-visible-icon-inventory.json",
+    "audit-2026-09-22/phase0-0.5-current-inventory.json",
+    "phase5/icon-audit.json"
+  ]
+}

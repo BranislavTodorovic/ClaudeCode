@@ -1,0 +1,15 @@
+{
+  "item": "0.8",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "result": "PASS",
+  "source": [
+    "shared/storage-utils.js:20-31 defines bounded text, ID, date/time, URL, optional text, tag and timestamp validators",
+    "shared/storage-utils.js:32-39 defines Work item/task enums and bounds, game templates/resources and destination fields",
+    "shared/storage-utils.js:57-71 applies the field contracts to persisted domain records",
+    "work/work-tracker.js:117,133 and work/projects.js:47 create IDs and timestamps",
+    "personal/personal-controller.js:8,16,30 creates and updates IDs/timestamps",
+    "games/games.js:53 generates game IDs"
+  ],
+  "compatibility": "Legacy optional timestamps and provider metadata remain optional where the current v2-v4 import contract requires it; field bounds and enum validation are applied according to each current schema.",
+  "tests": "phase0-0.1-tests.txt: work status/type/date/length and malformed domain metadata/template tests pass"
+}

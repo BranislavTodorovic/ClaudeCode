@@ -1,0 +1,35 @@
+{
+  "checklistItems": ["10.4.1", "10.4.2"],
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "catalogOwner": "explore/explore-data.js",
+  "destinationCount": 12,
+  "uniqueIdCount": 12,
+  "requiredFields": [
+    "id",
+    "name",
+    "country/region",
+    "categories",
+    "budget",
+    "duration",
+    "seasons",
+    "styles",
+    "tags",
+    "summary",
+    "details",
+    "links",
+    "image",
+    "fallback"
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js",
+    "passed": 31,
+    "failed": 0
+  },
+  "browserChecks": {
+    "renderedDestinationCount": 12,
+    "pagination": "six initial results plus six after Load more",
+    "detailsResolvedFromCatalog": true,
+    "consoleWarningsOrErrors": 0
+  }
+}

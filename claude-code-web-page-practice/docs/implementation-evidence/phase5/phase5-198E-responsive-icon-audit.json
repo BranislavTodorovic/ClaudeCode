@@ -1,0 +1,674 @@
+{
+  "item": "198E / 5.6.5",
+  "date": "2026-09-23",
+  "baseCommit": "cb37089150e4e5b50a928a6a539ebbf51cde45c1",
+  "origin": "http://localhost:18974/",
+  "method": "In-app browser viewport override; visible UI route navigation; read-only DOM geometry, SVG and overflow inspection; visual screenshot review",
+  "widthRouteMatrix": [
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "home",
+      "svgControls": 36,
+      "visibleSvg": 43,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "shortcuts",
+      "svgControls": 46,
+      "visibleSvg": 57,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "productivity",
+      "svgControls": 13,
+      "visibleSvg": 19,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "notes",
+      "svgControls": 14,
+      "visibleSvg": 16,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "settings",
+      "svgControls": 11,
+      "visibleSvg": 17,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "work",
+      "svgControls": 68,
+      "visibleSvg": 86,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "personal",
+      "svgControls": 101,
+      "visibleSvg": 124,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "explore",
+      "svgControls": 44,
+      "visibleSvg": 53,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "games",
+      "svgControls": 33,
+      "visibleSvg": 37,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "movies",
+      "svgControls": 53,
+      "visibleSvg": 89,
+      "width": 1440
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "home",
+      "svgControls": 36,
+      "visibleSvg": 43,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "shortcuts",
+      "svgControls": 46,
+      "visibleSvg": 57,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "productivity",
+      "svgControls": 13,
+      "visibleSvg": 19,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "notes",
+      "svgControls": 14,
+      "visibleSvg": 16,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "settings",
+      "svgControls": 11,
+      "visibleSvg": 17,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "work",
+      "svgControls": 68,
+      "visibleSvg": 86,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "personal",
+      "svgControls": 101,
+      "visibleSvg": 124,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "explore",
+      "svgControls": 44,
+      "visibleSvg": 53,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "games",
+      "svgControls": 33,
+      "visibleSvg": 37,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "movies",
+      "svgControls": 53,
+      "visibleSvg": 89,
+      "width": 1024
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "home",
+      "svgControls": 32,
+      "visibleSvg": 33,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "shortcuts",
+      "svgControls": 42,
+      "visibleSvg": 52,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "productivity",
+      "svgControls": 9,
+      "visibleSvg": 14,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "notes",
+      "svgControls": 10,
+      "visibleSvg": 11,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "settings",
+      "svgControls": 7,
+      "visibleSvg": 12,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "work",
+      "svgControls": 63,
+      "visibleSvg": 67,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "personal",
+      "svgControls": 97,
+      "visibleSvg": 101,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "explore",
+      "svgControls": 39,
+      "visibleSvg": 41,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "games",
+      "svgControls": 29,
+      "visibleSvg": 32,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "movies",
+      "svgControls": 49,
+      "visibleSvg": 84,
+      "width": 760
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "home",
+      "svgControls": 32,
+      "visibleSvg": 30,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "shortcuts",
+      "svgControls": 42,
+      "visibleSvg": 52,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "productivity",
+      "svgControls": 9,
+      "visibleSvg": 14,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "notes",
+      "svgControls": 10,
+      "visibleSvg": 11,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "settings",
+      "svgControls": 7,
+      "visibleSvg": 12,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "work",
+      "svgControls": 63,
+      "visibleSvg": 67,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "personal",
+      "svgControls": 97,
+      "visibleSvg": 101,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "explore",
+      "svgControls": 39,
+      "visibleSvg": 41,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "games",
+      "svgControls": 29,
+      "visibleSvg": 32,
+      "width": 390
+    },
+    {
+      "issues": [],
+      "overflow": false,
+      "route": "movies",
+      "svgControls": 49,
+      "visibleSvg": 84,
+      "width": 390
+    }
+  ],
+  "classicLightRoutes": [
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "home",
+      "svgCount": 39,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "shortcuts",
+      "svgCount": 55,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "productivity",
+      "svgCount": 13,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "notes",
+      "svgCount": 14,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "settings",
+      "svgCount": 11,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "work",
+      "svgCount": 81,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "personal",
+      "svgCount": 119,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "explore",
+      "svgCount": 50,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "games",
+      "svgCount": 33,
+      "theme": "light"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "classic",
+      "route": "movies",
+      "svgCount": 84,
+      "theme": "light"
+    }
+  ],
+  "deepSpaceDarkRoutes": [
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "home",
+      "svgCount": 39,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "shortcuts",
+      "svgCount": 55,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "productivity",
+      "svgCount": 13,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "notes",
+      "svgCount": 14,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "settings",
+      "svgCount": 11,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "work",
+      "svgCount": 81,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "personal",
+      "svgCount": 119,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "explore",
+      "svgCount": 50,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "games",
+      "svgCount": 33,
+      "theme": "dark"
+    },
+    {
+      "badColor": 0,
+      "overflow": false,
+      "palette": "midnight",
+      "route": "movies",
+      "svgCount": 84,
+      "theme": "dark"
+    }
+  ],
+  "darkPaletteSettings390": [
+    {
+      "accent": "#7a8fff",
+      "overflow": false,
+      "palette": "classic/auto",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    },
+    {
+      "accent": "#7a8fff",
+      "overflow": false,
+      "palette": "classic/auto",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    },
+    {
+      "accent": "#b6a6ff",
+      "overflow": false,
+      "palette": "midnight",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    },
+    {
+      "accent": "#8ce2b6",
+      "overflow": false,
+      "palette": "aurora",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    },
+    {
+      "accent": "#c6d6f0",
+      "overflow": false,
+      "palette": "graphite",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    },
+    {
+      "accent": "#f1c385",
+      "overflow": false,
+      "palette": "sandstone",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    },
+    {
+      "accent": "#f0adcd",
+      "overflow": false,
+      "palette": "rosewood",
+      "theme": "dark",
+      "transparent": 0,
+      "visibleIcons": 22,
+      "zeroGeometry": 0
+    }
+  ],
+  "lightPaletteSettings390": [
+    {
+      "accent": "#536dff",
+      "overflow": false,
+      "palette": "classic",
+      "theme": "light",
+      "transparent": 0,
+      "visibleIcons": 22
+    },
+    {
+      "accent": "#4a3b9c",
+      "overflow": false,
+      "palette": "midnight",
+      "theme": "light",
+      "transparent": 0,
+      "visibleIcons": 22
+    },
+    {
+      "accent": "#176744",
+      "overflow": false,
+      "palette": "aurora",
+      "theme": "light",
+      "transparent": 0,
+      "visibleIcons": 22
+    },
+    {
+      "accent": "#3e4e67",
+      "overflow": false,
+      "palette": "graphite",
+      "theme": "light",
+      "transparent": 0,
+      "visibleIcons": 22
+    },
+    {
+      "accent": "#805019",
+      "overflow": false,
+      "palette": "sandstone",
+      "theme": "light",
+      "transparent": 0,
+      "visibleIcons": 22
+    },
+    {
+      "accent": "#8b365c",
+      "overflow": false,
+      "palette": "rosewood",
+      "theme": "light",
+      "transparent": 0,
+      "visibleIcons": 22
+    }
+  ],
+  "notePinAfterFix": [
+    {
+      "color": "rgb(97, 112, 138)",
+      "iconHeight": 20,
+      "iconWidth": 20,
+      "name": "Pin note",
+      "overflow": false,
+      "pressed": "false",
+      "route": "notes",
+      "targetHeight": 44,
+      "targetWidth": 44,
+      "width": 1440
+    },
+    {
+      "color": "rgb(97, 112, 138)",
+      "iconHeight": 20,
+      "iconWidth": 20,
+      "name": "Pin note",
+      "overflow": false,
+      "pressed": "false",
+      "route": "notes",
+      "targetHeight": 44,
+      "targetWidth": 44,
+      "width": 1024
+    },
+    {
+      "color": "rgb(97, 112, 138)",
+      "iconHeight": 20,
+      "iconWidth": 20,
+      "name": "Pin note",
+      "overflow": false,
+      "pressed": "false",
+      "route": "notes",
+      "targetHeight": 44,
+      "targetWidth": 44,
+      "width": 760
+    },
+    {
+      "color": "rgb(97, 112, 138)",
+      "iconHeight": 20,
+      "iconWidth": 20,
+      "name": "Pin note",
+      "overflow": false,
+      "pressed": "false",
+      "route": "notes",
+      "targetHeight": 44,
+      "targetWidth": 44,
+      "width": 390
+    }
+  ],
+  "screenshots": [
+    "icons-classic-light-1440-home.jpg",
+    "icons-deep-space-dark-1440-shortcut-actions.jpg",
+    "icons-deep-space-dark-1024-shortcut-dialog.jpg",
+    "icons-deep-space-dark-760-explore-filters.jpg",
+    "icons-deep-space-dark-390-note-actions-after.jpg",
+    "icons-rosewood-light-390-settings-settled.jpg"
+  ],
+  "findings": [
+    "All ten tabs inspected at each of 1440, 1024, 760, 390 px; visible control SVGs had drawable geometry and no measured clipping or sub-10px rendered size, and no page-wide horizontal overflow.",
+    "All ten tabs inspected in Classic Light and Deep Space dark at 1440 px; no transparent control icon color or overflow.",
+    "Settings icons inspected in Auto, Classic, Deep Space, Aurora, Graphite, Sandstone and Rosewood in dark, and six explicit palettes in light at 390 px; no missing geometry, transparent icon color or page-wide overflow.",
+    "Visual captures reviewed for navigation/headings, shortcut cards/action menu, dialog form/close, Explore search/filter and note actions. Brand/favicons remain distinct from application controls.",
+    "Mobile Notes visual review found 15px unpinned pushpin too weak; increased to 20px and changed faint to muted. Rechecked its 44px target, 20px icon and accessible state at all four widths."
+  ],
+  "tests": "node --test tests/: 92 passed, 0 failed; git diff --check exit 0"
+}

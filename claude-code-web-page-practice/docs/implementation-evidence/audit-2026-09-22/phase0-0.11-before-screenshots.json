@@ -1,0 +1,133 @@
+{
+  "item": "0.11",
+  "gitCommit": "37f3e00eb78af88672b61336fe29dd26eab9e321",
+  "checkedAt": "2026-09-22T22:26:11.1742864+02:00",
+  "result": "PASS",
+  "expectedRoutes": [
+    "work",
+    "games",
+    "movies",
+    "settings"
+  ],
+  "expectedViewports": [
+    1440,
+    1024,
+    760,
+    390
+  ],
+  "files": [
+    {
+      "file": "docs/implementation-evidence/before/before-games-1024.png",
+      "width": 1009,
+      "height": 1663,
+      "bytes": 119411,
+      "sha256": "45BE553590622ABECE74B74ED937AD0C07D3AF8121E38A92E4080D8508E5DA21"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-games-1440.png",
+      "width": 1425,
+      "height": 1903,
+      "bytes": 192541,
+      "sha256": "F53AD393FEDB459FB66D95166D16BE832A216BEE1384C67116C116DD1E26C405"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-games-390.png",
+      "width": 375,
+      "height": 1924,
+      "bytes": 57172,
+      "sha256": "0CC32E2BB9AF9F8A39841DE8850C7631D3E7E12F3EF10EA8D10FC9BDAF17C72F"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-games-760.png",
+      "width": 745,
+      "height": 1930,
+      "bytes": 94921,
+      "sha256": "AAD27A82BD1E3D9D0422AC7452676F3FC5471923700AA0A070EA8E375ED4DBF3"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-movies-1024.png",
+      "width": 1009,
+      "height": 1772,
+      "bytes": 96005,
+      "sha256": "44F69790B1C7A01FFF556B62F3FFB5934773712B71204ABE36C112851872B239"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-movies-1440.png",
+      "width": 1425,
+      "height": 1709,
+      "bytes": 120505,
+      "sha256": "B684DED19516C05F5C5CC01C8D75680CB55FD0CDD68BAD26E52DBBA4F1994B01"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-movies-390.png",
+      "width": 375,
+      "height": 1970,
+      "bytes": 56681,
+      "sha256": "CD71AF485843D70941796D68CB273AC15635DEAF2426F965F739DC05072B979A"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-movies-760.png",
+      "width": 745,
+      "height": 1851,
+      "bytes": 73845,
+      "sha256": "678AF1F1C3120CBE66B2F767970046DDB37A29DD1F2C721DC96818EA763D6748"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-settings-1024.png",
+      "width": 1009,
+      "height": 2748,
+      "bytes": 192382,
+      "sha256": "4B40CEB74DEB7DFD343182648BC6D5633E44113BADB539641CF0D5ECCA4CA265"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-settings-1440.png",
+      "width": 1425,
+      "height": 2477,
+      "bytes": 213103,
+      "sha256": "4E6DE034ECF33C94D55C915F3F52C57F4CEF42095C3D7AFC7B68084FDA96F5FD"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-settings-390.png",
+      "width": 385,
+      "height": 3400,
+      "bytes": 138192,
+      "sha256": "31BA6D85F2744FE096B2F3BFEF7D547B811553698AD9AC68BB9F937ACA1FEA84"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-settings-760.png",
+      "width": 745,
+      "height": 3181,
+      "bytes": 173194,
+      "sha256": "FCB361988F8CFB636E711D2D6C793580C0B2F9F9B64CB422ACA1FACA0E2B01D7"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-work-1024.png",
+      "width": 1009,
+      "height": 3207,
+      "bytes": 146168,
+      "sha256": "899A61CB1F2AAB3036D617ACFBAE439A35791B23E09E219ED06E27071C2B3415"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-work-1440.png",
+      "width": 1425,
+      "height": 2943,
+      "bytes": 182880,
+      "sha256": "B54952EF7963800D4131FE626933812C24C2BE3B3F9238328936EE5D9E2D0639"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-work-390.png",
+      "width": 375,
+      "height": 4209,
+      "bytes": 102273,
+      "sha256": "0960F1E50A517C3F2AEF719C90586E58236A266D3D315A438F32C34D7B106C10"
+    },
+    {
+      "file": "docs/implementation-evidence/before/before-work-760.png",
+      "width": 745,
+      "height": 4057,
+      "bytes": 144851,
+      "sha256": "1160F1D81ADC991ED1B640BF09D60FC78589D750D1A1FDADF1F3D76C21B8E880"
+    }
+  ],
+  "visualReview": "Opened representative 1440-width captures for all four domains; each shows the named pre-redesign page. Existing before-layouts.json records requested browser viewport widths."
+}

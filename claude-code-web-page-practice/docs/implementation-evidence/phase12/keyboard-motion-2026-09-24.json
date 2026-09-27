@@ -1,0 +1,12 @@
+{
+  "item": 344,
+  "step": "12.10",
+  "status": "VERIFIED",
+  "date": "2026-09-24",
+  "mode": "Settings Motion = Reduced motion — minimize animation; body carried force-reduced-motion and scene-still.",
+  "keyboardRoutes": ["Home", "Work", "Personal", "Explore", "Games", "Movies & Series", "Shortcuts", "Productivity", "Quick Notes", "Settings"],
+  "routeResults": "Each route was activated using Enter on its navigation button. The expected route heading appeared in every case, focus remained on the activated button, and computed outline width was 3px on all ten buttons.",
+  "stillness": "For each of the ten routes, all visible DOM elements were checked for computed animation-name other than none or nonzero transition duration; none were found. body.scene-still was true on every route. tests/scenes.test.js independently covers reduced motion and Off mode rules.",
+  "dialogKeyboard": "On Work, Enter on Add shortcut opened the Add shortcut dialog and focused Name. Escape closed it and returned visible 3px focus outline to Add shortcut.",
+  "browserConsole": "No uncaught browser errors in the current static-server route pass."
+}

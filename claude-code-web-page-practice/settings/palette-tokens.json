@@ -1,0 +1,178 @@
+{
+  "tokens": [
+    "bg",
+    "bg-2",
+    "surface",
+    "surface-2",
+    "surface-3",
+    "text",
+    "muted",
+    "faint",
+    "line",
+    "accent",
+    "accent-2",
+    "accent-soft"
+  ],
+  "palettes": {
+    "midnight": {
+      "name": "Deep Space",
+      "note": "Navy and violet",
+      "light": [
+        "#edf0fa",
+        "#e0e5f5",
+        "#ffffff",
+        "#f2f4fc",
+        "#e4e8f5",
+        "#17213f",
+        "#495778",
+        "#596584",
+        "#69789c",
+        "#4a3b9c",
+        "#6751b4",
+        "#e8e2fb"
+      ],
+      "dark": [
+        "#080d20",
+        "#101730",
+        "#151e39",
+        "#1b2748",
+        "#253353",
+        "#f3f4ff",
+        "#bec8e8",
+        "#a3b2d9",
+        "#7384ad",
+        "#b6a6ff",
+        "#ccbdff",
+        "#342957"
+      ]
+    },
+    "aurora": {
+      "name": "Aurora",
+      "note": "Green and teal",
+      "light": [
+        "#edf6f0",
+        "#deeee4",
+        "#ffffff",
+        "#f0f8f3",
+        "#e0f0e7",
+        "#153a2d",
+        "#3c6151",
+        "#506f61",
+        "#638773",
+        "#176744",
+        "#215b78",
+        "#dbeee4"
+      ],
+      "dark": [
+        "#091e19",
+        "#102b23",
+        "#14362c",
+        "#1c4237",
+        "#285347",
+        "#f1fcf6",
+        "#b2d8c6",
+        "#9ac3b0",
+        "#698d7c",
+        "#8ce2b6",
+        "#8ed6e4",
+        "#204e3a"
+      ]
+    },
+    "graphite": {
+      "name": "Graphite",
+      "note": "Quiet monochrome",
+      "light": [
+        "#f0f1f3",
+        "#e6e8eb",
+        "#ffffff",
+        "#f6f7f8",
+        "#e7e9ec",
+        "#252a33",
+        "#4f5968",
+        "#626d7b",
+        "#77808e",
+        "#3e4e67",
+        "#53596c",
+        "#e2e7ef"
+      ],
+      "dark": [
+        "#111318",
+        "#191d24",
+        "#202630",
+        "#292f3b",
+        "#353d49",
+        "#f3f5fa",
+        "#c0c8d6",
+        "#a9b3c4",
+        "#7a8597",
+        "#c6d6f0",
+        "#d5c5e6",
+        "#394659"
+      ]
+    },
+    "sandstone": {
+      "name": "Sandstone",
+      "note": "Warm mineral light",
+      "light": [
+        "#f8f1e7",
+        "#eee2d2",
+        "#fffaf3",
+        "#f7ecdd",
+        "#eadbc7",
+        "#392b20",
+        "#67523d",
+        "#79634b",
+        "#9b7955",
+        "#805019",
+        "#98412e",
+        "#f1dfc5"
+      ],
+      "dark": [
+        "#22180f",
+        "#302216",
+        "#39291b",
+        "#453222",
+        "#55402b",
+        "#fff4e3",
+        "#dcc4a2",
+        "#c9ac85",
+        "#987850",
+        "#f1c385",
+        "#eeb59b",
+        "#54391f"
+      ]
+    },
+    "rosewood": {
+      "name": "Rosewood",
+      "note": "Soft rose and plum",
+      "light": [
+        "#f8eff1",
+        "#eddee4",
+        "#fffafb",
+        "#f6e9ee",
+        "#ebd8e1",
+        "#3b2532",
+        "#694c5d",
+        "#7c5e70",
+        "#9e7c8d",
+        "#8b365c",
+        "#6d467d",
+        "#f0dbe5"
+      ],
+      "dark": [
+        "#21151e",
+        "#2c1d29",
+        "#392535",
+        "#472f41",
+        "#563c4e",
+        "#fff0f8",
+        "#dfbdd2",
+        "#cba5be",
+        "#97758b",
+        "#f0adcd",
+        "#cfb6ee",
+        "#5b3149"
+      ]
+    }
+  }
+}

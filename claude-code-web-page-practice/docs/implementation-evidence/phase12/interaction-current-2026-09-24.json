@@ -1,0 +1,56 @@
+{
+  "phase": 12,
+  "item": 340,
+  "status": "VERIFIED",
+  "context": "Disposable local browser test server on 127.0.0.1:18974; current browser origin; 2026-09-24.",
+  "checks": [
+    {
+      "surface": "Explore trip board",
+      "actions": "Open Edit trip for saved São Miguel; set Trip notes to 'Phase 12 browser note' and Priority to 2 High; Save trip; reload",
+      "result": "Trip board displayed Priority 2 and the exact note before and after reload; browser console error log empty."
+    },
+    {
+      "surface": "Explore trip board",
+      "actions": "Change São Miguel status to Researching; reload; open editor, change notes, and Cancel",
+      "result": "Researching 1 remained after reload; the saved note remained and discarded edit was absent after Cancel."
+    },
+    {
+      "surface": "Work item lifecycle",
+      "actions": "Open QA story lifecycle; Close item & tasks; inspect History and Backlog; reopen item; reload",
+      "result": "Close reported 'Item closed. All tasks completed.' History recorded a closed event, Backlog displayed the closed item, and reopen reported 'Completed task history retained.' After reload the Board displayed Open with 1/1 tasks completed. Browser console error log empty."
+    },
+    {
+      "surface": "Personal goals; source item 328 / 11.8",
+      "actions": "Add Phase 12 personal goal; check it; open edit and Cancel a changed value; save a new name; reload; open Delete and Cancel; confirm Delete; reload",
+      "result": "Completion changed from 0/1 to 1/1. Cancel preserved the original text. Edited name and checked state survived reload. Delete Cancel retained the item; confirmed Delete restored the 0/0 empty state after reload. The reusable goal/routine/habit controller and confirmation/storage failure paths are covered by tests/tracker-regression.test.js."
+    },
+    {
+      "surface": "Explore trip board",
+      "actions": "Shortlist Lake Bohinj; move it earlier; create plan with name and Day 1 itinerary; reload; Remove and Cancel; Remove and confirm; reload",
+      "result": "Board count grew to two, move control changed its order, plan title and itinerary appeared and survived reload, Cancel preserved the plan, and confirmed removal returned the board count to one with plan absent after reload."
+    },
+    {
+      "surface": "Explore discovery; source item 318 / 10.4.12",
+      "actions": "Search São Miguel and submit; open its Details and Cancel; clear the query and submit; test each of eight preference selectors separately and reset to Any; combine Nature and Medium; press Surprise me; save Lake Bohinj from its detail; reload",
+      "result": "Search returned São Miguel. Details showed the destination description, provenance and planning link, then closed. The eight selectors each retained their chosen option and produced 2 Beach, 6 Summer, 6 Week, 4 High budget, 5 Active style, 5 Temperate climate, 3 Hiking interest and 6 Europe departure results. Nature plus Medium returned two explained cards; Surprise me opened a matching Lake Bohinj detail. Lake Bohinj appeared on the board and survived reload. Nature and Medium selections also survived reload. The failed-photo state is independently evidenced in image-fallback-2026-09-24.json."
+    },
+    {
+      "surface": "Work task and external links",
+      "actions": "Uncheck QA task one; reload and reopen item; check it again; inspect the visible item link and Work shortcut link",
+      "result": "Task count changed to 0/1 and survived reload, then returned to 1/1. The item link was https://example.com/story and the Oracle Documentation shortcut was https://docs.oracle.com/; both used target=_blank and rel='noopener noreferrer'. Browser console error log empty."
+    }
+  ],
+  "coverage": {
+    "navigation": "docs/implementation-evidence/phase12/audit-2026-09-23.jsonl -> item 339; tests/browser-smoke.mjs routes(tab) passed all ten top-level routes and Work/Projects alias",
+    "addEditDeleteAndCancel": "Personal goals browser check above; Explore trip board save, plan edit and remove checks above",
+    "modalCloseAndCancel": "Personal edit/delete Cancel; Explore detail/trip/remove Cancel; Work detail close",
+    "persistenceAfterReload": "Personal goal state; Explore note, plan, filters and shortlist; Work task and close/reopen state",
+    "filters": "All eight Explore selectors with result counts; Work closed status filter and Backlog route",
+    "taskCheckboxes": "Work QA task one 1/1 -> 0/1 -> reload 0/1 -> 1/1",
+    "closeReopenBacklogHistory": "Work browser check above",
+    "reminders": "Work Board showed QA story lifecycle in Deadline reminders with an Overdue label and local overdue status; its History recorded close and reopen events",
+    "imageFallback": "docs/implementation-evidence/phase12/image-fallback-2026-09-24.json",
+    "externalLinks": "Visible Work item and shortcut link DOM attributes above; tests/shortcuts.test.js covers unsafe URL rejection"
+  },
+  "remainingForGate12": "Item 340 is verified. Other Phase 12 items and assigned deferred matrices still require their own verification before Gate 12."
+}

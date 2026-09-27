@@ -1,0 +1,26 @@
+{
+  "checklistItem": "10.1.5",
+  "status": "VERIFIED",
+  "verifiedAt": "2026-09-22",
+  "assetRoot": "assets/destinations/",
+  "inventory": {
+    "destinations": 12,
+    "cardWebp": 12,
+    "heroWebp": 12,
+    "svgFallbacks": 12,
+    "sourceLedgers": 1
+  },
+  "checks": [
+    "Every canonical image, cardImage, heroImage and fallbackImage begins with assets/destinations/.",
+    "Every referenced destination asset exists under the repository-root asset directory.",
+    "All current destination paths pass shared/storage-utils.js validation.",
+    "All current destination paths pass explore/local-discovery.js media validation.",
+    "Normalized destination records pass explore/trip-board.js saved-record validation.",
+    "No parallel Explore-local destination asset directory is present or referenced."
+  ],
+  "automatedChecks": {
+    "command": "node --test tests/explore-imagery.test.js tests/tracker-regression.test.js tests/structure.test.js",
+    "passed": 29,
+    "failed": 0
+  }
+}

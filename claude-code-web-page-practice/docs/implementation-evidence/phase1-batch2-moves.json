@@ -1,0 +1,10 @@
+[
+  {
+    "from": "pages.css",
+    "to": "styles/pages.css"
+  },
+  {
+    "from": "cinematic-refinement.css",
+    "to": "styles/cinematic-refinement.css"
+  }
+]

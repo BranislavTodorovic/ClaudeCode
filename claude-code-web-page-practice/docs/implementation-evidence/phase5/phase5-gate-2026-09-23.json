@@ -1,0 +1,221 @@
+{
+  "phase": 5,
+  "gate": 199,
+  "date": "2026-09-23",
+  "baseCommit": "cb37089150e4e5b50a928a6a539ebbf51cde45c1",
+  "status": "PASS",
+  "checklist": {
+    "items": "172-198, 198A-198E VERIFIED",
+    "deferred": {
+      "194": "Phase 12 exhaustive all-control width matrix explicitly assigned by standing plan"
+    },
+    "pendingPhaseLocalItems": 0
+  },
+  "automated": {
+    "scenes": "node --test tests/scenes.test.js: 8 passed, 0 failed",
+    "all": "node --test tests/: 92 passed, 0 failed",
+    "diffCheck": "git diff --check: exit 0"
+  },
+  "browser": {
+    "sceneEntryAmbient": [
+      {
+        "entry": {
+          "caption": "ONESPACE / YOUR DAILY UNIVERSE      \n        \n          01:16:16 PM\n          Wednesday, September 2",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "home",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "home",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "SHORTCUTS\n        Your launchpad\n        Every saved destination, organized and one click away.\n    ",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "shortcuts",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "shortcuts",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "PRODUCTIVITY\n        Stay in focus\n        A timer, today's tasks, and the dates that matter — all i",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "productivity",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "productivity",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "QUICK NOTES\n          Your visual journal\n          Capture an idea the moment it appears — pin, sea",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "notes",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "notes",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "CONTROL CENTER\n          Settings\n          Theme, motion, and data controls for your OneSpace.\n    ",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "settings",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "settings",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "WORK / THE DRAFTING ROOMSPACE TO FOCUS\n        IDEAS BECOME REAL HEREBuild withintention.Clear prior",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "work",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "work",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "PERSONAL SPACE\n          A calmer corner\n          Goals, routines, and the small habits that keep e",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "personal",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "personal",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "EXPLORE SPACE\n          Somewhere new\n          Travel, entertainment, and a slower pace — pick a di",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "explore",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "explore",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "GAMEVAULTWorlds worth returning to.Your games, your progress, your next adventure.05 / THE NEXT WORL",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "games",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "games",
+          "state": "ambient"
+        }
+      },
+      {
+        "entry": {
+          "caption": "MOVIES & SERIESSet the evening scene.A personal theater for everything you want to watch.06 / THE PR",
+          "drawn": true,
+          "hero": true,
+          "overflow": false,
+          "route": "movies",
+          "state": "entry"
+        },
+        "after": {
+          "ambientAnimation": "sceneLight",
+          "route": "movies",
+          "state": "ambient"
+        }
+      }
+    ],
+    "motion": {
+      "subtleEntry": "entry",
+      "subtleAmbient": {
+        "animation": "sceneLight",
+        "state": "ambient"
+      },
+      "off": {
+        "animation": "none",
+        "state": "still"
+      },
+      "reduced": {
+        "animation": "none",
+        "bodyStill": true,
+        "state": "still"
+      }
+    },
+    "iconAudit": "phase5-198E-responsive-icon-audit.json",
+    "consoleWarningsOrErrors": 0
+  },
+  "security": {
+    "trackedSecrets": [
+      "config/secrets/.gitkeep"
+    ],
+    "realSecretIgnore": "config/secrets/probe.js ignored by .gitignore line 9",
+    "configBrowserReferences": 0,
+    "productionHttp": {
+      "config/secrets/probe.js": 404,
+      "config/secrets/api-keys.json": 404
+    }
+  },
+  "visualEvidence": [
+    "scene-home.png",
+    "scene-work.png",
+    "scene-personal.png",
+    "scene-explore.png",
+    "scene-games.png",
+    "scene-movies.png",
+    "scene-shortcuts.png",
+    "scene-productivity.png",
+    "scene-notes.png",
+    "scene-settings.png",
+    "icons-classic-light-1440-home.jpg",
+    "icons-deep-space-dark-1440-shortcut-actions.jpg",
+    "icons-deep-space-dark-1024-shortcut-dialog.jpg",
+    "icons-deep-space-dark-760-explore-filters.jpg",
+    "icons-deep-space-dark-390-note-actions-after.jpg",
+    "icons-rosewood-light-390-settings-settled.jpg"
+  ],
+  "notes": "Current browser observed ENTRY then AMBIENT for all ten routes at 1440; Subtle had shortened entry, Off and reduced motion were still. Icon audit covers current four-width/tab and theme/palette matrix. The icon-only Notes pin size/contrast fix was retested after reload. The historical 40 scene/width sequences remain valid for unchanged scene-controller geometry."
+}
