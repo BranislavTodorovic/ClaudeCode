@@ -1,0 +1,48 @@
+{
+  "item": 351,
+  "gate": "Gate 12",
+  "date": "2026-09-28",
+  "status": "VERIFIED",
+  "repository": {
+    "workingDirectory": "C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice",
+    "gitRoot": "C:\\Users\\btodorovic\\Projects\\ClaudeCode",
+    "branch": "main",
+    "headAtAudit": "a069732aae2ec7977aaeeab719f26c12b0eafdfd",
+    "currentChanges": "Only the item 349-350/Gate 12 checklist, focused test and Phase 12 evidence changes; prior HEAD work was preserved. No reset, clean or discard was used."
+  },
+  "checklist": {
+    "phase12Items": "335-350 all checked and VERIFIED with retained evidence; item 351 was the sole remaining unchecked original Phase 0-12 line immediately before this gate result.",
+    "deferredOriginalItems": "135, 198A-198E, Gate 5, 264 and 297 have current VERIFIED rows and evidence. The Games and Movies matrices are in deferred-domain-matrices-2026-09-28.json.",
+    "itemEvidence": {
+      "335-339": "docs/implementation-evidence/phase12/audit-2026-09-23.jsonl",
+      "340": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json and image-fallback-2026-09-24.json",
+      "341": "docs/implementation-evidence/phase12/static-server-2026-09-24.json",
+      "342": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
+      "343": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
+      "344": "docs/implementation-evidence/phase12/keyboard-motion-2026-09-24.json",
+      "345": "docs/implementation-evidence/phase12/layout-current-2026-09-24.json and retained viewport images",
+      "346": "docs/implementation-evidence/phase12/provider-offline-2026-09-24.json",
+      "347": "docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json and control-rows-2026-09-24.json; the affected Games objective Add facet was reverified after its later fix",
+      "348": "docs/implementation-evidence/phase12/image-fallback-2026-09-24.json",
+      "349": "docs/implementation-evidence/phase12/deferred-domain-matrices-2026-09-28.json",
+      "350": "docs/implementation-evidence/phase12/transition-order-2026-09-28.json"
+    }
+  },
+  "currentRegression": {
+    "completeNodeCommand": "node --preserve-symlinks --preserve-symlinks-main --test tests/",
+    "passed": 173,
+    "failed": 0,
+    "focusedGamesPassed": 29,
+    "focusedGamesFailed": 0,
+    "diffCheck": "git diff --check exited 0"
+  },
+  "browser": "The disposable localhost:18974 origin confirmed the post-fix Games objective blank alert/focus, successful Add, reload and Edit; Games filters, preference reload, Sessions and Journal persisted records; Movies search, type/genre intersections, similarity preference, saved statuses and custom genre after reload. Prior Phase 12 browser evidence covers all other gate-specific route, layout, keyboard/motion, offline, image-fallback and control facets. No subsequent implementation change invalidated those checks.",
+  "security": {
+    "trackedSecretDirectory": "git ls-files config/secrets returned only config/secrets/.gitkeep",
+    "ignoreRule": "git check-ignore -v config/secrets/phase12-probe.js matched .gitignore config/secrets/*",
+    "trackedSecretLikePaths": "Only config/secrets.example.json and config/secrets/.gitkeep were relevant; the example contains placeholder values only.",
+    "browserSource": "rg -l for config/secrets, api key, client secret and Authorization across index.html and browser-facing source directories returned no files.",
+    "serverDenial": "The disposable server, using server/_static-server.js, returned 404 for representative config/secrets .json and .js URLs and config/secrets.example.json; static-server source rejects config/secrets path segments before file serving."
+  },
+  "nextStep": "R0 Redesign Integration Gate; no redesign UI implementation or Phase 14 work precedes it."
+}

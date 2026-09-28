@@ -195,6 +195,20 @@ test('adding an objective retains the form and stored tracker after a rejected w
  accepted=true;root.submit({target:{closest:()=>form},preventDefault(){}});
  assert.equal(context.library[0].story.chapters[0].objectives[0].text,'New objective');assert.equal(renders,1);
 });
+test('first objective creates its chapter only after persistence succeeds',()=>{
+ const original=[{id:'g',story:{chapters:[]}}];let accept=false,renders=0;
+ const context={library:JSON.parse(JSON.stringify(original)),selectedStoryGameId:'g',uid:prefix=>prefix+'-new',
+  findChapter:()=>null,saveLibrary:()=>{if(!accept)context.library=JSON.parse(JSON.stringify(original));return accept;},renderAll:()=>{renders++;}};
+ vm.runInNewContext(fn('addObjective'),context);
+ assert.equal(context.addObjective('','First goal'),false);
+ assert.equal(context.library[0].story.chapters.length,0);
+ assert.equal(renders,0);
+ accept=true;
+ assert.equal(context.addObjective('','First goal'),true);
+ assert.equal(context.library[0].story.chapters[0].title,'My goals');
+ assert.equal(context.library[0].story.chapters[0].objectives[0].text,'First goal');
+ assert.equal(renders,1);
+});
 test('Delete session requires confirmation and keeps the log on rejected writes',()=>{
  const original=[{id:'s',gameId:'g',end:'2026-09-24T11:00:00.000Z',minutes:20}];let confirm,reject=true,renderCount=0;const toasts=[];
  const context={sessions:original,GK:{sessions:'orbit-games-sessions'},window:{OneSpaceUI:{confirm:(title,message,action)=>{confirm=action;}}},

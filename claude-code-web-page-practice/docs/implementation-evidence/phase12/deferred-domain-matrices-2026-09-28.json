@@ -1,0 +1,55 @@
+{
+  "phase": 12,
+  "item": 349,
+  "date": "2026-09-28",
+  "status": "VERIFIED",
+  "origin": "http://localhost:18974/ (disposable browser data)",
+  "inventory": "docs/implementation-evidence/interaction-inventory.json",
+  "buttonEvidence": "docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json and control-rows-2026-09-24.json: all 47 Games and 36 Movies button templates have success and applicable inverse/cancel, error, and persistence results; retired Games I0042 maps to current I0028.",
+  "originalUncheckedReconciliation": {
+    "135": "VERIFIED in item 347 evidence and checklist; Work/Projects button outcomes complete.",
+    "198A-198E and Gate 5": "VERIFIED from the persistent Phase 5 icon inventory, modernization, semantics, accessibility, responsive theme audit and gate evidence. Current source retains those changes; no Phase 5 implementation restart.",
+    "264": "VERIFIED by Games matrix below.",
+    "297": "VERIFIED by Movies matrix below.",
+    "remainingBeforeItem349WasMarked": "Items 349, 350 and Gate 12 were the only remaining unchecked original Phase 0–12 rows after 264 and 297 verification."
+  },
+  "games": {
+    "sourceItem": 264,
+    "step": "8.4.11",
+    "status": "VERIFIED",
+    "inventoryTemplates": { "buttons": 47, "other": 13 },
+    "matrix": [
+      { "facet": "tabs", "result": "Overview, My Games, Mission Progress, Weekly Tasks, Suggestions, Sessions, Journal and Appearance selected their own panels; selection survives reload. Item 347 Games I0129-I0136 records button outcomes and rejected-write cases." },
+      { "facet": "filters", "result": "My Games genre Action RPG displayed Diablo Immortal and Hades; combined Search My Games=Hades narrowed to Hades. Suggestions platform PC checkbox combined with More like Hades produced the truthful no-match state and the checked preference survived reload. Item 347 I0138-I0140 covers suggestion filter actions; tests/data-regression.test.js proves group intersection and OR semantics." },
+      { "facet": "search", "result": "Local game typeahead offered Hades and its detail/add action; unconfigured remote enrichment had an explicit state. Source control I0137; Phase 8 browser and provider-search tests cover keyboard and error cases." },
+      { "facet": "suggestion", "result": "More like Hades produced a single Diablo Immortal recommendation before the added PC filter; preference selector survived reload. Add to My Games, Save to Wishlist, Dismiss, View Details, Move to My Games and Remove are verified button rows I0046-I0051. Source controls I0044-I0045." },
+      { "facet": "library and wishlist", "result": "My Games search/genre intersection, Spotlight/Open Progress, edit/delete, and wishlist move/remove have named button outcomes in item 347; Phase 8 acceptance proves canceled and successful wishlist move and tracker creation." },
+      { "facet": "details and resource links", "result": "Local game details, genre-specific resources and external official/news/guide/community links were inspected in Phase 8 and Phase 12 domain regression. Item 347 I0029/I0049/I0053 covers details and resource actions; I0052 external anchors use safe HTTP(S) link behavior." },
+      { "facet": "story objectives and tasks", "result": "Story objective checkbox, weekly checkbox, chapter collapse, Add/Edit/Delete objective, weekly reset and confirmation are covered by item 347 I0032-I0039 and focused tests. Current browser: blank Add announced 'Enter an objective before adding.' and focused its input; valid Add showed 'Phase 12 objective retry' and survived reload; empty Edit announced its validation, Cancel restored the prior objective, successful edit showed 'Phase 12 objective edited' after route change. Source controls I0031, I0035-I0037, I0040." },
+      { "facet": "sessions", "result": "Current browser showed the earlier Alan Wake 2 manual 42-minute log with its date and note after reload. Session start/stop/delete buttons and confirmations are in item 347 I0054-I0055. Source forms I0141-I0142; focused test proves failed manual-log persistence retains the draft and retry succeeds." },
+      { "facet": "journal", "result": "Current browser showed the earlier game-linked 'Matrix journal entry' and body after reload; required title/body validation was observed. Journal edit, cancel, delete and confirmed failure paths are in item 347 I0056-I0057 and tests/games-lifecycle.test.js. Source form I0143." },
+      { "facet": "themes and platform", "result": "Games Midnight/Neon/Crimson/Aurora and Appearance selection, rejected theme save and reload are covered by item 347 I0120-I0123 and focused tests. Hero platform PS5 selection survived reload in the disposable browser. Source select I0058." },
+      { "facet": "add, edit, delete and confirmation", "result": "Add Game, edit game, Delete game, objective delete, weekly reset, session delete and journal delete outcomes include cancellation and rejected-write coverage in item 347 button rows and tests/games-lifecycle.test.js; Phase 8 acceptance retains local/custom game lifecycle evidence." }
+    ],
+    "fixCompleted": "games/games.js now keeps manual-session form fields after a rejected write and retains an objective Add draft with an alert/focus on invalid input or rejected persistence. tests/games-lifecycle.test.js adds focused rejected-write/retry cases, including the initially empty chapter path. Focused run 29/29 PASS; browser validation, successful Add, reload and successful Edit passed after the fix.",
+    "priorEvidence": ["docs/implementation-evidence/phase8/acceptance.json", "docs/implementation-evidence/phase8/audit-2026-09-23.jsonl", "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json"]
+  },
+  "movies": {
+    "sourceItem": 297,
+    "step": "9.4.10",
+    "status": "VERIFIED",
+    "inventoryTemplates": { "buttons": 36, "other": 7 },
+    "matrix": [
+      { "facet": "tabs", "result": "Overview, My Movies & Series, Suggestions, Watchlist and Appearance selected their panels; item 347 I0266-I0270 records success/inverse/reload behavior." },
+      { "facet": "type and genre filters", "result": "In current browser, Movie plus Drama displayed only the saved custom Matrix genre film; Series plus Sci-Fi displayed only Dark. Prior Phase 12 regression checked Movie plus Crime (The Godfather) and Series plus Drama (custom series). Source selects I0276-I0277; item 347 I0272-I0275 covers status filters; tests/movies-lifecycle.test.js covers type/genre intersection." },
+      { "facet": "search", "result": "The local 'Dark' typeahead offered the saved Series Dark detail plus other local matches with provenance; earlier browser flow opened Dark detail from search. Source combobox I0271; provider-unconfigured state is explicit. Phase 9 acceptance and provider-search tests cover local/typeahead behavior." },
+      { "facet": "suggestions", "result": "More like Dark persisted across reload and yielded local matches; Series preference checkbox persisted and reduced the suggestion set to nine titles with type-filter explanations. Source controls I0238-I0239; item 347 I0240-I0243/I0250/I0278-I0280 covers detail/add/watch/dismiss/filter actions." },
+      { "facet": "detail and add/remove", "result": "Current saved Dark and custom film opened detail; Phase 9 acceptance verifies catalog movie and series untrack/re-add, custom permanent deletion, confirmation cancel and reload. Item 347 I0244-I0248/I0251-I0258 covers all rendered detail/library/featured actions and rejected writes." },
+      { "facet": "watched state, watchlist and library", "result": "Current browser shows Dark as Watchlist and Matrix genre film as Unwatched after reload. Earlier browser changed Dark Unwatched -> Watchlist; Watchlist route reflected the saved state. Source status select I0249, custom genre checkbox I0255; custom film Drama genre survived reload. Item 347 and tests/movies-lifecycle.test.js cover status, untrack, reset and transaction rollback." },
+      { "facet": "reload", "result": "The disposable browser reopened Movies with Dark Watchlist, the custom Drama film Unwatched, More like Dark and Series suggestion preference still present. Phase 9 acceptance records catalog/custom removal persistence and image fallback." }
+    ],
+    "priorEvidence": ["docs/implementation-evidence/phase9/acceptance.json", "docs/implementation-evidence/phase9/audit-2026-09-23.jsonl", "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json"]
+  },
+  "regression": { "command": "node --preserve-symlinks --preserve-symlinks-main --test tests/", "passed": 173, "failed": 0, "focusedGamesPassed": 29, "focusedGamesFailed": 0 },
+  "nextItem": 350
+}

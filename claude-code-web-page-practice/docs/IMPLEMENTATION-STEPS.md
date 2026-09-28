@@ -621,7 +621,7 @@ No final "complete" statement is allowed until these conditions are true.
 | 9 | VERIFIED | Historical Movies/Series behavior and 9.2.6 licensed-fallback acceptance are evidenced; post-R0 local media is mandatory and optional-provider media is conditional in Phase 22. |
 | 10 | VERIFIED | Items 300–320 VERIFIED; item 318 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json and image-fallback-2026-09-24.json). |
 | 11 | VERIFIED | Items 321–334 VERIFIED; item 328 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json). |
-| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–348 VERIFIED; items 349–350 and Gate 12 remain open. Item 347's 229-button matrix is verified in phase12/control-inventory-audit-2026-09-24.json. |
+| 12 | VERIFIED | Items 335–350 and Gate 12 VERIFIED; retained Phase 12 evidence and gate12-2026-09-28.json record the 173/173 current regression, deferred Games/Movies matrices and Gate 12 security checks. R0 is next. |
 | R0 | PENDING | Transition/classification gate immediately after Gate 12; no redesign UI implementation is allowed until Gate R0 passes. |
 | R1 | PENDING | Redesign architecture lock + shared shell/design/asset foundation. |
 | R2 | PENDING | Home reference-fidelity checkpoint; proves the new visual system before rollout. |
@@ -2912,13 +2912,13 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Verified | Phase 8 acceptance.json; 71 Node tests; browser tracker lifecycle and four widths passed. Full action matrix assigned to Phase 12. |
 
-264. [ ] **8.4.11** — Verify every Games tab, filter, search, suggestion, library, wishlist, details, resource link, task, session, journal, theme, add, edit, delete and confirmation action — [OPEN] — Phase 12
+264. [x] **8.4.11** — Verify every Games tab, filter, search, suggestion, library, wishlist, details, resource link, task, session, journal, theme, add, edit, delete and confirmation action — [VERIFIED] — Phase 12
 
    Files: `games/games.js`, `games/games-data.js`, `games/game-resources.js`, `server/providers/`, game tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/deferred-domain-matrices-2026-09-28.json -> Games 11-facet matrix covers all 47 button and 13 other source templates, Phase 8 evidence, direct browser objective validation/add/edit/reload and other domain flows; Games focused regression 29/29 and full suite 173/173 passed 2026-09-28. |
 
 ## 8.5 Remaining games defects [FIX]
 
@@ -3196,13 +3196,13 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Verified | Phase 9 acceptance.json; 79 tests and browser lifecycle passed. Artwork uses explicit 9.2.6 licensing exception documented in assets/movie-art/SOURCES.md. |
 
-297. [ ] **9.4.10** — Verify every Movies & Series tab, type filter, genre filter, search, suggestion, detail, add/remove, watched state, watchlist, library and reload flow — [OPEN] — Phase 12
+297. [x] **9.4.10** — Verify every Movies & Series tab, type filter, genre filter, search, suggestion, detail, add/remove, watched state, watchlist, library and reload flow — [VERIFIED] — Phase 12
 
    Files: `movies/movies.js`, `movies/movies-data.js`, `movies/movies.css`, `assets/movie-art/`, `assets/manifest.json`, movie tests. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/deferred-domain-matrices-2026-09-28.json -> Movies 7-facet matrix covers all 36 button and 7 other source templates, Phase 9 evidence, current browser type/genre/search/suggestion/library/reload observations and full suite 173/173 passed 2026-09-28. |
 
 ## 9.5 Confirmation dialog consistency [FIX]
 
@@ -3638,29 +3638,29 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | VERIFIED | docs/implementation-evidence/phase12/image-fallback-2026-09-24.json |
 
-349. [ ] **12.15** — Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason. After Gate 12, R0 intentionally runs before any Phase 14–19 work.
+349. [x] **12.15** — Tick off every remaining **original Phase 0–12** box and confirm none is left unchecked without a stated reason. After Gate 12, R0 intentionally runs before any Phase 14–19 work.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/deferred-domain-matrices-2026-09-28.json -> the original unchecked 135 and 198A–198E/Gate 5 were reconciled from existing evidence, and the deferred 264 Games/297 Movies matrices are now VERIFIED. At item 349 acceptance only 350 and Gate 12 remained unchecked before R0; Games focused tests 29/29, full suite 173/173 and git diff --check passed 2026-09-28. |
 
-350. [ ] **12.16** — Do not perform final documentation here. After Gate 12, run R0 first; after Gate R0 execute redesign phases R1–R6 in order; only then continue the reclassified Phase 14–19 obligations, additive/final-fidelity Phases 20–25, and Phase 26. Final documentation remains **Phase 13.3 after Gate 26**.
+350. [x] **12.16** — Do not perform final documentation here. After Gate 12, run R0 first; after Gate R0 execute redesign phases R1–R6 in order; only then continue the reclassified Phase 14–19 obligations, additive/final-fidelity Phases 20–25, and Phase 26. Final documentation remains **Phase 13.3 after Gate 26**.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/transition-order-2026-09-28.json -> no final documentation work performed; exact Gate 12 -> R0 -> R1–R6 -> classified Phase 14–25 -> Gate 25 -> Phase 26 -> Gate 26 -> Phase 13.3 order retained. |
 
-351. [ ] **Gate 12** — Complete the original-plan Phase 0–12 verification checkpoint before R0; after Gate 12, R0 and then R1–R6 must pass before Phase 14 may start
+351. [x] **Gate 12** — Complete the original-plan Phase 0–12 verification checkpoint before R0; after Gate 12, R0 and then R1–R6 must pass before Phase 14 may start
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: All planned verification checks pass with retained evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/gate12-2026-09-28.json -> items 335–350 and original deferred boxes verified; full Node suite 173/173, Games focused 29/29, current browser regression, retained layout/keyboard/offline/backup evidence, secret-path denial and git diff --check passed. R0 is the exact next step. |
 
 
 
@@ -3669,13 +3669,13 @@ No final "complete" statement is allowed until these conditions are true.
 
 > **Exact placement:** This gate runs immediately after Gate 12 passes. It is not optional and it must complete before any Phase 14+ work. It exists because the approved Live Experience Redesign changes the visual target, information architecture, scene-asset rules and provider default.
 >
-> **Current resume point:** continue Phase 12 item 347 and the remaining Phase 12 audit first. Do not jump here early.
+> **Current resume point:** Gate 12 and R0 are VERIFIED as of 2026-09-28. Continue with R1.1 in the sequence below. R0 evidence: `docs/implementation-evidence/r0/gate-r0-2026-09-28.md` and `classification-2026-09-28.json`.
 
 ## R0.1 — Repository/evidence recovery
 
-- [ ] Record working directory, Git root, branch, HEAD, staged/modified/untracked files.
-- [ ] Record latest automated result, latest browser result, latest VERIFIED item, current IN PROGRESS item, first unresolved item and blockers.
-- [ ] Preserve unknown local work; no destructive reset/history rewrite.
+- [x] Record working directory, Git root, branch, HEAD, staged/modified/untracked files.
+- [x] Record latest automated result, latest browser result, latest VERIFIED item, current IN PROGRESS item, first unresolved item and blockers.
+- [x] Preserve unknown local work; no destructive reset/history rewrite.
 
 ## R0.2 — Read the full coordinated authority set
 
@@ -3692,6 +3692,8 @@ Read in order:
 
 Then open and inspect all eight actual reference images under `docs/ui-reference/`. Filename-only or text-only review is not accepted.
 
+**R0.2 VERIFIED:** All eight actual images opened and inspected; byte-identical canonical filename corrections and image-specific notes are in `docs/implementation-evidence/r0/gate-r0-2026-09-28.md`. The user-directed authority reading order controlled this run.
+
 ## R0.3 — Classify every remaining Phase 14–25 requirement
 
 Each remaining requirement becomes exactly one of:
@@ -3703,48 +3705,52 @@ Each remaining requirement becomes exactly one of:
 
 Persist item/phase, reason, retained evidence, replacement requirement and required post-redesign proof. No item may disappear silently.
 
+**R0.3 VERIFIED:** The 367-entry `docs/implementation-evidence/r0/classification-2026-09-28.json` covers all 361 remaining Phase 14–25 checklist boxes and six gates.
+
 ## R0.4 — Provider/default reconciliation
 
-- [ ] Record that bundled/local catalogues are the normal production path.
-- [ ] Record that core OneSpace is credential-free by default.
-- [ ] Reclassify mandatory TMDB/RAWG/IGDB/destination-provider requirements as optional-provider checks unless the user explicitly approves that provider as required scope.
-- [ ] Record that missing provider credentials do **not** block Gate 22, Gate 25, Gate 26 or Phase 13.3 for the credential-free product.
-- [ ] Preserve provider-adapter/security tests conditionally for any approved optional provider.
+- [x] Record that bundled/local catalogues are the normal production path.
+- [x] Record that core OneSpace is credential-free by default.
+- [x] Reclassify mandatory TMDB/RAWG/IGDB/destination-provider requirements as optional-provider checks unless the user explicitly approves that provider as required scope.
+- [x] Record that missing provider credentials do **not** block Gate 22, Gate 25, Gate 26 or Phase 13.3 for the credential-free product.
+- [x] Preserve provider-adapter/security tests conditionally for any approved optional provider.
 
 ## R0.5 — Asset-rule reconciliation
 
-- [ ] Mark the historical “SVG/CSS only / no new binary assets” constraint `SUPERSEDED BY APPROVED REDESIGN`.
-- [ ] Permit properly licensed repository-local scene/media assets plus CSS/SVG/procedural layers.
-- [ ] Prohibit using the composite UI reference screenshot as the actual production background.
-- [ ] Require provenance/license/attribution and deterministic missing-asset fallbacks.
+- [x] Mark the historical “SVG/CSS only / no new binary assets” constraint `SUPERSEDED BY APPROVED REDESIGN`.
+- [x] Permit properly licensed repository-local scene/media assets plus CSS/SVG/procedural layers.
+- [x] Prohibit using the composite UI reference screenshot as the actual production background.
+- [x] Require provenance/license/attribution and deterministic missing-asset fallbacks.
 
 ## R0.6 — Protected functional baseline
 
-- [ ] Current automated regression is green or every failure is understood/recorded.
-- [ ] Storage/schema/backup versions are recorded.
-- [ ] Critical CRUD, persistence, migration, import/export, action, security and navigation behavior is known.
-- [ ] Stable rollback point and canonical test-data snapshot are recorded.
+- [x] Current automated regression is green or every failure is understood/recorded.
+- [x] Storage/schema/backup versions are recorded.
+- [x] Critical CRUD, persistence, migration, import/export, action, security and navigation behavior is known.
+- [x] Stable rollback point and canonical test-data snapshot are recorded.
 
 ## R0.7 — Redesign architecture delta and execution classification
 
 Before Gate R0 can pass, define/confirm the **planned** post-gate contracts only; do not implement the redesign UI inside R0:
 
-- [ ] canonical global shell/navigation model;
-- [ ] eight-world registry and retained compatibility surfaces;
-- [ ] submodule registry and canonical data ownership;
-- [ ] scene/asset registry and provenance model;
-- [ ] data-source classifications and unsupported/future-data policy;
-- [ ] route/deep-link/back-forward strategy;
-- [ ] storage/migration impact, if any;
-- [ ] failure boundaries and feature flags, if needed;
-- [ ] exact R1–R6 execution map;
-- [ ] exact mapping of every remaining Phase 14–25 item to KEEP / REVERIFY / SUPERSEDED / BLOCKED.
+- [x] canonical global shell/navigation model;
+- [x] eight-world registry and retained compatibility surfaces;
+- [x] submodule registry and canonical data ownership;
+- [x] scene/asset registry and provenance model;
+- [x] data-source classifications and unsupported/future-data policy;
+- [x] route/deep-link/back-forward strategy;
+- [x] storage/migration impact, if any;
+- [x] failure boundaries and feature flags, if needed;
+- [x] exact R1–R6 execution map;
+- [x] exact mapping of every remaining Phase 14–25 item to KEEP / REVERIFY / SUPERSEDED / BLOCKED.
 
 R0 is a **change-control gate**, not the redesign implementation phase. Do not build Home, worlds or submodules here.
 
 ## R0.8 — Gate R0
 
 Gate R0 passes only when repository recovery, authority reading, legacy classification, provider reconciliation, asset reconciliation, protected baseline, all-eight-image inspection, architecture delta and the exact R1–R6 handoff are persisted.
+
+**Gate R0: VERIFIED.** Evidence: `docs/implementation-evidence/r0/gate-r0-2026-09-28.md` and `docs/implementation-evidence/r0/classification-2026-09-28.json`. First unresolved item: R1.1.
 
 After Gate R0, execute **R1 → R2 → R3 → R4 → R5 → R6**. Phase 14 may not begin before Gate R6.
 
@@ -3758,26 +3764,34 @@ After Gate R0, execute **R1 → R2 → R3 → R4 → R5 → R6**. Phase 14 may n
 
 ### R1.1 — Freeze canonical architecture before visual rollout
 
-- [ ] Confirm one canonical shell/navigation model.
-- [ ] Confirm exactly eight reference-led main worlds: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes, Settings.
-- [ ] Confirm `Today` and `AI Assistant / Command` as utility/subview surfaces unless separately approved as full worlds.
-- [ ] Confirm retained Shortcuts/Productivity/Notes/legacy Projects compatibility behavior.
-- [ ] Confirm world/submodule/detail route ownership and active-parent behavior.
-- [ ] Confirm Work owns Work/project lifecycle records; Notes owns notes; Productivity owns generic task/timer/countdown state; Shortcuts owns shortcut records.
-- [ ] Confirm Projects & Notes is an aggregation/presentation surface over canonical owners, not a parallel datastore.
-- [ ] Preserve `movies` compatibility; any `/media` route is alias-only if deliberately added.
+- [x] Confirm one canonical shell/navigation model.
+- [x] Confirm exactly eight reference-led main worlds: Home, Work, Personal/Fitness, Explore, Games, Movies & Series, Projects & Notes, Settings.
+- [x] Confirm `Today` and `AI Assistant / Command` as utility/subview surfaces unless separately approved as full worlds.
+- [x] Confirm retained Shortcuts/Productivity/Notes/legacy Projects compatibility behavior.
+- [x] Confirm world/submodule/detail route ownership and active-parent behavior.
+- [x] Confirm Work owns Work/project lifecycle records; Notes owns notes; Productivity owns generic task/timer/countdown state; Shortcuts owns shortcut records.
+- [x] Confirm Projects & Notes is an aggregation/presentation surface over canonical owners, not a parallel datastore.
+- [x] Preserve `movies` compatibility; any `/media` route is alias-only if deliberately added.
+
+**R1.1 VERIFIED:** `docs/implementation-evidence/r1/architecture-lock-2026-09-28.md` freezes the shell, eight-world and portal registries, route/history grammar, compatibility aliases, data owners, scenes and failure boundaries. R1.2 is next.
 
 ### R1.2 — Shared visual foundation
 
 Implement and verify reusable primitives only: shell; brand/header; canonical navigation; typography; spacing/grid; glass/surface tokens; buttons/chips/cards/portal primitives; icon language; focus/hover/pressed/disabled states; responsive primitives; scene-host lifecycle interface; local scene/media asset loading and deterministic fallbacks. Do not mass-build world pages yet.
 
+**R1.2 VERIFIED:** `docs/implementation-evidence/r1/foundation-and-assets-2026-09-28.md` records the namespaced shared primitives, canonical route and shell module, scene host/fallback, 177/177 regression and browser compatibility result.
+
 ### R1.3 — Asset reconstruction contract
 
 For all eight references, prepare/verify clean production scene families without baked-in UI. Record provenance/license/attribution and fallback behavior. The composite concept screenshots remain documentation references only.
 
+**R1.3 VERIFIED:** Eight original clean local scene images, `assets/scenes/manifest.json` provenance and deterministic fallback are recorded in `docs/implementation-evidence/r1/foundation-and-assets-2026-09-28.md`.
+
 ### Gate R1
 
 PASS only when architecture contracts and shared primitives are stable enough that Home can be built without inventing new route/storage/design rules. Persist evidence.
+
+**Gate R1: VERIFIED.** Evidence: `docs/implementation-evidence/r1/architecture-lock-2026-09-28.md` and `foundation-and-assets-2026-09-28.md`. First unresolved step: R2 step 1, inspect the actual Home reference.
 
 ---
 

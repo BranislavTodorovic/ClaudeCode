@@ -106,6 +106,8 @@ body.force-full-motion { scroll-behavior:smooth; }
 <link rel="stylesheet" href="styles/cinematic-refinement.css">
 <link rel="stylesheet" href="work/tracker.css">
 <link rel="stylesheet" href="explore/discovery.css">
+<link rel="stylesheet" href="styles/redesign-foundation.css">
+<link rel="stylesheet" href="home/home-redesign.css">
 </head>
 <body class="has-sidebar" data-page="home">
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
@@ -150,6 +152,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   <div class="wrap">
 
   <section id="homeView" class="page-view" data-page-when="home" aria-label="Home">
+    <div id="redesignHome" class="osr-world osr-home" hidden></div>
     <header class="app-header page-hero scene-hero home-scene" data-page-hero="home">
       <img class="scene-image" src="assets/page-art/home-observatory.png" width="1672" height="941" alt="" fetchpriority="high">
       <div class="scene-shade"></div>
@@ -3027,7 +3030,9 @@ body.force-full-motion { scroll-behavior:smooth; }
 <script src="movies/movies-data.js"></script>
 <script src="movies/movies.js"></script>
 <script src="settings/settings.js"></script>
+<script src="shared/redesign-foundation.js"></script>
 <script src="shared/cinematic-scenes.js"></script>
 <script src="explore/discovery-integration.js"></script>
+<script src="home/home-redesign.js"></script>
 </body>
 </html>

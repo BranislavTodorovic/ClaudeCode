@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "created": "2026-09-28",
+  "provenance": "Original clean background artwork generated for this OneSpace project with the built-in OpenAI imagegen tool. The approved composite UI screenshots were visual references only and were not copied into production assets. No third-party photo, logo, title art or identifiable person was used as an input.",
+  "licenseAndAttribution": "Generated project artwork; no third-party asset attribution identified. Keep this provenance record with the assets and review applicable OpenAI output terms before external redistribution.",
+  "fallback": "The shared scene host displays a deterministic local CSS gradient when a scene file is loading, missing, or corrupt. Controls and data remain usable; no provider request is needed.",
+  "scenes": [
+    { "world": "home", "file": "assets/scenes/home/hero.png", "reference": "docs/ui-reference/00-home.png", "subject": "warm living room, fireplace, plants and sunset city-window depth", "sourceId": "exec-67f50293-1547-4964-a542-b84606a53d88" },
+    { "world": "work", "file": "assets/scenes/work/hero.png", "reference": "docs/ui-reference/01-work.png", "subject": "warm desk studio with dual displays and sunset city-window depth", "sourceId": "exec-a1590f8a-d392-42fd-b548-ded91cb28802" },
+    { "world": "personal", "file": "assets/scenes/personal/hero.png", "reference": "docs/ui-reference/02-personal-fitness.png", "subject": "home wellness and training room with city-window depth", "sourceId": "exec-7d68e802-bafb-4aca-a909-9cdaac5d4f1a" },
+    { "world": "explore", "file": "assets/scenes/explore/hero.png", "reference": "docs/ui-reference/03-explore.png", "subject": "travel study, maps, globe and sunset coastline", "sourceId": "exec-ad828842-dc36-4a8a-bc8a-dcbdb0479241" },
+    { "world": "games", "file": "assets/scenes/games/hero.png", "reference": "docs/ui-reference/04-games.png", "subject": "warm gaming room, generic equipment and dusk skyline", "sourceId": "exec-d8b15c1a-2641-4e4d-a7a7-9fb047fd09ad" },
+    { "world": "movies", "file": "assets/scenes/movies/hero.png", "reference": "docs/ui-reference/05-movies-series.png", "subject": "home cinema and unbranded landscape screen", "sourceId": "exec-0a6c128f-a09f-4f8a-9b71-952ed402ad83" },
+    { "world": "projects-notes", "file": "assets/scenes/projects-notes/hero.png", "reference": "docs/ui-reference/06-projects-notes.png", "subject": "creative planning studio with blank notebook and pinboard", "sourceId": "exec-ac4d4cd0-0b8d-4b0f-a85b-a9e5dcfde04b" },
+    { "world": "settings", "file": "assets/scenes/settings/hero.png", "reference": "docs/ui-reference/07-settings.png", "subject": "calm lounge and fireplace with sunset city-window depth", "sourceId": "exec-d1ea0806-57f4-4b17-8e51-440347c3b0ab" }
+  ]
+}
