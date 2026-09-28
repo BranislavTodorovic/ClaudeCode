@@ -36,7 +36,7 @@ Before resuming R2, confirm that the required R1 checklist/evidence state was ac
 
 The previous run then started R2 at the documented Home fidelity step and reopened the actual approved Home reference before implementation.
 
-Current Home work already includes the redesigned eight-world shell, Home scene, local-state-backed Quick Capture and summary surfaces, Home portals, and integration with existing local stores rather than fabricated live values.
+Current Home work already includes the redesigned eight-world shell, Home scene, local-state-backed Qui1ck Capture and summary surfaces, Home portals, and integration with existing local stores rather than fabricated live values.
 
 Browser checks already confirmed note/task capture, reload persistence, and navigation into the existing Work experience.
 
