@@ -1,8 +1,8 @@
 {
   "item": 347,
   "step": "12.13",
-  "date": "2026-09-24",
-  "method": "Current local OneSpace build in the in-app browser at disposable origins http://127.0.0.1:18974/ and http://127.0.0.1:18977/; each named current row was clicked and its visible result inspected. The browser profiles are test-only.",
+  "date": "2026-09-28",
+  "method": "Current local OneSpace build in the in-app browser at disposable origins http://127.0.0.1:18974/ and http://127.0.0.1:18977/; each named current row was clicked and its visible result inspected. Earlier valid row results were retained, and 2026-09-28 gaps were verified with direct browser flows and focused tests. The browser profiles are test-only.",
   "rows": {
     "I0002": {
       "success": "Explore Add Location opened Add Location dialog; completing name, country, required description and Add to trip board displayed Saved to your trip board and a card named Phase 12 audit place.",
@@ -489,13 +489,19 @@
     "I0153": {
       "success": "Personal Add shortcut opened a form with Personal selected; saving Audit Personal displayed its link in Personal shortcuts.",
       "cancel": "Cancel closed a form with an unsaved invalid URL; the unsaved draft was not in the list.",
-      "error": "Submitting not-a-url displayed Please enter a valid URL, starting with http:// or https:// and kept the form open; write failure remains to verify.",
+      "error": "Submitting not-a-url displayed Please enter a valid URL, starting with http:// or https:// and kept the form open. tests/shortcut-save-failure.test.js personal Add shortcut verifies a rejected write leaves prior links, draft, space and dialog unchanged with no false success; focused run 2026-09-28 passed 5/5.",
       "persistence": "Audit Personal link remained in Personal shortcuts after browser reload."
+    },
+    "I0154": {
+      "success": "With Nature and Medium selected, Surprise me opened matching Lake Bohinj details in interaction-current-2026-09-24.json. A fresh 2026-09-28 browser flow opened matching Edinburgh details and displayed its source.",
+      "cancel": "Close dialog dismissed the read-only Edinburgh detail without adding a trip-board card; the board remained at 0 saved places.",
+      "error": "An unmatched search showed No matching destinations with guidance to clear search or a preference; no detail opened. tests/discovery-ui-write-failure.test.js verifies a rejected preference write reports an error and makes no discovery request; focused run 2026-09-28 passed 2/2.",
+      "persistence": "The earlier Nature and Medium preferences survived browser reload in interaction-current-2026-09-24.json. Surprise me itself is a read-only selection and does not persist a chosen destination until Shortlist is used."
     },
     "I0158": {
       "success": "Explore Add shortcut opened the form with Explore selected and disabled against switching spaces; saving Audit Explore displayed its link under Explore shortcuts.",
       "cancel": "Cancel closed the empty form without adding a link.",
-      "error": "An invalid URL displayed Please enter a valid URL, starting with http:// or https://; the dialog stayed open. Storage write failure remains to verify.",
+      "error": "An invalid URL displayed Please enter a valid URL, starting with http:// or https://; the dialog stayed open. tests/shortcut-save-failure.test.js explore Add shortcut verifies a rejected write leaves prior links, draft, space and dialog unchanged with no false success; focused run 2026-09-28 passed 5/5.",
       "persistence": "Audit Explore link remained after browser reload."
     },
     "I0160": {
@@ -557,6 +563,18 @@
       "cancel": "Selecting another background reverses the choice; no draft exists.",
       "error": "The shared rejected-write test verifies no false background change.",
       "persistence": "Atmosphere remained selected with data-background=orbit after browser reload."
+    },
+    "I0179": {
+      "success": "Settings Download backup displayed Backup downloaded. Your OneSpace data stayed on this device and Last downloaded 9/28/2026 in the 2026-09-28 disposable browser flow; the earlier download is recorded in backup-reset-2026-09-24.json.",
+      "cancel": "Download is immediate and creates no draft or confirmation. The user can retain or discard the downloaded file outside OneSpace.",
+      "error": "The export handler catches backup snapshot read failures before creating a Blob or download link and shows Storage could not be read. No backup was downloaded. tests/data-regression.test.js verifies the storage backup aborts on a blocked read; focused run 2026-09-28 passed 15/15.",
+      "persistence": "Last downloaded 9/28/2026 remained in Settings after browser reload. The backup file is an external download; the timestamp is OneSpace's persisted indicator."
+    },
+    "I0180": {
+      "success": "Settings Restore backup imported tests/fixtures/complete-backup.json in the disposable browser profile. Imported acceptance note appeared in Quick Notes, and the prior Work project and Personal habit observations are in backup-reset-2026-09-24.json.",
+      "cancel": "A second fixture upload opened the native Restore this complete backup? confirmation; dismissing it left Settings visible and did not reload or replace the current data.",
+      "error": "Uploading tests/fixtures/invalid-backup.json displayed Invalid backup field: orbit-notes-list without import. tests/data-regression.test.js verifies invalid and incomplete backups leave prior data unchanged and storage write failure rolls back; focused run 2026-09-28 passed 15/15.",
+      "persistence": "Imported acceptance note was still present in Quick Notes after browser reload on 2026-09-28. The earlier fixture import's Work project and Personal habit are recorded in backup-reset-2026-09-24.json."
     },
     "I0181": {
       "success": "With Graphite selected, Settings Reset preferences opened its scoped confirmation; confirming reset reloaded Settings with Auto selected and no explicit custom palette.",
@@ -1031,6 +1049,66 @@
       "cancel": "Drama can be checked and a title dismissed again; this immediate action has no draft-stage Cancel.",
       "error": "Reset Preferences now commits preferences and dismissed IDs in one transaction. tests/movies-lifecycle.test.js verifies a rejected transaction retains both old states and skips rerender, while an accepted retry clears both.",
       "persistence": "Reload after Reset Preferences kept Drama unchecked and The Shawshank Redemption visible."
+    },
+    "I0282": {
+      "success": "Personal goals browser flow opened Edit for Phase 12 personal goal, saved a new name, and retained the checked state; see interaction-current-2026-09-24.json. The same controller renders goal, routine and habit Edit buttons.",
+      "cancel": "The browser flow changed the Edit value and canceled; the original text remained.",
+      "error": "The Edit handler rejects an empty name and invalid habit target before write. tests/tracker-regression.test.js verifies rejected storage writes for goals, routines and habits leave the original text and completion state unchanged with no success toast; focused run 2026-09-28 passed 19/19.",
+      "persistence": "The renamed, checked goal survived browser reload in interaction-current-2026-09-24.json."
+    },
+    "I0283": {
+      "success": "Personal goals browser flow confirmed Delete for the edited goal and returned to the 0/0 empty state; see interaction-current-2026-09-24.json.",
+      "cancel": "The browser flow canceled Delete first and retained the item.",
+      "error": "tests/tracker-regression.test.js invokes the actual Personal confirmation callback; a rejected storage write returns false, keeps the item, and emits no deletion success toast. The focused run 2026-09-28 passed 19/19.",
+      "persistence": "The confirmed deletion remained absent after browser reload in interaction-current-2026-09-24.json."
+    },
+    "I0284": {
+      "success": "On 2026-09-28, the compact card for Imported acceptance project exposed Open Projects within Active projects. Clicking it kept the Projects view selected and focused projectList.",
+      "cancel": "The Work Board view provides the inverse navigation without changing project data; this read-only focus action has no draft.",
+      "error": "The compact action delegates to the shared page-jump router. Its rejected-route-write behavior is covered by tests/sidebar-write-failure.test.js; the button itself makes no project record write.",
+      "persistence": "Browser reload retained the saved Imported acceptance project and Work dashboard while returning the transient Work subview to Board, consistent with I0146."
+    },
+    "I0286": {
+      "success": "Projects Edit opened Imported acceptance project with its existing values. Saving description Phase 12 project edit audit returned to Create a project and displayed Project updated.",
+      "cancel": "Entering Canceled phase 12 draft then clicking Cancel edit restored the original empty description when Edit was reopened.",
+      "error": "An invalid project URL kept Edit project open with the native URL input invalid. tests/work-project-save-failure.test.js verifies a rejected project save does not rerender; the submit handler cancels the edit only after commit succeeds.",
+      "persistence": "After browser reload and reopening Projects, the saved description appeared on both the full and compact project cards."
+    },
+    "I0287": {
+      "success": "Projects Delete for Imported acceptance project opened Delete project?; confirming removed the project and its active work, showed 0 projects, and reported Project and its work deleted; history retained.",
+      "cancel": "Cancel closed the confirmation and retained Imported acceptance project before the confirmed deletion.",
+      "error": "The callback now returns false on a rejected Work transaction so the shared confirmation stays open. Work also restores its selected detail when commit fails. tests/work-project-save-failure.test.js verifies both paths and unchanged records; focused run 2026-09-28 passed 4/4.",
+      "persistence": "After browser reload and reopening Projects, 0 projects and the empty-state Create your first project control remained; Imported acceptance project was absent."
+    },
+    "I0288": {
+      "success": "The overview-tile template moved from projects.js to home/home-overview.js. On Home, Work in motion opened Work Projects with 0 projects, On your mind opened Productivity, and Thoughts captured opened Quick Notes with Imported acceptance note.",
+      "cancel": "Each tile is immediate navigation with no draft; Home view returned from each destination without changing records.",
+      "error": "The current shared data-page-jump handler checks goToPage before applying destination focus, and tests/sidebar-write-failure.test.js covers rejected route persistence. These tiles do not write domain records.",
+      "persistence": "Quick Notes remained the selected route after browser reload, with Imported acceptance note still present; the other tile destinations use the same route persistence path."
+    },
+    "I0289": {
+      "success": "With 0 projects, Create your first project focused the Name field. Entering Phase 12 empty-state project and a description, then submitting Create project, displayed 1 project and Project created.",
+      "cancel": "Navigating to Board before submitting an unsaved name left the project collection at 0; returning to Projects retained only the transient form draft, not a record.",
+      "error": "Submitting an empty required name kept 0 projects and marked the Name input invalid. tests/work-project-save-failure.test.js verifies a rejected project commit does not rerender; the form resets only after accepted commit.",
+      "persistence": "Phase 12 empty-state project and its 1 project count remained in Projects after browser reload."
+    },
+    "I0290": {
+      "success": "On the Work shortcut card template, Favorite GitHub changed to pressed Unfavorite; Move earlier Oracle Documentation changed visible order; Move later restored it. Remove GitHub hid it and Settings Restore GitHub returned it. A custom Phase 12 surface link was added, edited through its card Edit button, and removed through its card Remove button.",
+      "cancel": "Unfavorite and Move later inverted the corresponding immediate actions. The built-in Remove and custom Delete confirmations were canceled first and retained the links; a custom Edit draft was canceled and the prior name remained.",
+      "error": "Moving the first card earlier reported the edge without changing order. tests/shortcut-save-failure.test.js covers rejected Favorite, Edit, custom Delete, shared order and hidden writes; the card Favorite handler now skips rerender and focus movement on failure. Focused run 2026-09-28 passed 7/7; tests/shortcuts.test.js covers category-scoped reorder and hidden-link backup.",
+      "persistence": "Favorite, moved order, built-in removal, custom creation and edit, and custom deletion were each checked after browser reload. Settings restoration returned the built-in GitHub link."
+    },
+    "I0291": {
+      "success": "The Work button template opened New work item, Open details, Edit item, Add task and Edit task; saved Phase 12 work action audit, its analysis and task details. Hide details closed the panel and Open details reopened it. Delete task removed the task, and Delete item removed the item while retaining a Work history snapshot. Close item & tasks and Reopen item success were already observed in interaction-current-2026-09-24.json.",
+      "cancel": "New work item, Edit item, New task and Edit task drafts were canceled without record changes. Delete task and Delete work item confirmations were canceled before accepted deletion and retained the records. Hide details is a read-only inverse of Open details.",
+      "error": "An invalid item link showed Links must use http or https while keeping the dialog open; an empty task title kept New task open. tests/work-project-save-failure.test.js verifies rejected Work transactions leave records/UI unchanged and Delete item now restores selected detail and keeps confirmation open; focused run 2026-09-28 passed 6/6. tests/tracker-regression.test.js covers hierarchy and lifecycle validation.",
+      "persistence": "Saved item analysis and edited task details survived browser reload. Confirmed task and item deletion remained absent after reload; Work History showed the deleted and task-deleted snapshots. Prior Close/Reopen task completion persistence is recorded in interaction-current-2026-09-24.json."
+    },
+    "I0292": {
+      "success": "The current Work view button template exposes Board, Projects, Backlog and History. Clicking each selected its pressed state and panel: Board showed 0 items, Projects showed Phase 12 empty-state project, Backlog showed 0 items, and History showed 8 events including deleted and task-deleted snapshots.",
+      "cancel": "Selecting another view immediately reversed the prior transient selection without editing records; Board returned from History.",
+      "error": "These view buttons filter local in-memory data and make no storage or provider write. The History and Backlog empty states rendered without an error; no rejected-write path applies.",
+      "persistence": "Reload returned the transient Work subview to Board while the saved project remained in the Project filter and Work history records remained available. Prior Close/Reopen history and reload are also recorded in interaction-current-2026-09-24.json."
     }
   }
 }

@@ -169,6 +169,32 @@ test('Stop Session keeps the timer active and stored record unchanged after a re
  for(const name of ['saveSessions','stopSession'])vm.runInNewContext(fn(name),context);
  assert.equal(context.stopSession(),false);assert.equal(JSON.stringify(context.sessions),JSON.stringify(original));assert.equal(tickerStopped,false);assert.equal(renderCount,1);assert.deepEqual(toasts,[]);
 });
+test('manual session log keeps its draft when persistence fails and clears it after retry',()=>{
+ const elements={};for(const id of ['gvSessionStartForm','gvSessionLogForm','gvSessionGame','gvLogSessionGame','gvLogSessionMinutes','gvLogSessionDate','gvLogSessionNote'])elements[id]={value:'',addEventListener(type,handler){this[type]=handler;}};
+ elements.gvLogSessionGame.value='g';elements.gvLogSessionMinutes.value='42';elements.gvLogSessionDate.value='2026-09-28';elements.gvLogSessionNote.value='Keep this draft';
+ let accepted=false,resets=0,renders=0;const toasts=[];
+ const context={sessions:[],GK:{sessions:'orbit-games-sessions'},document:{getElementById:id=>elements[id]},uid:()=> 's',
+  safeSet:()=>accepted,safeGetJSON:()=>[],renderSessionsPanel:()=>{renders++;},showToast:message=>toasts.push(message)};
+ for(const name of ['saveSessions','logSessionManual','wireSessions'])vm.runInNewContext(fn(name),context);
+ context.wireSessions();const submit={preventDefault(){},target:{reset(){resets++;}}};
+ elements.gvSessionLogForm.submit(submit);
+ assert.equal(resets,0);assert.equal(elements.gvLogSessionNote.value,'Keep this draft');assert.equal(context.sessions.length,0);assert.deepEqual(toasts,[]);
+ accepted=true;elements.gvSessionLogForm.submit(submit);
+ assert.equal(resets,1);assert.equal(context.sessions.length,1);assert.equal(context.sessions[0].minutes,42);assert.deepEqual(toasts,['Session logged.']);assert.equal(renders,2);
+});
+test('adding an objective retains the form and stored tracker after a rejected write',()=>{
+ const stored=[{id:'g',story:{chapters:[{id:'c',expanded:true,objectives:[]}]}}];let accepted=false,renders=0,focused=false;
+ const input={value:'New objective',focus(){focused=true;}},error={textContent:''};
+ const form={getAttribute:()=> 'c',querySelector:selector=>selector==='input'?input:error};
+ const root={addEventListener(type,handler){this[type]=handler;}};
+ const context={library:JSON.parse(JSON.stringify(stored)),selectedStoryGameId:'g',uid:()=> 'new',document:{getElementById:()=>root},
+  findChapter:()=>context.library[0].story.chapters[0],saveLibrary:()=>{if(!accepted)context.library=JSON.parse(JSON.stringify(stored));return accepted;},renderAll:()=>{renders++;}};
+ for(const name of ['addObjective','wireDelegatedEvents'])vm.runInNewContext(fn(name),context);
+ context.wireDelegatedEvents();root.submit({target:{closest:()=>form},preventDefault(){}});
+ assert.equal(context.library[0].story.chapters[0].objectives.length,0);assert.equal(renders,0);assert.equal(input.value,'New objective');assert.equal(focused,true);assert.match(error.textContent,/could not be saved/i);
+ accepted=true;root.submit({target:{closest:()=>form},preventDefault(){}});
+ assert.equal(context.library[0].story.chapters[0].objectives[0].text,'New objective');assert.equal(renders,1);
+});
 test('Delete session requires confirmation and keeps the log on rejected writes',()=>{
  const original=[{id:'s',gameId:'g',end:'2026-09-24T11:00:00.000Z',minutes:20}];let confirm,reject=true,renderCount=0;const toasts=[];
  const context={sessions:original,GK:{sessions:'orbit-games-sessions'},window:{OneSpaceUI:{confirm:(title,message,action)=>{confirm=action;}}},

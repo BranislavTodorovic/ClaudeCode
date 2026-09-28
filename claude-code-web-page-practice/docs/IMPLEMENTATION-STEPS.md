@@ -621,7 +621,7 @@ No final "complete" statement is allowed until these conditions are true.
 | 9 | VERIFIED | Historical Movies/Series behavior and 9.2.6 licensed-fallback acceptance are evidenced; post-R0 local media is mandatory and optional-provider media is conditional in Phase 22. |
 | 10 | VERIFIED | Items 300–320 VERIFIED; item 318 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json and image-fallback-2026-09-24.json). |
 | 11 | VERIFIED | Items 321–334 VERIFIED; item 328 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json). |
-| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–346 and 348 VERIFIED; item 347 remains OPEN mid-audit and must resume from its persistent control-inventory evidence; Gate 12 remains open. |
+| 12 | IMPLEMENTED / NOT VERIFIED | Items 335–348 VERIFIED; items 349–350 and Gate 12 remain open. Item 347's 229-button matrix is verified in phase12/control-inventory-audit-2026-09-24.json. |
 | R0 | PENDING | Transition/classification gate immediately after Gate 12; no redesign UI implementation is allowed until Gate R0 passes. |
 | R1 | PENDING | Redesign architecture lock + shared shell/design/asset foundation. |
 | R2 | PENDING | Home reference-fidelity checkpoint; proves the new visual system before rollout. |
@@ -1758,13 +1758,13 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | Verified | docs/implementation-evidence/phase2/acceptance.json; 40 tests pass; Work viewport and drawer screenshots at four widths. |
 
-135. [ ] **2.6.21** — Verify every Work button end to end — [OPEN] — Phase 12
+135. [x] **2.6.21** — Verify every Work button end to end — [VERIFIED] — Phase 12
 
    Files: `index.html`, `work/projects.js`, `work/work-tracker.js`, `work/tracker.css`, `shared/domain-ui.js`. Acceptance: Verify the stated behavior and retain evidence.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json -> Work/Projects inventory buttons have named success and applicable cancel/error/persistence evidence, including I0284 and I0286–I0292; control-rows-2026-09-24.json, interaction-current-2026-09-24.json and 170/170 tests on 2026-09-28 |
 
 136. [x] **Gate 2** — every Work action from the Phase 0.5 inventory still works; 31/31 green; side-by-side screenshots at all four widths show no overflow and no overlap.
 
@@ -2311,54 +2311,54 @@ No final "complete" statement is allowed until these conditions are true.
 
 ## 5.6 Global icon modernization and consistency [NEW V2]
 
-198A. [ ] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
+198A. [x] **5.6.1** — Audit every visible application-control icon across Home, Work/Projects, Personal, Explore, Games, Movies & Series, Shortcuts, Productivity, Notes, Settings and shared navigation/dialog/search/filter/card surfaces.
 
    Files: `index.html`, `shared/`, `styles/`, domain JS/CSS files as required. Acceptance: Produce an inventory/audit showing which existing icons are retained and which require improvement; content/source brand marks and favicons are identified as exceptions rather than application-control icons.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/audit-2026-09-22/phase5-198A-decisions.json and phase5-198A-visible-icon-inventory.json -> 433 visible controls across ten routes, retain/improve decisions and brand/source exceptions |
 
-198B. [ ] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
+198B. [x] **5.6.2** — Modernize only dated, inconsistent, ambiguous, poorly aligned or visually weak application icons into one coherent inline-SVG visual language.
 
    Files: `index.html`, `shared/`, `styles/`, affected domain files. Acceptance: Shared UI icons use consistent geometry, stroke/fill philosophy, optical sizing, alignment and spacing without unrelated redesign or icon churn.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/audit-2026-09-22/phase5-198B-modernization.json -> shared SVG arrows, Home timer and Explore chevron; retained sound icons; current source still contains the changes and 170/170 tests passed 2026-09-28 |
 
-198C. [ ] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
+198C. [x] **5.6.3** — Normalize shared action semantics so the same action uses the same recognizable glyph where context permits.
 
    Files: shared icon helpers/markup and affected domain surfaces. Acceptance: Add/edit/remove/back/more/favorite/search/filter/sort/save/restore/open/navigation/close/retry/expand-collapse do not use conflicting or random glyphs without an explicit reason; no accidental emoji/Unicode substitute controls remain.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/audit-2026-09-22/phase5-198C-semantics.json -> shared action map and browser checks for pushpin, trash and reorder arrows; source changes retained |
 
-198D. [ ] **5.6.4** — Preserve icon accessibility and interaction quality.
+198D. [x] **5.6.4** — Preserve icon accessibility and interaction quality.
 
    Files: affected markup/styles/shared UI helpers. Acceptance: Icon-only actions have accessible names, visible focus, adequate touch targets, correct ARIA state where applicable and tooltips where useful; decorative icons do not create redundant announcements; clear text labels are not removed merely to add icons.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/audit-2026-09-22/phase5-198D-accessibility.json -> ten-route icon-only audit, named controls, 44px note/countdown/category targets, focus/ARIA checks; current source retained |
 
-198E. [ ] **5.6.5** — Verify global icon quality across required themes and responsive widths.
+198E. [x] **5.6.5** — Verify global icon quality across required themes and responsive widths.
 
    Files: all affected UI files; `docs/implementation-evidence/phase5/`; browser verification. Acceptance: All tabs are inspected at the active required desktop/tablet/mobile widths; no broken/missing/clipped/misaligned UI icons remain; icons are crisp/readable in light/dark and supported palettes; representative visual evidence covers navigation, headings, cards, forms/dialogs and shared actions. Brand/provider/source logos and favicons remain intentionally distinct.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Pending |
+   | VERIFIED | docs/implementation-evidence/phase5/phase5-198E-responsive-icon-audit.json -> ten routes at 1440/1024/760/390, Classic Light/Deep Space and supported palettes, named screenshot review and post-fix note pin geometry; current changes do not alter icon markup |
 
 
-199. [ ] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
+199. [x] **Gate 5** — Complete this phase’s requirements and applicable defect acceptance checks before advancing
 
    Files: `index.html`, `shared/`, `styles/`, affected domain files, `docs/implementation-evidence/phase5/`. Acceptance: Existing Phase 5 cinematic/motion evidence remains valid, and the newly approved 5.6 global icon-modernization requirements are also VERIFIED before Gate 5 closes again.
 
    | Status | Evidence |
    |---|---|
-   | Pending | Gate 5 was previously Verified under the pre-5.6 scope. Prior Phase 5 evidence is retained; the gate is reopened only because the newly approved global icon-modernization requirement must now be completed and evidenced. |
+   | VERIFIED | docs/implementation-evidence/phase5/phase5-gate-2026-09-23.json -> 198A–198E and original Phase 5 scope PASS with scene, icon, responsive, theme, security and browser evidence. Current source retains those icon fixes; 170/170 tests and git diff --check passed 2026-09-28. |
 
 ## Phase 6
 
@@ -3622,13 +3622,13 @@ No final "complete" statement is allowed until these conditions are true.
    |---|---|
    | VERIFIED | docs/implementation-evidence/phase12/provider-offline-2026-09-24.json |
 
-347. [ ] **12.13** — Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
+347. [x] **12.13** — Verify every button from the Phase 0.5 inventory has a success test and an applicable cancel / error / persistence test.
 
    Files: `tests/`, `docs/implementation-evidence/`, `docs/IMPLEMENTATION-STEPS.md`. Acceptance: Verify this requirement with its phase acceptance checks.
 
    | Status | Evidence |
    |---|---|
-   | IMPLEMENTED / NOT VERIFIED | docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json -> 229 button templates, partial mapped observations and remaining IDs; complete each applicable outcome before checking this box |
+   | VERIFIED | docs/implementation-evidence/phase12/control-inventory-audit-2026-09-24.json -> all 229 button templates mapped to 205 current success/facet rows and 24 retired-source successors, with zero remaining IDs; named row evidence in control-rows-2026-09-24.json and cited prior evidence, 170/170 automated tests passed 2026-09-28 |
 
 348. [x] **12.14** — Set `MISSING_ASSET='assets/destinations/azores-card.webp'` on `tests/browser-server.js` to exercise the current photograph-to-illustration fallback path. Phase 10 made `azores.svg` the fallback asset, so failing that old target alone no longer triggers fallback.
 

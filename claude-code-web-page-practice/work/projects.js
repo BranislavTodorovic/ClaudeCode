@@ -66,7 +66,10 @@
       form.scrollIntoView({ block: "center", behavior: OS.prefersReducedMotion() ? "auto" : "smooth" }); form.elements.name.focus();
     }
     if (del) window.OneSpaceUI.confirm('Delete project?', 'Its stories, defects and tasks will be removed. Snapshots remain in Work history.', function () {
-      if (window.OneSpaceWork.deleteProject(del.dataset.projectDelete)) { if (editingId === del.dataset.projectDelete) cancel(); render(); }
+      if (!window.OneSpaceWork.deleteProject(del.dataset.projectDelete)) return false;
+      if (editingId === del.dataset.projectDelete) cancel();
+      render();
+      return true;
     });
   });
   var scheduled = false;

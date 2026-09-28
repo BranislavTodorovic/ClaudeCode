@@ -73,6 +73,12 @@ test('complete backups round-trip projects, preferences, trackers and unrelated 
   assert.equal(target.getItem('orbit-theme'), null);
 });
 
+test('backup aborts when stored data cannot be read', () => {
+  const store = memory({ 'orbit-notes': 'Keep' });
+  store.getItem = () => { throw new Error('Storage read blocked'); };
+  assert.throws(() => storage.backup(store), /Storage read blocked/);
+});
+
 test('legacy project records without optional fields remain valid', () => {
   assert.equal(storage.valid('orbit-work-projects', JSON.stringify([{ id: 'legacy', name: 'Existing project', status: 'done', progress: 100 }])), true);
 });

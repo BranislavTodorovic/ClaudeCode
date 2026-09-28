@@ -1,8 +1,8 @@
 {
   "item": 347,
   "step": "12.13",
-  "status": "IMPLEMENTED / NOT VERIFIED",
-  "date": "2026-09-24",
+  "status": "VERIFIED",
+  "date": "2026-09-28",
   "inventory": "docs/implementation-evidence/interaction-inventory.json",
   "buttonRows": 229,
   "byOwner": {
@@ -37,11 +37,11 @@
     },
     "I0153": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
-      "otherFacets": "Cancel, invalid URL and reload observed; storage write failure remains."
+      "otherFacets": "Direct Personal Add shortcut success, Cancel, invalid URL and reload observed in control-rows-2026-09-24.json; tests/shortcut-save-failure.test.js personal Add shortcut rejected-write case passed 2026-09-28. Row facets complete."
     },
     "I0158": {
       "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
-      "otherFacets": "Cancel, invalid URL and reload observed; storage write failure remains."
+      "otherFacets": "Direct Explore Add shortcut success, Cancel, invalid URL and reload observed in control-rows-2026-09-24.json; tests/shortcut-save-failure.test.js explore Add shortcut rejected-write case passed 2026-09-28. Row facets complete."
     },
     "I0005": {
       "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
@@ -72,16 +72,48 @@
       "otherFacets": "Browser confirmed removal, Cancel and reload plus rejected-write confirmation test are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0154": {
-      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Matching detail success, close without save, no-match guidance and preference reload observed in browser evidence; tests/discovery-ui-write-failure.test.js rejected-preference-write case passed 2026-09-28. Row facets complete."
     },
     "I0282": {
-      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Goal Edit success, Cancel and reload observed; shared controller validation and rejected-write behavior for goal/routine/habit Edit passed focused regression. Row facets complete."
     },
     "I0283": {
-      "successEvidence": "docs/implementation-evidence/phase12/interaction-current-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Goal Delete confirm, Cancel and reload observed; shared controller rejected-write callback passed focused regression. Row facets complete."
+    },
+    "I0284": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct compact-card Open Projects focus and Projects selection, inverse Work view and reload observed; shared route write safety applies. Row facets complete."
+    },
+    "I0286": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct project Edit success, Cancel, invalid URL and reload observed; rejected commit does not rerender or reset form. Row facets complete."
+    },
+    "I0287": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Delete confirmation, Cancel and reload observed; rejected transaction keeps dialog and selected detail, covered by focused regression. Row facets complete."
+    },
+    "I0288": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "The old projects.js overview-tile template now lives in home/home-overview.js. All three Home tile routes, inverse Home navigation and Notes reload observed; shared rejected route safety applies. Row facets complete."
+    },
+    "I0289": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct empty-state focus, form creation, unsaved draft navigation, required-field rejection and created-project reload observed; rejected commit test applies. Row facets complete."
+    },
+    "I0290": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Shared space-card Favorite, inverse, reorder, edge, built-in Remove/restore and custom Edit/Delete were directly observed with cancel and reload; focused rejected-write tests passed. Row facets complete."
+    },
+    "I0291": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Direct Work item/task create, edit, hide, delete, cancel, validation and reload plus prior Close/Reopen evidence cover the button template; rejected transaction and selected-detail rollback tests passed. Row facets complete."
+    },
+    "I0292": {
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Board, Projects, Backlog and History views directly selected with inverse navigation and reload; read-only local filters have no write failure path. Row facets complete."
     },
     "I0028": {
       "successEvidence": "docs/implementation-evidence/phase12/domain-regression-2026-09-24.json",
@@ -140,12 +172,12 @@
       "otherFacets": "Direct Settings navigation/reload, inverse and shared rejected-write safety are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0179": {
-      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Download status and last-download reload observed; immediate action has no draft Cancel. Snapshot read failure aborts before file creation and passes focused storage test. Row facets complete."
     },
     "I0180": {
-      "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
-      "otherFacets": "Inspect applicable cancel/error/persistence evidence before declaring row complete"
+      "successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json",
+      "otherFacets": "Fixture import and reload, native confirmation dismissal, invalid-file rejection and transactional rollback are mapped in control-rows-2026-09-24.json. Row facets complete."
     },
     "I0182": {
       "successEvidence": "docs/implementation-evidence/phase12/backup-reset-2026-09-24.json",
@@ -449,7 +481,7 @@
     "I0279": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Clear Filters/inverse/reload plus rejected-preference-write regression. Row facets complete."},
     "I0280": {"successEvidence": "docs/implementation-evidence/phase12/control-rows-2026-09-24.json", "otherFacets": "Direct Reset Preferences after dismissal/reload plus rejected-atomic-transaction regression. Row facets complete."}
   },
-  "observedSuccessCount": 197,
+  "observedSuccessCount": 205,
   "retiredSuccessorMappings": {
     "I0021": {
       "retiredIntent": "Open an Explore destination's Details from the retired explore.js renderer.",
@@ -536,16 +568,7 @@
       "evidence": "The current browser DOM still contains a templated category-jump button, but getComputedStyle(categoryJump).display is none and the visible Shortcuts category headings are rendered in the page. Shortcuts sidebar and empty-Favorites Browse shortcuts were directly clicked with route reload evidence; category Collapse/Expand is verified under I0214. The hidden category-jump button was not clicked."
     }
   },
-  "remainingSuccessIds": [
-    "I0284",
-    "I0286",
-    "I0287",
-    "I0288",
-    "I0289",
-    "I0290",
-    "I0291",
-    "I0292"
-  ],
+  "remainingSuccessIds": [],
   "retiredSourceRows": [
     {
       "ids": [
@@ -571,5 +594,10 @@
       "reason": "games-cinematic.css hid this row unconditionally, so its generated Open Progress controls were unreachable. The dead row/container were retired and its intent maps to the reachable My Games Open Progress control I0028."
     }
   ],
-  "completionRule": "Every one of 229 inventory button templates needs its own success evidence and applicable cancel/error/persistence evidence. Existing broad tests, phase acceptance summaries, and the partial observedSuccess map do not satisfy item 347 by themselves."
+  "completionRule": "Every one of 229 inventory button templates has success and applicable cancel/error/persistence evidence: 205 current templates in observedSuccess and 24 retired-source mappings to verified successors. No inventory IDs are missing, extra, overlapping, or left in remainingSuccessIds.",
+  "finalVerification": {
+    "matrixAudit": "2026-09-28: 229 inventory buttons = 205 observed current templates + 24 retired mappings; zero missing/extra/overlap/placeholder IDs. control-rows-2026-09-24.json contains named facets for 201 current rows; the four other current rows have named evidence in interaction-current-2026-09-24.json and productivity-controls-2026-09-24.json.",
+    "automated": "node --preserve-symlinks --preserve-symlinks-main --test tests/: 170 passed, 0 failed, 0 skipped on 2026-09-28.",
+    "browser": "Disposable local browser on localhost:18974 exercised the final shortcut, Settings backup, Personal, Work/Projects, Home tile and Explore Surprise me gaps; per-row results and reload/cancel/error outcomes are in control-rows-2026-09-24.json."
+  }
 }

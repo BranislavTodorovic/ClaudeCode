@@ -91,6 +91,21 @@ test('Personal deletion waits for confirmation and storage failure preserves the
  let fail=false;const controller=ctx.window.makePersonalController('orbit-personal-goals',{safeGetJSON:()=>records,safeSet:(k,v)=>{if(fail)return false;records=JSON.parse(v);return true;},uid:()=> 'new',escapeHtml:s=>s,iconSvg:()=>'',showToast:s=>toast.push(s)});
  const list={innerHTML:''};controller.render(list);list.onclick({target:{closest:()=>({dataset:{delete:'x'}})}});assert.equal(records.length,1);assert.equal(typeof confirm,'function');fail=true;assert.equal(confirm(),false);assert.equal(records.length,1);fail=false;confirm();assert.equal(records.length,0);assert.ok(toast.includes('Personal item deleted.'));
 });
+test('Personal Edit keeps goal, routine and habit records on rejected writes',()=>{
+ for(const key of ['orbit-personal-goals','orbit-personal-routines','orbit-personal-habits']){
+  let records=[{id:'x',text:'Keep me',done:true}],save,toast=[];
+  const ctx={window:{OneSpaceUI:{open:(title,fields,action)=>{save=action;},field:()=>'',select:()=>''}}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'personal/personal-controller.js'),'utf8'),ctx);
+  let fail=true;const controller=ctx.window.makePersonalController(key,{safeGetJSON:()=>records,safeSet:(k,v)=>{if(fail)return false;records=JSON.parse(v);return true;},escapeHtml:s=>s,iconSvg:()=>'',showToast:s=>toast.push(s)});
+  const list={innerHTML:''};controller.render(list);list.onclick({target:{closest:()=>({dataset:{edit:'x'}})}});
+  const form=new Map([['text','Changed'],['frequency','weekly'],['target','3']]);
+  assert.equal(save(form),false,key);
+  assert.equal(records[0].text,'Keep me',key);
+  assert.deepEqual(toast,[],key);
+  fail=false;save(form);
+  assert.equal(records[0].text,'Changed',key);
+  assert.equal(records[0].done,true,key);
+ }
+});
 test('habit targets remain bounded and survive backup restore',()=>{
  const habit={id:'weekly-walk',text:'Walk',done:false,frequency:'weekly',target:3};
  assert.equal(storage.valid('orbit-personal-habits',JSON.stringify([habit])),true);

@@ -359,6 +359,7 @@
             '<form class="gv-add-objective" data-action="add-objective-form" data-chapter-id="' + esc(c.id) + '">' +
               '<input type="text" placeholder="Add an objective…" maxlength="140" aria-label="New objective text">' +
               '<button type="submit" class="btn">Add</button>' +
+              '<span role="alert"></span>' +
             "</form>" +
           "</div>" +
         "</div>"
@@ -370,7 +371,7 @@
           '<div class="gv-tracker-title">' + renderLogo(game) + "<div><h2>" + esc(game.name) + "</h2><p>" + stats.completed + "/" + stats.total + " objectives · " + stats.percent + "% · " + esc(stats.status) + "</p></div></div>" +
         "</div>" +
         '<p class="gv-tracker-next"><strong>Next up:</strong> ' + esc(stats.next) + "</p>" +
-        '<div class="gv-chapters">' + (chaptersHtml || '<form class="gv-add-objective" data-action="add-objective-form" data-chapter-id=""><input type="text" placeholder="Add your first objective…" maxlength="140" aria-label="New objective text"><button type="submit" class="btn">Add</button></form>') + "</div>" +
+        '<div class="gv-chapters">' + (chaptersHtml || '<form class="gv-add-objective" data-action="add-objective-form" data-chapter-id=""><input type="text" placeholder="Add your first objective…" maxlength="140" aria-label="New objective text"><button type="submit" class="btn">Add</button><span role="alert"></span></form>') + "</div>" +
       "</div>"
     );
   }
@@ -512,11 +513,12 @@
         game.story.chapters.push(chapter);
       }
     }
-    if (!chapter) return;
+    if (!chapter) return false;
     chapter.objectives.push({ id: uid("o"), text: text, done: false });
     chapter.expanded = true;
-    saveLibrary();
+    if (!saveLibrary()) return false;
     renderAll();
+    return true;
   }
   function deleteObjective(chapterId, objectiveId, confirmed) {
     var chapter = findChapter(chapterId);
@@ -1004,6 +1006,7 @@
     if(!saveSessions()){renderSessionsPanel();return false;}
     renderSessionsPanel();
     showToast("Session logged.");
+    return true;
   }
   function deleteSession(id) {
     var session=sessions.find(function(s){return s.id===id;});
@@ -1081,8 +1084,7 @@
       if (!gameId || !minutes || minutes <= 0) return;
       var dateVal = document.getElementById("gvLogSessionDate").value;
       var note = document.getElementById("gvLogSessionNote").value.trim();
-      logSessionManual(gameId, minutes, dateVal, note);
-      e.target.reset();
+      if (logSessionManual(gameId, minutes, dateVal, note) !== false) e.target.reset();
     });
   }
 
@@ -1518,9 +1520,14 @@
       if (addForm) {
         e.preventDefault();
         var input = addForm.querySelector("input");
+        var error = addForm.querySelector('[role="alert"]');
         var text = input.value.trim();
-        if (!text) return;
-        addObjective(addForm.getAttribute("data-chapter-id"), text);
+        if (!text) { error.textContent = "Enter an objective before adding."; input.focus(); return; }
+        error.textContent = "";
+        if (addObjective(addForm.getAttribute("data-chapter-id"), text) === false) {
+          error.textContent = "Changes could not be saved. Please try again.";
+          input.focus();
+        }
         return;
       }
       var editForm = e.target.closest(".gv-objective-edit-form");
