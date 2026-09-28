@@ -1,43 +1,169 @@
-# =========================================================
+\# =========================================================
 # OneSpace - Git ignore rules
 # =========================================================
+
 
 # ---------------------------------------------------------
 # Secrets / local credentials
 # ---------------------------------------------------------
-# Keep only the empty directory marker; ignore all local credentials.
-config/secrets/*
+
+# Nothing inside this directory may be committed.
+# Only the empty directory marker is allowed.
+config/secrets/**
 !config/secrets/.gitkeep
 
-# Environment files
+
+# ---------------------------------------------------------
+# Environment / local configuration
+# ---------------------------------------------------------
+
 .env
 .env.*
+*.local
 *.local.json
+
+# Optional public templates can be committed.
+!.env.example
+!.env.template
+!.env.sample
+
+
+# ---------------------------------------------------------
+# Explicit credential / secret files
+# ---------------------------------------------------------
+
+credentials.json
+credentials.*.json
+
+secrets.json
+secrets.*.json
+
+api-keys.json
+api-keys.*.json
+apikeys.json
+apikeys.*.json
+
+client_secret*.json
+service-account*.json
+service_account*.json
+
+*.secret
+*.secrets
+*.secret.json
+*.secrets.json
+
+
+# ---------------------------------------------------------
+# Authentication / package manager credentials
+# ---------------------------------------------------------
+
+.npmrc
+.netrc
+.pypirc
+
+auth.json
+
+
+# ---------------------------------------------------------
+# Private keys / certificates containing private keys
+# ---------------------------------------------------------
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+*.jks
+*.keystore
+
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+
+# ---------------------------------------------------------
+# Cloud / infrastructure credentials
+# ---------------------------------------------------------
+
+.aws/
+.azure/
+.gcloud/
+
+.terraform/
+*.tfstate
+*.tfstate.*
+
+
+# ---------------------------------------------------------
+# Local databases / potentially sensitive local data
+# ---------------------------------------------------------
+
+*.db
+*.sqlite
+*.sqlite3
+
+*.bak
+*.backup
+*.dump
+
 
 # ---------------------------------------------------------
 # Dependencies
 # ---------------------------------------------------------
+
 node_modules/
+
 
 # ---------------------------------------------------------
 # Local / generated implementation evidence
 # ---------------------------------------------------------
+
 docs/implementation-evidence/live-origin-*.json
+
 
 # ---------------------------------------------------------
 # Local implementation support / temporary working files
 # ---------------------------------------------------------
+
 work/implementation-support/
+
+
+# ---------------------------------------------------------
+# Logs / debug output
+# ---------------------------------------------------------
+
+*.log
+logs/
+
 
 # ---------------------------------------------------------
 # Common local OS / editor artifacts
 # ---------------------------------------------------------
+
 .DS_Store
 Thumbs.db
 desktop.ini
+
 *.swp
 *.swo
 *~
 
-# VS Code local workspace settings may be committed intentionally,
-# so .vscode/ is NOT ignored here.
+.idea/
+
+
+# ---------------------------------------------------------
+# VS Code
+# ---------------------------------------------------------
+
+# .vscode/ is intentionally NOT globally ignored because
+# project-level VS Code configuration may be committed.
+#
+# NEVER store passwords, API keys or tokens inside:
+# .vscode/settings.json
+# .vscode/launch.json
+# .vscode/tasks.json
+
+.vscode/*.local.json
+.vscode/*.secret.json
+.vscode/*.secrets.json
