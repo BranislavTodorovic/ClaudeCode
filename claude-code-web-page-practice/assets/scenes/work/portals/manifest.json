@@ -1,0 +1,14 @@
+{
+  "purpose": "R3 Work portal card artwork, separate from the approved reference composite and from the Work hero scene",
+  "source": "Generated with the built-in image generation tool on 2026-09-29 from original OneSpace prompts",
+  "style": "Photorealistic warm work studio at sunset, no UI, readable text, logos or people",
+  "assets": [
+    { "slug": "projects", "file": "projects.png", "scene": "Focused project planning desk with monitor, notebook, plant and city window" },
+    { "slug": "kanban-board", "file": "kanban-board.png", "scene": "Physical planning board with blank cards in a studio" },
+    { "slug": "team", "file": "team.png", "scene": "Empty collaboration table with three chairs and sunset city view" },
+    { "slug": "documents", "file": "documents.png", "scene": "Reading desk with blank notebooks, folders, shelves and task lamp" },
+    { "slug": "meetings", "file": "meetings.png", "scene": "Small meeting table with blank pads and warm pendant light" },
+    { "slug": "templates", "file": "templates.png", "scene": "Creative studio cork board with blank layouts and material swatches" }
+  ],
+  "runtimeFallback": "Each card retains its title, availability and action on a decorative gradient if its image fails to load"
+}

@@ -621,10 +621,10 @@ No final "complete" statement is allowed until these conditions are true.
 | 9 | VERIFIED | Historical Movies/Series behavior and 9.2.6 licensed-fallback acceptance are evidenced; post-R0 local media is mandatory and optional-provider media is conditional in Phase 22. |
 | 10 | VERIFIED | Items 300–320 VERIFIED; item 318 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json and image-fallback-2026-09-24.json). |
 | 11 | VERIFIED | Items 321–334 VERIFIED; item 328 resolved in Phase 12 browser regression (interaction-current-2026-09-24.json). |
-| 12 | VERIFIED | Items 335–350 and Gate 12 VERIFIED; retained Phase 12 evidence and gate12-2026-09-28.json record the 173/173 current regression, deferred Games/Movies matrices and Gate 12 security checks. R0 is next. |
-| R0 | PENDING | Transition/classification gate immediately after Gate 12; no redesign UI implementation is allowed until Gate R0 passes. |
-| R1 | PENDING | Redesign architecture lock + shared shell/design/asset foundation. |
-| R2 | PENDING | Home reference-fidelity checkpoint; proves the new visual system before rollout. |
+| 12 | VERIFIED | Items 335–350 and Gate 12 VERIFIED; retained Phase 12 evidence and gate12-2026-09-28.json record the 173/173 regression, deferred Games/Movies matrices and Gate 12 security checks. |
+| R0 | VERIFIED | `docs/implementation-evidence/r0/gate-r0-2026-09-28.md` and `classification-2026-09-28.json` record the completed transition/classification gate. |
+| R1 | VERIFIED | R1.1–R1.3 and Gate R1 are evidenced in `docs/implementation-evidence/r1/architecture-lock-2026-09-28.md` and `foundation-and-assets-2026-09-28.md`; the R1 suite passed 177/177. |
+| R2 | VERIFIED | R2 steps 1–17 and Gate R2 are evidenced in `docs/implementation-evidence/r2/home-analysis-2026-09-28.md`, `home-static-fidelity-2026-09-29.md` and `home-acceptance-2026-09-29.md`; the full suite passed 178/178. R3 Work is next. |
 | R3 | PENDING | Seven remaining reference-led main worlds, one at a time. |
 | R4 | PENDING | Nested UI pilot: Work -> Projects. |
 | R5 | PENDING | Dedicated submodule rollout by world family. |
@@ -3822,6 +3822,8 @@ Execute in this exact order:
 ### Gate R2
 
 Home is VERIFIED only when structure, function, static fidelity, responsive behavior, accessibility, cinematic lifecycle, fallbacks, persistence/navigation and evidence all pass.
+
+**Gate R2: VERIFIED.** The Home analysis, actual-reference visual comparisons, responsive/effective-zoom captures, route/keyboard/motion/fallback browser checks and 178/178 regression are recorded in `docs/implementation-evidence/r2/`. First unresolved item: R3 Work step 1, inspect `docs/ui-reference/01-work.png`.
 
 ---
 

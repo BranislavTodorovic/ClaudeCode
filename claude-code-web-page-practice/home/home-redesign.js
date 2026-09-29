@@ -45,12 +45,10 @@
   stage.appendChild(frame);
 
   function oldPage(world) {
-    var button = doc.querySelector('[data-page-button="' + world + '"]');
-    if (button) { button.click(); return true; }
-    return false;
+    return OS.goToPage(world);
   }
   function go(world, focusId) {
-    if (!oldPage(world)) return false;
+    if (!oldPage(world)) { OS.showToast('Could not open that space. Your current page is unchanged.'); return false; }
     if (focusId) { var target = doc.getElementById(focusId); if (target) target.focus({ preventScroll: true }); }
     return true;
   }
@@ -74,7 +72,7 @@
       '<section class="osr-home-hero" aria-labelledby="osrHomeTitle">' +
         '<p class="osr-context" id="osrHomeDate"></p>' +
         '<h1 class="osr-title" id="osrHomeTitle">A more intentional day starts here.</h1>' +
-        '<p class="osr-lead">Your work, your next step, and the spaces you return to.</p>' +
+        '<p class="osr-lead">A calmer day. A brighter you.</p>' +
         '<form class="osr-search osr-capture" id="osrCaptureForm">' +
           '<label class="visually-hidden" for="osrCaptureInput">Quick Capture text</label>' +
           '<input id="osrCaptureInput" maxlength="500" placeholder="Capture a thought or task…" autocomplete="off">' +
@@ -124,6 +122,9 @@
     var tile = doc.createElement('div');
     tile.className = 'osr-portal osr-home-portal';
     tile.innerHTML = '<img src="' + image + '" alt="" loading="lazy" decoding="async"><div class="osr-portal-copy"><strong>' + esc(portal.label) + '</strong><small>' + esc(portal.subtitle) + '</small></div>';
+    var art = tile.querySelector('img');
+    art.addEventListener('load', function () { tile.dataset.assetState = 'ready'; });
+    art.addEventListener('error', function () { tile.dataset.assetState = 'fallback'; art.remove(); });
     if (portal.world === 'media-games') {
       tile.classList.add('osr-media-portal');
       var actions = doc.createElement('div');
@@ -173,12 +174,17 @@
     doc.getElementById('osrHomeDate').textContent = new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric' }).format(now) + ' · Your local space';
     var hour = now.getHours();
     var greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
-    doc.getElementById('osrHomeTitle').textContent = greeting + '. Make room for what matters.';
+    doc.getElementById('osrHomeTitle').textContent = greeting + '.';
     var focus = doc.getElementById('focusTime');
     var status = doc.getElementById('focusStatus');
     var running = doc.getElementById('focusStart').getAttribute('aria-pressed') === 'true';
     var time = focus ? focus.textContent : '25:00';
-    doc.getElementById('osrNowBody').innerHTML = '<div class="osr-timer-ring"><strong>' + esc(time) + '</strong><span>' + (running ? 'Focus running' : status && status.textContent === 'Paused' ? 'Paused' : 'Ready to focus') + '</span></div><div class="osr-now-copy"><strong>' + (running ? 'Your focus session is active' : 'A moment for focused work') + '</strong><p>' + (running ? 'Continue in Productivity to pause or reset.' : 'Start or adjust your local timer in Productivity.') + '</p><button type="button" class="osr-inline-link" data-osr-action="focus">Open timer →</button></div>';
+    var nowBody = doc.getElementById('osrNowBody');
+    if (!nowBody.firstElementChild) nowBody.innerHTML = '<div class="osr-timer-ring"><strong data-osr-time></strong><span data-osr-timer-status></span></div><div class="osr-now-copy"><strong data-osr-focus-title></strong><p data-osr-focus-description></p><button type="button" class="osr-inline-link" data-osr-action="focus">Open timer →</button></div>';
+    nowBody.querySelector('[data-osr-time]').textContent = time;
+    nowBody.querySelector('[data-osr-timer-status]').textContent = running ? 'Focus running' : status && status.textContent === 'Paused' ? 'Paused' : 'Ready to focus';
+    nowBody.querySelector('[data-osr-focus-title]').textContent = running ? 'Your focus session is active' : 'A moment for focused work';
+    nowBody.querySelector('[data-osr-focus-description]').textContent = running ? 'Continue in Productivity to pause or reset.' : 'Start or adjust your local timer in Productivity.';
   }
   function capture(event) {
     event.preventDefault();
@@ -227,32 +233,52 @@
   var applyingHistory = false;
   function hashForPage(page) {
     if (['shortcuts', 'productivity', 'notes'].indexOf(page) !== -1) return foundation.routePath({ utility: page });
+    if (page === 'work' && doc.body.dataset.workView === 'projects') return foundation.routePath({ world: 'work', module: 'projects' });
     return foundation.routePath({ world: page }) || foundation.routePath({ world: 'home' });
   }
   function applyHashRoute() {
     var route = foundation.parseRoute(root.location.hash);
     applyingHistory = true;
+    function openRoutePage(page) {
+      if (oldPage(page)) return true;
+      OS.showToast('Could not save that page change. Your current page is unchanged.');
+      root.history.replaceState(null, '', hashForPage(doc.body.dataset.page));
+      return false;
+    }
     try {
       if (!route) {
-        if (doc.body.dataset.page !== 'home') oldPage('home');
+        if (doc.body.dataset.page !== 'home' && !openRoutePage('home')) return;
         showNotice('That OneSpace address is unavailable. You are safely back at Home.');
         root.history.replaceState(null, '', hashForPage('home'));
         return;
       }
       if (route.utility === 'command') { doc.getElementById('paletteHint').click(); return; }
-      if (route.utility === 'today') { if (doc.body.dataset.page !== 'productivity') oldPage('productivity'); return; }
-      if (route.utility) { if (doc.body.dataset.page !== route.utility) oldPage(route.utility); return; }
+      if (route.utility === 'today') { if (doc.body.dataset.page !== 'productivity') openRoutePage('productivity'); return; }
+      if (route.utility) { if (doc.body.dataset.page !== route.utility) openRoutePage(route.utility); return; }
       if (route.world === 'projects-notes') {
-        if (doc.body.dataset.page !== 'home') oldPage('home');
+        if (doc.body.dataset.page !== 'home' && !openRoutePage('home')) return;
         showNotice('Projects & Notes is being prepared. Work Projects and Quick Notes remain available.');
         return;
       }
-      if (doc.body.dataset.page !== route.world) oldPage(route.world);
+      if (route.module && (route.world !== 'work' || route.module !== 'projects' || route.recordId != null)) {
+        var parent = route.world === 'work' && route.module === 'projects' ? 'projects' : route.world;
+        if (!openRoutePage(parent)) return;
+        OS.showToast('That subspace is being prepared. Showing its available parent space.');
+        root.history.replaceState(null, '', hashForPage(doc.body.dataset.page));
+        return;
+      }
+      var target = route.world === 'work' && route.module === 'projects' ? 'projects' : route.world;
+      if (doc.body.dataset.page !== route.world || (route.world === 'work' && (doc.body.dataset.workView === 'projects') !== (route.module === 'projects'))) openRoutePage(target);
     } finally { applyingHistory = false; }
   }
   doc.addEventListener('onespace:page-changed', function (event) {
     if (applyingHistory) return;
     var hash = hashForPage(event.detail.page);
+    if (root.location.hash !== hash) root.history.pushState(null, '', hash);
+  });
+  doc.addEventListener('click', function (event) {
+    if (applyingHistory || doc.body.dataset.page !== 'work' || !event.target.closest('#workTracker [data-view]')) return;
+    var hash = hashForPage('work');
     if (root.location.hash !== hash) root.history.pushState(null, '', hash);
   });
   root.addEventListener('popstate', applyHashRoute);

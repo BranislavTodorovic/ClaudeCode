@@ -1,4 +1,4 @@
-/* R2 Home static composition; page-level entry motion follows static fidelity acceptance. */
+/* R2 Home composition and scene-controller-driven motion. */
 body[data-page="home"] .sidebar, body[data-page="home"] .sidebar-toggle, body[data-page="home"] .mobile-nav { display: none !important; }
 body[data-page="home"] .wrap { width: 100%; max-width: none; margin: 0; padding: 0; }
 #homeView.redesign-home { margin: 0; padding: 0; border: 0; box-shadow: none; }
@@ -46,7 +46,8 @@ body[data-page="home"] .wrap { width: 100%; max-width: none; margin: 0; padding:
 .osr-pulse-metrics span { color: var(--osr-muted); font-size: .66rem; text-align: center; }
 .osr-pulse-metrics strong { display: block; color: var(--osr-ink); font-size: 1.12rem; }
 .osr-home-portals { margin-top: 16px; }
-.osr-home-portal { min-height: clamp(185px, 24vh, 275px); }
+.osr-home-portal { min-height: clamp(220px, 29vh, 335px); }
+.osr-home-portal[data-asset-state="fallback"] { background: radial-gradient(circle at 74% 20%, rgb(165 123 91 / 49%), transparent 46%), linear-gradient(135deg, #243746, #0a1828 72%); }
 .osr-home-portal .osr-portal-copy { padding: 17px 18px 22px; }
 .osr-portal-action { position: absolute; z-index: 2; inset: 0; width: 100%; border: 0; background: transparent; color: #fff; cursor: pointer; font-size: 0; text-align: right; }
 .osr-portal-action::after { content: '↗'; display: grid; position: absolute; right: 12px; bottom: 14px; width: 30px; height: 30px; place-items: center; border: 1px solid var(--osr-edge); border-radius: 50%; background: rgb(15 30 49 / 82%); font-size: 1rem; }
@@ -60,5 +61,25 @@ body[data-page="home"] .wrap { width: 100%; max-width: none; margin: 0; padding:
 .osr-home-followon .home-search input { color: var(--osr-ink); }
 @media (max-width: 1450px) { .osr-home-hero { padding-left: 2%; } .osr-home-summary .osr-panel { min-height: 220px; } }
 @media (max-width: 1000px) { .osr-home-hero { min-height: 300px; padding-left: 0; } .osr-home-summary { margin-top: 18px; } .osr-home-portal { min-height: 230px; } }
-@media (max-width: 760px) { .osr-home-hero { min-height: 0; padding-top: 40px; } .osr-home-summary .osr-panel { min-height: 210px; } .osr-home-portal { min-height: 200px; } .osr-home-followon { margin-top: 40px; } }
+@media (max-width: 760px) { .osr-home-hero { min-height: 0; padding-top: 40px; } .osr-home-summary .osr-panel { min-height: 210px; } .osr-home-portal { min-height: 200px; } .osr-home-followon { margin-top: 40px; } .osr-card-arrow { flex-basis: 44px; width: 44px; height: 44px; } .osr-media-actions button, .osr-capture select { min-height: 44px; } }
 @media (max-width: 520px) { .osr-home-hero { padding-top: 26px; } .osr-capture { flex-wrap: wrap; border-radius: 22px; } .osr-capture input { flex-basis: 100%; } .osr-capture select, .osr-capture .osr-button { flex: 1; max-width: none; } .osr-quick-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .osr-chip { padding-inline: 8px; font-size: .72rem; text-align: center; } .osr-home-summary { grid-template-columns: 1fr; } .osr-home-portal { min-height: 185px; } .osr-home-followon > section, .osr-home-followon > div { padding: 16px; } }
+
+/* The shared scene controller owns entry, settle, ambient and reset states. */
+#homeView .osr-scene-host::before { content: ''; position: absolute; z-index: 1; top: 0; left: 34%; width: 66%; height: min(75vh, 900px); pointer-events: none; background: radial-gradient(ellipse at 57% 18%, rgb(255 180 103 / 35%), transparent 58%); opacity: .3; mix-blend-mode: screen; }
+#homeView[data-scene-state="entry"] .osr-scene-image { animation: osrHomeWake var(--scene-wake-duration, 2350ms) cubic-bezier(.18,.72,.18,1) both; }
+#homeView[data-scene-state="entry"] .osr-home-hero { animation: osrHomeRise .74s var(--scene-copy-delay, 520ms) cubic-bezier(.2,.75,.2,1) both; }
+#homeView[data-scene-state="entry"] .osr-home-summary .osr-panel { animation: osrHomeRise .68s calc(var(--scene-copy-delay, 520ms) + 180ms) cubic-bezier(.2,.75,.2,1) both; }
+#homeView[data-scene-state="entry"] .osr-home-summary .osr-panel:nth-child(2) { animation-delay: calc(var(--scene-copy-delay, 520ms) + 240ms); }
+#homeView[data-scene-state="entry"] .osr-home-summary .osr-panel:nth-child(3) { animation-delay: calc(var(--scene-copy-delay, 520ms) + 300ms); }
+#homeView[data-scene-state="entry"] .osr-home-summary .osr-panel:nth-child(4) { animation-delay: calc(var(--scene-copy-delay, 520ms) + 360ms); }
+#homeView[data-scene-state="entry"] .osr-home-portal { animation: osrHomeRise .64s calc(var(--scene-caption-delay, 1180ms) + 90ms) cubic-bezier(.2,.75,.2,1) both; }
+#homeView[data-scene-state="ambient"] .osr-scene-host::before { animation: osrHomeGlow 15s ease-in-out infinite alternate; }
+#homeView[data-scene-intensity="subtle"][data-scene-state="ambient"] .osr-scene-host::before { animation: none; opacity: .2; }
+#homeView[data-scene-intensity="subtle"][data-scene-state="entry"] .osr-scene-image { animation: osrHomeSubtleWake var(--scene-wake-duration, 1050ms) ease-out both; }
+#homeView[data-scene-intensity="off"] .osr-scene-host::before { opacity: .2; }
+body.scene-document-hidden #homeView .osr-scene-host::before, #homeView[hidden] .osr-scene-host::before { animation-play-state: paused; }
+@keyframes osrHomeWake { from { opacity: .75; transform: scale(1.035); filter: brightness(.78) saturate(.85); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes osrHomeSubtleWake { from { opacity: .85; filter: brightness(.9); } to { opacity: 1; filter: none; } }
+@keyframes osrHomeRise { from { opacity: .2; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes osrHomeGlow { from { opacity: .18; } to { opacity: .42; } }
+@media (prefers-reduced-motion: reduce) { body:not(.force-full-motion) #homeView .osr-scene-host::before, body:not(.force-full-motion) #homeView .osr-scene-image, body:not(.force-full-motion) #homeView .osr-home-hero, body:not(.force-full-motion) #homeView .osr-home-summary .osr-panel, body:not(.force-full-motion) #homeView .osr-home-portal { animation: none !important; transition: none !important; } }
