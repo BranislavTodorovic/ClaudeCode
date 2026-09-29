@@ -1,17 +1,27 @@
+# Continue OneSpace from the current Personal / Fitness checkpoint
+
 Continue the existing OneSpace project from the exact repository state left by the previous agent run.
 
 Project working directory:
 
-C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice
+`C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice`
+
+## 1. Reconstruct the current repository state first
 
 Before editing anything:
 
 1. confirm the current working directory;
 2. confirm the resolved Git root and expected OneSpace project/repository structure;
-3. inspect branch, HEAD, `git status --short --untracked-files=all`, and the complete current diff;
-4. preserve all valid work left by the previous run — do not reset, clean, discard, or overwrite it.
+3. inspect the current branch and HEAD;
+4. inspect `git status --short --untracked-files=all`;
+5. inspect the complete current diff and all newly created/untracked files;
+6. preserve all valid work from the previous run — do not reset, clean, discard, overwrite, or recreate unfinished changes.
 
-Then read the COMPLETE current authority/documentation set FROM THE BEGINNING and in the documented order:
+Also check whether any temporary local test server/process or disposable artifact from the interrupted Personal fallback/testing work is still present. Clean up only disposable state after confirming it is not required evidence or project data.
+
+## 2. Re-read the authority set
+
+Before changing implementation, read the COMPLETE current authority/documentation set FROM THE BEGINNING and in the documented order:
 
 1. `docs/agent-instructions.md`
 2. `docs/IMPLEMENTATION-STEPS.md`
@@ -22,68 +32,106 @@ Then read the COMPLETE current authority/documentation set FROM THE BEGINNING an
 7. `VERIFICATION.md`
 8. `README.md`
 
-Do not rely on this handoff instead of the repository, checklist, evidence, or authority documents.
+Do not use this handoff as a replacement for the repository, checklist, persisted evidence, or authority documents.
 
-Also inspect the current implementation, persisted checklist/progress state, redesign evidence, tests, approved UI references, scene assets, and all files changed by the previous run.
+Also inspect the current implementation, tests, redesign evidence, approved references, generated assets/manifests/provenance, screenshots, and all files changed or created by the previous run.
 
-The previous run completed and VERIFIED Phase 12 and Gate 12.
+## 3. Confirm the persisted checkpoint
 
-R0 was also completed and recorded as VERIFIED.
+The previous run completed the Work redesign acceptance work and persisted Work as VERIFIED.
 
-R1 implemented the shared redesign foundation, including the route/scene contracts, eight clean scene assets under `assets/scenes/`, shared loading/fallback behavior, and regression coverage. The full suite was green at 177/177 before R2 began.
+Before reopening Work, confirm that its checklist/evidence record remains valid. Do not repeat valid Work work unless later changes provide concrete evidence that its verification has been invalidated.
 
-Before resuming R2, confirm that the required R1 checklist/evidence state was actually persisted. Do not redo valid R1 work; only resolve a real incomplete status/evidence gap if one exists.
+The Work checkpoint had a fully green regression suite at `183/183`.
 
-The previous run then started R2 at the documented Home fidelity step and reopened the actual approved Home reference before implementation.
+After Work was VERIFIED, the previous run advanced to the next Personal / Fitness checklist work.
 
-Current Home work already includes the redesigned eight-world shell, Home scene, local-state-backed Qui1ck Capture and summary surfaces, Home portals, and integration with existing local stores rather than fabricated live values.
+Confirm the exact active Personal / Fitness item and numbering from the authoritative checklist rather than relying on this handoff.
 
-Browser checks already confirmed note/task capture, reload persistence, and navigation into the existing Work experience.
+## 4. Reconcile the interrupted Personal / Fitness work
 
-A route bridge was also being completed so URL state, direct links, Back/Forward and in-app transitions remain consistent. Confirm its actual persisted/verified state rather than assuming it finished.
+The previous run performed substantial Personal / Fitness work, including:
 
-The regression suite remained green at 177/177 during this work.
+- generation of six clean Personal / Fitness portal images;
+- real goals, routines, and habits bindings;
+- add/complete behavior through the preserved owner forms;
+- summary/search handoff to the matching owner control;
+- responsive checks at `1920`, `1440`, `1024`, `760`, and `390`;
+- Productivity/plan navigation and Back behavior;
+- focused Personal model and asset tests;
+- Full/Subtle/Off/reduced-motion checks;
+- clean-origin/empty-state checks;
+- missing portal-image fallback testing;
+- tablet, phone, and 200%-equivalent evidence captures;
+- keyboard activation and mobile target checks;
+- portal keyboard handoffs;
+- deep-link and repeated-route lifecycle checks.
 
-The previous run then began the required responsive/static fidelity verification for Home.
+Treat those as resume context only.
 
-The in-app browser had already shown the Home layout at its fixed 1280px viewport with no console errors or horizontal overflow.
+Do not assume a check is complete merely because it was started or mentioned.
 
-Because that browser could not set all required acceptance widths, the previous run started isolated headless-browser captures for:
+The previous image-generation run displayed six Personal / Fitness portal outputs. Verify from the repository that every asset actually needed by the implementation was saved under the intended project asset directories, is correctly referenced by the current manifest/provenance records, and has no missing, duplicate, orphaned, or generator-only output.
 
-2048 / 1920 / 1440 / 1024 / 760 / 390
+Do not regenerate valid Personal / Fitness assets that are already correctly persisted.
 
-Usage expired immediately after starting the first 2048px capture and checking whether `home-2048.png` had been created.
+Usage expired while the previous run was executing the final Personal regression checks.
 
-Treat that only as a resume hint.
+In particular, the final full-suite result is not visible in the handoff, so do NOT treat the earlier `183/183` Work result as proof that the current Personal implementation is regression-free.
 
-Do NOT assume that the 2048px capture succeeded, that it was visually inspected, or that any responsive acceptance width is complete unless the current evidence proves it.
+First determine:
 
-First reconstruct the exact current R2 state and determine:
+1. which Personal / Fitness acceptance steps and evidence are actually persisted;
+2. whether all required generated Personal assets, manifest entries, provenance and fallbacks are valid;
+3. whether the responsive and screenshot evidence files actually exist and are correctly linked;
+4. whether the documented 200% acceptance requirement is satisfied by the recorded scale-equivalent evidence;
+5. whether all required motion, reduced-motion, keyboard, touch, routing, deep-link, empty-state and fallback checks are complete;
+6. whether persistence/rejected-write/failure behavior required by the active Personal criteria was actually verified or remained unfinished;
+7. the current focused-test and full-suite result after all Personal changes;
+8. the exact first unresolved Personal / Fitness checklist step.
 
-1. whether the 2048px capture actually completed;
-2. which responsive/fidelity checks are already persisted;
-3. whether the Home route bridge is fully implemented and verified;
-4. whether any R2 test, browser, screenshot, visual-fidelity, accessibility, persistence, routing, or evidence requirement remains incomplete;
-5. the exact first unresolved R2 checklist step.
+Reopen and visually inspect the actual approved Personal / Fitness reference whenever the active checklist requires fidelity decisions. Do not rely only on previous notes or MANIFEST text.
 
-Resume from that exact point.
+## 5. Resume from the first real gap
 
-For every required Home acceptance width, follow the authority documents and visually compare the rendered Home against the actual approved Home reference. Screenshot creation alone is not sufficient verification.
+Resume from the exact first unresolved Personal / Fitness step.
 
-If a defect is found, fix it within R2, perform the required focused/full verification, persist the evidence, and continue.
+Do not redo already valid evidence or regenerate valid assets simply because the previous run was interrupted.
 
-Do not mark R2 complete until all documented R2 acceptance criteria and evidence requirements are satisfied.
+If a defect or regression is found:
 
-Once R2 is genuinely complete, derive the exact next unresolved item directly from the authoritative checklist and continue automatically in documented order.
+- fix the underlying problem;
+- preserve existing owner/data contracts;
+- run the required focused verification;
+- perform the required browser/visual check;
+- rerun the required regression suite;
+- persist the required evidence before advancing.
 
-Do not skip ahead to another world, phase, or gate.
+Do not mark Personal / Fitness VERIFIED merely because the UI renders or focused tests pass.
 
-Do not redo VERIFIED Phase 12, Gate 12, R0, or valid R1 work unless current repository evidence proves that later changes invalidated it.
+Before closing it, satisfy all acceptance/evidence requirements from the authority documents and confirm the current full regression result.
 
-Do not create a parallel plan or alternate execution sequence.
+Then persist the final Personal / Fitness evidence and checklist/gate status exactly as required.
 
-Stop only for a genuine permission requirement, missing required authority/reference/evidence file, hard technical blocker, or irreconcilable authority contradiction.
+## 6. Continue automatically in authority order
 
-Otherwise continue item by item, phase by phase and gate by gate according to the authoritative repository workflow.
+Once Personal / Fitness is genuinely complete, derive the exact next unresolved item directly from the authoritative checklist and continue automatically in documented order.
 
-Begin now by reconstructing the repository state, confirming R1’s persisted completion state, reconciling the active R2 Home work, identifying the exact first unfinished Home acceptance step, and continuing from there.
+Do not skip ahead to another world, portal phase, or gate.
+
+Do not prematurely implement later-phase functionality merely because a portal is visible now.
+
+Do not redo VERIFIED Phase 12, Gate 12, R0, R1, Home/R2, or Work work unless later changes actually invalidate their evidence.
+
+Do not create a parallel plan, alternate phase sequence, or replacement authority set.
+
+Stop only for:
+
+- a genuine permission requirement;
+- a missing required authority/reference/evidence file;
+- a hard technical blocker;
+- an irreconcilable authority contradiction after applying the documented precedence rules.
+
+Otherwise continue item by item and gate by gate according to the authoritative repository workflow.
+
+Begin now by reconstructing the repository state, confirming the persisted Work checkpoint, verifying the persisted Personal / Fitness assets and evidence, reconciling the interrupted Personal / Fitness acceptance work, identifying the exact first unresolved step, and continuing from there.
