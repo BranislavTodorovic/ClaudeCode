@@ -624,8 +624,8 @@ No final "complete" statement is allowed until these conditions are true.
 | 12 | VERIFIED | Items 335–350 and Gate 12 VERIFIED; retained Phase 12 evidence and gate12-2026-09-28.json record the 173/173 regression, deferred Games/Movies matrices and Gate 12 security checks. |
 | R0 | VERIFIED | `docs/implementation-evidence/r0/gate-r0-2026-09-28.md` and `classification-2026-09-28.json` record the completed transition/classification gate. |
 | R1 | VERIFIED | R1.1–R1.3 and Gate R1 are evidenced in `docs/implementation-evidence/r1/architecture-lock-2026-09-28.md` and `foundation-and-assets-2026-09-28.md`; the R1 suite passed 177/177. |
-| R2 | VERIFIED | R2 steps 1–17 and Gate R2 are evidenced in `docs/implementation-evidence/r2/home-analysis-2026-09-28.md`, `home-static-fidelity-2026-09-29.md` and `home-acceptance-2026-09-29.md`; the full suite passed 178/178. R3 Work is next. |
-| R3 | PENDING | Seven remaining reference-led main worlds, one at a time. |
+| R2 | VERIFIED | R2 steps 1–17 and Gate R2 are evidenced in `docs/implementation-evidence/r2/home-analysis-2026-09-28.md`, `home-static-fidelity-2026-09-29.md` and `home-acceptance-2026-09-29.md`; the full suite passed 178/178 at that checkpoint. |
+| R3 | IN PROGRESS | Work is VERIFIED in `docs/implementation-evidence/r3/work-analysis-2026-09-29.md` and `work-acceptance-2026-09-29.md`; the final Work regression passed 183/183. First unresolved step: Personal / Fitness step 1. Gate R3 is pending. |
 | R4 | PENDING | Nested UI pilot: Work -> Projects. |
 | R5 | PENDING | Dedicated submodule rollout by world family. |
 | R6 | PENDING | Cross-world systems + redesign regression/integration gate before reclassified legacy hardening. |
@@ -3862,6 +3862,8 @@ For **each** world, complete this exact sequence before starting the next:
 19. mark that world VERIFIED.
 
 Do not batch-mark several worlds from one generic test or shared screenshot.
+
+**R3 Work: VERIFIED.** Steps 1–19, including approved-reference inspection, real owner handoffs, static/responsive captures, motion modes, fallbacks, route history, 183/183 regression and performance checks are recorded in `docs/implementation-evidence/r3/work-analysis-2026-09-29.md` and `work-acceptance-2026-09-29.md`. The first unresolved step is **R3 Personal / Fitness step 1: physically open `docs/ui-reference/02-personal-fitness.png`**.
 
 ### Gate R3
 

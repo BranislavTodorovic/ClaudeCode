@@ -8,7 +8,7 @@
 
   var worlds = [
     { id: 'home', label: 'Home', scene: 'assets/scenes/home/hero.png', modules: [] },
-    { id: 'work', label: 'Work', scene: 'assets/scenes/work/hero.png', modules: ['projects', 'kanban-board', 'team', 'documents', 'meetings', 'templates'] },
+    { id: 'work', label: 'Work', scene: 'assets/scenes/work/hero-r3.png', modules: ['projects', 'kanban-board', 'team', 'documents', 'meetings', 'templates'] },
     { id: 'personal', label: 'Personal / Fitness', scene: 'assets/scenes/personal/hero.png', modules: ['mindfulness', 'fitness', 'nutrition', 'recovery', 'personal-life', 'home-wellbeing'] },
     { id: 'explore', label: 'Explore', scene: 'assets/scenes/explore/hero.png', modules: ['destinations', 'experiences', 'travel-guides', 'bucket-list', 'discover-more'] },
     { id: 'games', label: 'Games', scene: 'assets/scenes/games/hero.png', modules: ['my-games', 'missions-quests', 'game-library', 'game-sessions', 'discover-games', 'game-settings'] },

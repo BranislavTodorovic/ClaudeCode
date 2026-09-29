@@ -30,7 +30,7 @@ The R1 portal registry fixes Work order and slugs as `projects`, `kanban-board`,
 
 ## 5. Reference and architecture conflicts resolved
 
-The sample navigation is not a different Work-only shell; use the canonical eight-world order and utility routes. “Alex”, avatar, sunny weather, 18°C, unread notification, monitor dashboard, sample tasks, scheduled meetings, project names/percentages, forest ambience, 3.2h focus, 6/10 tasks, High flow and Calm mindset are illustrative. They must not be presented as live. The source image contains baked UI, so runtime Work scene is the independent `assets/scenes/work/hero.png` created and proven in R1. Work projects, work items, tasks and history remain Work-owned. The generic Productivity timer/tasks and Notes stay with their existing owners; a Work action may navigate to those utilities but must not create a parallel Work record or quietly mix stores. Work → Projects is the R4 pilot after R3; R3 keeps the current Projects functionality and cannot claim R4 detail acceptance early.
+The sample navigation is not a different Work-only shell; use the canonical eight-world order and utility routes. “Alex”, avatar, sunny weather, 18°C, unread notification, monitor dashboard, sample tasks, scheduled meetings, project names/percentages, forest ambience, 3.2h focus, 6/10 tasks, High flow and Calm mindset are illustrative. They must not be presented as live. The source image contains baked UI, so runtime Work art must be an independent clean scene. R1 created and proved `assets/scenes/work/hero.png`; R3 subsequently added the separately documented `assets/scenes/work/hero-r3.png` for closer approved-image composition while preserving the R1 original. Work projects, work items, tasks and history remain Work-owned. The generic Productivity timer/tasks and Notes stay with their existing owners; a Work action may navigate to those utilities but must not create a parallel Work record or quietly mix stores. Work → Projects is the R4 pilot after R3; R3 keeps the current Projects functionality and cannot claim R4 detail acceptance early.
 
 ## 6. Dynamic-value source classification
 
@@ -47,4 +47,4 @@ The sample navigation is not a different Work-only shell; use the canonical eigh
 | Team/Documents/Meetings/Templates cards | `FUTURE_DISABLED` until R5 | Visible status and useful parent return, with no dead interactive card. |
 | Work scene/portal artwork | Decorative local asset | R1 manifest provenance; independent scene and fallback, never the approved composite screenshot. |
 
-Next unresolved R3 Work step: **7. Build its reference-led static structure using the existing clean Work scene, after checking the current Work UI/action owners in detail.**
+Work steps 7–19 and the R3 Work VERIFIED decision are recorded in `work-acceptance-2026-09-29.md`. The next unresolved checklist step is R3 Personal / Fitness step 1; Gate R3 remains pending.

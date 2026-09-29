@@ -137,6 +137,9 @@
         log(state,parent,id?'task-updated':'task-created'); return commit(state,'Task saved.');
       });
     }
+    root.OneSpaceWork.openNewTask=function(itemId){var parent=read().items.find(function(item){return item.id===itemId && item.status!=='closed';});if(!parent)return false;editTask(null,itemId);return true;};
+    root.OneSpaceWork.openItem=function(itemId){var item=read().items.find(function(entry){return entry.id===itemId;});if(!item)return false;selected=itemId;if(!detailPanel){detailPanel=UI.panel('Work details');detailPanel.body.onclick=host.onclick;detailPanel.body.onchange=host.onchange;}detailPanel.show();render();return true;};
+    root.OneSpaceWork.openTask=function(taskId){var state=read(),task=state.tasks.find(function(entry){return entry.id===taskId;});if(!task||!state.items.some(function(item){return item.id===task.itemId;}))return false;if(!root.OneSpaceWork.openItem(task.itemId))return false;var row=Array.from(detailPanel.body.querySelectorAll('[data-task-key]')).find(function(node){return node.dataset.taskKey===taskId;});if(!row)return false;row.scrollIntoView({block:'nearest'});var target=row.querySelector('input:not([disabled]), button')||row;if(target===row)row.setAttribute('tabindex','-1');target.focus({preventScroll:true});return true;};
     document.querySelector('[data-work-new]').onclick=function(){editItem(null);};
     document.getElementById('workOverview').onclick=function(e){var button=e.target.closest('[data-work-overview]');if(!button)return;e.stopPropagation();if(!OS.goToPage('work'))return;filters={view:'active'};if(button.dataset.workOverview==='blocked')filters.status='blocked';if(button.dataset.workOverview==='overdue')filters.deadline='overdue';render();};
     host.onclick=function(e){

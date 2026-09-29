@@ -14,7 +14,7 @@ const expectedScripts = [
   'explore/local-discovery.js', 'explore/discovery-ui.js', 'explore/explore-global.js',
   'shared/provider-search.js', 'games/game-resources.js', 'games/games-data.js', 'games/games.js',
   'movies/movies-data.js', 'movies/movies.js', 'settings/settings.js', 'shared/redesign-foundation.js', 'shared/cinematic-scenes.js',
-  'explore/discovery-integration.js', 'home/home-redesign.js'
+  'explore/discovery-integration.js', 'home/home-redesign.js', 'work/work-redesign.js', 'personal/personal-redesign.js'
 ];
 function walk(dir, tests = false) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
@@ -65,7 +65,7 @@ test('literal artwork and stylesheet URLs resolve without moving assets', () => 
 });
 test('recursive parse inventory covers every application JS file', () => {
   const source=walk(root).filter(f=>f.endsWith('.js'));
-  assert.equal(source.length,30);
+  assert.equal(source.length,32);
   for(const folder of ['shared','work','personal','games','movies','explore','server'])assert(source.some(f=>path.relative(root,f).startsWith(folder+path.sep)),folder);
   const parseTest=fs.readFileSync(path.join(root,'tests/data-regression.test.js'),'utf8');
   assert(parseTest.includes('walk(root)'));

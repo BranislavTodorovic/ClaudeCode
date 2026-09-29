@@ -1,0 +1,15 @@
+{
+  "purpose": "R3 Personal / Fitness portal artwork, independent of the approved composite reference and hero scene",
+  "source": "Original OneSpace prompts using the built-in image generation tool on 2026-09-29",
+  "style": "Photorealistic warm wellness interior at sunset; no UI, readable writing, brands or people",
+  "displayDerivation": "Each original generated PNG remains intact. A 640px-wide JPEG at quality 82 was created with Windows System.Drawing high-quality bicubic resampling for fast portal display.",
+  "assets": [
+    { "slug": "mindfulness", "file": "mindfulness.jpg", "original": "mindfulness.png", "sourceId": "exec-66ea9c2d-efe1-405f-b1e0-28347596e8a1", "scene": "Meditation cushion, candle, plants and sunset window" },
+    { "slug": "fitness", "file": "fitness.jpg", "original": "fitness.png", "sourceId": "exec-7536ca60-bca8-4369-98f0-a1a573612ff9", "scene": "Home workout studio with mat, dumbbells, exercise ball and plants" },
+    { "slug": "nutrition", "file": "nutrition.jpg", "original": "nutrition.png", "sourceId": "exec-a136f424-1b3b-4b92-8078-6dbd2542ea7a", "scene": "Colorful meal bowl and green smoothie in a warm studio" },
+    { "slug": "recovery", "file": "recovery.jpg", "original": "recovery.png", "sourceId": "exec-53e16b28-64db-4e8e-9145-52d5f965960f", "scene": "Restorative bedroom with warm lamp and sunset window" },
+    { "slug": "personal-life", "file": "personal-life.jpg", "original": "personal-life.png", "sourceId": "exec-99623f3d-e9ea-4f34-95ff-1b82c9cc8195", "scene": "Blank journal, tea and plants in a personal planning corner" },
+    { "slug": "home-wellbeing", "file": "home-wellbeing.jpg", "original": "home-wellbeing.png", "sourceId": "exec-3487d9b9-495e-41c4-b1a2-24e185e3b75f", "scene": "Calm living room with armchair, lamp and plants" }
+  ],
+  "runtimeFallback": "Each decorative card keeps its visible title, availability and action over a local gradient when its display image fails"
+}

@@ -13,7 +13,7 @@ test('eight reference-led worlds have unique routes and local scenes', () => {
     assert.deepEqual(foundation.parseRoute(hash), {
       utility: null, world: world.id, module: null, recordId: null, activeParent: world.id
     });
-    assert.match(world.scene, /^assets\/scenes\/[a-z-]+\/hero\.png$/);
+    assert.match(world.scene, /^assets\/scenes\/[a-z-]+\/hero(?:-r\d+)?\.png$/);
   }
 });
 

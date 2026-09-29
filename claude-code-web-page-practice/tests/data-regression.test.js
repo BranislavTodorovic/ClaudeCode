@@ -143,7 +143,7 @@ test('every application script parses', () => {
     });
   }
   const scripts = walk(root);
-  assert.equal(scripts.length, 30, 'Application source inventory changed: update this count alongside intentional module additions or removals');
+  assert.equal(scripts.length, 31, 'Application source inventory changed: update this count alongside intentional module additions or removals');
   for (const file of scripts) {
     new vm.Script(fs.readFileSync(path.join(root, file), 'utf8'), { filename: file });
   }
