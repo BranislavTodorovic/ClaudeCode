@@ -1,0 +1,4658 @@
+{
+  "before": {
+    "insideExperiencesActivated": true,
+    "outsideExperiencesActivated": false
+  },
+  "desktop": {
+    "width": 2048,
+    "failures": [],
+    "cards": [
+      {
+        "action": "destinations",
+        "box": {
+          "bottom": 1141.375,
+          "height": 230,
+          "left": 42,
+          "right": 414.1875,
+          "top": 911.375,
+          "width": 372.1875
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "photo",
+            "x": 228.09375,
+            "y": 931.375
+          },
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "caption",
+            "x": 66,
+            "y": 1117.375
+          },
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "icon",
+            "x": 386.1875,
+            "y": 1110.375
+          },
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 386.1875,
+            "y": 1132.375
+          }
+        ],
+        "label": "Open Destinations",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 386.1875,
+            "y": 1147.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 228.09375,
+            "y": 905.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 36,
+            "y": 1026.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 420.1875,
+            "y": 1026.375
+          }
+        ],
+        "slug": "destinations",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "experiences",
+        "box": {
+          "bottom": 1141.375,
+          "height": 230,
+          "left": 436.1875,
+          "right": 808.390625,
+          "top": 911.375,
+          "width": 372.203125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "photo",
+            "x": 622.2890625,
+            "y": 931.375
+          },
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "caption",
+            "x": 460.1875,
+            "y": 1117.375
+          },
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "icon",
+            "x": 780.390625,
+            "y": 1110.375
+          },
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 780.390625,
+            "y": 1132.375
+          }
+        ],
+        "label": "Experiences — coming later",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 780.390625,
+            "y": 1147.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 622.2890625,
+            "y": 905.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 430.1875,
+            "y": 1026.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 814.390625,
+            "y": 1026.375
+          }
+        ],
+        "slug": "experiences",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "travel-guides",
+        "box": {
+          "bottom": 1141.375,
+          "height": 230,
+          "left": 830.390625,
+          "right": 1202.59375,
+          "top": 911.375,
+          "width": 372.203125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "photo",
+            "x": 1016.4921875,
+            "y": 931.375
+          },
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "caption",
+            "x": 854.390625,
+            "y": 1117.375
+          },
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "icon",
+            "x": 1174.59375,
+            "y": 1110.375
+          },
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 1174.59375,
+            "y": 1132.375
+          }
+        ],
+        "label": "Travel Guides — coming later",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 1174.59375,
+            "y": 1147.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 1016.4921875,
+            "y": 905.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 824.390625,
+            "y": 1026.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 1208.59375,
+            "y": 1026.375
+          }
+        ],
+        "slug": "travel-guides",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "bucket-list",
+        "box": {
+          "bottom": 1141.375,
+          "height": 230,
+          "left": 1224.59375,
+          "right": 1596.796875,
+          "top": 911.375,
+          "width": 372.203125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "photo",
+            "x": 1410.6953125,
+            "y": 931.375
+          },
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "caption",
+            "x": 1248.59375,
+            "y": 1117.375
+          },
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "icon",
+            "x": 1568.796875,
+            "y": 1110.375
+          },
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 1568.796875,
+            "y": 1132.375
+          }
+        ],
+        "label": "Open Bucket List",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 1568.796875,
+            "y": 1147.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 1410.6953125,
+            "y": 905.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 1218.59375,
+            "y": 1026.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 1602.796875,
+            "y": 1026.375
+          }
+        ],
+        "slug": "bucket-list",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "discover-more",
+        "box": {
+          "bottom": 1141.375,
+          "height": 230,
+          "left": 1618.796875,
+          "right": 1991,
+          "top": 911.375,
+          "width": 372.203125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "photo",
+            "x": 1804.8984375,
+            "y": 931.375
+          },
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "caption",
+            "x": 1642.796875,
+            "y": 1117.375
+          },
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "icon",
+            "x": 1963,
+            "y": 1110.375
+          },
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 1963,
+            "y": 1132.375
+          }
+        ],
+        "label": "Open Discover More",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 1963,
+            "y": 1147.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 1804.8984375,
+            "y": 905.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 1612.796875,
+            "y": 1026.375
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 1997,
+            "y": 1026.375
+          }
+        ],
+        "slug": "discover-more",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      }
+    ]
+  },
+  "clicks": [
+    {
+      "slug": "destinations",
+      "point": "below card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "destinations",
+      "point": "above card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "destinations",
+      "point": "left of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "destinations",
+      "point": "right of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "experiences",
+      "point": "below card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "experiences",
+      "point": "above card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "experiences",
+      "point": "left of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "experiences",
+      "point": "right of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "travel-guides",
+      "point": "below card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "travel-guides",
+      "point": "above card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "travel-guides",
+      "point": "left of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "travel-guides",
+      "point": "right of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "bucket-list",
+      "point": "below card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "bucket-list",
+      "point": "above card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "bucket-list",
+      "point": "left of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "bucket-list",
+      "point": "right of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "discover-more",
+      "point": "below card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "discover-more",
+      "point": "above card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "discover-more",
+      "point": "left of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    },
+    {
+      "slug": "discover-more",
+      "point": "right of card",
+      "state": {
+        "focusAction": null,
+        "hash": "#/w/explore",
+        "noticeHidden": true,
+        "scrollY": 0
+      }
+    }
+  ],
+  "responsive": [
+    {
+      "width": 3440,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 730.5,
+            "right": 1105.6875,
+            "top": 299.71875,
+            "width": 375.1875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 918.09375,
+              "y": 319.71875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 754.5,
+              "y": 505.71875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1077.6875,
+              "y": 498.71875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1077.6875,
+              "y": 520.71875
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1077.6875,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 918.09375,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 724.5,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1111.6875,
+              "y": 414.71875
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 1127.6875,
+            "right": 1502.890625,
+            "top": 299.71875,
+            "width": 375.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1315.2890625,
+              "y": 319.71875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1151.6875,
+              "y": 505.71875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1474.890625,
+              "y": 498.71875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1474.890625,
+              "y": 520.71875
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1474.890625,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1315.2890625,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1121.6875,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1508.890625,
+              "y": 414.71875
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 1524.890625,
+            "right": 1900.09375,
+            "top": 299.71875,
+            "width": 375.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1712.4921875,
+              "y": 319.71875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1548.890625,
+              "y": 505.71875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1872.09375,
+              "y": 498.71875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1872.09375,
+              "y": 520.71875
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1872.09375,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1712.4921875,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1518.890625,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1906.09375,
+              "y": 414.71875
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 1922.09375,
+            "right": 2297.296875,
+            "top": 299.71875,
+            "width": 375.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 2109.6953125,
+              "y": 319.71875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1946.09375,
+              "y": 505.71875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 2269.296875,
+              "y": 498.71875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 2269.296875,
+              "y": 520.71875
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 2269.296875,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 2109.6953125,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1916.09375,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 2303.296875,
+              "y": 414.71875
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 2319.296875,
+            "right": 2694.5,
+            "top": 299.71875,
+            "width": 375.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 2506.8984375,
+              "y": 319.71875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 2343.296875,
+              "y": 505.71875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 2666.5,
+              "y": 498.71875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 2666.5,
+              "y": 520.71875
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 2666.5,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 2506.8984375,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 2313.296875,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 2700.5,
+              "y": 414.71875
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 2048,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 42,
+            "right": 414.1875,
+            "top": 299.71875,
+            "width": 372.1875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 228.09375,
+              "y": 319.71875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 66,
+              "y": 505.71875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 386.1875,
+              "y": 498.71875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 386.1875,
+              "y": 520.71875
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 386.1875,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 228.09375,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 36,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 420.1875,
+              "y": 414.71875
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 436.1875,
+            "right": 808.390625,
+            "top": 299.71875,
+            "width": 372.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 622.2890625,
+              "y": 319.71875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 460.1875,
+              "y": 505.71875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 780.390625,
+              "y": 498.71875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 780.390625,
+              "y": 520.71875
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 780.390625,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 622.2890625,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 430.1875,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 814.390625,
+              "y": 414.71875
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 830.390625,
+            "right": 1202.59375,
+            "top": 299.71875,
+            "width": 372.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1016.4921875,
+              "y": 319.71875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 854.390625,
+              "y": 505.71875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1174.59375,
+              "y": 498.71875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1174.59375,
+              "y": 520.71875
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1174.59375,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1016.4921875,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 824.390625,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1208.59375,
+              "y": 414.71875
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 530.71875,
+            "height": 230,
+            "left": 1224.59375,
+            "right": 1596.796875,
+            "top": 300.71875,
+            "width": 372.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1410.6953125,
+              "y": 320.71875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1248.59375,
+              "y": 506.71875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1568.796875,
+              "y": 499.71875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1568.796875,
+              "y": 521.71875
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1568.796875,
+              "y": 536.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1410.6953125,
+              "y": 294.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1218.59375,
+              "y": 415.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1602.796875,
+              "y": 415.71875
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 529.71875,
+            "height": 230,
+            "left": 1618.796875,
+            "right": 1991,
+            "top": 299.71875,
+            "width": 372.203125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1804.8984375,
+              "y": 319.71875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1642.796875,
+              "y": 505.71875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1963,
+              "y": 498.71875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1963,
+              "y": 520.71875
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1963,
+              "y": 535.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1804.8984375,
+              "y": 293.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1612.796875,
+              "y": 414.71875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1997,
+              "y": 414.71875
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 1920,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 529.375,
+            "height": 230,
+            "left": 40.3125,
+            "right": 388.296875,
+            "top": 299.375,
+            "width": 347.984375
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 214.3046875,
+              "y": 319.375
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 64.3125,
+              "y": 505.375
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 360.296875,
+              "y": 498.375
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 360.296875,
+              "y": 520.375
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 360.296875,
+              "y": 535.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 214.3046875,
+              "y": 293.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 34.3125,
+              "y": 414.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 394.296875,
+              "y": 414.375
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 530.375,
+            "height": 230,
+            "left": 409.40625,
+            "right": 757.390625,
+            "top": 300.375,
+            "width": 347.984375
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 583.3984375,
+              "y": 320.375
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 433.40625,
+              "y": 506.375
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 729.390625,
+              "y": 499.375
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 729.390625,
+              "y": 521.375
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 729.390625,
+              "y": 536.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 583.3984375,
+              "y": 294.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 403.40625,
+              "y": 415.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 763.390625,
+              "y": 415.375
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 530.375,
+            "height": 230,
+            "left": 778.5,
+            "right": 1126.484375,
+            "top": 300.375,
+            "width": 347.984375
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 952.4921875,
+              "y": 320.375
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 802.5,
+              "y": 506.375
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1098.484375,
+              "y": 499.375
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1098.484375,
+              "y": 521.375
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1098.484375,
+              "y": 536.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 952.4921875,
+              "y": 294.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 772.5,
+              "y": 415.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1132.484375,
+              "y": 415.375
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 529.375,
+            "height": 230,
+            "left": 1147.59375,
+            "right": 1495.578125,
+            "top": 299.375,
+            "width": 347.984375
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1321.5859375,
+              "y": 319.375
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1171.59375,
+              "y": 505.375
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1467.578125,
+              "y": 498.375
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1467.578125,
+              "y": 520.375
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1467.578125,
+              "y": 535.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1321.5859375,
+              "y": 293.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1141.59375,
+              "y": 414.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1501.578125,
+              "y": 414.375
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 530.375,
+            "height": 230,
+            "left": 1516.6875,
+            "right": 1864.671875,
+            "top": 300.375,
+            "width": 347.984375
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1690.6796875,
+              "y": 320.375
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1540.6875,
+              "y": 506.375
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1836.671875,
+              "y": 499.375
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1836.671875,
+              "y": 521.375
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1836.671875,
+              "y": 536.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1690.6796875,
+              "y": 294.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1510.6875,
+              "y": 415.375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1870.671875,
+              "y": 415.375
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 1715,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 530.203125,
+            "height": 230,
+            "left": 36,
+            "right": 346.5,
+            "top": 300.203125,
+            "width": 310.5
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 191.25,
+              "y": 320.203125
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 60,
+              "y": 506.203125
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 318.5,
+              "y": 499.203125
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 318.5,
+              "y": 521.203125
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 318.5,
+              "y": 536.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 191.25,
+              "y": 294.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 30,
+              "y": 415.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 352.5,
+              "y": 415.203125
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 530.203125,
+            "height": 230,
+            "left": 365.359375,
+            "right": 675.875,
+            "top": 300.203125,
+            "width": 310.515625
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 520.6171875,
+              "y": 320.203125
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 389.359375,
+              "y": 506.203125
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 647.875,
+              "y": 499.203125
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 647.875,
+              "y": 521.203125
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 647.875,
+              "y": 536.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 520.6171875,
+              "y": 294.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 359.359375,
+              "y": 415.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 681.875,
+              "y": 415.203125
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 529.203125,
+            "height": 230,
+            "left": 694.734375,
+            "right": 1005.25,
+            "top": 299.203125,
+            "width": 310.515625
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 849.9921875,
+              "y": 319.203125
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 718.734375,
+              "y": 505.203125
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 977.25,
+              "y": 498.203125
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 977.25,
+              "y": 520.203125
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 977.25,
+              "y": 535.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 849.9921875,
+              "y": 293.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 688.734375,
+              "y": 414.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1011.25,
+              "y": 414.203125
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 530.203125,
+            "height": 230,
+            "left": 1024.109375,
+            "right": 1334.625,
+            "top": 300.203125,
+            "width": 310.515625
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1179.3671875,
+              "y": 320.203125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1048.109375,
+              "y": 506.203125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1306.625,
+              "y": 499.203125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1306.625,
+              "y": 521.203125
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1306.625,
+              "y": 536.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1179.3671875,
+              "y": 294.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1018.109375,
+              "y": 415.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1340.625,
+              "y": 415.203125
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 530.203125,
+            "height": 230,
+            "left": 1353.484375,
+            "right": 1664,
+            "top": 300.203125,
+            "width": 310.515625
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1508.7421875,
+              "y": 320.203125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 1377.484375,
+              "y": 506.203125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1636,
+              "y": 499.203125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1636,
+              "y": 521.203125
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1636,
+              "y": 536.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1508.7421875,
+              "y": 294.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 1347.484375,
+              "y": 415.203125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1670,
+              "y": 415.203125
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 1440,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 516,
+            "height": 216,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 300,
+            "width": 444.28125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 252.375,
+              "y": 320
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 54.234375,
+              "y": 492
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 446.515625,
+              "y": 485
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 446.515625,
+              "y": 507
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 446.515625,
+              "y": 522
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 252.375,
+              "y": 294
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 24.234375,
+              "y": 408
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 480.515625,
+              "y": 408
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 516,
+            "height": 216,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": 300,
+            "width": 444.296875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 712.4921875,
+              "y": 320
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 514.34375,
+              "y": 492
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 906.640625,
+              "y": 485
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 906.640625,
+              "y": 507
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 906.640625,
+              "y": 522
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 712.4921875,
+              "y": 294
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 484.34375,
+              "y": 408
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 940.640625,
+              "y": 408
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 516,
+            "height": 216,
+            "left": 950.46875,
+            "right": 1394.75,
+            "top": 300,
+            "width": 444.28125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 1172.609375,
+              "y": 320
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 974.46875,
+              "y": 492
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 1366.75,
+              "y": 485
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 1366.75,
+              "y": 507
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 1366.75,
+              "y": 522
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 1172.609375,
+              "y": 294
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 944.46875,
+              "y": 408
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 1400.75,
+              "y": 408
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 515.828125,
+            "height": 216,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 299.828125,
+            "width": 444.28125
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 252.375,
+              "y": 319.828125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 54.234375,
+              "y": 491.828125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 446.515625,
+              "y": 484.828125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 446.515625,
+              "y": 506.828125
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 446.515625,
+              "y": 521.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 252.375,
+              "y": 293.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 24.234375,
+              "y": 407.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 480.515625,
+              "y": 407.828125
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 515.828125,
+            "height": 216,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": 299.828125,
+            "width": 444.296875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 712.4921875,
+              "y": 319.828125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 514.34375,
+              "y": 491.828125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 906.640625,
+              "y": 484.828125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 906.640625,
+              "y": 506.828125
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 906.640625,
+              "y": 521.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 712.4921875,
+              "y": 293.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 484.34375,
+              "y": 407.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 940.640625,
+              "y": 407.828125
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 1024,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 509.828125,
+            "height": 210,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 299.828125,
+            "width": 314
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 178.5,
+              "y": 319.828125
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 45.5,
+              "y": 485.828125
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 307.5,
+              "y": 478.828125
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 307.5,
+              "y": 500.828125
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 307.5,
+              "y": 515.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 178.5,
+              "y": 293.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 15.5,
+              "y": 404.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 341.5,
+              "y": 404.828125
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 510.828125,
+            "height": 210,
+            "left": 347.5,
+            "right": 661.5,
+            "top": 300.828125,
+            "width": 314
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 504.5,
+              "y": 320.828125
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 371.5,
+              "y": 486.828125
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 633.5,
+              "y": 479.828125
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 633.5,
+              "y": 501.828125
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 633.5,
+              "y": 516.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 504.5,
+              "y": 294.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 341.5,
+              "y": 405.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 667.5,
+              "y": 405.828125
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 509.828125,
+            "height": 210,
+            "left": 673.5,
+            "right": 987.5,
+            "top": 299.828125,
+            "width": 314
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 830.5,
+              "y": 319.828125
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 697.5,
+              "y": 485.828125
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 959.5,
+              "y": 478.828125
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 959.5,
+              "y": 500.828125
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 959.5,
+              "y": 515.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 830.5,
+              "y": 293.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 667.5,
+              "y": 404.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 993.5,
+              "y": 404.828125
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 509.828125,
+            "height": 210,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 299.828125,
+            "width": 314
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 178.5,
+              "y": 319.828125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 45.5,
+              "y": 485.828125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 307.5,
+              "y": 478.828125
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 307.5,
+              "y": 500.828125
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 307.5,
+              "y": 515.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 178.5,
+              "y": 293.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 15.5,
+              "y": 404.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 341.5,
+              "y": 404.828125
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 509.828125,
+            "height": 210,
+            "left": 347.5,
+            "right": 661.5,
+            "top": 299.828125,
+            "width": 314
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 504.5,
+              "y": 319.828125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 371.5,
+              "y": 485.828125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 633.5,
+              "y": 478.828125
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 633.5,
+              "y": 500.828125
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 633.5,
+              "y": 515.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 504.5,
+              "y": 293.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 341.5,
+              "y": 404.828125
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 667.5,
+              "y": 404.828125
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 857,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 509.796875,
+            "height": 210,
+            "left": 17.984375,
+            "right": 278.65625,
+            "top": 299.796875,
+            "width": 260.671875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 148.3203125,
+              "y": 319.796875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 41.984375,
+              "y": 485.796875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 250.65625,
+              "y": 478.796875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 250.65625,
+              "y": 500.796875
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 250.65625,
+              "y": 515.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 148.3203125,
+              "y": 293.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 11.984375,
+              "y": 404.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 284.65625,
+              "y": 404.796875
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 510.796875,
+            "height": 210,
+            "left": 290.65625,
+            "right": 551.328125,
+            "top": 300.796875,
+            "width": 260.671875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 420.9921875,
+              "y": 320.796875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 314.65625,
+              "y": 486.796875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 523.328125,
+              "y": 479.796875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 523.328125,
+              "y": 501.796875
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 523.328125,
+              "y": 516.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 420.9921875,
+              "y": 294.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 284.65625,
+              "y": 405.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 557.328125,
+              "y": 405.796875
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 509.796875,
+            "height": 210,
+            "left": 563.328125,
+            "right": 824.015625,
+            "top": 299.796875,
+            "width": 260.6875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 693.671875,
+              "y": 319.796875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 587.328125,
+              "y": 485.796875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 796.015625,
+              "y": 478.796875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 796.015625,
+              "y": 500.796875
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 796.015625,
+              "y": 515.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 693.671875,
+              "y": 293.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 557.328125,
+              "y": 404.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 830.015625,
+              "y": 404.796875
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 509.796875,
+            "height": 210,
+            "left": 17.984375,
+            "right": 278.65625,
+            "top": 299.796875,
+            "width": 260.671875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 148.3203125,
+              "y": 319.796875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 41.984375,
+              "y": 485.796875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 250.65625,
+              "y": 478.796875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 250.65625,
+              "y": 500.796875
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 250.65625,
+              "y": 515.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 148.3203125,
+              "y": 293.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 11.984375,
+              "y": 404.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 284.65625,
+              "y": 404.796875
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 509.796875,
+            "height": 210,
+            "left": 290.65625,
+            "right": 551.328125,
+            "top": 299.796875,
+            "width": 260.671875
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 420.9921875,
+              "y": 319.796875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 314.65625,
+              "y": 485.796875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 523.328125,
+              "y": 478.796875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 523.328125,
+              "y": 500.796875
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 523.328125,
+              "y": 515.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 420.9921875,
+              "y": 293.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 284.65625,
+              "y": 404.796875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 557.328125,
+              "y": 404.796875
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 760,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 344.421875,
+            "height": 210,
+            "left": 16,
+            "right": 366.5,
+            "top": 134.421875,
+            "width": 350.5
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 191.25,
+              "y": 154.421875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 320.421875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 338.5,
+              "y": 313.421875
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 338.5,
+              "y": 335.421875
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 338.5,
+              "y": 350.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 191.25,
+              "y": 128.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 239.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 372.5,
+              "y": 239.421875
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 509.421875,
+            "height": 210,
+            "left": 378.5,
+            "right": 729,
+            "top": 299.421875,
+            "width": 350.5
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 553.75,
+              "y": 319.421875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 402.5,
+              "y": 485.421875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 701,
+              "y": 478.421875
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 701,
+              "y": 500.421875
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 701,
+              "y": 515.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 553.75,
+              "y": 293.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 372.5,
+              "y": 404.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 735,
+              "y": 404.421875
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 510.421875,
+            "height": 210,
+            "left": 16,
+            "right": 366.5,
+            "top": 300.421875,
+            "width": 350.5
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 191.25,
+              "y": 320.421875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.421875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 338.5,
+              "y": 479.421875
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 338.5,
+              "y": 501.421875
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 338.5,
+              "y": 516.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 191.25,
+              "y": 294.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 372.5,
+              "y": 405.421875
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 509.421875,
+            "height": 210,
+            "left": 378.5,
+            "right": 729,
+            "top": 299.421875,
+            "width": 350.5
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 553.75,
+              "y": 319.421875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 402.5,
+              "y": 485.421875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 701,
+              "y": 478.421875
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 701,
+              "y": 500.421875
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 701,
+              "y": 515.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 553.75,
+              "y": 293.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 372.5,
+              "y": 404.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 735,
+              "y": 404.421875
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 510.421875,
+            "height": 210,
+            "left": 16,
+            "right": 366.5,
+            "top": 300.421875,
+            "width": 350.5
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 191.25,
+              "y": 320.421875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.421875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 338.5,
+              "y": 479.421875
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 338.5,
+              "y": 501.421875
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 338.5,
+              "y": 516.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 191.25,
+              "y": 294.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.421875
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 372.5,
+              "y": 405.421875
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 390,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 509.5625,
+            "height": 210,
+            "left": 16,
+            "right": 359,
+            "top": 299.5625,
+            "width": 343
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 187.5,
+              "y": 319.5625
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 485.5625
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 331,
+              "y": 478.5625
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 331,
+              "y": 500.5625
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 331,
+              "y": 515.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 187.5,
+              "y": 293.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 404.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 365,
+              "y": 404.5625
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 510.5625,
+            "height": 210,
+            "left": 16,
+            "right": 359,
+            "top": 300.5625,
+            "width": 343
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 187.5,
+              "y": 320.5625
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.5625
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 331,
+              "y": 479.5625
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 331,
+              "y": 501.5625
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 331,
+              "y": 516.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 187.5,
+              "y": 294.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 365,
+              "y": 405.5625
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 509.5625,
+            "height": 210,
+            "left": 16,
+            "right": 359,
+            "top": 299.5625,
+            "width": 343
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 187.5,
+              "y": 319.5625
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 485.5625
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 331,
+              "y": 478.5625
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 331,
+              "y": 500.5625
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 331,
+              "y": 515.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 187.5,
+              "y": 293.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 404.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 365,
+              "y": 404.5625
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 510.5625,
+            "height": 210,
+            "left": 16,
+            "right": 359,
+            "top": 300.5625,
+            "width": 343
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 187.5,
+              "y": 320.5625
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.5625
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 331,
+              "y": 479.5625
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 331,
+              "y": 501.5625
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 331,
+              "y": 516.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 187.5,
+              "y": 294.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 365,
+              "y": 405.5625
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 509.5625,
+            "height": 210,
+            "left": 16,
+            "right": 359,
+            "top": 299.5625,
+            "width": 343
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 187.5,
+              "y": 319.5625
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 485.5625
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 331,
+              "y": 478.5625
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 331,
+              "y": 500.5625
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 331,
+              "y": 515.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 187.5,
+              "y": 293.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 404.5625
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 365,
+              "y": 404.5625
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": []
+    },
+    {
+      "width": 320,
+      "cards": [
+        {
+          "action": "destinations",
+          "box": {
+            "bottom": 510.4375,
+            "height": 210,
+            "left": 16,
+            "right": 289,
+            "top": 300.4375,
+            "width": 273
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "photo",
+              "x": 152.5,
+              "y": 320.4375
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.4375
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "icon",
+              "x": 261,
+              "y": 479.4375
+            },
+            {
+              "action": "destinations",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 261,
+              "y": 501.4375
+            }
+          ],
+          "label": "Open Destinations",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 261,
+              "y": 516.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 152.5,
+              "y": 294.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 295,
+              "y": 405.4375
+            }
+          ],
+          "slug": "destinations",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "experiences",
+          "box": {
+            "bottom": 509.4375,
+            "height": 210,
+            "left": 16,
+            "right": 289,
+            "top": 299.4375,
+            "width": 273
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "photo",
+              "x": 152.5,
+              "y": 319.4375
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 485.4375
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "icon",
+              "x": 261,
+              "y": 478.4375
+            },
+            {
+              "action": "experiences",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 261,
+              "y": 500.4375
+            }
+          ],
+          "label": "Experiences — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 261,
+              "y": 515.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 152.5,
+              "y": 293.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 404.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 295,
+              "y": 404.4375
+            }
+          ],
+          "slug": "experiences",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "travel-guides",
+          "box": {
+            "bottom": 510.4375,
+            "height": 210,
+            "left": 16,
+            "right": 289,
+            "top": 300.4375,
+            "width": 273
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "photo",
+              "x": 152.5,
+              "y": 320.4375
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.4375
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "icon",
+              "x": 261,
+              "y": 479.4375
+            },
+            {
+              "action": "travel-guides",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 261,
+              "y": 501.4375
+            }
+          ],
+          "label": "Travel Guides — coming later",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 261,
+              "y": 516.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 152.5,
+              "y": 294.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 295,
+              "y": 405.4375
+            }
+          ],
+          "slug": "travel-guides",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "bucket-list",
+          "box": {
+            "bottom": 509.4375,
+            "height": 210,
+            "left": 16,
+            "right": 289,
+            "top": 299.4375,
+            "width": 273
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "photo",
+              "x": 152.5,
+              "y": 319.4375
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 485.4375
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "icon",
+              "x": 261,
+              "y": 478.4375
+            },
+            {
+              "action": "bucket-list",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 261,
+              "y": 500.4375
+            }
+          ],
+          "label": "Open Bucket List",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 261,
+              "y": 515.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 152.5,
+              "y": 293.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 404.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 295,
+              "y": 404.4375
+            }
+          ],
+          "slug": "bucket-list",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        },
+        {
+          "action": "discover-more",
+          "box": {
+            "bottom": 510.4375,
+            "height": 210,
+            "left": 16,
+            "right": 289,
+            "top": 300.4375,
+            "width": 273
+          },
+          "descendants": 0,
+          "iconHidden": "true",
+          "inside": [
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "photo",
+              "x": 152.5,
+              "y": 320.4375
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "caption",
+              "x": 40,
+              "y": 486.4375
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "icon",
+              "x": 261,
+              "y": 479.4375
+            },
+            {
+              "action": "discover-more",
+              "inViewport": true,
+              "name": "below icon inside card",
+              "x": 261,
+              "y": 501.4375
+            }
+          ],
+          "label": "Open Discover More",
+          "outside": [
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "below card",
+              "x": 261,
+              "y": 516.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "above card",
+              "x": 152.5,
+              "y": 294.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "left of card",
+              "x": 10,
+              "y": 405.4375
+            },
+            {
+              "action": null,
+              "inViewport": true,
+              "name": "right of card",
+              "x": 295,
+              "y": 405.4375
+            }
+          ],
+          "slug": "discover-more",
+          "tag": "BUTTON",
+          "transform": "none",
+          "type": "button"
+        }
+      ],
+      "portalFailures": [],
+      "layoutFailures": [],
+      "initialOffscreenObservation": {
+        "action": "destinations",
+        "box": {
+          "bottom": -291.5625,
+          "height": 210,
+          "left": 16,
+          "right": 289,
+          "top": -501.5625,
+          "width": 273
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "photo",
+            "x": 152.5,
+            "y": -481.5625
+          },
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "caption",
+            "x": 40,
+            "y": -315.5625
+          },
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "icon",
+            "x": 261,
+            "y": -322.5625
+          },
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "below icon inside card",
+            "x": 261,
+            "y": -300.5625
+          }
+        ],
+        "label": "Open Destinations",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "below card",
+            "x": 261,
+            "y": -285.5625
+          },
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "above card",
+            "x": 152.5,
+            "y": -507.5625
+          },
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "left of card",
+            "x": 10,
+            "y": -396.5625
+          },
+          {
+            "action": null,
+            "inViewport": false,
+            "name": "right of card",
+            "x": 295,
+            "y": -396.5625
+          }
+        ],
+        "slug": "destinations",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      }
+    }
+  ],
+  "keyboard": {
+    "tabFromGuide": "bucket-list",
+    "enterFocus": "trip-board"
+  }
+}

@@ -1,0 +1,76 @@
+# R3 Explore acceptance progress — 2026-09-30
+
+Explore is NOT VERIFIED; Gate R3 remains OPEN. Personal remains VERIFIED.
+
+**Current checkpoint after credits/description UX report:** Reproduced the page-wide credits SUMMARY activating from apparent empty space and its flow-driven scene recropping. Replaced it with a bordered **Scene & photo credits** dialog launcher; scene/page geometry now stays stable. Verified all 12 maintained destination images, substantive descriptions and separate source/license state; hero and provenance use full dialog width, map links are labelled truthfully, and missing user-entry provenance is explicit. See `explore-credits-details-2026-09-30.md` and its audit/screenshots. Latest **57/57 focused / 214/214 full**. Step 11 native Edge 100% / 200% layout and step 12 credits/portal/detail interaction confirmation remain pending; step 19 PENDING. Older checkpoints/results below are historical.
+
+**Current checkpoint after portal hit-target report:** Whole-card activation below the arrow inside the card reproduced; outside-card activation was not reproduced. Replaced transparent stretched button overlays with single semantic card buttons and stabilized hover boundaries. See `explore-portal-targets-2026-09-30.md` and its boundary audit/screenshots. Current focused/full tests: **50/50 / 207/207**. Step 11 native Edge 100% / 200% layout and step 12 portal-boundary manual confirmation remain pending; step 19 remains PENDING. Older checkpoint/results below are historical.
+
+**Current checkpoint after continued global-layout failure:** Reproduced inconsistent 2048px landing / 1800px travel-body frames; unified their sizing and strengthened alignment/centering/outer-frame coverage. See `explore-global-containment-fix-2026-09-30.md` and its audit/screenshot. Current tests: 45/45 focused, 202/202 full. Step 11 requires new manual normal-width and native Edge 200% confirmation; step 19 remains PENDING. Earlier records below are historical and do not supersede this status.
+
+**Latest update:** User's actual native Edge 200% check FAILED for horizontal page overflow. Prior viewport-only results do not override that failure. Explore is IMPLEMENTED / NOT VERIFIED. The layout fix, preserved failed screenshots, stronger audit and 43/43 focused / 200/200 full results are recorded in `explore-overflow-fix-2026-09-30.md`. Step 11 requires a new post-fix native check; step 19 remains pending. Historical results below are retained as earlier evidence.
+
+| Step | Status | Evidence |
+|---|---|---|
+| 1–6 | COMPLETE | explore-analysis-2026-09-30.md; prior physical reference/scene inspection and owner/classification planning persisted without redoing it |
+| 7 | COMPLETE | Static Explore mount, shared shell/scene host, hero/search/chips, three summary panels and five portals. Existing generated room and licensed local photos reused; no assets generated/replaced. Script parses; all selected assets exist. Static fidelity is evaluated separately at step 10. |
+| 8–10 | PASS | Owner integration, real derived behavior and static fidelity recorded below. |
+| 11 | FAILED / POST-FIX RETEST PENDING | Native Edge 200% exposed horizontal overflow. Fix and stronger audit are in explore-overflow-fix-2026-09-30.md; actual post-fix native confirmation is required. |
+| 12 | POST-CHANGE MANUAL RECHECK PENDING | Prior evidence preserved; explicit credits dialog, boundary/stability/keyboard checks and all 12 destination detail checks pass in-app. User Edge 100% / 200% confirmation required; see explore-credits-details-2026-09-30.md. |
+| 13–17 | PASS | Independent motion, fallback, history, regression and performance evidence below; latest regression 57/57 focused and 214/214 full. |
+| 18 | COMPLETE | This record and retained screenshots; checklist/README reconciled. |
+| 19 | PENDING | Explore cannot be VERIFIED until outstanding step 11 layout and step 12 interaction manual checks pass. |
+
+Asset sources: `assets/scenes/explore/hero.png` is the R1 generated source recorded in `assets/scenes/manifest.json`. Portal photography uses Crete (Ввласенко, CC BY-SA 3.0), Monteverde (Cephas, CC BY-SA 4.0), São Miguel (Gonçalo Torres, CC BY-SA 4.0); original URLs and license links stay in `explore/explore-data.js` and are exposed in landing credits. Map/globe portals use different CSS framing of the same clean room. Reference composite is not used in production. No optional travel provider is introduced.
+
+## Step 8 — preserved owner integration
+
+COMPLETE at source/regression level: contextual search submits the existing destination form; filter chips open existing controls; featured details use existing local discovery API/detail modal and delegate saves to `OneSpaceExplore.save`, an integration seam on the original owner. Saved/upcoming rows focus the original board's Edit trip control. Bucket List and Travel Dates focus the canonical board; Discover More focuses the existing final resource action; Surprise me delegates to existing owner random. No parallel writer/store. Licensed media/credits use original discovery helpers. New focused/structure checks pass 15/15 with no skips. Browser flows and broader regression remain required below.
+
+## Step 9 — missing landing behavior
+
+COMPLETE at source/regression level: actual saved-place counts and date-sorted planned nonpast trips derive from validated owner records, never reference samples. Empty summaries are truthful. Existing storage/page events refresh the summaries. Future Experiences/Travel Guides disclose later rollout. Search/detail failures disclose errors; portal media failures retain readable controls. Six focused model/asset tests cover boundaries, invalid/empty data, ownership, catalog/provenance and portal classification. Next: step 10 static fidelity at 2048×1152. No Explore cinematic motion added yet.
+
+## Step 10 — static fidelity
+
+PASS before any cinematic CSS: physically inspected in-app Browser at 2048×1152. Warm travel-library room, left hero/search/six chips, 2.15:1:1 summary row and five photographic portals fit in the first frame; all scene/photos loaded. Panels span y469–881 and portals y897–1127. All five labels/actions are visible; document has no horizontal overflow. Honest empty saved/upcoming states replace reference sample trips. Different map/globe room crops distinguish guide/bucket portals. Screenshot: `screenshots/explore-static-2048.png`. Next step 11 responsive/native zoom; native actual 200% remains human-only, with independent later checks allowed by the user's explicit instruction before requesting that check.
+
+## Step 11 — responsive complete; native zoom PENDING
+
+Measured in-app Browser at actual widths 1920/1440/1024/760/390. Document scroll widths were 1905/1425/1009/745/375 (scrollbar accounted for), with zero horizontal overflow and zero clipped portal captions. Summary layouts reflow 3 -> 2 -> 1 columns; portals 5 -> 3 -> 2 -> 1. Physically inspected settled mobile hero/nav and featured card; readable shell and wrapping chips/search, no hover dependency. Viewport resizing is NOT native zoom evidence. The smallest remaining manual check is actual browser zoom 200% on Explore: verify header/search/chips, summaries, all five portal captions and arrows, and owner tools are readable/reachable without overlap or horizontal page scrolling. All independent checks below proceed under the user's explicit instruction; step 11 remains unresolved until that evidence exists.
+
+## Step 12 — accessibility progress
+
+UI verified landing search focuses original owner input; future portal disclosure is a role=status region; Interests/Budget/Travel Style open existing filters and focus the matching named controls. Summary row focuses original Edit trip; Enter opens canonical editor. Keyboard portal activation retains owner focus. Shared visible focus styles are preserved. Credits consolidated into accessible disclosure with 44px targets rather than tiny overlaid photo links. No new hover-only action. Additional DOM/control geometry and responsive inspection recorded below.
+
+## Owner behavior checks
+
+Kyoto landing search returned one real local result and kept the owner query. Featured Lisbon opened its canonical local-detail modal with original licensed photo/description. Save to shortlist wrote through existing owner, updated Saved Places to one, and created the original trip-board card. Edit trip set planned 2026-10-10 through 2026-10-12; Upcoming Trips reflected exact dates. Reload preserved saved record and date summary. This is a disposable isolated in-app Browser record, not production sample data; remove after acceptance. No Chrome/Edge/Computer Use used.
+
+## Steps 12–14 — independent acceptance
+
+12 PASS: keyboard Enter activates future portals, Bucket List focuses the role-labelled Trip board, Discover More focuses the final `explore-random` action, and tab from hero search focuses Search places with a 3px outline. Every quick chip/search/button/portal has a visible semantic label and target >=44px; credits use accessible 44px links. Scene imagery is decorative; featured images retain real alt text. No action depends on hover; no-hover CSS suppresses transform. Mobile settled render was physically inspected after the browser's delayed paint (initial same-call screenshots could be stale; they were not treated as visibility failures or acceptance evidence).
+
+13 PASS after step 10: shared scene controller owns lifecycle; added a 2.35s warm-room wake, small staged copy/panel/portal rise, and 20s quiet Full-only sunset shade. No domain values animate, no new timers/controller/listeners/pointer loop introduced. Document-hidden ambient animation pauses.
+
+14 PASS for supported modes in actual in-app UI: Subtle entry computed 1.05s; Off state=still with both image and shade animation=none; Reduced override with Full intensity remains still, both animations none; Auto restored and Full entry measured 2.35s. System prefers-reduced-motion CSS and shared controller contract are retained; independent OS preference emulation is unavailable in this browser, so system media behavior is supported by shared regression/source checks rather than a fabricated browser emulation result. Native 200% remains pending step 11.
+
+## Step 15 — empty/loading/error/unavailable/missing assets
+
+PASS: empty Saved/Upcoming and no-match local search shown and inspected; detail action announces loading and uses existing error-aware modal save callback. Existing focused owner regression covers rejected preference writes, destination saving and rollback without losing state. Missing-scene fixture on separate localhost:8979 returns 404 for the Explore hero (no assets changed), and also removes guide/bucket imagery. Physical inspection exposed legacy global image capture replacing those portal images with unrelated generated art. Fixed narrowly: tagged Explore-owned fallbacks bypass the legacy replacement; their own error handler hides the failed image and retains warm gradient, caption and button. A regression asserts owned images are untouched while legacy images still receive original fallback. Reopened fixture confirms scene state=fallback and guide/bucket state=fallback; both remain keyboard operable with captions. Screenshot: `screenshots/explore-missing-scene.png`. Expected 404 warnings in the fixture are intentional; normal page console checked separately.
+
+## Step 16 — routes and persistence
+
+PASS: Explore -> Home, Back -> Explore retained real saved-trip dates; Forward returned Home. Direct `#/w/explore/bucket-list` reaches the parent with existing truthful subspace-preparation notice; dedicated module remains R5. Reload retained saved/dated trip summaries and original owner board. More To Explore remains final. After testing, the disposable Lisbon record was deleted via canonical confirmation UI; landing reports zero saved. Test servers and fallback browser are disposable and stopped/closed after recording evidence.
+
+## Step 17 — regression and performance
+
+PASS: focused command includes explore-redesign, explore-preservation, explore-imagery, discovery-ui-write-failure, scenes, redesign-foundation and structure; **40/40**, zero failures/skips. Full `node --preserve-symlinks --preserve-symlinks-main --test tests/`: **197/197**, zero failures/skips. Added seven Explore regressions; intentional application script inventory 32 -> 33. No Work/Personal files changed; full suite includes their existing regression coverage. Thirty model runs on 10,000 validated trip records measured median 37.32ms, maximum 69.12ms on this machine. Six unique existing display files total 2,701,094 bytes (2,391,358-byte room plus five small WebPs); three room uses share the same cached URL. No new images, remote calls, animation timers or provider introduced. Temporary benchmark file removed.
+
+## Step 18 and resume decision
+
+Evidence is persisted in this record, `explore-analysis-2026-09-30.md`, and static/fallback/mobile screenshots. Final normal page console has zero warn/error entries; all new landing button targets measure at least 44px at mobile width. `git diff --check` passes. Reviewed implementation and tracked diff: existing owner changed only to expose its save/random integration seam; shared visual fallback changed only for explicitly owned Explore portal images. Canonical catalog, trips, preferences, photos, scene assets, routing and final More To Explore retained. No assets generated or replaced. Work/Personal accepted evidence remains valid.
+
+**Exact next unresolved item: R3 Explore step 11 — actual native-browser 200% zoom.** Independent steps 12–18 complete under the user's explicit instruction; no claim of sequential gate completion past the outstanding manual check. **Explore step 19 PENDING / NOT VERIFIED; Gate R3 OPEN.** After genuine native-200% confirmation and retained screenshot/result, reconcile step 11 then make the step 19 decision before beginning Games. Current branch main / HEAD 6a68232; changes uncommitted.
+
+Smallest manual check: start the normal repository server (`node --preserve-symlinks --preserve-symlinks-main server/_static-server.js`), open `http://localhost:8973/#/w/explore` in the user's native browser, set the actual browser zoom menu to 200%, and scroll through header/search/chips, summaries, five portals and owner tools. Confirm readable/reachable controls, no overlapping captions/arrows and no horizontal page overflow. Retain a screenshot showing zoom setting and portal captions plus the observed result. No browser control permission is implied; user performs this check. Default empty state is sufficient; no test trips need creating.

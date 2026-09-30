@@ -16,6 +16,53 @@ function catalog() {
   return context.window.DESTINATIONS;
 }
 
+function detailRenderer() {
+  const escapeHtml=value=>String(value==null?'':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const context={URL,location:{href:'http://localhost/'},window:{OneSpace:{escapeHtml},OneSpaceUI:{},OneSpaceLocalDiscovery:local}};
+  vm.createContext(context);
+  vm.runInContext(fs.readFileSync(path.join(root,'explore/discovery-ui.js'),'utf8'),context);
+  return {ui:context.window.OneSpaceDiscovery,escapeHtml};
+}
+
+test('actual detail renderer presents every maintained description and hero separately from provenance',()=>{
+  const {ui,escapeHtml}=detailRenderer();
+  const descriptions=new Set();
+  for(const destination of catalog()) {
+    const item=local.normalize(destination,'destinations'),html=ui.detailHtml(item);
+    assert.equal(item.description,destination.details,destination.id+' long form is preserved');
+    descriptions.add(item.description);
+    assert(html.includes('<p class="provider-description">'+escapeHtml(destination.details)+'</p>'),destination.id+' actual description UI');
+    assert(html.includes('src="'+destination.heroImage+'"'),destination.id+' actual hero UI');
+    assert(html.includes('alt="'+escapeHtml(destination.imageAlt)+'"'),destination.id+' meaningful alt');
+    assert(html.includes('href="'+escapeHtml(destination.photoSource.sourceUrl)+'"'),destination.id+' original source link');
+    assert(html.includes('href="'+escapeHtml(destination.photoSource.licenseUrl)+'"'),destination.id+' license link');
+    assert(html.includes('<p class="provider-credit">'+escapeHtml(destination.photoSource.license)+'</p>'),destination.id+' separate provenance');
+    assert(html.includes('Planning link'),destination.id+' map link is a planning resource');
+    assert(!html.includes('Official website'),destination.id+' map is not misrepresented as an official site');
+  }
+  assert.equal(descriptions.size,12,'each maintained place has its own long-form description');
+});
+
+test('detail renderer handles genuinely missing user-added image and description without fabrication',()=>{
+  const {ui}=detailRenderer();
+  const item=local.normalize({id:'manual-place',name:'My location'},'destinations'),html=ui.detailHtml(item);
+  assert.match(html,/No description has been added to this local entry/);
+  assert.match(html,/No local image added/);
+  assert.doesNotMatch(html,/<img|<dt>Country<\/dt>/);
+  assert.match(html,/User-added location/);
+});
+
+test('photo failure retains description/provenance flow and uses local fallback only on error',()=>{
+  const {ui}=detailRenderer();
+  const states=new Set(['is-loading']),message={textContent:''};
+  const figure={classList:{add(...values){values.forEach(v=>states.add(v));},remove(...values){values.forEach(v=>states.delete(v));},contains:v=>states.has(v)},querySelector:()=>message};
+  const img={parentElement:figure,dataset:{fallbackSrc:'assets/destinations/lisbon.svg',fallbackAlt:'Illustrated fallback for Lisbon'},complete:false,src:'assets/destinations/lisbon-hero.webp',removeAttribute(){},remove(){this.removed=true;}};
+  ui.wirePhotos({querySelectorAll:()=>[img]});
+  assert.equal(img.src,'assets/destinations/lisbon-hero.webp');
+  img.onerror(); assert.equal(img.src,'assets/destinations/lisbon.svg'); assert(states.has('is-fallback'));
+  img.onerror(); assert.equal(img.removed,true); assert.match(message.textContent,/Image unavailable · destination details remain available/);
+});
+
 function webpSize(file) {
   const bytes = fs.readFileSync(file);
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');

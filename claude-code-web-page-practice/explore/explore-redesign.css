@@ -1,0 +1,95 @@
+/* R3 Explore world. Static reference layout; cinematic motion follows acceptance. */
+/* Explore owns its bounded room backdrop; legacy off-screen fixed glows do not belong here.
+   Keep page overflow visible so content-width defects cannot be masked by the legacy body rule. */
+body[data-page="explore"] { overflow-x: visible; }
+body[data-page="explore"]::before, body[data-page="explore"]::after { content: none; }
+#redesignExplore { overflow: visible; }
+#redesignExplore .osr-shell, #redesignExplore .osr-utilities { min-width: 0; }
+#redesignExplore .osr-utilities { flex-wrap: wrap; max-width: 100%; flex-shrink: 1; }
+#redesignExplore .osr-card-head { flex-wrap: wrap; }
+#redesignExplore .osr-explore-credits { overflow-wrap: anywhere; }
+body[data-page="explore"] :is(.sidebar,.sidebar-toggle,.mobile-nav,.today-rail,.mobile-today-toggle) { display: none !important; }
+/* The legacy sidebar animates wrap width/margin; the full-width Explore shell owns neither. */
+body[data-page="explore"] .wrap { width: 100% !important; max-width: none; min-width: 0; box-sizing: border-box; margin: 0; margin-left: 0 !important; padding: 0; transition: none; }
+#exploreView.redesign-explore { width: 100%; min-width: 0; box-sizing: border-box; margin: 0; padding: 0; border: 0; box-shadow: none; }
+#exploreView.redesign-explore > .page-hero { display: none !important; }
+#redesignExplore .osr-frame { min-height: min(100vh,1152px); }
+#redesignExplore .osr-scene-host::after { background: linear-gradient(90deg,rgb(8 12 18 / 62%),rgb(12 15 19 / 20%) 55%,rgb(8 11 19 / 8%)),linear-gradient(0deg,rgb(7 11 20 / 82%),transparent 58%); }
+.osr-explore-hero { display: flex; flex-direction: column; justify-content: center; min-height: clamp(310px,30vh,360px); padding: 22px 0 16px 4%; }
+.osr-explore-hero .osr-title { max-width: none; font-size: clamp(2.2rem,3.2vw,4rem); color: #b5dfff; text-shadow: 0 3px 18px rgb(0 0 0 / 55%); }
+.osr-explore-hero .osr-lead { margin-top: 7px; }
+.osr-explore-hero .osr-search { margin-top: 23px; width: min(850px,100%); }
+.osr-explore-hero .osr-search > .icon { flex: 0 0 21px; width: 21px; height: 21px; }
+.osr-explore-hero .osr-quick-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.osr-explore-summary { grid-template-columns: 2.15fr 1fr 1fr; margin-top: 12px; }
+.osr-explore-summary .osr-panel { min-height: 330px; padding: clamp(16px,1.2vw,24px); }
+.osr-explore-summary .osr-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.osr-explore-summary h2 { margin: 0; font-size: clamp(1.05rem,1.2vw,1.45rem); }
+.osr-explore-context { color: var(--osr-muted); font-size: .78rem; margin: 5px 0 16px; }
+.osr-explore-featured { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-bottom: 16px; }
+.osr-explore-destination { min-width: 0; }
+.osr-explore-destination .discovery-photo { height: 150px; margin: 0; border-radius: 12px; }
+.osr-explore-destination .discovery-photo { width: 100%; }
+.osr-explore-destination .discovery-photo img { width: 100%; height: 100%; object-fit: cover; }
+/* Full credits are in the adjacent explicit dialog launcher and in destination details. */
+.osr-explore-destination .discovery-photo figcaption { display: none; }
+.osr-explore-destination h3 { margin: 8px 0 2px; font-size: 1rem; }
+.osr-explore-destination p { margin: 0; font-size: .78rem; color: var(--osr-muted); }
+.osr-explore-destination button { margin-top: 6px; min-height: 44px; }
+.osr-explore-row { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 70px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--osr-edge); background: transparent; color: inherit; text-align: left; cursor: pointer; font: inherit; }
+.osr-explore-row > .icon { flex: 0 0 32px; width: 32px; height: 32px; color: var(--osr-amber); }
+.osr-explore-row span { min-width: 0; overflow-wrap: anywhere; }
+.osr-explore-row strong { display: block; font-size: .9rem; }
+.osr-explore-row small { display: block; font-size: .75rem; color: var(--osr-muted); }
+.osr-explore-portals { grid-template-columns: repeat(5,minmax(0,1fr)); margin-top: 16px; }
+.osr-explore-portal { min-height: clamp(210px,15vw,230px); }
+.osr-explore-portal[data-portal="travel-guides"] img,.osr-explore-portal[data-portal="bucket-list"] img { width: 180%; max-width: none; }
+.osr-explore-portal[data-portal="bucket-list"] img { left: -60%; }
+.osr-explore-portal[data-portal="travel-guides"] img { object-position: 17% center; }
+.osr-explore-portal[data-portal="bucket-list"] img { object-position: 52% 75%; }
+.osr-explore-portal .osr-portal-copy { padding: 18px 56px 18px 17px; }
+.osr-explore-portal .osr-portal-copy small { font-size: .73rem; }
+/* The visible card is the single control; no transparent stretched action overlay.
+   Keep its boundary stable under the pointer, including near the lower edge. */
+.osr-explore-portal-action { width: 100%; padding: 0; align-items: stretch; appearance: none; font: inherit; text-align: left; cursor: pointer; }
+.osr-explore-portal-action:hover { transform: none; }
+.osr-explore-portal-action > .icon { position: absolute; z-index: 2; right: 12px; bottom: 15px; width: 30px; height: 30px; padding: 6px; border: 1px solid var(--osr-edge); border-radius: 50%; color: #fff; background: rgb(15 30 49 / 82%); pointer-events: none; }
+.osr-explore-portal[data-asset-state="fallback"] { background: radial-gradient(circle at 65% 25%,#a57d57,#2b3f40 65%,#0b1b2b); }
+.osr-explore-credits { margin-top: 14px; font-size: .76rem; color: var(--osr-muted); }
+/* Only this visible bordered control opens provenance. Its surrounding row is inert.
+   The existing dialog keeps credits out of scene layout, preventing backdrop recropping. */
+.osr-explore-credits-toggle { display: inline-flex; align-items: center; gap: 9px; max-width: 100%; min-height: 44px; padding: 10px 16px; border: 1px solid var(--osr-edge); border-radius: 12px; background: var(--osr-glass-strong); color: var(--osr-ink); font: inherit; font-size: .85rem; font-weight: 650; cursor: pointer; }
+.osr-explore-credits-toggle:hover { border-color: var(--osr-accent); background: #26394c; }
+.osr-explore-credits-toggle > .icon { flex: 0 0 20px; pointer-events: none; }
+#domainOverlay .osr-explore-provenance { grid-column: 1 / -1; overflow-wrap: anywhere; }
+#domainOverlay .osr-explore-provenance a { display: inline-flex; align-items: center; max-width: 100%; min-height: 44px; color: var(--accent); }
+body[data-page="explore"] #domainOverlay .discovery-photo--hero { grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 9; }
+.osr-explore-followon { margin-top: 15px; padding: 18px 4%; border-top: 1px solid var(--osr-edge); }
+.osr-explore-followon h2 { margin: 0; font-size: 1.1rem; }
+.osr-explore-followon p { margin: 4px 0 0; color: var(--osr-muted); font-size: .82rem; }
+/* One frame contract for the landing and every retained owner section. */
+#redesignExplore .osr-frame, #exploreView.redesign-explore > .page-body { width: min(100%,var(--osr-content-max)); min-width: 0; box-sizing: border-box; padding-inline: var(--osr-page-pad); margin-inline: auto; }
+#exploreView.redesign-explore > .page-body { grid-template-columns: minmax(0,1fr); }
+#exploreView.redesign-explore .page-body :is(.discovery-search label,.discovery-heading > div,.domain-filters > label,.trip-card-copy) { min-width: 0; }
+#exploreView.redesign-explore .page-body :is(.discovery-heading,.page-section-head,.domain-actions) { flex-wrap: wrap; }
+#exploreView.redesign-explore .page-body :is(input,select,textarea,button) { box-sizing: border-box; min-width: 0; max-width: 100%; }
+#exploreView.redesign-explore .page-body :is(h2,h3,h4,a,label,.provider-status,.trip-empty) { overflow-wrap: anywhere; }
+@media (max-width:1450px) { .osr-explore-summary { grid-template-columns: 1fr 1fr; } .osr-explore-summary > :first-child { grid-column: 1 / -1; } .osr-explore-portals { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width:760px) { .osr-explore-hero { padding-inline: 0; } .osr-explore-portals { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width:520px) { .osr-explore-summary,.osr-explore-portals,.osr-explore-featured { grid-template-columns: 1fr; } .osr-explore-hero .osr-search { flex-wrap: wrap; padding: 12px; } .osr-explore-hero .osr-search .osr-button { flex: 1 0 100%; } .osr-explore-destination .discovery-photo { height: 190px; } }
+/* Reference-derived room wake and quiet reveals, added after static acceptance. */
+@keyframes osrExploreWake { from { opacity: .72; filter: brightness(.8) saturate(.88); transform: scale(1.018); } to { opacity: 1; filter: none; transform: scale(1); } }
+@keyframes osrExploreRise { from { opacity: .15; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes osrExploreSunset { from { opacity: .8; } to { opacity: 1; } }
+#exploreView[data-scene-state="entry"] .osr-scene-image { animation: osrExploreWake var(--scene-wake-duration,2350ms) cubic-bezier(.22,.7,.2,1) both; }
+#exploreView[data-scene-state="entry"] .osr-explore-hero { animation: osrExploreRise .68s var(--scene-copy-delay,520ms) ease-out both; }
+#exploreView[data-scene-state="entry"] .osr-explore-summary .osr-panel { animation: osrExploreRise .64s calc(var(--scene-copy-delay,520ms) + 160ms) ease-out both; }
+#exploreView[data-scene-state="entry"] .osr-explore-summary .osr-panel:nth-child(2) { animation-delay: calc(var(--scene-copy-delay,520ms) + 220ms); }
+#exploreView[data-scene-state="entry"] .osr-explore-summary .osr-panel:nth-child(3) { animation-delay: calc(var(--scene-copy-delay,520ms) + 280ms); }
+#exploreView[data-scene-state="entry"] .osr-explore-portals { animation: osrExploreRise .66s calc(var(--scene-caption-delay,1180ms) + 80ms) ease-out both; }
+#exploreView[data-scene-state="ambient"][data-scene-intensity="full"]:not([hidden]) .osr-scene-host::after { animation: osrExploreSunset 20s ease-in-out infinite alternate; }
+#exploreView[data-scene-intensity="subtle"][data-scene-state="entry"] .osr-scene-image { animation-duration: 1050ms; }
+#exploreView[data-scene-intensity="off"] .osr-world :is(.osr-portal,.osr-chip,.osr-button,.osr-nav-link) { transition-duration: .01ms; }
+body.scene-document-hidden #exploreView .osr-scene-host::after { animation-play-state: paused !important; }
+@media (hover:none) { #redesignExplore :is(.osr-portal,.osr-button,.osr-chip):hover { transform: none; } }
+@media (prefers-reduced-motion:reduce) { body:not(.force-full-motion) #exploreView :is(.osr-scene-image,.osr-explore-hero,.osr-explore-summary .osr-panel,.osr-explore-portals), body:not(.force-full-motion) #exploreView .osr-scene-host::after { animation: none !important; transition: none !important; } }

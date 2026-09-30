@@ -16,4 +16,6 @@
   // One-time non-destructive migration; old saved records and their notes remain in backups.
   if(OS.safeGet(key)==null){var legacy=OS.safeGetJSON('orbit-explore-saved',[]),migrated=[];legacy.forEach(function(s){var old=(window.DESTINATIONS||[]).find(function(d){return d.id===s.destinationId;});if(!old)return;var d={id:old.id,kind:'destination',name:old.name,country:old.country,description:old.details||old.summary,notes:s.notes,image:'',source:{name:'Previously saved local destination',url:old.links?.[0]?.url||'',license:'Local editorial record'}};migrated=T.save(migrated,d,s.id);});if(migrated.length)OS.safeSet(key,JSON.stringify(migrated));}
   document.querySelector('[data-action="destination-random"]').textContent='Surprise me';document.querySelector('[data-action="destination-random"]').onclick=function(){discovery.random();};render();
+  // Landing integration delegates every write to this existing owner.
+  window.OneSpaceExplore = {save:save,random:discovery.random};
 })();

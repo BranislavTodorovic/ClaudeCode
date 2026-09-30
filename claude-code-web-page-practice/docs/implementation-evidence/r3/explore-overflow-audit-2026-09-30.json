@@ -1,0 +1,90 @@
+[
+  {
+    "width": 2048,
+    "clientWidth": 2033,
+    "documentWidth": 2033,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 1920,
+    "clientWidth": 1905,
+    "documentWidth": 1905,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 1715,
+    "clientWidth": 1700,
+    "documentWidth": 1700,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "clientWidth": 1425,
+    "documentWidth": 1425,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 1024,
+    "clientWidth": 1009,
+    "documentWidth": 1009,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 857,
+    "clientWidth": 842,
+    "documentWidth": 842,
+    "regions": 11,
+    "controls": 109,
+    "violations": []
+  },
+  {
+    "width": 760,
+    "clientWidth": 745,
+    "documentWidth": 745,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 640,
+    "clientWidth": 625,
+    "documentWidth": 625,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 520,
+    "clientWidth": 505,
+    "documentWidth": 505,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "clientWidth": 375,
+    "documentWidth": 375,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  },
+  {
+    "width": 320,
+    "clientWidth": 305,
+    "documentWidth": 305,
+    "regions": 11,
+    "controls": 117,
+    "violations": []
+  }
+]
