@@ -12,6 +12,7 @@ body[data-page="personal"] .wrap { width: 100% !important; max-width: none; marg
 .osr-personal-search { margin-top: 20px; }
 .osr-personal-search > .icon { flex: 0 0 21px; width: 21px; height: 21px; color: #dcf6ff; }
 .osr-personal-search .osr-button { flex: 0 0 auto; min-height: 44px; padding-inline: 17px; }
+.osr-personal-hero .osr-capture-hint button, .osr-personal-rows .osr-inline-link { display: inline-flex; min-height: 44px; align-items: center; }
 .osr-personal-hero .osr-quick-actions { margin-top: 14px; }
 .osr-personal-hero .osr-chip .icon { width: 17px; height: 17px; }
 .osr-personal-summary { margin-top: clamp(8px, 1.4vh, 22px); }
@@ -45,7 +46,7 @@ body[data-page="personal"] .wrap { width: 100% !important; max-width: none; marg
 .osr-personal-portals { margin-top: 13px; }
 .osr-personal-portal { min-height: clamp(188px, 17.5vw, 248px); }
 .osr-personal-portal > img { object-position: center 49%; }
-.osr-personal-portal .osr-portal-copy { padding: 18px 17px; }
+.osr-personal-portal .osr-portal-copy { padding: 18px 56px 18px 17px; }
 .osr-personal-portal .osr-portal-copy strong { font-size: .94rem; }
 .osr-personal-portal .osr-portal-copy small { font-size: .7rem; }
 .osr-personal-portal .osr-portal-action { position: absolute; z-index: 2; inset: 0; width: 100%; border: 0; background: transparent; cursor: pointer; }

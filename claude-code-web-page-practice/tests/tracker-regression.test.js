@@ -106,6 +106,20 @@ test('Personal Edit keeps goal, routine and habit records on rejected writes',()
   assert.equal(records[0].done,true,key);
  }
 });
+test('Personal add and completion preserve records when storage rejects writes',()=>{
+ for(const key of ['orbit-personal-goals','orbit-personal-routines','orbit-personal-habits']){
+  const records=[{id:'x',text:'Keep me',done:false}],toast=[];
+  const ctx={window:{}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'personal/personal-controller.js'),'utf8'),ctx);
+  const controller=ctx.window.makePersonalController(key,{safeGetJSON:()=>records,safeSet:()=>false,uid:()=> 'new',escapeHtml:s=>s,iconSvg:()=>'',showToast:s=>toast.push(s)});
+  assert.equal(controller.add('Another item'),false,key);
+  assert.equal(records.length,1,key);
+  const list={innerHTML:''};controller.render(list);
+  const checkbox={dataset:{toggle:'x'},checked:true};list.onchange({target:checkbox});
+  assert.equal(checkbox.checked,false,key);
+  assert.equal(records[0].done,false,key);
+  assert.deepEqual(toast,[],key);
+ }
+});
 test('habit targets remain bounded and survive backup restore',()=>{
  const habit={id:'weekly-walk',text:'Walk',done:false,frequency:'weekly',target:3};
  assert.equal(storage.valid('orbit-personal-habits',JSON.stringify([habit])),true);

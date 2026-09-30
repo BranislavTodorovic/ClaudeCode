@@ -1098,6 +1098,8 @@ A requirement is not considered complete only because:
 
 Requirement-level acceptance evidence and phase gates are required.
 
+Current redesign checkpoint (2026-09-30): R3 Work and Personal / Fitness are individually VERIFIED. The post-fix Recovery portal check passed at user-confirmed native Edge 200% zoom; its screenshot and the complete Personal record are under `docs/implementation-evidence/r3/`. Gate R3 remains open. The next world is Explore, beginning with its approved reference image. The current execution status is maintained in `docs/IMPLEMENTATION-STEPS.md`.
+
 The cinematic requirement is especially strict:
 
 > If a page technically contains animation but does not visibly feel like a short domain-specific cinematic opening followed by a living ambient state, the cinematic requirement has not passed.
@@ -1132,7 +1134,7 @@ At the start of a new coding-agent session or after context compaction/interrupt
 8. Inspect `git status` and `git diff`.
 9. Inspect the actual implementation and `docs/implementation-evidence/`.
 10. Identify last VERIFIED, current IN PROGRESS and first unresolved item.
-11. Continue only from the exact next required step; current known resume remains Phase 12 item 347 until repository evidence advances it.
+11. Continue only from the exact next required step recorded in `docs/IMPLEMENTATION-STEPS.md` and its matching evidence; do not reuse historical resume pointers after repository evidence advances them.
 
 Previous chat summaries are navigation aids, not completion evidence.
 
