@@ -1,5 +1,7 @@
 # R3 Explore acceptance progress — 2026-09-30
 
+**Latest reconciliation (2026-10-01):** Full authority and current-phase completeness audit is recorded in `explore-completeness-2026-10-01.md`. Experiences/Travel Guides future notices are explicitly allowed in R3; dedicated rollout remains R5 family 3. Fixed actual custom-location provenance (including read-only correction of legacy automatic claims), preference submit/change/reset rejection feedback, silent empty More To Explore behavior, and light-theme detail support-text contrast. All 12 actual destination dialogs, six quick actions, five portals, populated persistence and ten-width containment/boundary/credits checks pass. Latest **68/68 focused / 225/225 full**. Explore **IMPLEMENTED / NOT VERIFIED**, step 11 native Edge 100% / 200% and step 12 native interaction confirmation pending; step 19 PENDING; R3 OPEN. Older entries below are historical.
+
 Explore is NOT VERIFIED; Gate R3 remains OPEN. Personal remains VERIFIED.
 
 **Current checkpoint after credits/description UX report:** Reproduced the page-wide credits SUMMARY activating from apparent empty space and its flow-driven scene recropping. Replaced it with a bordered **Scene & photo credits** dialog launcher; scene/page geometry now stays stable. Verified all 12 maintained destination images, substantive descriptions and separate source/license state; hero and provenance use full dialog width, map links are labelled truthfully, and missing user-entry provenance is explicit. See `explore-credits-details-2026-09-30.md` and its audit/screenshots. Latest **57/57 focused / 214/214 full**. Step 11 native Edge 100% / 200% layout and step 12 credits/portal/detail interaction confirmation remain pending; step 19 PENDING. Older checkpoints/results below are historical.
@@ -17,7 +19,7 @@ Explore is NOT VERIFIED; Gate R3 remains OPEN. Personal remains VERIFIED.
 | 8–10 | PASS | Owner integration, real derived behavior and static fidelity recorded below. |
 | 11 | FAILED / POST-FIX RETEST PENDING | Native Edge 200% exposed horizontal overflow. Fix and stronger audit are in explore-overflow-fix-2026-09-30.md; actual post-fix native confirmation is required. |
 | 12 | POST-CHANGE MANUAL RECHECK PENDING | Prior evidence preserved; explicit credits dialog, boundary/stability/keyboard checks and all 12 destination detail checks pass in-app. User Edge 100% / 200% confirmation required; see explore-credits-details-2026-09-30.md. |
-| 13–17 | PASS | Independent motion, fallback, history, regression and performance evidence below; latest regression 57/57 focused and 214/214 full. |
+| 13–17 | PASS | Independent motion, fallback, history, regression and performance evidence below; latest regression 68/68 focused and 225/225 full. |
 | 18 | COMPLETE | This record and retained screenshots; checklist/README reconciled. |
 | 19 | PENDING | Explore cannot be VERIFIED until outstanding step 11 layout and step 12 interaction manual checks pass. |
 

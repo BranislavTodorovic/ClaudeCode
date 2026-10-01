@@ -2975,7 +2975,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   document.querySelectorAll('[data-action="explore-random"]').forEach(function (btn) {
     btn.addEventListener("click", function () {
       var choices = linksForSpace("explore").filter(function(link){return link.category === "Travel";});
-      if (!choices.length) return;
+      if (!choices.length) { showToast('No travel shortcuts available. Add an Explore shortcut to discover a resource.'); return; }
       var choice = choices[Math.floor(Math.random() * choices.length)];
       rememberRecent(choice.id); recordUsage(choice.id);
       window.open(choice.url, "_blank", "noopener,noreferrer");

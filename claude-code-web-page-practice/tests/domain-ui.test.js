@@ -64,6 +64,7 @@ test('Explore Add Location does not change the trip board when storage rejects t
     },
     window: {
       DESTINATIONS: [],
+      OneSpaceLocalDiscovery: require('../explore/local-discovery'),
       OneSpace: {
         escapeHtml: value => String(value),
         iconSvg: () => '',

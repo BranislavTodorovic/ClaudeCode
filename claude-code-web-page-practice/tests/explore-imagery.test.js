@@ -52,6 +52,18 @@ test('detail renderer handles genuinely missing user-added image and description
   assert.match(html,/User-added location/);
 });
 
+test('direct saved-board Details corrects legacy automatic provenance without changing stored content',()=>{
+  const {ui}=detailRenderer();
+  for(const image of ['', 'data:image/png;base64,YQ==']) {
+    const item={id:'manual-kept',kind:'destination',name:'Kept',description:'Keep the real description.',image,source:{name:'Your location',url:'',license:'User-supplied description and image.'}};
+    const before=JSON.stringify(item),html=ui.detailHtml(item);
+    assert.match(html,image ? /image source and license not supplied/ : /no image supplied/);
+    assert.doesNotMatch(html,/User-supplied description and image/);
+    assert.match(html,/Keep the real description/);
+    assert.equal(JSON.stringify(item),before);
+  }
+});
+
 test('photo failure retains description/provenance flow and uses local fallback only on error',()=>{
   const {ui}=detailRenderer();
   const states=new Set(['is-loading']),message={textContent:''};

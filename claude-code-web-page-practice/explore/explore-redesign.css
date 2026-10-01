@@ -64,6 +64,10 @@ body[data-page="explore"] .wrap { width: 100% !important; max-width: none; min-w
 #domainOverlay .osr-explore-provenance { grid-column: 1 / -1; overflow-wrap: anywhere; }
 #domainOverlay .osr-explore-provenance a { display: inline-flex; align-items: center; max-width: 100%; min-height: 44px; color: var(--accent); }
 body[data-page="explore"] #domainOverlay .discovery-photo--hero { grid-column: 1 / -1; width: 100%; aspect-ratio: 16 / 9; }
+body[data-page="explore"] #domainOverlay .discovery-photo.is-missing { background: var(--surface-2); }
+body[data-page="explore"] #domainOverlay .is-missing .photo-state { color: var(--muted); }
+body[data-page="explore"] #domainOverlay .provider-credit { color: var(--muted) !important; }
+body[data-page="explore"] #domainOverlay .provider-credit a { color: var(--accent); }
 .osr-explore-followon { margin-top: 15px; padding: 18px 4%; border-top: 1px solid var(--osr-edge); }
 .osr-explore-followon h2 { margin: 0; font-size: 1.1rem; }
 .osr-explore-followon p { margin: 4px 0 0; color: var(--osr-muted); font-size: .82rem; }

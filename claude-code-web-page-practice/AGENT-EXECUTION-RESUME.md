@@ -1,3 +1,11 @@
+# Current persisted checkpoint — 2026-10-01
+
+main / HEAD ad0d5faac7c95a57a18aca7b5bfbff5d1afcec5b. Prior Explore work is committed in HEAD; this audit's incremental fixes/evidence are uncommitted. Full authority reread and R3 completeness reconciliation finished: docs/implementation-evidence/r3/explore-completeness-2026-10-01.md. Focused 68/68, full 225/225, diff check PASS. All current R3 surfaces reconciled; dedicated Experiences/Travel Guides deferred to R5 family 3 under spec 8.5 / reference MANIFEST 7. Explore IMPLEMENTED / NOT VERIFIED, step 19 PENDING; R3 OPEN; Work/Personal VERIFIED. Exact next unresolved: Explore step 11 user native Edge 100% / 200% containment, then step 12 native credits/portal/detail interaction. No Games until these pass and remaining Explore acceptance is reconciled in order. After legitimate Explore step 19, next is R3 Games step 1: physically open docs/ui-reference/04-games.png.
+
+The original continuation request below is preserved; latest implementation/evidence supersedes its historical counts and pre-audit tasks.
+
+---
+
 # Continue OneSpace from the exact current Explore checkpoint
 
 Continue the existing OneSpace project from the exact repository state left by the previous agent run.

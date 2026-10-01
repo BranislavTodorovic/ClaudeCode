@@ -1,0 +1,980 @@
+{
+  "custom": " \"Explore audit location\":\n  - heading \"Explore audit location\" [level=3]\n  - button \"Close dialog\" [active]:\n  - figure:\n    - generic: No local image added\n  - paragraph: A temporary local destination created to verify truthful missing-image provenance.\n  - term: Type\n  - definition: Destination\n  - term: Country\n  - definition: Local\n  - paragraph\n  - paragraph: User-entered description; no image supplied.\n  - alert\n  - button \"Cancel\"\n  - button \"Edit location\"",
+  "controls": [
+    {
+      "filters": false,
+      "focus": "q",
+      "notice": "",
+      "action": "Destinations"
+    },
+    {
+      "filters": false,
+      "focus": "osr-chip",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.",
+      "action": "Experiences"
+    },
+    {
+      "filters": false,
+      "focus": "trip-board",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.",
+      "action": "Travel Dates"
+    },
+    {
+      "filters": true,
+      "focus": "interests",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.",
+      "action": "Interests"
+    },
+    {
+      "filters": true,
+      "focus": "budget",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.",
+      "action": "Budget"
+    },
+    {
+      "filters": true,
+      "focus": "style",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.",
+      "action": "Travel Style"
+    },
+    {
+      "portal": "Open Destinations",
+      "focus": "q",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below."
+    },
+    {
+      "portal": "Experiences — coming later",
+      "focus": "osr-portal osr-explore-portal osr-explore-portal-action",
+      "notice": "Experiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below."
+    },
+    {
+      "portal": "Travel Guides — coming later",
+      "focus": "osr-portal osr-explore-portal osr-explore-portal-action",
+      "notice": "Travel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below."
+    },
+    {
+      "portal": "Open Bucket List",
+      "focus": "trip-board",
+      "notice": "Travel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below."
+    },
+    {
+      "portal": "Open Discover More",
+      "focus": "explore-random",
+      "notice": "Travel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below."
+    }
+  ],
+  "destinations": [
+    {
+      "credit": "CC BY-SA 4.0",
+      "links": [
+        {
+          "label": "Gonçalo Torres",
+          "url": "https://commons.wikimedia.org/wiki/File:View_overlooking_the_Sete_Cidades_Lagoon,_S%C3%A3o_Miguel_island,_Azores_(Portugal).jpg"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=S%C3%A3o%20Miguel%20Portugal%20%2F%20Azores"
+        },
+        {
+          "label": "Gonçalo Torres / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:View_overlooking_the_Sete_Cidades_Lagoon,_S%C3%A3o_Miguel_island,_Azores_(Portugal).jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "São Miguel",
+      "src": "assets/destinations/azores-hero.webp",
+      "words": 102
+    },
+    {
+      "credit": "CC BY-SA 4.0",
+      "links": [
+        {
+          "label": "chensiyuan",
+          "url": "https://commons.wikimedia.org/wiki/File:1_Tegalalang_rice_terrace_ubud_bali.jpg"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Ubud%20Indonesia"
+        },
+        {
+          "label": "chensiyuan / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:1_Tegalalang_rice_terrace_ubud_bali.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Ubud",
+      "src": "assets/destinations/bali-hero.webp",
+      "words": 108
+    },
+    {
+      "credit": "CC0",
+      "links": [
+        {
+          "label": "Pierre Blaché",
+          "url": "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_2023-9.jpg"
+        },
+        {
+          "label": "CC0",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Budapest%20Hungary"
+        },
+        {
+          "label": "Pierre Blaché / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_2023-9.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Budapest",
+      "src": "assets/destinations/budapest-hero.webp",
+      "words": 101
+    },
+    {
+      "credit": "CC BY 4.0",
+      "links": [
+        {
+          "label": "Philip Nalangan",
+          "url": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_Temple_Thailand.jpg"
+        },
+        {
+          "label": "CC BY 4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Chiang%20Mai%20Thailand"
+        },
+        {
+          "label": "Philip Nalangan / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_Temple_Thailand.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Chiang Mai",
+      "src": "assets/destinations/chiang-mai-hero.webp",
+      "words": 106
+    },
+    {
+      "credit": "CC BY-SA 4.0",
+      "links": [
+        {
+          "label": "Cephas",
+          "url": "https://commons.wikimedia.org/wiki/File:Monteverde_Reserve_Costa_Rica_02.jpg"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Monteverde%20Costa%20Rica"
+        },
+        {
+          "label": "Cephas / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Monteverde_Reserve_Costa_Rica_02.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Monteverde",
+      "src": "assets/destinations/costa-rica-hero.webp",
+      "words": 104
+    },
+    {
+      "credit": "CC BY-SA 3.0",
+      "links": [
+        {
+          "label": "Ввласенко",
+          "url": "https://commons.wikimedia.org/wiki/File:Coast_in_Agioi_apostoli._Crete,_Greece.jpg"
+        },
+        {
+          "label": "CC BY-SA 3.0",
+          "url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Crete%20Greece"
+        },
+        {
+          "label": "Ввласенко / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Coast_in_Agioi_apostoli._Crete,_Greece.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Crete",
+      "src": "assets/destinations/crete-hero.webp",
+      "words": 102
+    },
+    {
+      "credit": "CC BY 2.0",
+      "links": [
+        {
+          "label": "Andrew Colin",
+          "url": "https://commons.wikimedia.org/wiki/File:Skyline_of_Edinburgh.jpg"
+        },
+        {
+          "label": "CC BY 2.0",
+          "url": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Edinburgh%20Scotland"
+        },
+        {
+          "label": "Andrew Colin / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Skyline_of_Edinburgh.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Edinburgh",
+      "src": "assets/destinations/edinburgh-hero.webp",
+      "words": 101
+    },
+    {
+      "credit": "CC BY-SA 4.0",
+      "links": [
+        {
+          "label": "Basile Morin",
+          "url": "https://commons.wikimedia.org/wiki/File:Dry-sand_Zen_garden_made_of_beige_stripes_a_sunny_day_at_Higashiyama_Jisho-ji_Buddhist_temple_Ginkaku-ji_Kyoto_Japan.jpg"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Kyoto%20Japan"
+        },
+        {
+          "label": "Basile Morin / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Dry-sand_Zen_garden_made_of_beige_stripes_a_sunny_day_at_Higashiyama_Jisho-ji_Buddhist_temple_Ginkaku-ji_Kyoto_Japan.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Kyoto",
+      "src": "assets/destinations/kyoto-hero.webp",
+      "words": 99
+    },
+    {
+      "credit": "CC BY 4.0",
+      "links": [
+        {
+          "label": "Dale Cruse",
+          "url": "https://commons.wikimedia.org/wiki/File:Lisbon_Skyline_from_Miradouro_de_S%C3%A3o_Pedro_de_Alc%C3%A2ntara_at_Twilight_(54714276547).jpg"
+        },
+        {
+          "label": "CC BY 4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Lisbon%20Portugal"
+        },
+        {
+          "label": "Dale Cruse / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Lisbon_Skyline_from_Miradouro_de_S%C3%A3o_Pedro_de_Alc%C3%A2ntara_at_Twilight_(54714276547).jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Lisbon",
+      "src": "assets/destinations/lisbon-hero.webp",
+      "words": 94
+    },
+    {
+      "credit": "CC0",
+      "links": [
+        {
+          "label": "Wilfredor",
+          "url": "https://commons.wikimedia.org/wiki/File:Petit_Champlain_at_night,_Quebec_city.jpg"
+        },
+        {
+          "label": "CC0",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Qu%C3%A9bec%20City%20Canada"
+        },
+        {
+          "label": "Wilfredor / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Petit_Champlain_at_night,_Quebec_city.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Québec City",
+      "src": "assets/destinations/quebec-hero.webp",
+      "words": 101
+    },
+    {
+      "credit": "CC BY-SA 4.0",
+      "links": [
+        {
+          "label": "Carsten Steger",
+          "url": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_Lake_Bohinj_(view_from_the_south).jpg"
+        },
+        {
+          "label": "CC BY-SA 4.0",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Lake%20Bohinj%20Slovenia"
+        },
+        {
+          "label": "Carsten Steger / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_Lake_Bohinj_(view_from_the_south).jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Lake Bohinj",
+      "src": "assets/destinations/slovenia-hero.webp",
+      "words": 105
+    },
+    {
+      "credit": "CC BY-SA 3.0",
+      "links": [
+        {
+          "label": "Arthurguo",
+          "url": "https://commons.wikimedia.org/wiki/File:City_of_arts_and_sciences.jpg"
+        },
+        {
+          "label": "CC BY-SA 3.0",
+          "url": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "label": "Planning link",
+          "url": "https://www.openstreetmap.org/search?query=Valencia%20Spain"
+        },
+        {
+          "label": "Arthurguo / Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:City_of_arts_and_sciences.jpg"
+        }
+      ],
+      "loaded": true,
+      "name": "Valencia",
+      "src": "assets/destinations/valencia-hero.webp",
+      "words": 106
+    }
+  ],
+  "layouts": [
+    {
+      "width": 3440,
+      "client": 3425,
+      "document": 3425,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 2048,
+      "client": 2033,
+      "document": 2033,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 1920,
+      "client": 1905,
+      "document": 1905,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 1715,
+      "client": 1700,
+      "document": 1700,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 1440,
+      "client": 1425,
+      "document": 1425,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 1024,
+      "client": 1009,
+      "document": 1009,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 857,
+      "client": 842,
+      "document": 842,
+      "violations": [],
+      "controls": 173
+    },
+    {
+      "width": 760,
+      "client": 745,
+      "document": 745,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 390,
+      "client": 375,
+      "document": 375,
+      "violations": [],
+      "controls": 181
+    },
+    {
+      "width": 320,
+      "client": 305,
+      "document": 305,
+      "violations": [],
+      "controls": 181
+    }
+  ],
+  "credits": [
+    {
+      "width": 3440,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 1427.5,
+        "links": 10,
+        "right": 1997.5,
+        "scroll": 568,
+        "viewport": 3425
+      }
+    },
+    {
+      "width": 2048,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 731.5,
+        "links": 10,
+        "right": 1301.5,
+        "scroll": 568,
+        "viewport": 2033
+      }
+    },
+    {
+      "width": 1920,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 667.5,
+        "links": 10,
+        "right": 1237.5,
+        "scroll": 568,
+        "viewport": 1905
+      }
+    },
+    {
+      "width": 1715,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 565,
+        "links": 10,
+        "right": 1135,
+        "scroll": 568,
+        "viewport": 1700
+      }
+    },
+    {
+      "width": 1440,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 427.5,
+        "links": 10,
+        "right": 997.5,
+        "scroll": 568,
+        "viewport": 1425
+      }
+    },
+    {
+      "width": 1024,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 219.5,
+        "links": 10,
+        "right": 789.5,
+        "scroll": 568,
+        "viewport": 1009
+      }
+    },
+    {
+      "width": 857,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 568,
+        "left": 136,
+        "links": 10,
+        "right": 706,
+        "scroll": 568,
+        "viewport": 842
+      }
+    },
+    {
+      "width": 760,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 723,
+        "left": 10,
+        "links": 10,
+        "right": 735,
+        "scroll": 723,
+        "viewport": 745
+      }
+    },
+    {
+      "width": 390,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 353,
+        "left": 10,
+        "links": 10,
+        "right": 365,
+        "scroll": 353,
+        "viewport": 375
+      }
+    },
+    {
+      "width": 320,
+      "boundary": [],
+      "blankActivated": false,
+      "sceneChanges": [],
+      "dialog": {
+        "client": 283,
+        "left": 10,
+        "links": 10,
+        "right": 295,
+        "scroll": 283,
+        "viewport": 305
+      }
+    }
+  ],
+  "portals": [
+    {
+      "width": 3440,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 3440,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 3440,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 3440,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 3440,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 2048,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 2048,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 2048,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 2048,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 2048,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 1920,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 1920,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 1920,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 1920,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 1920,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 1715,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 1715,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 1715,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 1715,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 1715,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 857,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 857,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 857,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 857,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 857,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 760,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 760,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 760,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 760,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 760,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "slug": "discover-more",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "slug": "destinations",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "slug": "experiences",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "slug": "travel-guides",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "slug": "bucket-list",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "slug": "discover-more",
+      "violations": []
+    }
+  ],
+  "persistence": {
+    "board": "FROM MAYBE TO MEMORIESYour trip board1 saved places · every note, date and day stays hereIdea 0Ready for your next placeResearching 0Ready for your next placePlanned 1No local image addedExplore audit locationPriority 3 · 2026-10-15 → 2026-10-17Completeness audit notes retained after reload.Status for Explore audit locationIdeaResearchingPlannedVisitedAudit itineraryDay 1: Arrive and exploreDay 2: Walk the local trailsDetailsEdit tripEdit planRemoveVisited 0Ready for your next place",
+    "saved": "Explore audit locationLocal · Planned",
+    "upcoming": "Explore audit location2026-10-15 → 2026-10-17"
+  },
+  "keyboardCredits": {
+    "closed": true,
+    "focus": "Scene & photo credits",
+    "outline": "3px"
+  },
+  "preferences": {
+    "budget": "medium",
+    "interests": "hiking",
+    "names": [
+      "São Miguel",
+      "Lake Bohinj"
+    ],
+    "style": "active"
+  },
+  "portalOutsideClicks": [
+    {
+      "slug": "destinations",
+      "point": "below card",
+      "stable": true
+    },
+    {
+      "slug": "destinations",
+      "point": "above card",
+      "stable": true
+    },
+    {
+      "slug": "destinations",
+      "point": "left of card",
+      "stable": true
+    },
+    {
+      "slug": "destinations",
+      "point": "right of card",
+      "stable": true
+    },
+    {
+      "slug": "experiences",
+      "point": "below card",
+      "stable": true
+    },
+    {
+      "slug": "experiences",
+      "point": "above card",
+      "stable": true
+    },
+    {
+      "slug": "experiences",
+      "point": "left of card",
+      "stable": true
+    },
+    {
+      "slug": "experiences",
+      "point": "right of card",
+      "stable": true
+    },
+    {
+      "slug": "travel-guides",
+      "point": "below card",
+      "stable": true
+    },
+    {
+      "slug": "travel-guides",
+      "point": "above card",
+      "stable": true
+    },
+    {
+      "slug": "travel-guides",
+      "point": "left of card",
+      "stable": true
+    },
+    {
+      "slug": "travel-guides",
+      "point": "right of card",
+      "stable": true
+    },
+    {
+      "slug": "bucket-list",
+      "point": "below card",
+      "stable": true
+    },
+    {
+      "slug": "bucket-list",
+      "point": "above card",
+      "stable": true
+    },
+    {
+      "slug": "bucket-list",
+      "point": "left of card",
+      "stable": true
+    },
+    {
+      "slug": "bucket-list",
+      "point": "right of card",
+      "stable": true
+    },
+    {
+      "slug": "discover-more",
+      "point": "below card",
+      "stable": true
+    },
+    {
+      "slug": "discover-more",
+      "point": "above card",
+      "stable": true
+    },
+    {
+      "slug": "discover-more",
+      "point": "left of card",
+      "stable": true
+    },
+    {
+      "slug": "discover-more",
+      "point": "right of card",
+      "stable": true
+    }
+  ],
+  "history": {
+    "back": "http://localhost:8978/#/w/explore",
+    "saved": "Explore audit locationLocal · Planned"
+  },
+  "cleanup": {
+    "saved": "0 saved on this device",
+    "upcoming": "No upcoming dated trips. Set a planned trip’s dates on your board.",
+    "freshOrigin": "0 saved on this device"
+  },
+  "console": [],
+  "phase": "R3 Explore IMPLEMENTED / NOT VERIFIED; step 11 and step 12 manual-only pending; step 19 PENDING; R3 OPEN",
+  "dialogColors": {
+    "caption": "rgb(97, 112, 138)",
+    "credit": "rgb(97, 112, 138)",
+    "placeholder": "rgb(247, 249, 253)",
+    "surface": "rgb(255, 255, 255)",
+    "text": "User-entered description; no image supplied.",
+    "theme": "light"
+  },
+  "contrast": {
+    "lightPlaceholder": 4.751670217171229,
+    "lightCredit": 5.008417469368009,
+    "darkPlaceholderTokens": 6.844338904808983,
+    "darkCreditTokens": 7.329590215560626
+  }
+}
