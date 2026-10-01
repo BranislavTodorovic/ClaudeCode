@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-01",
+  "branch": "main",
+  "implementationHead": "eef09987be8787e44596ed6172ae46f82ba8cc32",
+  "initialGitStatus": "clean; no tracked, staged or untracked changes",
+  "authority": [
+    {
+      "path": "docs/agent-instructions.md",
+      "sha256BeforeCheckpointEdits": "82B9A1AB8826685658A8C7B6DEDD368342969A00675A6581BF481A3C4BEA4F14",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "docs/IMPLEMENTATION-STEPS.md",
+      "sha256BeforeCheckpointEdits": "AB2E075C21358F25466DEE69318819F351D19234518A95ECE456B280393CC973",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "docs/REVISED-IMPLEMENTATION-PLAN.md",
+      "sha256BeforeCheckpointEdits": "5D6C793895A796278DF177B01E015D1A118B3F444AD1007A5A13B52BDCBCA03A",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "docs/REDESIGN-INTEGRATION-GATE.md",
+      "sha256BeforeCheckpointEdits": "B8E7025CF65DE446BB35DF44FEE45D229944DB2CD88C29FCADCB605715EF67E7",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md",
+      "sha256BeforeCheckpointEdits": "E1F3F266C0B7871D823B733F0C42789FD823FDDB47503D86F43EACBFE63DDB4D",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "docs/ui-reference/MANIFEST.md",
+      "sha256BeforeCheckpointEdits": "33012BAEBF459CB217DA086808A61CA4FA30A0135A46D1BC412F8DFEF13F0AFC",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "VERIFICATION.md",
+      "sha256BeforeCheckpointEdits": "C735B051B31EFE832BBBC83FC780D5BDF03B796335E2DF8080CC77FEC342BB82",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    },
+    {
+      "path": "README.md",
+      "sha256BeforeCheckpointEdits": "A093CA231DD93952565C02A92678CC2D36910697827E66896A8508079120ECA1",
+      "read": "Complete authority reread in documented order on 2026-10-01 before acceptance edits"
+    }
+  ],
+  "captures": [
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-1c6920b6-e07b-43bc-9705-e46aefb245db.png",
+      "preserved": "screenshots/explore-native-edge-postfix-100-top-2026-10-01.png",
+      "bytes": 7467572,
+      "width": 3418,
+      "height": 1268,
+      "sha256": "6E3DBE529010B2A470BF672941553C2A6B92441881C8BA543B881C38B2355982",
+      "zoomPercent": 100,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    },
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-4984d1b2-b299-407d-96fe-d001a5aec83a.png",
+      "preserved": "screenshots/explore-native-edge-postfix-100-atlas-results-2026-10-01.png",
+      "bytes": 2285941,
+      "width": 3416,
+      "height": 1267,
+      "sha256": "71EF780E0BAA63978513E141464E0B4D0E49F4F28D1A248C1A2FF50A9CC3170D",
+      "zoomPercent": 100,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    },
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-fbd7a5ef-6ee4-42f2-9e4f-4c64fbd2be4e.png",
+      "preserved": "screenshots/explore-native-edge-postfix-100-board-shortcuts-inspiration-2026-10-01.png",
+      "bytes": 700705,
+      "width": 3417,
+      "height": 1268,
+      "sha256": "A995896A9C0AABA7441A9A46023F1FAE733CC1F51B409E8BF43AF7F74D81C89C",
+      "zoomPercent": 100,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    },
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-422c5f62-c2c7-47bc-9499-a4e796b4324f.png",
+      "preserved": "screenshots/explore-native-edge-postfix-200-top-2026-10-01.png",
+      "bytes": 5277456,
+      "width": 3424,
+      "height": 1266,
+      "sha256": "D7369A6CD16716965061C14DE6B3D1C158DFEF17AEE1740B23436131BC72CF26",
+      "zoomPercent": 200,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    },
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-0e70caae-4e89-4a6a-86d4-404ab9ab2f73.png",
+      "preserved": "screenshots/explore-native-edge-postfix-200-portals-credits-atlas-2026-10-01.png",
+      "bytes": 4945997,
+      "width": 3418,
+      "height": 1270,
+      "sha256": "8327C0BC2C877765AF2D68FE1E8BFB6DBB6C85260CABEFEF315E27465CC8BF9B",
+      "zoomPercent": 200,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    },
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-902c5e10-9c66-48e9-9319-8e81b4d27e03.png",
+      "preserved": "screenshots/explore-native-edge-postfix-200-atlas-board-2026-10-01.png",
+      "bytes": 275711,
+      "width": 3420,
+      "height": 1270,
+      "sha256": "01CB9150F695E09C49159298DE53EBE5CDA7B4FDB2F4C63969F9F784FB5245CC",
+      "zoomPercent": 200,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    },
+    {
+      "source": "C:\\Users\\BTODOR~1\\AppData\\Local\\Temp\\codex-clipboard-a07e71ba-eb25-404f-a7bf-a9e41a5a18df.png",
+      "preserved": "screenshots/explore-native-edge-postfix-200-shortcuts-inspiration-2026-10-01.png",
+      "bytes": 1200788,
+      "width": 3419,
+      "height": 1269,
+      "sha256": "0147D0DBCA6843FA668B1C87EA4238ABEEBDB3F34BAEA9234E35B28F2A2B95DC",
+      "zoomPercent": 200,
+      "zoomBasis": "User-labelled native Edge capture; browser zoom indicator not visible",
+      "originalBytesPreserved": true
+    }
+  ],
+  "userWrittenReport": {
+    "source": "User continuation supplied in attachment c83e1deb-8419-475a-b9c6-94745dfe3469, section 4; newest user message supplies original captures labelled 100% and 200%",
+    "nativeZoomLevels": [
+      100,
+      200
+    ],
+    "result": "PASS for affected-area Travel inspiration and containment",
+    "observations": [
+      "Correct image/crop",
+      "Readable caption/title and acceptable contrast",
+      "Lower area contained",
+      "No horizontal/sideways scroll or off-screen empty page area",
+      "Controls reachable and keyboard focus visible",
+      "Travel inspiration activates correctly",
+      "Surrounding non-actionable space inert",
+      "No unexpected scene reframe or page-position movement"
+    ],
+    "limitation": "Does not explicitly confirm all remaining native portal/credits/destination-dialog keyboard interactions"
+  },
+  "screenshotLimitations": [
+    "Still images cannot prove click behavior, horizontal panning, keyboard activation, focus return or motion",
+    "Browser chrome/version/origin and zoom indicator absent",
+    "Captured views are separate scrolled viewports, not complete full-page captures",
+    "Some content continues vertically below the capture; not evidence of horizontal clipping"
+  ],
+  "step11": "VERIFIED using retained width audits, original captures and written native PASS",
+  "step12": "IMPLEMENTED / NOT VERIFIED; native interaction confirmation requested",
+  "step19": "PENDING",
+  "world": "IMPLEMENTED / NOT VERIFIED",
+  "gateR3": "OPEN",
+  "games": "NOT STARTED",
+  "implementationChangedThisRun": false,
+  "tests": {
+    "focused": "72/72",
+    "full": "229/229",
+    "basis": "Latest persisted runs after last code fix; unchanged current code"
+  },
+  "diffCheck": "PASS, exit 0 after checkpoint edits",
+  "finalGitInventory": "4 modified checkpoint documents, 9 new evidence files; unstaged; no code or production asset changes"
+}
