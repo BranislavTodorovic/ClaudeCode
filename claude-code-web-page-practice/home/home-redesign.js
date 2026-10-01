@@ -118,7 +118,8 @@
   var portalGrid = doc.getElementById('osrPortalGrid');
   portals.forEach(function (portal) {
     var world = portal.world === 'media-games' ? 'movies' : portal.world;
-    var image = foundation.worlds.find(function (entry) { return entry.id === world; }).scene;
+    var sceneAsset = foundation.worlds.find(function (entry) { return entry.id === world; });
+    var image = sceneAsset.preview || sceneAsset.scene;
     var tile = doc.createElement('div');
     tile.className = 'osr-portal osr-home-portal';
     tile.innerHTML = '<img src="' + image + '" alt="" loading="lazy" decoding="async"><div class="osr-portal-copy"><strong>' + esc(portal.label) + '</strong><small>' + esc(portal.subtitle) + '</small></div>';

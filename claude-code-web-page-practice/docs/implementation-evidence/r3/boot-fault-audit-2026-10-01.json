@@ -1,0 +1,457 @@
+{
+  "script": {
+    "frames": [
+      {
+        "ms": 19,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1280,
+        "scrollWidth": 1280
+      },
+      {
+        "ms": 143,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 187,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 235,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 288,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 331,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 358,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 377,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 406,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 465,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 527,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 803,
+        "boot": "error",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 891,
+        "boot": "error",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 910,
+        "boot": "error",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      }
+    ],
+    "runtime": [],
+    "activeFocus": "",
+    "hash": "#/w/games",
+    "finalPage": "games",
+    "sceneStates": [
+      {
+        "state": "ready",
+        "view": "homeView"
+      },
+      {
+        "state": "ready",
+        "view": "workView"
+      },
+      {
+        "state": "ready",
+        "view": "personalView"
+      },
+      {
+        "state": "ready",
+        "view": "exploreView"
+      }
+    ]
+  },
+  "scene": {
+    "frames": [
+      {
+        "ms": 110,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 126,
+        "boot": "pending",
+        "page": "home",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 180,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 213,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 236,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 257,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 322,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 348,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 381,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 408,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 447,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 531,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 565,
+        "boot": "pending",
+        "page": "games",
+        "visibleViews": [],
+        "stages": [],
+        "oldNavigation": false,
+        "gameVault": false,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 895,
+        "boot": "ready",
+        "page": "games",
+        "visibleViews": [
+          "gamesView"
+        ],
+        "stages": [
+          {
+            "view": "gamesView",
+            "mounted": true,
+            "redesignVisible": true
+          }
+        ],
+        "oldNavigation": false,
+        "gameVault": true,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 991,
+        "boot": "ready",
+        "page": "games",
+        "visibleViews": [
+          "gamesView"
+        ],
+        "stages": [
+          {
+            "view": "gamesView",
+            "mounted": true,
+            "redesignVisible": true
+          }
+        ],
+        "oldNavigation": false,
+        "gameVault": true,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      },
+      {
+        "ms": 1022,
+        "boot": "ready",
+        "page": "games",
+        "visibleViews": [
+          "gamesView"
+        ],
+        "stages": [
+          {
+            "view": "gamesView",
+            "mounted": true,
+            "redesignVisible": true
+          }
+        ],
+        "oldNavigation": false,
+        "gameVault": true,
+        "scroll": 0,
+        "client": 1265,
+        "scrollWidth": 1265
+      }
+    ],
+    "runtime": [],
+    "activeFocus": "",
+    "hash": "#/w/games",
+    "finalPage": "games",
+    "sceneStates": [
+      {
+        "state": "ready",
+        "view": "homeView"
+      },
+      {
+        "state": "fallback",
+        "view": "gamesView"
+      },
+      {
+        "state": "ready",
+        "view": "workView"
+      },
+      {
+        "state": "ready",
+        "view": "personalView"
+      },
+      {
+        "state": "ready",
+        "view": "exploreView"
+      }
+    ]
+  },
+  "sceneStatus": {
+    "boot": "ready",
+    "portalFallbacks": 6,
+    "scene": "fallback",
+    "scrollWidth": 1265,
+    "visibleCaptions": [
+      "My Games",
+      "Missions & Quests",
+      "Game Library",
+      "Game Sessions",
+      "Discover Games",
+      "Game Settings"
+    ],
+    "width": 1265
+  }
+}

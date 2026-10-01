@@ -69,6 +69,11 @@
 .osr-scene-host[data-asset-state="loading"] .osr-scene-image, .osr-scene-host[data-asset-state="fallback"] .osr-scene-image { display: none; }
 .osr-world[data-motion="subtle"] .osr-portal, .osr-world[data-motion="off"] .osr-portal { transition-duration: .01ms; }
 .osr-world[data-motion="off"] :is(.osr-button, .osr-chip, .osr-icon-button, .osr-nav-link) { transition-duration: .01ms; }
+/* Content is usable on the first ready frame. Scene hosts own atmospheric entry;
+   form, summary and portal content never waits for that decorative lifecycle. */
+.osr-world .osr-frame, .osr-world .osr-frame * { animation: none !important; }
+[data-page-when] :is(.page-hero-copy, .scene-copy, .page-hero-eyebrow, .page-hero-actions, .gv-hero-content, .mv-hero-content, .gv-header, .mv-header, .gv-tabs, .mv-tabs, .gv-panel, .gv-panel *, .mv-panel, .mv-panel *, [data-reveal], .reveal-ready) { animation: none !important; }
+[data-page-when] :is([data-reveal], .reveal-ready) { opacity: 1 !important; transform: none !important; transition: none !important; }
 @media (max-width: 1450px) { .osr-shell { flex-wrap: wrap; } .osr-brand { margin-right: auto; } .osr-nav { order: 3; flex: 0 0 100%; justify-content: center; } .osr-portal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 1100px) { .osr-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 1000px) { .osr-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .osr-nav { justify-content: start; overflow-x: auto; } }

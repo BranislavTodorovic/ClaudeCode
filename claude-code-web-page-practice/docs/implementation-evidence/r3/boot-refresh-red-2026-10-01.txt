@@ -1,0 +1,180 @@
+TAP version 13
+# Subtest: critical gate starts in the head before styles or legacy roots; completion is after every owner listener
+not ok 1 - critical gate starts in the head before styles or legacy roots; completion is after every owner listener
+  ---
+  duration_ms: 19.1151
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:14:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(html.indexOf('id="onespaceBootController"')>0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:15:3)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.start (node:internal/test_runner/test:550:17)
+    startSubtest (node:internal/test_runner/harness:218:17)
+  ...
+# Subtest: parser and partially loaded pipeline never reveal the application
+not ok 2 - parser and partially loaded pipeline never reveal the application
+  ---
+  duration_ms: 0.5143
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:21:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:22:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async startSubtest (node:internal/test_runner/harness:218:3)
+  ...
+# Subtest: route/owner initialization completed with all redesigned roots releases the shared gate
+not ok 3 - route/owner initialization completed with all redesigned roots releases the shared gate
+  ---
+  duration_ms: 0.3926
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:25:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:26:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:382:7)
+  ...
+# Subtest: missing redesign mount produces accessible recovery instead of showing the legacy owner
+not ok 4 - missing redesign mount produces accessible recovery instead of showing the legacy owner
+  ---
+  duration_ms: 0.3855
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:29:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:30:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:382:7)
+  ...
+# Subtest: script-load failure cannot be overwritten by a later completion event
+not ok 5 - script-load failure cannot be overwritten by a later completion event
+  ---
+  duration_ms: 0.3809
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:33:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:34:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:382:7)
+  ...
+# Subtest: initialization exception keeps the recovery screen and never exposes a partial world
+not ok 6 - initialization exception keeps the recovery screen and never exposes a partial world
+  ---
+  duration_ms: 0.3957
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:37:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:38:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:382:7)
+  ...
+# Subtest: missing image uses existing scene fallback rather than blocking application startup
+not ok 7 - missing image uses existing scene fallback rather than blocking application startup
+  ---
+  duration_ms: 0.3419
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:41:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:42:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:382:7)
+  ...
+# Subtest: no-JS fallback is preserved and deterministic readiness has no arbitrary delay or storage writer
+not ok 8 - no-JS fallback is preserved and deterministic readiness has no arbitrary delay or storage writer
+  ---
+  duration_ms: 0.3313
+  location: 'C:\\Users\\btodorovic\\Projects\\ClaudeCode\\claude-code-web-page-practice\\tests\\boot-lifecycle.test.js:45:1'
+  failureType: 'testCodeFailure'
+  error: 'A pre-paint shared boot controller must guard parser-visible legacy markup'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    harness (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:6:3)
+    TestContext.<anonymous> (C:\Users\btodorovic\Projects\ClaudeCode\claude-code-web-page-practice\tests\boot-lifecycle.test.js:46:11)
+    Test.runInAsyncScope (node:async_hooks:206:9)
+    Test.run (node:internal/test_runner/test:639:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:382:18)
+    Test.postRun (node:internal/test_runner/test:730:19)
+    Test.run (node:internal/test_runner/test:688:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:382:7)
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 0
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 155.197

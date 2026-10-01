@@ -1,0 +1,88 @@
+{
+  "created": "2026-10-01",
+  "purpose": "Six distinct R3 Games portal compositions; no R5 module rollout",
+  "source": "Built-in OpenAI image_gen; six independent original prompts, no reference composite or third-party art input",
+  "licenseAndAttribution": "Generated project artwork; no third-party asset attribution identified. Keep this provenance record with the assets and review applicable OpenAI output terms before external redistribution.",
+  "displayDerivation": "Original 1536×1024 PNGs copied unchanged from generated output; 960×640 JPEG display copies quality 85, Windows System.Drawing high-quality bicubic resizing",
+  "fallback": "Each whole-card action retains its readable title and description on the local CSS gradient when artwork is missing or corrupt; images have empty alt as decorative content",
+  "assets": [
+    {
+      "slug": "my-games",
+      "file": "my-games.jpg",
+      "original": "my-games.png",
+      "sourceId": "exec-427689a7-fb44-483c-a504-6ccc843b8dcb",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Games portal decorative photograph-like artwork, landscape 3:2, intended for small 230px-tall cards. Primary request: A treasured personal game collection: several neat rows of generic unbranded game cases in a walnut cabinet, one well-used handheld console and a controller on a small shelf. Each case has a different abstract colored illustration, with no words. Collection is the unmistakable main subject. Style: cinematic photorealistic architectural still life, warm amber practical light with restrained blue dusk fill, premium walnut and dark charcoal materials, believable texture, cohesive luxury gaming-space family. Composition: one clear semantic focal subject in the central upper two-thirds, readable at thumbnail size and when center-cropped to a square; bottom 20% dark and uncluttered for an HTML caption later. No people, no readable text, no logos, no brands, no interface overlays, no baked-in captions, no watermark. This must be an original distinct composition, not a crop of a previous gaming-room image.",
+      "displayBytes": 133892,
+      "displaySha256": "089d61a813d19db048a39e41a593c741996f0c04857fb2f2146e2027a46f1944",
+      "masterSha256": "7c78aee1d520f08d305f3accb656ebe78897af5a2de3b8415707e89b1143f396",
+      "focal": "50% 45%",
+      "width": 960,
+      "height": 640
+    },
+    {
+      "slug": "missions-quests",
+      "file": "missions-quests.jpg",
+      "original": "missions-quests.png",
+      "sourceId": "exec-5e144cb2-0ca0-4838-b237-03bfa3882b84",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Games portal decorative photograph-like artwork, landscape 3:2, intended for small 230px-tall cards. Primary request: A quest-planning tabletop: an unfolded parchment adventure map with a clear branching path of brass waypoint tokens ending at a small trophy, a blank open journal and pencil. Objective progression is the unmistakable main subject, no screens. Style: cinematic photorealistic architectural still life, warm amber practical light with restrained blue dusk fill, premium walnut and dark charcoal materials, believable texture, cohesive luxury gaming-space family. Composition: one clear semantic focal subject in the central upper two-thirds, readable at thumbnail size and when center-cropped to a square; bottom 20% dark and uncluttered for an HTML caption later. No people, no readable text, no logos, no brands, no interface overlays, no baked-in captions, no watermark. This must be an original distinct composition, not a crop of a previous gaming-room image.",
+      "displayBytes": 138537,
+      "displaySha256": "61fee8250e17193ce182192a684fe9dbe237c06ba752277bb2f6cec274873e86",
+      "masterSha256": "294102cfcbca2575bc2f68fbb910793500ec87dbcb9b6b463b1f089555e3eae2",
+      "focal": "50% 45%",
+      "width": 960,
+      "height": 640
+    },
+    {
+      "slug": "game-library",
+      "file": "game-library.jpg",
+      "original": "game-library.png",
+      "sourceId": "exec-422559ac-3914-4e61-b1c2-2931c116371a",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Games portal decorative photograph-like artwork, landscape 3:2, intended for small 230px-tall cards. Primary request: A premium game catalogue archive: deep rows of neatly organized game cases in an elegant illuminated library, broad shelf labels are blank, a catalogue drawer pulled out on the desk. Repeating archive shelves and systematic organization are the main subject, no controller hero. Style: cinematic photorealistic architectural still life, warm amber practical light with restrained blue dusk fill, premium walnut and dark charcoal materials, believable texture, cohesive luxury gaming-space family. Composition: one clear semantic focal subject in the central upper two-thirds, readable at thumbnail size and when center-cropped to a square; bottom 20% dark and uncluttered for an HTML caption later. No people, no readable text, no logos, no brands, no interface overlays, no baked-in captions, no watermark. This must be an original distinct composition, not a crop of a previous gaming-room image.",
+      "displayBytes": 148060,
+      "displaySha256": "882b347a89d17ef58ee606cd908d47468760c65a6bab18caac364cc7713db237",
+      "masterSha256": "992e36f9303ae6813ec7ae43e2dd1662a946be7c4222dc99a6bbb87cc1bdf001",
+      "focal": "50% 45%",
+      "width": 960,
+      "height": 640
+    },
+    {
+      "slug": "game-sessions",
+      "file": "game-sessions.jpg",
+      "original": "game-sessions.png",
+      "sourceId": "exec-80becac1-0ca2-4724-bc53-d6a0e42d05e5",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Games portal decorative photograph-like artwork, landscape 3:2, intended for small 230px-tall cards. Primary request: An active gaming session desk close-up: generic controller beside a mechanical keyboard and headphones, a small analog stopwatch and blank notebook on the desk; beyond it a monitor shows an original abstract adventure landscape with no interface. Stopwatch and ready-to-play equipment dominate. Style: cinematic photorealistic architectural still life, warm amber practical light with restrained blue dusk fill, premium walnut and dark charcoal materials, believable texture, cohesive luxury gaming-space family. Composition: one clear semantic focal subject in the central upper two-thirds, readable at thumbnail size and when center-cropped to a square; bottom 20% dark and uncluttered for an HTML caption later. No people, no readable text, no logos, no brands, no interface overlays, no baked-in captions, no watermark. This must be an original distinct composition, not a crop of a previous gaming-room image.",
+      "displayBytes": 104315,
+      "displaySha256": "2267b929cec2be8116f9b930302b1b05cc6cbd956aa398fc35f50d6b11bdb5dd",
+      "masterSha256": "25f16436e8890c52198ba53a6f90ed3268ff853550b1f2316a0227377bbda11f",
+      "focal": "50% 45%",
+      "width": 960,
+      "height": 640
+    },
+    {
+      "slug": "discover-games",
+      "file": "discover-games.jpg",
+      "original": "discover-games.png",
+      "sourceId": "exec-1807b57e-9934-4500-a819-f67bbf930747",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Games portal decorative photograph-like artwork, landscape 3:2, intended for small 230px-tall cards. Primary request: Discovery of a new game world: a luminous fantasy landscape of floating stone islands, turquoise waterfalls and an unexplored glowing archway amid lush plants. This is original game-like environment art seen directly, not a TV in a room; horizon and archway dominate. Style: cinematic photorealistic architectural still life, warm amber practical light with restrained blue dusk fill, premium walnut and dark charcoal materials, believable texture, cohesive luxury gaming-space family. Composition: one clear semantic focal subject in the central upper two-thirds, readable at thumbnail size and when center-cropped to a square; bottom 20% dark and uncluttered for an HTML caption later. No people, no readable text, no logos, no brands, no interface overlays, no baked-in captions, no watermark. This must be an original distinct composition, not a crop of a previous gaming-room image.",
+      "displayBytes": 151443,
+      "displaySha256": "5cb6f88f285a4c00251264fe22652ba445f9af35f2207afdee5918c829861a57",
+      "masterSha256": "5b38f72b4763dbe341a77a1f061af772e8b77e32abdc53a2392968744d9f09bd",
+      "focal": "50% 45%",
+      "width": 960,
+      "height": 640
+    },
+    {
+      "slug": "game-settings",
+      "file": "game-settings.jpg",
+      "original": "game-settings.png",
+      "sourceId": "exec-8dee5559-4ccc-4d29-b08a-454609ecdb0f",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Games portal decorative photograph-like artwork, landscape 3:2, intended for small 230px-tall cards. Primary request: A gaming configuration workbench: an unbranded modular controller opened for customization with interchangeable thumbsticks and colored keycaps neatly arranged in walnut trays, an elegant rotary audio dial and headphones. Configuration and personalization are unmistakable, no screen UI. Style: cinematic photorealistic architectural still life, warm amber practical light with restrained blue dusk fill, premium walnut and dark charcoal materials, believable texture, cohesive luxury gaming-space family. Composition: one clear semantic focal subject in the central upper two-thirds, readable at thumbnail size and when center-cropped to a square; bottom 20% dark and uncluttered for an HTML caption later. No people, no readable text, no logos, no brands, no interface overlays, no baked-in captions, no watermark. This must be an original distinct composition, not a crop of a previous gaming-room image.",
+      "displayBytes": 105983,
+      "displaySha256": "7806508a00e4f6e3a906a48791059ab3fe1d3e07722847ac3dd14a379183b6aa",
+      "masterSha256": "27f6c9561edeb52fccc9c6f50ebe45a3ffef935bca0f8830de9ca94d3777d934",
+      "focal": "50% 45%",
+      "width": 960,
+      "height": 640
+    }
+  ]
+}

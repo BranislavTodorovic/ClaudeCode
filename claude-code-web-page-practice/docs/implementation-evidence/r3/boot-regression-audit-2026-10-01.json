@@ -1,0 +1,392 @@
+{
+  "owner": {
+    "before": {
+      "library": "Your last seven calendar days0 minutes recorded0Completed sessions6Games in your collectionView session history",
+      "today": "0 minutes recorded today0 completed sessionsNo active session.Record a sessionWeekly tasks"
+    },
+    "reloaded": {
+      "library": "Your last seven calendar days0 minutes recorded0Completed sessions6Games in your collectionView session history",
+      "panel": [
+        "sessions"
+      ],
+      "today": "0 minutes recorded today0 completed sessionsNo active session.Record a sessionWeekly tasks"
+    },
+    "reloadFrames": {
+      "frames": [
+        {
+          "ms": 32,
+          "boot": "pending",
+          "page": "home",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1280,
+          "scrollWidth": 1280
+        },
+        {
+          "ms": 99,
+          "boot": "pending",
+          "page": "home",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 142,
+          "boot": "pending",
+          "page": "home",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 156,
+          "boot": "pending",
+          "page": "home",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 209,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 240,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 253,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 268,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 282,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 286,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 295,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 307,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 313,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 321,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 330,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 343,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 356,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 367,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 425,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 457,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 518,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 538,
+          "boot": "pending",
+          "page": "games",
+          "visibleViews": [],
+          "stages": [],
+          "oldNavigation": false,
+          "gameVault": false,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 790,
+          "boot": "ready",
+          "page": "games",
+          "visibleViews": [
+            "gamesView"
+          ],
+          "stages": [
+            {
+              "view": "gamesView",
+              "mounted": true,
+              "redesignVisible": true
+            }
+          ],
+          "oldNavigation": false,
+          "gameVault": true,
+          "scroll": 0,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 876,
+          "boot": "ready",
+          "page": "games",
+          "visibleViews": [
+            "gamesView"
+          ],
+          "stages": [
+            {
+              "view": "gamesView",
+              "mounted": true,
+              "redesignVisible": true
+            }
+          ],
+          "oldNavigation": false,
+          "gameVault": true,
+          "scroll": 1753,
+          "client": 1265,
+          "scrollWidth": 1265
+        },
+        {
+          "ms": 960,
+          "boot": "ready",
+          "page": "games",
+          "visibleViews": [
+            "gamesView"
+          ],
+          "stages": [
+            {
+              "view": "gamesView",
+              "mounted": true,
+              "redesignVisible": true
+            }
+          ],
+          "oldNavigation": false,
+          "gameVault": true,
+          "scroll": 1753,
+          "client": 1265,
+          "scrollWidth": 1265
+        }
+      ],
+      "runtime": [],
+      "activeFocus": "",
+      "hash": "#/w/games",
+      "finalPage": "games",
+      "sceneStates": [
+        {
+          "state": "ready",
+          "view": "homeView"
+        },
+        {
+          "state": "ready",
+          "view": "gamesView"
+        },
+        {
+          "state": "ready",
+          "view": "workView"
+        },
+        {
+          "state": "ready",
+          "view": "personalView"
+        },
+        {
+          "state": "ready",
+          "view": "exploreView"
+        }
+      ]
+    },
+    "restoredTab": "Overview"
+  },
+  "history": {
+    "home": {
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    "games": {
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    "back": {
+      "activeNav": "Home",
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    "forward": {
+      "activeNav": "Games",
+      "hash": "#/w/games",
+      "page": "games",
+      "selectedOwnerTab": "Overview"
+    },
+    "method": "Existing shell navigation plus fixture buttons invoking native History Back/Forward"
+  }
+}

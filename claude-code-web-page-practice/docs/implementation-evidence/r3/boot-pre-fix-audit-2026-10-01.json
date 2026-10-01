@@ -1,0 +1,240 @@
+{
+  "frames": [
+    {
+      "ms": 12,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [],
+      "stages": [],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "ms": 170,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 229,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 283,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 308,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 324,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 351,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 380,
+      "boot": null,
+      "page": "home",
+      "visibleViews": [
+        "homeView"
+      ],
+      "stages": [
+        {
+          "view": "homeView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": false,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 431,
+      "boot": null,
+      "page": "games",
+      "visibleViews": [
+        "gamesView"
+      ],
+      "stages": [
+        {
+          "view": "gamesView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": true,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 465,
+      "boot": null,
+      "page": "games",
+      "visibleViews": [
+        "gamesView"
+      ],
+      "stages": [
+        {
+          "view": "gamesView",
+          "mounted": false,
+          "redesignVisible": false
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": true,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    },
+    {
+      "ms": 904,
+      "boot": null,
+      "page": "games",
+      "visibleViews": [
+        "gamesView"
+      ],
+      "stages": [
+        {
+          "view": "gamesView",
+          "mounted": true,
+          "redesignVisible": true
+        }
+      ],
+      "oldNavigation": false,
+      "gameVault": true,
+      "scroll": 0,
+      "client": 1265,
+      "scrollWidth": 1265
+    }
+  ],
+  "hash": "#/w/games",
+  "finalPage": "games",
+  "sceneStates": [
+    {
+      "state": "loading",
+      "view": "homeView"
+    },
+    {
+      "state": "loading",
+      "view": "gamesView"
+    },
+    {
+      "state": "loading",
+      "view": "workView"
+    },
+    {
+      "state": "loading",
+      "view": "personalView"
+    },
+    {
+      "state": "loading",
+      "view": "exploreView"
+    }
+  ]
+}

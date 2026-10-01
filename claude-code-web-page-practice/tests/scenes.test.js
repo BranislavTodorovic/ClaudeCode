@@ -37,20 +37,22 @@ test('pointer depth clamps, resets and ignores touch, reduced and Off input',()=
  }
 });
 
-test('scene lifecycle stages entry, settle and ambient; exit resets without same-page replay',()=>{
- const vm=require('node:vm'),scheduled=[],events=[];let still=false;
+test('scene lifecycle waits for boot, stages entry, settle and ambient; exit resets without same-page replay',()=>{
+ const vm=require('node:vm'),scheduled=[],events=[];let still=false,bootState='pending';
  function classList(){var values=new Set();return {add:x=>values.add(x),remove:x=>values.delete(x),contains:x=>values.has(x)};}
  function view(id,level){var styles={};var node={id,hidden:false,dataset:{sceneIntensity:level||'full'},classList:classList(),style:{setProperty:(k,v)=>styles[k]=v,removeProperty:k=>delete styles[k]},querySelectorAll:()=>[],closest:()=>node,offsetWidth:1200};return node;}
- const document={hidden:false,body:{classList:classList()},querySelectorAll:()=>[],dispatchEvent:e=>events.push(e.detail)};
+ const document={hidden:false,documentElement:{getAttribute:()=>bootState},body:{classList:classList()},querySelectorAll:()=>[],dispatchEvent:e=>events.push(e.detail)};
  const OS={prefersReducedMotion:()=>still};
  const setTimer=(fn,delay)=>{var task={fn,delay,cancelled:false};scheduled.push(task);return task;};
  const clearTimer=task=>{if(task)task.cancelled=true;};
  const source=read('shared/cinematic-scenes.js').split(' // Drawn compositions')[0]+'})();';
  vm.runInNewContext(source,{window:{OneSpace:OS},document,matchMedia:()=>({matches:true}),setTimeout:setTimer,clearTimeout:clearTimer,CustomEvent:function(type,init){this.type=type;this.detail=init.detail;}});
- const home=view('homeView');OS.scene.enter(home);assert.equal(home.dataset.sceneState,'entry');
+ const home=view('homeView');OS.scene.enter(home);assert.equal(scheduled.length,0,'entry cannot run behind the loading gate');assert.equal(OS.scene.state(),'idle');bootState='ready';OS.scene.enter(home);assert.equal(home.dataset.sceneState,'entry');
+ Object.defineProperty(home,'offsetWidth',{get(){throw Error('Scene entry must not force a synchronous layout');}});
  scheduled.find(x=>x.delay===2350).fn();assert.equal(home.dataset.sceneState,'settle');
  scheduled.find(x=>x.delay===3350).fn();assert.equal(home.dataset.sceneState,'ambient');
  var eventCount=events.length;OS.scene.enter(home);assert.equal(events.length,eventCount,'same-page work must not restart entry');
+ OS.scene.exit(home);OS.scene.enter(home);assert.equal(home.dataset.sceneState,'entry');
  const work=view('workView');OS.scene.enter(work);assert.equal(home.dataset.sceneState,'idle');assert.equal(work.dataset.sceneState,'entry');
  OS.scene.exit(work);assert.equal(work.dataset.sceneState,'idle');
  const subtle=view('personalView','subtle');OS.scene.enter(subtle);assert.equal(subtle.dataset.sceneState,'entry');assert(scheduled.some(x=>x.delay===1050));assert(scheduled.some(x=>x.delay===1550));

@@ -26,7 +26,46 @@
     var continuing = recent.length ? games.find(function(g) { return g.id === recent[0].gameId; }) : games.find(function(g) { return g.completed > 0 && g.completed < g.total; });
     return { games: games, continuing: continuing || null, lastSession: continuing && recent.length ? recent[0].start : null, active: sessions.find(function(s) { return s.end === null; }) || null, todayCount: today.length, todayMinutes: today.reduce(function(n,s) { return n+s.minutes; },0), weekCount: week.length, weekMinutes: week.reduce(function(n,s) { return n+s.minutes; },0) };
   }
-  if (!root || !root.document) return { portals: portals, buildModel: buildModel };
+  function wireSearch(form, input, results, status, clear, search, esc) {
+    function reset() {
+      results.hidden = true;
+      results.replaceChildren();
+      input.removeAttribute('aria-invalid');
+      status.textContent = 'Search the bundled catalogue on this device.';
+    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      reset();
+      var query = input.value.trim();
+      if (!query) {
+        status.textContent = 'Enter a game name to search your local catalog.';
+        input.setAttribute('aria-invalid', 'true');
+        input.focus({ preventScroll: true });
+        return;
+      }
+      try {
+        var found = search(query);
+        results.innerHTML = found.map(function (game) {
+          return '<button type="button" class="osr-chip" data-games-action="game-details" data-game-id="' + esc(game.id) + '">' + esc(game.title) + ' — Details</button>';
+        }).join('');
+        results.hidden = !found.length;
+        status.textContent = found.length ? found.length + ' local match' + (found.length === 1 ? '' : 'es') + '. Choose a result for details.' : 'No local matches. Try another game name.';
+      } catch (_) {
+        status.textContent = 'Local search is unavailable. Your library is available below.';
+      }
+    });
+    input.addEventListener('input', reset);
+    clear.addEventListener('click', function () { input.value = ''; reset(); input.focus({ preventScroll: true }); });
+    form.parentElement.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !results.hidden) {
+        event.preventDefault(); event.stopPropagation();
+        results.hidden = true;
+        input.focus({ preventScroll: true });
+      }
+    });
+    reset();
+  }
+  if (!root || !root.document) return { portals: portals, buildModel: buildModel, wireSearch: wireSearch };
   var doc=root.document, OS=root.OneSpace, foundation=root.OneSpaceRedesign, owner=root.OneSpaceGames;
   var view=doc.getElementById('gamesView'),stage=doc.getElementById('redesignGames');
   if (!view || !stage || !owner || !foundation) return {};
@@ -42,7 +81,7 @@
   var esc=OS.escapeHtml;
   function button(label,action,extra) { return '<button type="button" class="osr-chip" data-games-action="'+action+'"'+(extra||'')+'>'+label+'</button>'; }
   function panel(title,id,action) { return '<article class="osr-panel"><div class="osr-games-card-head"><h2>'+title+'</h2>'+button('↗',action,' aria-label="Open '+title+' tools"')+'</div><div id="'+id+'"></div></article>'; }
-  frame.insertAdjacentHTML('beforeend','<main><section class="osr-games-hero" aria-labelledby="osrGamesTitle"><p class="osr-eyebrow">Your personal gaming room</p><h1 class="osr-title" id="osrGamesTitle">Game on.</h1><p class="osr-lead">Good games. A brighter you.</p><form class="osr-search" id="osrGamesSearchForm"><label class="visually-hidden" for="osrGamesSearch">Search local games</label>'+OS.iconSvg('search')+'<input id="osrGamesSearch" maxlength="160" placeholder="Search your games and local catalog…" autocomplete="off"><button class="osr-button" type="submit">Search games →</button></form><div class="osr-games-results" id="osrGamesResults" hidden></div><p id="osrGamesSearchStatus" role="status" hidden></p><div class="osr-games-quick" aria-label="Games quick actions">'+button('Open game details','details')+button('View library','library')+button('Track progress','progress')+button('Discover games','suggestions')+button('Game sessions','sessions')+'</div></section><section class="osr-grid osr-games-summary" aria-label="Games at a glance">'+panel('Continue Playing','osrGamesContinue','library')+panel("Today’s Gaming",'osrGamesToday','sessions')+panel('Game Progress','osrGamesProgress','progress')+panel('OneSpace Gaming Pulse','osrGamesPulse','sessions')+'</section><section class="osr-grid osr-games-portals" aria-label="Games spaces">'+portals.map(function(p){return '<button class="osr-portal osr-games-portal" type="button" data-games-action="'+p[3]+'" data-portal="'+p[0]+'" aria-label="Open '+p[1]+'"><img src="assets/scenes/games/hero.png" alt="" decoding="async" data-fallback-owner="games-portal"><span class="osr-portal-copy"><strong>'+p[1]+'</strong><small>'+p[2]+'</small></span>'+'<span class="osr-games-arrow" aria-hidden="true">↗</span>'+'</button>';}).join('')+'</section><div class="osr-games-footer">'+button('Scene credits','credits',' aria-haspopup="dialog" aria-controls="domainOverlay"')+'<p>Play your way. Your collection and progress stay on this device.</p></div><h2 class="osr-section-title">Your game tools</h2><p class="osr-lead">Library, trackers, sessions, journal and preferences.</p></main>');
+  frame.insertAdjacentHTML('beforeend','<main><section class="osr-games-hero" aria-labelledby="osrGamesTitle"><p class="osr-eyebrow">Your personal gaming room</p><h1 class="osr-title" id="osrGamesTitle">Game on.</h1><p class="osr-lead">Good games. A brighter you.</p><div class="osr-games-search"><form class="osr-search" id="osrGamesSearchForm"><label class="visually-hidden" for="osrGamesSearch">Search local games</label>'+OS.iconSvg('search')+'<input id="osrGamesSearch" aria-describedby="osrGamesSearchStatus" aria-controls="osrGamesResults" maxlength="160" placeholder="Search your games and local catalog…" autocomplete="off"><button class="osr-button" type="submit">Search games →</button><button class="osr-chip" type="button" id="osrGamesSearchClear" aria-label="Clear game search">Clear</button></form><p id="osrGamesSearchStatus" role="status" aria-live="polite"></p><div class="osr-games-results" id="osrGamesResults" role="region" aria-label="Local game search results" hidden></div></div><div class="osr-games-quick" aria-label="Games quick actions">'+button('Open game details','details')+button('View library','library')+button('Track progress','progress')+button('Discover games','suggestions')+button('Game sessions','sessions')+'</div></section><section class="osr-grid osr-games-summary" aria-label="Games at a glance">'+panel('Continue Playing','osrGamesContinue','library')+panel("Today’s Gaming",'osrGamesToday','sessions')+panel('Game Progress','osrGamesProgress','progress')+panel('OneSpace Gaming Pulse','osrGamesPulse','sessions')+'</section><section class="osr-grid osr-games-portals" aria-label="Games spaces">'+portals.map(function(p){return '<button class="osr-portal osr-games-portal" type="button" data-games-action="'+p[3]+'" data-portal="'+p[0]+'" aria-label="Open '+p[1]+'"><img src="assets/scenes/games/portals/'+p[0]+'.jpg" alt="" loading="lazy" decoding="async" width="960" height="640" data-fallback-owner="games-portal"><span class="osr-portal-copy"><strong>'+p[1]+'</strong><small>'+p[2]+'</small></span>'+'<span class="osr-games-arrow" aria-hidden="true">↗</span>'+'</button>';}).join('')+'</section><div class="osr-games-footer">'+button('Scene credits','credits',' aria-haspopup="dialog" aria-controls="domainOverlay"')+'<p>Play your way. Your collection and progress stay on this device.</p></div><h2 class="osr-section-title">Your game tools</h2><p class="osr-lead">Library, trackers, sessions, journal and preferences.</p></main>');
   function info(title,message) { root.OneSpaceUI.open(title,'<p>'+esc(message)+'</p>',null); }
   function openTab(tab) { if(owner.open(tab)===false)info('Game tool unavailable','That view could not be saved. Please try again. Your game records are unchanged.'); }
   function row(g,action) { var pct=g.total?Math.round(g.completed/g.total*100):0;return '<button class="osr-games-row" type="button" data-games-action="'+action+'" data-game-id="'+esc(g.id)+'"><span><strong>'+esc(g.name)+'</strong><small>'+(g.trackerType==='weekly'?'Weekly tasks':'Story objectives')+' · '+g.completed+'/'+g.total+'</small></span><span>'+pct+'%</span></button>'; }
@@ -54,8 +93,8 @@
     doc.getElementById('osrGamesProgress').innerHTML='<p class="osr-games-context">Checked tasks in your current trackers</p>'+(model.games.length?model.games.slice(0,3).map(function(g){return row(g,'tracker');}).join(''):'<p class="osr-empty">No tracked games yet. Add one in your library.</p>');
     doc.getElementById('osrGamesPulse').innerHTML='<p class="osr-games-context">Your last seven calendar days</p><p class="osr-games-big">'+model.weekMinutes+'<small> minutes recorded</small></p><div class="osr-games-metrics"><p><strong>'+model.weekCount+'</strong><span>Completed sessions</span></p><p><strong>'+model.games.length+'</strong><span>Games in your collection</span></p></div>'+button('View session history','sessions');
   }
-  stage.addEventListener('submit',function(event){if(event.target.id!=='osrGamesSearchForm')return;event.preventDefault();var q=doc.getElementById('osrGamesSearch').value.trim(),results=doc.getElementById('osrGamesResults'),status=doc.getElementById('osrGamesSearchStatus');status.hidden=false;if(!q){results.hidden=true;results.replaceChildren();status.textContent='Enter a game name to search your local catalog.';return;}try{var found=owner.search(q);results.innerHTML=found.map(function(g){return button(esc(g.title)+' — Details','game-details',' data-game-id="'+esc(g.id)+'"');}).join('');results.hidden=!found.length;status.textContent=found.length+' local match'+(found.length===1?'':'es')+'.';}catch(_){results.hidden=true;status.textContent='Local search is unavailable. Your library remains available below.';}});
-  stage.addEventListener('click',function(event){var control=event.target.closest('[data-games-action]');if(!control)return;var action=control.dataset.gamesAction,id=control.dataset.gameId;if(action==='credits'){info('Games scene credits','Decorative gaming room artwork created for OneSpace with OpenAI image generation. The room and its crops illustrate your personal gaming space.');return;}if(action==='game-details'){owner.details(id);return;}if(action==='tracker'){if(owner.tracker(id)===false)info('Tracker unavailable','Please try again. Your progress is unchanged.');return;}if(action==='details'){var game=model.continuing||model.games[0];if(game)owner.details(game.id);else info('No games yet','Add a game in your library to open its details.');return;}if(action==='progress'){if(model.continuing)owner.tracker(model.continuing.id);else openTab('missions');return;}openTab(action);});
+  wireSearch(doc.getElementById('osrGamesSearchForm'),doc.getElementById('osrGamesSearch'),doc.getElementById('osrGamesResults'),doc.getElementById('osrGamesSearchStatus'),doc.getElementById('osrGamesSearchClear'),owner.search,esc);
+  stage.addEventListener('click',function(event){var control=event.target.closest('[data-games-action]');if(!control)return;var action=control.dataset.gamesAction,id=control.dataset.gameId;if(action==='credits'){info('Games scene credits','Decorative gaming room artwork created for OneSpace with OpenAI image generation. The room and six separate portal scenes are original project artwork. Collection shelves, quest map, catalogue archive, session desk, discovery landscape and configuration workbench each represent their own action. Local display copies and retained masters are documented in assets/scenes/manifest.json and assets/scenes/games/portals/manifest.json.');return;}if(action==='game-details'){owner.details(id);return;}if(action==='tracker'){if(owner.tracker(id)===false)info('Tracker unavailable','Please try again. Your progress is unchanged.');return;}if(action==='details'){var game=model.continuing||model.games[0];if(game)owner.details(game.id);else info('No games yet','Add a game in your library to open its details.');return;}if(action==='progress'){if(model.continuing)owner.tracker(model.continuing.id);else openTab('missions');return;}openTab(action);});
   stage.querySelectorAll('.osr-games-portal img').forEach(function(img){function fallback(){img.hidden=true;img.parentElement.dataset.assetState='fallback';}img.addEventListener('error',fallback);if(img.complete&&!img.naturalWidth)fallback();});
   function queuedRefresh(){Promise.resolve().then(refresh);}
   doc.addEventListener('onespace:games-changed',queuedRefresh);

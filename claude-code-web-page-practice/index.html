@@ -5,6 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OneSpace — Work and Life Dashboard</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='12' height='12' rx='4' fill='%23536dff'/%3E%3Crect x='9' y='9' width='12' height='12' rx='4' fill='none' stroke='%238a5cff' stroke-width='2'/%3E%3C/svg%3E">
+<style id="onespaceBootStyles">
+/* Critical pre-paint gate. With JavaScript disabled, the existing static fallback remains visible. */
+#onespaceBoot { display:none; position:fixed; inset:0; z-index:300; align-items:center; justify-content:center; flex-direction:column; padding:24px; background:#07101f; color:#f4f7ff; font:16px/1.5 system-ui,sans-serif; text-align:center; }
+#onespaceBoot h1 { margin:0; font-size:2rem; letter-spacing:-.04em; }
+#onespaceBoot p { max-width:34rem; color:#b5c6df; }
+#onespaceBootRetry { min-height:44px; padding:8px 20px; border:1px solid #9dbade; border-radius:12px; background:#162640; color:#fff; cursor:pointer; }
+html[data-onespace-boot="pending"] body > :not(#onespaceBoot), html[data-onespace-boot="pending"] body > :not(#onespaceBoot) *, html[data-onespace-boot="error"] body > :not(#onespaceBoot), html[data-onespace-boot="error"] body > :not(#onespaceBoot) * { visibility:hidden !important; }
+html[data-onespace-boot="pending"] #onespaceBoot, html[data-onespace-boot="error"] #onespaceBoot { display:flex; }
+html[data-onespace-boot="pending"] body::before, html[data-onespace-boot="pending"] body::after, html[data-onespace-boot="error"] body::before, html[data-onespace-boot="error"] body::after { content:none; }
+</style>
+<script id="onespaceBootController">
+(function () {
+  var doc=document, root=doc.documentElement, failed=false;
+  root.setAttribute('data-onespace-boot','pending');
+  root.setAttribute('aria-busy','true');
+  function fail() {
+    failed=true;
+    root.setAttribute('data-onespace-boot','error');
+    root.setAttribute('aria-busy','false');
+    var message=doc.getElementById('onespaceBootMessage'), retry=doc.getElementById('onespaceBootRetry');
+    if(message)message.textContent='OneSpace could not finish opening. Reload to try again. Your saved data stays on this device.';
+    if(retry)retry.hidden=false;
+  }
+  window.addEventListener('error',function(event){
+    if(root.getAttribute('data-onespace-boot')==='pending' && (event.message || (event.target && event.target.tagName==='SCRIPT')))fail();
+  },true);
+  window.OneSpaceBoot={complete:function(){
+    if(doc.readyState==='loading')return;
+    // The final DOMContentLoaded listener runs after routing, all mounts and owner initialization.
+    if(failed || !window.OneSpace || !window.OneSpaceRedesign){fail();return;}
+    var mounted=['Home','Work','Personal','Explore','Games'].every(function(world){var stage=doc.getElementById('redesign'+world);return stage && stage.querySelector('.osr-shell');});
+    if(!mounted){fail();return;}
+    root.setAttribute('data-onespace-boot','ready');
+    root.setAttribute('aria-busy','false');
+    // A direct Command route may open its canonical dialog while the gate prevents focus.
+    var dialogFocus=doc.querySelector('.modal-overlay:not([hidden]):not([inert]) input, .modal-overlay:not([hidden]):not([inert]) button');
+    if(dialogFocus)dialogFocus.focus({preventScroll:true});
+    doc.dispatchEvent(new CustomEvent('onespace:ready'));
+  }};
+})();
+</script>
 <script>(function(){try{var p=localStorage.getItem('orbit-palette'),t=localStorage.getItem('orbit-theme'),b=localStorage.getItem('orbit-background');if(p&&p!=='classic'&&p!=='auto')document.documentElement.setAttribute('data-palette',p);document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));document.addEventListener('DOMContentLoaded',function(){document.body.setAttribute('data-background',b||'orbit')});}catch(e){}})();</script>
 <style>
 /* ONESPACE — unified visual system */
@@ -114,6 +155,10 @@ body.force-full-motion { scroll-behavior:smooth; }
 <link rel="stylesheet" href="games/games-redesign.css">
 </head>
 <body class="has-sidebar" data-page="home">
+  <div id="onespaceBoot" role="status" aria-live="polite">
+    <h1>OneSpace</h1><p id="onespaceBootMessage">Opening your space…</p>
+    <button id="onespaceBootRetry" type="button" hidden onclick="location.reload()">Reload OneSpace</button>
+  </div>
   <button class="btn btn-icon sidebar-toggle" id="mobileSidebarToggle" type="button" title="Open navigation" aria-label="Open navigation" aria-expanded="false">
     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
   </button>
@@ -2222,7 +2267,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       return;
     }
     Array.from(document.body.children).forEach(function (el) {
-      if (["SCRIPT", "STYLE", "LINK"].indexOf(el.tagName) !== -1 || el.id === "toast" || el.id === "osTooltipBubble") return;
+      if (["SCRIPT", "STYLE", "LINK"].indexOf(el.tagName) !== -1 || el.id === "toast" || el.id === "osTooltipBubble" || el.id === "onespaceBoot") return;
       if (!modalBackground.has(el)) modalBackground.set(el, el.inert);
       el.inert = el !== top.overlay;
     });
@@ -3052,5 +3097,6 @@ body.force-full-motion { scroll-behavior:smooth; }
 <script src="personal/personal-redesign.js"></script>
 <script src="explore/explore-redesign.js"></script>
 <script src="games/games-redesign.js"></script>
+<script>document.addEventListener('DOMContentLoaded', window.OneSpaceBoot.complete, { once: true });</script>
 </body>
 </html>

@@ -5,13 +5,95 @@
   "licenseAndAttribution": "Generated project artwork; no third-party asset attribution identified. Keep this provenance record with the assets and review applicable OpenAI output terms before external redistribution.",
   "fallback": "The shared scene host displays a deterministic local CSS gradient when a scene file is loading, missing, or corrupt. Controls and data remain usable; no provider request is needed.",
   "scenes": [
-    { "world": "home", "file": "assets/scenes/home/hero.png", "reference": "docs/ui-reference/00-home.png", "subject": "warm living room, fireplace, plants and sunset city-window depth", "sourceId": "exec-67f50293-1547-4964-a542-b84606a53d88" },
-    { "world": "work", "file": "assets/scenes/work/hero-r3.png", "reference": "docs/ui-reference/01-work.png", "subject": "warm desk studio with dual displays high in the right frame, amber practical lighting, shelves, plants and sunset city-window depth", "sourceId": "exec-fecd4dcb-431f-4ca1-9482-68b4c7b2d8be", "supersedes": "assets/scenes/work/hero.png; the R1 original is retained for historical provenance" },
-    { "world": "personal", "file": "assets/scenes/personal/hero.png", "reference": "docs/ui-reference/02-personal-fitness.png", "subject": "home wellness and training room with city-window depth", "sourceId": "exec-7d68e802-bafb-4aca-a909-9cdaac5d4f1a" },
-    { "world": "explore", "file": "assets/scenes/explore/hero.png", "reference": "docs/ui-reference/03-explore.png", "subject": "travel study, maps, globe and sunset coastline", "sourceId": "exec-ad828842-dc36-4a8a-bc8a-dcbdb0479241" },
-    { "world": "games", "file": "assets/scenes/games/hero.png", "reference": "docs/ui-reference/04-games.png", "subject": "warm gaming room, generic equipment and dusk skyline", "sourceId": "exec-d8b15c1a-2641-4e4d-a7a7-9fb047fd09ad" },
-    { "world": "movies", "file": "assets/scenes/movies/hero.png", "reference": "docs/ui-reference/05-movies-series.png", "subject": "home cinema and unbranded landscape screen", "sourceId": "exec-0a6c128f-a09f-4f8a-9b71-952ed402ad83" },
-    { "world": "projects-notes", "file": "assets/scenes/projects-notes/hero.png", "reference": "docs/ui-reference/06-projects-notes.png", "subject": "creative planning studio with blank notebook and pinboard", "sourceId": "exec-ac4d4cd0-0b8d-4b0f-a85b-a9e5dcfde04b" },
-    { "world": "settings", "file": "assets/scenes/settings/hero.png", "reference": "docs/ui-reference/07-settings.png", "subject": "calm lounge and fireplace with sunset city-window depth", "sourceId": "exec-d1ea0806-57f4-4b17-8e51-440347c3b0ab" }
-  ]
+    {
+      "world": "home",
+      "file": "assets/scenes/home/hero.png",
+      "reference": "docs/ui-reference/00-home.png",
+      "subject": "warm living room, fireplace, plants and sunset city-window depth",
+      "sourceId": "exec-67f50293-1547-4964-a542-b84606a53d88",
+      "runtimeFile": "assets/scenes/home/hero-fast.jpg",
+      "runtimeBytes": 252201,
+      "runtimeSha256": "0b23837668599a9256bc545df2beef4df4768932e1b3544376d8abe7c3b498cd",
+      "masterSha256": "25431958fc118d86f64cdb814bdd86764e922dd5a2c84ab9c5cbb9116112c390"
+    },
+    {
+      "world": "work",
+      "file": "assets/scenes/work/hero-r3.png",
+      "reference": "docs/ui-reference/01-work.png",
+      "subject": "warm desk studio with dual displays high in the right frame, amber practical lighting, shelves, plants and sunset city-window depth",
+      "sourceId": "exec-fecd4dcb-431f-4ca1-9482-68b4c7b2d8be",
+      "supersedes": "assets/scenes/work/hero.png; the R1 original is retained for historical provenance",
+      "runtimeFile": "assets/scenes/work/hero-fast.jpg",
+      "runtimeBytes": 234273,
+      "runtimeSha256": "ad4f773de2b24ec32fdd8a8d6394e4134c9aefd4b44823548c764ca12e8042e4",
+      "masterSha256": "711978f54af162c277a134bf3627c25de13fabbe1414817af72dc0dc4bcb6fa7"
+    },
+    {
+      "world": "personal",
+      "file": "assets/scenes/personal/hero.png",
+      "reference": "docs/ui-reference/02-personal-fitness.png",
+      "subject": "home wellness and training room with city-window depth",
+      "sourceId": "exec-7d68e802-bafb-4aca-a909-9cdaac5d4f1a",
+      "runtimeFile": "assets/scenes/personal/hero-fast.jpg",
+      "runtimeBytes": 243341,
+      "runtimeSha256": "30653b7fe5ad07c199fb341baad1bf2164dfde839d92bd82e9863a4c2d3b4d45",
+      "masterSha256": "cebb0d60044ac14e79c2173af730f84b9a4aa873e5492ca292d6f92b840d2eb0"
+    },
+    {
+      "world": "explore",
+      "file": "assets/scenes/explore/hero.png",
+      "reference": "docs/ui-reference/03-explore.png",
+      "subject": "travel study, maps, globe and sunset coastline",
+      "sourceId": "exec-ad828842-dc36-4a8a-bc8a-dcbdb0479241",
+      "runtimeFile": "assets/scenes/explore/hero-fast.jpg",
+      "runtimeBytes": 286632,
+      "runtimeSha256": "14b0165197967c2b8473e9ca58357e9eb722ffdb191d1e7975a2d5bc6baca171",
+      "masterSha256": "f32b010fc7fc9d50d72949cf2d913d53c7be58d1283b63bbe9aac4ae76cd862e"
+    },
+    {
+      "world": "games",
+      "file": "assets/scenes/games/hero.png",
+      "reference": "docs/ui-reference/04-games.png",
+      "subject": "warm gaming room, generic equipment and dusk skyline",
+      "sourceId": "exec-d8b15c1a-2641-4e4d-a7a7-9fb047fd09ad",
+      "runtimeFile": "assets/scenes/games/hero-fast.jpg",
+      "runtimeBytes": 227092,
+      "runtimeSha256": "4177612a5e077c02c8b6ecf25d8b5daf87b46c58c5ac92dba74e9d329485a23f",
+      "masterSha256": "1344c1e0e5329f13184f1bc7b7f837403d23a1d725c5e68f7c40dc5df4261382"
+    },
+    {
+      "world": "movies",
+      "file": "assets/scenes/movies/hero.png",
+      "reference": "docs/ui-reference/05-movies-series.png",
+      "subject": "home cinema and unbranded landscape screen",
+      "sourceId": "exec-0a6c128f-a09f-4f8a-9b71-952ed402ad83",
+      "runtimeFile": "assets/scenes/movies/hero-fast.jpg",
+      "runtimeBytes": 218731,
+      "runtimeSha256": "ae1e67075d120d9cc4c9c3dae2386558382dc35368b21fc41f44cea4729bc238",
+      "masterSha256": "f8a163a9d6dd0b2ee86ed15d569bc5a0773470bc52be227c7d251c4d099f5368"
+    },
+    {
+      "world": "projects-notes",
+      "file": "assets/scenes/projects-notes/hero.png",
+      "reference": "docs/ui-reference/06-projects-notes.png",
+      "subject": "creative planning studio with blank notebook and pinboard",
+      "sourceId": "exec-ac4d4cd0-0b8d-4b0f-a85b-a9e5dcfde04b",
+      "runtimeFile": "assets/scenes/projects-notes/hero-fast.jpg",
+      "runtimeBytes": 201825,
+      "runtimeSha256": "4bc9c44f4b42cf125d6d364334083a80c40cde2d294fc9c4456240634ab94d35",
+      "masterSha256": "a50e120dac33c4b566dc32a30fb00e78850ec1b10f26cb32354cef36be19fc68"
+    },
+    {
+      "world": "settings",
+      "file": "assets/scenes/settings/hero.png",
+      "reference": "docs/ui-reference/07-settings.png",
+      "subject": "calm lounge and fireplace with sunset city-window depth",
+      "sourceId": "exec-d1ea0806-57f4-4b17-8e51-440347c3b0ab",
+      "runtimeFile": "assets/scenes/settings/hero-fast.jpg",
+      "runtimeBytes": 212764,
+      "runtimeSha256": "66e3996bd415a5d2ac50bef50130f5d55280f49844d1330c1ce4787dc2c8ff20",
+      "masterSha256": "65cd1152bd8746c22e06ffb22b7d8b1219ae6a0627da5692255b034ec76aec90"
+    }
+  ],
+  "displayDerivation": "2026-10-01: original PNG masters retained unchanged; 1600px JPEG display copies, quality 85, Windows System.Drawing high-quality bicubic resizing. The shared host defers hidden worlds and reuses loaded images. Artwork never blocks UI readiness."
 }

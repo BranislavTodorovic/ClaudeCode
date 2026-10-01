@@ -71,7 +71,7 @@ test('scene host falls back on failed local art and ignores stale image completi
   const scene = foundation.createSceneHost(host, PendingImage);
   const first = scene.show('home');
   assert.equal(host.dataset.assetState, 'loading');
-  assert.equal(PendingImage.instances[0].src, 'assets/scenes/home/hero.png');
+  assert.equal(PendingImage.instances[0].src, 'assets/scenes/home/hero-fast.jpg');
   const second = scene.show('work');
   PendingImage.instances[0].onload();
   PendingImage.instances[1].onerror();
@@ -82,8 +82,54 @@ test('scene host falls back on failed local art and ignores stale image completi
   const third = scene.show('games');
   PendingImage.instances[2].onload();
   assert.equal(await third, 'ready');
-  assert.equal(host.children[0].src, 'assets/scenes/games/hero.png');
+  assert.equal(host.children[0].src, 'assets/scenes/games/hero-fast.jpg');
   scene.clear();
   assert.equal(host.dataset.assetState, 'empty');
   assert.equal(host.children.length, 0);
+});
+
+test('hidden scene fetches wait for activation; repeated visits reuse the same image without clearing art', async () => {
+  PendingImage.instances = [];
+  const listeners = {}, view = { hidden: true }, host = fakeHost();
+  host.closest = () => view;
+  host.ownerDocument = { documentElement: { getAttribute: () => 'ready' },
+    addEventListener(name, fn) { listeners[name] = fn; }, removeEventListener(name) { delete listeners[name]; } };
+  const scene = foundation.createSceneHost(host, PendingImage);
+  assert.equal(await scene.show('work'), 'deferred');
+  assert.equal(PendingImage.instances.length, 0);
+  view.hidden = false; listeners['onespace:page-changed']();
+  assert.equal(PendingImage.instances.length, 1);
+  const first = scene.show('work'); PendingImage.instances[0].onload();
+  assert.equal(await first, 'ready');
+  const image = host.children[0];
+  view.hidden = true; listeners['onespace:page-changed']();
+  view.hidden = false; listeners['onespace:page-changed']();
+  assert.equal(await scene.show('work'), 'ready');
+  assert.equal(PendingImage.instances.length, 1); assert.equal(host.children[0], image);
+  scene.clear(); assert.deepEqual(Object.keys(listeners), []);
+});
+
+test('direct hash route never eagerly loads Home art while the boot router is pending', async () => {
+  PendingImage.instances = [];
+  const listeners = {}, host = fakeHost(); let boot = 'pending';
+  host.closest = () => ({ hidden: false });
+  host.ownerDocument = { documentElement: { getAttribute: () => boot }, defaultView: { location: { hash: '#/w/games' } },
+    addEventListener(name, fn) { listeners[name] = fn; }, removeEventListener() {} };
+  const scene = foundation.createSceneHost(host, PendingImage);
+  assert.equal(await scene.show('home'), 'deferred'); assert.equal(PendingImage.instances.length, 0);
+  boot = 'ready'; listeners['onespace:page-changed']();
+  assert.equal(PendingImage.instances.length, 1);
+});
+
+test('scene display copies retain provenance and reduce decode/transfer size for their role', () => {
+  const root = path.resolve(__dirname, '..');
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'assets/scenes/manifest.json')));
+  for (const world of foundation.worlds) {
+    const record = manifest.scenes.find(scene => scene.world === world.id);
+    assert.equal(world.preview, record.runtimeFile);
+    const display = fs.readFileSync(path.join(root, world.preview));
+    assert.equal(display[0], 255); assert.equal(display[1], 216);
+    assert(display.length < fs.statSync(path.join(root, world.scene)).size / 4);
+    assert.equal(require('node:crypto').createHash('sha256').update(display).digest('hex'), record.runtimeSha256);
+  }
 });
