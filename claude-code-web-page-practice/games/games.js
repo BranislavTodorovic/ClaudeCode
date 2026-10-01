@@ -163,7 +163,9 @@
   function saveLibrary() { return commitGameChanges(); }
   function commitGameChanges() {
     var data={}; data[GK.library]=JSON.stringify(library);data[GK.weekly]=JSON.stringify(weekly);
-    try { window.OneSpaceStorage.transaction(window.localStorage,data); return true; } catch(error) {library=safeGetJSON(GK.library,[]);weekly=safeGetJSON(GK.weekly,{});showToast(error.message);return false;}
+    try { window.OneSpaceStorage.transaction(window.localStorage,data); } catch(error) {library=safeGetJSON(GK.library,[]);weekly=safeGetJSON(GK.weekly,{});showToast(error.message);return false;}
+    if (typeof CustomEvent === 'function') document.dispatchEvent(new CustomEvent('onespace:games-changed'));
+    return true;
   }
   function saveWeekly() { return commitGameChanges(); }
   function saveSessions() { if(safeSet(GK.sessions,JSON.stringify(sessions)))return true;sessions=safeGetJSON(GK.sessions,[]);return false; }
@@ -1213,12 +1215,12 @@
   function featuredGames() {
     return library.slice();
   }
-  function focusPanel(name) {
+  function focusPanel(name, immediate) {
     var panel = document.querySelector('.gv-panel[data-panel="' + name + '"]');
     if (!panel) return;
     panel.tabIndex = -1;
     panel.focus({preventScroll:true});
-    panel.scrollIntoView({behavior: motionQuery.matches ? "auto" : "smooth", block:"start"});
+    panel.scrollIntoView({behavior: immediate || motionQuery.matches ? "instant" : "smooth", block:"start"});
   }
   function selectSpotlight(id, reason) {
     var game = library.find(function (g) { return g.id === id; });
@@ -1309,7 +1311,7 @@
     var hero = document.getElementById("gvSpotlight");
     if (!hero) return;
     var isGames = document.body.dataset.page === "games";
-    var blocked = document.getElementById('gamesView').dataset.sceneIntensity==='off' || spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isGames || activeTab !== "overview" || !spotlight.visible;
+    var blocked = document.getElementById('gamesView').classList.contains('redesign-games') || document.getElementById('gamesView').dataset.sceneIntensity==='off' || spotlight.paused || motionQuery.matches || spotlight.hover || spotlight.focus || document.hidden || !isGames || activeTab !== "overview" || !spotlight.visible;
     hero.dataset.playing = String(!blocked);
     document.getElementById("gamesView").classList.toggle("gv-motion-paused", document.hidden || !isGames);
     hero.classList.toggle("gv-ambient-paused", document.hidden || !isGames || !spotlight.visible || spotlight.paused);
@@ -1572,6 +1574,21 @@
   /* ---------------------------------------------------------------------
    * Init
    * ------------------------------------------------------------------- */
+  // Read-only landing data and existing owner actions; no second storage owner.
+  window.OneSpaceGames = {
+    pauseHiddenSpotlight: syncSpotlightPlayback,
+    snapshot: function () {
+      return { games: library.map(function (g) {
+        var entry = weekly[g.id], tasks = entry && entry.weekKey === getISOWeekKey(new Date()) ? entry.tasks : [];
+        var stats = g.trackerType === 'weekly' ? { total: tasks.length, completed: tasks.filter(function (t) { return t.done; }).length } : storyStats(g);
+        return { id: g.id, name: g.name, trackerType: g.trackerType, total: stats.total, completed: stats.completed };
+      }), sessions: sessions.map(function (s) { return Object.assign({},s); }) };
+    },
+    search: function (query) { return window.OneSpaceCatalog.search(gameCatalog(),query).slice(0,6); },
+    details: openSuggestionDetails,
+    tracker: goToTracker,
+    open: function (tab) { if (switchTab(tab) === false) return false; focusPanel(tab,true); return true; }
+  };
   window.OneSpaceGameDiscovery={snapshot:function(){return {games:library,DEFAULT_GAMES:window.DEFAULT_GAMES,SUGGESTION_CATALOG:window.SUGGESTION_CATALOG};},has:function(x){return library.some(function(g){return g.id===x.id||g.sourceSuggestion===x.id||g.name.toLowerCase()===x.name.toLowerCase();});},save:function(x,f){
     if(library.some(function(g){return g.id===x.id||g.sourceSuggestion===x.id||g.name.toLowerCase()===x.name.toLowerCase();})){showToast('Already in My Games.');return true;}
     var g={id:x.id,name:x.name.slice(0,160),platform:x.platforms?.[0]||'Unspecified',platforms:x.platforms||[],genre:x.genres?.[0]||'Adventure',genres:x.genres||[],accent:'#a99ada',logo:x.image?{kind:'asset',src:x.image}:{kind:'cover'},artwork:x.image||'',cardArtwork:x.image||'',trackerType:String(f?.get('tracker')||window.OneSpaceGameResources.infer(x)),chapterOutline:x.chapterOutline,weeklyTemplate:x.weeklyTemplate,custom:true,discoveryRecord:x,resources:x.resources?.length?x.resources:window.OneSpaceGameResources.resources({name:x.name}),story:{chapters:[]}};

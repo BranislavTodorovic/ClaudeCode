@@ -1,0 +1,385 @@
+TAP version 13
+# Subtest: Explore Shortlist reports a rejected write without showing a saved state
+ok 1 - Explore Shortlist reports a rejected write without showing a saved state
+  ---
+  duration_ms: 55.2199
+  ...
+# Subtest: Explore Surprise me stops on a rejected preference write
+ok 2 - Explore Surprise me stops on a rejected preference write
+  ---
+  duration_ms: 6.4053
+  ...
+# Subtest: Explore submit preserves rejected preference feedback and does not search
+ok 3 - Explore submit preserves rejected preference feedback and does not search
+  ---
+  duration_ms: 34.2548
+  ...
+# Subtest: Explore change preserves rejected preference feedback and does not search
+ok 4 - Explore change preserves rejected preference feedback and does not search
+  ---
+  duration_ms: 21.0405
+  ...
+# Subtest: Explore reset preserves rejected preference feedback and does not search
+ok 5 - Explore reset preserves rejected preference feedback and does not search
+  ---
+  duration_ms: 14.7392
+  ...
+# Subtest: custom location form does not claim an image or license when none was supplied
+ok 6 - custom location form does not claim an image or license when none was supplied
+  ---
+  duration_ms: 46.8204
+  ...
+# Subtest: local upload does not invent image licensing or source
+ok 7 - local upload does not invent image licensing or source
+  ---
+  duration_ms: 4.0738
+  ...
+# Subtest: editing unchanged custom imagery preserves supplied provenance
+ok 8 - editing unchanged custom imagery preserves supplied provenance
+  ---
+  duration_ms: 11.5532
+  ...
+# Subtest: image removal and legacy automatic provenance reflect the new image state
+ok 9 - image removal and legacy automatic provenance reflect the new image state
+  ---
+  duration_ms: 7.535
+  ...
+# Subtest: existing automatic image claims are corrected on read without rewriting saved locations
+ok 10 - existing automatic image claims are corrected on read without rewriting saved locations
+  ---
+  duration_ms: 3.1511
+  ...
+# Subtest: Experiences opens visible future feedback without changing hero notice or owner data
+ok 11 - Experiences opens visible future feedback without changing hero notice or owner data
+  ---
+  duration_ms: 19.4202
+  ...
+# Subtest: Travel Guides opens visible future feedback without changing hero notice or owner data
+ok 12 - Travel Guides opens visible future feedback without changing hero notice or owner data
+  ---
+  duration_ms: 3.3728
+  ...
+# Subtest: Experiences quick action declares the same dialog feedback
+ok 13 - Experiences quick action declares the same dialog feedback
+  ---
+  duration_ms: 8.7377
+  ...
+# Subtest: actual detail renderer presents every maintained description and hero separately from provenance
+ok 14 - actual detail renderer presents every maintained description and hero separately from provenance
+  ---
+  duration_ms: 27.138
+  ...
+# Subtest: detail renderer handles genuinely missing user-added image and description without fabrication
+ok 15 - detail renderer handles genuinely missing user-added image and description without fabrication
+  ---
+  duration_ms: 4.7117
+  ...
+# Subtest: direct saved-board Details corrects legacy automatic provenance without changing stored content
+ok 16 - direct saved-board Details corrects legacy automatic provenance without changing stored content
+  ---
+  duration_ms: 13.241
+  ...
+# Subtest: photo failure retains description/provenance flow and uses local fallback only on error
+ok 17 - photo failure retains description/provenance flow and uses local fallback only on error
+  ---
+  duration_ms: 3.0218
+  ...
+# Subtest: explore-data owns a unique, fully shaped twelve-destination catalog
+ok 18 - explore-data owns a unique, fully shaped twelve-destination catalog
+  ---
+  duration_ms: 3.1222
+  ...
+# Subtest: all curated destinations expose licensed card, hero and deterministic fallback artwork
+ok 19 - all curated destinations expose licensed card, hero and deterministic fallback artwork
+  ---
+  duration_ms: 427.8983
+  ...
+# Subtest: local discovery preserves image roles, attribution and failure-only fallback metadata
+ok 20 - local discovery preserves image roles, attribution and failure-only fallback metadata
+  ---
+  duration_ms: 8.954
+  ...
+# Subtest: every curated destination has concise card copy and substantive planning detail
+ok 21 - every curated destination has concise card copy and substantive planning detail
+  ---
+  duration_ms: 9.5175
+  ...
+# Subtest: destination license metadata agrees across catalog, manifest and colocated source ledger
+ok 22 - destination license metadata agrees across catalog, manifest and colocated source ledger
+  ---
+  duration_ms: 77.5758
+  ...
+# Subtest: Explore filtering intersects groups and ranking is stable with visible reasons
+ok 23 - Explore filtering intersects groups and ranking is stable with visible reasons
+  ---
+  duration_ms: 88.3023
+  ...
+# Subtest: saved destinations validate, deduplicate and retain trip-board notes
+ok 24 - saved destinations validate, deduplicate and retain trip-board notes
+  ---
+  duration_ms: 12.9126
+  ...
+# Subtest: shortcut ownership keeps travel links in Explore only
+ok 25 - shortcut ownership keeps travel links in Explore only
+  ---
+  duration_ms: 4.3716
+  ...
+# Subtest: malformed destinations and preferences are rejected
+ok 26 - malformed destinations and preferences are rejected
+  ---
+  duration_ms: 7.0086
+  ...
+# Subtest: missing Explore detail reports not-found without changing saved trips
+ok 27 - missing Explore detail reports not-found without changing saved trips
+  ---
+  duration_ms: 12.8698
+  ...
+# Subtest: credits audit accepts an explicit bounded dialog launcher and inert empty row
+ok 28 - credits audit accepts an explicit bounded dialog launcher and inert empty row
+  ---
+  duration_ms: 36.7056
+  ...
+# Subtest: credits audit rejects the stretched disclosure and empty-space activation
+ok 29 - credits audit rejects the stretched disclosure and empty-space activation
+  ---
+  duration_ms: 1.548
+  ...
+# Subtest: credits audit rejects invisible, moving and untested targets
+ok 30 - credits audit rejects invisible, moving and untested targets
+  ---
+  duration_ms: 0.7526
+  ...
+# Subtest: scene audit catches backdrop recropping, container shift and zoom on credits activation
+ok 31 - scene audit catches backdrop recropping, container shift and zoom on credits activation
+  ---
+  duration_ms: 0.8779
+  ...
+# Subtest: portal audit accepts one semantic whole-card target and inactive adjacent space
+ok 32 - portal audit accepts one semantic whole-card target and inactive adjacent space
+  ---
+  duration_ms: 6.0694
+  ...
+# Subtest: portal audit rejects action leakage outside the visible card
+ok 33 - portal audit rejects action leakage outside the visible card
+  ---
+  duration_ms: 0.7021
+  ...
+# Subtest: portal audit rejects invisible nested controls and moving hit boundaries
+ok 34 - portal audit rejects invisible nested controls and moving hit boundaries
+  ---
+  duration_ms: 0.9088
+  ...
+# Subtest: portal audit rejects an inactive part of the whole-card target and small controls
+ok 35 - portal audit rejects an inactive part of the whole-card target and small controls
+  ---
+  duration_ms: 0.7971
+  ...
+# Subtest: portal audit cannot pass untested off-screen boundaries
+ok 36 - portal audit cannot pass untested off-screen boundaries
+  ---
+  duration_ms: 0.8416
+  ...
+# Subtest: layout audit catches clipped controls even when legacy document width hides overflow
+ok 37 - layout audit catches clipped controls even when legacy document width hides overflow
+  ---
+  duration_ms: 1.3796
+  ...
+# Subtest: layout audit checks all retained regions as well as document width
+ok 38 - layout audit checks all retained regions as well as document width
+  ---
+  duration_ms: 1.1518
+  ...
+# Subtest: layout audit accepts bounded reflow with scrollbar width and subpixel rounding
+ok 39 - layout audit accepts bounded reflow with scrollbar width and subpixel rounding
+  ---
+  duration_ms: 0.4995
+  ...
+# Subtest: layout audit rejects mismatched centered frames even when nothing exceeds document width
+ok 40 - layout audit rejects mismatched centered frames even when nothing exceeds document width
+  ---
+  duration_ms: 0.6463
+  ...
+# Subtest: layout audit checks centering and common edges after frame reflow
+ok 41 - layout audit checks centering and common edges after frame reflow
+  ---
+  duration_ms: 1.0936
+  ...
+# Subtest: upcoming uses planned valid nonpast local dates, including today, in chronological order
+ok 42 - upcoming uses planned valid nonpast local dates, including today, in chronological order
+  ---
+  duration_ms: 36.8157
+  ...
+# Subtest: saved summary follows canonical ordering and leaves owner records untouched
+ok 43 - saved summary follows canonical ordering and leaves owner records untouched
+  ---
+  duration_ms: 0.8351
+  ...
+# Subtest: malformed and empty storage cannot become fake trips
+ok 44 - malformed and empty storage cannot become fake trips
+  ---
+  duration_ms: 0.7009
+  ...
+# Subtest: legacy capture handler leaves Explore-owned fallbacks intact while retaining other art fallbacks
+ok 45 - legacy capture handler leaves Explore-owned fallbacks intact while retaining other art fallbacks
+  ---
+  duration_ms: 6.3142
+  ...
+# Subtest: featured entries are actual catalog records and retain licensed media through normalization
+ok 46 - featured entries are actual catalog records and retain licensed media through normalization
+  ---
+  duration_ms: 8.4971
+  ...
+# Subtest: five canonical portals keep future modules truthful and use existing clean local assets
+ok 47 - five canonical portals keep future modules truthful and use existing clean local assets
+  ---
+  duration_ms: 3.422
+  ...
+# Subtest: changing owner dates/status changes summaries without a parallel model or store
+ok 48 - changing owner dates/status changes summaries without a parallel model or store
+  ---
+  duration_ms: 2.3173
+  ...
+# Subtest: More To Explore explains an empty resource collection instead of doing nothing
+ok 49 - More To Explore explains an empty resource collection instead of doing nothing
+  ---
+  duration_ms: 14.4546
+  ...
+# Subtest: More To Explore opens an existing travel resource and preserves its usage owner
+ok 50 - More To Explore opens an existing travel resource and preserves its usage owner
+  ---
+  duration_ms: 8.9783
+  ...
+# Subtest: resource card shows its real collection state independently of shortcut search and updates after removal
+ok 51 - resource card shows its real collection state independently of shortcut search and updates after removal
+  ---
+  duration_ms: 9.2664
+  ...
+# Subtest: travel artwork has local provenance, valid WebP bytes and one decorative image inside its semantic action
+ok 52 - travel artwork has local provenance, valid WebP bytes and one decorative image inside its semantic action
+  ---
+  duration_ms: 138.8
+  ...
+# Subtest: actual inspiration image owner handles early failures, loaded images and recovery without replacing the control
+ok 53 - actual inspiration image owner handles early failures, loaded images and recovery without replacing the control
+  ---
+  duration_ms: 8.5334
+  ...
+# Subtest: global legacy error handler leaves the inspiration image to its own fallback owner
+ok 54 - global legacy error handler leaves the inspiration image to its own fallback owner
+  ---
+  duration_ms: 4.1162
+  ...
+# Subtest: eight reference-led worlds have unique routes and local scenes
+ok 55 - eight reference-led worlds have unique routes and local scenes
+  ---
+  duration_ms: 5.3625
+  ...
+# Subtest: every approved world has a separate local production scene and provenance
+ok 56 - every approved world has a separate local production scene and provenance
+  ---
+  duration_ms: 182.3778
+  ...
+# Subtest: nested details, compatibility aliases and invalid routes preserve owner identity
+ok 57 - nested details, compatibility aliases and invalid routes preserve owner identity
+  ---
+  duration_ms: 9.4447
+  ...
+# Subtest: scene host falls back on failed local art and ignores stale image completion
+ok 58 - scene host falls back on failed local art and ignores stale image completion
+  ---
+  duration_ms: 1.5412
+  ...
+# Subtest: ten distinct drawn scenes and static Games/Movies heroes cover all route domains
+ok 59 - ten distinct drawn scenes and static Games/Movies heroes cover all route domains
+  ---
+  duration_ms: 12.9382
+  ...
+# Subtest: scene depth is bounded and applied only to decorative drawing/art layers
+ok 60 - scene depth is bounded and applied only to decorative drawing/art layers
+  ---
+  duration_ms: 60.7397
+  ...
+# Subtest: reduced motion and per-page Off eliminate scene drift rather than slowing it
+ok 61 - reduced motion and per-page Off eliminate scene drift rather than slowing it
+  ---
+  duration_ms: 26.6132
+  ...
+# Subtest: drawn scenes use no external requests or binary assets
+ok 62 - drawn scenes use no external requests or binary assets
+  ---
+  duration_ms: 1.1286
+  ...
+# Subtest: pointer depth clamps, resets and ignores touch, reduced and Off input
+ok 63 - pointer depth clamps, resets and ignores touch, reduced and Off input
+  ---
+  duration_ms: 9.2443
+  ...
+# Subtest: scene lifecycle stages entry, settle and ambient; exit resets without same-page replay
+ok 64 - scene lifecycle stages entry, settle and ambient; exit resets without same-page replay
+  ---
+  duration_ms: 33.3961
+  ...
+# Subtest: each domain entry has its own camera direction and subject motion
+ok 65 - each domain entry has its own camera direction and subject motion
+  ---
+  duration_ms: 30.5692
+  ...
+# Subtest: top-level navigation keeps a coherent accessible outline-icon language
+ok 66 - top-level navigation keeps a coherent accessible outline-icon language
+  ---
+  duration_ms: 12.8728
+  ...
+# Subtest: all document script and stylesheet references resolve
+ok 67 - all document script and stylesheet references resolve
+  ---
+  duration_ms: 39.5571
+  ...
+# Subtest: classic scripts preserve the exact baseline dependency order and inline boundary
+ok 68 - classic scripts preserve the exact baseline dependency order and inline boundary
+  ---
+  duration_ms: 4.338
+  ...
+# Subtest: More To Explore is the final Explore page-body section in source order
+ok 69 - More To Explore is the final Explore page-body section in source order
+  ---
+  duration_ms: 1.5555
+  ...
+# Subtest: all literal relative requires in source and test files resolve
+ok 70 - all literal relative requires in source and test files resolve
+  ---
+  duration_ms: 1534.6084
+  ...
+# Subtest: literal artwork and stylesheet URLs resolve without moving assets
+ok 71 - literal artwork and stylesheet URLs resolve without moving assets
+  ---
+  duration_ms: 60.7991
+  ...
+# Subtest: recursive parse inventory covers every application JS file
+ok 72 - recursive parse inventory covers every application JS file
+  ---
+  duration_ms: 6.6638
+  ...
+# Subtest: browser entry and modules never load configuration or credential files
+ok 73 - browser entry and modules never load configuration or credential files
+  ---
+  duration_ms: 22.3766
+  ...
+# Subtest: saved destination paths still satisfy all three existing validators
+ok 74 - saved destination paths still satisfy all three existing validators
+  ---
+  duration_ms: 22.8278
+  ...
+# Subtest: static server serves Work but blocks existing credential-like JS and JSON
+ok 75 - static server serves Work but blocks existing credential-like JS and JSON
+  ---
+  duration_ms: 218.9276
+  ...
+1..75
+# tests 75
+# suites 0
+# pass 75
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3890.4064

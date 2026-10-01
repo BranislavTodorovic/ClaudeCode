@@ -1,3 +1,5 @@
+**Current R3 checkpoint (2026-10-01):** Branch main / HEAD c50004c4fd74029c5c36c02f4d8e9e6b3857297b. Work, Personal and Explore VERIFIED. Explore steps 12 through 18 individually reconciled and step 19 VERIFIED; user-reported native Edge 100%/200% interaction PASS persisted, future-feedback fix and original evidence preserved. Explore focused 75/75 retained; final Explore full 232/232. Games started after Explore acceptance: steps 1–10 VERIFIED individually; step 11 IN PROGRESS, required 1920/1440/1024/760/390 in-app width matrix PASS across 25 owner-view checks, actual native Edge 200% zoom acceptance still required. Games IMPLEMENTED / NOT VERIFIED; steps 12–19 PENDING; no new cinematic motion. Latest Games focused 91/91 and full 238/238, zero failures/skips; normal in-app runtime warn/error log empty. Canonical reports: `docs/implementation-evidence/r3/explore-final-acceptance-2026-10-01.md`, `games-analysis-2026-10-01.md` and `games-acceptance-progress-2026-10-01.md`. Gate R3 OPEN; R5 deferred. Exact next action: hard-refresh Games in native Edge, inspect landing and retained owner tools at actual 100%/200% zoom, and record containment/readability PASS or the specific failure before step 12. Earlier checkpoints below are historical.
+
 **# OneSpace — Final Verification and Acceptance Runbook V2**
 
 **## Authority**
@@ -2198,3 +2200,9 @@ After implementation/acceptance only:
 If FAIL, list exact unresolved checklist IDs and evidence gaps.
 
 A final PASS requires original-plan, V2, Phases 20–25 acceptance, Phase 26 whole-project integrity, Gate 26, and Phase 13.3 completion.
+
+## R3 Explore future-feedback continuation — 2026-10-01
+
+**Historical Explore feedback checkpoint (2026-10-01):** Branch main / HEAD c50004c4fd74029c5c36c02f4d8e9e6b3857297b. Experiences and Travel Guides now use the existing shared coming-later dialog rather than an off-screen hero notice; their FUTURE_DISABLED R3 classification and R5 family-3 deferral remain unchanged. Fresh whole-card/icon/gap, Tab/Enter/Space/Escape/focus-return, six-width dialog containment and zero scene/scroll-change evidence: `docs/implementation-evidence/r3/explore-future-feedback-2026-10-01.md` with audit, two screenshots and three logs. Focused 75/75; full 232/232, zero failures/skips. Step 11 remains VERIFIED; first unresolved step 12, specific native Edge 100% / 200% portal/credits/representative destination-dialog interaction confirmation. Steps 13–18 supporting evidence retained pending ordered reconciliation; step 19 PENDING; Explore IMPLEMENTED / NOT VERIFIED; Gate R3 OPEN; Games NOT STARTED. After legitimate Explore verification, Games step 1 physically opens `docs/ui-reference/04-games.png`. Earlier checkpoints are historical.
+
+These are item-specific supporting results, not whole-project or native acceptance PASS. Fresh warnings/errors: none in the in-app audit. Actual native Edge interaction confirmation remains missing; no resize-to-zoom equivalence claimed.

@@ -1,0 +1,1627 @@
+{
+  "baseline": {
+    "noticeBottom": -497.828125,
+    "scrollY": 975,
+    "dialogVisible": false
+  },
+  "interactions": [
+    {
+      "action": "experiences",
+      "method": "Tab then Enter; Escape",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "trapFirst": "Cancel",
+      "trapLast": "Close dialog",
+      "before": {
+        "documentWidth": 1425,
+        "regions": [
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-frame",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 310,
+            "left": 30.234375,
+            "selector": ".osr-explore-hero",
+            "top": 147.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 743.734375,
+            "left": 30.234375,
+            "selector": ".osr-explore-summary",
+            "top": 469.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 447.828125,
+            "left": 30.234375,
+            "selector": ".osr-explore-portals",
+            "top": 1229.5625,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-host",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-image",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1707.5625,
+            "left": 0,
+            "selector": "#exploreView > .page-body",
+            "top": 1868.15625,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          }
+        ],
+        "scrollY": 888,
+        "viewport": 1425
+      },
+      "opened": {
+        "documentWidth": 1425,
+        "regions": [
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-frame",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 310,
+            "left": 30.234375,
+            "selector": ".osr-explore-hero",
+            "top": 147.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 743.734375,
+            "left": 30.234375,
+            "selector": ".osr-explore-summary",
+            "top": 469.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 447.828125,
+            "left": 30.234375,
+            "selector": ".osr-explore-portals",
+            "top": 1229.5625,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-host",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-image",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1707.5625,
+            "left": 0,
+            "selector": "#exploreView > .page-body",
+            "top": 1868.15625,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          }
+        ],
+        "scrollY": 888,
+        "viewport": 1425
+      },
+      "closed": {
+        "documentWidth": 1425,
+        "regions": [
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-frame",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 310,
+            "left": 30.234375,
+            "selector": ".osr-explore-hero",
+            "top": 147.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 743.734375,
+            "left": 30.234375,
+            "selector": ".osr-explore-summary",
+            "top": 469.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 447.828125,
+            "left": 30.234375,
+            "selector": ".osr-explore-portals",
+            "top": 1229.5625,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-host",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-image",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1707.5625,
+            "left": 0,
+            "selector": "#exploreView > .page-body",
+            "top": 1868.15625,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          }
+        ],
+        "scrollY": 888,
+        "viewport": 1425
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": {
+        "focusVisible": true,
+        "label": "Experiences — coming later"
+      }
+    },
+    {
+      "action": "travel-guides",
+      "method": "Tab then Space; Escape",
+      "guideFocus": {
+        "active": "Travel Guides — coming later",
+        "outline": "rgb(184, 227, 255) solid 3px",
+        "visible": true
+      },
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "before": {
+        "documentWidth": 1425,
+        "regions": [
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-frame",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 310,
+            "left": 30.234375,
+            "selector": ".osr-explore-hero",
+            "top": 147.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 743.734375,
+            "left": 30.234375,
+            "selector": ".osr-explore-summary",
+            "top": 469.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 447.828125,
+            "left": 30.234375,
+            "selector": ".osr-explore-portals",
+            "top": 1229.5625,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-host",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-image",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1707.5625,
+            "left": 0,
+            "selector": "#exploreView > .page-body",
+            "top": 1868.15625,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          }
+        ],
+        "scrollY": 888,
+        "viewport": 1425
+      },
+      "opened": {
+        "documentWidth": 1425,
+        "regions": [
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-frame",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 310,
+            "left": 30.234375,
+            "selector": ".osr-explore-hero",
+            "top": 147.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 743.734375,
+            "left": 30.234375,
+            "selector": ".osr-explore-summary",
+            "top": 469.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 447.828125,
+            "left": 30.234375,
+            "selector": ".osr-explore-portals",
+            "top": 1229.5625,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-host",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-image",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1707.5625,
+            "left": 0,
+            "selector": "#exploreView > .page-body",
+            "top": 1868.15625,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          }
+        ],
+        "scrollY": 888,
+        "viewport": 1425
+      },
+      "closed": {
+        "documentWidth": 1425,
+        "regions": [
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-frame",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 310,
+            "left": 30.234375,
+            "selector": ".osr-explore-hero",
+            "top": 147.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 743.734375,
+            "left": 30.234375,
+            "selector": ".osr-explore-summary",
+            "top": 469.828125,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 447.828125,
+            "left": 30.234375,
+            "selector": ".osr-explore-portals",
+            "top": 1229.5625,
+            "transform": "none",
+            "width": 1364.53125,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-host",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1868.15625,
+            "left": 0,
+            "selector": "#redesignExplore .osr-scene-image",
+            "top": 0,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          },
+          {
+            "height": 1707.5625,
+            "left": 0,
+            "selector": "#exploreView > .page-body",
+            "top": 1868.15625,
+            "transform": "none",
+            "width": 1425,
+            "zoom": "1"
+          }
+        ],
+        "scrollY": 888,
+        "viewport": 1425
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    },
+    {
+      "action": "experiences",
+      "method": "pointer photo",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "experiences"
+    },
+    {
+      "action": "experiences",
+      "method": "pointer caption",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "experiences"
+    },
+    {
+      "action": "experiences",
+      "method": "pointer icon",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "experiences"
+    },
+    {
+      "action": "experiences",
+      "method": "pointer below icon inside card",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "experiences"
+    },
+    {
+      "action": "travel-guides",
+      "method": "pointer photo",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "travel-guides"
+    },
+    {
+      "action": "travel-guides",
+      "method": "pointer caption",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "travel-guides"
+    },
+    {
+      "action": "travel-guides",
+      "method": "pointer icon",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "travel-guides"
+    },
+    {
+      "action": "travel-guides",
+      "method": "pointer below icon inside card",
+      "dialogInfo": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "travel-guides"
+    },
+    {
+      "action": "Experiences — coming later",
+      "method": "Space",
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "action": "Travel Guides — coming later",
+      "method": "Enter",
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    }
+  ],
+  "widths": [
+    {
+      "width": 2048,
+      "label": "Experiences — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 731.5,
+          "right": 1301.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 2048
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "width": 2048,
+      "label": "Travel Guides — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 731.5,
+          "right": 1301.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 2048
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    },
+    {
+      "width": 1920,
+      "label": "Experiences — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 667.5,
+          "right": 1237.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1920
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "width": 1920,
+      "label": "Travel Guides — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 667.5,
+          "right": 1237.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1920
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    },
+    {
+      "width": 1440,
+      "label": "Experiences — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "width": 1440,
+      "label": "Travel Guides — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 427.5,
+          "right": 997.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1440
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    },
+    {
+      "width": 1024,
+      "label": "Experiences — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 219.5,
+          "right": 789.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1024
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "width": 1024,
+      "label": "Travel Guides — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 568,
+        "focus": "",
+        "rect": {
+          "bottom": 614.765625,
+          "left": 219.5,
+          "right": 789.5,
+          "top": 285.234375
+        },
+        "scrollWidth": 568,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 1024
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    },
+    {
+      "width": 760,
+      "label": "Experiences — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 723,
+        "focus": "",
+        "rect": {
+          "bottom": 622.765625,
+          "left": 10,
+          "right": 735,
+          "top": 277.234375
+        },
+        "scrollWidth": 723,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 760
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "width": 760,
+      "label": "Travel Guides — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 723,
+        "focus": "",
+        "rect": {
+          "bottom": 622.765625,
+          "left": 10,
+          "right": 735,
+          "top": 277.234375
+        },
+        "scrollWidth": 723,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 900,
+          "width": 760
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    },
+    {
+      "width": 390,
+      "label": "Experiences — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 353,
+        "focus": "",
+        "rect": {
+          "bottom": 607.15625,
+          "left": 10,
+          "right": 365,
+          "top": 236.828125
+        },
+        "scrollWidth": 353,
+        "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Experiences — coming later",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Experiences — coming later"
+    },
+    {
+      "width": 390,
+      "label": "Travel Guides — coming later",
+      "dialog": {
+        "bodyInert": true,
+        "clientWidth": 353,
+        "focus": "",
+        "rect": {
+          "bottom": 607.15625,
+          "left": 10,
+          "right": 365,
+          "top": 236.828125
+        },
+        "scrollWidth": 353,
+        "text": "Travel Guides — coming later\n\nTravel Guides is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+        "title": "Travel Guides — coming later",
+        "viewport": {
+          "height": 844,
+          "width": 390
+        }
+      },
+      "openChanges": [],
+      "closeChanges": [],
+      "returned": "Travel Guides — coming later"
+    }
+  ],
+  "portalSemantics": {
+    "cards": [
+      {
+        "action": "destinations",
+        "box": {
+          "bottom": 557.5625,
+          "height": 216,
+          "left": 30.234375,
+          "right": 474.515625,
+          "top": 341.5625,
+          "width": 444.28125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "photo",
+            "x": 252.375,
+            "y": 361.5625
+          },
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "caption",
+            "x": 54.234375,
+            "y": 533.5625
+          },
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "icon",
+            "x": 446.515625,
+            "y": 526.5625
+          },
+          {
+            "action": "destinations",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 446.515625,
+            "y": 548.5625
+          }
+        ],
+        "label": "Open Destinations",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 446.515625,
+            "y": 563.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 252.375,
+            "y": 335.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 24.234375,
+            "y": 449.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 480.515625,
+            "y": 449.5625
+          }
+        ],
+        "slug": "destinations",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "experiences",
+        "box": {
+          "bottom": 557.5625,
+          "height": 216,
+          "left": 490.34375,
+          "right": 934.640625,
+          "top": 341.5625,
+          "width": 444.296875
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "photo",
+            "x": 712.4921875,
+            "y": 361.5625
+          },
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "caption",
+            "x": 514.34375,
+            "y": 533.5625
+          },
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "icon",
+            "x": 906.640625,
+            "y": 526.5625
+          },
+          {
+            "action": "experiences",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 906.640625,
+            "y": 548.5625
+          }
+        ],
+        "label": "Experiences — coming later",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 906.640625,
+            "y": 563.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 712.4921875,
+            "y": 335.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 484.34375,
+            "y": 449.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 940.640625,
+            "y": 449.5625
+          }
+        ],
+        "slug": "experiences",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "travel-guides",
+        "box": {
+          "bottom": 557.5625,
+          "height": 216,
+          "left": 950.46875,
+          "right": 1394.75,
+          "top": 341.5625,
+          "width": 444.28125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "photo",
+            "x": 1172.609375,
+            "y": 361.5625
+          },
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "caption",
+            "x": 974.46875,
+            "y": 533.5625
+          },
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "icon",
+            "x": 1366.75,
+            "y": 526.5625
+          },
+          {
+            "action": "travel-guides",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 1366.75,
+            "y": 548.5625
+          }
+        ],
+        "label": "Travel Guides — coming later",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 1366.75,
+            "y": 563.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 1172.609375,
+            "y": 335.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 944.46875,
+            "y": 449.5625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 1400.75,
+            "y": 449.5625
+          }
+        ],
+        "slug": "travel-guides",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "bucket-list",
+        "box": {
+          "bottom": 789.390625,
+          "height": 216,
+          "left": 30.234375,
+          "right": 474.515625,
+          "top": 573.390625,
+          "width": 444.28125
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "photo",
+            "x": 252.375,
+            "y": 593.390625
+          },
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "caption",
+            "x": 54.234375,
+            "y": 765.390625
+          },
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "icon",
+            "x": 446.515625,
+            "y": 758.390625
+          },
+          {
+            "action": "bucket-list",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 446.515625,
+            "y": 780.390625
+          }
+        ],
+        "label": "Open Bucket List",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 446.515625,
+            "y": 795.390625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 252.375,
+            "y": 567.390625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 24.234375,
+            "y": 681.390625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 480.515625,
+            "y": 681.390625
+          }
+        ],
+        "slug": "bucket-list",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      },
+      {
+        "action": "discover-more",
+        "box": {
+          "bottom": 789.390625,
+          "height": 216,
+          "left": 490.34375,
+          "right": 934.640625,
+          "top": 573.390625,
+          "width": 444.296875
+        },
+        "descendants": 0,
+        "iconHidden": "true",
+        "inside": [
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "photo",
+            "x": 712.4921875,
+            "y": 593.390625
+          },
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "caption",
+            "x": 514.34375,
+            "y": 765.390625
+          },
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "icon",
+            "x": 906.640625,
+            "y": 758.390625
+          },
+          {
+            "action": "discover-more",
+            "inViewport": true,
+            "name": "below icon inside card",
+            "x": 906.640625,
+            "y": 780.390625
+          }
+        ],
+        "label": "Open Discover More",
+        "outside": [
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "below card",
+            "x": 906.640625,
+            "y": 795.390625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "above card",
+            "x": 712.4921875,
+            "y": 567.390625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "left of card",
+            "x": 484.34375,
+            "y": 681.390625
+          },
+          {
+            "action": null,
+            "inViewport": true,
+            "name": "right of card",
+            "x": 940.640625,
+            "y": 681.390625
+          }
+        ],
+        "slug": "discover-more",
+        "tag": "BUTTON",
+        "transform": "none",
+        "type": "button"
+      }
+    ],
+    "violations": []
+  },
+  "gaps": [
+    {
+      "portal": "destinations",
+      "point": "below card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "destinations",
+      "point": "above card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "destinations",
+      "point": "left of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "destinations",
+      "point": "right of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "experiences",
+      "point": "below card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "experiences",
+      "point": "above card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "experiences",
+      "point": "left of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "experiences",
+      "point": "right of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "travel-guides",
+      "point": "below card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "travel-guides",
+      "point": "above card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "travel-guides",
+      "point": "left of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "travel-guides",
+      "point": "right of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "bucket-list",
+      "point": "below card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "bucket-list",
+      "point": "above card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "bucket-list",
+      "point": "left of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "bucket-list",
+      "point": "right of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "discover-more",
+      "point": "below card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "discover-more",
+      "point": "above card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "discover-more",
+      "point": "left of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    },
+    {
+      "portal": "discover-more",
+      "point": "right of card",
+      "action": null,
+      "changes": [],
+      "dialogVisible": false
+    }
+  ],
+  "quickChip": {
+    "dialog": {
+      "bodyInert": true,
+      "clientWidth": 568,
+      "focus": "",
+      "rect": {
+        "bottom": 614.765625,
+        "left": 427.5,
+        "right": 997.5,
+        "top": 285.234375
+      },
+      "scrollWidth": 568,
+      "text": "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.\n\nCancel",
+      "title": "Experiences — coming later",
+      "viewport": {
+        "height": 900,
+        "width": 1440
+      }
+    },
+    "returned": {
+      "action": "experiences",
+      "className": "osr-chip"
+    }
+  },
+  "logs": [],
+  "environment": {
+    "browser": "Codex in-app browser",
+    "origin": "http://localhost:18978",
+    "nativeEdgeZoom": "not tested",
+    "date": "2026-10-01"
+  }
+}

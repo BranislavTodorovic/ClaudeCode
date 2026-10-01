@@ -1,0 +1,2579 @@
+{
+  "portals": [
+    {
+      "focus": "library",
+      "selected": "library",
+      "visiblePanels": [
+        "library"
+      ]
+    },
+    {
+      "focus": "missions",
+      "selected": "missions",
+      "visiblePanels": [
+        "missions"
+      ]
+    },
+    {
+      "focus": "library",
+      "selected": "library",
+      "visiblePanels": [
+        "library"
+      ]
+    },
+    {
+      "focus": "sessions",
+      "selected": "sessions",
+      "visiblePanels": [
+        "sessions"
+      ]
+    },
+    {
+      "focus": "suggestions",
+      "selected": "suggestions",
+      "visiblePanels": [
+        "suggestions"
+      ]
+    },
+    {
+      "focus": "appearance",
+      "selected": "appearance",
+      "visiblePanels": [
+        "appearance"
+      ]
+    }
+  ],
+  "search": [
+    {
+      "description": "Alan Wake 2Some stories never let you go.Genres: Survival Horror, Survival, HorrorPlatforms: PCPlay styles: Mood: Game resourcesOfficialOfficial Alan Wake 2 websitePlatformFind Alan Wake 2 on SteamNews / updatesSearch Steam news for Alan Wake 2Builds / guidesSearch community guides for Alan Wake 2CommunityFind Alan Wake 2 communitiesSuggested tracker tasksFinish the opening chapterExplore and collect useful resourcesComplete the next story chapterEdit resources",
+      "dialog": {
+        "bottom": 676.796875,
+        "height": 633.59375,
+        "left": 347.5,
+        "right": 917.5,
+        "top": 43.203125,
+        "width": 570,
+        "x": 347.5,
+        "y": 43.203125
+      },
+      "title": "Alan Wake 2"
+    },
+    {
+      "quickDetailsTitle": "Alan Wake 2",
+      "visible": true
+    }
+  ],
+  "owner": [
+    {
+      "continuing": "Alan Wake 2Last recorded 10/1/2026Open tracker →",
+      "pulse": "Your last seven calendar days30 minutes recorded1Completed sessions6Games in your collectionView session history",
+      "today": "30 minutes recorded today1 completed sessionNo active session.Record a sessionWeekly tasks"
+    },
+    {
+      "afterReload": true,
+      "pulse": "Your last seven calendar days30 minutes recorded1Completed sessions6Games in your collectionView session history",
+      "today": "30 minutes recorded today1 completed sessionNo active session.Record a sessionWeekly tasks"
+    },
+    {
+      "afterObjective": true,
+      "continuing": "Alan Wake 2Last recorded 10/1/2026Open tracker →",
+      "progress": "Checked tasks in your current trackersAlan Wake 2Story objectives · 1/128%Resident Evil 4Story objectives · 0/130%Diablo ImmortalWeekly tasks · 0/70%"
+    },
+    {
+      "cleanup": true,
+      "progress": "Checked tasks in your current trackersAlan Wake 2Story objectives · 0/120%Resident Evil 4Story objectives · 0/130%Diablo ImmortalWeekly tasks · 0/70%",
+      "today": "0 minutes recorded today0 completed sessionsNo active session.Record a sessionWeekly tasks"
+    }
+  ],
+  "responsive": [
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 21,
+      "tab": "library",
+      "violations": [],
+      "width": 1920,
+      "expectedTab": "library"
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 21,
+      "tab": "missions",
+      "violations": [],
+      "width": 1920,
+      "expectedTab": "missions"
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 21,
+      "tab": "sessions",
+      "violations": [],
+      "width": 1920,
+      "expectedTab": "sessions"
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 21,
+      "tab": "suggestions",
+      "violations": [],
+      "width": 1920,
+      "expectedTab": "suggestions"
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 21,
+      "tab": "appearance",
+      "violations": [],
+      "width": 1920,
+      "expectedTab": "appearance"
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 21,
+      "tab": "library",
+      "violations": [],
+      "width": 1440,
+      "expectedTab": "library"
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 21,
+      "tab": "missions",
+      "violations": [],
+      "width": 1440,
+      "expectedTab": "missions"
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 21,
+      "tab": "sessions",
+      "violations": [],
+      "width": 1440,
+      "expectedTab": "sessions"
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 21,
+      "tab": "suggestions",
+      "violations": [],
+      "width": 1440,
+      "expectedTab": "suggestions"
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 21,
+      "tab": "appearance",
+      "violations": [],
+      "width": 1440,
+      "expectedTab": "appearance"
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 21,
+      "tab": "library",
+      "violations": [],
+      "width": 1024,
+      "expectedTab": "library"
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 21,
+      "tab": "missions",
+      "violations": [],
+      "width": 1024,
+      "expectedTab": "missions"
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 21,
+      "tab": "sessions",
+      "violations": [],
+      "width": 1024,
+      "expectedTab": "sessions"
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 21,
+      "tab": "suggestions",
+      "violations": [],
+      "width": 1024,
+      "expectedTab": "suggestions"
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 21,
+      "tab": "appearance",
+      "violations": [],
+      "width": 1024,
+      "expectedTab": "appearance"
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 21,
+      "tab": "library",
+      "violations": [],
+      "width": 760,
+      "expectedTab": "library"
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 21,
+      "tab": "missions",
+      "violations": [],
+      "width": 760,
+      "expectedTab": "missions"
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 21,
+      "tab": "sessions",
+      "violations": [],
+      "width": 760,
+      "expectedTab": "sessions"
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 21,
+      "tab": "suggestions",
+      "violations": [],
+      "width": 760,
+      "expectedTab": "suggestions"
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 21,
+      "tab": "appearance",
+      "violations": [],
+      "width": 760,
+      "expectedTab": "appearance"
+    },
+    {
+      "client": 375,
+      "controlOverflow": [],
+      "doc": 375,
+      "regions": 21,
+      "tab": "library",
+      "violations": [],
+      "width": 390,
+      "expectedTab": "library"
+    },
+    {
+      "client": 375,
+      "controlOverflow": [],
+      "doc": 375,
+      "regions": 21,
+      "tab": "missions",
+      "violations": [],
+      "width": 390,
+      "expectedTab": "missions"
+    },
+    {
+      "client": 375,
+      "controlOverflow": [],
+      "doc": 375,
+      "regions": 21,
+      "tab": "sessions",
+      "violations": [],
+      "width": 390,
+      "expectedTab": "sessions"
+    },
+    {
+      "client": 375,
+      "controlOverflow": [],
+      "doc": 375,
+      "regions": 21,
+      "tab": "suggestions",
+      "violations": [],
+      "width": 390,
+      "expectedTab": "suggestions"
+    },
+    {
+      "client": 375,
+      "controlOverflow": [],
+      "doc": 375,
+      "regions": 21,
+      "tab": "appearance",
+      "violations": [],
+      "width": 390,
+      "expectedTab": "appearance"
+    }
+  ],
+  "static": {
+    "animations": [],
+    "client": 2033,
+    "doc": 2033,
+    "height": 1152,
+    "portalBounds": [
+      {
+        "bottom": 1042.75,
+        "height": 230,
+        "left": 42,
+        "right": 348.5,
+        "top": 812.75,
+        "width": 306.5,
+        "x": 42,
+        "y": 812.75
+      },
+      {
+        "bottom": 1042.75,
+        "height": 230,
+        "left": 370.5,
+        "right": 677,
+        "top": 812.75,
+        "width": 306.5,
+        "x": 370.5,
+        "y": 812.75
+      },
+      {
+        "bottom": 1042.75,
+        "height": 230,
+        "left": 699,
+        "right": 1005.5,
+        "top": 812.75,
+        "width": 306.5,
+        "x": 699,
+        "y": 812.75
+      },
+      {
+        "bottom": 1042.75,
+        "height": 230,
+        "left": 1027.5,
+        "right": 1334,
+        "top": 812.75,
+        "width": 306.5,
+        "x": 1027.5,
+        "y": 812.75
+      },
+      {
+        "bottom": 1042.75,
+        "height": 230,
+        "left": 1356,
+        "right": 1662.5,
+        "top": 812.75,
+        "width": 306.5,
+        "x": 1356,
+        "y": 812.75
+      },
+      {
+        "bottom": 1042.75,
+        "height": 230,
+        "left": 1684.5,
+        "right": 1991,
+        "top": 812.75,
+        "width": 306.5,
+        "x": 1684.5,
+        "y": 812.75
+      }
+    ],
+    "scene": "ready",
+    "scrollY": 0,
+    "summary": {
+      "bottom": 796.75,
+      "height": 331.15625,
+      "left": 42,
+      "right": 1991,
+      "top": 465.59375,
+      "width": 1949,
+      "x": 42,
+      "y": 465.59375
+    },
+    "width": 2048
+  },
+  "initialResponsive": [
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 14,
+      "tab": "library",
+      "violations": [
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 40.3125,
+            "right": 326.78125,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 40.3125,
+            "y": 335.234375
+          },
+          "scroll": 370
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 963.046875,
+            "right": 1249.515625,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 963.046875,
+            "y": 335.234375
+          },
+          "scroll": 427
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1270.625,
+            "right": 1557.09375,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1270.625,
+            "y": 335.234375
+          },
+          "scroll": 569
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1578.203125,
+            "right": 1864.671875,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1578.203125,
+            "y": 335.234375
+          },
+          "scroll": 327
+        }
+      ],
+      "width": 1920
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 40.3125,
+            "right": 326.78125,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 40.3125,
+            "y": 335.234375
+          },
+          "scroll": 370
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 963.046875,
+            "right": 1249.515625,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 963.046875,
+            "y": 335.234375
+          },
+          "scroll": 427
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1270.625,
+            "right": 1557.09375,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1270.625,
+            "y": 335.234375
+          },
+          "scroll": 569
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1578.203125,
+            "right": 1864.671875,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1578.203125,
+            "y": 335.234375
+          },
+          "scroll": 327
+        }
+      ],
+      "width": 1920
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 14,
+      "tab": "sessions",
+      "violations": [
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 40.3125,
+            "right": 326.78125,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 40.3125,
+            "y": 335.234375
+          },
+          "scroll": 370
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 963.046875,
+            "right": 1249.515625,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 963.046875,
+            "y": 335.234375
+          },
+          "scroll": 427
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1270.625,
+            "right": 1557.09375,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1270.625,
+            "y": 335.234375
+          },
+          "scroll": 569
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1578.203125,
+            "right": 1864.671875,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1578.203125,
+            "y": 335.234375
+          },
+          "scroll": 327
+        }
+      ],
+      "width": 1920
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 14,
+      "tab": "sessions",
+      "violations": [
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 21.234375,
+            "height": 230,
+            "left": 40.3125,
+            "right": 326.78125,
+            "top": -208.765625,
+            "width": 286.46875,
+            "x": 40.3125,
+            "y": -208.765625
+          },
+          "scroll": 370
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 21.234375,
+            "height": 230,
+            "left": 963.046875,
+            "right": 1249.515625,
+            "top": -208.765625,
+            "width": 286.46875,
+            "x": 963.046875,
+            "y": -208.765625
+          },
+          "scroll": 427
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 21.234375,
+            "height": 230,
+            "left": 1270.625,
+            "right": 1557.09375,
+            "top": -208.765625,
+            "width": 286.46875,
+            "x": 1270.625,
+            "y": -208.765625
+          },
+          "scroll": 569
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 21.234375,
+            "height": 230,
+            "left": 1578.203125,
+            "right": 1864.671875,
+            "top": -208.765625,
+            "width": 286.46875,
+            "x": 1578.203125,
+            "y": -208.765625
+          },
+          "scroll": 327
+        }
+      ],
+      "width": 1920
+    },
+    {
+      "client": 1905,
+      "controlOverflow": [],
+      "doc": 1905,
+      "regions": 14,
+      "tab": "appearance",
+      "violations": [
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 40.3125,
+            "right": 326.78125,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 40.3125,
+            "y": 335.234375
+          },
+          "scroll": 370
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 963.046875,
+            "right": 1249.515625,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 963.046875,
+            "y": 335.234375
+          },
+          "scroll": 427
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1270.625,
+            "right": 1557.09375,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1270.625,
+            "y": 335.234375
+          },
+          "scroll": 569
+        },
+        {
+          "client": 284,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.234375,
+            "height": 230,
+            "left": 1578.203125,
+            "right": 1864.671875,
+            "top": 335.234375,
+            "width": 286.46875,
+            "x": 1578.203125,
+            "y": 335.234375
+          },
+          "scroll": 327
+        }
+      ],
+      "width": 1920
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 14,
+      "tab": "library",
+      "violations": [
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.140625,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 335.140625,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 335.140625
+          },
+          "scroll": 575
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 810.96875,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 580.96875,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 580.96875
+          },
+          "scroll": 663
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 810.96875,
+            "height": 230,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": 580.96875,
+            "width": 444.296875,
+            "x": 490.34375,
+            "y": 580.96875
+          },
+          "scroll": 885
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 810.96875,
+            "height": 230,
+            "left": 950.46875,
+            "right": 1394.75,
+            "top": 580.96875,
+            "width": 444.28125,
+            "x": 950.46875,
+            "y": 580.96875
+          },
+          "scroll": 509
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.140625,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 335.140625,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 335.140625
+          },
+          "scroll": 575
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 810.96875,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 580.96875,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 580.96875
+          },
+          "scroll": 663
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 810.96875,
+            "height": 230,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": 580.96875,
+            "width": 444.296875,
+            "x": 490.34375,
+            "y": 580.96875
+          },
+          "scroll": 885
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 810.96875,
+            "height": 230,
+            "left": 950.46875,
+            "right": 1394.75,
+            "top": 580.96875,
+            "width": 444.28125,
+            "x": 950.46875,
+            "y": 580.96875
+          },
+          "scroll": 509
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -830.859375,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": -1060.859375,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": -1060.859375
+          },
+          "scroll": 575
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -585.03125,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": -815.03125,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": -815.03125
+          },
+          "scroll": 663
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -585.03125,
+            "height": 230,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": -815.03125,
+            "width": 444.296875,
+            "x": 490.34375,
+            "y": -815.03125
+          },
+          "scroll": 885
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -585.03125,
+            "height": 230,
+            "left": 950.46875,
+            "right": 1394.75,
+            "top": -815.03125,
+            "width": 444.28125,
+            "x": 950.46875,
+            "y": -815.03125
+          },
+          "scroll": 509
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 14,
+      "tab": "suggestions",
+      "violations": [
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 319.140625,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 89.140625,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 89.140625
+          },
+          "scroll": 575
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.96875,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 334.96875,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 334.96875
+          },
+          "scroll": 663
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.96875,
+            "height": 230,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": 334.96875,
+            "width": 444.296875,
+            "x": 490.34375,
+            "y": 334.96875
+          },
+          "scroll": 885
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.96875,
+            "height": 230,
+            "left": 950.46875,
+            "right": 1394.75,
+            "top": 334.96875,
+            "width": 444.28125,
+            "x": 950.46875,
+            "y": 334.96875
+          },
+          "scroll": 509
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "client": 1425,
+      "controlOverflow": [],
+      "doc": 1425,
+      "regions": 14,
+      "tab": "appearance",
+      "violations": [
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 319.140625,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 89.140625,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 89.140625
+          },
+          "scroll": 575
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.96875,
+            "height": 230,
+            "left": 30.234375,
+            "right": 474.515625,
+            "top": 334.96875,
+            "width": 444.28125,
+            "x": 30.234375,
+            "y": 334.96875
+          },
+          "scroll": 663
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.96875,
+            "height": 230,
+            "left": 490.34375,
+            "right": 934.640625,
+            "top": 334.96875,
+            "width": 444.296875,
+            "x": 490.34375,
+            "y": 334.96875
+          },
+          "scroll": 885
+        },
+        {
+          "client": 442,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.96875,
+            "height": 230,
+            "left": 950.46875,
+            "right": 1394.75,
+            "top": 334.96875,
+            "width": 444.28125,
+            "x": 950.46875,
+            "y": 334.96875
+          },
+          "scroll": 509
+        }
+      ],
+      "width": 1440
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 14,
+      "tab": "library",
+      "violations": [
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 335.359375
+          },
+          "scroll": 406
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 807.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 577.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 577.359375
+          },
+          "scroll": 468
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 807.359375,
+            "height": 230,
+            "left": 347.5,
+            "right": 661.5,
+            "top": 577.359375,
+            "width": 314,
+            "x": 347.5,
+            "y": 577.359375
+          },
+          "scroll": 624
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 807.359375,
+            "height": 230,
+            "left": 673.5,
+            "right": 987.5,
+            "top": 577.359375,
+            "width": 314,
+            "x": 673.5,
+            "y": 577.359375
+          },
+          "scroll": 359
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 335.359375
+          },
+          "scroll": 406
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 807.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 577.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 577.359375
+          },
+          "scroll": 468
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 807.359375,
+            "height": 230,
+            "left": 347.5,
+            "right": 661.5,
+            "top": 577.359375,
+            "width": 314,
+            "x": 347.5,
+            "y": 577.359375
+          },
+          "scroll": 624
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 807.359375,
+            "height": 230,
+            "left": 673.5,
+            "right": 987.5,
+            "top": 577.359375,
+            "width": 314,
+            "x": 673.5,
+            "y": 577.359375
+          },
+          "scroll": 359
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -862.640625,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": -1092.640625,
+            "width": 314,
+            "x": 21.5,
+            "y": -1092.640625
+          },
+          "scroll": 406
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -620.640625,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": -850.640625,
+            "width": 314,
+            "x": 21.5,
+            "y": -850.640625
+          },
+          "scroll": 468
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -620.640625,
+            "height": 230,
+            "left": 347.5,
+            "right": 661.5,
+            "top": -850.640625,
+            "width": 314,
+            "x": 347.5,
+            "y": -850.640625
+          },
+          "scroll": 624
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -620.640625,
+            "height": 230,
+            "left": 673.5,
+            "right": 987.5,
+            "top": -850.640625,
+            "width": 314,
+            "x": 673.5,
+            "y": -850.640625
+          },
+          "scroll": 359
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 14,
+      "tab": "suggestions",
+      "violations": [
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 323.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 93.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 93.359375
+          },
+          "scroll": 406
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 335.359375
+          },
+          "scroll": 468
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 347.5,
+            "right": 661.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 347.5,
+            "y": 335.359375
+          },
+          "scroll": 624
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 673.5,
+            "right": 987.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 673.5,
+            "y": 335.359375
+          },
+          "scroll": 359
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "client": 1009,
+      "controlOverflow": [],
+      "doc": 1009,
+      "regions": 14,
+      "tab": "appearance",
+      "violations": [
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 323.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 93.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 93.359375
+          },
+          "scroll": 406
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 21.5,
+            "right": 335.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 21.5,
+            "y": 335.359375
+          },
+          "scroll": 468
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 347.5,
+            "right": 661.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 347.5,
+            "y": 335.359375
+          },
+          "scroll": 624
+        },
+        {
+          "client": 312,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 565.359375,
+            "height": 230,
+            "left": 673.5,
+            "right": 987.5,
+            "top": 335.359375,
+            "width": 314,
+            "x": 673.5,
+            "y": 335.359375
+          },
+          "scroll": 359
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 14,
+      "tab": "appearance",
+      "violations": [
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -530.328125,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": -760.328125,
+            "width": 350.5,
+            "x": 16,
+            "y": -760.328125
+          },
+          "scroll": 453
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -288.328125,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": -518.328125,
+            "width": 350.5,
+            "x": 378.5,
+            "y": -518.328125
+          },
+          "scroll": 523
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -46.328125,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": -276.328125,
+            "width": 350.5,
+            "x": 16,
+            "y": -276.328125
+          },
+          "scroll": 697
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -46.328125,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": -276.328125,
+            "width": 350.5,
+            "x": 378.5,
+            "y": -276.328125
+          },
+          "scroll": 401
+        }
+      ],
+      "width": 760
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": 334.671875,
+            "width": 350.5,
+            "x": 16,
+            "y": 334.671875
+          },
+          "scroll": 453
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 806.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 576.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 576.671875
+          },
+          "scroll": 523
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1048.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": 818.671875,
+            "width": 350.5,
+            "x": 16,
+            "y": 818.671875
+          },
+          "scroll": 697
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1048.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 818.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 818.671875
+          },
+          "scroll": 401
+        }
+      ],
+      "width": 760
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 14,
+      "tab": "sessions",
+      "violations": [
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 322.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": 92.671875,
+            "width": 350.5,
+            "x": 16,
+            "y": 92.671875
+          },
+          "scroll": 453
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 334.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 334.671875
+          },
+          "scroll": 523
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 806.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": 576.671875,
+            "width": 350.5,
+            "x": 16,
+            "y": 576.671875
+          },
+          "scroll": 697
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 806.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 576.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 576.671875
+          },
+          "scroll": 401
+        }
+      ],
+      "width": 760
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 14,
+      "tab": "suggestions",
+      "violations": [
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 80.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": -149.328125,
+            "width": 350.5,
+            "x": 16,
+            "y": -149.328125
+          },
+          "scroll": 453
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 322.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 92.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 92.671875
+          },
+          "scroll": 523
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": 334.671875,
+            "width": 350.5,
+            "x": 16,
+            "y": 334.671875
+          },
+          "scroll": 697
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 334.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 334.671875
+          },
+          "scroll": 401
+        }
+      ],
+      "width": 760
+    },
+    {
+      "client": 745,
+      "controlOverflow": [],
+      "doc": 745,
+      "regions": 14,
+      "tab": "appearance",
+      "violations": [
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 80.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": -149.328125,
+            "width": 350.5,
+            "x": 16,
+            "y": -149.328125
+          },
+          "scroll": 453
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 322.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 92.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 92.671875
+          },
+          "scroll": 523
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.671875,
+            "height": 230,
+            "left": 16,
+            "right": 366.5,
+            "top": 334.671875,
+            "width": 350.5,
+            "x": 16,
+            "y": 334.671875
+          },
+          "scroll": 697
+        },
+        {
+          "client": 349,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.671875,
+            "height": 230,
+            "left": 378.5,
+            "right": 729,
+            "top": 334.671875,
+            "width": 350.5,
+            "x": 378.5,
+            "y": 334.671875
+          },
+          "scroll": 401
+        }
+      ],
+      "width": 760
+    },
+    {
+      "client": 375,
+      "controlOverflow": [
+        {
+          "box": {
+            "bottom": 1751.28125,
+            "height": 44,
+            "left": 237.46875,
+            "right": 380,
+            "top": 1707.28125,
+            "width": 142.53125,
+            "x": 237.46875,
+            "y": 1707.28125
+          },
+          "label": "Mission Progress"
+        },
+        {
+          "box": {
+            "bottom": 1751.28125,
+            "height": 44,
+            "left": 385,
+            "right": 507.34375,
+            "top": 1707.28125,
+            "width": 122.34375,
+            "x": 385,
+            "y": 1707.28125
+          },
+          "label": "Weekly Tasks"
+        },
+        {
+          "box": {
+            "bottom": 1751.28125,
+            "height": 44,
+            "left": 512.34375,
+            "right": 629.9375,
+            "top": 1707.28125,
+            "width": 117.59375,
+            "x": 512.34375,
+            "y": 1707.28125
+          },
+          "label": "Suggestions"
+        },
+        {
+          "box": {
+            "bottom": 1751.28125,
+            "height": 44,
+            "left": 634.9375,
+            "right": 732.453125,
+            "top": 1707.28125,
+            "width": 97.515625,
+            "x": 634.9375,
+            "y": 1707.28125
+          },
+          "label": "Sessions"
+        },
+        {
+          "box": {
+            "bottom": 1751.28125,
+            "height": 44,
+            "left": 737.453125,
+            "right": 829.171875,
+            "top": 1707.28125,
+            "width": 91.71875,
+            "x": 737.453125,
+            "y": 1707.28125
+          },
+          "label": "Journal"
+        },
+        {
+          "box": {
+            "bottom": 1751.28125,
+            "height": 44,
+            "left": 834.171875,
+            "right": 950.328125,
+            "top": 1707.28125,
+            "width": 116.15625,
+            "x": 834.171875,
+            "y": 1707.28125
+          },
+          "label": "Appearance"
+        }
+      ],
+      "doc": 375,
+      "regions": 14,
+      "tab": "library",
+      "violations": [
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 80.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": -149.46875,
+            "width": 343,
+            "x": 16,
+            "y": -149.46875
+          },
+          "scroll": 443
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 806.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 576.53125,
+            "width": 343,
+            "x": 16,
+            "y": 576.53125
+          },
+          "scroll": 512
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1048.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 818.53125,
+            "width": 343,
+            "x": 16,
+            "y": 818.53125
+          },
+          "scroll": 682
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1290.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 1060.53125,
+            "width": 343,
+            "x": 16,
+            "y": 1060.53125
+          },
+          "scroll": 392
+        }
+      ],
+      "width": 390
+    },
+    {
+      "client": 375,
+      "controlOverflow": [
+        {
+          "box": {
+            "bottom": 1993.28125,
+            "height": 44,
+            "left": 237.46875,
+            "right": 380,
+            "top": 1949.28125,
+            "width": 142.53125,
+            "x": 237.46875,
+            "y": 1949.28125
+          },
+          "label": "Mission Progress"
+        },
+        {
+          "box": {
+            "bottom": 1993.28125,
+            "height": 44,
+            "left": 385,
+            "right": 507.34375,
+            "top": 1949.28125,
+            "width": 122.34375,
+            "x": 385,
+            "y": 1949.28125
+          },
+          "label": "Weekly Tasks"
+        },
+        {
+          "box": {
+            "bottom": 1993.28125,
+            "height": 44,
+            "left": 512.34375,
+            "right": 629.9375,
+            "top": 1949.28125,
+            "width": 117.59375,
+            "x": 512.34375,
+            "y": 1949.28125
+          },
+          "label": "Suggestions"
+        },
+        {
+          "box": {
+            "bottom": 1993.28125,
+            "height": 44,
+            "left": 634.9375,
+            "right": 732.453125,
+            "top": 1949.28125,
+            "width": 97.515625,
+            "x": 634.9375,
+            "y": 1949.28125
+          },
+          "label": "Sessions"
+        },
+        {
+          "box": {
+            "bottom": 1993.28125,
+            "height": 44,
+            "left": 737.453125,
+            "right": 829.171875,
+            "top": 1949.28125,
+            "width": 91.71875,
+            "x": 737.453125,
+            "y": 1949.28125
+          },
+          "label": "Journal"
+        },
+        {
+          "box": {
+            "bottom": 1993.28125,
+            "height": 44,
+            "left": 834.171875,
+            "right": 950.328125,
+            "top": 1949.28125,
+            "width": 116.15625,
+            "x": 834.171875,
+            "y": 1949.28125
+          },
+          "label": "Appearance"
+        }
+      ],
+      "doc": 375,
+      "regions": 14,
+      "tab": "missions",
+      "violations": [
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 322.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 92.53125,
+            "width": 343,
+            "x": 16,
+            "y": 92.53125
+          },
+          "scroll": 443
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1048.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 818.53125,
+            "width": 343,
+            "x": 16,
+            "y": 818.53125
+          },
+          "scroll": 512
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1290.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 1060.53125,
+            "width": 343,
+            "x": 16,
+            "y": 1060.53125
+          },
+          "scroll": 682
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1532.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 1302.53125,
+            "width": 343,
+            "x": 16,
+            "y": 1302.53125
+          },
+          "scroll": 392
+        }
+      ],
+      "width": 390
+    },
+    {
+      "client": 375,
+      "controlOverflow": [
+        {
+          "box": {
+            "bottom": 1509.28125,
+            "height": 44,
+            "left": 237.46875,
+            "right": 380,
+            "top": 1465.28125,
+            "width": 142.53125,
+            "x": 237.46875,
+            "y": 1465.28125
+          },
+          "label": "Mission Progress"
+        },
+        {
+          "box": {
+            "bottom": 1509.28125,
+            "height": 44,
+            "left": 385,
+            "right": 507.34375,
+            "top": 1465.28125,
+            "width": 122.34375,
+            "x": 385,
+            "y": 1465.28125
+          },
+          "label": "Weekly Tasks"
+        },
+        {
+          "box": {
+            "bottom": 1509.28125,
+            "height": 44,
+            "left": 512.34375,
+            "right": 629.9375,
+            "top": 1465.28125,
+            "width": 117.59375,
+            "x": 512.34375,
+            "y": 1465.28125
+          },
+          "label": "Suggestions"
+        },
+        {
+          "box": {
+            "bottom": 1509.28125,
+            "height": 44,
+            "left": 634.9375,
+            "right": 732.453125,
+            "top": 1465.28125,
+            "width": 97.515625,
+            "x": 634.9375,
+            "y": 1465.28125
+          },
+          "label": "Sessions"
+        },
+        {
+          "box": {
+            "bottom": 1509.28125,
+            "height": 44,
+            "left": 737.453125,
+            "right": 829.171875,
+            "top": 1465.28125,
+            "width": 91.71875,
+            "x": 737.453125,
+            "y": 1465.28125
+          },
+          "label": "Journal"
+        },
+        {
+          "box": {
+            "bottom": 1509.28125,
+            "height": 44,
+            "left": 834.171875,
+            "right": 950.328125,
+            "top": 1465.28125,
+            "width": 116.15625,
+            "x": 834.171875,
+            "y": 1465.28125
+          },
+          "label": "Appearance"
+        }
+      ],
+      "doc": 375,
+      "regions": 14,
+      "tab": "sessions",
+      "violations": [
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -161.46875,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": -391.46875,
+            "width": 343,
+            "x": 16,
+            "y": -391.46875
+          },
+          "scroll": 443
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 334.53125,
+            "width": 343,
+            "x": 16,
+            "y": 334.53125
+          },
+          "scroll": 512
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 806.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 576.53125,
+            "width": 343,
+            "x": 16,
+            "y": 576.53125
+          },
+          "scroll": 682
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 1048.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 818.53125,
+            "width": 343,
+            "x": 16,
+            "y": 818.53125
+          },
+          "scroll": 392
+        }
+      ],
+      "width": 390
+    },
+    {
+      "client": 375,
+      "controlOverflow": [
+        {
+          "box": {
+            "bottom": 1267.28125,
+            "height": 44,
+            "left": 237.46875,
+            "right": 380,
+            "top": 1223.28125,
+            "width": 142.53125,
+            "x": 237.46875,
+            "y": 1223.28125
+          },
+          "label": "Mission Progress"
+        },
+        {
+          "box": {
+            "bottom": 1267.28125,
+            "height": 44,
+            "left": 385,
+            "right": 507.34375,
+            "top": 1223.28125,
+            "width": 122.34375,
+            "x": 385,
+            "y": 1223.28125
+          },
+          "label": "Weekly Tasks"
+        },
+        {
+          "box": {
+            "bottom": 1267.28125,
+            "height": 44,
+            "left": 512.34375,
+            "right": 629.9375,
+            "top": 1223.28125,
+            "width": 117.59375,
+            "x": 512.34375,
+            "y": 1223.28125
+          },
+          "label": "Suggestions"
+        },
+        {
+          "box": {
+            "bottom": 1267.28125,
+            "height": 44,
+            "left": 634.9375,
+            "right": 732.453125,
+            "top": 1223.28125,
+            "width": 97.515625,
+            "x": 634.9375,
+            "y": 1223.28125
+          },
+          "label": "Sessions"
+        },
+        {
+          "box": {
+            "bottom": 1267.28125,
+            "height": 44,
+            "left": 737.453125,
+            "right": 829.171875,
+            "top": 1223.28125,
+            "width": 91.71875,
+            "x": 737.453125,
+            "y": 1223.28125
+          },
+          "label": "Journal"
+        },
+        {
+          "box": {
+            "bottom": 1267.28125,
+            "height": 44,
+            "left": 834.171875,
+            "right": 950.328125,
+            "top": 1223.28125,
+            "width": 116.15625,
+            "x": 834.171875,
+            "y": 1223.28125
+          },
+          "label": "Appearance"
+        }
+      ],
+      "doc": 375,
+      "regions": 14,
+      "tab": "suggestions",
+      "violations": [
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -403.46875,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": -633.46875,
+            "width": 343,
+            "x": 16,
+            "y": -633.46875
+          },
+          "scroll": 443
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 322.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 92.53125,
+            "width": 343,
+            "x": 16,
+            "y": 92.53125
+          },
+          "scroll": 512
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 334.53125,
+            "width": 343,
+            "x": 16,
+            "y": 334.53125
+          },
+          "scroll": 682
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 806.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 576.53125,
+            "width": 343,
+            "x": 16,
+            "y": 576.53125
+          },
+          "scroll": 392
+        }
+      ],
+      "width": 390
+    },
+    {
+      "client": 375,
+      "controlOverflow": [
+        {
+          "box": {
+            "bottom": 1025.28125,
+            "height": 44,
+            "left": 237.46875,
+            "right": 380,
+            "top": 981.28125,
+            "width": 142.53125,
+            "x": 237.46875,
+            "y": 981.28125
+          },
+          "label": "Mission Progress"
+        },
+        {
+          "box": {
+            "bottom": 1025.28125,
+            "height": 44,
+            "left": 385,
+            "right": 507.34375,
+            "top": 981.28125,
+            "width": 122.34375,
+            "x": 385,
+            "y": 981.28125
+          },
+          "label": "Weekly Tasks"
+        },
+        {
+          "box": {
+            "bottom": 1025.28125,
+            "height": 44,
+            "left": 512.34375,
+            "right": 629.9375,
+            "top": 981.28125,
+            "width": 117.59375,
+            "x": 512.34375,
+            "y": 981.28125
+          },
+          "label": "Suggestions"
+        },
+        {
+          "box": {
+            "bottom": 1025.28125,
+            "height": 44,
+            "left": 634.9375,
+            "right": 732.453125,
+            "top": 981.28125,
+            "width": 97.515625,
+            "x": 634.9375,
+            "y": 981.28125
+          },
+          "label": "Sessions"
+        },
+        {
+          "box": {
+            "bottom": 1025.28125,
+            "height": 44,
+            "left": 737.453125,
+            "right": 829.171875,
+            "top": 981.28125,
+            "width": 91.71875,
+            "x": 737.453125,
+            "y": 981.28125
+          },
+          "label": "Journal"
+        },
+        {
+          "box": {
+            "bottom": 1025.28125,
+            "height": 44,
+            "left": 834.171875,
+            "right": 950.328125,
+            "top": 981.28125,
+            "width": 116.15625,
+            "x": 834.171875,
+            "y": 981.28125
+          },
+          "label": "Appearance"
+        }
+      ],
+      "doc": 375,
+      "regions": 14,
+      "tab": "appearance",
+      "violations": [
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": -645.46875,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": -875.46875,
+            "width": 343,
+            "x": 16,
+            "y": -875.46875
+          },
+          "scroll": 443
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 80.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": -149.46875,
+            "width": 343,
+            "x": 16,
+            "y": -149.46875
+          },
+          "scroll": 512
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 322.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 92.53125,
+            "width": 343,
+            "x": 16,
+            "y": 92.53125
+          },
+          "scroll": 682
+        },
+        {
+          "client": 341,
+          "node": "osr-portal osr-games-portal",
+          "rect": {
+            "bottom": 564.53125,
+            "height": 230,
+            "left": 16,
+            "right": 359,
+            "top": 334.53125,
+            "width": 343,
+            "x": 16,
+            "y": 334.53125
+          },
+          "scroll": 392
+        }
+      ],
+      "width": 390
+    }
+  ],
+  "runtime": [],
+  "environment": {
+    "browser": "Codex in-app browser",
+    "origin": "http://localhost:18978",
+    "nativeEdgeZoom": "not tested",
+    "date": "2026-10-01"
+  },
+  "lightOwner": {
+    "emptyColor": "rgb(97, 112, 138)",
+    "note": "Owner support text follows the global theme muted color."
+  }
+}
