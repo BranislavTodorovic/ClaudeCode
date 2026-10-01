@@ -16,8 +16,8 @@
   window.OneSpaceVisual={cover:cover};
   document.addEventListener('error',function(event){
     var img=event.target;
-    // Explore portals own their readable gradient fallback; do not replace their image first.
-    if (img instanceof HTMLImageElement && img.dataset.fallbackOwner === 'explore-portal') return;
+    // Explore controls own their readable gradient fallback; do not replace their image first.
+    if (img instanceof HTMLImageElement && ['explore-portal','explore-resource'].includes(img.dataset.fallbackOwner)) return;
     if (!(img instanceof HTMLImageElement) || img.matches('.gv-logo-img,.mv-poster-img') || img.closest('#gvSceneArt')) return;
     console.warn('[OneSpace asset]',img.getAttribute('src'));
     if(img.dataset.fallbackSrc && !img.dataset.fallbackTried){ img.dataset.fallbackTried='true'; img.src=img.dataset.fallbackSrc; return; }

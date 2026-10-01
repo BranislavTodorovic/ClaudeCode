@@ -78,6 +78,16 @@ body[data-page="explore"] #domainOverlay .provider-credit a { color: var(--accen
 #exploreView.redesign-explore .page-body :is(.discovery-heading,.page-section-head,.domain-actions) { flex-wrap: wrap; }
 #exploreView.redesign-explore .page-body :is(input,select,textarea,button) { box-sizing: border-box; min-width: 0; max-width: 100%; }
 #exploreView.redesign-explore .page-body :is(h2,h3,h4,a,label,.provider-status,.trip-empty) { overflow-wrap: anywhere; }
+/* Local decorative travel artwork stays inside its one semantic card control.
+   A deterministic coast-colored gradient remains when the asset fails. */
+#exploreView .explore-inspiration { min-width: 0; width: 100%; min-height: 280px; background: radial-gradient(ellipse at 75% 10%,#bd8051,#34535a 55%,#10232e); color: #fff; transform: none; }
+#exploreView .explore-inspiration-image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 64% 46%; pointer-events: none; }
+#exploreView .explore-inspiration-image[hidden] { display: none; }
+#exploreView .explore-inspiration::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg,#07111bf5 0%,#07111bea 28%,#07111b55 62%,transparent); pointer-events: none; }
+#exploreView .explore-inspiration strong { color: #fff; font-size: clamp(1.3rem,2vw,1.6rem); }
+#exploreView .explore-inspiration > span:last-child { color: #e0e4ea; overflow-wrap: anywhere; }
+#exploreView .explore-inspiration:hover { transform: none; border-color: #b5dfff; }
+#exploreView .explore-inspiration:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 @media (max-width:1450px) { .osr-explore-summary { grid-template-columns: 1fr 1fr; } .osr-explore-summary > :first-child { grid-column: 1 / -1; } .osr-explore-portals { grid-template-columns: repeat(3,minmax(0,1fr)); } }
 @media (max-width:760px) { .osr-explore-hero { padding-inline: 0; } .osr-explore-portals { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width:520px) { .osr-explore-summary,.osr-explore-portals,.osr-explore-featured { grid-template-columns: 1fr; } .osr-explore-hero .osr-search { flex-wrap: wrap; padding: 12px; } .osr-explore-hero .osr-search .osr-button { flex: 1 0 100%; } .osr-explore-destination .discovery-photo { height: 190px; } }

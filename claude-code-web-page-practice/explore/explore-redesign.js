@@ -20,8 +20,17 @@
     { slug: 'bucket-list', label: 'Bucket List', subtitle: 'Your saved places and trip plans.', image: 'assets/scenes/explore/hero.png' },
     { slug: 'discover-more', label: 'Discover More', subtitle: 'Explore your travel resources.', image: 'assets/destinations/azores-card.webp' }
   ];
-  if (!root || !root.document || !root.OneSpaceRedesign || !root.OneSpace) return { portals: portals, buildModel: buildModel };
+  function wireInspirationImage(img) {
+    if (!img) return;
+    function fallback() { img.hidden = true; img.parentElement.dataset.assetState = 'fallback'; }
+    function ready() { img.hidden = false; img.parentElement.dataset.assetState = 'ready'; }
+    img.addEventListener('error',fallback);
+    img.addEventListener('load',ready);
+    if (img.complete) { if (img.naturalWidth) ready(); else fallback(); }
+  }
+  if (!root || !root.document || !root.OneSpaceRedesign || !root.OneSpace) return { portals: portals, buildModel: buildModel, wireInspirationImage: wireInspirationImage };
   var doc = root.document, OS = root.OneSpace, foundation = root.OneSpaceRedesign;
+  wireInspirationImage(doc.querySelector('.explore-inspiration-image'));
   var view = doc.getElementById('exploreView'), stage = doc.getElementById('redesignExplore');
   if (!view || !stage) return {};
   view.classList.add('redesign-explore');
@@ -113,5 +122,5 @@
   doc.addEventListener('onespace:data-changed',function (event) { if (event.detail.key === 'orbit-trip-board') render(); });
   doc.addEventListener('onespace:page-changed',function (event) { if (event.detail.page === 'explore') render(); });
   render();
-  return { portals: portals, buildModel: buildModel };
+  return { portals: portals, buildModel: buildModel, wireInspirationImage: wireInspirationImage };
 });

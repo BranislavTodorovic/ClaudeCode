@@ -1,0 +1,341 @@
+{
+  "layout": [
+    {
+      "card": {
+        "height": 280,
+        "left": 42,
+        "right": 678.328125,
+        "width": 636.328125
+      },
+      "client": 2033,
+      "document": 2033,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 2048,
+      "violations": []
+    },
+    {
+      "card": {
+        "height": 280,
+        "left": 40.3125,
+        "right": 635.09375,
+        "width": 594.78125
+      },
+      "client": 1905,
+      "document": 1905,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 1920,
+      "violations": []
+    },
+    {
+      "card": {
+        "height": 280,
+        "left": 30.234375,
+        "right": 471.734375,
+        "width": 441.5
+      },
+      "client": 1425,
+      "document": 1425,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 1440,
+      "violations": []
+    },
+    {
+      "card": {
+        "height": 280,
+        "left": 21.5,
+        "right": 330.15625,
+        "width": 308.65625
+      },
+      "client": 1009,
+      "document": 1009,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 1024,
+      "violations": []
+    },
+    {
+      "card": {
+        "height": 280,
+        "left": 16,
+        "right": 729,
+        "width": 713
+      },
+      "client": 745,
+      "document": 745,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 760,
+      "violations": []
+    },
+    {
+      "card": {
+        "height": 280,
+        "left": 16,
+        "right": 359,
+        "width": 343
+      },
+      "client": 375,
+      "document": 375,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 390,
+      "violations": []
+    },
+    {
+      "card": {
+        "height": 280,
+        "left": 16,
+        "right": 289,
+        "width": 273
+      },
+      "client": 305,
+      "document": 305,
+      "image": {
+        "hidden": false,
+        "naturalHeight": 600,
+        "naturalWidth": 960,
+        "state": "ready"
+      },
+      "role": "BUTTON",
+      "styles": {
+        "caption": "rgb(224, 228, 234)",
+        "pointer": "none",
+        "text": "rgb(255, 255, 255)",
+        "transform": "none"
+      },
+      "tabindex": 0,
+      "viewport": 320,
+      "violations": []
+    }
+  ],
+  "outsideClicks": [
+    {
+      "point": {
+        "action": false,
+        "target": "DIV",
+        "x": 698.328125,
+        "y": 897.703125
+      },
+      "stable": true
+    },
+    {
+      "point": {
+        "action": false,
+        "target": "FOOTER",
+        "x": 142,
+        "y": 1092.703125
+      },
+      "stable": true
+    }
+  ],
+  "keyboard": [
+    {
+      "key": "Enter",
+      "dialog": "Add shortcut\nName\nURL\nDescription\nSpace\nWork\nPersonal\nExplore\nCategory\nDevelopment\nShopping & Home\nGaming\nDaily\nSmart Home\nTravel\nRelax & Play\n\nCancel\nSave shortcut",
+      "focus": "Travel inspiration — add a travel shortcut",
+      "space": "explore",
+      "client": 2033,
+      "dialogOpen": false,
+      "document": 2033
+    },
+    {
+      "key": "Space",
+      "dialog": "Add shortcut\nName\nURL\nDescription\nSpace\nWork\nPersonal\nExplore\nCategory\nDevelopment\nShopping & Home\nGaming\nDaily\nSmart Home\nTravel\nRelax & Play\n\nCancel\nSave shortcut",
+      "focus": "Travel inspiration — add a travel shortcut",
+      "space": "explore",
+      "client": 2033,
+      "dialogOpen": false,
+      "document": 2033
+    }
+  ],
+  "native": {
+    "reportedBeforeFix": "User inspected Edge 100% and native 200%; generally contained/stable/usable, but Travel inspiration artwork failed acceptance.",
+    "afterFix": "PENDING user affected-area check at native 100% and 200%"
+  },
+  "fallback": {
+    "card": {
+      "bottom": 1077.703125,
+      "height": 280,
+      "left": 42,
+      "right": 678.328125,
+      "top": 797.703125,
+      "width": 636.328125,
+      "x": 42,
+      "y": 797.703125
+    },
+    "client": 2033,
+    "copy": "Travel inspirationDiscover a travel resource",
+    "document": 2033,
+    "enabled": true,
+    "image": {
+      "hidden": true,
+      "naturalWidth": 0,
+      "src": "assets/scenes/explore/travel-inspiration.webp",
+      "state": "fallback"
+    },
+    "legacyFallback": false,
+    "viewport": 2048
+  },
+  "focus": {
+    "color": "rgb(122, 143, 255)",
+    "focusVisible": true,
+    "name": "Travel inspiration — discover a travel resource",
+    "outline": "3px"
+  },
+  "empty": {
+    "copy": "Travel inspiration\nNo travel resources yet. Add a travel shortcut.",
+    "enabled": true,
+    "label": "Travel inspiration — add a travel shortcut",
+    "shortcuts": "No matching shortcuts.",
+    "state": "empty"
+  },
+  "availableActivation": {
+    "card": {
+      "bottom": 1077.703125,
+      "height": 280,
+      "left": 42,
+      "right": 678.328125,
+      "top": 797.703125,
+      "width": 636.328125,
+      "x": 42,
+      "y": 797.703125
+    },
+    "document": 2033,
+    "focus": "Travel inspiration — discover a travel resource",
+    "scrollY": 1942,
+    "statuses": [
+      "",
+      "\n      Customize mode — drag custom shortcuts between categories or manage sections.\n      Add category Done\n    ",
+      "",
+      "",
+      "17 games · full local catalog · matches every active filter group",
+      "",
+      "0 items",
+      "0 projects",
+      "",
+      "0 / 0 complete",
+      "0 / 0 complete",
+      "0 / 0 complete",
+      "",
+      "Local collection · no accounts or API keys. Search to begin.",
+      "Movies & Series: configuration error. Games: configuration error. Local catalogs always remain available.",
+      "How about Google Maps?"
+    ],
+    "opened": []
+  },
+  "console": [],
+  "cleanup": {
+    "remainingRemoved": [
+      "Restore H&M",
+      "Restore Zara",
+      "Restore Max Mara"
+    ],
+    "originalMainTheme": "light"
+  },
+  "fallbackMobile": {
+    "card": {
+      "bottom": 770.359375,
+      "height": 280,
+      "left": 16,
+      "right": 359,
+      "top": 490.359375,
+      "width": 343,
+      "x": 16,
+      "y": 490.359375
+    },
+    "client": 375,
+    "document": 375,
+    "hidden": true,
+    "legacyFallback": false,
+    "state": "fallback",
+    "viewport": 390
+  },
+  "fallbackConsole": [],
+  "testResults": {
+    "focused": {
+      "pass": 72,
+      "fail": 0,
+      "skipped": 0
+    },
+    "full": {
+      "pass": 229,
+      "fail": 0,
+      "skipped": 0
+    }
+  }
+}

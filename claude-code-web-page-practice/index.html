@@ -540,7 +540,7 @@ body.force-full-motion { scroll-behavior:smooth; }
         </section>
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2>More To Explore</h2></div>
-          <div class="explore-category-grid"><button class="explore-category" type="button" data-action="explore-random"><strong>Travel inspiration</strong><span>Discover a travel resource</span></button></div>
+          <div class="explore-category-grid"><button class="explore-category explore-inspiration" type="button" data-action="explore-random"><img class="explore-inspiration-image" src="assets/scenes/explore/travel-inspiration.webp" width="960" height="600" alt="" loading="lazy" decoding="async" data-fallback-owner="explore-resource"><strong>Travel inspiration</strong><span data-explore-resource-copy>Discover a travel resource</span></button></div>
         </section>
       </div>
     </section>
@@ -2966,6 +2966,12 @@ body.force-full-motion { scroll-behavior:smooth; }
     var grid = document.getElementById("exploreShortcutsGrid");
     if (!grid) return;
     var q = (query || "").trim().toLowerCase();
+    var hasResources = linksForSpace("explore").some(function (link) { return link.category === "Travel"; });
+    document.querySelectorAll('[data-action="explore-random"]').forEach(function (btn) {
+      btn.dataset.resourceState = hasResources ? "available" : "empty";
+      btn.setAttribute("aria-label", hasResources ? "Travel inspiration — discover a travel resource" : "Travel inspiration — add a travel shortcut");
+      btn.querySelector('[data-explore-resource-copy]').textContent = hasResources ? "Discover a travel resource" : "No travel resources yet. Add a travel shortcut.";
+    });
     var items = linksForSpace("explore").filter(function (link) { return link.category === "Travel" && (!q || link.name.toLowerCase().indexOf(q) !== -1); });
     grid.innerHTML = items.length ? items.map(spaceCardHtml).join("") : '<div class="quick-empty"><span>No matching shortcuts.</span></div>';
     observeReveals(document);
@@ -2975,7 +2981,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   document.querySelectorAll('[data-action="explore-random"]').forEach(function (btn) {
     btn.addEventListener("click", function () {
       var choices = linksForSpace("explore").filter(function(link){return link.category === "Travel";});
-      if (!choices.length) { showToast('No travel shortcuts available. Add an Explore shortcut to discover a resource.'); return; }
+      if (!choices.length) { showToast('No travel shortcuts available. Add an Explore shortcut to discover a resource.'); openShortcutModal(null, "explore"); return; }
       var choice = choices[Math.floor(Math.random() * choices.length)];
       rememberRecent(choice.id); recordUsage(choice.id);
       window.open(choice.url, "_blank", "noopener,noreferrer");
