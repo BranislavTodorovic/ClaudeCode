@@ -242,10 +242,10 @@
   function renderLogo(game) {
     var fallbackAttrs = ' data-fallback-name="' + esc(game.name) + '" data-fallback-accent="' + esc(game.accent || "#7a8fff") + '"';
     if (game.logo && game.logo.kind === "upload" && game.logo.src) {
-      return '<img class="gv-logo-img" src="' + esc(game.logo.src) + '" alt="' + esc(game.name) + ' logo"' + fallbackAttrs + '>';
+      return '<img class="gv-logo-img" src="' + esc(game.logo.src) + '" alt="' + esc(game.name) + ' logo" loading="lazy" decoding="async"' + fallbackAttrs + '>';
     }
     if (game.logo && game.logo.kind === "asset" && game.logo.src) {
-      return '<img class="gv-logo-img" src="' + esc(game.logo.src) + '" alt="' + esc(game.name) + ' logo"' + fallbackAttrs + '>';
+      return '<img class="gv-logo-img" src="' + esc(game.logo.src) + '" alt="' + esc(game.name) + ' logo" loading="lazy" decoding="async"' + fallbackAttrs + '>';
     }
     var accent = game.accent || "#7a8fff";
     return '<div class="gv-logo-cover" style="background:linear-gradient(135deg,' + esc(accent) + ',color-mix(in srgb,' + esc(accent) + ' 40%,#0b0b14))">' + esc(game.name) + "</div>";
@@ -1249,6 +1249,9 @@
     selectSpotlight(games[(index + direction + games.length) % games.length].id, reason);
   }
   function renderSpotlight(reason) {
+    // The redesigned landing and separated owner hide this compatibility carousel.
+    // Keep its data and APIs, but avoid fetching artwork for an invisible surface.
+    if (document.getElementById('gamesView').classList.contains('redesign-games')) return;
     var hero = document.getElementById("gvSpotlight");
     var game = spotlightGame();
     if(!hero)return;hero.hidden=activeTab!=='overview'||!game;document.getElementById('gvSpotlightRail').hidden=activeTab!=='overview'||!game;if(!game){document.getElementById('gvSpotlightRail').innerHTML='';return;}

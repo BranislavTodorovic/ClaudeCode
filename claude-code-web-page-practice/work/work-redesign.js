@@ -62,7 +62,7 @@
     if (targetId) {
       var target = doc.getElementById(targetId);
       if (target) {
-        target.scrollIntoView({ block: 'start' });
+        if (targetId !== 'workTracker') target.scrollIntoView({ block: 'start' });
         var focusTarget = target.matches('input, textarea, select, button, a') ? target : target.querySelector('input, textarea, select, button, a') || target;
         if (focusTarget === target && !target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
         focusTarget.focus({ preventScroll: true });

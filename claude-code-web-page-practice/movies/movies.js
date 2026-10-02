@@ -1403,10 +1403,15 @@
     if(!saveLibrary()){renderAll();return false;}renderAll();showToast(x.name+' saved.');return true;
   }};
   function init() {
+    function activate() {
+      if (document.documentElement.getAttribute('data-onespace-boot') === 'pending') return;
+      if (document.body.getAttribute('data-page') === 'movies') { mount(); playEntryAnimation(); }
+    }
     document.addEventListener("onespace:page-changed", function (e) {
-      if (e.detail && e.detail.page === "movies") { mount(); playEntryAnimation(); }
+      if (e.detail && e.detail.page === "movies") activate();
     });
-    if (document.body.getAttribute("data-page") === "movies") { mount(); playEntryAnimation(); }
+    document.addEventListener('onespace:ready', activate);
+    activate();
   }
 
   if (document.readyState === "loading") {

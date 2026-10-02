@@ -119,9 +119,7 @@
   ];
   var portalGrid = doc.getElementById('osrPortalGrid');
   portals.forEach(function (portal) {
-    var world = portal.world === 'media-games' ? 'movies' : portal.world;
-    var sceneAsset = foundation.worlds.find(function (entry) { return entry.id === world; });
-    var image = sceneAsset.preview || sceneAsset.scene;
+    var image = 'assets/scenes/home/portals/' + portal.world + '-review.jpg';
     var tile = doc.createElement('div');
     tile.className = 'osr-portal osr-home-portal';
     tile.innerHTML = '<img src="' + image + '" alt="" loading="lazy" decoding="async"><div class="osr-portal-copy"><strong>' + esc(portal.label) + '</strong><small>' + esc(portal.subtitle) + '</small></div>';
@@ -227,7 +225,12 @@
       case 'pulse': ownerSurface.show('Your local activity & Quick Access'); break;
     }
   });
-  doc.addEventListener('onespace:data-changed', render);
+  // Page/preferences writes do not change Home's model. Defer hidden summaries
+  // until Home is entered; that entry already reads current canonical data.
+  doc.addEventListener('onespace:data-changed', function (event) {
+    if (doc.body.dataset.page === 'home' && event.detail &&
+        ['orbit-tasks', 'orbit-work-projects', 'orbit-notes-list', 'orbit-countdowns'].indexOf(event.detail.key) !== -1) render();
+  });
   doc.addEventListener('onespace:page-changed', function (event) {
     if (event.detail.page === 'home') { foundation.setActiveWorld(shell, 'home'); render(); }
   });

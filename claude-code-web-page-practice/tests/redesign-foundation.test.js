@@ -13,7 +13,7 @@ test('eight reference-led worlds have unique routes and local scenes', () => {
     assert.deepEqual(foundation.parseRoute(hash), {
       utility: null, world: world.id, module: null, recordId: null, activeParent: world.id
     });
-    assert.match(world.scene, /^assets\/scenes\/[a-z-]+\/hero(?:-r\d+)?\.png$/);
+    assert.match(world.scene, /^assets\/scenes\/[a-z-]+\/hero(?:-r\d+|-review)?\.png$/);
   }
 });
 
@@ -71,7 +71,7 @@ test('scene host falls back on failed local art and ignores stale image completi
   const scene = foundation.createSceneHost(host, PendingImage);
   const first = scene.show('home');
   assert.equal(host.dataset.assetState, 'loading');
-  assert.equal(PendingImage.instances[0].src, 'assets/scenes/home/hero-fast.jpg');
+  assert.equal(PendingImage.instances[0].src, foundation.worlds.find(world => world.id === 'home').preview);
   const second = scene.show('work');
   PendingImage.instances[0].onload();
   PendingImage.instances[1].onerror();
@@ -82,7 +82,7 @@ test('scene host falls back on failed local art and ignores stale image completi
   const third = scene.show('games');
   PendingImage.instances[2].onload();
   assert.equal(await third, 'ready');
-  assert.equal(host.children[0].src, 'assets/scenes/games/hero-fast.jpg');
+  assert.equal(host.children[0].src, foundation.worlds.find(world => world.id === 'games').preview);
   scene.clear();
   assert.equal(host.dataset.assetState, 'empty');
   assert.equal(host.children.length, 0);

@@ -1,0 +1,125 @@
+{
+  "fallback": "Image errors hide the decorative image and retain the labelled CSS portal.",
+  "portals": [
+    {
+      "slug": "work",
+      "file": "assets/scenes/home/portals/work-review.jpg",
+      "naturalWidth": 960,
+      "naturalHeight": 640,
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "crop": [
+        522,
+        87,
+        1150,
+        767
+      ],
+      "bytes": 182401,
+      "sha256": "cbdb5d6702420fd2ca874f4fe2657f35f8f52e0f3a7487172d3edecffc2b5ab0",
+      "sourceId": "exec-9fdf9b3c-9c12-4c6d-b361-487fab7bef52",
+      "sourceFile": "assets/scenes/work/hero-review.png",
+      "provenance": "Semantic derivative of the independently regenerated domain scene, not the previous rejected scene."
+    },
+    {
+      "slug": "personal",
+      "file": "assets/scenes/home/portals/personal-review.jpg",
+      "naturalWidth": 960,
+      "naturalHeight": 640,
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "crop": [
+        522,
+        87,
+        1150,
+        767
+      ],
+      "bytes": 192580,
+      "sha256": "28f8227a90a54ed8a2c7a4e0c8e02001e531e4570d2421659208e3f3f3c9ff05",
+      "sourceId": "exec-2fa44894-36bf-4012-ad59-fe608126c6bd",
+      "sourceFile": "assets/scenes/personal/hero-review.png",
+      "provenance": "Semantic derivative of the independently regenerated domain scene, not the previous rejected scene."
+    },
+    {
+      "slug": "explore",
+      "file": "assets/scenes/home/portals/explore-review.jpg",
+      "naturalWidth": 960,
+      "naturalHeight": 640,
+      "sourceWidth": 1672,
+      "sourceHeight": 941,
+      "crop": [
+        522,
+        87,
+        1150,
+        767
+      ],
+      "bytes": 206839,
+      "sha256": "bb0375951e6205c8124f9027a22bdc9677b9109e9c715d2881392a470ff87ac9",
+      "sourceId": "exec-214bf944-7b4a-4178-b933-ad0c9595b337",
+      "sourceFile": "assets/scenes/explore/hero-review.png",
+      "provenance": "Semantic derivative of the independently regenerated domain scene, not the previous rejected scene."
+    },
+    {
+      "slug": "media-games",
+      "file": "assets/scenes/home/portals/media-games-review.jpg",
+      "naturalWidth": 960,
+      "naturalHeight": 640,
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "crop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "bytes": 177556,
+      "sha256": "b7ded99db9da9bd990f7f3d81a02e187d71b3452d8fb89900d25982ff949097f",
+      "sourceId": "exec-8baf68f4-a477-4eb8-a3c8-04a0428cb804",
+      "sourceFile": "assets/scenes/home/portals/media-games-review.png",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Home destination thumbnail, independently generated original artwork, landscape 3:2, sharp natural textures, rich meaningful color and dimensional lighting. Center clear semantic subject within safe central 75% for small-card readability. No logos, labels, text, watermarks or UI overlay. A close but complete cinematic entertainment still life in a premium walnut screening room: luminous large landscape screen upper half, film reel and bowl of popcorn, clearly visible two game controllers and headset lower right, rich midnight-blue/violet and amber, no people.",
+      "provenance": "Independently generated original Home destination artwork; future world redesign remains deferred."
+    },
+    {
+      "slug": "projects-notes",
+      "file": "assets/scenes/home/portals/projects-notes-review.jpg",
+      "naturalWidth": 960,
+      "naturalHeight": 640,
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "crop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "bytes": 157868,
+      "sha256": "fb741e33560b0198f467417dac64298d475cbd87bb8ec3b62abe60b23d54e2b4",
+      "sourceId": "exec-c28ad264-9a42-4e89-8cbc-87084aa4465c",
+      "sourceFile": "assets/scenes/home/portals/projects-notes-review.png",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Home destination thumbnail, independently generated original artwork, landscape 3:2, sharp natural textures, rich meaningful color and dimensional lighting. Center clear semantic subject within safe central 75% for small-card readability. No logos, labels, text, watermarks or UI overlay. A clearly readable creative planning workbench: open notebook with blank geometric sketches, pencils, organized document folders, laptop displaying abstract colored blocks no text, cork planning board with blank colored cards, sage green plants, warm desk lamp. Dominant planning and knowledge objects, not a living room.",
+      "provenance": "Independently generated original Home destination artwork; future world redesign remains deferred."
+    },
+    {
+      "slug": "settings",
+      "file": "assets/scenes/home/portals/settings-review.jpg",
+      "naturalWidth": 960,
+      "naturalHeight": 640,
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "crop": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "bytes": 124585,
+      "sha256": "ecfd66a06681c565cf77768e036e954a0ae2f05161cf8a9d1ba9c8dc1840424c",
+      "sourceId": "exec-af7a91a1-3d4e-4a63-a029-89c3fc6de043",
+      "sourceFile": "assets/scenes/home/portals/settings-review.png",
+      "prompt": "Use case: stylized-concept. Asset type: OneSpace Home destination thumbnail, independently generated original artwork, landscape 3:2, sharp natural textures, rich meaningful color and dimensional lighting. Center clear semantic subject within safe central 75% for small-card readability. No logos, labels, text, watermarks or UI overlay. An elegant system-control still life: compact control tablet displaying simple cyan sliders and toggles with no text, rotary control dial, neatly docked phone, small smart speaker and lighting dimmer on clean stone console, softly lit architectural lamp, amber/cyan/graphite. Strong setup/preferences/device subject.",
+      "provenance": "Independently generated original Home destination artwork; future world redesign remains deferred."
+    }
+  ],
+  "reviewDate": "2026-10-02",
+  "provenance": "Original clean background artwork generated for this OneSpace project with the built-in OpenAI imagegen tool. The approved composite UI screenshots were visual references only and were not copied into production assets. No third-party photo, logo, title art or identifiable person was used as an input.",
+  "version": 1
+}

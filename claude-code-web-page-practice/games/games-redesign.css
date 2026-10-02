@@ -19,7 +19,7 @@ body[data-page="games"] .wrap { width:100% !important; max-width:none; min-width
 .osr-games-card-head { display:flex; justify-content:space-between; align-items:center; gap:8px; }
 .osr-games-card-head h2 { margin:0; font-size:clamp(1rem,1.13vw,1.4rem); }
 .osr-games-card-head button { flex-shrink:0; min-width:44px; padding:8px; }
-.osr-games-continue-art { height:125px; border-radius:12px; margin-top:10px; background:linear-gradient(0deg,#060d2380,transparent),url('../assets/scenes/games/hero-fast.jpg') 80% 45%/cover; }
+.osr-games-continue-art { height:125px; border-radius:12px; margin-top:10px; background:linear-gradient(0deg,#060d2380,transparent),url('../assets/scenes/home/portals/media-games-review.jpg') center/cover; }
 .osr-games-summary h3 { margin:9px 0 0; font-size:1.05rem; }
 .osr-games-context { color:var(--osr-muted); font-size:.8rem; margin:8px 0 12px; }
 .osr-games-summary .osr-chip { margin:3px 4px 0 0; font-size:.8rem; }

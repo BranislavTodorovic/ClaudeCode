@@ -7,11 +7,11 @@
   'use strict';
 
   var worlds = [
-    { id: 'home', label: 'Home', scene: 'assets/scenes/home/hero.png', preview: 'assets/scenes/home/hero-fast.jpg', modules: [] },
-    { id: 'work', label: 'Work', scene: 'assets/scenes/work/hero-r3.png', preview: 'assets/scenes/work/hero-fast.jpg', modules: ['projects', 'kanban-board', 'team', 'documents', 'meetings', 'templates'] },
-    { id: 'personal', label: 'Personal / Fitness', scene: 'assets/scenes/personal/hero.png', preview: 'assets/scenes/personal/hero-fast.jpg', modules: ['mindfulness', 'fitness', 'nutrition', 'recovery', 'personal-life', 'home-wellbeing'] },
-    { id: 'explore', label: 'Explore', scene: 'assets/scenes/explore/hero.png', preview: 'assets/scenes/explore/hero-fast.jpg', modules: ['destinations', 'experiences', 'travel-guides', 'bucket-list', 'discover-more'] },
-    { id: 'games', label: 'Games', scene: 'assets/scenes/games/hero.png', preview: 'assets/scenes/games/hero-fast.jpg', modules: ['my-games', 'missions-quests', 'game-library', 'game-sessions', 'discover-games', 'game-settings'] },
+    { id: 'home', label: 'Home', scene: 'assets/scenes/home/hero-review.png', preview: 'assets/scenes/home/hero-review.jpg', modules: [] },
+    { id: 'work', label: 'Work', scene: 'assets/scenes/work/hero-review.png', preview: 'assets/scenes/work/hero-review.jpg', modules: ['projects', 'kanban-board', 'team', 'documents', 'meetings', 'templates'] },
+    { id: 'personal', label: 'Personal / Fitness', scene: 'assets/scenes/personal/hero-review.png', preview: 'assets/scenes/personal/hero-review.jpg', modules: ['mindfulness', 'fitness', 'nutrition', 'recovery', 'personal-life', 'home-wellbeing'] },
+    { id: 'explore', label: 'Explore', scene: 'assets/scenes/explore/hero-review.png', preview: 'assets/scenes/explore/hero-review.jpg', modules: ['destinations', 'experiences', 'travel-guides', 'bucket-list', 'discover-more'] },
+    { id: 'games', label: 'Games', scene: 'assets/scenes/games/hero-review.png', preview: 'assets/scenes/games/hero-review.jpg', modules: ['my-games', 'missions-quests', 'game-library', 'game-sessions', 'discover-games', 'game-settings'] },
     { id: 'movies', label: 'Movies & Series', scene: 'assets/scenes/movies/hero.png', preview: 'assets/scenes/movies/hero-fast.jpg', modules: ['continue-watching', 'watchlist-library', 'discovery', 'new-releases', 'recommendations', 'genres', 'title-detail'] },
     { id: 'projects-notes', label: 'Projects & Notes', scene: 'assets/scenes/projects-notes/hero.png', preview: 'assets/scenes/projects-notes/hero-fast.jpg', modules: ['all-projects', 'notes-knowledge', 'documents', 'idea-inbox', 'templates', 'archive'] },
     { id: 'settings', label: 'Settings', scene: 'assets/scenes/settings/hero.png', preview: 'assets/scenes/settings/hero-fast.jpg', modules: ['appearance-theme', 'connected-devices', 'notifications', 'privacy-security', 'quick-settings', 'routines-automation', 'system-health', 'account-profile'] }
@@ -62,6 +62,23 @@
 
   function createShell(doc, handlers) {
     handlers = handlers || {};
+    // Preserve one real footer and its original utility-page location.
+    var footer = doc.querySelector && doc.querySelector('.site-footer');
+    if (footer && !footer.dataset.osrIntegrated) {
+      footer.dataset.osrIntegrated = 'true';
+      var footerParent = footer.parentNode;
+      function placeFooter() {
+        var page = doc.body.dataset.page;
+        var view = Array.from(doc.querySelectorAll('[data-page-when]')).find(function (el) {
+          return el.getAttribute('data-page-when').split(',').indexOf(page) !== -1;
+        });
+        var frame = view && view.querySelector('.osr-frame');
+        var credits = frame && frame.querySelector('.osr-games-footer, .osr-explore-credits');
+        (credits || frame || footerParent).appendChild(footer);
+      }
+      doc.addEventListener('onespace:page-changed', placeFooter);
+      doc.addEventListener('onespace:ready', placeFooter);
+    }
     var shell = doc.createElement('header');
     shell.className = 'osr-shell';
     var brand = doc.createElement('a');
@@ -124,9 +141,14 @@
     function present(open, name, focus) {
       landing.hidden = open; tools.hidden = !open;
       stage.dataset.surface = open ? 'owner' : 'landing';
+      var footer = frame.querySelector('.site-footer');
+      if (footer && footer.tagName === 'FOOTER') {
+        var credits = !open && landing.querySelector('.osr-games-footer, .osr-explore-credits');
+        (credits || frame).appendChild(footer);
+      }
       if (open) title.textContent = name || label + ' tools';
       if (focus) {
-        win.scrollTo({ top: open ? 0 : scroll, behavior: 'auto' });
+        win.scrollTo({ top: open ? 0 : scroll, behavior: 'instant' });
         var target = open ? title : trigger && trigger.isConnected ? trigger : landing.querySelector('h1');
         if (target) { if (!target.hasAttribute('tabindex') && target.tagName === 'H1') target.tabIndex = -1; target.focus({ preventScroll: true }); }
       }
@@ -210,6 +232,16 @@
         image.onload = function () {
           if (generation !== current) return resolve('stale');
           host.replaceChildren(image);
+          // Decorative light layers share the existing scene state and timers.
+          // Games remains static until its separate motion acceptance step.
+          if (doc && doc.createElement && ['home', 'work', 'personal', 'explore'].indexOf(worldId) !== -1) {
+            ['practical', 'depth'].forEach(function (layer) {
+              var effect = doc.createElement('span');
+              effect.className = 'osr-scene-' + layer;
+              effect.setAttribute('aria-hidden', 'true');
+              host.appendChild(effect);
+            });
+          }
           host.dataset.assetState = 'ready';
           resolve('ready');
         };
