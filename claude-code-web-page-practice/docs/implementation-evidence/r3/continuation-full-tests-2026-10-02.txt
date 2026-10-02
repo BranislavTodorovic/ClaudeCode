@@ -1,0 +1,1310 @@
+TAP version 13
+# Subtest: critical gate starts in the head before styles or legacy roots; completion is after every owner listener
+ok 1 - critical gate starts in the head before styles or legacy roots; completion is after every owner listener
+  ---
+  duration_ms: 7.2457
+  ...
+# Subtest: parser and partially loaded pipeline never reveal the application
+ok 2 - parser and partially loaded pipeline never reveal the application
+  ---
+  duration_ms: 3.5444
+  ...
+# Subtest: route/owner initialization completed with all redesigned roots releases the shared gate
+ok 3 - route/owner initialization completed with all redesigned roots releases the shared gate
+  ---
+  duration_ms: 1.5921
+  ...
+# Subtest: missing redesign mount produces accessible recovery instead of showing the legacy owner
+ok 4 - missing redesign mount produces accessible recovery instead of showing the legacy owner
+  ---
+  duration_ms: 1.9233
+  ...
+# Subtest: script-load failure cannot be overwritten by a later completion event
+ok 5 - script-load failure cannot be overwritten by a later completion event
+  ---
+  duration_ms: 1.9703
+  ...
+# Subtest: initialization exception keeps the recovery screen and never exposes a partial world
+ok 6 - initialization exception keeps the recovery screen and never exposes a partial world
+  ---
+  duration_ms: 0.8809
+  ...
+# Subtest: missing image uses existing scene fallback rather than blocking application startup
+ok 7 - missing image uses existing scene fallback rather than blocking application startup
+  ---
+  duration_ms: 1.1941
+  ...
+# Subtest: no-JS fallback is preserved and deterministic readiness has no arbitrary delay or storage writer
+ok 8 - no-JS fallback is preserved and deterministic readiness has no arbitrary delay or storage writer
+  ---
+  duration_ms: 2.1438
+  ...
+# Subtest: Add category keeps its draft and prior categories when storage rejects the transaction
+ok 9 - Add category keeps its draft and prior categories when storage rejects the transaction
+  ---
+  duration_ms: 7.8474
+  ...
+# Subtest: category movement changes visible order and rejects unsaved movement
+ok 10 - category movement changes visible order and rejects unsaved movement
+  ---
+  duration_ms: 4.674
+  ...
+# Subtest: category collapse keeps the prior visible state when persistence fails
+ok 11 - category collapse keeps the prior visible state when persistence fails
+  ---
+  duration_ms: 3.5889
+  ...
+# Subtest: category rename and delete commit related records atomically
+ok 12 - category rename and delete commit related records atomically
+  ---
+  duration_ms: 6.7681
+  ...
+# Subtest: PC and Horror require both groups, including default games
+ok 13 - PC and Horror require both groups, including default games
+  ---
+  duration_ms: 0.5959
+  ...
+# Subtest: multiple selections within one group use OR; groups use AND
+ok 14 - multiple selections within one group use OR; groups use AND
+  ---
+  duration_ms: 0.6202
+  ...
+# Subtest: a saved copy does not duplicate its catalog source
+ok 15 - a saved copy does not duplicate its catalog source
+  ---
+  duration_ms: 0.4358
+  ...
+# Subtest: search includes metadata and does not cap results at eight
+ok 16 - search includes metadata and does not cap results at eight
+  ---
+  duration_ms: 0.9005
+  ...
+# Subtest: similarity excludes the selected title and requires shared metadata
+ok 17 - similarity excludes the selected title and requires shared metadata
+  ---
+  duration_ms: 0.9131
+  ...
+# Subtest: complete backups round-trip projects, preferences, trackers and unrelated data
+ok 18 - complete backups round-trip projects, preferences, trackers and unrelated data
+  ---
+  duration_ms: 6.4947
+  ...
+# Subtest: backup aborts when stored data cannot be read
+ok 19 - backup aborts when stored data cannot be read
+  ---
+  duration_ms: 0.4967
+  ...
+# Subtest: legacy project records without optional fields remain valid
+ok 20 - legacy project records without optional fields remain valid
+  ---
+  duration_ms: 0.28
+  ...
+# Subtest: malformed project tags and note titles are rejected before writes
+ok 21 - malformed project tags and note titles are rejected before writes
+  ---
+  duration_ms: 0.3801
+  ...
+# Subtest: storage failure rolls back previously written values
+ok 22 - storage failure rolls back previously written values
+  ---
+  duration_ms: 0.5117
+  ...
+# Subtest: restore rejects unknown keys and incomplete backups without changing state
+ok 23 - restore rejects unknown keys and incomplete backups without changing state
+  ---
+  duration_ms: 0.3854
+  ...
+# Subtest: reset removes only known OneSpace keys
+ok 24 - reset removes only known OneSpace keys
+  ---
+  duration_ms: 0.3897
+  ...
+# Subtest: complete browser-import fixture restores all keys and preserves unrelated storage
+ok 25 - complete browser-import fixture restores all keys and preserves unrelated storage
+  ---
+  duration_ms: 5.4889
+  ...
+# Subtest: malformed browser-import fixture leaves existing notes unchanged
+ok 26 - malformed browser-import fixture leaves existing notes unchanged
+  ---
+  duration_ms: 2.2875
+  ...
+# Subtest: every application script parses
+ok 27 - every application script parses
+  ---
+  duration_ms: 47.7511
+  ...
+# Subtest: Explore Shortlist reports a rejected write without showing a saved state
+ok 28 - Explore Shortlist reports a rejected write without showing a saved state
+  ---
+  duration_ms: 91.0449
+  ...
+# Subtest: Explore Surprise me stops on a rejected preference write
+ok 29 - Explore Surprise me stops on a rejected preference write
+  ---
+  duration_ms: 4.0482
+  ...
+# Subtest: Explore submit preserves rejected preference feedback and does not search
+ok 30 - Explore submit preserves rejected preference feedback and does not search
+  ---
+  duration_ms: 21.0054
+  ...
+# Subtest: Explore change preserves rejected preference feedback and does not search
+ok 31 - Explore change preserves rejected preference feedback and does not search
+  ---
+  duration_ms: 13.2919
+  ...
+# Subtest: Explore reset preserves rejected preference feedback and does not search
+ok 32 - Explore reset preserves rejected preference feedback and does not search
+  ---
+  duration_ms: 15.104
+  ...
+# Subtest: domain modules may read only their own persisted records; Home is the sole cross-domain aggregator
+ok 33 - domain modules may read only their own persisted records; Home is the sole cross-domain aggregator
+  ---
+  duration_ms: 10.7834
+  ...
+# Subtest: page subtree declarations and shell renderers respect domain boundaries
+ok 34 - page subtree declarations and shell renderers respect domain boundaries
+  ---
+  duration_ms: 2.9459
+  ...
+# Subtest: storage rejects unregistered trip records and uses the injected validator without requiring Explore
+ok 35 - storage rejects unregistered trip records and uses the injected validator without requiring Explore
+  ---
+  duration_ms: 3.6866
+  ...
+# Subtest: local discovery requests only the selected domain snapshot
+ok 36 - local discovery requests only the selected domain snapshot
+  ---
+  duration_ms: 1.2838
+  ...
+# Subtest: domain dialog keeps a failed write open and reports it, then closes after retry
+ok 37 - domain dialog keeps a failed write open and reports it, then closes after retry
+  ---
+  duration_ms: 2.7916
+  ...
+# Subtest: Explore Add Location does not change the trip board when storage rejects the write
+ok 38 - Explore Add Location does not change the trip board when storage rejects the write
+  ---
+  duration_ms: 2.7121
+  ...
+# Subtest: Explore trip edit, plan, moves and removal reject failed writes
+ok 39 - Explore trip edit, plan, moves and removal reject failed writes
+  ---
+  duration_ms: 3.0627
+  ...
+# Subtest: custom location form does not claim an image or license when none was supplied
+ok 40 - custom location form does not claim an image or license when none was supplied
+  ---
+  duration_ms: 3.2205
+  ...
+# Subtest: local upload does not invent image licensing or source
+ok 41 - local upload does not invent image licensing or source
+  ---
+  duration_ms: 3.5642
+  ...
+# Subtest: editing unchanged custom imagery preserves supplied provenance
+ok 42 - editing unchanged custom imagery preserves supplied provenance
+  ---
+  duration_ms: 3.3411
+  ...
+# Subtest: image removal and legacy automatic provenance reflect the new image state
+ok 43 - image removal and legacy automatic provenance reflect the new image state
+  ---
+  duration_ms: 5.9392
+  ...
+# Subtest: existing automatic image claims are corrected on read without rewriting saved locations
+ok 44 - existing automatic image claims are corrected on read without rewriting saved locations
+  ---
+  duration_ms: 2.6428
+  ...
+# Subtest: Experiences opens visible future feedback without changing hero notice or owner data
+ok 45 - Experiences opens visible future feedback without changing hero notice or owner data
+  ---
+  duration_ms: 5.8886
+  ...
+# Subtest: Travel Guides opens visible future feedback without changing hero notice or owner data
+ok 46 - Travel Guides opens visible future feedback without changing hero notice or owner data
+  ---
+  duration_ms: 2.1938
+  ...
+# Subtest: Experiences quick action declares the same dialog feedback
+ok 47 - Experiences quick action declares the same dialog feedback
+  ---
+  duration_ms: 2.4984
+  ...
+# Subtest: actual detail renderer presents every maintained description and hero separately from provenance
+ok 48 - actual detail renderer presents every maintained description and hero separately from provenance
+  ---
+  duration_ms: 7.5683
+  ...
+# Subtest: detail renderer handles genuinely missing user-added image and description without fabrication
+ok 49 - detail renderer handles genuinely missing user-added image and description without fabrication
+  ---
+  duration_ms: 3.0022
+  ...
+# Subtest: direct saved-board Details corrects legacy automatic provenance without changing stored content
+ok 50 - direct saved-board Details corrects legacy automatic provenance without changing stored content
+  ---
+  duration_ms: 2.6754
+  ...
+# Subtest: photo failure retains description/provenance flow and uses local fallback only on error
+ok 51 - photo failure retains description/provenance flow and uses local fallback only on error
+  ---
+  duration_ms: 3.0857
+  ...
+# Subtest: explore-data owns a unique, fully shaped twelve-destination catalog
+ok 52 - explore-data owns a unique, fully shaped twelve-destination catalog
+  ---
+  duration_ms: 3.7409
+  ...
+# Subtest: all curated destinations expose licensed card, hero and deterministic fallback artwork
+ok 53 - all curated destinations expose licensed card, hero and deterministic fallback artwork
+  ---
+  duration_ms: 70.0936
+  ...
+# Subtest: local discovery preserves image roles, attribution and failure-only fallback metadata
+ok 54 - local discovery preserves image roles, attribution and failure-only fallback metadata
+  ---
+  duration_ms: 3.2142
+  ...
+# Subtest: every curated destination has concise card copy and substantive planning detail
+ok 55 - every curated destination has concise card copy and substantive planning detail
+  ---
+  duration_ms: 3.6133
+  ...
+# Subtest: destination license metadata agrees across catalog, manifest and colocated source ledger
+ok 56 - destination license metadata agrees across catalog, manifest and colocated source ledger
+  ---
+  duration_ms: 6.5486
+  ...
+# Subtest: Explore filtering intersects groups and ranking is stable with visible reasons
+ok 57 - Explore filtering intersects groups and ranking is stable with visible reasons
+  ---
+  duration_ms: 20.0483
+  ...
+# Subtest: saved destinations validate, deduplicate and retain trip-board notes
+ok 58 - saved destinations validate, deduplicate and retain trip-board notes
+  ---
+  duration_ms: 3.744
+  ...
+# Subtest: shortcut ownership keeps travel links in Explore only
+ok 59 - shortcut ownership keeps travel links in Explore only
+  ---
+  duration_ms: 1.1247
+  ...
+# Subtest: malformed destinations and preferences are rejected
+ok 60 - malformed destinations and preferences are rejected
+  ---
+  duration_ms: 2.318
+  ...
+# Subtest: missing Explore detail reports not-found without changing saved trips
+ok 61 - missing Explore detail reports not-found without changing saved trips
+  ---
+  duration_ms: 4.8559
+  ...
+# Subtest: credits audit accepts an explicit bounded dialog launcher and inert empty row
+ok 62 - credits audit accepts an explicit bounded dialog launcher and inert empty row
+  ---
+  duration_ms: 0.9634
+  ...
+# Subtest: credits audit rejects the stretched disclosure and empty-space activation
+ok 63 - credits audit rejects the stretched disclosure and empty-space activation
+  ---
+  duration_ms: 0.3213
+  ...
+# Subtest: credits audit rejects invisible, moving and untested targets
+ok 64 - credits audit rejects invisible, moving and untested targets
+  ---
+  duration_ms: 0.2198
+  ...
+# Subtest: scene audit catches backdrop recropping, container shift and zoom on credits activation
+ok 65 - scene audit catches backdrop recropping, container shift and zoom on credits activation
+  ---
+  duration_ms: 0.5236
+  ...
+# Subtest: portal audit accepts one semantic whole-card target and inactive adjacent space
+ok 66 - portal audit accepts one semantic whole-card target and inactive adjacent space
+  ---
+  duration_ms: 0.3086
+  ...
+# Subtest: portal audit rejects action leakage outside the visible card
+ok 67 - portal audit rejects action leakage outside the visible card
+  ---
+  duration_ms: 0.3498
+  ...
+# Subtest: portal audit rejects invisible nested controls and moving hit boundaries
+ok 68 - portal audit rejects invisible nested controls and moving hit boundaries
+  ---
+  duration_ms: 0.2583
+  ...
+# Subtest: portal audit rejects an inactive part of the whole-card target and small controls
+ok 69 - portal audit rejects an inactive part of the whole-card target and small controls
+  ---
+  duration_ms: 0.2116
+  ...
+# Subtest: portal audit cannot pass untested off-screen boundaries
+ok 70 - portal audit cannot pass untested off-screen boundaries
+  ---
+  duration_ms: 0.1909
+  ...
+# Subtest: layout audit catches clipped controls even when legacy document width hides overflow
+ok 71 - layout audit catches clipped controls even when legacy document width hides overflow
+  ---
+  duration_ms: 0.5157
+  ...
+# Subtest: layout audit checks all retained regions as well as document width
+ok 72 - layout audit checks all retained regions as well as document width
+  ---
+  duration_ms: 0.1395
+  ...
+# Subtest: layout audit accepts bounded reflow with scrollbar width and subpixel rounding
+ok 73 - layout audit accepts bounded reflow with scrollbar width and subpixel rounding
+  ---
+  duration_ms: 0.1239
+  ...
+# Subtest: layout audit rejects mismatched centered frames even when nothing exceeds document width
+ok 74 - layout audit rejects mismatched centered frames even when nothing exceeds document width
+  ---
+  duration_ms: 0.1342
+  ...
+# Subtest: layout audit checks centering and common edges after frame reflow
+ok 75 - layout audit checks centering and common edges after frame reflow
+  ---
+  duration_ms: 0.1609
+  ...
+# Subtest: upcoming uses planned valid nonpast local dates, including today, in chronological order
+ok 76 - upcoming uses planned valid nonpast local dates, including today, in chronological order
+  ---
+  duration_ms: 0.8663
+  ...
+# Subtest: saved summary follows canonical ordering and leaves owner records untouched
+ok 77 - saved summary follows canonical ordering and leaves owner records untouched
+  ---
+  duration_ms: 0.4001
+  ...
+# Subtest: malformed and empty storage cannot become fake trips
+ok 78 - malformed and empty storage cannot become fake trips
+  ---
+  duration_ms: 0.3011
+  ...
+# Subtest: legacy capture handler leaves Explore-owned fallbacks intact while retaining other art fallbacks
+ok 79 - legacy capture handler leaves Explore-owned fallbacks intact while retaining other art fallbacks
+  ---
+  duration_ms: 3.241
+  ...
+# Subtest: featured entries are actual catalog records and retain licensed media through normalization
+ok 80 - featured entries are actual catalog records and retain licensed media through normalization
+  ---
+  duration_ms: 1.4853
+  ...
+# Subtest: five canonical portals keep future modules truthful and use existing clean local assets
+ok 81 - five canonical portals keep future modules truthful and use existing clean local assets
+  ---
+  duration_ms: 1.9317
+  ...
+# Subtest: changing owner dates/status changes summaries without a parallel model or store
+ok 82 - changing owner dates/status changes summaries without a parallel model or store
+  ---
+  duration_ms: 0.5307
+  ...
+# Subtest: More To Explore explains an empty resource collection instead of doing nothing
+ok 83 - More To Explore explains an empty resource collection instead of doing nothing
+  ---
+  duration_ms: 4.6035
+  ...
+# Subtest: More To Explore opens an existing travel resource and preserves its usage owner
+ok 84 - More To Explore opens an existing travel resource and preserves its usage owner
+  ---
+  duration_ms: 3.1578
+  ...
+# Subtest: resource card shows its real collection state independently of shortcut search and updates after removal
+ok 85 - resource card shows its real collection state independently of shortcut search and updates after removal
+  ---
+  duration_ms: 4.0549
+  ...
+# Subtest: travel artwork has local provenance, valid WebP bytes and one decorative image inside its semantic action
+ok 86 - travel artwork has local provenance, valid WebP bytes and one decorative image inside its semantic action
+  ---
+  duration_ms: 19.1763
+  ...
+# Subtest: actual inspiration image owner handles early failures, loaded images and recovery without replacing the control
+ok 87 - actual inspiration image owner handles early failures, loaded images and recovery without replacing the control
+  ---
+  duration_ms: 0.4279
+  ...
+# Subtest: global legacy error handler leaves the inspiration image to its own fallback owner
+ok 88 - global legacy error handler leaves the inspiration image to its own fallback owner
+  ---
+  duration_ms: 1.8658
+  ...
+# Subtest: live-service inference and catalog chapter outlines select the appropriate tracker
+ok 89 - live-service inference and catalog chapter outlines select the appropriate tracker
+  ---
+  duration_ms: 5.3128
+  ...
+# Subtest: weekly templates take precedence over story defaults and reset preserves the game template
+ok 90 - weekly templates take precedence over story defaults and reset preserves the game template
+  ---
+  duration_ms: 4.9588
+  ...
+# Subtest: objective and weekly toggles are involutions and rejected writes never advance the rendered state
+ok 91 - objective and weekly toggles are involutions and rejected writes never advance the rendered state
+  ---
+  duration_ms: 16.696
+  ...
+# Subtest: type changes preserve each tracker history and keep only the active tracker live
+ok 92 - type changes preserve each tracker history and keep only the active tracker live
+  ---
+  duration_ms: 1.0015
+  ...
+# Subtest: weekly rollover occurs once and keeps subsequent toggles within the new week
+ok 93 - weekly rollover occurs once and keeps subsequent toggles within the new week
+  ---
+  duration_ms: 2.2103
+  ...
+# Subtest: spotlight includes custom games without artwork
+ok 94 - spotlight includes custom games without artwork
+  ---
+  duration_ms: 1.947
+  ...
+# Subtest: focus restoration treats quoted ids as values, not selector syntax
+ok 95 - focus restoration treats quoted ids as values, not selector syntax
+  ---
+  duration_ms: 2.5864
+  ...
+# Subtest: weekly write failure rolls back both transaction keys and rendered completion
+ok 96 - weekly write failure rolls back both transaction keys and rendered completion
+  ---
+  duration_ms: 5.6877
+  ...
+# Subtest: Delete game waits for confirmation and retains game and trackers on failed transaction
+ok 97 - Delete game waits for confirmation and retains game and trackers on failed transaction
+  ---
+  duration_ms: 3.4245
+  ...
+# Subtest: Spotlight selection commits both keys before changing the visible game
+ok 98 - Spotlight selection commits both keys before changing the visible game
+  ---
+  duration_ms: 2.7304
+  ...
+# Subtest: Open Progress does not navigate when Spotlight selection cannot be persisted
+ok 99 - Open Progress does not navigate when Spotlight selection cannot be persisted
+  ---
+  duration_ms: 6.5691
+  ...
+# Subtest: Edit Game retains the prior library and tracker when its write fails
+ok 100 - Edit Game retains the prior library and tracker when its write fails
+  ---
+  duration_ms: 3.932
+  ...
+# Subtest: Edit objective leaves the active story untouched after a rejected write
+ok 101 - Edit objective leaves the active story untouched after a rejected write
+  ---
+  duration_ms: 3.2547
+  ...
+# Subtest: Delete objective waits for confirmation and preserves it after a rejected write
+ok 102 - Delete objective waits for confirmation and preserves it after a rejected write
+  ---
+  duration_ms: 2.4177
+  ...
+# Subtest: Chapter collapse is reversible and does not advance after a rejected write
+ok 103 - Chapter collapse is reversible and does not advance after a rejected write
+  ---
+  duration_ms: 2.3171
+  ...
+# Subtest: Reset Weekly Tasks waits for confirmation and keeps completed tasks on failed write
+ok 104 - Reset Weekly Tasks waits for confirmation and keeps completed tasks on failed write
+  ---
+  duration_ms: 2.595
+  ...
+# Subtest: Games theme does not show an unpersisted choice after a rejected write
+ok 105 - Games theme does not show an unpersisted choice after a rejected write
+  ---
+  duration_ms: 3.2718
+  ...
+# Subtest: wishlist and dismissed suggestions retain visible records after rejected writes
+ok 106 - wishlist and dismissed suggestions retain visible records after rejected writes
+  ---
+  duration_ms: 6.6532
+  ...
+# Subtest: Stop Session keeps the timer active and stored record unchanged after a rejected write
+ok 107 - Stop Session keeps the timer active and stored record unchanged after a rejected write
+  ---
+  duration_ms: 5.3318
+  ...
+# Subtest: manual session log keeps its draft when persistence fails and clears it after retry
+ok 108 - manual session log keeps its draft when persistence fails and clears it after retry
+  ---
+  duration_ms: 7.1063
+  ...
+# Subtest: adding an objective retains the form and stored tracker after a rejected write
+ok 109 - adding an objective retains the form and stored tracker after a rejected write
+  ---
+  duration_ms: 3.6286
+  ...
+# Subtest: first objective creates its chapter only after persistence succeeds
+ok 110 - first objective creates its chapter only after persistence succeeds
+  ---
+  duration_ms: 1.8994
+  ...
+# Subtest: Delete session requires confirmation and keeps the log on rejected writes
+ok 111 - Delete session requires confirmation and keeps the log on rejected writes
+  ---
+  duration_ms: 2.8562
+  ...
+# Subtest: Journal edit retains the stored entry and form draft after a rejected write
+ok 112 - Journal edit retains the stored entry and form draft after a rejected write
+  ---
+  duration_ms: 4.6212
+  ...
+# Subtest: Journal deletion keeps the entry when the confirmed write is rejected
+ok 113 - Journal deletion keeps the entry when the confirmed write is rejected
+  ---
+  duration_ms: 3.8769
+  ...
+# Subtest: objective lookup honors the rendered game even when another tracker is selected
+ok 114 - objective lookup honors the rendered game even when another tracker is selected
+  ---
+  duration_ms: 2.5397
+  ...
+# Subtest: spotlight autoplay keeps its visible state when storage rejects the preference
+ok 115 - spotlight autoplay keeps its visible state when storage rejects the preference
+  ---
+  duration_ms: 2.9213
+  ...
+# Subtest: Games tab selection does not advance the panel when storage rejects the tab
+ok 116 - Games tab selection does not advance the panel when storage rejects the tab
+  ---
+  duration_ms: 2.5488
+  ...
+# Subtest: Games suggestion clear and reset keep preferences when storage rejects writes
+ok 117 - Games suggestion clear and reset keep preferences when storage rejects writes
+  ---
+  duration_ms: 3.0934
+  ...
+# Subtest: every Games portal uses a distinct local composition with retained master and traceable display copy
+ok 118 - every Games portal uses a distinct local composition with retained master and traceable display copy
+  ---
+  duration_ms: 110.8905
+  ...
+# Subtest: starter library does not imply play history or progress
+ok 119 - starter library does not imply play history or progress
+  ---
+  duration_ms: 0.5063
+  ...
+# Subtest: session summaries use local calendar days and reject future, orphan and invalid records
+ok 120 - session summaries use local calendar days and reject future, orphan and invalid records
+  ---
+  duration_ms: 0.5953
+  ...
+# Subtest: rolling seven calendar days include boundary day and exclude older sessions
+ok 121 - rolling seven calendar days include boundary day and exclude older sessions
+  ---
+  duration_ms: 0.2761
+  ...
+# Subtest: active session is disclosed separately from finished duration totals
+ok 122 - active session is disclosed separately from finished duration totals
+  ---
+  duration_ms: 0.1364
+  ...
+# Subtest: unfinished checked objectives can provide continuation without fabricated last-played date
+ok 123 - unfinished checked objectives can provide continuation without fabricated last-played date
+  ---
+  duration_ms: 0.1367
+  ...
+# Subtest: all six reference portals map to original owner workflows including module-local settings
+ok 124 - all six reference portals map to original owner workflows including module-local settings
+  ---
+  duration_ms: 0.2471
+  ...
+# Subtest: empty Games search validates locally and keeps keyboard focus without calling the catalogue
+ok 125 - empty Games search validates locally and keeps keyboard focus without calling the catalogue
+  ---
+  duration_ms: 0.7743
+  ...
+# Subtest: exact and partial search present the real local match and detail identity
+ok 126 - exact and partial search present the real local match and detail identity
+  ---
+  duration_ms: 0.5197
+  ...
+# Subtest: no match reports local-only absence and removes stale results
+ok 127 - no match reports local-only absence and removes stale results
+  ---
+  duration_ms: 0.2309
+  ...
+# Subtest: repeated submit replaces results; edits and Clear remove stale validation/result state
+ok 128 - repeated submit replaces results; edits and Clear remove stale validation/result state
+  ---
+  duration_ms: 0.256
+  ...
+# Subtest: Escape dismisses local results and restores the search input without leaking to other shortcuts
+ok 129 - Escape dismisses local results and restores the search input without leaking to other shortcuts
+  ---
+  duration_ms: 0.2626
+  ...
+# Subtest: search exceptions keep a truthful usable local-library path and no stale results
+ok 130 - search exceptions keep a truthful usable local-library path and no stale results
+  ---
+  duration_ms: 0.4833
+  ...
+# Subtest: untrusted imported catalogue titles and ids cannot inject markup in result buttons
+ok 131 - untrusted imported catalogue titles and ids cannot inject markup in result buttons
+  ---
+  duration_ms: 0.2848
+  ...
+# Subtest: Home theme toggle does not display an unsaved theme
+ok 132 - Home theme toggle does not display an unsaved theme
+  ---
+  duration_ms: 2.1585
+  ...
+# Subtest: Home search provider keeps its pressed state when storage rejects selection
+ok 133 - Home search provider keeps its pressed state when storage rejects selection
+  ---
+  duration_ms: 2.9709
+  ...
+# Subtest: Quick Access selection commits both preference keys before changing the view
+ok 134 - Quick Access selection commits both preference keys before changing the view
+  ---
+  duration_ms: 1.832
+  ...
+# Subtest: shortcut history and usage do not advance in memory after rejected storage writes
+ok 135 - shortcut history and usage do not advance in memory after rejected storage writes
+  ---
+  duration_ms: 1.8129
+  ...
+# Subtest: Random Pick reports an empty travel collection without opening a destination
+ok 136 - Random Pick reports an empty travel collection without opening a destination
+  ---
+  duration_ms: 1.9854
+  ...
+# Subtest: Start exploring keeps Welcome open until onboarding can be saved
+ok 137 - Start exploring keeps Welcome open until onboarding can be saved
+  ---
+  duration_ms: 1.7317
+  ...
+# Subtest: Home derives Today and Next from canonical local records at a date boundary
+ok 138 - Home derives Today and Next from canonical local records at a date boundary
+  ---
+  duration_ms: 1.1411
+  ...
+# Subtest: seed movie artwork uses the explicit licensing fallback without loading undersized legacy posters
+ok 139 - seed movie artwork uses the explicit licensing fallback without loading undersized legacy posters
+  ---
+  duration_ms: 2.3594
+  ...
+# Subtest: approved image pairs support responsive selection and intrinsic width limits
+ok 140 - approved image pairs support responsive selection and intrinsic width limits
+  ---
+  duration_ms: 6.1263
+  ...
+# Subtest: fifteen complete series have useful filter metadata, provenance and scalable art
+ok 141 - fifteen complete series have useful filter metadata, provenance and scalable art
+  ---
+  duration_ms: 2.6621
+  ...
+# Subtest: untrack removes any title and watchlist membership; custom titles remain re-addable
+ok 142 - untrack removes any title and watchlist membership; custom titles remain re-addable
+  ---
+  duration_ms: 3.4944
+  ...
+# Subtest: watchlist uses library status after legacy migration
+ok 143 - watchlist uses library status after legacy migration
+  ---
+  duration_ms: 1.0145
+  ...
+# Subtest: permanent custom deletion also removes the untracked catalog copy
+ok 144 - permanent custom deletion also removes the untracked catalog copy
+  ---
+  duration_ms: 1.2029
+  ...
+# Subtest: untracked custom metadata survives backup and restore without resurrecting library membership
+ok 145 - untracked custom metadata survives backup and restore without resurrecting library membership
+  ---
+  duration_ms: 1.9151
+  ...
+# Subtest: shared confirmation waits for explicit approval before deleting custom titles
+ok 146 - shared confirmation waits for explicit approval before deleting custom titles
+  ---
+  duration_ms: 1.1955
+  ...
+# Subtest: suggestion Add to Watchlist and Mark as Watched reject partial library writes
+ok 147 - suggestion Add to Watchlist and Mark as Watched reject partial library writes
+  ---
+  duration_ms: 4.7336
+  ...
+# Subtest: suggestion Dismiss leaves the card visible when persistence rejects it
+ok 148 - suggestion Dismiss leaves the card visible when persistence rejects it
+  ---
+  duration_ms: 4.1571
+  ...
+# Subtest: Watchlist Mark as Watched restores the prior status after rejected persistence
+ok 149 - Watchlist Mark as Watched restores the prior status after rejected persistence
+  ---
+  duration_ms: 2.4816
+  ...
+# Subtest: Watchlist Remove retains membership after a rejected transaction
+ok 150 - Watchlist Remove retains membership after a rejected transaction
+  ---
+  duration_ms: 1.4103
+  ...
+# Subtest: custom title Delete retains the title after rejected persistence
+ok 151 - custom title Delete retains the title after rejected persistence
+  ---
+  duration_ms: 1.8178
+  ...
+# Subtest: custom title Edit rolls back the prior metadata after rejected persistence
+ok 152 - custom title Edit rolls back the prior metadata after rejected persistence
+  ---
+  duration_ms: 3.4203
+  ...
+# Subtest: Movies Get Suggestions keeps the current tab after a rejected route write
+ok 153 - Movies Get Suggestions keeps the current tab after a rejected route write
+  ---
+  duration_ms: 2.67
+  ...
+# Subtest: movie details stays open when Watchlist or Watched save fails
+ok 154 - movie details stays open when Watchlist or Watched save fails
+  ---
+  duration_ms: 2.8903
+  ...
+# Subtest: Movies theme changes only after its preference saves
+ok 155 - Movies theme changes only after its preference saves
+  ---
+  duration_ms: 1.9796
+  ...
+# Subtest: spotlight selection waits for persistence before changing the featured title
+ok 156 - spotlight selection waits for persistence before changing the featured title
+  ---
+  duration_ms: 2.7927
+  ...
+# Subtest: automatic rotation pause waits for persistence
+ok 157 - automatic rotation pause waits for persistence
+  ---
+  duration_ms: 1.3712
+  ...
+# Subtest: Clear Filters retains existing preferences after rejected storage
+ok 158 - Clear Filters retains existing preferences after rejected storage
+  ---
+  duration_ms: 1.8893
+  ...
+# Subtest: Reset Preferences saves filters and dismissed titles atomically
+ok 159 - Reset Preferences saves filters and dismissed titles atomically
+  ---
+  duration_ms: 2.0643
+  ...
+# Subtest: Quick Notes commits a replacement list only after storage accepts it
+ok 160 - Quick Notes commits a replacement list only after storage accepts it
+  ---
+  duration_ms: 3.8813
+  ...
+# Subtest: Quick Notes deletion waits for confirmation and retains a rejected write
+ok 161 - Quick Notes deletion waits for confirmation and retains a rejected write
+  ---
+  duration_ms: 6.5125
+  ...
+# Subtest: owner handoff preserves canonical nodes, separates landing and supports Back/Forward focus return
+ok 162 - owner handoff preserves canonical nodes, separates landing and supports Back/Forward focus return
+  ---
+  duration_ms: 1.9143
+  ...
+# Subtest: ordinary owner navigation stays usable; global world entry returns to landing
+ok 163 - ordinary owner navigation stays usable; global world entry returns to landing
+  ---
+  duration_ms: 0.4778
+  ...
+# Subtest: existing Work Projects deep link exposes its owner and explicit return resolves parent
+ok 164 - existing Work Projects deep link exposes its owner and explicit return resolves parent
+  ---
+  duration_ms: 0.3117
+  ...
+# Subtest: Personal progress derives only from saved goals, routines and habits
+ok 165 - Personal progress derives only from saved goals, routines and habits
+  ---
+  duration_ms: 0.5104
+  ...
+# Subtest: Personal portal images retain source artwork and stay within display budget
+ok 166 - Personal portal images retain source artwork and stay within display budget
+  ---
+  duration_ms: 25.0898
+  ...
+# Subtest: Personal landing reads only the Personal owner keys and gives future actions availability text
+ok 167 - Personal landing reads only the Personal owner keys and gives future actions availability text
+  ---
+  duration_ms: 3.1035
+  ...
+# Subtest: Personal owner completion is reloaded by the landing from the same validated storage keys
+ok 168 - Personal owner completion is reloaded by the landing from the same validated storage keys
+  ---
+  duration_ms: 26.8733
+  ...
+# Subtest: Fitness portal opens visible availability feedback without navigation or hero reflow
+ok 169 - Fitness portal opens visible availability feedback without navigation or hero reflow
+  ---
+  duration_ms: 5.1079
+  ...
+# Subtest: Personal portal caption reserves more inline room than the corner icon uses
+ok 170 - Personal portal caption reserves more inline room than the corner icon uses
+  ---
+  duration_ms: 2.8851
+  ...
+# Subtest: Productivity task changes stay in memory only after storage accepts them
+ok 171 - Productivity task changes stay in memory only after storage accepts them
+  ---
+  duration_ms: 3.878
+  ...
+# Subtest: task deletion waits for confirmation and keeps a failed write visible
+ok 172 - task deletion waits for confirmation and keeps a failed write visible
+  ---
+  duration_ms: 3.433
+  ...
+# Subtest: countdown creation and deletion retain state on rejected storage writes
+ok 173 - countdown creation and deletion retain state on rejected storage writes
+  ---
+  duration_ms: 13.2772
+  ...
+# Subtest: provider records normalize to local discovery shapes without remote images or secrets
+ok 174 - provider records normalize to local discovery shapes without remote images or secrets
+  ---
+  duration_ms: 1.4225
+  ...
+# Subtest: mock search exposes pagination, details, empty and all degraded states with no network
+ok 175 - mock search exposes pagination, details, empty and all degraded states with no network
+  ---
+  duration_ms: 5.2152
+  ...
+# Subtest: provider cache expires, clears, and respects cancellation
+ok 176 - provider cache expires, clears, and respects cancellation
+  ---
+  duration_ms: 2.4182
+  ...
+# Subtest: real transport maps timeout, rate limit, auth, offline and malformed payload without leaking credentials
+ok 177 - real transport maps timeout, rate limit, auth, offline and malformed payload without leaking credentials
+  ---
+  duration_ms: 67.3571
+  ...
+# Subtest: API serves neutral records, protects mutations and never exposes credentials
+ok 178 - API serves neutral records, protects mutations and never exposes credentials
+  ---
+  duration_ms: 143.1947
+  ...
+# Subtest: eight reference-led worlds have unique routes and local scenes
+ok 179 - eight reference-led worlds have unique routes and local scenes
+  ---
+  duration_ms: 0.975
+  ...
+# Subtest: every approved world has a separate local production scene and provenance
+ok 180 - every approved world has a separate local production scene and provenance
+  ---
+  duration_ms: 28.9566
+  ...
+# Subtest: nested details, compatibility aliases and invalid routes preserve owner identity
+ok 181 - nested details, compatibility aliases and invalid routes preserve owner identity
+  ---
+  duration_ms: 0.374
+  ...
+# Subtest: scene host falls back on failed local art and ignores stale image completion
+ok 182 - scene host falls back on failed local art and ignores stale image completion
+  ---
+  duration_ms: 0.6308
+  ...
+# Subtest: hidden scene fetches wait for activation; repeated visits reuse the same image without clearing art
+ok 183 - hidden scene fetches wait for activation; repeated visits reuse the same image without clearing art
+  ---
+  duration_ms: 0.2971
+  ...
+# Subtest: direct hash route never eagerly loads Home art while the boot router is pending
+ok 184 - direct hash route never eagerly loads Home art while the boot router is pending
+  ---
+  duration_ms: 0.3947
+  ...
+# Subtest: scene display copies retain provenance and reduce decode/transfer size for their role
+ok 185 - scene display copies retain provenance and reduce decode/transfer size for their role
+  ---
+  duration_ms: 20.1405
+  ...
+# Subtest: ten distinct drawn scenes and static Games/Movies heroes cover all route domains
+ok 186 - ten distinct drawn scenes and static Games/Movies heroes cover all route domains
+  ---
+  duration_ms: 4.4739
+  ...
+# Subtest: scene depth is bounded and applied only to decorative drawing/art layers
+ok 187 - scene depth is bounded and applied only to decorative drawing/art layers
+  ---
+  duration_ms: 12.3716
+  ...
+# Subtest: reduced motion and per-page Off eliminate scene drift rather than slowing it
+ok 188 - reduced motion and per-page Off eliminate scene drift rather than slowing it
+  ---
+  duration_ms: 1.586
+  ...
+# Subtest: drawn scenes use no external requests or binary assets
+ok 189 - drawn scenes use no external requests or binary assets
+  ---
+  duration_ms: 0.8717
+  ...
+# Subtest: pointer depth clamps, resets and ignores touch, reduced and Off input
+ok 190 - pointer depth clamps, resets and ignores touch, reduced and Off input
+  ---
+  duration_ms: 3.288
+  ...
+# Subtest: scene lifecycle waits for boot, stages entry, settle and ambient; exit resets without same-page replay
+ok 191 - scene lifecycle waits for boot, stages entry, settle and ambient; exit resets without same-page replay
+  ---
+  duration_ms: 6.0531
+  ...
+# Subtest: each domain entry has its own camera direction and subject motion
+ok 192 - each domain entry has its own camera direction and subject motion
+  ---
+  duration_ms: 0.9184
+  ...
+# Subtest: top-level navigation keeps a coherent accessible outline-icon language
+ok 193 - top-level navigation keeps a coherent accessible outline-icon language
+  ---
+  duration_ms: 3.443
+  ...
+# Subtest: complete palette tokens meet AA body, muted text and control contrast in both modes
+ok 194 - complete palette tokens meet AA body, muted text and control contrast in both modes
+  ---
+  duration_ms: 2.7593
+  ...
+# Subtest: preference reset preserves records, favorites, recents, collapsed sections and search provider
+ok 195 - preference reset preserves records, favorites, recents, collapsed sections and search provider
+  ---
+  duration_ms: 0.641
+  ...
+# Subtest: preference reset rolls back on quota failure
+ok 196 - preference reset rolls back on quota failure
+  ---
+  duration_ms: 0.4548
+  ...
+# Subtest: scene intensity validates, round trips, and legacy v4 without optional preferences remains valid
+ok 197 - scene intensity validates, round trips, and legacy v4 without optional preferences remains valid
+  ---
+  duration_ms: 0.5478
+  ...
+# Subtest: settings memberships are declarative and page-accent has one stylesheet owner
+ok 198 - settings memberships are declarative and page-accent has one stylesheet owner
+  ---
+  duration_ms: 5.1365
+  ...
+# Subtest: Settings theme and background choices keep the visible preference after rejected writes
+ok 199 - Settings theme and background choices keep the visible preference after rejected writes
+  ---
+  duration_ms: 4.92
+  ...
+# Subtest: Reset all data cancel and storage failure do not reload or claim success
+ok 200 - Reset all data cancel and storage failure do not reload or claim success
+  ---
+  duration_ms: 3.7947
+  ...
+# Subtest: leaving Minimal Mode commits both preferences before changing the view
+ok 201 - leaving Minimal Mode commits both preferences before changing the view
+  ---
+  duration_ms: 4.963
+  ...
+# Subtest: personal Add shortcut retains prior links and the dialog draft after a rejected write
+ok 202 - personal Add shortcut retains prior links and the dialog draft after a rejected write
+  ---
+  duration_ms: 7.0018
+  ...
+# Subtest: explore Add shortcut retains prior links and the dialog draft after a rejected write
+ok 203 - explore Add shortcut retains prior links and the dialog draft after a rejected write
+  ---
+  duration_ms: 3.6928
+  ...
+# Subtest: favorite toggle does not advance Quick Access after a rejected write
+ok 204 - favorite toggle does not advance Quick Access after a rejected write
+  ---
+  duration_ms: 5.2703
+  ...
+# Subtest: Edit shortcut restores its previous record after a rejected write
+ok 205 - Edit shortcut restores its previous record after a rejected write
+  ---
+  duration_ms: 5.1967
+  ...
+# Subtest: Delete shortcut retains the record on rejected persistence
+ok 206 - Delete shortcut retains the record on rejected persistence
+  ---
+  duration_ms: 7.1412
+  ...
+# Subtest: space shortcut Favorite leaves the card and focus alone after rejected persistence
+ok 207 - space shortcut Favorite leaves the card and focus alone after rejected persistence
+  ---
+  duration_ms: 2.5233
+  ...
+# Subtest: shared shortcut order and hidden setters leave the view unchanged on rejected writes
+ok 208 - shared shortcut order and hidden setters leave the view unchanged on rejected writes
+  ---
+  duration_ms: 5.4917
+  ...
+# Subtest: hidden built-ins round trip while old v4 backups retain compatibility
+ok 209 - hidden built-ins round trip while old v4 backups retain compatibility
+  ---
+  duration_ms: 9.9676
+  ...
+# Subtest: shortcut order is immutable, scoped and survives backup restore
+ok 210 - shortcut order is immutable, scoped and survives backup restore
+  ---
+  duration_ms: 1.1307
+  ...
+# Subtest: shortcut controls honor ownership, preserve search and have no duplicate stub
+ok 211 - shortcut controls honor ownership, preserve search and have no duplicate stub
+  ---
+  duration_ms: 3.9557
+  ...
+# Subtest: sidebar toggle waits for storage before changing the visible expansion state
+ok 212 - sidebar toggle waits for storage before changing the visible expansion state
+  ---
+  duration_ms: 6.9982
+  ...
+# Subtest: route navigation keeps the current page when storage rejects the new page
+ok 213 - route navigation keeps the current page when storage rejects the new page
+  ---
+  duration_ms: 5.8201
+  ...
+# Subtest: Chill Mode keeps the prior view when its preference cannot be saved
+ok 214 - Chill Mode keeps the prior view when its preference cannot be saved
+  ---
+  duration_ms: 4.1732
+  ...
+# Subtest: Shortcuts space selection retains its prior space after a rejected write
+ok 215 - Shortcuts space selection retains its prior space after a rejected write
+  ---
+  duration_ms: 5.4266
+  ...
+# Subtest: mobile page buttons and Search stop after rejected navigation writes
+ok 216 - mobile page buttons and Search stop after rejected navigation writes
+  ---
+  duration_ms: 4.2236
+  ...
+# Subtest: all document script and stylesheet references resolve
+ok 217 - all document script and stylesheet references resolve
+  ---
+  duration_ms: 12.2577
+  ...
+# Subtest: classic scripts preserve the exact baseline dependency order and inline boundary
+ok 218 - classic scripts preserve the exact baseline dependency order and inline boundary
+  ---
+  duration_ms: 1.6511
+  ...
+# Subtest: More To Explore is the final Explore page-body section in source order
+ok 219 - More To Explore is the final Explore page-body section in source order
+  ---
+  duration_ms: 0.3582
+  ...
+# Subtest: all literal relative requires in source and test files resolve
+ok 220 - all literal relative requires in source and test files resolve
+  ---
+  duration_ms: 45.6381
+  ...
+# Subtest: literal artwork and stylesheet URLs resolve without moving assets
+ok 221 - literal artwork and stylesheet URLs resolve without moving assets
+  ---
+  duration_ms: 45.8133
+  ...
+# Subtest: recursive parse inventory covers every application JS file
+ok 222 - recursive parse inventory covers every application JS file
+  ---
+  duration_ms: 6.539
+  ...
+# Subtest: browser entry and modules never load configuration or credential files
+ok 223 - browser entry and modules never load configuration or credential files
+  ---
+  duration_ms: 15.4167
+  ...
+# Subtest: saved destination paths still satisfy all three existing validators
+ok 224 - saved destination paths still satisfy all three existing validators
+  ---
+  duration_ms: 3.1877
+  ...
+# Subtest: static server serves Work but blocks existing credential-like JS and JSON
+ok 225 - static server serves Work but blocks existing credential-like JS and JSON
+  ---
+  duration_ms: 82.2719
+  ...
+# Subtest: password generation reports unavailable crypto without replacing the output
+ok 226 - password generation reports unavailable crypto without replacing the output
+  ---
+  duration_ms: 3.2213
+  ...
+# Subtest: password copy reports empty and failed clipboard states accurately
+ok 227 - password copy reports empty and failed clipboard states accurately
+  ---
+  duration_ms: 6.0462
+  ...
+# Subtest: URL tools round trip Unicode and leave invalid input available for correction
+ok 228 - URL tools round trip Unicode and leave invalid input available for correction
+  ---
+  duration_ms: 4.2636
+  ...
+# Subtest: close completes every unfinished task, logs a snapshot, and is idempotent
+ok 229 - close completes every unfinished task, logs a snapshot, and is idempotent
+  ---
+  duration_ms: 0.4568
+  ...
+# Subtest: reopen keeps task completion history and removes the item completion timestamp
+ok 230 - reopen keeps task completion history and removes the item completion timestamp
+  ---
+  duration_ms: 0.1887
+  ...
+# Subtest: active/backlog and combined filters do not lose closed records
+ok 231 - active/backlog and combined filters do not lose closed records
+  ---
+  duration_ms: 0.306
+  ...
+# Subtest: deadlines use the local end of day and distinguish due soon from overdue
+ok 232 - deadlines use the local end of day and distinguish due soon from overdue
+  ---
+  duration_ms: 0.1709
+  ...
+# Subtest: work schema rejects invalid status, type, URLs, dates, estimates and lengths
+ok 233 - work schema rejects invalid status, type, URLs, dates, estimates and lengths
+  ---
+  duration_ms: 0.7699
+  ...
+# Subtest: hierarchy rejects orphan items/tasks and incomplete tasks below closed items before writes
+ok 234 - hierarchy rejects orphan items/tasks and incomplete tasks below closed items before writes
+  ---
+  duration_ms: 2.222
+  ...
+# Subtest: atomic lifecycle transaction rolls back all keys after quota failure
+ok 235 - atomic lifecycle transaction rolls back all keys after quota failure
+  ---
+  duration_ms: 1.3733
+  ...
+# Subtest: version 2 migrates missing domain keys to null, while version 3 requires completeness
+ok 236 - version 2 migrates missing domain keys to null, while version 3 requires completeness
+  ---
+  duration_ms: 2.558
+  ...
+# Subtest: complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values
+ok 237 - complete v3 backup round trips new domains; invalid import makes no writes; reset preserves unrelated values
+  ---
+  duration_ms: 5.3711
+  ...
+# Subtest: all curated destinations validate and ranking is stable, explained and intersects groups
+ok 238 - all curated destinations validate and ranking is stable, explained and intersects groups
+  ---
+  duration_ms: 2.5308
+  ...
+# Subtest: shortcut normalization preserves descriptions and explicit ownership; duplicate and unsafe URLs rejected
+ok 239 - shortcut normalization preserves descriptions and explicit ownership; duplicate and unsafe URLs rejected
+  ---
+  duration_ms: 0.3778
+  ...
+# Subtest: game resources and default tasks work for several genres without sharing mutable task state
+ok 240 - game resources and default tasks work for several genres without sharing mutable task state
+  ---
+  duration_ms: 0.9755
+  ...
+# Subtest: movie/series type and genre filtering, legacy compatibility and series validation
+ok 241 - movie/series type and genre filtering, legacy compatibility and series validation
+  ---
+  duration_ms: 1.2663
+  ...
+# Subtest: Personal deletion waits for confirmation and storage failure preserves the item
+ok 242 - Personal deletion waits for confirmation and storage failure preserves the item
+  ---
+  duration_ms: 1.8046
+  ...
+# Subtest: Personal Edit keeps goal, routine and habit records on rejected writes
+ok 243 - Personal Edit keeps goal, routine and habit records on rejected writes
+  ---
+  duration_ms: 5.1451
+  ...
+# Subtest: Personal add and completion preserve records when storage rejects writes
+ok 244 - Personal add and completion preserve records when storage rejects writes
+  ---
+  duration_ms: 4.3277
+  ...
+# Subtest: habit targets remain bounded and survive backup restore
+ok 245 - habit targets remain bounded and survive backup restore
+  ---
+  duration_ms: 1.4304
+  ...
+# Subtest: deleting a game removes its weekly tasks and sessions but preserves journal text
+ok 246 - deleting a game removes its weekly tasks and sessions but preserves journal text
+  ---
+  duration_ms: 0.4923
+  ...
+# Subtest: series watchlist and enriched game resources survive backup restore
+ok 247 - series watchlist and enriched game resources survive backup restore
+  ---
+  duration_ms: 6.7117
+  ...
+# Subtest: malformed destination metadata and game templates are rejected, and tracker templates stay independent
+ok 248 - malformed destination metadata and game templates are rejected, and tracker templates stay independent
+  ---
+  duration_ms: 1.0112
+  ...
+# Subtest: Work sorting is selectable without mutating persisted order or hiding undated records
+ok 249 - Work sorting is selectable without mutating persisted order or hiding undated records
+  ---
+  duration_ms: 0.5653
+  ...
+# Subtest: Project Edit and Create do not rerender after rejected save
+ok 250 - Project Edit and Create do not rerender after rejected save
+  ---
+  duration_ms: 2.0084
+  ...
+# Subtest: Work and project deletion leave records and UI unchanged on rejected transaction
+ok 251 - Work and project deletion leave records and UI unchanged on rejected transaction
+  ---
+  duration_ms: 3.297
+  ...
+# Subtest: Project Delete keeps confirmation and edit state on failed transaction
+ok 252 - Project Delete keeps confirmation and edit state on failed transaction
+  ---
+  duration_ms: 2.7332
+  ...
+# Subtest: Work project deletion restores selected detail on rejected commit
+ok 253 - Work project deletion restores selected detail on rejected commit
+  ---
+  duration_ms: 3.0198
+  ...
+# Subtest: Work overview tiles do not change view when route persistence fails
+ok 254 - Work overview tiles do not change view when route persistence fails
+  ---
+  duration_ms: 2.8647
+  ...
+# Subtest: Work item Delete keeps selected detail and confirmation on rejected commit
+ok 255 - Work item Delete keeps selected detail and confirmation on rejected commit
+  ---
+  duration_ms: 3.1276
+  ...
+# Subtest: Work summaries use Work-owned tasks and exact local calendar periods
+ok 256 - Work summaries use Work-owned tasks and exact local calendar periods
+  ---
+  duration_ms: 1.5927
+  ...
+# Subtest: Work reminders and empty data do not invent meeting or project records
+ok 257 - Work reminders and empty data do not invent meeting or project records
+  ---
+  duration_ms: 0.4761
+  ...
+# Subtest: Work portal display assets preserve originals and stay within the page budget
+ok 258 - Work portal display assets preserve originals and stay within the page budget
+  ---
+  duration_ms: 25.7566
+  ...
+# Subtest: Work landing handoffs open the existing item and task owners
+ok 259 - Work landing handoffs open the existing item and task owners
+  ---
+  duration_ms: 3.1331
+  ...
+# Subtest: Work board handoff stops on rejected navigation or deleted item
+ok 260 - Work board handoff stops on rejected navigation or deleted item
+  ---
+  duration_ms: 1.9004
+  ...
+1..260
+# tests 260
+# suites 0
+# pass 260
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2127.0998

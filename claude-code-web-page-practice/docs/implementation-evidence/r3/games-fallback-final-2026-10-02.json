@@ -1,0 +1,108 @@
+[
+  {
+    "fault": "portals",
+    "client": 1265,
+    "portals": [
+      {
+        "height": 230,
+        "imgHidden": true,
+        "label": "Open My Games",
+        "slug": "my-games",
+        "state": "fallback",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": true,
+        "label": "Open Missions & Quests",
+        "slug": "missions-quests",
+        "state": "fallback",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": true,
+        "label": "Open Game Library",
+        "slug": "game-library",
+        "state": "fallback",
+        "width": 394.375
+      },
+      {
+        "height": 230,
+        "imgHidden": true,
+        "label": "Open Game Sessions",
+        "slug": "game-sessions",
+        "state": "fallback",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": true,
+        "label": "Open Discover Games",
+        "slug": "discover-games",
+        "state": "fallback",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": true,
+        "label": "Open Game Settings",
+        "slug": "game-settings",
+        "state": "fallback",
+        "width": 394.375
+      }
+    ],
+    "scene": "ready",
+    "scrollWidth": 1265
+  },
+  {
+    "fault": "scene",
+    "client": 1265,
+    "portals": [
+      {
+        "height": 230,
+        "imgHidden": false,
+        "label": "Open My Games",
+        "slug": "my-games",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": false,
+        "label": "Open Missions & Quests",
+        "slug": "missions-quests",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": false,
+        "label": "Open Game Library",
+        "slug": "game-library",
+        "width": 394.375
+      },
+      {
+        "height": 230,
+        "imgHidden": false,
+        "label": "Open Game Sessions",
+        "slug": "game-sessions",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": false,
+        "label": "Open Discover Games",
+        "slug": "discover-games",
+        "width": 394.359375
+      },
+      {
+        "height": 230,
+        "imgHidden": false,
+        "label": "Open Game Settings",
+        "slug": "game-settings",
+        "width": 394.375
+      }
+    ],
+    "scene": "fallback",
+    "scrollWidth": 1265
+  }
+]

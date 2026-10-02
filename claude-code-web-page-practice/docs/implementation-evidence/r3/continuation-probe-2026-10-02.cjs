@@ -1,0 +1,35 @@
+// Read-only diagnostic server; instrumentation is injected into fixture HTML only.
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),http=require('node:http');
+const repo=path.resolve(__dirname,'../../..');
+const app=require(path.join(repo,'server/_static-server')).createServer({root:repo});
+const probe=`<script>(function(){
+var frames=[],runtime=[],shifts=[],ready=0,ids=new WeakMap(),uid=0,start=performance.now(),load=String(Date.now())+'-'+Math.random(),timeouts=new Set(),intervals=new Set(),rafs=new Set(),navigation=[],intent=0;
+var timeout=window.setTimeout.bind(window),clear=window.clearTimeout.bind(window),interval=window.setInterval.bind(window),clearInt=window.clearInterval.bind(window),raf=window.requestAnimationFrame.bind(window),cancel=window.cancelAnimationFrame.bind(window);
+window.setTimeout=function(fn,delay){var args=Array.prototype.slice.call(arguments,2),id=timeout(function(){timeouts.delete(id);fn.apply(window,args);},delay);timeouts.add(id);return id;};window.clearTimeout=function(id){timeouts.delete(id);clear(id);};
+window.setInterval=function(){var id=interval.apply(window,arguments);intervals.add(id);return id;};window.clearInterval=function(id){intervals.delete(id);clearInt(id);};
+window.requestAnimationFrame=function(fn){var id=raf(function(t){rafs.delete(id);fn(t);});rafs.add(id);return id;};window.cancelAnimationFrame=function(id){rafs.delete(id);cancel(id);};
+document.addEventListener('click',function(e){if(e.target.closest('[data-world]'))intent=performance.now();},true);
+document.addEventListener('onespace:page-changed',function(e){navigation.push({page:e.detail.page,previous:e.detail.previous,ms:performance.now(),responseMs:intent?performance.now()-intent:null});intent=0;});
+['warn','error'].forEach(function(level){var original=console[level];console[level]=function(){runtime.push({level:level,message:Array.from(arguments).map(String).join(' ')});original.apply(console,arguments);};});
+addEventListener('error',function(e){if(e.message)runtime.push({level:'exception',message:e.message});},true);
+addEventListener('unhandledrejection',function(e){runtime.push({level:'rejection',message:String(e.reason)});});
+try{new PerformanceObserver(function(list){list.getEntries().forEach(function(e){shifts.push({ms:e.startTime,value:e.value,recentInput:e.hadRecentInput});});}).observe({type:'layout-shift',buffered:true});}catch(e){}
+function visible(el){return !!el&&el.getClientRects().length>0&&getComputedStyle(el).visibility!=='hidden';}
+function sample(){
+var views=Array.from(document.querySelectorAll('[data-page-when]')).filter(visible);
+return {ms:Math.round(performance.now()-start),boot:document.documentElement.dataset.onespaceBoot,page:document.body&&document.body.dataset.page,hash:location.hash,views:views.map(function(el){return el.id;}),stages:views.map(function(el){return {view:el.id,mounted:!!el.querySelector('.osr-shell'),visible:visible(el.querySelector('.osr-frame'))};}),oldNav:visible(document.getElementById('oneSpaceSidebar')),gameVault:visible(document.querySelector('.gv-header')),width:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth};}
+function publish(){if(!document.body)return;var out=document.getElementById('continuationEvidence');if(!out){out=document.createElement('pre');out.id='continuationEvidence';out.style.cssText='position:fixed;right:0;bottom:0;width:1px;height:1px;overflow:hidden;font-size:1px;z-index:10000';document.body.appendChild(out);}
+out.dataset.load=load;out.dataset.ready=String(document.documentElement.dataset.onespaceBoot==='ready');
+out.textContent=JSON.stringify({load:load,frames:frames,runtime:runtime,shifts:shifts,current:sample(),navigation:navigation,handles:{timeouts:timeouts.size,intervals:intervals.size,rafs:rafs.size},requests:performance.getEntriesByType('resource').map(function(e){return {path:new URL(e.name).pathname,bytes:e.encodedBodySize,transfer:e.transferSize,start:Math.round(e.startTime),end:Math.round(e.responseEnd)};}),scenes:Array.from(document.querySelectorAll('.osr-scene-host')).map(function(el){if(!ids.has(el))ids.set(el,++uid);var img=el.querySelector('img');return {id:ids.get(el),world:el.dataset.world,state:el.dataset.assetState,visible:visible(el),src:img&&img.getAttribute('src')};}),animations:document.getAnimations().filter(function(a){return a.playState==='running';}).map(function(a){var el=a.effect&&a.effect.target;return {name:a.animationName,view:el&&el.closest('[data-page-when]')&&el.closest('[data-page-when]').id,visible:visible(el)};})});}
+function frame(){frames.push(sample());publish();if(document.documentElement.dataset.onespaceBoot==='ready')ready++;if(!ready||ready<5)requestAnimationFrame(frame);}
+requestAnimationFrame(frame);setInterval(publish,100);
+})();</script>`;
+const server=http.createServer((req,res)=>{const url=new URL(req.url,'http://localhost');res.setHeader('Cache-Control','no-store');
+if(url.pathname.startsWith('/missing/')){const parts=url.pathname.split('/'),fault=parts[2],relative='/'+parts.slice(3).join('/');if(relative==='/'){res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.end(fs.readFileSync(path.join(repo,'index.html'),'utf8').replace('<head>','<head><base href="/missing/'+fault+'/">'+probe));return;}if(fault==='portals'&&/^\/assets\/scenes\/games\/portals\/.*\.jpg$/.test(relative)||fault==='scene'&&relative==='/assets/scenes/games/hero-fast.jpg'){res.writeHead(404);res.end('Expected missing asset');return;}req.url=relative+url.search;app.emit('request',req,res);return;}
+if(url.pathname==='/'||url.pathname==='/index.html'){res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});let html=fs.readFileSync(path.join(repo,'index.html'),'utf8').replace('<head>','<head>'+probe);if(url.searchParams.get('fault')==='script')html=html.replace('src="games/games-redesign.js"','src="shared/missing-probe.js"');res.end(html);return;}
+if(url.searchParams.get('missing')==='1'||url.pathname===process.env.PROBE_MISSING){res.writeHead(404);res.end('Missing diagnostic asset');return;}
+if(process.env.PROBE_SCENE_DELAY&&/\/hero-fast\.jpg$/.test(url.pathname)){setTimeout(()=>app.emit('request',req,res),250);return;}
+if(process.env.PROBE_DELAY&&/\/(?:home|work|personal|explore|games)-redesign\.js$|\/shared\/redesign-foundation\.js$/.test(url.pathname)){setTimeout(()=>app.emit('request',req,res),180);return;}
+app.emit('request',req,res);});
+server.listen(Number(process.env.PORT)||18981,'127.0.0.1',()=>console.log('Continuation fixture at http://localhost:'+(process.env.PORT||18981)));

@@ -410,6 +410,8 @@ Selected/unselected/focus states must be implemented.
 
 The redesign may reorganize presentation, but it must not create duplicate owners for existing data.
 
+A Level-2 world landing ends after its hero, quick actions, concise summaries and portal section (with small credits/footer where needed). Do not append a full owner application beneath those portals. Preserve existing owner DOM, storage, actions and detail workflows through a separate, explicitly labelled compatibility surface with a return to the parent landing while R3 is active. This presentation correction does not deliver the dedicated Level-3 modules: those still require Gate R3, the R4 Work → Projects pilot and Gate R4, then the ordered R5 rollout. Future R3 worlds are audited and recorded at the current checkpoint, not redesigned early.
+
 - Work remains the owner of professional Work/Projects lifecycle data. The legacy `Projects` route/alias must continue to resolve safely into that Work-owned experience unless an explicit migration is approved.
 - Notes remains the owner of existing note records. `Projects & Notes -> Notes & Knowledge` may present/use those records through the canonical Notes APIs/storage contract; it must not fork a second competing notes store.
 - Productivity remains owner of generic tasks/timers/countdowns that were previously removed from Work. A redesigned world may link or summarize them without taking ownership.

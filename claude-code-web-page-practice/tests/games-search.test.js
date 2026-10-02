@@ -28,7 +28,7 @@ test('Escape dismisses local results and restores the search input without leaki
  assert(prevented&&stopped);assert.equal(h.results.hidden,true);assert.equal(h.input.focused,true);
 });
 test('search exceptions keep a truthful usable local-library path and no stale results',()=>{
- const h=setup(()=>{throw Error('Unavailable');});h.input.value='Hades';h.submit();assert.equal(h.results.hidden,true);assert.match(h.status.textContent,/unavailable.*library/);
+ const h=setup(()=>{throw Error('Unavailable');});h.input.value='Hades';h.submit();assert.equal(h.results.hidden,true);assert.match(h.status.textContent,/unavailable.*Game Library/);
 });
 test('untrusted imported catalogue titles and ids cannot inject markup in result buttons',()=>{
  const h=setup(()=>[{id:'"><img src=x>',title:'<script>alert(1)</script>'}]);h.input.value='query';h.submit();assert(!h.results.innerHTML.includes('<script>'));assert(!h.results.innerHTML.includes('<img'));assert.match(h.results.innerHTML,/&lt;script>/);

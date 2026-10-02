@@ -1273,7 +1273,7 @@
       art.querySelectorAll("picture").forEach(function (p) { p.classList.remove("is-active"); });
       var picture = document.createElement("picture");
       if (game.artwork) {
-        picture.innerHTML = (game.artworkMobile ? '<source media="(max-width: 640px)" srcset="' + esc(game.artworkMobile) + '">' : '') + '<img src="' + esc(game.artwork) + '" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">';
+        picture.innerHTML = (game.artworkMobile ? '<source media="(max-width: 640px)" srcset="' + esc(game.artworkMobile) + '">' : '') + '<img src="' + esc(game.artwork) + '" alt="" width="1920" height="1080" loading="lazy" decoding="async">';
         picture.querySelector("img").addEventListener("error", function () { console.warn('[OneSpace asset]',game.name,game.artwork); picture.innerHTML=window.OneSpaceVisual.cover(game.name, 'game',game.accent); }, {once:true});
       } else picture.innerHTML = gameScene(game);
       art.appendChild(picture);

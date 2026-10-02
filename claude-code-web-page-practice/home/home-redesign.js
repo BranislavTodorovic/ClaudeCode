@@ -104,6 +104,8 @@
     var element = entry[0] === 'home-search' ? homeView.querySelector('.home-search') : doc.getElementById(entry[0]);
     if (element) support.appendChild(element);
   });
+  support.remove();
+  var ownerSurface = foundation.createOwnerSurface(homeView, stage, 'home', 'Home', support);
   homeView.classList.add('redesign-home');
   stage.hidden = false;
 
@@ -144,9 +146,7 @@
   });
 
   function showNotice(message) {
-    var notice = doc.getElementById('osrHomeNotice');
-    notice.textContent = message;
-    notice.hidden = false;
+    root.OneSpaceUI.open('OneSpace', '<p>' + esc(message) + '</p>', null);
   }
   function snapshot() {
     return {
@@ -224,7 +224,7 @@
       case 'progress': go('work'); break;
       case 'explore': go('explore'); break;
       case 'next': go('productivity', 'countdownName'); break;
-      case 'pulse': support.scrollIntoView({ behavior: 'smooth', block: 'start' }); break;
+      case 'pulse': ownerSurface.show('Your local activity & Quick Access'); break;
     }
   });
   doc.addEventListener('onespace:data-changed', render);

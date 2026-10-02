@@ -1,0 +1,4251 @@
+{
+  "base": {
+    "animations": [
+      {
+        "name": "ambientDrift",
+        "view": null,
+        "visible": true
+      },
+      {
+        "name": "ambientDrift",
+        "view": null,
+        "visible": true
+      },
+      {
+        "name": "osrHomeWake",
+        "view": "homeView",
+        "visible": true
+      }
+    ],
+    "current": {
+      "boot": "ready",
+      "gameVault": false,
+      "hash": "#/w/home",
+      "ms": 1185,
+      "oldNav": false,
+      "page": "home",
+      "scrollWidth": 1265,
+      "stages": [
+        {
+          "mounted": true,
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "views": [
+        "homeView"
+      ],
+      "width": 1265
+    },
+    "frames": [
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 31,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1280,
+        "stages": [],
+        "views": [],
+        "width": 1280
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 226,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 259,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 363,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 453,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 500,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 534,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 573,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 635,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 725,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 758,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 938,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1060,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1112,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1143,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1184,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      }
+    ],
+    "handles": {
+      "intervals": 4,
+      "rafs": 2,
+      "timeouts": 3
+    },
+    "load": "1790945588972-0.31478980921791366",
+    "navigation": [
+      {
+        "ms": 437.7000000476837,
+        "page": "home",
+        "previous": "home",
+        "responseMs": null
+      }
+    ],
+    "requests": [
+      {
+        "bytes": 39298,
+        "end": 95,
+        "path": "/games/games.css",
+        "start": 53,
+        "transfer": 39598
+      },
+      {
+        "bytes": 22229,
+        "end": 96,
+        "path": "/games/games-cinematic.css",
+        "start": 54,
+        "transfer": 22529
+      },
+      {
+        "bytes": 31203,
+        "end": 98,
+        "path": "/styles/pages.css",
+        "start": 54,
+        "transfer": 31503
+      },
+      {
+        "bytes": 21666,
+        "end": 100,
+        "path": "/movies/movies.css",
+        "start": 54,
+        "transfer": 21966
+      },
+      {
+        "bytes": 15626,
+        "end": 99,
+        "path": "/movies/movies-cinematic.css",
+        "start": 54,
+        "transfer": 15926
+      },
+      {
+        "bytes": 52280,
+        "end": 101,
+        "path": "/styles/cinematic-refinement.css",
+        "start": 54,
+        "transfer": 52580
+      },
+      {
+        "bytes": 9264,
+        "end": 104,
+        "path": "/work/tracker.css",
+        "start": 54,
+        "transfer": 9564
+      },
+      {
+        "bytes": 7504,
+        "end": 105,
+        "path": "/explore/discovery.css",
+        "start": 54,
+        "transfer": 7804
+      },
+      {
+        "bytes": 11262,
+        "end": 106,
+        "path": "/home/home-redesign.css",
+        "start": 54,
+        "transfer": 11562
+      },
+      {
+        "bytes": 10777,
+        "end": 108,
+        "path": "/styles/redesign-foundation.css",
+        "start": 54,
+        "transfer": 11077
+      },
+      {
+        "bytes": 10237,
+        "end": 109,
+        "path": "/work/work-redesign.css",
+        "start": 55,
+        "transfer": 10537
+      },
+      {
+        "bytes": 9803,
+        "end": 111,
+        "path": "/personal/personal-redesign.css",
+        "start": 55,
+        "transfer": 10103
+      },
+      {
+        "bytes": 12301,
+        "end": 114,
+        "path": "/explore/explore-redesign.css",
+        "start": 55,
+        "transfer": 12601
+      },
+      {
+        "bytes": 6967,
+        "end": 116,
+        "path": "/games/games-redesign.css",
+        "start": 55,
+        "transfer": 7267
+      },
+      {
+        "bytes": 3006,
+        "end": 113,
+        "path": "/explore/trip-board.js",
+        "start": 55,
+        "transfer": 3306
+      },
+      {
+        "bytes": 16066,
+        "end": 117,
+        "path": "/shared/storage-utils.js",
+        "start": 55,
+        "transfer": 16366
+      },
+      {
+        "bytes": 2599,
+        "end": 119,
+        "path": "/shared/catalog-utils.js",
+        "start": 55,
+        "transfer": 2899
+      },
+      {
+        "bytes": 7162,
+        "end": 121,
+        "path": "/shared/tooltip-utils.js",
+        "start": 55,
+        "transfer": 7462
+      },
+      {
+        "bytes": 2593,
+        "end": 123,
+        "path": "/shared/shortcut-utils.js",
+        "start": 55,
+        "transfer": 2893
+      },
+      {
+        "bytes": 3966,
+        "end": 125,
+        "path": "/personal/personal-controller.js",
+        "start": 55,
+        "transfer": 4266
+      },
+      {
+        "bytes": 2832,
+        "end": 127,
+        "path": "/shared/visual-utils.js",
+        "start": 55,
+        "transfer": 3132
+      },
+      {
+        "bytes": 4148,
+        "end": 128,
+        "path": "/shared/domain-ui.js",
+        "start": 55,
+        "transfer": 4448
+      },
+      {
+        "bytes": 6132,
+        "end": 131,
+        "path": "/shared/shortcut-surface.js",
+        "start": 55,
+        "transfer": 6432
+      },
+      {
+        "bytes": 8709,
+        "end": 132,
+        "path": "/work/projects.js",
+        "start": 55,
+        "transfer": 9009
+      },
+      {
+        "bytes": 5049,
+        "end": 133,
+        "path": "/home/home-overview.js",
+        "start": 55,
+        "transfer": 5349
+      },
+      {
+        "bytes": 29299,
+        "end": 135,
+        "path": "/work/work-tracker.js",
+        "start": 55,
+        "transfer": 29599
+      },
+      {
+        "bytes": 14876,
+        "end": 135,
+        "path": "/explore/explore-data.js",
+        "start": 56,
+        "transfer": 15176
+      },
+      {
+        "bytes": 9031,
+        "end": 138,
+        "path": "/explore/local-discovery.js",
+        "start": 56,
+        "transfer": 9331
+      },
+      {
+        "bytes": 15416,
+        "end": 141,
+        "path": "/explore/discovery-ui.js",
+        "start": 56,
+        "transfer": 15716
+      },
+      {
+        "bytes": 10771,
+        "end": 141,
+        "path": "/explore/explore-global.js",
+        "start": 56,
+        "transfer": 11071
+      },
+      {
+        "bytes": 7483,
+        "end": 144,
+        "path": "/shared/provider-search.js",
+        "start": 56,
+        "transfer": 7783
+      },
+      {
+        "bytes": 8154,
+        "end": 146,
+        "path": "/games/game-resources.js",
+        "start": 56,
+        "transfer": 8454
+      },
+      {
+        "bytes": 15603,
+        "end": 148,
+        "path": "/games/games-data.js",
+        "start": 56,
+        "transfer": 15903
+      },
+      {
+        "bytes": 24908,
+        "end": 153,
+        "path": "/movies/movies-data.js",
+        "start": 56,
+        "transfer": 25208
+      },
+      {
+        "bytes": 107397,
+        "end": 150,
+        "path": "/games/games.js",
+        "start": 56,
+        "transfer": 107697
+      },
+      {
+        "bytes": 100225,
+        "end": 155,
+        "path": "/movies/movies.js",
+        "start": 56,
+        "transfer": 100525
+      },
+      {
+        "bytes": 4321,
+        "end": 158,
+        "path": "/settings/settings.js",
+        "start": 56,
+        "transfer": 4621
+      },
+      {
+        "bytes": 12944,
+        "end": 160,
+        "path": "/shared/redesign-foundation.js",
+        "start": 56,
+        "transfer": 13244
+      },
+      {
+        "bytes": 14090,
+        "end": 175,
+        "path": "/shared/cinematic-scenes.js",
+        "start": 56,
+        "transfer": 14390
+      },
+      {
+        "bytes": 1760,
+        "end": 176,
+        "path": "/explore/discovery-integration.js",
+        "start": 56,
+        "transfer": 2060
+      },
+      {
+        "bytes": 19840,
+        "end": 177,
+        "path": "/home/home-redesign.js",
+        "start": 56,
+        "transfer": 20140
+      },
+      {
+        "bytes": 20479,
+        "end": 180,
+        "path": "/work/work-redesign.js",
+        "start": 56,
+        "transfer": 20779
+      },
+      {
+        "bytes": 15386,
+        "end": 181,
+        "path": "/personal/personal-redesign.js",
+        "start": 56,
+        "transfer": 15686
+      },
+      {
+        "bytes": 13800,
+        "end": 182,
+        "path": "/explore/explore-redesign.js",
+        "start": 57,
+        "transfer": 14100
+      },
+      {
+        "bytes": 13599,
+        "end": 182,
+        "path": "/games/games-redesign.js",
+        "start": 57,
+        "transfer": 13899
+      },
+      {
+        "bytes": 222935,
+        "end": 237,
+        "path": "/assets/game-art/cyberpunk-2077-hero.jpg",
+        "start": 231,
+        "transfer": 223235
+      },
+      {
+        "bytes": 695668,
+        "end": 260,
+        "path": "/assets/movie-art/inception-background.jpg",
+        "start": 232,
+        "transfer": 695968
+      },
+      {
+        "bytes": 474286,
+        "end": 646,
+        "path": "/assets/game-art/hades-hero.jpg",
+        "start": 606,
+        "transfer": 474586
+      },
+      {
+        "bytes": 688767,
+        "end": 625,
+        "path": "/assets/movie-art/matrix-background.jpg",
+        "start": 607,
+        "transfer": 689067
+      },
+      {
+        "bytes": 201872,
+        "end": 629,
+        "path": "/assets/page-art/personal-cinematic.webp",
+        "start": 609,
+        "transfer": 202172
+      },
+      {
+        "bytes": 93,
+        "end": 684,
+        "path": "/api/status",
+        "start": 677,
+        "transfer": 393
+      },
+      {
+        "bytes": 2577,
+        "end": 791,
+        "path": "/assets/provider-logos/tmdb.svg",
+        "start": 781,
+        "transfer": 2877
+      },
+      {
+        "bytes": 252201,
+        "end": 1051,
+        "path": "/assets/scenes/home/hero-fast.jpg",
+        "start": 795,
+        "transfer": 252501
+      },
+      {
+        "bytes": 234273,
+        "end": 1143,
+        "path": "/assets/scenes/work/hero-fast.jpg",
+        "start": 864,
+        "transfer": 234573
+      },
+      {
+        "bytes": 243341,
+        "end": 1131,
+        "path": "/assets/scenes/personal/hero-fast.jpg",
+        "start": 865,
+        "transfer": 243641
+      },
+      {
+        "bytes": 286632,
+        "end": 1133,
+        "path": "/assets/scenes/explore/hero-fast.jpg",
+        "start": 865,
+        "transfer": 286932
+      },
+      {
+        "bytes": 218731,
+        "end": 1134,
+        "path": "/assets/scenes/movies/hero-fast.jpg",
+        "start": 865,
+        "transfer": 219031
+      },
+      {
+        "bytes": 201825,
+        "end": 1136,
+        "path": "/assets/scenes/projects-notes/hero-fast.jpg",
+        "start": 865,
+        "transfer": 202125
+      },
+      {
+        "bytes": 12439,
+        "end": 1139,
+        "path": "/assets/game-art/alan-wake-2-logo.png",
+        "start": 958,
+        "transfer": 12739
+      },
+      {
+        "bytes": 59939,
+        "end": 1141,
+        "path": "/assets/game-art/resident-evil-4-logo.png",
+        "start": 958,
+        "transfer": 60239
+      },
+      {
+        "bytes": 220371,
+        "end": 1142,
+        "path": "/assets/game-art/diablo-immortal-logo.png",
+        "start": 958,
+        "transfer": 220671
+      },
+      {
+        "bytes": 80192,
+        "end": 1145,
+        "path": "/assets/game-art/cyberpunk-2077-logo.png",
+        "start": 958,
+        "transfer": 80492
+      },
+      {
+        "bytes": 70480,
+        "end": 1147,
+        "path": "/assets/game-art/hades-logo.png",
+        "start": 958,
+        "transfer": 70780
+      },
+      {
+        "bytes": 8178,
+        "end": 1147,
+        "path": "/assets/game-art/death-stranding-logo.png",
+        "start": 958,
+        "transfer": 8478
+      }
+    ],
+    "runtime": [],
+    "scenes": [
+      {
+        "id": 1,
+        "src": "assets/scenes/home/hero-fast.jpg",
+        "state": "ready",
+        "visible": true,
+        "world": "home"
+      },
+      {
+        "id": 4,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "games"
+      },
+      {
+        "id": 2,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "work"
+      },
+      {
+        "id": 3,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "personal"
+      },
+      {
+        "id": 5,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "explore"
+      }
+    ],
+    "shifts": []
+  },
+  "rows": [
+    {
+      "cycle": 0,
+      "label": "Work",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 22106,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 0
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeGlow",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 437.7000000476837,
+          "page": "home",
+          "previous": "home",
+          "responseMs": null
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 0,
+      "label": "Explore",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 22506,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 0
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeGlow",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 437.7000000476837,
+          "page": "home",
+          "previous": "home",
+          "responseMs": null
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 0,
+      "label": "Games",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 22909,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 0
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeGlow",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 437.7000000476837,
+          "page": "home",
+          "previous": "home",
+          "responseMs": null
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 0,
+      "label": "Personal / Fitness",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 23204,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 0
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeGlow",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 437.7000000476837,
+          "page": "home",
+          "previous": "home",
+          "responseMs": null
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 0,
+      "label": "Home",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 23604,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 0
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeGlow",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 437.7000000476837,
+          "page": "home",
+          "previous": "home",
+          "responseMs": null
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 1,
+      "label": "Work",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/work",
+        "ms": 23910,
+        "oldNav": false,
+        "page": "work",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "workView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "workView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 2
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrWorkWake",
+          "view": "workView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 23952.799999952316,
+          "page": "work",
+          "previous": "home",
+          "responseMs": 24.200000047683716
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 1,
+      "label": "Explore",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/explore",
+        "ms": 24129,
+        "oldNav": false,
+        "page": "explore",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "exploreView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "exploreView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 2,
+        "timeouts": 2
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "osrExploreWake",
+          "view": "exploreView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 24221.700000047684,
+          "page": "explore",
+          "previous": "work",
+          "responseMs": 14.799999952316284
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 1,
+      "label": "Games",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/games",
+        "ms": 24436,
+        "oldNav": false,
+        "page": "games",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "gamesView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "gamesView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": null,
+          "state": "loading",
+          "visible": true,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": null,
+          "state": "deferred",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 24516.5,
+          "page": "games",
+          "previous": "explore",
+          "responseMs": 36.40000009536743
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 1,
+      "label": "Personal / Fitness",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/personal",
+        "ms": 24716,
+        "oldNav": false,
+        "page": "personal",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "personalView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "personalView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrPersonalDawn",
+          "view": "personalView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 24782.799999952316,
+          "page": "personal",
+          "previous": "games",
+          "responseMs": 14.899999856948853
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 1,
+      "label": "Home",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 24939,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeWake",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 25031.099999904633,
+          "page": "home",
+          "previous": "personal",
+          "responseMs": 9
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 2,
+      "label": "Work",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/work",
+        "ms": 25203,
+        "oldNav": false,
+        "page": "work",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "workView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "workView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrWorkWake",
+          "view": "workView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 25281.200000047684,
+          "page": "work",
+          "previous": "home",
+          "responseMs": 11.700000047683716
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 2,
+      "label": "Explore",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/explore",
+        "ms": 25422,
+        "oldNav": false,
+        "page": "explore",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "exploreView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "exploreView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 1,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "osrExploreWake",
+          "view": "exploreView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 25512.200000047684,
+          "page": "explore",
+          "previous": "work",
+          "responseMs": 8.799999952316284
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 2,
+      "label": "Games",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/games",
+        "ms": 25711,
+        "oldNav": false,
+        "page": "games",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "gamesView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "gamesView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 25744.900000095367,
+          "page": "games",
+          "previous": "explore",
+          "responseMs": 16.700000047683716
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 2,
+      "label": "Personal / Fitness",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/personal",
+        "ms": 25904,
+        "oldNav": false,
+        "page": "personal",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "personalView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "personalView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrPersonalDawn",
+          "view": "personalView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 25986.900000095367,
+          "page": "personal",
+          "previous": "games",
+          "responseMs": 9.300000190734863
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 2,
+      "label": "Home",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 26208,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeWake",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 26230.299999952316,
+          "page": "home",
+          "previous": "personal",
+          "responseMs": 14.099999904632568
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 3,
+      "label": "Work",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/work",
+        "ms": 26509,
+        "oldNav": false,
+        "page": "work",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "workView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "workView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 1,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrWorkWake",
+          "view": "workView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 26582.099999904633,
+          "page": "work",
+          "previous": "home",
+          "responseMs": 14.799999952316284
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 3,
+      "label": "Explore",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/explore",
+        "ms": 26809,
+        "oldNav": false,
+        "page": "explore",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "exploreView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "exploreView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 1,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "osrExploreWake",
+          "view": "exploreView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 26878.400000095367,
+          "page": "explore",
+          "previous": "work",
+          "responseMs": 12.100000143051147
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 3,
+      "label": "Games",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/games",
+        "ms": 27047,
+        "oldNav": false,
+        "page": "games",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "gamesView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "gamesView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 27120.599999904633,
+          "page": "games",
+          "previous": "explore",
+          "responseMs": 8.899999856948853
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 3,
+      "label": "Personal / Fitness",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/games",
+        "ms": 27202,
+        "oldNav": false,
+        "page": "games",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "gamesView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "gamesView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 27120.599999904633,
+          "page": "games",
+          "previous": "explore",
+          "responseMs": 8.899999856948853
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 3,
+      "label": "Home",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 27512,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeWake",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 27570.599999904633,
+          "page": "home",
+          "previous": "personal",
+          "responseMs": 11.399999856948853
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 4,
+      "label": "Work",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/work",
+        "ms": 27812,
+        "oldNav": false,
+        "page": "work",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "workView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "workView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrWorkWake",
+          "view": "workView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 27800.799999952316,
+          "page": "work",
+          "previous": "home",
+          "responseMs": 7
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 4,
+      "label": "Explore",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/explore",
+        "ms": 28054,
+        "oldNav": false,
+        "page": "explore",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "exploreView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "exploreView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 1,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "name": "osrExploreWake",
+          "view": "exploreView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 28139.900000095367,
+          "page": "explore",
+          "previous": "work",
+          "responseMs": 7.400000095367432
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 4,
+      "label": "Games",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/games",
+        "ms": 28303,
+        "oldNav": false,
+        "page": "games",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "gamesView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "gamesView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 2,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 28365.5,
+          "page": "games",
+          "previous": "explore",
+          "responseMs": 11.799999952316284
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 4,
+      "label": "Personal / Fitness",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/personal",
+        "ms": 28503,
+        "oldNav": false,
+        "page": "personal",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "personalView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "personalView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 0,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrPersonalDawn",
+          "view": "personalView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 28589.200000047684,
+          "page": "personal",
+          "previous": "games",
+          "responseMs": 8.400000095367432
+        }
+      ],
+      "runtime": []
+    },
+    {
+      "cycle": 4,
+      "label": "Home",
+      "current": {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 28710,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      "handles": {
+        "intervals": 4,
+        "rafs": 2,
+        "timeouts": 4
+      },
+      "scenes": [
+        {
+          "id": 1,
+          "src": "assets/scenes/home/hero-fast.jpg",
+          "state": "ready",
+          "visible": true,
+          "world": "home"
+        },
+        {
+          "id": 4,
+          "src": "assets/scenes/games/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "games"
+        },
+        {
+          "id": 2,
+          "src": "assets/scenes/work/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "work"
+        },
+        {
+          "id": 3,
+          "src": "assets/scenes/personal/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "personal"
+        },
+        {
+          "id": 5,
+          "src": "assets/scenes/explore/hero-fast.jpg",
+          "state": "ready",
+          "visible": false,
+          "world": "explore"
+        }
+      ],
+      "animations": [
+        {
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "ambientDrift",
+          "view": null,
+          "visible": true
+        },
+        {
+          "name": "osrHomeWake",
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "navigation": [
+        {
+          "ms": 28800.299999952316,
+          "page": "home",
+          "previous": "personal",
+          "responseMs": 9.5
+        }
+      ],
+      "runtime": []
+    }
+  ],
+  "settled": {
+    "animations": [
+      {
+        "name": "ambientDrift",
+        "view": null,
+        "visible": true
+      },
+      {
+        "name": "ambientDrift",
+        "view": null,
+        "visible": true
+      },
+      {
+        "name": "osrHomeGlow",
+        "view": "homeView",
+        "visible": true
+      }
+    ],
+    "current": {
+      "boot": "ready",
+      "gameVault": false,
+      "hash": "#/w/home",
+      "ms": 60104,
+      "oldNav": false,
+      "page": "home",
+      "scrollWidth": 1265,
+      "stages": [
+        {
+          "mounted": true,
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "views": [
+        "homeView"
+      ],
+      "width": 1265
+    },
+    "frames": [
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 31,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1280,
+        "stages": [],
+        "views": [],
+        "width": 1280
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 226,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 259,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 363,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 453,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 500,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 534,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 573,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 635,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 725,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 758,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [],
+        "views": [],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 938,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1060,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1112,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1143,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 1184,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 1265,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 1265
+      }
+    ],
+    "handles": {
+      "intervals": 4,
+      "rafs": 0,
+      "timeouts": 0
+    },
+    "load": "1790945588972-0.31478980921791366",
+    "navigation": [
+      {
+        "ms": 437.7000000476837,
+        "page": "home",
+        "previous": "home",
+        "responseMs": null
+      },
+      {
+        "ms": 23952.799999952316,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 24.200000047683716
+      },
+      {
+        "ms": 24221.700000047684,
+        "page": "explore",
+        "previous": "work",
+        "responseMs": 14.799999952316284
+      },
+      {
+        "ms": 24516.5,
+        "page": "games",
+        "previous": "explore",
+        "responseMs": 36.40000009536743
+      },
+      {
+        "ms": 24782.799999952316,
+        "page": "personal",
+        "previous": "games",
+        "responseMs": 14.899999856948853
+      },
+      {
+        "ms": 25031.099999904633,
+        "page": "home",
+        "previous": "personal",
+        "responseMs": 9
+      },
+      {
+        "ms": 25281.200000047684,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 11.700000047683716
+      },
+      {
+        "ms": 25512.200000047684,
+        "page": "explore",
+        "previous": "work",
+        "responseMs": 8.799999952316284
+      },
+      {
+        "ms": 25744.900000095367,
+        "page": "games",
+        "previous": "explore",
+        "responseMs": 16.700000047683716
+      },
+      {
+        "ms": 25986.900000095367,
+        "page": "personal",
+        "previous": "games",
+        "responseMs": 9.300000190734863
+      },
+      {
+        "ms": 26230.299999952316,
+        "page": "home",
+        "previous": "personal",
+        "responseMs": 14.099999904632568
+      },
+      {
+        "ms": 26582.099999904633,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 14.799999952316284
+      },
+      {
+        "ms": 26878.400000095367,
+        "page": "explore",
+        "previous": "work",
+        "responseMs": 12.100000143051147
+      },
+      {
+        "ms": 27120.599999904633,
+        "page": "games",
+        "previous": "explore",
+        "responseMs": 8.899999856948853
+      },
+      {
+        "ms": 27347,
+        "page": "personal",
+        "previous": "games",
+        "responseMs": 6.700000047683716
+      },
+      {
+        "ms": 27570.599999904633,
+        "page": "home",
+        "previous": "personal",
+        "responseMs": 11.399999856948853
+      },
+      {
+        "ms": 27800.799999952316,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 7
+      },
+      {
+        "ms": 28139.900000095367,
+        "page": "explore",
+        "previous": "work",
+        "responseMs": 7.400000095367432
+      },
+      {
+        "ms": 28365.5,
+        "page": "games",
+        "previous": "explore",
+        "responseMs": 11.799999952316284
+      },
+      {
+        "ms": 28589.200000047684,
+        "page": "personal",
+        "previous": "games",
+        "responseMs": 8.400000095367432
+      },
+      {
+        "ms": 28800.299999952316,
+        "page": "home",
+        "previous": "personal",
+        "responseMs": 9.5
+      }
+    ],
+    "requests": [
+      {
+        "bytes": 39298,
+        "end": 95,
+        "path": "/games/games.css",
+        "start": 53,
+        "transfer": 39598
+      },
+      {
+        "bytes": 22229,
+        "end": 96,
+        "path": "/games/games-cinematic.css",
+        "start": 54,
+        "transfer": 22529
+      },
+      {
+        "bytes": 31203,
+        "end": 98,
+        "path": "/styles/pages.css",
+        "start": 54,
+        "transfer": 31503
+      },
+      {
+        "bytes": 21666,
+        "end": 100,
+        "path": "/movies/movies.css",
+        "start": 54,
+        "transfer": 21966
+      },
+      {
+        "bytes": 15626,
+        "end": 99,
+        "path": "/movies/movies-cinematic.css",
+        "start": 54,
+        "transfer": 15926
+      },
+      {
+        "bytes": 52280,
+        "end": 101,
+        "path": "/styles/cinematic-refinement.css",
+        "start": 54,
+        "transfer": 52580
+      },
+      {
+        "bytes": 9264,
+        "end": 104,
+        "path": "/work/tracker.css",
+        "start": 54,
+        "transfer": 9564
+      },
+      {
+        "bytes": 7504,
+        "end": 105,
+        "path": "/explore/discovery.css",
+        "start": 54,
+        "transfer": 7804
+      },
+      {
+        "bytes": 11262,
+        "end": 106,
+        "path": "/home/home-redesign.css",
+        "start": 54,
+        "transfer": 11562
+      },
+      {
+        "bytes": 10777,
+        "end": 108,
+        "path": "/styles/redesign-foundation.css",
+        "start": 54,
+        "transfer": 11077
+      },
+      {
+        "bytes": 10237,
+        "end": 109,
+        "path": "/work/work-redesign.css",
+        "start": 55,
+        "transfer": 10537
+      },
+      {
+        "bytes": 9803,
+        "end": 111,
+        "path": "/personal/personal-redesign.css",
+        "start": 55,
+        "transfer": 10103
+      },
+      {
+        "bytes": 12301,
+        "end": 114,
+        "path": "/explore/explore-redesign.css",
+        "start": 55,
+        "transfer": 12601
+      },
+      {
+        "bytes": 6967,
+        "end": 116,
+        "path": "/games/games-redesign.css",
+        "start": 55,
+        "transfer": 7267
+      },
+      {
+        "bytes": 3006,
+        "end": 113,
+        "path": "/explore/trip-board.js",
+        "start": 55,
+        "transfer": 3306
+      },
+      {
+        "bytes": 16066,
+        "end": 117,
+        "path": "/shared/storage-utils.js",
+        "start": 55,
+        "transfer": 16366
+      },
+      {
+        "bytes": 2599,
+        "end": 119,
+        "path": "/shared/catalog-utils.js",
+        "start": 55,
+        "transfer": 2899
+      },
+      {
+        "bytes": 7162,
+        "end": 121,
+        "path": "/shared/tooltip-utils.js",
+        "start": 55,
+        "transfer": 7462
+      },
+      {
+        "bytes": 2593,
+        "end": 123,
+        "path": "/shared/shortcut-utils.js",
+        "start": 55,
+        "transfer": 2893
+      },
+      {
+        "bytes": 3966,
+        "end": 125,
+        "path": "/personal/personal-controller.js",
+        "start": 55,
+        "transfer": 4266
+      },
+      {
+        "bytes": 2832,
+        "end": 127,
+        "path": "/shared/visual-utils.js",
+        "start": 55,
+        "transfer": 3132
+      },
+      {
+        "bytes": 4148,
+        "end": 128,
+        "path": "/shared/domain-ui.js",
+        "start": 55,
+        "transfer": 4448
+      },
+      {
+        "bytes": 6132,
+        "end": 131,
+        "path": "/shared/shortcut-surface.js",
+        "start": 55,
+        "transfer": 6432
+      },
+      {
+        "bytes": 8709,
+        "end": 132,
+        "path": "/work/projects.js",
+        "start": 55,
+        "transfer": 9009
+      },
+      {
+        "bytes": 5049,
+        "end": 133,
+        "path": "/home/home-overview.js",
+        "start": 55,
+        "transfer": 5349
+      },
+      {
+        "bytes": 29299,
+        "end": 135,
+        "path": "/work/work-tracker.js",
+        "start": 55,
+        "transfer": 29599
+      },
+      {
+        "bytes": 14876,
+        "end": 135,
+        "path": "/explore/explore-data.js",
+        "start": 56,
+        "transfer": 15176
+      },
+      {
+        "bytes": 9031,
+        "end": 138,
+        "path": "/explore/local-discovery.js",
+        "start": 56,
+        "transfer": 9331
+      },
+      {
+        "bytes": 15416,
+        "end": 141,
+        "path": "/explore/discovery-ui.js",
+        "start": 56,
+        "transfer": 15716
+      },
+      {
+        "bytes": 10771,
+        "end": 141,
+        "path": "/explore/explore-global.js",
+        "start": 56,
+        "transfer": 11071
+      },
+      {
+        "bytes": 7483,
+        "end": 144,
+        "path": "/shared/provider-search.js",
+        "start": 56,
+        "transfer": 7783
+      },
+      {
+        "bytes": 8154,
+        "end": 146,
+        "path": "/games/game-resources.js",
+        "start": 56,
+        "transfer": 8454
+      },
+      {
+        "bytes": 15603,
+        "end": 148,
+        "path": "/games/games-data.js",
+        "start": 56,
+        "transfer": 15903
+      },
+      {
+        "bytes": 24908,
+        "end": 153,
+        "path": "/movies/movies-data.js",
+        "start": 56,
+        "transfer": 25208
+      },
+      {
+        "bytes": 107397,
+        "end": 150,
+        "path": "/games/games.js",
+        "start": 56,
+        "transfer": 107697
+      },
+      {
+        "bytes": 100225,
+        "end": 155,
+        "path": "/movies/movies.js",
+        "start": 56,
+        "transfer": 100525
+      },
+      {
+        "bytes": 4321,
+        "end": 158,
+        "path": "/settings/settings.js",
+        "start": 56,
+        "transfer": 4621
+      },
+      {
+        "bytes": 12944,
+        "end": 160,
+        "path": "/shared/redesign-foundation.js",
+        "start": 56,
+        "transfer": 13244
+      },
+      {
+        "bytes": 14090,
+        "end": 175,
+        "path": "/shared/cinematic-scenes.js",
+        "start": 56,
+        "transfer": 14390
+      },
+      {
+        "bytes": 1760,
+        "end": 176,
+        "path": "/explore/discovery-integration.js",
+        "start": 56,
+        "transfer": 2060
+      },
+      {
+        "bytes": 19840,
+        "end": 177,
+        "path": "/home/home-redesign.js",
+        "start": 56,
+        "transfer": 20140
+      },
+      {
+        "bytes": 20479,
+        "end": 180,
+        "path": "/work/work-redesign.js",
+        "start": 56,
+        "transfer": 20779
+      },
+      {
+        "bytes": 15386,
+        "end": 181,
+        "path": "/personal/personal-redesign.js",
+        "start": 56,
+        "transfer": 15686
+      },
+      {
+        "bytes": 13800,
+        "end": 182,
+        "path": "/explore/explore-redesign.js",
+        "start": 57,
+        "transfer": 14100
+      },
+      {
+        "bytes": 13599,
+        "end": 182,
+        "path": "/games/games-redesign.js",
+        "start": 57,
+        "transfer": 13899
+      },
+      {
+        "bytes": 222935,
+        "end": 237,
+        "path": "/assets/game-art/cyberpunk-2077-hero.jpg",
+        "start": 231,
+        "transfer": 223235
+      },
+      {
+        "bytes": 695668,
+        "end": 260,
+        "path": "/assets/movie-art/inception-background.jpg",
+        "start": 232,
+        "transfer": 695968
+      },
+      {
+        "bytes": 474286,
+        "end": 646,
+        "path": "/assets/game-art/hades-hero.jpg",
+        "start": 606,
+        "transfer": 474586
+      },
+      {
+        "bytes": 688767,
+        "end": 625,
+        "path": "/assets/movie-art/matrix-background.jpg",
+        "start": 607,
+        "transfer": 689067
+      },
+      {
+        "bytes": 201872,
+        "end": 629,
+        "path": "/assets/page-art/personal-cinematic.webp",
+        "start": 609,
+        "transfer": 202172
+      },
+      {
+        "bytes": 93,
+        "end": 684,
+        "path": "/api/status",
+        "start": 677,
+        "transfer": 393
+      },
+      {
+        "bytes": 2577,
+        "end": 791,
+        "path": "/assets/provider-logos/tmdb.svg",
+        "start": 781,
+        "transfer": 2877
+      },
+      {
+        "bytes": 252201,
+        "end": 1051,
+        "path": "/assets/scenes/home/hero-fast.jpg",
+        "start": 795,
+        "transfer": 252501
+      },
+      {
+        "bytes": 234273,
+        "end": 1143,
+        "path": "/assets/scenes/work/hero-fast.jpg",
+        "start": 864,
+        "transfer": 234573
+      },
+      {
+        "bytes": 243341,
+        "end": 1131,
+        "path": "/assets/scenes/personal/hero-fast.jpg",
+        "start": 865,
+        "transfer": 243641
+      },
+      {
+        "bytes": 286632,
+        "end": 1133,
+        "path": "/assets/scenes/explore/hero-fast.jpg",
+        "start": 865,
+        "transfer": 286932
+      },
+      {
+        "bytes": 218731,
+        "end": 1134,
+        "path": "/assets/scenes/movies/hero-fast.jpg",
+        "start": 865,
+        "transfer": 219031
+      },
+      {
+        "bytes": 201825,
+        "end": 1136,
+        "path": "/assets/scenes/projects-notes/hero-fast.jpg",
+        "start": 865,
+        "transfer": 202125
+      },
+      {
+        "bytes": 212764,
+        "end": 1330,
+        "path": "/assets/scenes/settings/hero-fast.jpg",
+        "start": 865,
+        "transfer": 213064
+      },
+      {
+        "bytes": 12439,
+        "end": 1139,
+        "path": "/assets/game-art/alan-wake-2-logo.png",
+        "start": 958,
+        "transfer": 12739
+      },
+      {
+        "bytes": 59939,
+        "end": 1141,
+        "path": "/assets/game-art/resident-evil-4-logo.png",
+        "start": 958,
+        "transfer": 60239
+      },
+      {
+        "bytes": 220371,
+        "end": 1142,
+        "path": "/assets/game-art/diablo-immortal-logo.png",
+        "start": 958,
+        "transfer": 220671
+      },
+      {
+        "bytes": 80192,
+        "end": 1145,
+        "path": "/assets/game-art/cyberpunk-2077-logo.png",
+        "start": 958,
+        "transfer": 80492
+      },
+      {
+        "bytes": 70480,
+        "end": 1147,
+        "path": "/assets/game-art/hades-logo.png",
+        "start": 958,
+        "transfer": 70780
+      },
+      {
+        "bytes": 8178,
+        "end": 1147,
+        "path": "/assets/game-art/death-stranding-logo.png",
+        "start": 958,
+        "transfer": 8478
+      },
+      {
+        "bytes": 80002,
+        "end": 24006,
+        "path": "/assets/scenes/work/portals/projects.jpg",
+        "start": 23987,
+        "transfer": 80302
+      },
+      {
+        "bytes": 118740,
+        "end": 24007,
+        "path": "/assets/scenes/work/portals/kanban-board.jpg",
+        "start": 23987,
+        "transfer": 119040
+      },
+      {
+        "bytes": 129098,
+        "end": 24009,
+        "path": "/assets/scenes/work/portals/team.jpg",
+        "start": 23987,
+        "transfer": 129398
+      },
+      {
+        "bytes": 100055,
+        "end": 24008,
+        "path": "/assets/scenes/work/portals/documents.jpg",
+        "start": 23987,
+        "transfer": 100355
+      },
+      {
+        "bytes": 114686,
+        "end": 24012,
+        "path": "/assets/scenes/work/portals/templates.jpg",
+        "start": 23987,
+        "transfer": 114986
+      },
+      {
+        "bytes": 94983,
+        "end": 24013,
+        "path": "/assets/scenes/work/portals/meetings.jpg",
+        "start": 23987,
+        "transfer": 95283
+      },
+      {
+        "bytes": 34676,
+        "end": 24264,
+        "path": "/assets/destinations/crete-card.webp",
+        "start": 24255,
+        "transfer": 34976
+      },
+      {
+        "bytes": 115124,
+        "end": 24265,
+        "path": "/assets/destinations/costa-rica-card.webp",
+        "start": 24255,
+        "transfer": 115424
+      },
+      {
+        "bytes": 54202,
+        "end": 24266,
+        "path": "/assets/destinations/lisbon-card.webp",
+        "start": 24255,
+        "transfer": 54502
+      },
+      {
+        "bytes": 27590,
+        "end": 24268,
+        "path": "/assets/destinations/azores-card.webp",
+        "start": 24255,
+        "transfer": 27890
+      },
+      {
+        "bytes": 78144,
+        "end": 24267,
+        "path": "/assets/destinations/kyoto-card.webp",
+        "start": 24255,
+        "transfer": 78444
+      },
+      {
+        "bytes": 227092,
+        "end": 24762,
+        "path": "/assets/scenes/games/hero-fast.jpg",
+        "start": 24484,
+        "transfer": 227392
+      },
+      {
+        "bytes": 133892,
+        "end": 24571,
+        "path": "/assets/scenes/games/portals/my-games.jpg",
+        "start": 24562,
+        "transfer": 134192
+      },
+      {
+        "bytes": 138537,
+        "end": 24575,
+        "path": "/assets/scenes/games/portals/missions-quests.jpg",
+        "start": 24563,
+        "transfer": 138837
+      },
+      {
+        "bytes": 148060,
+        "end": 24574,
+        "path": "/assets/scenes/games/portals/game-library.jpg",
+        "start": 24563,
+        "transfer": 148360
+      },
+      {
+        "bytes": 104315,
+        "end": 24575,
+        "path": "/assets/scenes/games/portals/game-sessions.jpg",
+        "start": 24563,
+        "transfer": 104615
+      },
+      {
+        "bytes": 151443,
+        "end": 24577,
+        "path": "/assets/scenes/games/portals/discover-games.jpg",
+        "start": 24563,
+        "transfer": 151743
+      },
+      {
+        "bytes": 105983,
+        "end": 24580,
+        "path": "/assets/scenes/games/portals/game-settings.jpg",
+        "start": 24563,
+        "transfer": 106283
+      },
+      {
+        "bytes": 117081,
+        "end": 24831,
+        "path": "/assets/scenes/personal/portals/mindfulness.jpg",
+        "start": 24823,
+        "transfer": 117381
+      },
+      {
+        "bytes": 134525,
+        "end": 24832,
+        "path": "/assets/scenes/personal/portals/fitness.jpg",
+        "start": 24823,
+        "transfer": 134825
+      },
+      {
+        "bytes": 124008,
+        "end": 24834,
+        "path": "/assets/scenes/personal/portals/nutrition.jpg",
+        "start": 24824,
+        "transfer": 124308
+      },
+      {
+        "bytes": 119070,
+        "end": 24835,
+        "path": "/assets/scenes/personal/portals/recovery.jpg",
+        "start": 24824,
+        "transfer": 119370
+      },
+      {
+        "bytes": 111059,
+        "end": 24836,
+        "path": "/assets/scenes/personal/portals/personal-life.jpg",
+        "start": 24824,
+        "transfer": 111359
+      },
+      {
+        "bytes": 129138,
+        "end": 24837,
+        "path": "/assets/scenes/personal/portals/home-wellbeing.jpg",
+        "start": 24824,
+        "transfer": 129438
+      }
+    ],
+    "runtime": [],
+    "scenes": [
+      {
+        "id": 1,
+        "src": "assets/scenes/home/hero-fast.jpg",
+        "state": "ready",
+        "visible": true,
+        "world": "home"
+      },
+      {
+        "id": 4,
+        "src": "assets/scenes/games/hero-fast.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "games"
+      },
+      {
+        "id": 2,
+        "src": "assets/scenes/work/hero-fast.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "work"
+      },
+      {
+        "id": 3,
+        "src": "assets/scenes/personal/hero-fast.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "personal"
+      },
+      {
+        "id": 5,
+        "src": "assets/scenes/explore/hero-fast.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "explore"
+      }
+    ],
+    "shifts": []
+  },
+  "checked": [
+    {
+      "cycle": 0,
+      "expected": "work",
+      "page": "work",
+      "visibleHosts": [
+        "work"
+      ],
+      "visibleViews": [
+        "workView"
+      ]
+    },
+    {
+      "cycle": 0,
+      "expected": "explore",
+      "page": "explore",
+      "visibleHosts": [
+        "explore"
+      ],
+      "visibleViews": [
+        "exploreView"
+      ]
+    },
+    {
+      "cycle": 0,
+      "expected": "games",
+      "page": "games",
+      "visibleHosts": [
+        "games"
+      ],
+      "visibleViews": [
+        "gamesView"
+      ]
+    },
+    {
+      "cycle": 0,
+      "expected": "personal",
+      "page": "personal",
+      "visibleHosts": [
+        "personal"
+      ],
+      "visibleViews": [
+        "personalView"
+      ]
+    },
+    {
+      "cycle": 0,
+      "expected": "home",
+      "page": "home",
+      "visibleHosts": [
+        "home"
+      ],
+      "visibleViews": [
+        "homeView"
+      ]
+    },
+    {
+      "cycle": 1,
+      "expected": "work",
+      "page": "work",
+      "visibleHosts": [
+        "work"
+      ],
+      "visibleViews": [
+        "workView"
+      ]
+    },
+    {
+      "cycle": 1,
+      "expected": "explore",
+      "page": "explore",
+      "visibleHosts": [
+        "explore"
+      ],
+      "visibleViews": [
+        "exploreView"
+      ]
+    },
+    {
+      "cycle": 1,
+      "expected": "games",
+      "page": "games",
+      "visibleHosts": [
+        "games"
+      ],
+      "visibleViews": [
+        "gamesView"
+      ]
+    },
+    {
+      "cycle": 1,
+      "expected": "personal",
+      "page": "personal",
+      "visibleHosts": [
+        "personal"
+      ],
+      "visibleViews": [
+        "personalView"
+      ]
+    },
+    {
+      "cycle": 1,
+      "expected": "home",
+      "page": "home",
+      "visibleHosts": [
+        "home"
+      ],
+      "visibleViews": [
+        "homeView"
+      ]
+    },
+    {
+      "cycle": 2,
+      "expected": "work",
+      "page": "work",
+      "visibleHosts": [
+        "work"
+      ],
+      "visibleViews": [
+        "workView"
+      ]
+    },
+    {
+      "cycle": 2,
+      "expected": "explore",
+      "page": "explore",
+      "visibleHosts": [
+        "explore"
+      ],
+      "visibleViews": [
+        "exploreView"
+      ]
+    },
+    {
+      "cycle": 2,
+      "expected": "games",
+      "page": "games",
+      "visibleHosts": [
+        "games"
+      ],
+      "visibleViews": [
+        "gamesView"
+      ]
+    },
+    {
+      "cycle": 2,
+      "expected": "personal",
+      "page": "personal",
+      "visibleHosts": [
+        "personal"
+      ],
+      "visibleViews": [
+        "personalView"
+      ]
+    },
+    {
+      "cycle": 2,
+      "expected": "home",
+      "page": "home",
+      "visibleHosts": [
+        "home"
+      ],
+      "visibleViews": [
+        "homeView"
+      ]
+    }
+  ]
+}

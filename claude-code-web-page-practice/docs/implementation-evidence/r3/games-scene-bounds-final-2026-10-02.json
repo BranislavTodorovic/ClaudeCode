@@ -1,0 +1,77 @@
+[
+  {
+    "client": 1905,
+    "focus": "Open Game Sessions",
+    "oversized": [],
+    "ownerCount": 1,
+    "page": "games",
+    "scrollWidth": 1905,
+    "shellCount": 1,
+    "surface": "landing",
+    "width": 1920,
+    "scene": {
+      "height": 1080,
+      "viewHeight": 1080
+    }
+  },
+  {
+    "client": 1425,
+    "focus": "Open Game Sessions",
+    "oversized": [],
+    "ownerCount": 1,
+    "page": "games",
+    "scrollWidth": 1425,
+    "shellCount": 1,
+    "surface": "landing",
+    "width": 1440,
+    "scene": {
+      "height": 1080,
+      "viewHeight": 1080
+    }
+  },
+  {
+    "client": 1009,
+    "focus": "Open Game Sessions",
+    "oversized": [],
+    "ownerCount": 1,
+    "page": "games",
+    "scrollWidth": 1009,
+    "shellCount": 1,
+    "surface": "landing",
+    "width": 1024,
+    "scene": {
+      "height": 1080,
+      "viewHeight": 1080
+    }
+  },
+  {
+    "client": 745,
+    "focus": "Open Game Sessions",
+    "oversized": [],
+    "ownerCount": 1,
+    "page": "games",
+    "scrollWidth": 745,
+    "shellCount": 1,
+    "surface": "landing",
+    "width": 760,
+    "scene": {
+      "height": 1080,
+      "viewHeight": 1080
+    }
+  },
+  {
+    "client": 375,
+    "focus": "Open Game Sessions",
+    "oversized": [],
+    "ownerCount": 1,
+    "page": "games",
+    "scrollWidth": 375,
+    "shellCount": 1,
+    "surface": "landing",
+    "width": 390,
+    "scene": {
+      "height": 1080,
+      "viewHeight": 1080
+    }
+  }
+]

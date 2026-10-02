@@ -39,6 +39,7 @@
   }
   function go(page, targetId) {
     if (!OS.goToPage(page)) { notice('Could not open that space. Your current page is unchanged.'); return false; }
+    if (page === 'personal' && targetId) ownerSurface.show('Goals, routines & habits');
     if (targetId) {
       var target = doc.getElementById(targetId);
       if (target) {
@@ -82,9 +83,9 @@
         '<article class="osr-panel osr-personal-recovery"><div class="osr-card-head"><h2>Health &amp; Recovery</h2></div><div class="osr-personal-recovery-state">' + OS.iconSvg('heart') + '<strong>Your recovery, when you’re ready</strong><p>No health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.</p></div></article>' +
       '</section>' +
       '<section class="osr-personal-portals" aria-label="Personal spaces"><div class="osr-grid osr-portal-grid" id="osrPersonalPortalGrid"></div></section>' +
-      '<section class="osr-personal-followon" id="osrPersonalFollowon" aria-labelledby="osrPersonalToolsTitle"><h2 id="osrPersonalToolsTitle">Your Personal tools</h2><p>Manage your goals, routines and habits below.</p></section>' +
     '</main>');
 
+  var ownerSurface = foundation.createOwnerSurface(view, stage, 'personal', 'Personal');
   var portals = [
     { slug: 'mindfulness', label: 'Mindfulness', subtitle: 'Sessions coming in the next rollout.' },
     { slug: 'fitness', label: 'Fitness', subtitle: 'Workouts coming in the next rollout.' },
@@ -98,7 +99,7 @@
     var tile = doc.createElement('div');
     tile.className = 'osr-portal osr-personal-portal';
     tile.dataset.portal = portal.slug;
-    tile.innerHTML = '<img src="assets/scenes/personal/portals/' + portal.slug + '.jpg" alt="" loading="eager" decoding="sync"><div class="osr-portal-copy"><strong>' + portal.label + '</strong><small>' + portal.subtitle + '</small></div>';
+    tile.innerHTML = '<img src="assets/scenes/personal/portals/' + portal.slug + '.jpg" alt="" loading="lazy" decoding="async" width="960" height="640"><div class="osr-portal-copy"><strong>' + portal.label + '</strong><small>' + portal.subtitle + '</small></div>';
     var image = tile.querySelector('img');
     image.addEventListener('load', function () { tile.dataset.assetState = 'ready'; });
     image.addEventListener('error', function () { tile.dataset.assetState = 'fallback'; image.remove(); });
@@ -139,8 +140,8 @@
     doc.getElementById('osrPersonalDate').textContent = new Intl.DateTimeFormat(undefined, { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date()) + ' · Your personal space';
   }
   function focusPersonal(kind, id) {
-    if (!go('personal')) return false;
     var listId = kind === 'goal' ? 'personalGoalsList' : kind === 'routine' ? 'personalRoutinesList' : 'personalHabitsList';
+    if (!go('personal', listId)) return false;
     var control = Array.from(doc.querySelectorAll('#' + listId + ' [data-toggle]')).find(function (node) { return node.dataset.toggle === id; });
     if (!control) { notice('That personal item is no longer available.'); return false; }
     control.scrollIntoView({ block: 'center' });
@@ -153,7 +154,7 @@
     var portal = event.target.closest('[data-personal-portal]');
     if (portal) {
       if (portal.dataset.personalPortal === 'personal-life') go('personal', 'personalGoalInput');
-      else notice(portal.dataset.personalPortal.replace(/-/g, ' ').replace(/^./, function (letter) { return letter.toUpperCase(); }) + ' is coming in the Personal submodule rollout. Your saved goals, routines and habits remain available below.');
+      else root.OneSpaceUI.open('Personal space — coming later', '<p>' + OS.escapeHtml(portal.dataset.personalPortal.replace(/-/g, ' ').replace(/^./, function (letter) { return letter.toUpperCase(); })) + ' is coming in the Personal submodule rollout. Open Personal Life for your saved goals, routines and habits.</p>', null);
       return;
     }
     var action = event.target.closest('[data-personal-action]');
@@ -163,7 +164,7 @@
       case 'habit': go('personal', 'personalHabitInput'); break;
       case 'routine': go('personal', 'personalRoutineInput'); break;
       case 'personal-life': go('personal', 'personalGoalInput'); break;
-      case 'workout': notice('Workout sessions are coming in the Fitness submodule. Your saved Personal items remain available below.'); break;
+      case 'workout': notice('Workout sessions are coming in the Fitness submodule. Open Personal Life for your saved goals, routines and habits.'); break;
       case 'meditate': notice('Guided meditation sessions are coming in the Mindfulness submodule.'); break;
       case 'meal': notice('Meal logging is coming in the Nutrition submodule.'); break;
     }

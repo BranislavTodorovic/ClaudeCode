@@ -103,6 +103,65 @@
     });
   }
 
+  /* R3 presentation only: keep existing owner nodes and APIs, without building
+     the later dedicated module system or creating another domain store. */
+  function createOwnerSurface(view, stage, worldId, label, existingTools) {
+    var doc = view.ownerDocument, win = doc.defaultView;
+    var frame = stage.querySelector('.osr-frame'), landing = frame.querySelector('main');
+    var tools = existingTools || doc.createElement('section');
+    if (!existingTools) Array.from(view.children).forEach(function (child) {
+      if (child !== stage) tools.appendChild(child);
+    });
+    tools.classList.add('osr-owner-surface');
+    tools.setAttribute('aria-label', label + ' tools');
+    var heading = doc.createElement('div'); heading.className = 'osr-owner-heading';
+    var back = doc.createElement('button'); back.type = 'button'; back.className = 'osr-button';
+    back.textContent = '← Back to ' + label;
+    var title = doc.createElement('h1'); title.tabIndex = -1; title.textContent = label + ' tools';
+    heading.appendChild(back); heading.appendChild(title); tools.prepend(heading);
+    frame.appendChild(tools);
+    var trigger = null, scroll = 0;
+    function present(open, name, focus) {
+      landing.hidden = open; tools.hidden = !open;
+      stage.dataset.surface = open ? 'owner' : 'landing';
+      if (open) title.textContent = name || label + ' tools';
+      if (focus) {
+        win.scrollTo({ top: open ? 0 : scroll, behavior: 'auto' });
+        var target = open ? title : trigger && trigger.isConnected ? trigger : landing.querySelector('h1');
+        if (target) { if (!target.hasAttribute('tabindex') && target.tagName === 'H1') target.tabIndex = -1; target.focus({ preventScroll: true }); }
+      }
+    }
+    function show(name, trackHistory) {
+      if (tools.hidden) { trigger = doc.activeElement; scroll = win.scrollY; }
+      present(true, name, true);
+      if (trackHistory !== false && !(win.history.state && win.history.state.osrOwner === worldId)) {
+        var state = Object.assign({}, win.history.state, { osrOwner: worldId, osrOwnerTitle: title.textContent });
+        win.history.pushState(state, '', win.location.href);
+      }
+    }
+    function reset(focus) { present(false, null, focus); }
+    back.addEventListener('click', function () {
+      if (win.history.state && win.history.state.osrOwner === worldId) win.history.back();
+      else if (worldId === 'work' && doc.body.dataset.workView === 'projects') win.OneSpace.goToPage('work');
+      else reset(true);
+    });
+    doc.addEventListener('onespace:page-changed', function (event) {
+      if (event.detail.page === worldId && event.detail.previous === worldId && !tools.hidden && tools.contains(doc.activeElement)) return;
+      if (event.detail.page === 'work' && worldId === 'work' && doc.body.dataset.workView === 'projects') present(true, 'Projects', false);
+      else reset(false);
+    });
+    win.addEventListener('popstate', function () {
+      if (doc.body.dataset.page !== worldId) return;
+      var state = win.history.state;
+      if (state && state.osrOwner === worldId) present(true, state.osrOwnerTitle, true);
+      else if (worldId === 'work' && doc.body.dataset.workView === 'projects') present(true, 'Projects', true);
+      else reset(true);
+    });
+    reset(false);
+    if (worldId === 'work' && doc.body.dataset.workView === 'projects') present(true, 'Projects', false);
+    return { show: show, reset: reset, tools: tools };
+  }
+
   /* Decorative-only image loading; the existing OneSpace scene controller owns motion. */
   function createSceneHost(host, ImageConstructor) {
     var ImageType = ImageConstructor || (typeof Image !== 'undefined' ? Image : null);
@@ -177,5 +236,5 @@
     return { show: show, clear: clear };
   }
 
-  return { worlds: worlds, utilities: utilities, canonicalWorld: canonicalWorld, routePath: routePath, parseRoute: parseRoute, createShell: createShell, setActiveWorld: setActiveWorld, createSceneHost: createSceneHost };
+  return { worlds: worlds, utilities: utilities, canonicalWorld: canonicalWorld, routePath: routePath, parseRoute: parseRoute, createShell: createShell, setActiveWorld: setActiveWorld, createSceneHost: createSceneHost, createOwnerSurface: createOwnerSurface };
 });

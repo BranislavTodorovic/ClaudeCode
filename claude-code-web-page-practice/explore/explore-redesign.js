@@ -16,8 +16,8 @@
   var portals = [
     { slug: 'destinations', label: 'Destinations', subtitle: 'Search your local atlas.', image: 'assets/destinations/crete-card.webp' },
     { slug: 'experiences', label: 'Experiences', subtitle: 'Activity discovery coming later.', image: 'assets/destinations/costa-rica-card.webp', future: true },
-    { slug: 'travel-guides', label: 'Travel Guides', subtitle: 'Dedicated guides coming later.', image: 'assets/scenes/explore/hero.png', future: true },
-    { slug: 'bucket-list', label: 'Bucket List', subtitle: 'Your saved places and trip plans.', image: 'assets/scenes/explore/hero.png' },
+    { slug: 'travel-guides', label: 'Travel Guides', subtitle: 'Dedicated guides coming later.', image: 'assets/scenes/explore/hero-fast.jpg', future: true },
+    { slug: 'bucket-list', label: 'Bucket List', subtitle: 'Your saved places and trip plans.', image: 'assets/scenes/explore/hero-fast.jpg' },
     { slug: 'discover-more', label: 'Discover More', subtitle: 'Explore your travel resources.', image: 'assets/destinations/azores-card.webp' }
   ];
   function wireInspirationImage(img) {
@@ -41,6 +41,7 @@
   function notice(message) { var el = doc.getElementById('osrExploreNotice'); el.textContent = message; el.hidden = false; }
   function focusOwner(target) {
     if (!target) { notice('That travel tool is unavailable. Your saved places are unchanged.'); return false; }
+    ownerSurface.show('Destinations & saved trips');
     target.scrollIntoView({block:'center'});
     if (!target.matches('button,input,select,a,textarea,summary')) { target.setAttribute('tabindex','-1'); }
     target.focus({preventScroll:true}); return true;
@@ -63,13 +64,13 @@
       '</section>' +
       '<section class="osr-explore-summary osr-grid" aria-label="Explore at a glance">' +
         '<article class="osr-panel"><div class="osr-card-head"><h2>Featured Destinations</h2><button class="osr-button" type="button" data-explore-action="surprise">Surprise me</button></div><p class="osr-explore-context">From your maintained local collection</p><div id="osrExploreFeatured" class="osr-explore-featured"></div></article>' +
-        '<article class="osr-panel"><div class="osr-card-head"><h2>Saved Places</h2><button class="osr-card-arrow" type="button" data-explore-action="bucket-list" aria-label="Open saved trip board">↗</button></div><p class="osr-explore-context" id="osrExploreSavedCount">Your saved trip board</p><div id="osrExploreSaved"><p class="osr-empty">No saved places yet. Search or add a location below.</p></div></article>' +
+        '<article class="osr-panel"><div class="osr-card-head"><h2>Saved Places</h2><button class="osr-card-arrow" type="button" data-explore-action="bucket-list" aria-label="Open saved trip board">↗</button></div><p class="osr-explore-context" id="osrExploreSavedCount">Your saved trip board</p><div id="osrExploreSaved"><p class="osr-empty">No saved places yet. Open Destinations to search or add a location.</p></div></article>' +
         '<article class="osr-panel"><div class="osr-card-head"><h2>Upcoming Trips</h2><button class="osr-card-arrow" type="button" data-explore-action="dates" aria-label="Plan trip dates">↗</button></div><p class="osr-explore-context">Planned trips with upcoming start dates</p><div id="osrExploreUpcoming"><p class="osr-empty">No upcoming dated trips. Set a planned trip’s dates on your board.</p></div></article>' +
       '</section>' +
-      '<section class="osr-explore-portals osr-grid" aria-label="Explore spaces">' + portals.map(function (portal) { return '<button class="osr-portal osr-explore-portal osr-explore-portal-action" type="button" data-portal="' + portal.slug + '" data-explore-action="' + portal.slug + '" aria-label="' + (portal.future ? portal.label + ' — coming later' : 'Open ' + portal.label) + '"' + (portal.future ? ' aria-haspopup="dialog" aria-controls="domainOverlay"' : '') + '><img src="' + portal.image + '" alt="" loading="eager" decoding="async"><span class="osr-portal-copy"><strong>' + portal.label + '</strong><small>' + portal.subtitle + '</small></span>' + OS.iconSvg('arrowUpRight') + '</button>'; }).join('') + '</section>' +
+      '<section class="osr-explore-portals osr-grid" aria-label="Explore spaces">' + portals.map(function (portal) { return '<button class="osr-portal osr-explore-portal osr-explore-portal-action" type="button" data-portal="' + portal.slug + '" data-explore-action="' + portal.slug + '" aria-label="' + (portal.future ? portal.label + ' — coming later' : 'Open ' + portal.label) + '"' + (portal.future ? ' aria-haspopup="dialog" aria-controls="domainOverlay"' : '') + '><img src="' + portal.image + '" alt="" loading="lazy" decoding="async"><span class="osr-portal-copy"><strong>' + portal.label + '</strong><small>' + portal.subtitle + '</small></span>' + OS.iconSvg('arrowUpRight') + '</button>'; }).join('') + '</section>' +
       '<div class="osr-explore-credits"><button class="osr-explore-credits-toggle" type="button" data-explore-action="credits" aria-haspopup="dialog" aria-controls="domainOverlay">' + OS.iconSvg('book') + 'Scene &amp; photo credits</button><template id="osrExploreCredits"></template></div>' +
-      '<section class="osr-explore-followon"><h2>Your travel tools</h2><p>Search, save places and manage your trips below.</p></section>' +
     '</main>');
+  var ownerSurface = foundation.createOwnerSurface(view, stage, 'explore', 'Explore');
   stage.querySelectorAll('.osr-explore-portal img').forEach(function (img) {
     img.dataset.fallbackOwner = 'explore-portal';
     function fallback() { img.hidden = true; img.parentElement.dataset.assetState = 'fallback'; }
@@ -84,10 +85,10 @@
   }
   function render() {
     var model = buildModel(snapshot(),todayKey());
-    doc.getElementById('osrExploreFeatured').innerHTML = model.featured.map(function (raw) { var item = root.OneSpaceLocalDiscovery.normalize(raw,'destinations'); return '<article class="osr-explore-destination">' + D.photo(item) + '<h3>' + esc(item.name) + '</h3><p>' + esc(item.country) + '</p><button class="osr-button" type="button" data-explore-destination="' + esc(item.id) + '" aria-label="Explore ' + esc(item.name) + '">Explore →</button></article>'; }).join('') || '<p class="osr-empty">The local catalog is unavailable. Your saved places remain below.</p>';
+    doc.getElementById('osrExploreFeatured').innerHTML = model.featured.map(function (raw) { var item = root.OneSpaceLocalDiscovery.normalize(raw,'destinations'); return '<article class="osr-explore-destination">' + D.photo(item) + '<h3>' + esc(item.name) + '</h3><p>' + esc(item.country) + '</p><button class="osr-button" type="button" data-explore-destination="' + esc(item.id) + '" aria-label="Explore ' + esc(item.name) + '">Explore →</button></article>'; }).join('') || '<p class="osr-empty">The local catalog is unavailable. Open Bucket List for your saved places.</p>';
     D.wirePhotos(doc.getElementById('osrExploreFeatured'));
     doc.getElementById('osrExploreSavedCount').textContent = model.saved.length + ' saved on this device';
-    doc.getElementById('osrExploreSaved').innerHTML = model.saved.slice(0,3).map(function (row) { return tripRow(row,false); }).join('') || '<p class="osr-empty">No saved places yet. Search or add a location below.</p>';
+    doc.getElementById('osrExploreSaved').innerHTML = model.saved.slice(0,3).map(function (row) { return tripRow(row,false); }).join('') || '<p class="osr-empty">No saved places yet. Open Destinations to search or add a location.</p>';
     doc.getElementById('osrExploreUpcoming').innerHTML = model.upcoming.slice(0,3).map(function (row) { return tripRow(row,true); }).join('') || '<p class="osr-empty">No upcoming dated trips. Set a planned trip’s dates on your board.</p>';
   }
   var photoIds = ['lisbon','kyoto','azores','crete','costa-rica'];
@@ -113,7 +114,7 @@
     if (name === 'credits') { root.OneSpaceUI.open('Scene & photo credits',doc.getElementById('osrExploreCredits').innerHTML,null); return; }
     if (name === 'experiences' || name === 'travel-guides') {
       var label = name === 'experiences' ? 'Experiences' : 'Travel Guides';
-      root.OneSpaceUI.open(label + ' — coming later','<p>' + esc(label + ' is coming in the Explore submodule rollout. Destination discovery and your trip board are available below.') + '</p>',null);
+      root.OneSpaceUI.open(label + ' — coming later','<p>' + esc(label + ' is coming in the Explore submodule rollout. Open Destinations or Bucket List for destination discovery and your trip board.') + '</p>',null);
       return;
     }
     if (name === 'surprise') { owner.random(); return; }

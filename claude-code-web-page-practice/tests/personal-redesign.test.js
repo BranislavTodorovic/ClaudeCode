@@ -12,7 +12,7 @@ function personalRuntime(values = new Map()) {
   function node() {
     const handlers = new Map();
     return {
-      dataset: {}, style: { setProperty() {} }, classList: { add() {} },
+      hidden: true, dataset: {}, style: { setProperty() {} }, classList: { add() {} },
       appendChild(child) { this.lastChild = child; if (this === nodes.get('osrPersonalPortalGrid')) portals.push(child); },
       insertAdjacentHTML() {}, querySelector() { return node(); },
       addEventListener(type, callback) { handlers.set(type, callback); },
@@ -47,14 +47,15 @@ function personalRuntime(values = new Map()) {
     }
   };
   const foundation = {
-    createSceneHost: () => ({ show() {} }), createShell: () => node(), setActiveWorld() {}
+    createOwnerSurface: () => ({ show() {} }), createSceneHost: () => ({ show() {} }), createShell: () => node(), setActiveWorld() {}
   };
-  const window = { document: doc, OneSpace: OS, OneSpaceRedesign: foundation };
+  const dialogs = [];
+  const window = { document: doc, OneSpace: OS, OneSpaceRedesign: foundation, OneSpaceUI: {open: (...args) => dialogs.push(args)} };
   const context = vm.createContext({ window });
   const source = file => fs.readFileSync(path.resolve(__dirname, '..', file), 'utf8');
   vm.runInContext(source('personal/personal-controller.js'), context);
   vm.runInContext(source('personal/personal-redesign.js'), context);
-  return { window, doc, nodes, portals, values, OS };
+  return { window, doc, nodes, portals, values, OS, dialogs };
 }
 
 test('Personal progress derives only from saved goals, routines and habits', () => {
@@ -115,7 +116,7 @@ test('Personal owner completion is reloaded by the landing from the same validat
   assert.equal(JSON.parse(afterReload.values.get('orbit-personal-habits'))[0].done, true);
 });
 
-test('Fitness portal activates an availability notice without navigation', () => {
+test('Fitness portal opens visible availability feedback without navigation or hero reflow', () => {
   const app = personalRuntime();
   const fitness = app.portals.find(portal => portal.dataset.portal === 'fitness');
   assert(fitness);
@@ -124,9 +125,10 @@ test('Fitness portal activates an availability notice without navigation', () =>
   app.nodes.get('redesignPersonal').trigger('click', {
     target: { closest(selector) { return selector === '[data-personal-portal]' ? button : null; } }
   });
-  const notice = app.nodes.get('osrPersonalNotice');
-  assert.equal(notice.hidden, false);
-  assert.match(notice.textContent, /^Fitness is coming in the Personal submodule rollout\./);
+  const notice = app.doc.getElementById('osrPersonalNotice');
+  assert.equal(notice.hidden, true);
+  assert.equal(app.dialogs.length, 1);
+  assert.match(app.dialogs[0][1], /Fitness is coming in the Personal submodule rollout\./);
 });
 
 test('Personal portal caption reserves more inline room than the corner icon uses', () => {

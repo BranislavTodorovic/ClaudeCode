@@ -13,7 +13,7 @@ function mount() {
     return nodes.get(id);
   };
   const document = {getElementById:node,createElement:()=>node('created-'+nodes.size),querySelector:()=>null,querySelectorAll:()=>[],addEventListener(){}};
-  const window = {document,OneSpaceTrips:require('../explore/trip-board'),OneSpaceRedesign:{createSceneHost:()=>({show(){}}),createShell:()=>({}),setActiveWorld(){}},OneSpace:{iconSvg:()=>'<svg aria-hidden="true"></svg>',escapeHtml:s=>s,safeGetJSON:()=>[]},OneSpaceDiscovery:{wirePhotos(){}},OneSpaceExplore:{},OneSpaceUI:{open:(...args)=>calls.push(args)},DESTINATIONS:[]};
+  const window = {document,OneSpaceTrips:require('../explore/trip-board'),OneSpaceRedesign:{createOwnerSurface:()=>({show(){}}),createSceneHost:()=>({show(){}}),createShell:()=>({}),setActiveWorld(){}},OneSpace:{iconSvg:()=>'<svg aria-hidden="true"></svg>',escapeHtml:s=>s,safeGetJSON:()=>[]},OneSpaceDiscovery:{wirePhotos(){}},OneSpaceExplore:{},OneSpaceUI:{open:(...args)=>calls.push(args)},DESTINATIONS:[]};
   vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../explore/explore-redesign.js'),'utf8'),{window});
   node('osrExploreNotice');
   return {nodes,calls,html:[...nodes.values()].map(n=>n.html||'').join(''),click:async name=>handlers.click({target:{closest:selector=>selector==='[data-explore-action]'?{dataset:{exploreAction:name}}:null}})};
@@ -26,7 +26,7 @@ for (const [action,label] of [['experiences','Experiences'],['travel-guides','Tr
     assert.equal(app.calls.length,1,'future portal must open the shared dialog');
     assert.equal(app.calls[0][0],label+' — coming later');
     assert.match(app.calls[0][1],/coming in the Explore submodule rollout/);
-    assert.match(app.calls[0][1],/Destination discovery and your trip board are available below/);
+    assert.match(app.calls[0][1],/Open Destinations or Bucket List/);
     assert.equal(app.calls[0][2],null,'information-only dialog');
     assert.equal(notice.textContent,'Existing owner status');
     assert.equal(notice.hidden,true,'do not reflow the hero to show off-screen feedback');

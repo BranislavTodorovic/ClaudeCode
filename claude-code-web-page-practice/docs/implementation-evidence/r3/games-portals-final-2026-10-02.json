@@ -1,0 +1,38 @@
+[
+  {
+    "heading": "Game Library",
+    "landing": false,
+    "owner": true,
+    "tab": "My Games"
+  },
+  {
+    "heading": "Missions & Quests",
+    "landing": false,
+    "owner": true,
+    "tab": "Mission Progress"
+  },
+  {
+    "heading": "Game Library",
+    "landing": false,
+    "owner": true,
+    "tab": "My Games"
+  },
+  {
+    "heading": "Game Sessions",
+    "landing": false,
+    "owner": true,
+    "tab": "Sessions"
+  },
+  {
+    "heading": "Discover Games",
+    "landing": false,
+    "owner": true,
+    "tab": "Suggestions"
+  },
+  {
+    "heading": "Game Settings",
+    "landing": false,
+    "owner": true,
+    "tab": "Appearance"
+  }
+]

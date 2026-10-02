@@ -1,0 +1,178 @@
+[
+  {
+    "case": "initial",
+    "focus": "",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "empty-pointer",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": "true",
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Enter a game name to search your local catalog.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "exact-enter",
+    "focus": "osrGamesSearch",
+    "hidden": false,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "edit-alan",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "submit-alan",
+    "focus": "",
+    "hidden": false,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "edit-nonexistent-local-game",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "submit-nonexistent-local-game",
+    "focus": "",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "No local matches. Try another game name.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "edit-Hades",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "submit-Hades",
+    "focus": "",
+    "hidden": false,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "edit-Hades",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "submit-Hades",
+    "focus": "",
+    "hidden": false,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "edit-Hades",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "submit-Hades",
+    "focus": "",
+    "hidden": false,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "clear",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 0,
+    "scroll": 0,
+    "status": "Search the bundled catalogue on this device.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "detail-return",
+    "focus": "",
+    "hidden": false,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  },
+  {
+    "case": "escape",
+    "focus": "osrGamesSearch",
+    "hidden": true,
+    "invalid": null,
+    "portalY": 842.0625,
+    "resultCount": 1,
+    "scroll": 0,
+    "status": "1 local match. Choose a result for details.",
+    "summaryY": 494.90625
+  }
+]

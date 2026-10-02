@@ -1,0 +1,530 @@
+TAP version 13
+# Subtest: critical gate starts in the head before styles or legacy roots; completion is after every owner listener
+ok 1 - critical gate starts in the head before styles or legacy roots; completion is after every owner listener
+  ---
+  duration_ms: 3.4074
+  ...
+# Subtest: parser and partially loaded pipeline never reveal the application
+ok 2 - parser and partially loaded pipeline never reveal the application
+  ---
+  duration_ms: 15.5969
+  ...
+# Subtest: route/owner initialization completed with all redesigned roots releases the shared gate
+ok 3 - route/owner initialization completed with all redesigned roots releases the shared gate
+  ---
+  duration_ms: 4.0993
+  ...
+# Subtest: missing redesign mount produces accessible recovery instead of showing the legacy owner
+ok 4 - missing redesign mount produces accessible recovery instead of showing the legacy owner
+  ---
+  duration_ms: 4.066
+  ...
+# Subtest: script-load failure cannot be overwritten by a later completion event
+ok 5 - script-load failure cannot be overwritten by a later completion event
+  ---
+  duration_ms: 3.1969
+  ...
+# Subtest: initialization exception keeps the recovery screen and never exposes a partial world
+ok 6 - initialization exception keeps the recovery screen and never exposes a partial world
+  ---
+  duration_ms: 3.6253
+  ...
+# Subtest: missing image uses existing scene fallback rather than blocking application startup
+ok 7 - missing image uses existing scene fallback rather than blocking application startup
+  ---
+  duration_ms: 1.6139
+  ...
+# Subtest: no-JS fallback is preserved and deterministic readiness has no arbitrary delay or storage writer
+ok 8 - no-JS fallback is preserved and deterministic readiness has no arbitrary delay or storage writer
+  ---
+  duration_ms: 2.2536
+  ...
+# Subtest: Experiences opens visible future feedback without changing hero notice or owner data
+ok 9 - Experiences opens visible future feedback without changing hero notice or owner data
+  ---
+  duration_ms: 14.3654
+  ...
+# Subtest: Travel Guides opens visible future feedback without changing hero notice or owner data
+ok 10 - Travel Guides opens visible future feedback without changing hero notice or owner data
+  ---
+  duration_ms: 2.4839
+  ...
+# Subtest: Experiences quick action declares the same dialog feedback
+ok 11 - Experiences quick action declares the same dialog feedback
+  ---
+  duration_ms: 4.6458
+  ...
+# Subtest: credits audit accepts an explicit bounded dialog launcher and inert empty row
+ok 12 - credits audit accepts an explicit bounded dialog launcher and inert empty row
+  ---
+  duration_ms: 27.7967
+  ...
+# Subtest: credits audit rejects the stretched disclosure and empty-space activation
+ok 13 - credits audit rejects the stretched disclosure and empty-space activation
+  ---
+  duration_ms: 2.656
+  ...
+# Subtest: credits audit rejects invisible, moving and untested targets
+ok 14 - credits audit rejects invisible, moving and untested targets
+  ---
+  duration_ms: 0.6245
+  ...
+# Subtest: scene audit catches backdrop recropping, container shift and zoom on credits activation
+ok 15 - scene audit catches backdrop recropping, container shift and zoom on credits activation
+  ---
+  duration_ms: 1.087
+  ...
+# Subtest: portal audit accepts one semantic whole-card target and inactive adjacent space
+ok 16 - portal audit accepts one semantic whole-card target and inactive adjacent space
+  ---
+  duration_ms: 8.3479
+  ...
+# Subtest: portal audit rejects action leakage outside the visible card
+ok 17 - portal audit rejects action leakage outside the visible card
+  ---
+  duration_ms: 0.672
+  ...
+# Subtest: portal audit rejects invisible nested controls and moving hit boundaries
+ok 18 - portal audit rejects invisible nested controls and moving hit boundaries
+  ---
+  duration_ms: 0.5348
+  ...
+# Subtest: portal audit rejects an inactive part of the whole-card target and small controls
+ok 19 - portal audit rejects an inactive part of the whole-card target and small controls
+  ---
+  duration_ms: 0.4268
+  ...
+# Subtest: portal audit cannot pass untested off-screen boundaries
+ok 20 - portal audit cannot pass untested off-screen boundaries
+  ---
+  duration_ms: 0.2958
+  ...
+# Subtest: layout audit catches clipped controls even when legacy document width hides overflow
+ok 21 - layout audit catches clipped controls even when legacy document width hides overflow
+  ---
+  duration_ms: 1.2427
+  ...
+# Subtest: layout audit checks all retained regions as well as document width
+ok 22 - layout audit checks all retained regions as well as document width
+  ---
+  duration_ms: 1.8232
+  ...
+# Subtest: layout audit accepts bounded reflow with scrollbar width and subpixel rounding
+ok 23 - layout audit accepts bounded reflow with scrollbar width and subpixel rounding
+  ---
+  duration_ms: 0.8388
+  ...
+# Subtest: layout audit rejects mismatched centered frames even when nothing exceeds document width
+ok 24 - layout audit rejects mismatched centered frames even when nothing exceeds document width
+  ---
+  duration_ms: 0.4595
+  ...
+# Subtest: layout audit checks centering and common edges after frame reflow
+ok 25 - layout audit checks centering and common edges after frame reflow
+  ---
+  duration_ms: 0.5296
+  ...
+# Subtest: upcoming uses planned valid nonpast local dates, including today, in chronological order
+ok 26 - upcoming uses planned valid nonpast local dates, including today, in chronological order
+  ---
+  duration_ms: 31.4426
+  ...
+# Subtest: saved summary follows canonical ordering and leaves owner records untouched
+ok 27 - saved summary follows canonical ordering and leaves owner records untouched
+  ---
+  duration_ms: 0.7816
+  ...
+# Subtest: malformed and empty storage cannot become fake trips
+ok 28 - malformed and empty storage cannot become fake trips
+  ---
+  duration_ms: 0.9007
+  ...
+# Subtest: legacy capture handler leaves Explore-owned fallbacks intact while retaining other art fallbacks
+ok 29 - legacy capture handler leaves Explore-owned fallbacks intact while retaining other art fallbacks
+  ---
+  duration_ms: 5.6594
+  ...
+# Subtest: featured entries are actual catalog records and retain licensed media through normalization
+ok 30 - featured entries are actual catalog records and retain licensed media through normalization
+  ---
+  duration_ms: 16.9281
+  ...
+# Subtest: five canonical portals keep future modules truthful and use existing clean local assets
+ok 31 - five canonical portals keep future modules truthful and use existing clean local assets
+  ---
+  duration_ms: 4.1317
+  ...
+# Subtest: changing owner dates/status changes summaries without a parallel model or store
+ok 32 - changing owner dates/status changes summaries without a parallel model or store
+  ---
+  duration_ms: 0.981
+  ...
+# Subtest: live-service inference and catalog chapter outlines select the appropriate tracker
+ok 33 - live-service inference and catalog chapter outlines select the appropriate tracker
+  ---
+  duration_ms: 17.1603
+  ...
+# Subtest: weekly templates take precedence over story defaults and reset preserves the game template
+ok 34 - weekly templates take precedence over story defaults and reset preserves the game template
+  ---
+  duration_ms: 8.7295
+  ...
+# Subtest: objective and weekly toggles are involutions and rejected writes never advance the rendered state
+ok 35 - objective and weekly toggles are involutions and rejected writes never advance the rendered state
+  ---
+  duration_ms: 42.2031
+  ...
+# Subtest: type changes preserve each tracker history and keep only the active tracker live
+ok 36 - type changes preserve each tracker history and keep only the active tracker live
+  ---
+  duration_ms: 0.9031
+  ...
+# Subtest: weekly rollover occurs once and keeps subsequent toggles within the new week
+ok 37 - weekly rollover occurs once and keeps subsequent toggles within the new week
+  ---
+  duration_ms: 24.7351
+  ...
+# Subtest: spotlight includes custom games without artwork
+ok 38 - spotlight includes custom games without artwork
+  ---
+  duration_ms: 3.1374
+  ...
+# Subtest: focus restoration treats quoted ids as values, not selector syntax
+ok 39 - focus restoration treats quoted ids as values, not selector syntax
+  ---
+  duration_ms: 3.3523
+  ...
+# Subtest: weekly write failure rolls back both transaction keys and rendered completion
+ok 40 - weekly write failure rolls back both transaction keys and rendered completion
+  ---
+  duration_ms: 8.01
+  ...
+# Subtest: Delete game waits for confirmation and retains game and trackers on failed transaction
+ok 41 - Delete game waits for confirmation and retains game and trackers on failed transaction
+  ---
+  duration_ms: 3.0351
+  ...
+# Subtest: Spotlight selection commits both keys before changing the visible game
+ok 42 - Spotlight selection commits both keys before changing the visible game
+  ---
+  duration_ms: 6.0334
+  ...
+# Subtest: Open Progress does not navigate when Spotlight selection cannot be persisted
+ok 43 - Open Progress does not navigate when Spotlight selection cannot be persisted
+  ---
+  duration_ms: 3.1745
+  ...
+# Subtest: Edit Game retains the prior library and tracker when its write fails
+ok 44 - Edit Game retains the prior library and tracker when its write fails
+  ---
+  duration_ms: 4.7362
+  ...
+# Subtest: Edit objective leaves the active story untouched after a rejected write
+ok 45 - Edit objective leaves the active story untouched after a rejected write
+  ---
+  duration_ms: 6.8133
+  ...
+# Subtest: Delete objective waits for confirmation and preserves it after a rejected write
+ok 46 - Delete objective waits for confirmation and preserves it after a rejected write
+  ---
+  duration_ms: 4.5608
+  ...
+# Subtest: Chapter collapse is reversible and does not advance after a rejected write
+ok 47 - Chapter collapse is reversible and does not advance after a rejected write
+  ---
+  duration_ms: 6.6608
+  ...
+# Subtest: Reset Weekly Tasks waits for confirmation and keeps completed tasks on failed write
+ok 48 - Reset Weekly Tasks waits for confirmation and keeps completed tasks on failed write
+  ---
+  duration_ms: 4.392
+  ...
+# Subtest: Games theme does not show an unpersisted choice after a rejected write
+ok 49 - Games theme does not show an unpersisted choice after a rejected write
+  ---
+  duration_ms: 5.0465
+  ...
+# Subtest: wishlist and dismissed suggestions retain visible records after rejected writes
+ok 50 - wishlist and dismissed suggestions retain visible records after rejected writes
+  ---
+  duration_ms: 6.7015
+  ...
+# Subtest: Stop Session keeps the timer active and stored record unchanged after a rejected write
+ok 51 - Stop Session keeps the timer active and stored record unchanged after a rejected write
+  ---
+  duration_ms: 13.3907
+  ...
+# Subtest: manual session log keeps its draft when persistence fails and clears it after retry
+ok 52 - manual session log keeps its draft when persistence fails and clears it after retry
+  ---
+  duration_ms: 23.9005
+  ...
+# Subtest: adding an objective retains the form and stored tracker after a rejected write
+ok 53 - adding an objective retains the form and stored tracker after a rejected write
+  ---
+  duration_ms: 7.9698
+  ...
+# Subtest: first objective creates its chapter only after persistence succeeds
+ok 54 - first objective creates its chapter only after persistence succeeds
+  ---
+  duration_ms: 3.3787
+  ...
+# Subtest: Delete session requires confirmation and keeps the log on rejected writes
+ok 55 - Delete session requires confirmation and keeps the log on rejected writes
+  ---
+  duration_ms: 3.7372
+  ...
+# Subtest: Journal edit retains the stored entry and form draft after a rejected write
+ok 56 - Journal edit retains the stored entry and form draft after a rejected write
+  ---
+  duration_ms: 8.71
+  ...
+# Subtest: Journal deletion keeps the entry when the confirmed write is rejected
+ok 57 - Journal deletion keeps the entry when the confirmed write is rejected
+  ---
+  duration_ms: 13.725
+  ...
+# Subtest: objective lookup honors the rendered game even when another tracker is selected
+ok 58 - objective lookup honors the rendered game even when another tracker is selected
+  ---
+  duration_ms: 2.9474
+  ...
+# Subtest: spotlight autoplay keeps its visible state when storage rejects the preference
+ok 59 - spotlight autoplay keeps its visible state when storage rejects the preference
+  ---
+  duration_ms: 4.8734
+  ...
+# Subtest: Games tab selection does not advance the panel when storage rejects the tab
+ok 60 - Games tab selection does not advance the panel when storage rejects the tab
+  ---
+  duration_ms: 3.4455
+  ...
+# Subtest: Games suggestion clear and reset keep preferences when storage rejects writes
+ok 61 - Games suggestion clear and reset keep preferences when storage rejects writes
+  ---
+  duration_ms: 5.4649
+  ...
+# Subtest: every Games portal uses a distinct local composition with retained master and traceable display copy
+ok 62 - every Games portal uses a distinct local composition with retained master and traceable display copy
+  ---
+  duration_ms: 195.785
+  ...
+# Subtest: starter library does not imply play history or progress
+ok 63 - starter library does not imply play history or progress
+  ---
+  duration_ms: 2.1949
+  ...
+# Subtest: session summaries use local calendar days and reject future, orphan and invalid records
+ok 64 - session summaries use local calendar days and reject future, orphan and invalid records
+  ---
+  duration_ms: 0.8918
+  ...
+# Subtest: rolling seven calendar days include boundary day and exclude older sessions
+ok 65 - rolling seven calendar days include boundary day and exclude older sessions
+  ---
+  duration_ms: 0.5715
+  ...
+# Subtest: active session is disclosed separately from finished duration totals
+ok 66 - active session is disclosed separately from finished duration totals
+  ---
+  duration_ms: 0.3602
+  ...
+# Subtest: unfinished checked objectives can provide continuation without fabricated last-played date
+ok 67 - unfinished checked objectives can provide continuation without fabricated last-played date
+  ---
+  duration_ms: 0.377
+  ...
+# Subtest: all six reference portals map to original owner workflows including module-local settings
+ok 68 - all six reference portals map to original owner workflows including module-local settings
+  ---
+  duration_ms: 1.2722
+  ...
+# Subtest: empty Games search validates locally and keeps keyboard focus without calling the catalogue
+ok 69 - empty Games search validates locally and keeps keyboard focus without calling the catalogue
+  ---
+  duration_ms: 3.3598
+  ...
+# Subtest: exact and partial search present the real local match and detail identity
+ok 70 - exact and partial search present the real local match and detail identity
+  ---
+  duration_ms: 1.1278
+  ...
+# Subtest: no match reports local-only absence and removes stale results
+ok 71 - no match reports local-only absence and removes stale results
+  ---
+  duration_ms: 0.493
+  ...
+# Subtest: repeated submit replaces results; edits and Clear remove stale validation/result state
+ok 72 - repeated submit replaces results; edits and Clear remove stale validation/result state
+  ---
+  duration_ms: 0.4458
+  ...
+# Subtest: Escape dismisses local results and restores the search input without leaking to other shortcuts
+ok 73 - Escape dismisses local results and restores the search input without leaking to other shortcuts
+  ---
+  duration_ms: 0.498
+  ...
+# Subtest: search exceptions keep a truthful usable local-library path and no stale results
+ok 74 - search exceptions keep a truthful usable local-library path and no stale results
+  ---
+  duration_ms: 0.5261
+  ...
+# Subtest: untrusted imported catalogue titles and ids cannot inject markup in result buttons
+ok 75 - untrusted imported catalogue titles and ids cannot inject markup in result buttons
+  ---
+  duration_ms: 1.0933
+  ...
+# Subtest: owner handoff preserves canonical nodes, separates landing and supports Back/Forward focus return
+ok 76 - owner handoff preserves canonical nodes, separates landing and supports Back/Forward focus return
+  ---
+  duration_ms: 4.0533
+  ...
+# Subtest: ordinary owner navigation stays usable; global world entry returns to landing
+ok 77 - ordinary owner navigation stays usable; global world entry returns to landing
+  ---
+  duration_ms: 0.9523
+  ...
+# Subtest: existing Work Projects deep link exposes its owner and explicit return resolves parent
+ok 78 - existing Work Projects deep link exposes its owner and explicit return resolves parent
+  ---
+  duration_ms: 0.9573
+  ...
+# Subtest: Personal progress derives only from saved goals, routines and habits
+ok 79 - Personal progress derives only from saved goals, routines and habits
+  ---
+  duration_ms: 3.8423
+  ...
+# Subtest: Personal portal images retain source artwork and stay within display budget
+ok 80 - Personal portal images retain source artwork and stay within display budget
+  ---
+  duration_ms: 50.8258
+  ...
+# Subtest: Personal landing reads only the Personal owner keys and gives future actions availability text
+ok 81 - Personal landing reads only the Personal owner keys and gives future actions availability text
+  ---
+  duration_ms: 1.8653
+  ...
+# Subtest: Personal owner completion is reloaded by the landing from the same validated storage keys
+ok 82 - Personal owner completion is reloaded by the landing from the same validated storage keys
+  ---
+  duration_ms: 75.6862
+  ...
+# Subtest: Fitness portal opens visible availability feedback without navigation or hero reflow
+ok 83 - Fitness portal opens visible availability feedback without navigation or hero reflow
+  ---
+  duration_ms: 6.6205
+  ...
+# Subtest: Personal portal caption reserves more inline room than the corner icon uses
+ok 84 - Personal portal caption reserves more inline room than the corner icon uses
+  ---
+  duration_ms: 3.1281
+  ...
+# Subtest: eight reference-led worlds have unique routes and local scenes
+ok 85 - eight reference-led worlds have unique routes and local scenes
+  ---
+  duration_ms: 5.7979
+  ...
+# Subtest: every approved world has a separate local production scene and provenance
+ok 86 - every approved world has a separate local production scene and provenance
+  ---
+  duration_ms: 54.64
+  ...
+# Subtest: nested details, compatibility aliases and invalid routes preserve owner identity
+ok 87 - nested details, compatibility aliases and invalid routes preserve owner identity
+  ---
+  duration_ms: 0.998
+  ...
+# Subtest: scene host falls back on failed local art and ignores stale image completion
+ok 88 - scene host falls back on failed local art and ignores stale image completion
+  ---
+  duration_ms: 1.5868
+  ...
+# Subtest: hidden scene fetches wait for activation; repeated visits reuse the same image without clearing art
+ok 89 - hidden scene fetches wait for activation; repeated visits reuse the same image without clearing art
+  ---
+  duration_ms: 0.9855
+  ...
+# Subtest: direct hash route never eagerly loads Home art while the boot router is pending
+ok 90 - direct hash route never eagerly loads Home art while the boot router is pending
+  ---
+  duration_ms: 1.1355
+  ...
+# Subtest: scene display copies retain provenance and reduce decode/transfer size for their role
+ok 91 - scene display copies retain provenance and reduce decode/transfer size for their role
+  ---
+  duration_ms: 36.0183
+  ...
+# Subtest: ten distinct drawn scenes and static Games/Movies heroes cover all route domains
+ok 92 - ten distinct drawn scenes and static Games/Movies heroes cover all route domains
+  ---
+  duration_ms: 7.6707
+  ...
+# Subtest: scene depth is bounded and applied only to decorative drawing/art layers
+ok 93 - scene depth is bounded and applied only to decorative drawing/art layers
+  ---
+  duration_ms: 18.3102
+  ...
+# Subtest: reduced motion and per-page Off eliminate scene drift rather than slowing it
+ok 94 - reduced motion and per-page Off eliminate scene drift rather than slowing it
+  ---
+  duration_ms: 1.9836
+  ...
+# Subtest: drawn scenes use no external requests or binary assets
+ok 95 - drawn scenes use no external requests or binary assets
+  ---
+  duration_ms: 0.8862
+  ...
+# Subtest: pointer depth clamps, resets and ignores touch, reduced and Off input
+ok 96 - pointer depth clamps, resets and ignores touch, reduced and Off input
+  ---
+  duration_ms: 4.3796
+  ...
+# Subtest: scene lifecycle waits for boot, stages entry, settle and ambient; exit resets without same-page replay
+ok 97 - scene lifecycle waits for boot, stages entry, settle and ambient; exit resets without same-page replay
+  ---
+  duration_ms: 6.9769
+  ...
+# Subtest: each domain entry has its own camera direction and subject motion
+ok 98 - each domain entry has its own camera direction and subject motion
+  ---
+  duration_ms: 1.8131
+  ...
+# Subtest: top-level navigation keeps a coherent accessible outline-icon language
+ok 99 - top-level navigation keeps a coherent accessible outline-icon language
+  ---
+  duration_ms: 7.0221
+  ...
+# Subtest: Work summaries use Work-owned tasks and exact local calendar periods
+ok 100 - Work summaries use Work-owned tasks and exact local calendar periods
+  ---
+  duration_ms: 7.6408
+  ...
+# Subtest: Work reminders and empty data do not invent meeting or project records
+ok 101 - Work reminders and empty data do not invent meeting or project records
+  ---
+  duration_ms: 0.7516
+  ...
+# Subtest: Work portal display assets preserve originals and stay within the page budget
+ok 102 - Work portal display assets preserve originals and stay within the page budget
+  ---
+  duration_ms: 32.5706
+  ...
+# Subtest: Work landing handoffs open the existing item and task owners
+ok 103 - Work landing handoffs open the existing item and task owners
+  ---
+  duration_ms: 12.3047
+  ...
+# Subtest: Work board handoff stops on rejected navigation or deleted item
+ok 104 - Work board handoff stops on rejected navigation or deleted item
+  ---
+  duration_ms: 4.2645
+  ...
+1..104
+# tests 104
+# suites 0
+# pass 104
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 836.4945

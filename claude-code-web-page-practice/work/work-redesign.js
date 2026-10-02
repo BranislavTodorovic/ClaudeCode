@@ -58,6 +58,7 @@
   }
   function go(page, targetId) {
     if (!OS.goToPage(page)) { notice('Could not open that space. Your current page is unchanged.'); return false; }
+    if (page === 'projects' || page === 'work' && targetId) ownerSurface.show(page === 'projects' ? 'Projects' : 'Work board & timeline');
     if (targetId) {
       var target = doc.getElementById(targetId);
       if (target) {
@@ -102,9 +103,9 @@
         '<article class="osr-panel osr-work-focus"><div class="osr-card-head"><h2>Focus &amp; Productivity</h2><button class="osr-card-arrow" type="button" data-work-redesign="focus" aria-label="Open focus timer">↗</button></div><div class="osr-work-focus-content"><div class="osr-timer-ring"><strong id="osrWorkFocusTime">25:00</strong><span id="osrWorkFocusState">Ready</span></div><div class="osr-work-focus-copy"><strong>Make space to focus</strong><p>Your local timer is in Productivity.</p><button class="osr-inline-link" type="button" data-work-redesign="focus">Open timer →</button></div></div><div class="osr-work-focus-metrics"><span><strong id="osrWorkOpenItems">0</strong>Active items</span><span><strong id="osrWorkOpenTasks">0</strong>Open tasks</span></div></article>' +
       '</section>' +
       '<section class="osr-work-portals" aria-label="Work spaces"><div class="osr-grid osr-portal-grid" id="osrWorkPortalGrid"></div></section>' +
-      '<section class="osr-work-followon" id="osrWorkFollowon" aria-labelledby="osrWorkToolsTitle"><h2 id="osrWorkToolsTitle">Your Work tools</h2><p>Manage projects, stories, defects, tasks and their history below.</p></section>' +
     '</main>');
 
+  var ownerSurface = foundation.createOwnerSurface(view, stage, 'work', 'Work');
   var portals = [
     { slug: 'projects', label: 'Projects', subtitle: 'Plan. Build. Ship.', available: true },
     { slug: 'kanban-board', label: 'Kanban Board', subtitle: 'Track work in progress.', available: true },
@@ -118,7 +119,7 @@
     var tile = doc.createElement('div');
     tile.className = 'osr-portal osr-work-portal';
     tile.dataset.portal = portal.slug;
-    tile.innerHTML = '<img src="assets/scenes/work/portals/' + portal.slug + '.jpg" alt="" loading="eager" decoding="sync"><div class="osr-portal-copy"><strong>' + esc(portal.label) + '</strong><small>' + esc(portal.subtitle) + '</small></div>';
+    tile.innerHTML = '<img src="assets/scenes/work/portals/' + portal.slug + '.jpg" alt="" loading="lazy" decoding="async" width="960" height="640"><div class="osr-portal-copy"><strong>' + esc(portal.label) + '</strong><small>' + esc(portal.subtitle) + '</small></div>';
     var image = tile.querySelector('img');
     image.addEventListener('load', function () { tile.dataset.assetState = 'ready'; });
     image.addEventListener('error', function () { tile.dataset.assetState = 'fallback'; image.remove(); });
@@ -213,7 +214,7 @@
     if (portal) {
       if (portal.dataset.workPortal === 'projects') go('projects', 'projectForm');
       else if (portal.dataset.workPortal === 'kanban-board') openBoard();
-      else notice(portal.dataset.workPortal.replace(/-/g, ' ').replace(/^./, function (letter) { return letter.toUpperCase(); }) + ' is coming in the Work submodule rollout. Your current Work records remain available below.');
+      else root.OneSpaceUI.open('Work space — coming later', '<p>' + esc(portal.dataset.workPortal.replace(/-/g, ' ').replace(/^./, function (letter) { return letter.toUpperCase(); })) + ' is coming in the Work submodule rollout. Open Projects or Kanban Board for your current Work records.</p>', null);
       return;
     }
     var action = event.target.closest('[data-work-redesign]');
@@ -224,7 +225,7 @@
       case 'task-continue': {
         var parentId = doc.getElementById('osrWorkTaskParent').value;
         hideTaskChooser(false);
-        if (go('work') && !root.OneSpaceWork.openNewTask(parentId)) OS.showToast('That Work item is no longer available. Choose an active item.');
+        if (go('work', 'workTracker') && !root.OneSpaceWork.openNewTask(parentId)) OS.showToast('That Work item is no longer available. Choose an active item.');
         break;
       }
       case 'new-item': {
