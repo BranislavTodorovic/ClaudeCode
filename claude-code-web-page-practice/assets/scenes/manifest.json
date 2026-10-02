@@ -6,84 +6,344 @@
   "fallback": "The shared scene host displays a deterministic local CSS gradient when a scene file is loading, missing, or corrupt. Controls and data remain usable; no provider request is needed.",
   "scenes": [
     {
-      "world": "home",
-      "file": "assets/scenes/home/hero-review.png",
       "reference": "docs/ui-reference/00-home.png",
       "subject": "with foreground/midground/distant skyline depth. Camera looks across room, entire scene readable, rich amber/turquoise/coral.",
-      "sourceId": "exec-c6f5304f-f4e4-4a9d-87f7-4f75e95f92ca",
-      "runtimeFile": "assets/scenes/home/hero-review.jpg",
-      "runtimeBytes": 444713,
-      "runtimeSha256": "5a79c1575fc8288d39030c7d9233ee9373926ff13b8768b87168a83e38375b6a",
-      "masterSha256": "0013f123f9954cb9bfa8256402e4bd2db8cf3afd08794cf446a59c9ff1c9f68d",
-      "supersedes": "assets/scenes/home/hero.png; retained historical artwork, superseded after user visual FAIL on 2026-10-02",
-      "naturalWidth": 1672,
-      "naturalHeight": 941,
-      "prompt": "Use case: stylized-concept. Asset type: clean OneSpace full-viewport production environment, no UI. Generate a richly detailed cinematic architectural photograph, landscape 3840x2160 native output if supported, maximum available resolution. Wide medium-field lens with straight architectural lines, tack-sharp textures throughout, no blur or bokeh. Upper center/right contains clearly recognizable domain subject; left third calmer dark architectural wall for later live HTML text, but still texture and light. Subject occupies upper 55% so later live cards along bottom do not obscure it. Shared premium walnut/stone/glass/plant material family, warm practical lights with rich distinct complementary colors. No people, readable text, watermark, brand, logo, app screenshot, interface or baked-in labels. Do not reproduce reference UI. Avoid generic couch-centered apartment, huge closeup props, murky shadows or excessive zoom. HOME central living hub: sweeping city-and-river dusk vista, sculptural terracotta lounge seat on right, low polished stone gathering table, open layered plant atrium, welcoming amber fireplace high center, navy sky and peach sunset. Clearly spacious high-ceiling welcoming home with foreground/midground/distant skyline depth. Camera looks across room, entire scene readable, rich amber/turquoise/coral.",
-      "reviewDate": "2026-10-02"
+      "world": "home",
+      "naturalWidth": 2144,
+      "naturalHeight": 1254,
+      "runtimeBytes": 910490,
+      "runtimeSha256": "4e7557655ea9da2f0f238ba891da38b6bed7897cff78f988557db048309080df",
+      "masterSha256": "e01c806107664d907bda0b95e6fe0318e380b3f2456c88e0347bd7060e30dcfa",
+      "file": "assets/scenes/home/hero-fullbleed.png",
+      "runtimeFile": "assets/scenes/home/hero-fullbleed.jpg",
+      "sources": [
+        {
+          "file": "assets/scenes/home/hero-fullbleed-left.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel for the attached room photograph. Same Home warm walnut double-height atrium, limestone architecture, amber lighting, dusk blue city through windows, marble floors and leafy indoor trees. Camera faces the LEFT SIDE of the SAME ROOM with complementary library bookshelves, reading chairs, small planted courtyard alcove and reflected warm fireplace light. Maintain the same horizon and camera height as attached. The panel will adjoin the LEFT edge of the reference image to create one wider environment, so its right edge should be a thin vertical limestone column with warm light, its floor should have the same perspective, and its upper section matching walnut ceiling at the same height. Rich sharp detail across the image including leftmost regions. Architectural photography, no UI, no text, no collage borders, no blank dark area. Highest actual native output resolution, square.",
+          "sourceId": "exec-aa5e6053-9e3d-4c32-a8df-60d9a9f68256",
+          "sha256": "a5e7029f92030f66300437c124de8a4503e5f06e3d3d2be505d0a670547fb96b"
+        },
+        {
+          "file": "assets/scenes/home/hero-fullbleed-right.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case: precise-object-edit. Asset: square clean room panorama SOURCE PANEL for full-viewport OneSpace Home. Generate a SQUARE image, aspect ratio 1:1, 2048x2048 requested. Reframe the input room, extending its height and adding detailed adjacent furnishings. Warm luxurious living atrium at blue-hour sunset, fire, terracotta sofa, city river, shelves and plants. Wide-angle square camera. Fireplace, sofa and city window clearly visible in upper half; wood/stone floor below. Fill entire frame with textured architecture and environment, no black empty wall, no interface, no text. Retain warm amber and terracotta Home identity. Crisp detailed surface textures.",
+          "sourceId": "exec-70baf0d2-d52c-48a8-9386-56a7474cd1f7",
+          "sha256": "9b866d159e581df9e331162fc21575e5d5bae49cde058cd5ad66b0f97fefdd0c"
+        }
+      ],
+      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=263. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
+      "reviewDate": "2026-10-02",
+      "supersedes": "assets/scenes/home/hero-review.png and hero-review.jpg retained as historical review sources",
+      "repair": {
+        "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. Unify the split repeated shelving/stone columns, remove the cut-off extra foreground chair at center, continue one marble floor to the right rug and fireplace. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
+        "x": 263,
+        "file": "assets/scenes/home/hero-fullbleed-repair.png",
+        "edgeFeather": 64,
+        "width": 1254,
+        "height": 1254,
+        "sourceId": "exec-ea5b0a88-d0a5-4bbb-bd20-dd2684a52314",
+        "sha256": "93948d94bd86eb7d7bdccd6d09aff0d1cb1fc7316ab7b195fe77d8047921cb35"
+      },
+      "composition": {
+        "leftSourceCrop": {
+          "width": 890,
+          "y": 0,
+          "height": 1254,
+          "x": 0
+        },
+        "runtimeJpegQuality": 92,
+        "rightPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 890
+        },
+        "repairEdgeFeather": 64,
+        "repairPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 263
+        },
+        "nativeScale": 1
+      },
+      "sourceId": "native-multipanel-composition-2026-10-02",
+      "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
     },
     {
-      "world": "work",
-      "file": "assets/scenes/work/hero-review.png",
       "reference": "docs/ui-reference/01-work.png",
       "subject": "professional focused project studio: dominant organized dual-monitor walnut workstation high right, blue-toned abstract geometric engineering diagrams WITHOUT text on monitors, ergonomic chair behind desk, architectural scale model and drafting tools, plan boards with blank geometric sketches, task light, plants and glass skyline. Different architecture: concrete beams, linear shelving. Monitors and productive tools dominant, no sofa. Rich teal daylight with warm task lights.",
-      "sourceId": "exec-9fdf9b3c-9c12-4c6d-b361-487fab7bef52",
-      "supersedes": "assets/scenes/work/hero-r3.png; retained historical artwork, superseded after user visual FAIL on 2026-10-02",
-      "runtimeFile": "assets/scenes/work/hero-review.jpg",
-      "runtimeBytes": 461232,
-      "runtimeSha256": "e1b1fec2707f09fcee3701bf85398f97967491c1185b7f9e80183da430675ed4",
-      "masterSha256": "0c8d0b59a49491c2413f21f1ccee3eaf0f0ca466b14d71e35c1638ffb26ac4f4",
-      "naturalWidth": 1672,
-      "naturalHeight": 941,
-      "prompt": "Use case: stylized-concept. Asset type: clean OneSpace full-viewport production environment, no UI. Generate a richly detailed cinematic architectural photograph, landscape 3840x2160 native output if supported, maximum available resolution. Wide medium-field lens with straight architectural lines, tack-sharp textures throughout, no blur or bokeh. Upper center/right contains clearly recognizable domain subject; left third calmer dark architectural wall for later live HTML text, but still texture and light. Subject occupies upper 55% so later live cards along bottom do not obscure it. Shared premium walnut/stone/glass/plant material family, warm practical lights with rich distinct complementary colors. No people, readable text, watermark, brand, logo, app screenshot, interface or baked-in labels. Do not reproduce reference UI. Avoid generic couch-centered apartment, huge closeup props, murky shadows or excessive zoom. WORK professional focused project studio: dominant organized dual-monitor walnut workstation high right, blue-toned abstract geometric engineering diagrams WITHOUT text on monitors, ergonomic chair behind desk, architectural scale model and drafting tools, plan boards with blank geometric sketches, task light, plants and glass skyline. Different architecture: concrete beams, linear shelving. Monitors and productive tools dominant, no sofa. Rich teal daylight with warm task lights.",
-      "reviewDate": "2026-10-02"
+      "world": "work",
+      "naturalWidth": 2508,
+      "naturalHeight": 1254,
+      "runtimeBytes": 1108031,
+      "runtimeSha256": "e4db18d36975bf7fb0bd9c04e002f1321c2ab1654f86f3d68cab16418670cdad",
+      "masterSha256": "cf26d2dd50c95e28bb31494b14ec086e28271e4c370cd9e7ae652beb044cbb16",
+      "file": "assets/scenes/work/hero-fullbleed.png",
+      "runtimeFile": "assets/scenes/work/hero-fullbleed.jpg",
+      "sources": [
+        {
+          "file": "assets/scenes/work/hero-fullbleed-left.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel of the attached environment. architectural studio left wing, organized material samples on walnut shelves, drafting board with sketches, reading chair, concrete beams and river city windows at sunset; same blue and amber tones. Camera faces left wing of the SAME room, same horizon/camera height, floor joins reference at equal height; rightmost edge narrow vertical matching stone or walnut column, compatible ceiling perspective. Photoreal sharp architectural detail over ALL the image. Complementary objects: do not duplicate the main right-panel dual monitor desk. No UI, no legible text, no collage frame, no flat dark slabs. This source will be composed beside the reference at native resolution to create a coherent wide panorama. Highest actual native square output.",
+          "sourceId": "exec-1e6099a9-f47a-4b97-9164-a0d04eaa2b4f",
+          "sha256": "c0d935d75464f5b639213d2f59cbe6c94d1d19944d4d606993bd2bfa9b75c8e8"
+        },
+        {
+          "file": "assets/scenes/work/hero-fullbleed-right.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case: precise-object-edit. Reframe this existing environment as a SQUARE 1:1 native SOURCE PANEL. Preserve its identity and improve photographic detail. Scene: architectural work studio, concrete and walnut, dual blue blueprint monitors, desk chair, models and drawings, city river windows at sunset. Full-bleed photoreal architecture, realistic coherent perspective, layered lighting and rich detailed environment everywhere. Main semantic objects visible in upper middle and right, floor limited to lower quarter, window and ceiling details. This will be the right half of a wider panorama joined to a matching left room extension. No UI, no text or watermark, no blank dark slab. Request highest actual native resolution; do not enlarge a smaller source.",
+          "sourceId": "exec-0224a466-1d17-44dd-83d9-4482e1651c79",
+          "sha256": "3459296fc0a0c9e3ad75c17b55a83de5ee87f8ffb238a1d1b94108f8641d302e"
+        }
+      ],
+      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=627. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
+      "reviewDate": "2026-10-02",
+      "supersedes": "assets/scenes/work/hero-review.png and hero-review.jpg retained as historical review sources",
+      "repair": {
+        "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. There must be just ONE setting sun: keep the sun left of center and remove the second sun immediately right of center, continue the sky and river reflections. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
+        "x": 627,
+        "file": "assets/scenes/work/hero-fullbleed-repair.png",
+        "edgeFeather": 64,
+        "width": 1254,
+        "height": 1254,
+        "sourceId": "exec-ee9b389b-f301-41d2-a1da-087d957d77d5",
+        "sha256": "4e24ce2dec7554727dc6f37be8ebdd4c969f4d4635b7a7385e22e947f00bce4c"
+      },
+      "composition": {
+        "leftSourceCrop": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 0
+        },
+        "runtimeJpegQuality": 92,
+        "rightPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 1254
+        },
+        "repairEdgeFeather": 64,
+        "repairPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 627
+        },
+        "nativeScale": 1
+      },
+      "sourceId": "native-multipanel-composition-2026-10-02",
+      "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
     },
     {
-      "world": "personal",
-      "file": "assets/scenes/personal/hero-review.png",
       "reference": "docs/ui-reference/02-personal-fitness.png",
       "subject": "wellness and fitness studio: sunlit open training space, visible dumbbell rack and stationary training bike high right, clearly laid-out deep teal yoga mat, kettlebells, wooden stretching bench, folded towels, exercise ball, plants, calm tall arched windows to green garden and coral morning sky. Equipment near middle distance and within upper 55%, not hidden near bottom. Distinct bright olive/teal/clay environment, no workstation/TV/sofa.",
-      "sourceId": "exec-2fa44894-36bf-4012-ad59-fe608126c6bd",
-      "runtimeFile": "assets/scenes/personal/hero-review.jpg",
-      "runtimeBytes": 503571,
-      "runtimeSha256": "c39cb5df3bab1feced054e987c9200639e6a705943402bc31407c4c5f57a675b",
-      "masterSha256": "21ff2a86fd9fa1831857a852faba89ff1521d40ac4a556ca70232a88d860978b",
-      "supersedes": "assets/scenes/personal/hero.png; retained historical artwork, superseded after user visual FAIL on 2026-10-02",
-      "naturalWidth": 1672,
-      "naturalHeight": 941,
-      "prompt": "Use case: stylized-concept. Asset type: clean OneSpace full-viewport production environment, no UI. Generate a richly detailed cinematic architectural photograph, landscape 3840x2160 native output if supported, maximum available resolution. Wide medium-field lens with straight architectural lines, tack-sharp textures throughout, no blur or bokeh. Upper center/right contains clearly recognizable domain subject; left third calmer dark architectural wall for later live HTML text, but still texture and light. Subject occupies upper 55% so later live cards along bottom do not obscure it. Shared premium walnut/stone/glass/plant material family, warm practical lights with rich distinct complementary colors. No people, readable text, watermark, brand, logo, app screenshot, interface or baked-in labels. Do not reproduce reference UI. Avoid generic couch-centered apartment, huge closeup props, murky shadows or excessive zoom. PERSONAL wellness and fitness studio: sunlit open training space, visible dumbbell rack and stationary training bike high right, clearly laid-out deep teal yoga mat, kettlebells, wooden stretching bench, folded towels, exercise ball, plants, calm tall arched windows to green garden and coral morning sky. Equipment near middle distance and within upper 55%, not hidden near bottom. Distinct bright olive/teal/clay environment, no workstation/TV/sofa.",
-      "reviewDate": "2026-10-02"
+      "world": "personal",
+      "naturalWidth": 2508,
+      "naturalHeight": 1254,
+      "runtimeBytes": 1152795,
+      "runtimeSha256": "e592908ae8184f8128850d08549dc8a476a4ede21795ca5c1c9c35463dcaf7a1",
+      "masterSha256": "40ac86f2f1319a0b2f4ca35ea31f6fd15d9df2c2ae8473f437a76c4bb6b49e20",
+      "file": "assets/scenes/personal/hero-fullbleed.png",
+      "runtimeFile": "assets/scenes/personal/hero-fullbleed.jpg",
+      "sources": [
+        {
+          "file": "assets/scenes/personal/hero-fullbleed-left.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel of the attached environment. garden fitness studio left wing, towels on walnut shelves, meditation cushions and bench, plants and arched windows looking onto sunrise garden; same limestone and teak slatted ceiling. Camera faces left wing of the SAME room, same horizon/camera height, floor joins reference at equal height; rightmost edge narrow vertical matching stone or walnut column, compatible ceiling perspective. Photoreal sharp architectural detail over ALL the image. Complementary objects: do not duplicate the main right-panel exercise bike. No UI, no legible text, no collage frame, no flat dark slabs. This source will be composed beside the reference at native resolution to create a coherent wide panorama. Highest actual native square output.",
+          "sourceId": "exec-730f036e-123e-41ee-8626-d446f01cf2ef",
+          "sha256": "ce22494c28b26ea5f17fb69ac43f49a43ef037b2ae246dab4a5433c9d331d9d9"
+        },
+        {
+          "file": "assets/scenes/personal/hero-fullbleed-right.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case: precise-object-edit. Reframe this existing environment as a SQUARE 1:1 native SOURCE PANEL. Preserve its identity and improve photographic detail. Scene: arched stone garden fitness studio, dumbbell rack, exercise bike, rolled towels, teal yoga mat, sunrise gardens. Full-bleed photoreal architecture, realistic coherent perspective, layered lighting and rich detailed environment everywhere. Main semantic objects visible in upper middle and right, floor limited to lower quarter, window and ceiling details. This will be the right half of a wider panorama joined to a matching left room extension. No UI, no text or watermark, no blank dark slab. Request highest actual native resolution; do not enlarge a smaller source.",
+          "sourceId": "exec-b69ab0fe-a1a9-450a-a64c-1b1c201875bc",
+          "sha256": "3bbc5383e1049aef29c0f80a882b5e4e195d696bedbbf4d43cc75fddabf2c9df"
+        }
+      ],
+      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=627. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
+      "reviewDate": "2026-10-02",
+      "supersedes": "assets/scenes/personal/hero-review.png and hero-review.jpg retained as historical review sources",
+      "repair": {
+        "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. Unify the split central limestone column and make one continuous stone floor with physically consistent sunlight. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
+        "x": 627,
+        "file": "assets/scenes/personal/hero-fullbleed-repair.png",
+        "edgeFeather": 64,
+        "width": 1254,
+        "height": 1254,
+        "sourceId": "exec-00adc35d-4f3b-48c5-a2fd-95e7992c2e83",
+        "sha256": "ecca307847def068118f8ddcc472fa478921116952cf5a4c24393a17c29eb41d"
+      },
+      "composition": {
+        "leftSourceCrop": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 0
+        },
+        "runtimeJpegQuality": 92,
+        "rightPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 1254
+        },
+        "repairEdgeFeather": 64,
+        "repairPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 627
+        },
+        "nativeScale": 1
+      },
+      "sourceId": "native-multipanel-composition-2026-10-02",
+      "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
     },
     {
-      "world": "explore",
-      "file": "assets/scenes/explore/hero-review.png",
       "reference": "docs/ui-reference/03-explore.png",
       "subject": "travel discovery studio: large antique globe and open atlas on a raised console mid-right, camera and binoculars, framed map with shapes no labels on warm terracotta wall, panoramic opening to vivid turquoise coast and dramatic distant limestone mountains. Hero focal region is globe/map/coast in upper-right. Moss green plants, gold reading lights, richly colored travel journals no text. Outdoor vista dominates far depth, no computer desk or generic apartment.",
-      "sourceId": "exec-214bf944-7b4a-4178-b933-ad0c9595b337",
-      "runtimeFile": "assets/scenes/explore/hero-review.jpg",
-      "runtimeBytes": 547718,
-      "runtimeSha256": "4b3602ac0c8fc68da382dd450775e171593d2be8ab8d2987614f4496f8afada4",
-      "masterSha256": "0f4450a58be395efa5c1f9c1aaab92b65f7c306eea5475d2a3af6bbcd67cda94",
-      "supersedes": "assets/scenes/explore/hero.png; retained historical artwork, superseded after user visual FAIL on 2026-10-02",
-      "naturalWidth": 1672,
-      "naturalHeight": 941,
-      "prompt": "Use case: stylized-concept. Asset type: clean OneSpace full-viewport production environment, no UI. Generate a richly detailed cinematic architectural photograph, landscape 3840x2160 native output if supported, maximum available resolution. Wide medium-field lens with straight architectural lines, tack-sharp textures throughout, no blur or bokeh. Upper center/right contains clearly recognizable domain subject; left third calmer dark architectural wall for later live HTML text, but still texture and light. Subject occupies upper 55% so later live cards along bottom do not obscure it. Shared premium walnut/stone/glass/plant material family, warm practical lights with rich distinct complementary colors. No people, readable text, watermark, brand, logo, app screenshot, interface or baked-in labels. Do not reproduce reference UI. Avoid generic couch-centered apartment, huge closeup props, murky shadows or excessive zoom. EXPLORE travel discovery studio: large antique globe and open atlas on a raised console mid-right, camera and binoculars, framed map with shapes no labels on warm terracotta wall, panoramic opening to vivid turquoise coast and dramatic distant limestone mountains. Hero focal region is globe/map/coast in upper-right. Moss green plants, gold reading lights, richly colored travel journals no text. Outdoor vista dominates far depth, no computer desk or generic apartment.",
-      "reviewDate": "2026-10-02"
+      "world": "explore",
+      "naturalWidth": 2508,
+      "naturalHeight": 1254,
+      "runtimeBytes": 1317840,
+      "runtimeSha256": "f54c0622b77b9cca4ea5b3be4497f4be8b31f775bc5e023165d701497c62edf7",
+      "masterSha256": "df630b957f957b35232386ed4ce1c5a2490be191ab67d795d309e4ff4d6a8134",
+      "file": "assets/scenes/explore/hero-fullbleed.png",
+      "runtimeFile": "assets/scenes/explore/hero-fullbleed.jpg",
+      "sources": [
+        {
+          "file": "assets/scenes/explore/hero-fullbleed-left.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel of the attached environment. travel study left wing, terracotta alcove with travel books and expedition photos, woven armchair and plants, open terrace along the same turquoise coast; matching teak ceiling and gray stone floor. Camera faces left wing of the SAME room, same horizon/camera height, floor joins reference at equal height; rightmost edge narrow vertical matching stone or walnut column, compatible ceiling perspective. Photoreal sharp architectural detail over ALL the image. Complementary objects: do not duplicate the main right-panel globe. No UI, no legible text, no collage frame, no flat dark slabs. This source will be composed beside the reference at native resolution to create a coherent wide panorama. Highest actual native square output.",
+          "sourceId": "exec-e58071bc-fc31-44e6-a9ea-dfbca2e7894c",
+          "sha256": "540ce19a4e17efa8c575ae15bdc9b6c0b8c2f1e83e0dd4c06eb3d44d56846f6f"
+        },
+        {
+          "file": "assets/scenes/explore/hero-fullbleed-right.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case: precise-object-edit. Reframe this existing environment as a SQUARE 1:1 native SOURCE PANEL. Preserve its identity and improve photographic detail. Scene: terracotta travel study beside turquoise coastal terrace, globe, large atlas, old guide books, compass, camera, lush plants, coastline. Full-bleed photoreal architecture, realistic coherent perspective, layered lighting and rich detailed environment everywhere. Main semantic objects visible in upper middle and right, floor limited to lower quarter, window and ceiling details. This will be the right half of a wider panorama joined to a matching left room extension. No UI, no text or watermark, no blank dark slab. Request highest actual native resolution; do not enlarge a smaller source.",
+          "sourceId": "exec-8448a3bd-5ba4-4f36-ae4a-28e293985618",
+          "sha256": "6b1c5eb95bf34fbd38000729f687591b2d5991c92e17ce858b4f169eaefeb205"
+        }
+      ],
+      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=627. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
+      "reviewDate": "2026-10-02",
+      "supersedes": "assets/scenes/explore/hero-review.png and hero-review.jpg retained as historical review sources",
+      "repair": {
+        "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. Unify the split central doorway column and planter, fix the rug/table crop and connect one coherent terrace floor and coastal view. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
+        "x": 627,
+        "file": "assets/scenes/explore/hero-fullbleed-repair.png",
+        "edgeFeather": 64,
+        "width": 1254,
+        "height": 1254,
+        "sourceId": "exec-02b7acdb-946b-462b-882e-c1b8c50823e2",
+        "sha256": "27d5baee0a8aac4279614565a3511eb19e87e0613dc7f0592e6346311bd04ba7"
+      },
+      "composition": {
+        "leftSourceCrop": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 0
+        },
+        "runtimeJpegQuality": 92,
+        "rightPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 1254
+        },
+        "repairEdgeFeather": 64,
+        "repairPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 627
+        },
+        "nativeScale": 1
+      },
+      "sourceId": "native-multipanel-composition-2026-10-02",
+      "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
     },
     {
-      "world": "games",
-      "file": "assets/scenes/games/hero-review.png",
       "reference": "docs/ui-reference/04-games.png",
       "subject": "unmistakable premium gaming den: dominant ultrawide gaming screen high right showing an original colorful fantasy landscape no text, illuminated PC tower with restrained cyan/violet rings, visible game controllers and headset on raised console beside screen, racing wheel near center-right, geometric collectibles shelves, warm walnut and amber architectural lights, deep indigo city night window. No branded games. Distinct expressive violet/cyan/amber technology environment, hardware clearly readable in upper 55%.",
-      "sourceId": "exec-98bea0e0-b496-4b64-ad48-3d3d79634070",
-      "runtimeFile": "assets/scenes/games/hero-review.jpg",
-      "runtimeBytes": 509284,
-      "runtimeSha256": "efd735e74904c83fd606f1bb4112d3dd8e467b274d2f86cbba08adeb3aedee78",
-      "masterSha256": "6ec69b0f47d5f275a865e46ef82dc20886088b27382ea501bbb13dadfbc10952",
-      "supersedes": "assets/scenes/games/hero.png; retained historical artwork, superseded after user visual FAIL on 2026-10-02",
-      "naturalWidth": 1672,
-      "naturalHeight": 941,
-      "prompt": "Use case: stylized-concept. Asset type: clean OneSpace full-viewport production environment, no UI. Generate a richly detailed cinematic architectural photograph, landscape 3840x2160 native output if supported, maximum available resolution. Wide medium-field lens with straight architectural lines, tack-sharp textures throughout, no blur or bokeh. Upper center/right contains clearly recognizable domain subject; left third calmer dark architectural wall for later live HTML text, but still texture and light. Subject occupies upper 55% so later live cards along bottom do not obscure it. Shared premium walnut/stone/glass/plant material family, warm practical lights with rich distinct complementary colors. No people, readable text, watermark, brand, logo, app screenshot, interface or baked-in labels. Do not reproduce reference UI. Avoid generic couch-centered apartment, huge closeup props, murky shadows or excessive zoom. GAMES unmistakable premium gaming den: dominant ultrawide gaming screen high right showing an original colorful fantasy landscape no text, illuminated PC tower with restrained cyan/violet rings, visible game controllers and headset on raised console beside screen, racing wheel near center-right, geometric collectibles shelves, warm walnut and amber architectural lights, deep indigo city night window. No branded games. Distinct expressive violet/cyan/amber technology environment, hardware clearly readable in upper 55%.",
-      "reviewDate": "2026-10-02"
+      "world": "games",
+      "naturalWidth": 2508,
+      "naturalHeight": 1254,
+      "runtimeBytes": 1164656,
+      "runtimeSha256": "f4ac36bc27e7b02c1bea7184724fd6c8d0698deba634198733fbd8f80cfc389c",
+      "masterSha256": "1edd70ddc420e45d470511d1cf8ae4b9198648938333e78c84610ff82624d06e",
+      "file": "assets/scenes/games/hero-fullbleed.png",
+      "runtimeFile": "assets/scenes/games/hero-fullbleed.jpg",
+      "sources": [
+        {
+          "file": "assets/scenes/games/hero-fullbleed-left.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel of the attached environment. gaming lounge left wing, game collectibles on warm amber shelves, board game table, controllers and small arcade cabinet with blue-purple screen, night skyline windows and lounge chair; same slatted walnut ceiling and dark marble floor. Camera faces left wing of the SAME room, same horizon/camera height, floor joins reference at equal height; rightmost edge narrow vertical matching stone or walnut column, compatible ceiling perspective. Photoreal sharp architectural detail over ALL the image. Complementary objects: do not duplicate the main right-panel large television. No UI, no legible text, no collage frame, no flat dark slabs. This source will be composed beside the reference at native resolution to create a coherent wide panorama. Highest actual native square output.",
+          "sourceId": "exec-36f03976-45c0-4c30-9b35-4c03065fa7de",
+          "sha256": "22e10df698c6fad73a5fe19640768758162dbefaae19175ca7f2fdbbaa2573b1"
+        },
+        {
+          "file": "assets/scenes/games/hero-fullbleed-right.png",
+          "width": 1254,
+          "height": 1254,
+          "prompt": "Use case: precise-object-edit. Reframe this existing environment as a SQUARE 1:1 native SOURCE PANEL. Preserve its identity and improve photographic detail. Scene: luxury gaming lounge, huge fantasy game screen, RGB PC case, controllers, headset and racing steering wheel, warm amber shelving and purple-blue reflections, night city windows. Full-bleed photoreal architecture, realistic coherent perspective, layered lighting and rich detailed environment everywhere. Main semantic objects visible in upper middle and right, floor limited to lower quarter, window and ceiling details. This will be the right half of a wider panorama joined to a matching left room extension. No UI, no text or watermark, no blank dark slab. Request highest actual native resolution; do not enlarge a smaller source.",
+          "sourceId": "exec-0ba5852f-d1ac-48ed-963d-f3b9ff9156df",
+          "sha256": "db8f44e49ada01925f9fb0461884d5d32a4cec2408d73383540a871508f7369b"
+        }
+      ],
+      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=627. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
+      "reviewDate": "2026-10-02",
+      "supersedes": "assets/scenes/games/hero-review.png and hero-review.jpg retained as historical review sources",
+      "repair": {
+        "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. Remove the cut-off sofa/table at center and unify the floor and rugs; the two chairs can be separate chairs in one large room. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
+        "x": 627,
+        "file": "assets/scenes/games/hero-fullbleed-repair.png",
+        "edgeFeather": 64,
+        "width": 1254,
+        "height": 1254,
+        "sourceId": "exec-7d79f173-12af-4d9c-b972-5278795609c9",
+        "sha256": "ac0abf062d8a55507cd8638ef3b08b06b4fd30a473593aa756ee186ec4565b27"
+      },
+      "composition": {
+        "leftSourceCrop": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 0
+        },
+        "runtimeJpegQuality": 92,
+        "rightPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 1254
+        },
+        "repairEdgeFeather": 64,
+        "repairPlacement": {
+          "width": 1254,
+          "y": 0,
+          "height": 1254,
+          "x": 627
+        },
+        "nativeScale": 1
+      },
+      "sourceId": "native-multipanel-composition-2026-10-02",
+      "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
     },
     {
       "world": "movies",

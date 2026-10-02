@@ -7,11 +7,11 @@
   'use strict';
 
   var worlds = [
-    { id: 'home', label: 'Home', scene: 'assets/scenes/home/hero-review.png', preview: 'assets/scenes/home/hero-review.jpg', modules: [] },
-    { id: 'work', label: 'Work', scene: 'assets/scenes/work/hero-review.png', preview: 'assets/scenes/work/hero-review.jpg', modules: ['projects', 'kanban-board', 'team', 'documents', 'meetings', 'templates'] },
-    { id: 'personal', label: 'Personal / Fitness', scene: 'assets/scenes/personal/hero-review.png', preview: 'assets/scenes/personal/hero-review.jpg', modules: ['mindfulness', 'fitness', 'nutrition', 'recovery', 'personal-life', 'home-wellbeing'] },
-    { id: 'explore', label: 'Explore', scene: 'assets/scenes/explore/hero-review.png', preview: 'assets/scenes/explore/hero-review.jpg', modules: ['destinations', 'experiences', 'travel-guides', 'bucket-list', 'discover-more'] },
-    { id: 'games', label: 'Games', scene: 'assets/scenes/games/hero-review.png', preview: 'assets/scenes/games/hero-review.jpg', modules: ['my-games', 'missions-quests', 'game-library', 'game-sessions', 'discover-games', 'game-settings'] },
+    { id: 'home', label: 'Home', scene: 'assets/scenes/home/hero-fullbleed.png', preview: 'assets/scenes/home/hero-fullbleed.jpg', modules: [] },
+    { id: 'work', label: 'Work', scene: 'assets/scenes/work/hero-fullbleed.png', preview: 'assets/scenes/work/hero-fullbleed.jpg', modules: ['projects', 'kanban-board', 'team', 'documents', 'meetings', 'templates'] },
+    { id: 'personal', label: 'Personal / Fitness', scene: 'assets/scenes/personal/hero-fullbleed.png', preview: 'assets/scenes/personal/hero-fullbleed.jpg', modules: ['mindfulness', 'fitness', 'nutrition', 'recovery', 'personal-life', 'home-wellbeing'] },
+    { id: 'explore', label: 'Explore', scene: 'assets/scenes/explore/hero-fullbleed.png', preview: 'assets/scenes/explore/hero-fullbleed.jpg', modules: ['destinations', 'experiences', 'travel-guides', 'bucket-list', 'discover-more'] },
+    { id: 'games', label: 'Games', scene: 'assets/scenes/games/hero-fullbleed.png', preview: 'assets/scenes/games/hero-fullbleed.jpg', modules: ['my-games', 'missions-quests', 'game-library', 'game-sessions', 'discover-games', 'game-settings'] },
     { id: 'movies', label: 'Movies & Series', scene: 'assets/scenes/movies/hero.png', preview: 'assets/scenes/movies/hero-fast.jpg', modules: ['continue-watching', 'watchlist-library', 'discovery', 'new-releases', 'recommendations', 'genres', 'title-detail'] },
     { id: 'projects-notes', label: 'Projects & Notes', scene: 'assets/scenes/projects-notes/hero.png', preview: 'assets/scenes/projects-notes/hero-fast.jpg', modules: ['all-projects', 'notes-knowledge', 'documents', 'idea-inbox', 'templates', 'archive'] },
     { id: 'settings', label: 'Settings', scene: 'assets/scenes/settings/hero.png', preview: 'assets/scenes/settings/hero-fast.jpg', modules: ['appearance-theme', 'connected-devices', 'notifications', 'privacy-security', 'quick-settings', 'routines-automation', 'system-health', 'account-profile'] }
@@ -135,7 +135,36 @@
     var back = doc.createElement('button'); back.type = 'button'; back.className = 'osr-button';
     back.textContent = '← Back to ' + label;
     var title = doc.createElement('h1'); title.tabIndex = -1; title.textContent = label + ' tools';
-    heading.appendChild(back); heading.appendChild(title); tools.prepend(heading);
+    var identity = doc.createElement('img'); identity.className = 'osr-owner-art';
+    identity.alt = ''; identity.decoding = 'async'; identity.width = 112; identity.height = 64;
+    identity.onerror = function () { identity.hidden = true; };
+    heading.appendChild(back); heading.appendChild(title); heading.appendChild(identity); tools.prepend(heading);
+    function identify(name) {
+      title.textContent = name || label + ' tools';
+      var slug = worldId === 'work' ? (/project/i.test(title.textContent) ? 'projects' : 'kanban-board') :
+        worldId === 'personal' ? 'personal-life' : worldId === 'home' ? 'work-review' : 'bucket-list';
+      if (worldId === 'games') {
+        slug = /mission|progress|weekly/i.test(title.textContent) ? 'missions-quests' :
+          /session/i.test(title.textContent) ? 'game-sessions' : /discover|suggest/i.test(title.textContent) ? 'discover-games' :
+          /setting|appearance/i.test(title.textContent) ? 'game-settings' : /journal/i.test(title.textContent) ? 'my-games' : 'game-library';
+      }
+      var src = 'assets/scenes/' + worldId + '/portals/' + slug + '.jpg';
+      if (identity.getAttribute('src') !== src) { identity.hidden = false; identity.src = src; }
+      tools.dataset.ownerIdentity = slug;
+    }
+    function identifyGameTab(event) {
+      if (!event.target.closest('[data-gv-tab]')) return;
+      var tab = tools.querySelector('[data-gv-tab][aria-selected="true"]');
+      if (!tab || tab.getAttribute('aria-selected') !== 'true') return;
+      var names = { overview:'Games overview', library:'Game Library', missions:'Missions & Quests', weekly:'Weekly Tasks', suggestions:'Discover Games', sessions:'Game Sessions', journal:'Game Journal', appearance:'Game Settings' };
+      identify(names[tab.dataset.gvTab]);
+    }
+    if (worldId === 'games') {
+      tools.addEventListener('click', identifyGameTab);
+      tools.addEventListener('keydown', function (event) {
+        if (['ArrowLeft','ArrowRight','Home','End'].indexOf(event.key) !== -1) identifyGameTab(event);
+      });
+    }
     frame.appendChild(tools);
     var trigger = null, scroll = 0;
     function present(open, name, focus) {
@@ -146,7 +175,7 @@
         var credits = !open && landing.querySelector('.osr-games-footer, .osr-explore-credits');
         (credits || frame).appendChild(footer);
       }
-      if (open) title.textContent = name || label + ' tools';
+      if (open) identify(name);
       if (focus) {
         win.scrollTo({ top: open ? 0 : scroll, behavior: 'instant' });
         var target = open ? title : trigger && trigger.isConnected ? trigger : landing.querySelector('h1');
@@ -235,10 +264,15 @@
           // Decorative light layers share the existing scene state and timers.
           // Games remains static until its separate motion acceptance step.
           if (doc && doc.createElement && ['home', 'work', 'personal', 'explore'].indexOf(worldId) !== -1) {
+            var lights = { home:[2144,1540,640,'#ffad52'], work:[2508,2020,650,'#54d2ff'], personal:[2508,2220,530,'#ffe3a2'], explore:[2508,1950,470,'#8ffff1'] };
+            var light = lights[worldId];
             ['practical', 'depth'].forEach(function (layer) {
               var effect = doc.createElement('span');
               effect.className = 'osr-scene-' + layer;
               effect.setAttribute('aria-hidden', 'true');
+              var shape = layer === 'practical' ? '<ellipse cx="' + light[1] + '" cy="' + light[2] + '" rx="330" ry="220" fill="url(#light)"/>' : '<ellipse cx="' + (light[1]-120) + '" cy="1110" rx="660" ry="250" fill="url(#light)"/>';
+              var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + light[0] + ' 1254"><defs><radialGradient id="light"><stop stop-color="' + light[3] + '"/><stop offset="1" stop-color="' + light[3] + '" stop-opacity="0"/></radialGradient></defs>' + shape + '</svg>';
+              effect.style.backgroundImage = 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
               host.appendChild(effect);
             });
           }

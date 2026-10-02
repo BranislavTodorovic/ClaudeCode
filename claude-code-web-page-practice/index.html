@@ -154,6 +154,7 @@ body.force-full-motion { scroll-behavior:smooth; }
 <link rel="stylesheet" href="explore/explore-redesign.css">
 <link rel="stylesheet" href="games/games-redesign.css">
 <link rel="stylesheet" href="styles/redesign-layout.css">
+<link rel="stylesheet" href="styles/redesign-owners.css">
 </head>
 <body class="has-sidebar" data-page="home">
   <div id="onespaceBoot" role="status" aria-live="polite">
@@ -363,7 +364,7 @@ body.force-full-motion { scroll-behavior:smooth; }
       <div id="redesignGames" class="osr-world osr-games"></div>
       <header class="page-hero" data-page-hero="games"><div class="page-hero-copy"><span class="page-hero-eyebrow">GAMEVAULT</span><h1>Worlds worth returning to.</h1><p>Your games, your progress, your next adventure.</p></div></header>
       <div class="gv-header">
-        <div class="gv-brand" role="img" aria-label="GameVault — your gaming dashboard">
+        <div class="gv-brand" role="img" aria-label="Games — your collection and progress">
           <span class="gv-emblem" aria-hidden="true">
             <span class="gv-ring"></span>
             <svg viewBox="0 0 64 64" fill="none">
@@ -375,8 +376,8 @@ body.force-full-motion { scroll-behavior:smooth; }
               <circle cx="45" cy="30" r="2.4" fill="#0b0b14"/>
             </svg>
           </span>
-          <span class="gv-wordmark">GameVault</span>
-          <span class="gv-tagline">Your personal game tracker</span>
+          <span class="gv-wordmark">Games</span>
+          <span class="gv-tagline">Your collection &amp; progress</span>
         </div>
         <div class="gv-header-actions">
           <div class="gv-theme-switch" role="group" aria-label="Games theme">
@@ -541,17 +542,17 @@ body.force-full-motion { scroll-behavior:smooth; }
       <div class="page-body">
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2 data-heading-icon="target">Goals</h2><span class="page-section-hint" id="personalGoalsCount">0 goals</span></div>
-          <form class="mini-form" id="personalGoalForm"><input type="text" id="personalGoalInput" maxlength="80" placeholder="Add a goal…" autocomplete="off"><button class="btn btn-primary" type="submit">Add</button></form>
+          <form class="mini-form" id="personalGoalForm"><input type="text" id="personalGoalInput" required pattern=".*\S.*" aria-label="Add a goal" maxlength="80" placeholder="Add a goal…" autocomplete="off"><button class="btn btn-primary" type="submit">Add</button></form>
           <ul class="check-list" id="personalGoalsList"></ul>
         </section>
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2 data-heading-icon="repeat">Routines</h2></div>
-          <form class="mini-form" id="personalRoutineForm"><input type="text" id="personalRoutineInput" maxlength="80" placeholder="Add a routine…" autocomplete="off"><button class="btn btn-primary" type="submit">Add</button></form>
+          <form class="mini-form" id="personalRoutineForm"><input type="text" id="personalRoutineInput" required pattern=".*\S.*" aria-label="Add a routine" maxlength="80" placeholder="Add a routine…" autocomplete="off"><button class="btn btn-primary" type="submit">Add</button></form>
           <ul class="check-list" id="personalRoutinesList"></ul>
         </section>
         <section class="page-section" data-reveal>
           <div class="page-section-head"><h2 data-heading-icon="heart">Habits</h2></div>
-          <form class="mini-form" id="personalHabitForm"><input type="text" id="personalHabitInput" maxlength="80" placeholder="Add a habit to track…" autocomplete="off"><button class="btn btn-primary" type="submit">Add</button></form>
+          <form class="mini-form" id="personalHabitForm"><input type="text" id="personalHabitInput" required pattern=".*\S.*" aria-label="Add a habit" maxlength="80" placeholder="Add a habit to track…" autocomplete="off"><button class="btn btn-primary" type="submit">Add</button></form>
           <ul class="check-list" id="personalHabitsList"></ul>
         </section>
         <section class="page-section" data-reveal>
@@ -2261,6 +2262,7 @@ body.force-full-motion { scroll-behavior:smooth; }
 
   // Isolate the active dialog, including navigation and any underlying dialog.
   function syncModalBackground() {
+    modalStack.forEach(function (entry, index) { entry.overlay.style.zIndex = String(100 + index); });
     var top = modalStack[modalStack.length - 1];
     if (!top) {
       modalBackground.forEach(function (wasInert, el) { el.inert = wasInert; });
@@ -2275,7 +2277,7 @@ body.force-full-motion { scroll-behavior:smooth; }
   }
   function openModal(overlay, focusEl) {
     if (!overlay || modalStack.some(function (entry) { return entry.overlay === overlay; })) return;
-    modalStack.push({ overlay: overlay, opener: document.activeElement });
+    modalStack.push({ overlay: overlay, opener: document.activeElement, previousZIndex: overlay.style.zIndex });
     overlay.hidden = false;
     syncModalBackground();
     if (overlay === paletteOverlay) paletteInput.setAttribute("aria-expanded", "true");
@@ -2288,6 +2290,7 @@ body.force-full-motion { scroll-behavior:smooth; }
     var wasTop = index === modalStack.length - 1;
     var entry = modalStack.splice(index, 1)[0];
     overlay.hidden = true;
+    overlay.style.zIndex = entry.previousZIndex || '';
     if (overlay === paletteOverlay) {
       paletteInput.setAttribute("aria-expanded", "false");
       paletteInput.removeAttribute("aria-activedescendant");

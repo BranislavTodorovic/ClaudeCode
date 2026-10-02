@@ -55,6 +55,26 @@ test('malformed destinations and preferences are rejected', () => {
   assert.equal(storage.valid('orbit-explore-preferences', JSON.stringify({ budget: ['unlimited'] })), false);
 });
 
+test('every offered Explore preference can be persisted without losing legacy choices', () => {
+  const source = fs.readFileSync(path.join(root, 'explore/discovery-ui.js'), 'utf8');
+  const start = source.indexOf('  function filters(domain)');
+  const end = source.indexOf('  function mount(', start);
+  const offered = {};
+  const context = { UI: {
+    field: () => '',
+    select: (name, label, values) => { offered[name] = Array.from(values, value => Array.isArray(value) ? value[0] : value).filter(Boolean); return ''; }
+  }};
+  vm.createContext(context);
+  vm.runInContext(source.slice(start, end) + "\nfilters('destinations');", context);
+  const fields = { category:'categories', season:'seasons', duration:'duration', budget:'budget', style:'pace', climate:'climate', interests:'interests', departure:'departure' };
+  for (const [input, key] of Object.entries(fields)) {
+    assert(offered[input].length > 0, input);
+    for (const value of offered[input]) assert.equal(storage.valid('orbit-explore-preferences', JSON.stringify({ [key]: [value] })), true, `${input}: ${value}`);
+  }
+  assert.equal(storage.valid('orbit-explore-preferences', JSON.stringify({ categories:['culture/history'], departure:['any'] })), true);
+  assert.equal(storage.valid('orbit-explore-preferences', JSON.stringify({ categories:['invented'] })), false);
+});
+
 test('missing Explore detail reports not-found without changing saved trips', async () => {
   const saved = trips.save([], discovery.normalize(destinations()[0], 'destinations'), 'trip-kept');
   const before = JSON.stringify(saved);

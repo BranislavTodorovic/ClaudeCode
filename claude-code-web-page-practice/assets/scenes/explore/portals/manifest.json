@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "slug": "travel-guides",
+      "source": "assets/scenes/explore/portals/travel-guides.png",
+      "display": "assets/scenes/explore/portals/travel-guides.jpg",
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "displayWidth": 960,
+      "displayHeight": 640,
+      "displayBytes": 235671,
+      "sha256": "f53b6b41fc4fb646fdb81cfa0b28ad7b29d7100aba33b9eac4a3673c54bc6c14",
+      "prompt": "Create an independently generated portal card photograph. A richly detailed still life of an open travel guidebook with illustrated architecture on its pages, folded annotated city map, route pencil, page tabs, reading glasses and warm brass desk lamp. Close editorial tabletop view, knowledge and practical planning, muted terracotta and ivory palette. No sea panorama. Landscape 3:2, photoreal, highest detail, sharp recognizable central subject, safe crop for wide 2.4:1 card with object in middle, no interface or legible branding, no watermarks. This is unique art for OneSpace Explore travel-guides.",
+      "production": "Independent OpenAI image generation; native retained PNG; JPEG display copy downsampled only, quality 92",
+      "date": "2026-10-02",
+      "focalPoint": "50% 50%",
+      "usage": "Original OneSpace decorative artwork"
+    },
+    {
+      "slug": "bucket-list",
+      "source": "assets/scenes/explore/portals/bucket-list.png",
+      "display": "assets/scenes/explore/portals/bucket-list.jpg",
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "displayWidth": 960,
+      "displayHeight": 640,
+      "displayBytes": 240919,
+      "sha256": "901f442dd13d000df50b30e68db9c2c62d391c3543293191f13cea692cc85422",
+      "prompt": "Create an independently generated portal card photograph. A pinned paper world map on a cork board, colored pins marking dream destinations, tiny handwritten checklist card with unrecognizable text, a few destination postcards and connecting thread, warm golden aspirational travel studio. Close view clearly distinguishing pin-map and checklist objects. No globe or open guidebook. Landscape 3:2, photoreal, highest detail, sharp recognizable central subject, safe crop for wide 2.4:1 card with object in middle, no interface or legible branding, no watermarks. This is unique art for OneSpace Explore bucket-list.",
+      "production": "Independent OpenAI image generation; native retained PNG; JPEG display copy downsampled only, quality 92",
+      "date": "2026-10-02",
+      "focalPoint": "50% 50%",
+      "usage": "Original OneSpace decorative artwork"
+    },
+    {
+      "slug": "discover-more",
+      "source": "assets/scenes/explore/portals/discover-more.png",
+      "display": "assets/scenes/explore/portals/discover-more.jpg",
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "displayWidth": 960,
+      "displayHeight": 640,
+      "displayBytes": 201271,
+      "sha256": "5191f9d823b7887a10c59fd7c8e9121beca3505d42de3cdd2ba1a455f36cf940",
+      "prompt": "Create an independently generated portal card photograph. A weathered brass compass and neatly arranged trail/resource cards, binoculars, magnifying glass and folded discovery field notebook on a teak explorer desk, forest light at the side, teal and amber exploratory resource mood. Close composition emphasizing the compass. No world map wall or guidebook. Landscape 3:2, photoreal, highest detail, sharp recognizable central subject, safe crop for wide 2.4:1 card with object in middle, no interface or legible branding, no watermarks. This is unique art for OneSpace Explore discover-more.",
+      "production": "Independent OpenAI image generation; native retained PNG; JPEG display copy downsampled only, quality 92",
+      "date": "2026-10-02",
+      "focalPoint": "50% 50%",
+      "usage": "Original OneSpace decorative artwork"
+    }
+  ],
+  "acceptedArtPreserved": [
+    "Destinations: assets/destinations/crete-card.webp",
+    "Experiences: assets/destinations/costa-rica-card.webp"
+  ]
+}

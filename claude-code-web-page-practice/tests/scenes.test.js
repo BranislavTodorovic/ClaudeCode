@@ -39,7 +39,7 @@ test('pointer depth clamps, resets and ignores touch, reduced and Off input',()=
 
 test('scene lifecycle waits for boot, stages entry, settle and ambient; exit resets without same-page replay',()=>{
  const vm=require('node:vm'),scheduled=[],events=[];let still=false,bootState='pending';
- function classList(){var values=new Set();return {add:x=>values.add(x),remove:x=>values.delete(x),contains:x=>values.has(x)};}
+ function classList(){var values=new Set();return {add:x=>values.add(x),remove:x=>values.delete(x),contains:x=>values.has(x),toggle:(x,on)=>on?values.add(x):values.delete(x)};}
  function view(id,level){var styles={};var node={id,hidden:false,dataset:{sceneIntensity:level||'full'},classList:classList(),style:{setProperty:(k,v)=>styles[k]=v,removeProperty:k=>delete styles[k]},querySelectorAll:()=>[],closest:()=>node,offsetWidth:1200};return node;}
  const document={hidden:false,documentElement:{getAttribute:()=>bootState},body:{classList:classList()},querySelectorAll:()=>[],dispatchEvent:e=>events.push(e.detail)};
  const OS={prefersReducedMotion:()=>still};
@@ -58,6 +58,14 @@ test('scene lifecycle waits for boot, stages entry, settle and ambient; exit res
  const subtle=view('personalView','subtle');OS.scene.enter(subtle);assert.equal(subtle.dataset.sceneState,'entry');assert(scheduled.some(x=>x.delay===1050));assert(scheduled.some(x=>x.delay===1550));
  OS.scene.exit(subtle);const off=view('notesView','off');OS.scene.enter(off);assert.equal(off.dataset.sceneState,'still');
  OS.scene.exit(off);still=true;const reduced=view('settingsView');OS.scene.enter(reduced);assert.equal(reduced.dataset.sceneState,'still');
+ OS.scene.exit(reduced);still=false;const hiddenEntry=view('homeView');
+ const firstHiddenTimer=scheduled.length;OS.scene.enter(hiddenEntry);document.hidden=true;OS.scene.refresh();
+ assert.equal(hiddenEntry.dataset.sceneState,'still','hiding the document stops entry');
+ assert(scheduled.slice(firstHiddenTimer).every(task=>task.cancelled),'hidden entry leaves no decorative stage timers');
+ document.hidden=false;OS.scene.refresh();assert.equal(hiddenEntry.dataset.sceneState,'ambient');
+ OS.scene.exit(hiddenEntry);document.hidden=true;const hiddenBoot=view('workView');
+ const timersBeforeBoot=scheduled.length;OS.scene.enter(hiddenBoot);
+ assert.equal(hiddenBoot.dataset.sceneState,'still');assert.equal(scheduled.length,timersBeforeBoot,'background activation schedules no entry timers');
  assert(events.some(x=>x.page==='home'&&x.state==='entry'));assert(events.some(x=>x.page==='home'&&x.state==='settle'));assert(events.some(x=>x.page==='home'&&x.state==='ambient'));
 });
 

@@ -16,9 +16,9 @@
   var portals = [
     { slug: 'destinations', label: 'Destinations', subtitle: 'Search your local atlas.', image: 'assets/destinations/crete-card.webp' },
     { slug: 'experiences', label: 'Experiences', subtitle: 'Activity discovery coming later.', image: 'assets/destinations/costa-rica-card.webp', future: true },
-    { slug: 'travel-guides', label: 'Travel Guides', subtitle: 'Dedicated guides coming later.', image: 'assets/scenes/home/portals/explore-review.jpg', future: true },
-    { slug: 'bucket-list', label: 'Bucket List', subtitle: 'Your saved places and trip plans.', image: 'assets/scenes/home/portals/explore-review.jpg' },
-    { slug: 'discover-more', label: 'Discover More', subtitle: 'Explore your travel resources.', image: 'assets/destinations/azores-card.webp' }
+    { slug: 'travel-guides', label: 'Travel Guides', subtitle: 'Dedicated guides coming later.', image: 'assets/scenes/explore/portals/travel-guides.jpg', future: true },
+    { slug: 'bucket-list', label: 'Bucket List', subtitle: 'Your saved places and trip plans.', image: 'assets/scenes/explore/portals/bucket-list.jpg' },
+    { slug: 'discover-more', label: 'Discover More', subtitle: 'Explore your travel resources.', image: 'assets/scenes/explore/portals/discover-more.jpg' }
   ];
   function wireInspirationImage(img) {
     if (!img) return;

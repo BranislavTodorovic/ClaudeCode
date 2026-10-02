@@ -9,7 +9,7 @@ function fixture(world='games',workView='active'){
   prepend(child){this.appendChild(child);this.children.splice(this.children.indexOf(child),1);this.children.unshift(child);}
   contains(child){return this===child||this.children.some(el=>el.contains(child));}
   querySelector(selector){return selector==='.osr-frame'?frame:selector==='main'?landing:selector==='h1'?landingTitle:null;}
-  setAttribute(k,v){this.attrs[k]=v;}hasAttribute(k){return k in this.attrs;}
+  setAttribute(k,v){this.attrs[k]=v;}getAttribute(k){return this.attrs[k]??(k==='src'?this.src:null);}hasAttribute(k){return k in this.attrs;}
   addEventListener(name,fn){this.listeners[name]=fn;}focus(){doc.activeElement=this;}
  }
  const view=new Element(),stage=new Element(),frame=new Element(),landing=new Element('MAIN'),landingTitle=new Element('H1'),owner=new Element(),trigger=new Element('BUTTON');

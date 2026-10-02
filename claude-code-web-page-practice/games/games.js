@@ -1251,7 +1251,7 @@
   function renderSpotlight(reason) {
     // The redesigned landing and separated owner hide this compatibility carousel.
     // Keep its data and APIs, but avoid fetching artwork for an invisible surface.
-    if (document.getElementById('gamesView').classList.contains('redesign-games')) return;
+    if (document.getElementById('redesignGames') || document.getElementById('gamesView').classList.contains('redesign-games')) return;
     var hero = document.getElementById("gvSpotlight");
     var game = spotlightGame();
     if(!hero)return;hero.hidden=activeTab!=='overview'||!game;document.getElementById('gvSpotlightRail').hidden=activeTab!=='overview'||!game;if(!game){document.getElementById('gvSpotlightRail').innerHTML='';return;}
@@ -1386,7 +1386,7 @@
       panel.setAttribute("data-reveal", ""); panel.setAttribute("data-reveal-key", "panel-" + name);
       var heading = document.createElement("div"); heading.className = "gv-section-heading";
       heading.setAttribute("data-reveal", ""); heading.setAttribute("data-reveal-key", "section-" + name);
-      heading.innerHTML = '<span>0' + (i+1) + ' / YOUR GAMEVAULT</span><h2 id="gvHeading-' + name + '">' + gvIcon(name) + labels[name] + '</h2>';
+      heading.innerHTML = '<span>0' + (i+1) + ' / YOUR GAMES</span><h2 id="gvHeading-' + name + '">' + gvIcon(name) + labels[name] + '</h2>';
       panel.prepend(heading);
     });
     document.querySelectorAll('[data-page-button="games"] svg, .gv-emblem svg').forEach(function (svg) {

@@ -1,0 +1,69 @@
+/* Current compatibility owners share their parent world. Existing records,
+   controls and domain DOM remain the canonical implementation. */
+.modal-overlay[inert] { pointer-events:none; }
+.osr-owner-surface {
+  --text:#f6f8fc; --text-primary:#f6f8fc; --muted:#c8d2df; --text-muted:#c8d2df;
+  --surface:rgb(7 18 30 / 80%); --surface-2:rgb(18 33 47 / 88%);
+  --surface-3:rgb(28 47 65 / 82%); --line:rgb(191 216 239 / 28%);
+  --gv-surface:rgb(12 19 37 / 80%); --gv-surface-2:rgb(22 32 52 / 85%);
+  --gv-line:rgb(185 210 245 / 28%); --gv-text:#f6f8fc; --gv-muted:#c8d2df;
+  color:var(--osr-ink); font-family:inherit;
+}
+.osr-owner-heading { min-height:64px; overflow:hidden; border:1px solid var(--osr-edge); padding:0 12px; box-shadow:var(--osr-shadow); }
+.osr-owner-heading h1 { flex:1; letter-spacing:-.025em; line-height:1.2; }
+.osr-owner-art { width:112px; height:64px; object-fit:cover; object-position:center; border-radius:8px; flex:none; }
+.osr-owner-surface :is(.page-section,.project-form,.overview-tile,.domain-card,.project-card,.work-item-card,.discovery-workspace,.trip-empty,.space-shortcut,.gv-continue-card,.gv-session-row,.gv-journal-card,.gv-panel) {
+  border:1px solid var(--osr-edge); border-radius:var(--osr-radius);
+  background:var(--surface); box-shadow:0 12px 32px #0003; backdrop-filter:blur(18px);
+}
+.osr-owner-surface .page-section { padding:16px; min-width:0; }
+.osr-owner-surface :is(h2,h3,h4) { color:var(--osr-ink); letter-spacing:-.02em; }
+.osr-owner-surface :is(label,p,.check-list li,.trip-column-empty) { color:var(--text); }
+.osr-owner-surface :is(input,select,textarea) { color:var(--osr-ink); background:rgb(4 14 24 / 86%); border:1px solid var(--osr-edge); border-radius:10px; padding:10px 12px; font:inherit; min-width:0; }
+.osr-owner-surface :is(input,textarea)::placeholder { color:#b8c8d8; opacity:1; }
+.osr-owner-surface select option { color:#f6f8fc; background:#101e2d; }
+.osr-owner-surface :is(button,.btn) { border:1px solid var(--osr-edge); border-radius:12px; color:var(--osr-ink); background:rgb(22 41 59 / 86%); font-family:inherit; line-height:1.3; }
+.osr-owner-surface :is(button,.btn):hover { border-color:var(--osr-accent); background:rgb(40 66 87 / 94%); }
+.osr-owner-surface :is(button,.btn)[aria-pressed="true"],.osr-owner-surface [role="tab"][aria-selected="true"] { background:color-mix(in srgb,var(--osr-accent) 24%,#102233); border-color:var(--osr-accent); box-shadow:inset 0 -3px var(--osr-accent); }
+.osr-owner-surface :is(button,a,input,select,textarea,summary):focus-visible { outline:3px solid #bfecff; outline-offset:3px; }
+.osr-owner-surface .domain-actions,.osr-owner-surface .gv-tabs { gap:6px; }
+.osr-owner-surface .gv-tabs { padding:8px; border:1px solid var(--osr-edge); border-radius:16px; background:var(--osr-glass); margin:12px 0; }
+.osr-owner-surface .gv-tab { flex:0 1 auto; padding:10px 16px; font-size:.9rem; }
+.osr-owner-surface .gv-header { margin:8px 0; padding:12px 16px; border:1px solid var(--osr-edge); border-radius:16px; background:var(--osr-glass); gap:16px; }
+.osr-owner-surface .gv-emblem { display:none; }
+.osr-owner-surface .gv-brand { gap:6px 14px; flex-wrap:wrap; }
+.osr-owner-surface .gv-wordmark { font-family:inherit; font-weight:700; font-size:1.15rem; line-height:1.2; letter-spacing:-.025em; background:none; -webkit-text-fill-color:var(--osr-ink); }
+.osr-owner-surface .gv-tagline { font-size:.85rem; color:var(--osr-muted); }
+.osr-owner-surface .gv-panel { padding:16px; }
+.osr-owner-surface .gv-grid { gap:16px; }
+.osr-owner-surface .gv-pref-chip { min-height:44px; }
+.osr-owner-surface .check-list { padding:0; }
+.osr-owner-surface .check-list li { border-color:var(--osr-edge); padding:12px 0; gap:10px; }
+.osr-owner-surface .check-list input[type="checkbox"] { width:24px; height:24px; flex:none; accent-color:var(--osr-accent); }
+.osr-owner-surface .check-list li>span { flex:1; }
+#personalView .osr-owner-surface .page-section-head { min-height:64px; padding-right:104px; background-position:right center; background-repeat:no-repeat; background-size:96px 64px; }
+#personalView .page-section:has(#personalGoalsList) .page-section-head { background-image:url('../assets/scenes/personal/portals/personal-life.jpg'); }
+#personalView .page-section:has(#personalRoutinesList) .page-section-head { background-image:url('../assets/scenes/personal/portals/recovery.jpg'); }
+#personalView .page-section:has(#personalHabitsList) .page-section-head { background-image:url('../assets/scenes/personal/portals/mindfulness.jpg'); }
+.osr-owner-surface .discovery-heading { margin-bottom:16px; }
+.osr-owner-surface .discovery-workspace { margin:14px 0; padding:20px; }
+.osr-owner-surface .discovery-card,.osr-owner-surface .trip-card { background:var(--surface-2); border-color:var(--osr-edge); }
+.osr-owner-surface .trip-column h3 { padding:12px; background:var(--osr-glass); border-radius:12px; }
+.osr-owner-surface .overview-tile { box-shadow:none; }
+#workView .osr-owner-surface .page-section { padding:12px; }
+#workView .osr-owner-surface #workTracker { border:none; background:transparent; box-shadow:none; backdrop-filter:none; padding:0; }
+#workView .osr-owner-surface .work-item-card { padding:16px; }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal { color:#f6f8fc; background:rgb(10 22 36 / 97%); border:1px solid var(--osr-edge); backdrop-filter:blur(22px); }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal :is(label,input,select,textarea,.btn) { color:#f6f8fc; }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal :is(input,select,textarea) { background:#0c1b2b; border-color:var(--osr-edge); }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal select option { color:#f6f8fc; background:#0c1b2b; }
+@media(max-width:760px) {
+  .osr-owner-heading { position:relative; padding:8px; gap:10px; flex-wrap:wrap; }
+  .osr-owner-heading > button { flex-basis:100%; }
+  .osr-owner-heading h1 { font-size:1.5rem; min-width:0; overflow-wrap:anywhere; }
+  .osr-owner-art { width:80px; height:56px; }
+  .osr-owner-surface .page-section,.osr-owner-surface .gv-panel,.osr-owner-surface .discovery-workspace { padding:12px; }
+  .osr-owner-surface .gv-tab { padding:8px 12px; }
+  .osr-owner-surface .gv-header-actions { width:100%; }
+  .osr-owner-surface .gv-theme-switch { flex-wrap:wrap; }
+}

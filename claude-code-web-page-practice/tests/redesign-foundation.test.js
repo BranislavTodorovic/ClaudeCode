@@ -13,7 +13,7 @@ test('eight reference-led worlds have unique routes and local scenes', () => {
     assert.deepEqual(foundation.parseRoute(hash), {
       utility: null, world: world.id, module: null, recordId: null, activeParent: world.id
     });
-    assert.match(world.scene, /^assets\/scenes\/[a-z-]+\/hero(?:-r\d+|-review)?\.png$/);
+    assert.match(world.scene, /^assets\/scenes\/[a-z-]+\/hero(?:-r\d+|-review|-fullbleed)?\.png$/);
   }
 });
 
@@ -119,6 +119,25 @@ test('direct hash route never eagerly loads Home art while the boot router is pe
   assert.equal(await scene.show('home'), 'deferred'); assert.equal(PendingImage.instances.length, 0);
   boot = 'ready'; listeners['onespace:page-changed']();
   assert.equal(PendingImage.instances.length, 1);
+});
+
+test('five landing environments have adequate native canvas and unscaled source provenance', () => {
+  const root = path.resolve(__dirname, '..');
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, 'assets/scenes/manifest.json')));
+  for (const id of ['home', 'work', 'personal', 'explore', 'games']) {
+    const record = manifest.scenes.find(scene => scene.world === id);
+    const master = fs.readFileSync(path.join(root, record.file));
+    assert.equal(master.readUInt32BE(16), record.naturalWidth);
+    assert.equal(master.readUInt32BE(20), record.naturalHeight);
+    assert(record.naturalWidth >= 2048 && record.naturalHeight >= 1152, id);
+    assert.match(record.production, /1:1 pixels/);
+    assert.match(record.production, /No image or patch enlargement/);
+    for (const source of [...record.sources, record.repair]) {
+      const panel = fs.readFileSync(path.join(root, source.file));
+      assert.equal(panel.readUInt32BE(16), 1254);
+      assert.equal(panel.readUInt32BE(20), 1254);
+    }
+  }
 });
 
 test('scene display copies retain provenance and reduce decode/transfer size for their role', () => {

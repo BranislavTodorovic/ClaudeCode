@@ -1,12 +1,16 @@
-/* Review correction: the viewport environment continues behind the compact footer.
-   Scene pictures remain within their native 1672px width; architectural side fields
-   extend the environment without inventing detail by upscaling. */
+/* The actual room spans the viewport, including the compact footer.
+   Native panoramic masters provide detailed environment behind the live UI. */
+/* Hide replaced decorative surfaces before scripts mount the new shell, so
+   initial style resolution cannot fetch invisible legacy backgrounds. */
+#homeView > .home-destinations,
+:is(#homeView,#workView,#personalView,#exploreView) > .page-hero { display:none !important; }
 body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .site-footer { position:relative; z-index:2; margin:0; padding:6px 16px; min-height:28px; color:#c8d2df; background:transparent; }
 .osr-world { background:transparent; }
-.osr-world .osr-scene-host { position:fixed; inset:0; height:100vh; background:repeating-linear-gradient(90deg,#181c20 0 24px,#242a2d 24px 26px,#1a2024 26px 58px); }
+.osr-world .osr-scene-host { position:fixed; inset:0; height:100vh; background:radial-gradient(ellipse at 70% 35%,#294a52,#101e2e 75%); }
 .osr-world[data-surface="owner"] .osr-scene-host { height:100vh; }
-.osr-world .osr-scene-image { position:absolute; right:0; top:0; width:min(100%,1672px); height:min(100vh,941px); object-fit:cover; object-position:right bottom; mask-image:linear-gradient(90deg,transparent,#000 12%),linear-gradient(#000 82%,transparent); mask-composite:intersect; }
-.osr-world .osr-scene-host::after { background:linear-gradient(90deg,#07111bb5,transparent 55%),linear-gradient(0deg,#07111b80,transparent 50%); }
+.osr-world .osr-scene-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; mask-image:none; }
+:is(#redesignHome,#redesignWork,#redesignPersonal,#redesignExplore,#redesignGames) .osr-scene-host::after { background:linear-gradient(90deg,#07111b99,#07111b52 40%,#07111b10 74%),linear-gradient(0deg,#07111b80,transparent 55%); }
+#redesignGames .osr-scene-image { object-position:center 30%; }
 .osr-world { min-height:0; }
 .osr-world .osr-frame { display:flex; flex-direction:column; min-height:100vh !important; padding-block:12px 4px; }
 .osr-world .osr-frame > .site-footer { margin-top:auto; padding:6px 0; flex-shrink:0; }
@@ -71,7 +75,7 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
   .osr-games-tools { padding:12px 0 16px; }
 }
 @media(max-width:1459px) { .osr-world .osr-frame { padding-block:16px; } }
-@media(max-width:760px) { .osr-world .osr-scene-image { object-position:right top; mask-image:linear-gradient(#000 70%,transparent); mask-composite:add; } }
+@media(max-width:760px) { .osr-world .osr-scene-image { object-position:80% center; } }
 @media(min-width:1460px) and (max-height:900px) {
   .osr-world :is(.osr-home-hero,.osr-work-hero,.osr-personal-hero) { display:grid; grid-template-columns:minmax(0,1fr) auto; max-width:1100px; column-gap:16px; }
   .osr-world :is(.osr-home-hero,.osr-work-hero,.osr-personal-hero) > :not(.osr-capture-hint):not(.osr-quick-actions) { grid-column:1/-1; }
@@ -110,16 +114,9 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
   .osr-world :is(.osr-games-portals,.osr-explore-portals) { margin-top:8px; }
 }
 /* Scene-only film: the shared controller owns all entry/settle/ambient timing.
-   Light layers are aligned with the same native-size, bottom-cropped picture. */
-.osr-world :is(.osr-scene-practical,.osr-scene-depth) { position:absolute; right:0; top:0; width:min(100%,1672px); height:min(100vh,941px); pointer-events:none; mix-blend-mode:screen; opacity:.12; }
-#homeView .osr-scene-practical { background:radial-gradient(ellipse at 53% 40%,#ff9b36b0,transparent 24%); }
-#homeView .osr-scene-depth { background:linear-gradient(115deg,transparent 46%,#ffc17542 61%,transparent 77%); }
-#workView .osr-scene-practical { background:radial-gradient(ellipse at 71% 30%,#40c4ff90,transparent 18%),radial-gradient(ellipse at 88% 19%,#ffbf6655,transparent 12%); }
-#workView .osr-scene-depth { background:linear-gradient(155deg,transparent 48%,#64d2ea30 64%,transparent 78%); }
-#personalView .osr-scene-practical { background:linear-gradient(110deg,transparent 36%,#ffdf9580 47%,transparent 65%); clip-path:polygon(25% 0,68% 0,95% 80%,57% 80%); }
-#personalView .osr-scene-depth { background:radial-gradient(ellipse at 67% 35%,#98e2b252,transparent 39%); }
-#exploreView .osr-scene-practical { background:radial-gradient(ellipse at 53% 24%,#66ebdf78,transparent 31%); }
-#exploreView .osr-scene-depth { background:linear-gradient(165deg,transparent 18%,#b9fff840 30%,transparent 39%),radial-gradient(ellipse at 87% 19%,#ffcb713a,transparent 20%); }
+   Light layers use the same source coordinates and cover crop as the picture. */
+.osr-world :is(.osr-scene-practical,.osr-scene-depth) { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; mix-blend-mode:screen; opacity:.12; background-size:cover; background-position:center bottom; background-repeat:no-repeat; }
+@media(max-width:760px) { .osr-world :is(.osr-scene-practical,.osr-scene-depth) { background-position:80% center; } }
 :is(#homeView,#workView,#personalView,#exploreView)[data-scene-state="entry"] .osr-scene-image { animation:osrRoomExposure var(--scene-wake-duration,2350ms) ease-out both; }
 #homeView[data-scene-state="entry"] .osr-scene-practical { animation:osrFirelight var(--scene-wake-duration,2350ms) ease-out both; }
 #workView[data-scene-state="entry"] .osr-scene-practical { animation:osrScreensOn var(--scene-wake-duration,2350ms) ease-out both; }
