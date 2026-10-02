@@ -1,6 +1,9 @@
 /* Current compatibility owners share their parent world. Existing records,
    controls and domain DOM remain the canonical implementation. */
 .modal-overlay[inert] { pointer-events:none; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) :is(.sidebar,.sidebar-toggle,.mobile-nav,.wrap > .app-header) { display:none !important; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .wrap { width:100%; max-width:none; margin:0; padding:0; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .page-view { padding:0; margin:0; }
 .osr-owner-surface {
   --text:#f6f8fc; --text-primary:#f6f8fc; --muted:#c8d2df; --text-muted:#c8d2df;
   --surface:rgb(7 18 30 / 80%); --surface-2:rgb(18 33 47 / 88%);
@@ -57,6 +60,19 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
 body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal :is(label,input,select,textarea,.btn) { color:#f6f8fc; }
 body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal :is(input,select,textarea) { background:#0c1b2b; border-color:var(--osr-edge); }
 body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .modal select option { color:#f6f8fc; background:#0c1b2b; }
+/* Dialogs live beside the world surface, so they need their own theme tokens. */
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"],[data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal {
+ --surface:#111f2e; --surface-2:#1c3043; --surface-3:#233b50; --line:#40576d;
+ --text:#f6f8fc; --muted:#c8d2df; --dialog-accent:#d6b779;
+ color:var(--text); background:var(--surface);
+}
+body[data-page="work"] .modal { --dialog-accent:#8fcddb; }
+body[data-page="personal"] .modal { --dialog-accent:#b6dab2; }
+body[data-page="explore"] .modal { --dialog-accent:#a5dacf; }
+body[data-page="games"] .modal { --dialog-accent:#c5b1ee; }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"],[data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal .btn:not(.btn-primary) { background:var(--surface-2); color:var(--text); border-color:var(--line); }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"],[data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal .btn-primary { background:linear-gradient(120deg,var(--dialog-accent),#f0d8a5); color:#102030; }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"],[data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal :is(button,a,input,select,textarea):focus-visible { outline:3px solid #bfecff; outline-offset:3px; }
 @media(max-width:760px) {
   .osr-owner-heading { position:relative; padding:8px; gap:10px; flex-wrap:wrap; }
   .osr-owner-heading > button { flex-basis:100%; }
@@ -66,4 +82,74 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
   .osr-owner-surface .gv-tab { padding:8px 12px; }
   .osr-owner-surface .gv-header-actions { width:100%; }
   .osr-owner-surface .gv-theme-switch { flex-wrap:wrap; }
+}
+
+/* Warm architectural materials carry into current tools without changing owners. */
+.osr-owner-surface { --owner-warm:#e7bb84; --owner-tint:#354454; }
+.osr-owner-surface { --bg:#0c1724; --page-soft:color-mix(in srgb,var(--owner-tint) 75%,#142332); --page-ink:#f6f8fc; }
+.osr-games-tools.osr-owner-surface { background:transparent; }
+.osr-owner-surface[data-owner-world="work"] { --owner-warm:#8bd7ef; --owner-tint:#274652; }
+.osr-owner-surface[data-owner-world="personal"] { --owner-warm:#d3d7a0; --owner-tint:#3c493e; }
+.osr-owner-surface[data-owner-world="explore"] { --owner-warm:#edbd80; --owner-tint:#524538; }
+.osr-owner-surface[data-owner-world="games"] { --owner-warm:#baaff5; --owner-tint:#403c59; }
+.osr-owner-surface .osr-owner-heading { position:relative; top:auto; min-height:112px; padding:16px 20px; margin-bottom:18px; border-radius:20px; background:linear-gradient(110deg,#101c27f0,color-mix(in srgb,var(--owner-tint) 90%,transparent)); overflow:hidden; }
+.osr-owner-surface .osr-owner-heading h1 { font-size:clamp(1.6rem,2.4vw,2.8rem); color:#fff5e8; }
+.osr-owner-surface .osr-owner-art { width:clamp(150px,18vw,320px); height:96px; border-radius:14px; object-fit:cover; box-shadow:0 8px 24px #0005; }
+.osr-owner-surface .gv-section-heading { min-height:108px; padding:18px 240px 18px 18px; margin-bottom:20px; border-radius:16px; background:linear-gradient(90deg,#101c29 45%,#101c2930),var(--panel-art) right center/220px 146px no-repeat; border:1px solid var(--osr-edge); }
+.osr-owner-surface .gv-panel[data-panel="overview"] { --panel-art:url('../assets/scenes/games/portals/my-games.jpg'); }
+.osr-owner-surface .gv-panel[data-panel="library"] { --panel-art:url('../assets/scenes/games/portals/game-library.jpg'); }
+.osr-owner-surface .gv-panel:is([data-panel="missions"],[data-panel="weekly"]) { --panel-art:url('../assets/scenes/games/portals/missions-quests.jpg'); }
+.osr-owner-surface .gv-panel[data-panel="suggestions"] { --panel-art:url('../assets/scenes/games/portals/discover-games.jpg'); }
+.osr-owner-surface .gv-panel[data-panel="sessions"] { --panel-art:url('../assets/scenes/games/portals/game-sessions.jpg'); }
+.osr-owner-surface .gv-panel[data-panel="journal"] { --panel-art:url('../assets/scenes/games/portals/my-games.jpg'); }
+.osr-owner-surface .gv-panel[data-panel="appearance"] { --panel-art:url('../assets/scenes/games/portals/game-settings.jpg'); }
+.osr-owner-intro { max-width:76ch; margin:0 0 24px; color:var(--osr-muted); font-size:1.05rem; }
+.osr-owner-surface :is(.widget,.page-section,.gv-panel,.discovery-workspace) { background:linear-gradient(130deg,#101d2af5,color-mix(in srgb,var(--owner-tint) 55%,#10202ef5)); border:1px solid color-mix(in srgb,var(--owner-warm) 28%,transparent); border-radius:20px; box-shadow:inset 0 1px #ffffff0d,0 18px 42px #0003; }
+.osr-owner-surface :is(.widget-header,.page-section-head,.gv-section-head,.discovery-heading) { border-bottom:1px solid color-mix(in srgb,var(--owner-warm) 24%,transparent); padding-bottom:14px; }
+.osr-owner-surface :is(.domain-card,.project-card,.gv-game-card,.gv-journal-entry,.gv-session-row,.trip-card,.note-card) { background:linear-gradient(145deg,#182735f5,#111c28ed); border:1px solid color-mix(in srgb,var(--owner-warm) 22%,transparent); border-radius:16px; box-shadow:0 8px 24px #0003; }
+.osr-owner-surface :is(.domain-card,.project-card,.gv-journal-entry) { border-top:3px solid color-mix(in srgb,var(--owner-warm) 68%,#203446); }
+.osr-owner-surface :is(.btn-primary,.project-form button[type="submit"],#gvJournalSave) { background:linear-gradient(110deg,var(--owner-warm),#eef1dc); border-color:transparent; color:#112130; font-weight:750; }
+.osr-owner-surface :is(.domain-actions,.gv-tabs) { padding:8px; border-radius:14px; background:#0a1722a6; }
+.osr-owner-surface :is(button,.btn)[aria-pressed="true"],.osr-owner-surface [role="tab"][aria-selected="true"] { background:linear-gradient(120deg,color-mix(in srgb,var(--owner-warm) 34%,#152330),#243a4a); border-color:var(--owner-warm); box-shadow:inset 0 -3px var(--owner-warm); color:#fff; }
+.work-history-card { text-align:left; display:grid; gap:10px; padding:20px !important; cursor:pointer; }
+.work-history-card > strong { font-size:1.25rem; }
+.work-history-card > span { color:var(--osr-muted); font-size:.9rem; }
+.work-history-card .work-history-icon { color:var(--owner-warm); }
+.work-history-card .work-history-open { display:flex; align-items:center; justify-content:space-between; min-height:44px; border-top:1px solid var(--osr-edge); color:var(--owner-warm); }
+.work-history-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.work-history-fields > div { min-width:0; padding:12px; background:#ffffff08; border-radius:12px; }
+.work-history-fields dt { font-size:.8rem; color:#b7cadd; }
+.work-history-fields dd { margin:6px 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.work-history-task { margin-top:16px; border-top:1px solid var(--osr-edge); }
+.osr-utility .widget-grid { width:100%; gap:20px; }
+.osr-utility :is(.widget,.notes-new-form,.notes-search,.notes-grid) { min-width:0; }
+.osr-utility .widget { padding:22px; }
+.osr-utility .focus-dial { width:180px; height:180px; margin:20px auto; background:none; box-shadow:none; }
+.osr-utility .focus-time { color:#fff5e8; text-shadow:none; }
+.osr-utility .focus-track { stroke:#ffffff20; }
+.osr-utility #prodProgressRing { stroke:var(--owner-warm); filter:none; }
+.osr-utility :is(.widget-header > h2 > .icon,.focus-caption) { color:var(--owner-warm); }
+.osr-utility .notes-new-form { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; }
+.osr-utility .notes-new-form textarea { grid-column:1/-1; min-height:130px; }
+.osr-utility .notes-new-form button { grid-column:2; }
+.osr-utility .notes-search { width:100%; margin:20px 0; }
+.osr-utility .note-card :is(p,textarea,input) { color:#f6f8fc; }
+.osr-utility .toolbar { display:flex; flex-wrap:wrap; gap:12px; }
+.osr-utility .toolbar .btn span { display:inline; }
+.osr-utility :is(.card,.quick-access,.space-picker) { background:var(--surface); border-color:var(--osr-edge); border-radius:16px; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal { color:#f6f8fc; background:rgb(10 22 36 / 97%); border:1px solid #b7cadd55; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal :is(label,input,select,textarea,.btn) { color:#f6f8fc; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .modal :is(input,select,textarea) { background:#0c1b2b; border-color:#b7cadd55; }
+/* These native completion inputs have no wrapping label to enlarge the target. */
+#personalView .osr-owner-surface input[type="checkbox"],
+.osr-utility .osr-owner-surface input[type="checkbox"] { width:44px; height:44px; min-height:44px; flex:0 0 44px; }
+body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"],[data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) [role="dialog"] :is(button,input:not([type="checkbox"]):not([type="radio"]),select) { min-height:44px; }
+@media(max-width:760px) {
+ .osr-owner-surface .osr-owner-heading { padding:12px; min-height:0; }
+ .osr-owner-surface .osr-owner-art { width:100%; height:110px; }
+ .osr-owner-surface .osr-owner-heading h1 { width:100%; }
+ .work-history-fields { grid-template-columns:1fr; }
+ .osr-owner-surface .gv-section-heading { padding:16px; background:#101c29; min-height:0; }
+ .osr-utility .notes-new-form { grid-template-columns:1fr; }
+ .osr-utility .notes-new-form button { grid-column:1; }
 }

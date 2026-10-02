@@ -1,0 +1,61 @@
+{
+  "head": "143451f359880c13569ef33d751868aba9b73133",
+  "at": "2026-10-02T23:41:45.771Z",
+  "productionFiles": [
+    {
+      "file": "explore/explore-redesign.css",
+      "bytes": 12087,
+      "sha256": "54e2718847336bcd668afee8172a367a2bf83bb2ae1730ea973b3e96c1df4251"
+    },
+    {
+      "file": "explore/explore-redesign.js",
+      "bytes": 14039,
+      "sha256": "265bef405b9d33a408440f6ae73a125171aea52d1f497cb577e3cd6800f74c4b"
+    },
+    {
+      "file": "games/games-redesign.js",
+      "bytes": 13872,
+      "sha256": "e8e8025e80dd091a18a9ac1d8bec9b9713ea1307029ba5e68e8c1cb5abd15a5d"
+    },
+    {
+      "file": "games/games.js",
+      "bytes": 107971,
+      "sha256": "f78515eef916f7dc5001aa68d7501ff2f59db2fa98b4b5d752be14db09f64e9d"
+    },
+    {
+      "file": "home/home-redesign.js",
+      "bytes": 23070,
+      "sha256": "909fdf862f033ff6d517a9ae77ba84ba25d5abccb18db098207e5f44f0a32dfe"
+    },
+    {
+      "file": "personal/personal-redesign.js",
+      "bytes": 15657,
+      "sha256": "8c9abb3f941067aaeb770b06ea07a0a6d068c8063e4c8dce291e353ae272c3a3"
+    },
+    {
+      "file": "shared/domain-ui.js",
+      "bytes": 4311,
+      "sha256": "79751fc6fa813adac605cf7d65740037188e4f44a2c02a0e9d994d83e495615b"
+    },
+    {
+      "file": "shared/redesign-foundation.js",
+      "bytes": 18250,
+      "sha256": "106bd5338ec82f4b74d23cfb1bdb66006e5746b21f62832c2f0a540b7682a99d"
+    },
+    {
+      "file": "styles/redesign-layout.css",
+      "bytes": 16736,
+      "sha256": "89bc88bd3b89743ab265bb8e8380e5397f6a9f9783b73484d0957751bc409683"
+    },
+    {
+      "file": "styles/redesign-owners.css",
+      "bytes": 16265,
+      "sha256": "1bf8815c5ca6c27eb6ca216f308287163184759a92f4f02e1f771b25fdb33006"
+    },
+    {
+      "file": "work/work-tracker.js",
+      "bytes": 31959,
+      "sha256": "c076831eb513287de708aa8415cfb28201eeae9a3b7205c7a90b6e803c1130d2"
+    }
+  ]
+}

@@ -1,0 +1,6546 @@
+[
+  {
+    "size": [
+      2048,
+      758
+    ],
+    "world": "home",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 754,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 710
+      },
+      "frame": {
+        "bottom": 758,
+        "height": 758,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/home",
+      "height": 758,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.59375,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 558.59375
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.59375,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 558.59375
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.59375,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 558.59375
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.59375,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 558.59375
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.59375,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 558.59375
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.59375,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 558.59375
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 699.59375,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 557.59375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 758,
+            "height": 758,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 758,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 541.59375,
+        "height": 212.296875,
+        "width": 1996,
+        "x": 26,
+        "y": 329.296875
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      758
+    ],
+    "world": "work",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 754,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 710
+      },
+      "frame": {
+        "bottom": 758,
+        "height": 758,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/work",
+      "height": 758,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 707.796875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 567.796875
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 707.796875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 567.796875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 707.796875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 567.796875
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 707.796875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 567.796875
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 707.796875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 567.796875
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 707.796875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 567.796875
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 708.796875,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 566.796875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 758,
+            "height": 758,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 758,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 553.796875,
+        "height": 242.1875,
+        "width": 1996,
+        "x": 26,
+        "y": 311.609375
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      758
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 754,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 710
+      },
+      "frame": {
+        "bottom": 758,
+        "height": 758,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/personal",
+      "height": 758,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.296875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 551.296875
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.296875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 551.296875
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.296875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 551.296875
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.296875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 551.296875
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.296875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 551.296875
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.296875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 551.296875
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 692.296875,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 550.296875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 758,
+            "height": 758,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 758,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 537.296875,
+        "height": 208,
+        "width": 1996,
+        "x": 26,
+        "y": 329.296875
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      758
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 754,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 710
+      },
+      "frame": {
+        "bottom": 758,
+        "height": 758,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 758,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.59375,
+            "x": 27,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.59375,
+            "x": 428.59375,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.609375,
+            "x": 830.1875,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.59375,
+            "x": 1231.796875,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.609375,
+            "x": 1633.390625,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 705.09375,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 563.09375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 758,
+            "height": 758,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 758,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 555.09375,
+        "height": 253.28125,
+        "width": 1996,
+        "x": 26,
+        "y": 301.8125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      758
+    ],
+    "world": "games",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 754.421875,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 710.421875
+      },
+      "frame": {
+        "bottom": 758.421875,
+        "height": 758.421875,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/games",
+      "height": 758,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 709.421875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 569.421875
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 709.421875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 569.421875
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 709.421875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 569.421875
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 709.421875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 569.421875
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 709.421875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 569.421875
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 709.421875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 569.421875
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 710.421875,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 568.421875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 758,
+            "height": 758,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 758,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 560.421875,
+        "height": 246.296875,
+        "width": 1996,
+        "x": 26,
+        "y": 314.125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      760
+    ],
+    "world": "home",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 756,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 712
+      },
+      "frame": {
+        "bottom": 760,
+        "height": 760,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/home",
+      "height": 760,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.90625,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 558.90625
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.90625,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 558.90625
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.90625,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 558.90625
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.90625,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 558.90625
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.90625,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 558.90625
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 698.90625,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 558.90625
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 699.90625,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 557.90625
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 760,
+            "height": 760,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 760,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 541.90625,
+        "height": 212.296875,
+        "width": 1996,
+        "x": 26,
+        "y": 329.609375
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      760
+    ],
+    "world": "work",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 756,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 712
+      },
+      "frame": {
+        "bottom": 760,
+        "height": 760,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/work",
+      "height": 760,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 709.796875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 569.796875
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 709.796875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 569.796875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 709.796875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 569.796875
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 709.796875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 569.796875
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 709.796875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 569.796875
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 709.796875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 569.796875
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 710.796875,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 568.796875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 760,
+            "height": 760,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 760,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 555.796875,
+        "height": 242.1875,
+        "width": 1996,
+        "x": 26,
+        "y": 313.609375
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      760
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 756,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 712
+      },
+      "frame": {
+        "bottom": 760,
+        "height": 760,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/personal",
+      "height": 760,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.609375,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 551.609375
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.609375,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 551.609375
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.609375,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 551.609375
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.609375,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 551.609375
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.609375,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 551.609375
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 691.609375,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 551.609375
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 692.609375,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 550.609375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 760,
+            "height": 760,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 760,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 537.609375,
+        "height": 208,
+        "width": 1996,
+        "x": 26,
+        "y": 329.609375
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      760
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 756,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 712
+      },
+      "frame": {
+        "bottom": 760,
+        "height": 760,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 760,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.40625,
+            "height": 140,
+            "width": 387.59375,
+            "x": 27,
+            "y": 564.40625
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.40625,
+            "height": 140,
+            "width": 387.59375,
+            "x": 428.59375,
+            "y": 564.40625
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.40625,
+            "height": 140,
+            "width": 387.609375,
+            "x": 830.1875,
+            "y": 564.40625
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.40625,
+            "height": 140,
+            "width": 387.59375,
+            "x": 1231.796875,
+            "y": 564.40625
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.40625,
+            "height": 140,
+            "width": 387.609375,
+            "x": 1633.390625,
+            "y": 564.40625
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 705.40625,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 563.40625
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 760,
+            "height": 760,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 760,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 555.40625,
+        "height": 253.28125,
+        "width": 1996,
+        "x": 26,
+        "y": 302.125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      760
+    ],
+    "world": "games",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 756.421875,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 712.421875
+      },
+      "frame": {
+        "bottom": 760.421875,
+        "height": 760.421875,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/games",
+      "height": 760,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 711.421875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 27,
+            "y": 571.421875
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 711.421875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 361.65625,
+            "y": 571.421875
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 711.421875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 696.328125,
+            "y": 571.421875
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 711.421875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1030.984375,
+            "y": 571.421875
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 711.421875,
+            "height": 140,
+            "width": 320.671875,
+            "x": 1365.65625,
+            "y": 571.421875
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 711.421875,
+            "height": 140,
+            "width": 320.65625,
+            "x": 1700.328125,
+            "y": 571.421875
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 712.421875,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 570.421875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 760,
+            "height": 760,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 760,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 562.421875,
+        "height": 246.296875,
+        "width": 1996,
+        "x": 26,
+        "y": 316.125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      1152
+    ],
+    "world": "home",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 1148,
+        "height": 44,
+        "width": 1964,
+        "x": 42,
+        "y": 1104
+      },
+      "frame": {
+        "bottom": 1152,
+        "height": 1152,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/home",
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "width": 307,
+            "x": 43,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "width": 307,
+            "x": 374,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "width": 307,
+            "x": 705,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "width": 307,
+            "x": 1036,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "width": 307,
+            "x": 1367,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "width": 307,
+            "x": 1698,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 1090.0625,
+        "height": 300,
+        "width": 1964,
+        "x": 42,
+        "y": 790.0625
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1152,
+            "height": 1152,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 774.0625,
+        "height": 246.296875,
+        "width": 1964,
+        "x": 42,
+        "y": 527.765625
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      1152
+    ],
+    "world": "work",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 1148,
+        "height": 44,
+        "width": 1964,
+        "x": 42,
+        "y": 1104
+      },
+      "frame": {
+        "bottom": 1152,
+        "height": 1152,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/work",
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "width": 307,
+            "x": 43,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "width": 307,
+            "x": 374,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "width": 307,
+            "x": 705,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "width": 307,
+            "x": 1036,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "width": 307,
+            "x": 1367,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "width": 307,
+            "x": 1698,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 1063.109375,
+        "height": 248,
+        "width": 1964,
+        "x": 42,
+        "y": 815.109375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1152,
+            "height": 1152,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 802.109375,
+        "height": 298.1875,
+        "width": 1964,
+        "x": 42,
+        "y": 503.921875
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      1152
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 1148,
+        "height": 44,
+        "width": 1964,
+        "x": 42,
+        "y": 1104
+      },
+      "frame": {
+        "bottom": 1152,
+        "height": 1152,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/personal",
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "width": 307,
+            "x": 43,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "width": 307,
+            "x": 374,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "width": 307,
+            "x": 705,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "width": 307,
+            "x": 1036,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "width": 307,
+            "x": 1367,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "width": 307,
+            "x": 1698,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 1054.921875,
+        "height": 248,
+        "width": 1964,
+        "x": 42,
+        "y": 806.921875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1152,
+            "height": 1152,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 793.921875,
+        "height": 289,
+        "width": 1964,
+        "x": 42,
+        "y": 504.921875
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      1152
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 1148,
+        "height": 44,
+        "width": 1964,
+        "x": 42,
+        "y": 1104
+      },
+      "frame": {
+        "bottom": 1152,
+        "height": 1152,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.1875,
+            "x": 43,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 440.1875,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 837.390625,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 1234.59375,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 1631.796875,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 1086.6875,
+        "height": 210,
+        "width": 1964,
+        "x": 42,
+        "y": 876.6875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1152,
+            "height": 1152,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 860.6875,
+        "height": 386.375,
+        "width": 1964,
+        "x": 42,
+        "y": 474.3125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      2048,
+      1152
+    ],
+    "world": "games",
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 1148,
+        "height": 44,
+        "width": 1964,
+        "x": 42,
+        "y": 1104
+      },
+      "frame": {
+        "bottom": 1152,
+        "height": 1152,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/games",
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1092.484375,
+            "height": 208,
+            "width": 307,
+            "x": 43,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1092.484375,
+            "height": 208,
+            "width": 307,
+            "x": 374,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1092.484375,
+            "height": 208,
+            "width": 307,
+            "x": 705,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1092.484375,
+            "height": 208,
+            "width": 307,
+            "x": 1036,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1092.484375,
+            "height": 208,
+            "width": 307,
+            "x": 1367,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1092.484375,
+            "height": 208,
+            "width": 307,
+            "x": 1698,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 1093.484375,
+        "height": 210,
+        "width": 1964,
+        "x": 42,
+        "y": 883.484375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 1152,
+            "height": 1152,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 867.484375,
+        "height": 338.890625,
+        "width": 1964,
+        "x": 42,
+        "y": 528.59375
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "world": "home",
+    "observation": {
+      "client": 1920,
+      "footer": {
+        "bottom": 1076,
+        "height": 44,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 1032
+      },
+      "frame": {
+        "bottom": 1080,
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/home",
+      "height": 1080,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1012.859375,
+            "height": 226,
+            "width": 286.96875,
+            "x": 41.3125,
+            "y": 786.859375
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1012.859375,
+            "height": 226,
+            "width": 286.96875,
+            "x": 351.390625,
+            "y": 786.859375
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1012.859375,
+            "height": 226,
+            "width": 286.96875,
+            "x": 661.46875,
+            "y": 786.859375
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1012.859375,
+            "height": 226,
+            "width": 286.96875,
+            "x": 971.546875,
+            "y": 786.859375
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1012.859375,
+            "height": 226,
+            "width": 286.96875,
+            "x": 1281.625,
+            "y": 786.859375
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1012.859375,
+            "height": 226,
+            "width": 286.96875,
+            "x": 1591.703125,
+            "y": 786.859375
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 1013.859375,
+        "height": 228,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 785.859375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1080,
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "summary": {
+        "bottom": 769.859375,
+        "height": 246.296875,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 523.5625
+      },
+      "width": 1920
+    }
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "world": "work",
+    "observation": {
+      "client": 1920,
+      "footer": {
+        "bottom": 1076,
+        "height": 44,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 1032
+      },
+      "frame": {
+        "bottom": 1080,
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/work",
+      "height": 1080,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 986.71875,
+            "height": 174,
+            "width": 286.96875,
+            "x": 41.3125,
+            "y": 812.71875
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 986.71875,
+            "height": 174,
+            "width": 286.96875,
+            "x": 351.390625,
+            "y": 812.71875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 986.71875,
+            "height": 174,
+            "width": 286.96875,
+            "x": 661.46875,
+            "y": 812.71875
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 986.71875,
+            "height": 174,
+            "width": 286.96875,
+            "x": 971.546875,
+            "y": 812.71875
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 986.71875,
+            "height": 174,
+            "width": 286.96875,
+            "x": 1281.625,
+            "y": 812.71875
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 986.71875,
+            "height": 174,
+            "width": 286.96875,
+            "x": 1591.703125,
+            "y": 812.71875
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 987.71875,
+        "height": 176,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 811.71875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1080,
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "summary": {
+        "bottom": 798.71875,
+        "height": 298.1875,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 500.53125
+      },
+      "width": 1920
+    }
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 1920,
+      "footer": {
+        "bottom": 1076,
+        "height": 44,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 1032
+      },
+      "frame": {
+        "bottom": 1080,
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/personal",
+      "height": 1080,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 978.53125,
+            "height": 174,
+            "width": 286.96875,
+            "x": 41.3125,
+            "y": 804.53125
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 978.53125,
+            "height": 174,
+            "width": 286.96875,
+            "x": 351.390625,
+            "y": 804.53125
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 978.53125,
+            "height": 174,
+            "width": 286.96875,
+            "x": 661.46875,
+            "y": 804.53125
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 978.53125,
+            "height": 174,
+            "width": 286.96875,
+            "x": 971.546875,
+            "y": 804.53125
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 978.53125,
+            "height": 174,
+            "width": 286.96875,
+            "x": 1281.625,
+            "y": 804.53125
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 978.53125,
+            "height": 174,
+            "width": 286.96875,
+            "x": 1591.703125,
+            "y": 804.53125
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 979.53125,
+        "height": 176,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 803.53125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1080,
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "summary": {
+        "bottom": 790.53125,
+        "height": 289,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 501.53125
+      },
+      "width": 1920
+    }
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 1920,
+      "footer": {
+        "bottom": 1076,
+        "height": 44,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 1032
+      },
+      "frame": {
+        "bottom": 1080,
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 1080,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 41.3125,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 413.40625,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 785.5,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 1157.59375,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 1529.6875,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 1014.03125,
+        "height": 142,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 872.03125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1080,
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "summary": {
+        "bottom": 856.03125,
+        "height": 384.4375,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 471.59375
+      },
+      "width": 1920
+    }
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "world": "games",
+    "observation": {
+      "client": 1920,
+      "footer": {
+        "bottom": 1076,
+        "height": 44,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 1032
+      },
+      "frame": {
+        "bottom": 1080,
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/games",
+      "height": 1080,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1024.484375,
+            "height": 140,
+            "width": 286.96875,
+            "x": 41.3125,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1024.484375,
+            "height": 140,
+            "width": 286.96875,
+            "x": 351.390625,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1024.484375,
+            "height": 140,
+            "width": 286.96875,
+            "x": 661.46875,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1024.484375,
+            "height": 140,
+            "width": 286.96875,
+            "x": 971.546875,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1024.484375,
+            "height": 140,
+            "width": 286.96875,
+            "x": 1281.625,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1024.484375,
+            "height": 140,
+            "width": 286.96875,
+            "x": 1591.703125,
+            "y": 884.484375
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 1025.484375,
+        "height": 142,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 883.484375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 1080,
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "summary": {
+        "bottom": 867.484375,
+        "height": 338.890625,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 528.59375
+      },
+      "width": 1920
+    }
+  },
+  {
+    "size": [
+      1440,
+      900
+    ],
+    "world": "home",
+    "observation": {
+      "client": 1425,
+      "footer": {
+        "bottom": 1327.328125,
+        "height": 28.6875,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 1298.640625
+      },
+      "frame": {
+        "bottom": 1343.328125,
+        "height": 1343.328125,
+        "width": 1425,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/home",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1020.8125,
+            "height": 259,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 761.8125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1020.8125,
+            "height": 259,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 761.8125
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1020.8125,
+            "height": 259,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 761.8125
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1297.640625,
+            "height": 259,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 1038.640625
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1297.640625,
+            "height": 259,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 1038.640625
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1297.640625,
+            "height": 259,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 1038.640625
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 1298.640625,
+        "height": 537.828125,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 760.8125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 1425,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1343,
+      "scrollWidth": 1425,
+      "small": [],
+      "summary": {
+        "bottom": 744.8125,
+        "height": 235.734375,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 509.078125
+      },
+      "width": 1440
+    }
+  },
+  {
+    "size": [
+      1440,
+      900
+    ],
+    "world": "work",
+    "observation": {
+      "client": 1425,
+      "footer": {
+        "bottom": 884.25,
+        "height": 28.6875,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 855.5625
+      },
+      "frame": {
+        "bottom": 900.25,
+        "height": 1344.25,
+        "width": 1425,
+        "x": 0,
+        "y": -444
+      },
+      "hash": "#/w/work",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 590.734375,
+            "height": 246,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 344.734375
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 590.734375,
+            "height": 246,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 344.734375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 590.734375,
+            "height": 246,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 344.734375
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 854.5625,
+            "height": 246,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 608.5625
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 854.5625,
+            "height": 246,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 608.5625
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 854.5625,
+            "height": 246,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 608.5625
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 855.5625,
+        "height": 511.828125,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 343.734375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 1425,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1344,
+      "scrollWidth": 1425,
+      "small": [],
+      "summary": {
+        "bottom": 330.734375,
+        "height": 288.1875,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 42.546875
+      },
+      "width": 1440
+    }
+  },
+  {
+    "size": [
+      1440,
+      900
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 1425,
+      "footer": {
+        "bottom": 1250.0625,
+        "height": 28.6875,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 1221.375
+      },
+      "frame": {
+        "bottom": 1266.0625,
+        "height": 1336.0625,
+        "width": 1425,
+        "x": 0,
+        "y": -70
+      },
+      "hash": "#/w/personal",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 956.546875,
+            "height": 246,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 710.546875
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 956.546875,
+            "height": 246,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 710.546875
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 956.546875,
+            "height": 246,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 710.546875
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1220.375,
+            "height": 246,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 974.375
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1220.375,
+            "height": 246,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 974.375
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1220.375,
+            "height": 246,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 974.375
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 1221.375,
+        "height": 511.828125,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 709.546875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 1425,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1336,
+      "scrollWidth": 1425,
+      "small": [],
+      "summary": {
+        "bottom": 696.546875,
+        "height": 279,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 417.546875
+      },
+      "width": 1440
+    }
+  },
+  {
+    "size": [
+      1440,
+      900
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 1425,
+      "footer": {
+        "bottom": 883.84375,
+        "height": 28.6875,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 855.15625
+      },
+      "frame": {
+        "bottom": 899.84375,
+        "height": 1771.84375,
+        "width": 1425,
+        "x": 0,
+        "y": -872
+      },
+      "hash": "#/w/explore",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 562.328125,
+            "height": 214,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 348.328125
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 562.328125,
+            "height": 214,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 348.328125
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 562.328125,
+            "height": 214,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 348.328125
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 794.15625,
+            "height": 214,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 580.15625
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 794.15625,
+            "height": 214,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 580.15625
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 795.15625,
+        "height": 447.828125,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 347.328125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 1425,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1772,
+      "scrollWidth": 1425,
+      "small": [],
+      "summary": {
+        "bottom": 331.328125,
+        "height": 743.734375,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": -412.40625
+      },
+      "width": 1440
+    }
+  },
+  {
+    "size": [
+      1440,
+      900
+    ],
+    "world": "games",
+    "observation": {
+      "client": 1425,
+      "footer": {
+        "bottom": 1731.984375,
+        "height": 28.6875,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 1703.296875
+      },
+      "frame": {
+        "bottom": 1747.984375,
+        "height": 1777.984375,
+        "width": 1425,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/games",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1404.46875,
+            "height": 228,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 1176.46875
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1404.46875,
+            "height": 228,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 1176.46875
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1404.46875,
+            "height": 228,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 1176.46875
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1650.296875,
+            "height": 228,
+            "width": 442.28125,
+            "x": 31.234375,
+            "y": 1422.296875
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1650.296875,
+            "height": 228,
+            "width": 442.296875,
+            "x": 491.34375,
+            "y": 1422.296875
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1650.296875,
+            "height": 228,
+            "width": 442.28125,
+            "x": 951.46875,
+            "y": 1422.296875
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 1651.296875,
+        "height": 475.828125,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 1175.46875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 1425,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1778,
+      "scrollWidth": 1425,
+      "small": [],
+      "summary": {
+        "bottom": 1159.46875,
+        "height": 683.0625,
+        "width": 1364.53125,
+        "x": 30.234375,
+        "y": 476.40625
+      },
+      "width": 1440
+    }
+  },
+  {
+    "size": [
+      1024,
+      768
+    ],
+    "world": "home",
+    "observation": {
+      "client": 1009,
+      "footer": {
+        "bottom": 1425.90625,
+        "height": 28.6875,
+        "width": 966,
+        "x": 21.5,
+        "y": 1397.21875
+      },
+      "frame": {
+        "bottom": 1441.90625,
+        "height": 1471.90625,
+        "width": 1009,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/home",
+      "height": 768,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1161.5,
+            "height": 220.71875,
+            "width": 312,
+            "x": 22.5,
+            "y": 940.78125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1161.5,
+            "height": 220.71875,
+            "width": 312,
+            "x": 348.5,
+            "y": 940.78125
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1161.5,
+            "height": 220.71875,
+            "width": 312,
+            "x": 674.5,
+            "y": 940.78125
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1396.21875,
+            "height": 220.71875,
+            "width": 312,
+            "x": 22.5,
+            "y": 1175.5
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1396.21875,
+            "height": 220.71875,
+            "width": 312,
+            "x": 348.5,
+            "y": 1175.5
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1396.21875,
+            "height": 220.71875,
+            "width": 312,
+            "x": 674.5,
+            "y": 1175.5
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 1397.21875,
+        "height": 457.4375,
+        "width": 966,
+        "x": 21.5,
+        "y": 939.78125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 768,
+            "height": 768,
+            "width": 1009,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1472,
+      "scrollWidth": 1009,
+      "small": [],
+      "summary": {
+        "bottom": 923.78125,
+        "height": 462.296875,
+        "width": 966,
+        "x": 21.5,
+        "y": 461.484375
+      },
+      "width": 1024
+    }
+  },
+  {
+    "size": [
+      1024,
+      768
+    ],
+    "world": "work",
+    "observation": {
+      "client": 1009,
+      "footer": {
+        "bottom": 768.96875,
+        "height": 28.6875,
+        "width": 966,
+        "x": 21.5,
+        "y": 740.28125
+      },
+      "frame": {
+        "bottom": 784.96875,
+        "height": 1484.96875,
+        "width": 1009,
+        "x": 0,
+        "y": -700
+      },
+      "hash": "#/w/work",
+      "height": 768,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 539.28125,
+            "height": 186,
+            "width": 312,
+            "x": 22.5,
+            "y": 353.28125
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 539.28125,
+            "height": 186,
+            "width": 312,
+            "x": 348.5,
+            "y": 353.28125
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 539.28125,
+            "height": 186,
+            "width": 312,
+            "x": 674.5,
+            "y": 353.28125
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 739.28125,
+            "height": 186,
+            "width": 312,
+            "x": 22.5,
+            "y": 553.28125
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 739.28125,
+            "height": 186,
+            "width": 312,
+            "x": 348.5,
+            "y": 553.28125
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 739.28125,
+            "height": 186,
+            "width": 312,
+            "x": 674.5,
+            "y": 553.28125
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 740.28125,
+        "height": 388,
+        "width": 966,
+        "x": 21.5,
+        "y": 352.28125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 768,
+            "height": 768,
+            "width": 1009,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1485,
+      "scrollWidth": 1009,
+      "small": [],
+      "summary": {
+        "bottom": 339.28125,
+        "height": 572.1875,
+        "width": 966,
+        "x": 21.5,
+        "y": -232.90625
+      },
+      "width": 1024
+    }
+  },
+  {
+    "size": [
+      1024,
+      768
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 1009,
+      "footer": {
+        "bottom": 1358.90625,
+        "height": 28.6875,
+        "width": 966,
+        "x": 21.5,
+        "y": 1330.21875
+      },
+      "frame": {
+        "bottom": 1374.90625,
+        "height": 1444.90625,
+        "width": 1009,
+        "x": 0,
+        "y": -70
+      },
+      "hash": "#/w/personal",
+      "height": 768,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1129.21875,
+            "height": 186,
+            "width": 312,
+            "x": 22.5,
+            "y": 943.21875
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1129.21875,
+            "height": 186,
+            "width": 312,
+            "x": 348.5,
+            "y": 943.21875
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1129.21875,
+            "height": 186,
+            "width": 312,
+            "x": 674.5,
+            "y": 943.21875
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1329.21875,
+            "height": 186,
+            "width": 312,
+            "x": 22.5,
+            "y": 1143.21875
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1329.21875,
+            "height": 186,
+            "width": 312,
+            "x": 348.5,
+            "y": 1143.21875
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1329.21875,
+            "height": 186,
+            "width": 312,
+            "x": 674.5,
+            "y": 1143.21875
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 1330.21875,
+        "height": 388,
+        "width": 966,
+        "x": 21.5,
+        "y": 942.21875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 768,
+            "height": 768,
+            "width": 1009,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1445,
+      "scrollWidth": 1009,
+      "small": [],
+      "summary": {
+        "bottom": 929.21875,
+        "height": 531.125,
+        "width": 966,
+        "x": 21.5,
+        "y": 398.09375
+      },
+      "width": 1024
+    }
+  },
+  {
+    "size": [
+      1024,
+      768
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 1009,
+      "footer": {
+        "bottom": 752.421875,
+        "height": 28.6875,
+        "width": 966,
+        "x": 21.5,
+        "y": 723.734375
+      },
+      "frame": {
+        "bottom": 768.421875,
+        "height": 1743.421875,
+        "width": 1009,
+        "x": 0,
+        "y": -975
+      },
+      "hash": "#/w/explore",
+      "height": 768,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 440.734375,
+            "height": 208,
+            "width": 312,
+            "x": 22.5,
+            "y": 232.734375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 440.734375,
+            "height": 208,
+            "width": 312,
+            "x": 348.5,
+            "y": 232.734375
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 440.734375,
+            "height": 208,
+            "width": 312,
+            "x": 674.5,
+            "y": 232.734375
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 662.734375,
+            "height": 208,
+            "width": 312,
+            "x": 22.5,
+            "y": 454.734375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 662.734375,
+            "height": 208,
+            "width": 312,
+            "x": 348.5,
+            "y": 454.734375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 663.734375,
+        "height": 432,
+        "width": 966,
+        "x": 21.5,
+        "y": 231.734375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 768,
+            "height": 768,
+            "width": 1009,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1743,
+      "scrollWidth": 1009,
+      "small": [],
+      "summary": {
+        "bottom": 215.734375,
+        "height": 737.375,
+        "width": 966,
+        "x": 21.5,
+        "y": -521.640625
+      },
+      "width": 1024
+    }
+  },
+  {
+    "size": [
+      1024,
+      768
+    ],
+    "world": "games",
+    "observation": {
+      "client": 1009,
+      "footer": {
+        "bottom": 1702.625,
+        "height": 28.6875,
+        "width": 966,
+        "x": 21.5,
+        "y": 1673.9375
+      },
+      "frame": {
+        "bottom": 1718.625,
+        "height": 1748.625,
+        "width": 1009,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/games",
+      "height": 768,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1378.9375,
+            "height": 228,
+            "width": 312,
+            "x": 22.5,
+            "y": 1150.9375
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1378.9375,
+            "height": 228,
+            "width": 312,
+            "x": 348.5,
+            "y": 1150.9375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1378.9375,
+            "height": 228,
+            "width": 312,
+            "x": 674.5,
+            "y": 1150.9375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1620.9375,
+            "height": 228,
+            "width": 312,
+            "x": 22.5,
+            "y": 1392.9375
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1620.9375,
+            "height": 228,
+            "width": 312,
+            "x": 348.5,
+            "y": 1392.9375
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1620.9375,
+            "height": 228,
+            "width": 312,
+            "x": 674.5,
+            "y": 1392.9375
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 1621.9375,
+        "height": 472,
+        "width": 966,
+        "x": 21.5,
+        "y": 1149.9375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 768,
+            "height": 768,
+            "width": 1009,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1749,
+      "scrollWidth": 1009,
+      "small": [],
+      "summary": {
+        "bottom": 1133.9375,
+        "height": 679.234375,
+        "width": 966,
+        "x": 21.5,
+        "y": 454.703125
+      },
+      "width": 1024
+    }
+  },
+  {
+    "size": [
+      760,
+      900
+    ],
+    "world": "home",
+    "observation": {
+      "client": 745,
+      "footer": {
+        "bottom": 1651.140625,
+        "height": 28.6875,
+        "width": 713,
+        "x": 16,
+        "y": 1622.453125
+      },
+      "frame": {
+        "bottom": 1667.140625,
+        "height": 1697.140625,
+        "width": 745,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/home",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1197.453125,
+            "height": 198,
+            "width": 348.5,
+            "x": 17,
+            "y": 999.453125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1197.453125,
+            "height": 198,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 999.453125
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1409.453125,
+            "height": 198,
+            "width": 348.5,
+            "x": 17,
+            "y": 1211.453125
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1409.453125,
+            "height": 198,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1211.453125
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1621.453125,
+            "height": 198,
+            "width": 348.5,
+            "x": 17,
+            "y": 1423.453125
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1621.453125,
+            "height": 198,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1423.453125
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 1622.453125,
+        "height": 624,
+        "width": 713,
+        "x": 16,
+        "y": 998.453125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "80% 50%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 745,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1697,
+      "scrollWidth": 745,
+      "small": [],
+      "summary": {
+        "bottom": 982.453125,
+        "height": 464.078125,
+        "width": 713,
+        "x": 16,
+        "y": 518.375
+      },
+      "width": 760
+    }
+  },
+  {
+    "size": [
+      760,
+      900
+    ],
+    "world": "work",
+    "observation": {
+      "client": 745,
+      "footer": {
+        "bottom": 982.453125,
+        "height": 28.6875,
+        "width": 713,
+        "x": 16,
+        "y": 953.765625
+      },
+      "frame": {
+        "bottom": 998.453125,
+        "height": 1789.453125,
+        "width": 745,
+        "x": 0,
+        "y": -791
+      },
+      "hash": "#/w/work",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 548.4270629882812,
+            "height": 187.99996948242188,
+            "width": 348.5,
+            "x": 17,
+            "y": 360.4270935058594
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 548.765625,
+            "height": 188,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 360.765625
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 750.765625,
+            "height": 188,
+            "width": 348.5,
+            "x": 17,
+            "y": 562.765625
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 750.765625,
+            "height": 188,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 562.765625
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 952.765625,
+            "height": 188,
+            "width": 348.5,
+            "x": 17,
+            "y": 764.765625
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 952.765625,
+            "height": 188,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 764.765625
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 953.765625,
+        "height": 594,
+        "width": 713,
+        "x": 16,
+        "y": 359.765625
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "70% 50%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 745,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1789,
+      "scrollWidth": 745,
+      "small": [],
+      "summary": {
+        "bottom": 346.765625,
+        "height": 572.1875,
+        "width": 713,
+        "x": 16,
+        "y": -225.421875
+      },
+      "width": 760
+    }
+  },
+  {
+    "size": [
+      760,
+      900
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 745,
+      "footer": {
+        "bottom": 1663.390625,
+        "height": 28.6875,
+        "width": 713,
+        "x": 16,
+        "y": 1634.703125
+      },
+      "frame": {
+        "bottom": 1679.390625,
+        "height": 1749.390625,
+        "width": 745,
+        "x": 0,
+        "y": -70
+      },
+      "hash": "#/w/personal",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1229.703125,
+            "height": 188,
+            "width": 348.5,
+            "x": 17,
+            "y": 1041.703125
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1229.703125,
+            "height": 188,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1041.703125
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1431.703125,
+            "height": 188,
+            "width": 348.5,
+            "x": 17,
+            "y": 1243.703125
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1431.703125,
+            "height": 188,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1243.703125
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1633.703125,
+            "height": 188,
+            "width": 348.5,
+            "x": 17,
+            "y": 1445.703125
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1633.703125,
+            "height": 188,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1445.703125
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 1634.703125,
+        "height": 594,
+        "width": 713,
+        "x": 16,
+        "y": 1040.703125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "60% 50%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 745,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1749,
+      "scrollWidth": 745,
+      "small": [],
+      "summary": {
+        "bottom": 1027.703125,
+        "height": 531.125,
+        "width": 713,
+        "x": 16,
+        "y": 496.578125
+      },
+      "width": 760
+    }
+  },
+  {
+    "size": [
+      760,
+      900
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 745,
+      "footer": {
+        "bottom": 884.0625,
+        "height": 28.6875,
+        "width": 713,
+        "x": 16,
+        "y": 855.375
+      },
+      "frame": {
+        "bottom": 900.0625,
+        "height": 2009.0625,
+        "width": 745,
+        "x": 0,
+        "y": -1109
+      },
+      "hash": "#/w/explore",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 350.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 17,
+            "y": 142.375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 350.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 142.375
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 572.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 17,
+            "y": 364.375
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 572.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 364.375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 794.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 17,
+            "y": 586.375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 795.375,
+        "height": 654,
+        "width": 713,
+        "x": 16,
+        "y": 141.375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "55% 50%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 745,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 2009,
+      "scrollWidth": 745,
+      "small": [],
+      "summary": {
+        "bottom": 125.375,
+        "height": 737.375,
+        "width": 713,
+        "x": 16,
+        "y": -612
+      },
+      "width": 760
+    }
+  },
+  {
+    "size": [
+      760,
+      900
+    ],
+    "world": "games",
+    "observation": {
+      "client": 745,
+      "footer": {
+        "bottom": 2059.4375,
+        "height": 28.6875,
+        "width": 713,
+        "x": 16,
+        "y": 2030.75
+      },
+      "frame": {
+        "bottom": 2075.4375,
+        "height": 2105.4375,
+        "width": 745,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/games",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1493.75,
+            "height": 228,
+            "width": 348.5,
+            "x": 17,
+            "y": 1265.75
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1493.75,
+            "height": 228,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1265.75
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1735.75,
+            "height": 228,
+            "width": 348.5,
+            "x": 17,
+            "y": 1507.75
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1735.75,
+            "height": 228,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1507.75
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1977.75,
+            "height": 228,
+            "width": 348.5,
+            "x": 17,
+            "y": 1749.75
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1977.75,
+            "height": 228,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1749.75
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 1978.75,
+        "height": 714,
+        "width": 713,
+        "x": 16,
+        "y": 1264.75
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 745,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 2105,
+      "scrollWidth": 745,
+      "small": [],
+      "summary": {
+        "bottom": 1248.75,
+        "height": 696.40625,
+        "width": 713,
+        "x": 16,
+        "y": 552.34375
+      },
+      "width": 760
+    }
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "world": "home",
+    "observation": {
+      "client": 375,
+      "footer": {
+        "bottom": 2882.140625,
+        "height": 28.6875,
+        "width": 343,
+        "x": 16,
+        "y": 2853.453125
+      },
+      "frame": {
+        "bottom": 2898.140625,
+        "height": 2928.140625,
+        "width": 375,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/home",
+      "height": 844,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 1867.453125,
+            "height": 183,
+            "width": 341,
+            "x": 17,
+            "y": 1684.453125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 2064.453125,
+            "height": 183,
+            "width": 341,
+            "x": 17,
+            "y": 1881.453125
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 2261.453125,
+            "height": 183,
+            "width": 341,
+            "x": 17,
+            "y": 2078.453125
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 2458.453125,
+            "height": 183,
+            "width": 341,
+            "x": 17,
+            "y": 2275.453125
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 2655.453125,
+            "height": 183,
+            "width": 341,
+            "x": 17,
+            "y": 2472.453125
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "bottom": 2852.453125,
+            "height": 183,
+            "width": 341,
+            "x": 17,
+            "y": 2669.453125
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "page": "home",
+      "portals": {
+        "bottom": 2853.453125,
+        "height": 1170,
+        "width": 343,
+        "x": 16,
+        "y": 1683.453125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2144,
+            1254
+          ],
+          "position": "80% 50%",
+          "render": {
+            "bottom": 844,
+            "height": 844,
+            "width": 375,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 2928,
+      "scrollWidth": 375,
+      "small": [],
+      "summary": {
+        "bottom": 1667.453125,
+        "height": 908.078125,
+        "width": 343,
+        "x": 16,
+        "y": 759.375
+      },
+      "width": 390
+    }
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "world": "work",
+    "observation": {
+      "client": 375,
+      "footer": {
+        "bottom": 2241.671875,
+        "height": 28.6875,
+        "width": 343,
+        "x": 16,
+        "y": 2212.984375
+      },
+      "frame": {
+        "bottom": 2257.671875,
+        "height": 3037.671875,
+        "width": 375,
+        "x": 0,
+        "y": -780
+      },
+      "hash": "#/w/work",
+      "height": 844,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1201.984375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1013.984375
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1403.984375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1215.984375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1605.984375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1417.984375
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 1807.984375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1619.984375
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 2009.984375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1821.984375
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 47%",
+          "render": {
+            "bottom": 2211.984375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 2023.984375
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "page": "work",
+      "portals": {
+        "bottom": 2212.984375,
+        "height": 1200,
+        "width": 343,
+        "x": 16,
+        "y": 1012.984375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "70% 50%",
+          "render": {
+            "bottom": 844,
+            "height": 844,
+            "width": 375,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 3038,
+      "scrollWidth": 375,
+      "small": [],
+      "summary": {
+        "bottom": 999.984375,
+        "height": 1016.1875,
+        "width": 343,
+        "x": 16,
+        "y": -16.203125
+      },
+      "width": 390
+    }
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "world": "personal",
+    "observation": {
+      "client": 375,
+      "footer": {
+        "bottom": 2954.796875,
+        "height": 28.6875,
+        "width": 343,
+        "x": 16,
+        "y": 2926.109375
+      },
+      "frame": {
+        "bottom": 2970.796875,
+        "height": 3040.796875,
+        "width": 375,
+        "x": 0,
+        "y": -70
+      },
+      "hash": "#/w/personal",
+      "height": 844,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 1915.109375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1727.109375
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 2117.109375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 1929.109375
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 2319.109375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 2131.109375
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 2521.109375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 2333.109375
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 2723.109375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 2535.109375
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 49%",
+          "render": {
+            "bottom": 2925.109375,
+            "height": 188,
+            "width": 341,
+            "x": 17,
+            "y": 2737.109375
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "page": "personal",
+      "portals": {
+        "bottom": 2926.109375,
+        "height": 1200,
+        "width": 343,
+        "x": 16,
+        "y": 1726.109375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "60% 50%",
+          "render": {
+            "bottom": 844,
+            "height": 844,
+            "width": 375,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 3041,
+      "scrollWidth": 375,
+      "small": [],
+      "summary": {
+        "bottom": 1713.109375,
+        "height": 995.125,
+        "width": 343,
+        "x": 16,
+        "y": 717.984375
+      },
+      "width": 390
+    }
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "world": "explore",
+    "observation": {
+      "client": 375,
+      "footer": {
+        "bottom": 2621.109375,
+        "height": 28.6875,
+        "width": 343,
+        "x": 16,
+        "y": 2592.421875
+      },
+      "frame": {
+        "bottom": 2637.109375,
+        "height": 3746.109375,
+        "width": 375,
+        "x": 0,
+        "y": -1109
+      },
+      "hash": "#/w/explore",
+      "height": 844,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1643.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 1435.421875
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1865.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 1657.421875
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2087.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 1879.421875
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2309.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 2101.421875
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2531.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 2323.421875
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 2532.421875,
+        "height": 1098,
+        "width": 343,
+        "x": 16,
+        "y": 1434.421875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "55% 50%",
+          "render": {
+            "bottom": 844,
+            "height": 844,
+            "width": 375,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 3746,
+      "scrollWidth": 375,
+      "small": [],
+      "summary": {
+        "bottom": 1418.421875,
+        "height": 1729.9375,
+        "width": 343,
+        "x": 16,
+        "y": -311.515625
+      },
+      "width": 390
+    }
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "world": "games",
+    "observation": {
+      "client": 375,
+      "footer": {
+        "bottom": 3790.109375,
+        "height": 28.6875,
+        "width": 343,
+        "x": 16,
+        "y": 3761.421875
+      },
+      "frame": {
+        "bottom": 3806.109375,
+        "height": 3836.109375,
+        "width": 375,
+        "x": 0,
+        "y": -30
+      },
+      "hash": "#/w/games",
+      "height": 844,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2451.328125,
+            "height": 228,
+            "width": 341,
+            "x": 17,
+            "y": 2223.328125
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2693.328125,
+            "height": 228,
+            "width": 341,
+            "x": 17,
+            "y": 2465.328125
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2935.328125,
+            "height": 228,
+            "width": 341,
+            "x": 17,
+            "y": 2707.328125
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 3177.328125,
+            "height": 228,
+            "width": 341,
+            "x": 17,
+            "y": 2949.328125
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 3419.328125,
+            "height": 228,
+            "width": 341,
+            "x": 17,
+            "y": 3191.328125
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 3661.328125,
+            "height": 228,
+            "width": 341,
+            "x": 17,
+            "y": 3433.328125
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "page": "games",
+      "portals": {
+        "bottom": 3662.328125,
+        "height": 1440,
+        "width": 343,
+        "x": 16,
+        "y": 2222.328125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 30%",
+          "render": {
+            "bottom": 844,
+            "height": 844,
+            "width": 375,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 3836,
+      "scrollWidth": 375,
+      "small": [],
+      "summary": {
+        "bottom": 2206.328125,
+        "height": 1329.984375,
+        "width": 343,
+        "x": 16,
+        "y": 876.34375
+      },
+      "width": 390
+    }
+  }
+]

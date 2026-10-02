@@ -1,0 +1,747 @@
+[
+  {
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 1148,
+        "height": 44,
+        "width": 1964,
+        "x": 42,
+        "y": 1104
+      },
+      "frame": {
+        "bottom": 1152,
+        "height": 1152,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.1875,
+            "x": 43,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 440.1875,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 837.390625,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 1234.59375,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "width": 373.203125,
+            "x": 1631.796875,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 1086.6875,
+        "height": 210,
+        "width": 1964,
+        "x": 42,
+        "y": 876.6875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1152,
+            "height": 1152,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 860.6875,
+        "height": 386.375,
+        "width": 1964,
+        "x": 42,
+        "y": 474.3125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1920,
+      "footer": {
+        "bottom": 1076,
+        "height": 44,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 1032
+      },
+      "frame": {
+        "bottom": 1080,
+        "height": 1080,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 1080,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 41.3125,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 413.40625,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 785.5,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 1157.59375,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1013.03125,
+            "height": 140,
+            "width": 348.984375,
+            "x": 1529.6875,
+            "y": 873.03125
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 1014.03125,
+        "height": 142,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 872.03125
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 1080,
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "summary": {
+        "bottom": 856.03125,
+        "height": 384.4375,
+        "width": 1839.375,
+        "x": 40.3125,
+        "y": 471.59375
+      },
+      "width": 1920
+    }
+  },
+  {
+    "size": [
+      2048,
+      758
+    ],
+    "observation": {
+      "client": 2048,
+      "footer": {
+        "bottom": 754,
+        "height": 44,
+        "width": 1996,
+        "x": 26,
+        "y": 710
+      },
+      "frame": {
+        "bottom": 758,
+        "height": 758,
+        "width": 2048,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 758,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.59375,
+            "x": 27,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.59375,
+            "x": 428.59375,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.609375,
+            "x": 830.1875,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.59375,
+            "x": 1231.796875,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 704.09375,
+            "height": 140,
+            "width": 387.609375,
+            "x": 1633.390625,
+            "y": 564.09375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 705.09375,
+        "height": 142,
+        "width": 1996,
+        "x": 26,
+        "y": 563.09375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "50% 100%",
+          "render": {
+            "bottom": 758,
+            "height": 758,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 758,
+      "scrollWidth": 2048,
+      "small": [],
+      "summary": {
+        "bottom": 555.09375,
+        "height": 253.28125,
+        "width": 1996,
+        "x": 26,
+        "y": 301.8125
+      },
+      "width": 2048
+    }
+  },
+  {
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "footer": {
+        "bottom": 1993.0625,
+        "height": 28.6875,
+        "width": 713,
+        "x": 16,
+        "y": 1964.375
+      },
+      "frame": {
+        "bottom": 2009.0625,
+        "height": 2009.0625,
+        "width": 745,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 900,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1459.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 17,
+            "y": 1251.375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1459.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1251.375
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1681.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 17,
+            "y": 1473.375
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1681.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 379.5,
+            "y": 1473.375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 1903.375,
+            "height": 208,
+            "width": 348.5,
+            "x": 17,
+            "y": 1695.375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 1904.375,
+        "height": 654,
+        "width": 713,
+        "x": 16,
+        "y": 1250.375
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "55% 50%",
+          "render": {
+            "bottom": 900,
+            "height": 900,
+            "width": 745,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 2009,
+      "scrollWidth": 745,
+      "small": [],
+      "summary": {
+        "bottom": 1234.375,
+        "height": 737.375,
+        "width": 713,
+        "x": 16,
+        "y": 497
+      },
+      "width": 760
+    }
+  },
+  {
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "footer": {
+        "bottom": 3730.109375,
+        "height": 28.6875,
+        "width": 343,
+        "x": 16,
+        "y": 3701.421875
+      },
+      "frame": {
+        "bottom": 3746.109375,
+        "height": 3746.109375,
+        "width": 375,
+        "x": 0,
+        "y": 0
+      },
+      "hash": "#/w/explore",
+      "height": 844,
+      "images": [
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2752.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 2544.421875
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 2974.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 2766.421875
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 3196.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 2988.421875
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 3418.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 3210.421875
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 45%",
+          "render": {
+            "bottom": 3640.421875,
+            "height": 208,
+            "width": 341,
+            "x": 17,
+            "y": 3432.421875
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "page": "explore",
+      "portals": {
+        "bottom": 3641.421875,
+        "height": 1098,
+        "width": 343,
+        "x": 16,
+        "y": 2543.421875
+      },
+      "scene": [
+        {
+          "fit": "cover",
+          "natural": [
+            2508,
+            1254
+          ],
+          "position": "55% 50%",
+          "render": {
+            "bottom": 844,
+            "height": 844,
+            "width": 375,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        }
+      ],
+      "scrollHeight": 3746,
+      "scrollWidth": 375,
+      "small": [],
+      "summary": {
+        "bottom": 2527.421875,
+        "height": 1729.9375,
+        "width": 343,
+        "x": 16,
+        "y": 797.484375
+      },
+      "width": 390
+    }
+  }
+]

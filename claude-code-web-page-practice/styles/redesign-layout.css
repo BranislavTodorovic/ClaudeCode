@@ -4,6 +4,9 @@
    initial style resolution cannot fetch invisible legacy backgrounds. */
 #homeView > .home-destinations,
 :is(#homeView,#workView,#personalView,#exploreView) > .page-hero { display:none !important; }
+/* Retained Quick Access actions use icons; their old photo skins must not
+   download before the compatibility owner is moved into its hidden surface. */
+#homeView .explore-category[data-page-jump] { background-image:none !important; }
 body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page="explore"],[data-page="games"]) .site-footer { position:relative; z-index:2; margin:0; padding:6px 16px; min-height:28px; color:#c8d2df; background:transparent; }
 .osr-world { background:transparent; }
 .osr-world .osr-scene-host { position:fixed; inset:0; height:100vh; background:radial-gradient(ellipse at 70% 35%,#294a52,#101e2e 75%); }
@@ -14,6 +17,26 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
 .osr-world { min-height:0; }
 .osr-world .osr-frame { display:flex; flex-direction:column; min-height:100vh !important; padding-block:12px 4px; }
 .osr-world .osr-frame > .site-footer { margin-top:auto; padding:6px 0; flex-shrink:0; }
+.osr-world .osr-frame > .site-footer { width:100%; text-align:center; align-self:center; background:none; border:0; box-shadow:none; }
+@media(min-width:1460px) {
+ .osr-world .osr-frame > .site-footer { min-height:44px; display:flex; align-items:center; justify-content:center; }
+ .osr-world :is(.osr-explore-credits,.osr-games-footer) { position:absolute; left:var(--osr-page-pad); bottom:4px; max-width:calc(50% - 220px); margin:0 !important; min-height:44px; }
+ .osr-world :is(.osr-explore-credits,.osr-games-footer) p { font-size:.75rem; }
+}
+/* Increase breathing room below the stable hero only where height permits. */
+@media(min-width:1460px) {
+  .osr-world[data-surface="landing"] :is(.osr-home-summary,.osr-work-summary,.osr-personal-summary,.osr-explore-summary,.osr-games-summary) { margin-top:calc(8px + clamp(12px,calc((100vh - 760px) * .15 + 24px),70px)); }
+}
+@media(min-width:1460px) and (max-height:900px) {
+ .osr-world[data-surface="landing"] .osr-work-summary { margin-top:16px; }
+ .osr-world[data-surface="landing"] .osr-games-summary { margin-top:26px; }
+ .osr-world[data-surface="landing"] :is(.osr-home-portal,.osr-work-portal,.osr-personal-portal,.osr-explore-portal,.osr-games-portal) { min-height:142px !important; }
+}
+@media(min-width:1460px) and (min-height:901px) {
+ .osr-world .osr-home-portal { min-height:clamp(142px,calc(100vh - 852px),300px); }
+ .osr-world :is(.osr-work-portal,.osr-personal-portal) { min-height:clamp(142px,calc(100vh - 904px),248px); }
+ .osr-world :is(.osr-explore-portal,.osr-games-portal) { min-height:clamp(142px,calc(100vh - 942px),210px) !important; }
+}
 .osr-nav-link,.osr-card-arrow,.osr-media-actions button,.osr-work-tabs button,.osr-inline-link,.osr-capture-hint button { min-height:44px; }
 .osr-card-arrow { flex-basis:44px; width:44px; height:44px; }
 .osr-inline-link,.osr-capture-hint button { display:inline-flex; align-items:center; }
@@ -112,6 +135,10 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
 @media(min-width:1460px) and (max-height:900px) {
   .osr-world :is(.osr-home-hero,.osr-work-hero,.osr-personal-hero,.osr-explore-hero,.osr-games-hero) { padding-block:6px 4px; }
   .osr-world :is(.osr-games-portals,.osr-explore-portals) { margin-top:8px; }
+}
+@media(min-width:1460px) and (max-height:759px) {
+  .osr-world[data-surface="landing"] .osr-work-summary { margin-top:14px; }
+  .osr-world[data-surface="landing"] .osr-games-summary { margin-top:24px; }
 }
 /* Scene-only film: the shared controller owns all entry/settle/ambient timing.
    Light layers use the same source coordinates and cover crop as the picture. */

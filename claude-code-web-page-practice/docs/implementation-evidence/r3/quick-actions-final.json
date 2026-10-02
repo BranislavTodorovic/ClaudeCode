@@ -1,0 +1,810 @@
+[
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "method": "pointer",
+    "elapsedMs": 101,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "method": "keyboard",
+    "elapsedMs": 63,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "method": "pointer",
+    "elapsedMs": 87,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "notesNewBody",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "method": "keyboard",
+    "elapsedMs": 61,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "notesNewBody",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Track my progress",
+    "method": "pointer",
+    "elapsedMs": 110,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "osrWorkTitle",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local workspace\n\nBuild with intention.\n\nFocus today. Create tomorrow.\n\nSearch your Work items\nSearch work →\n\nSaved on this device · Ctrl + K for commands\n\nNew task\nNew project\nOpen board\nMeeting notes\nFocus session\nMy Tasks\nToday\nThis Week\nAll\n0/0\nCompleted\n\nNo dated Work tasks in this period. View all tasks or add one to a work item.\n\nToday’s Schedule\n↗\n\nNo Work reminders set for today. Meeting schedules are coming later.\n\nView Work timeline →\nProject Progress\nView all →\nR3 disposable history project\nSaved progress · 0%\n›\nFocus & Productivity\n↗\n25:00\nReady\nMake space to focus\n\nYour local timer is in Productivity.\n\nOpen timer →\n0\nActive items\n0\nOpen tasks\nProjects\nPlan. Build. Ship.\nKanban Board\nTrack work in progress.\nTeam\nComing in the next rollout.\nDocuments\nComing in the next rollout.\nMeetings\nComing in the next rollout.\nTemplates\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Track my progress",
+    "method": "keyboard",
+    "elapsedMs": 71,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "osrWorkTitle",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local workspace\n\nBuild with intention.\n\nFocus today. Create tomorrow.\n\nSearch your Work items\nSearch work →\n\nSaved on this device · Ctrl + K for commands\n\nNew task\nNew project\nOpen board\nMeeting notes\nFocus session\nMy Tasks\nToday\nThis Week\nAll\n0/0\nCompleted\n\nNo dated Work tasks in this period. View all tasks or add one to a work item.\n\nToday’s Schedule\n↗\n\nNo Work reminders set for today. Meeting schedules are coming later.\n\nView Work timeline →\nProject Progress\nView all →\nR3 disposable history project\nSaved progress · 0%\n›\nFocus & Productivity\n↗\n25:00\nReady\nMake space to focus\n\nYour local timer is in Productivity.\n\nOpen timer →\n0\nActive items\n0\nOpen tasks\nProjects\nPlan. Build. Ship.\nKanban Board\nTrack work in progress.\nTeam\nComing in the next rollout.\nDocuments\nComing in the next rollout.\nMeetings\nComing in the next rollout.\nTemplates\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Find a place to visit",
+    "method": "pointer",
+    "elapsedMs": 104,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "osrExploreTitle",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYour local travel collection\n\nExplore a brighter world.\n\nFind your next place. Keep the ideas that move you.\n\nSearch destinations\nSearch places →\nDestinations\nExperiences\nTravel Dates\nInterests\nBudget\nTravel Style\nFeatured Destinations\nSurprise me\n\nFrom your maintained local collection\n\nLoading photograph…\nLisbon\n\nPortugal\n\nExplore →\nLoading photograph…\nKyoto\n\nJapan\n\nExplore →\nLoading photograph…\nSão Miguel\n\nPortugal / Azores\n\nExplore →\nSaved Places\n↗\n\n1 saved on this device\n\nR3 uploaded destination\nLocal review · Idea\nUpcoming Trips\n↗\n\nPlanned trips with upcoming start dates\n\nNo upcoming dated trips. Set a planned trip’s dates on your board.\n\nDestinations\nSearch your local atlas.\nExperiences\nActivity discovery coming later.\nTravel Guides\nDedicated guides coming later.\nBucket List\nYour saved places and trip plans.\nDiscover More\nExplore your travel resources.\nScene & photo credits\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Find a place to visit",
+    "method": "keyboard",
+    "elapsedMs": 67,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "osrExploreTitle",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYour local travel collection\n\nExplore a brighter world.\n\nFind your next place. Keep the ideas that move you.\n\nSearch destinations\nSearch places →\nDestinations\nExperiences\nTravel Dates\nInterests\nBudget\nTravel Style\nFeatured Destinations\nSurprise me\n\nFrom your maintained local collection\n\nLisbon\n\nPortugal\n\nExplore →\nKyoto\n\nJapan\n\nExplore →\nSão Miguel\n\nPortugal / Azores\n\nExplore →\nSaved Places\n↗\n\n1 saved on this device\n\nR3 uploaded destination\nLocal review · Idea\nUpcoming Trips\n↗\n\nPlanned trips with upcoming start dates\n\nNo upcoming dated trips. Set a planned trip’s dates on your board.\n\nDestinations\nSearch your local atlas.\nExperiences\nActivity discovery coming later.\nTravel Guides\nDedicated guides coming later.\nBucket List\nYour saved places and trip plans.\nDiscover More\nExplore your travel resources.\nScene & photo credits\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "New task",
+    "method": "pointer",
+    "elapsedMs": 351,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Create work item",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local workspace\n\nBuild with intention.\n\nFocus today. Create tomorrow.\n\nSearch your Work items\nSearch work →\n\nSaved on this device · Ctrl + K for commands\n\nNew task\nNew project\nOpen board\nMeeting notes\nFocus session\n\nCreate a Work item first. Every task belongs to a project and Work item.\n\nCreate work item\nCancel\nMy Tasks\nToday\nThis Week\nAll\n0/0\nCompleted\n\nNo dated Work tasks in this period. View all tasks or add one to a work item.\n\nToday’s Schedule\n↗\n\nNo Work reminders set for today. Meeting schedules are coming later.\n\nView Work timeline →\nProject Progress\nView all →\nR3 disposable history project\nSaved progress · 0%\n›\nFocus & Productivity\n↗\n25:00\nReady\nMake space to focus\n\nYour local timer is in Productivity.\n\nOpen timer →\n0\nActive items\n0\nOpen tasks\nProjects\nPlan. Build. Ship.\nKanban Board\nTrack work in progress.\nTeam\nComing in the next rollout.\nDocuments\nComing in the next rollout.\nMeetings\nComing in the next rollout.\nTemplates\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "New task",
+    "method": "keyboard",
+    "elapsedMs": 47,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Create work item",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local workspace\n\nBuild with intention.\n\nFocus today. Create tomorrow.\n\nSearch your Work items\nSearch work →\n\nSaved on this device · Ctrl + K for commands\n\nNew task\nNew project\nOpen board\nMeeting notes\nFocus session\n\nCreate a Work item first. Every task belongs to a project and Work item.\n\nCreate work item\nCancel\nMy Tasks\nToday\nThis Week\nAll\n0/0\nCompleted\n\nNo dated Work tasks in this period. View all tasks or add one to a work item.\n\nToday’s Schedule\n↗\n\nNo Work reminders set for today. Meeting schedules are coming later.\n\nView Work timeline →\nProject Progress\nView all →\nR3 disposable history project\nSaved progress · 0%\n›\nFocus & Productivity\n↗\n25:00\nReady\nMake space to focus\n\nYour local timer is in Productivity.\n\nOpen timer →\n0\nActive items\n0\nOpen tasks\nProjects\nPlan. Build. Ship.\nKanban Board\nTrack work in progress.\nTeam\nComing in the next rollout.\nDocuments\nComing in the next rollout.\nMeetings\nComing in the next rollout.\nTemplates\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "New project",
+    "method": "pointer",
+    "elapsedMs": 117,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "",
+      "focusVisible": true,
+      "hash": "#/w/work/projects",
+      "page": "work",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Work\nProjects\nDevelopment tracker\n\nProjects → stories & defects → tasks\n\nNew work item\nBoard\nProjects\nBacklog\nHistory\nCreate a project\nSaved on this device\nName\nDescription\nTags\nProject link (optional)\nStatus\nActive\nBlocked\nDone\nDeadline\nProgress (%)\nCreate project\nYour projects\n1 project\nIN THE MAKING\nR3 disposable history project\nACTIVE\n\nAn idea in progress. Give it a next step.\n\n0% complete\nEdit\nDelete\nActive projects\n1 in progress\nProject deadlines\n\nNo project deadlines in the next three days.\n\nIN THE MAKING\nR3 disposable history project\nACTIVE\n\nAn idea in progress. Give it a next step.\n\n0% complete\nOpen Projects\nWork shortcuts\nAdd shortcut\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "New project",
+    "method": "keyboard",
+    "elapsedMs": 79,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "",
+      "focusVisible": true,
+      "hash": "#/w/work/projects",
+      "page": "work",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Work\nProjects\nDevelopment tracker\n\nProjects → stories & defects → tasks\n\nNew work item\nBoard\nProjects\nBacklog\nHistory\nCreate a project\nSaved on this device\nName\nDescription\nTags\nProject link (optional)\nStatus\nActive\nBlocked\nDone\nDeadline\nProgress (%)\nCreate project\nYour projects\n1 project\nIN THE MAKING\nR3 disposable history project\nACTIVE\n\nAn idea in progress. Give it a next step.\n\n0% complete\nEdit\nDelete\nActive projects\n1 in progress\nProject deadlines\n\nNo project deadlines in the next three days.\n\nIN THE MAKING\nR3 disposable history project\nACTIVE\n\nAn idea in progress. Give it a next step.\n\n0% complete\nOpen Projects\nWork shortcuts\nAdd shortcut\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Open board",
+    "method": "pointer",
+    "elapsedMs": 97,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "New work item",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Work\nWork board & timeline\nActive items\n0\nStories and defects in motion\nBlocked\n0\nResolve the next obstacle\nOverdue\n0\nBring a deadline back on track\nDevelopment tracker\n\nProjects → stories & defects → tasks\n\nNew work item\nBoard\nProjects\nBacklog\nHistory\nProject\nAll projects\nR3 disposable history project\nType\nAll types\nStory\nDefect\nStatus\nAll statuses\nOpen\nIn-progress\nBlocked\nClosed\nPriority\nAll priorities\nLow\nMedium\nHigh\nUrgent\nDeadline\nAny deadline\nDue in 3 days\nOverdue\nLater\nSearch work\nSort by\nPriority\nDeadline\nNewest first\nOldest first\nName\n0 items\nNo matching work items\n\nCreate a project, then add a story or defect. Your next step starts here.\n\nNew work item\nPriorities & timeline\nYour development priorities will appear here.\nDeadline reminders\n\nReminders run locally while OneSpace is open.\n\nNo deadlines in the next 3 days.\n\nWork shortcuts\nAdd shortcut\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Open board",
+    "method": "keyboard",
+    "elapsedMs": 68,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "New work item",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Work\nWork board & timeline\nActive items\n0\nStories and defects in motion\nBlocked\n0\nResolve the next obstacle\nOverdue\n0\nBring a deadline back on track\nDevelopment tracker\n\nProjects → stories & defects → tasks\n\nNew work item\nBoard\nProjects\nBacklog\nHistory\nProject\nAll projects\nR3 disposable history project\nType\nAll types\nStory\nDefect\nStatus\nAll statuses\nOpen\nIn-progress\nBlocked\nClosed\nPriority\nAll priorities\nLow\nMedium\nHigh\nUrgent\nDeadline\nAny deadline\nDue in 3 days\nOverdue\nLater\nSearch work\nSort by\nPriority\nDeadline\nNewest first\nOldest first\nName\n0 items\nNo matching work items\n\nCreate a project, then add a story or defect. Your next step starts here.\n\nNew work item\nPriorities & timeline\nYour development priorities will appear here.\nDeadline reminders\n\nReminders run locally while OneSpace is open.\n\nNo deadlines in the next 3 days.\n\nWork shortcuts\nAdd shortcut\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Meeting notes",
+    "method": "pointer",
+    "elapsedMs": 94,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "notesNewBody",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Meeting notes",
+    "method": "keyboard",
+    "elapsedMs": 66,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "notesNewBody",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Focus session",
+    "method": "pointer",
+    "elapsedMs": 95,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "focusStart",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Focus session",
+    "method": "keyboard",
+    "elapsedMs": 60,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "focusStart",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Start a workout",
+    "method": "pointer",
+    "elapsedMs": 318,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Start a workout",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\n\nWorkout sessions are coming in the Fitness submodule. Open Personal Life for your saved goals, routines and habits.\n\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Start a workout",
+    "method": "keyboard",
+    "elapsedMs": 43,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Start a workout",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\n\nWorkout sessions are coming in the Fitness submodule. Open Personal Life for your saved goals, routines and habits.\n\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Meditate now",
+    "method": "pointer",
+    "elapsedMs": 325,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Meditate now",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\n\nGuided meditation sessions are coming in the Mindfulness submodule.\n\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Meditate now",
+    "method": "keyboard",
+    "elapsedMs": 43,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Meditate now",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\n\nGuided meditation sessions are coming in the Mindfulness submodule.\n\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Log a meal",
+    "method": "pointer",
+    "elapsedMs": 329,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Log a meal",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\n\nMeal logging is coming in the Nutrition submodule.\n\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Log a meal",
+    "method": "keyboard",
+    "elapsedMs": 48,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Log a meal",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\n\nMeal logging is coming in the Nutrition submodule.\n\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Plan my day",
+    "method": "pointer",
+    "elapsedMs": 86,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Plan my day",
+    "method": "keyboard",
+    "elapsedMs": 64,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Track a habit",
+    "method": "pointer",
+    "elapsedMs": 132,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "personalHabitInput",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Personal\nPersonal habits\nGoals\n0 goals\nAdd\n0 / 0 complete\nNothing here yet — add one above.\nRoutines\nAdd\n1 / 1 complete\nR3 routine presentation check\nHabits\nAdd\n1 / 1 complete\nR3 habit presentation check\nPersonal shortcuts\nAdd shortcut\nePonuda\nCompare prices before you buy\neponuda.com\nIKEA Serbia\nFurniture and home inspiration\nikea.com\nKupujemProdajem\nSerbia's online marketplace\nkupujemprodajem.com\nAmazon\nProducts, lists, and order tracking\namazon.com\neBay\nMarketplace, auctions, and deals\nebay.com\nGmail\nEmail and daily communication\nmail.google.com\nYouTube\nVideos, music, and learning\nyoutube.com\nWeather\nForecasts without dashboard tracking\nweather.com\nGoogle Calendar\nSchedule, events, and reminders\ncalendar.google.com\nGoogle Drive\nFiles, documents, and sharing\ndrive.google.com\nGoogle Translate\nTranslate words, documents, and websites\ntranslate.google.com\nOneDrive\nMicrosoft cloud files and photos\nonedrive.live.com\nMidea SmartHome\nConnected home and appliances\nmidea.com\nMTS\nInternet, mobile, and TV services\nmts.rs\nGoogle Home\nGoogle smart-home information\nhome.google.com\nAmazon Alexa\nAlexa devices and smart-home access\nalexa.amazon.com\nPhilips Hue\nSmart lighting, scenes, and support\nphilips-hue.com\nHome Assistant\nOpen-source home automation platform\nhome-assistant.io\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Track a habit",
+    "method": "keyboard",
+    "elapsedMs": 85,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "personalHabitInput",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Personal\nPersonal habits\nGoals\n0 goals\nAdd\n0 / 0 complete\nNothing here yet — add one above.\nRoutines\nAdd\n1 / 1 complete\nR3 routine presentation check\nHabits\nAdd\n1 / 1 complete\nR3 habit presentation check\nPersonal shortcuts\nAdd shortcut\nePonuda\nCompare prices before you buy\neponuda.com\nIKEA Serbia\nFurniture and home inspiration\nikea.com\nKupujemProdajem\nSerbia's online marketplace\nkupujemprodajem.com\nAmazon\nProducts, lists, and order tracking\namazon.com\neBay\nMarketplace, auctions, and deals\nebay.com\nGmail\nEmail and daily communication\nmail.google.com\nYouTube\nVideos, music, and learning\nyoutube.com\nWeather\nForecasts without dashboard tracking\nweather.com\nGoogle Calendar\nSchedule, events, and reminders\ncalendar.google.com\nGoogle Drive\nFiles, documents, and sharing\ndrive.google.com\nGoogle Translate\nTranslate words, documents, and websites\ntranslate.google.com\nOneDrive\nMicrosoft cloud files and photos\nonedrive.live.com\nMidea SmartHome\nConnected home and appliances\nmidea.com\nMTS\nInternet, mobile, and TV services\nmts.rs\nGoogle Home\nGoogle smart-home information\nhome.google.com\nAmazon Alexa\nAlexa devices and smart-home access\nalexa.amazon.com\nPhilips Hue\nSmart lighting, scenes, and support\nphilips-hue.com\nHome Assistant\nOpen-source home automation platform\nhome-assistant.io\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "method": "pointer",
+    "elapsedMs": 127,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "method": "keyboard",
+    "elapsedMs": 53,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Experiences",
+    "method": "pointer",
+    "elapsedMs": 309,
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Open Destinations or Bucket List for destination discovery and your trip board.\n\nCancel"
+      ],
+      "focus": "Close dialog",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYour local travel collection\n\nExplore a brighter world.\n\nFind your next place. Keep the ideas that move you.\n\nSearch destinations\nSearch places →\nDestinations\nExperiences\nTravel Dates\nInterests\nBudget\nTravel Style\nFeatured Destinations\nSurprise me\n\nFrom your maintained local collection\n\nLisbon\n\nPortugal\n\nExplore →\nKyoto\n\nJapan\n\nExplore →\nSão Miguel\n\nPortugal / Azores\n\nExplore →\nSaved Places\n↗\n\n1 saved on this device\n\nR3 uploaded destination\nLocal review · Idea\nUpcoming Trips\n↗\n\nPlanned trips with upcoming start dates\n\nNo upcoming dated trips. Set a planned trip’s dates on your board.\n\nDestinations\nSearch your local atlas.\nExperiences\nActivity discovery coming later.\nTravel Guides\nDedicated guides coming later.\nBucket List\nYour saved places and trip plans.\nDiscover More\nExplore your travel resources.\nScene & photo credits\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Experiences",
+    "method": "keyboard",
+    "elapsedMs": 69,
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Experiences — coming later\n\nExperiences is coming in the Explore submodule rollout. Open Destinations or Bucket List for destination discovery and your trip board.\n\nCancel"
+      ],
+      "focus": "Close dialog",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYour local travel collection\n\nExplore a brighter world.\n\nFind your next place. Keep the ideas that move you.\n\nSearch destinations\nSearch places →\nDestinations\nExperiences\nTravel Dates\nInterests\nBudget\nTravel Style\nFeatured Destinations\nSurprise me\n\nFrom your maintained local collection\n\nLisbon\n\nPortugal\n\nExplore →\nKyoto\n\nJapan\n\nExplore →\nSão Miguel\n\nPortugal / Azores\n\nExplore →\nSaved Places\n↗\n\n1 saved on this device\n\nR3 uploaded destination\nLocal review · Idea\nUpcoming Trips\n↗\n\nPlanned trips with upcoming start dates\n\nNo upcoming dated trips. Set a planned trip’s dates on your board.\n\nDestinations\nSearch your local atlas.\nExperiences\nActivity discovery coming later.\nTravel Guides\nDedicated guides coming later.\nBucket List\nYour saved places and trip plans.\nDiscover More\nExplore your travel resources.\nScene & photo credits\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Travel Dates",
+    "method": "pointer",
+    "elapsedMs": 86,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Trip board",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nBucket List & trip plans\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Travel Dates",
+    "method": "keyboard",
+    "elapsedMs": 60,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "Trip board",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nBucket List & trip plans\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Interests",
+    "method": "pointer",
+    "elapsedMs": 87,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "AnyArchitectureWalkingMuseumsWaterHikingCultureCuisineSpaWildlife",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\nDestination type\nAny\nCity break\nCountry\nRegion\nLandmark\nBeach\nPark\nIsland\nMuseum\nNature\nCulture\nFood\nWellness\nAdventure\nRegion\nCountry\nSeason\nAny\nSpring\nSummer\nAutumn\nWinter\nTrip length\nAny\nWeekend\nWeek\nExtended\nBudget\nAny\nLow\nMedium\nHigh\nTravel style\nAny\nRelaxed\nBalanced\nActive\nClimate\nAny\nWarm\nTemperate\nCool\nInterests\nAny\nArchitecture\nWalking\nMuseums\nWater\nHiking\nCulture\nCuisine\nSpa\nWildlife\nDeparture region\nAny\nEurope\nNorth America\nAsia-Pacific\nClear filters\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Interests",
+    "method": "keyboard",
+    "elapsedMs": 65,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "AnyArchitectureWalkingMuseumsWaterHikingCultureCuisineSpaWildlife",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\nDestination type\nAny\nCity break\nCountry\nRegion\nLandmark\nBeach\nPark\nIsland\nMuseum\nNature\nCulture\nFood\nWellness\nAdventure\nRegion\nCountry\nSeason\nAny\nSpring\nSummer\nAutumn\nWinter\nTrip length\nAny\nWeekend\nWeek\nExtended\nBudget\nAny\nLow\nMedium\nHigh\nTravel style\nAny\nRelaxed\nBalanced\nActive\nClimate\nAny\nWarm\nTemperate\nCool\nInterests\nAny\nArchitecture\nWalking\nMuseums\nWater\nHiking\nCulture\nCuisine\nSpa\nWildlife\nDeparture region\nAny\nEurope\nNorth America\nAsia-Pacific\nClear filters\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Budget",
+    "method": "pointer",
+    "elapsedMs": 93,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "AnyLowMediumHigh",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\nDestination type\nAny\nCity break\nCountry\nRegion\nLandmark\nBeach\nPark\nIsland\nMuseum\nNature\nCulture\nFood\nWellness\nAdventure\nRegion\nCountry\nSeason\nAny\nSpring\nSummer\nAutumn\nWinter\nTrip length\nAny\nWeekend\nWeek\nExtended\nBudget\nAny\nLow\nMedium\nHigh\nTravel style\nAny\nRelaxed\nBalanced\nActive\nClimate\nAny\nWarm\nTemperate\nCool\nInterests\nAny\nArchitecture\nWalking\nMuseums\nWater\nHiking\nCulture\nCuisine\nSpa\nWildlife\nDeparture region\nAny\nEurope\nNorth America\nAsia-Pacific\nClear filters\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Budget",
+    "method": "keyboard",
+    "elapsedMs": 58,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "AnyLowMediumHigh",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\nDestination type\nAny\nCity break\nCountry\nRegion\nLandmark\nBeach\nPark\nIsland\nMuseum\nNature\nCulture\nFood\nWellness\nAdventure\nRegion\nCountry\nSeason\nAny\nSpring\nSummer\nAutumn\nWinter\nTrip length\nAny\nWeekend\nWeek\nExtended\nBudget\nAny\nLow\nMedium\nHigh\nTravel style\nAny\nRelaxed\nBalanced\nActive\nClimate\nAny\nWarm\nTemperate\nCool\nInterests\nAny\nArchitecture\nWalking\nMuseums\nWater\nHiking\nCulture\nCuisine\nSpa\nWildlife\nDeparture region\nAny\nEurope\nNorth America\nAsia-Pacific\nClear filters\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Travel Style",
+    "method": "pointer",
+    "elapsedMs": 89,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "AnyRelaxedBalancedActive",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\nDestination type\nAny\nCity break\nCountry\nRegion\nLandmark\nBeach\nPark\nIsland\nMuseum\nNature\nCulture\nFood\nWellness\nAdventure\nRegion\nCountry\nSeason\nAny\nSpring\nSummer\nAutumn\nWinter\nTrip length\nAny\nWeekend\nWeek\nExtended\nBudget\nAny\nLow\nMedium\nHigh\nTravel style\nAny\nRelaxed\nBalanced\nActive\nClimate\nAny\nWarm\nTemperate\nCool\nInterests\nAny\nArchitecture\nWalking\nMuseums\nWater\nHiking\nCulture\nCuisine\nSpa\nWildlife\nDeparture region\nAny\nEurope\nNorth America\nAsia-Pacific\nClear filters\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Travel Style",
+    "method": "keyboard",
+    "elapsedMs": 55,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "AnyRelaxedBalancedActive",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Explore\nDestinations\nWORLD ATLAS\nFind your next horizon\n\nSearch bundled entries and your own collection. Everything stays on this device.\n\nAdd Location\nSearch places\nSearch destinations\nRefine your search\nDestination type\nAny\nCity break\nCountry\nRegion\nLandmark\nBeach\nPark\nIsland\nMuseum\nNature\nCulture\nFood\nWellness\nAdventure\nRegion\nCountry\nSeason\nAny\nSpring\nSummer\nAutumn\nWinter\nTrip length\nAny\nWeekend\nWeek\nExtended\nBudget\nAny\nLow\nMedium\nHigh\nTravel style\nAny\nRelaxed\nBalanced\nActive\nClimate\nAny\nWarm\nTemperate\nCool\nInterests\nAny\nArchitecture\nWalking\nMuseums\nWater\nHiking\nCulture\nCuisine\nSpa\nWildlife\nDeparture region\nAny\nEurope\nNorth America\nAsia-Pacific\nClear filters\n\nLocal collection · no accounts or API keys. Search to begin.\n\nFROM MAYBE TO MEMORIES\nYour trip board\n\n1 saved places · every note, date and day stays here\n\nIdea\n1\nNo local image added\nR3 uploaded destination\n\nPriority 3\n\nAdd your first trip note.\n\nStatus for R3 uploaded destination\nIdea\nResearching\nPlanned\nVisited\nDetails\nEdit trip\nCreate trip plan\nRemove\nResearching\n0\n\nReady for your next place\n\nPlanned\n0\n\nReady for your next place\n\nVisited\n0\n\nReady for your next place\n\nExplore shortcuts\nAdd shortcut\nSearch\nGoogle Maps\nDirections, places, and travel planning\nmaps.google.com\nGoogle Flights\nCompare flights and plan a trip\ngoogle.com\nBooking.com\nHotels, stays, and travel planning\nbooking.com\nAirbnb\nHomes and memorable stays\nairbnb.com\nTripadvisor\nPlaces, reviews, and trip ideas\ntripadvisor.com\nRome2Rio\nDiscover how to get anywhere\nrome2rio.com\nMore To Explore\nTravel inspiration\nDiscover a travel resource\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Open game details",
+    "method": "pointer",
+    "elapsedMs": 310,
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Alan Wake 2\nAlan Wake 2\n\nSome stories never let you go.\n\nGenres: Survival Horror, Survival, Horror\n\nPlatforms: PC\n\nPlay styles:\n\nMood:\n\nGame resources\nOfficial\nOfficial Alan Wake 2 website\nPlatform\nFind Alan Wake 2 on Steam\nNews / updates\nSearch Steam news for Alan Wake 2\nBuilds / guides\nSearch community guides for Alan Wake 2\nCommunity\nFind Alan Wake 2 communities\nReview\nR3 disposable resource\nSuggested tracker tasks\nFinish the opening chapter\nExplore and collect useful resources\nComplete the next story chapter\nEdit resources"
+      ],
+      "focus": "gameDetailsClose",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYOUR PERSONAL GAMING ROOM\n\nGame on.\n\nGood games. A brighter you.\n\nSearch local games\nSearch games →\nClear\n\nSearch the bundled catalogue on this device.\n\nOpen game details\nView library\nTrack progress\nDiscover games\nGame sessions\nContinue Playing\n↗\nAlan Wake 2\n\nLast recorded 10/3/2026\n\nOpen tracker →\nToday’s Gaming\n↗\n\n1\nminutes recorded today\n\n1 completed session\n\nNo active session.\n\nRecord a sessionWeekly tasks\nGame Progress\n↗\n\nChecked tasks in your current trackers\n\nAlan Wake 2\nStory objectives · 0/12\n0%\nResident Evil 4\nStory objectives · 0/13\n0%\nDiablo Immortal\nWeekly tasks · 0/7\n0%\nOneSpace Gaming Pulse\n↗\n\nYour last seven calendar days\n\n1\nminutes recorded\n\n1\nCompleted sessions\n\n6\nGames in your collection\n\nView session history\nMy Games\nYour collection, in one place.\n↗\nMissions & Quests\nYour story and weekly trackers.\n↗\nGame Library\nBrowse and add games.\n↗\nGame Sessions\nRecord your time playing.\n↗\nDiscover Games\nFind your next local favorite.\n↗\nGame Settings\nMake this room your own.\n↗\nScene credits\n\nPlay your way. Your collection and progress stay on this device.\n\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Open game details",
+    "method": "keyboard",
+    "elapsedMs": 72,
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Alan Wake 2\nAlan Wake 2\n\nSome stories never let you go.\n\nGenres: Survival Horror, Survival, Horror\n\nPlatforms: PC\n\nPlay styles:\n\nMood:\n\nGame resources\nOfficial\nOfficial Alan Wake 2 website\nPlatform\nFind Alan Wake 2 on Steam\nNews / updates\nSearch Steam news for Alan Wake 2\nBuilds / guides\nSearch community guides for Alan Wake 2\nCommunity\nFind Alan Wake 2 communities\nReview\nR3 disposable resource\nSuggested tracker tasks\nFinish the opening chapter\nExplore and collect useful resources\nComplete the next story chapter\nEdit resources"
+      ],
+      "focus": "gameDetailsClose",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYOUR PERSONAL GAMING ROOM\n\nGame on.\n\nGood games. A brighter you.\n\nSearch local games\nSearch games →\nClear\n\nSearch the bundled catalogue on this device.\n\nOpen game details\nView library\nTrack progress\nDiscover games\nGame sessions\nContinue Playing\n↗\nAlan Wake 2\n\nLast recorded 10/3/2026\n\nOpen tracker →\nToday’s Gaming\n↗\n\n1\nminutes recorded today\n\n1 completed session\n\nNo active session.\n\nRecord a sessionWeekly tasks\nGame Progress\n↗\n\nChecked tasks in your current trackers\n\nAlan Wake 2\nStory objectives · 0/12\n0%\nResident Evil 4\nStory objectives · 0/13\n0%\nDiablo Immortal\nWeekly tasks · 0/7\n0%\nOneSpace Gaming Pulse\n↗\n\nYour last seven calendar days\n\n1\nminutes recorded\n\n1\nCompleted sessions\n\n6\nGames in your collection\n\nView session history\nMy Games\nYour collection, in one place.\n↗\nMissions & Quests\nYour story and weekly trackers.\n↗\nGame Library\nBrowse and add games.\n↗\nGame Sessions\nRecord your time playing.\n↗\nDiscover Games\nFind your next local favorite.\n↗\nGame Settings\nMake this room your own.\n↗\nScene credits\n\nPlay your way. Your collection and progress stay on this device.\n\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "View library",
+    "method": "pointer",
+    "elapsedMs": 126,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "gvPanel-library",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nGame Library\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n02 / YOUR GAMES\nMy Games\nSearch a game to track or add\n\nMy Games genre\nAll genres\nAction RPG\nAdventure\nOpen world\nSurvival Horror\nSearch My Games\nAlan Wake 2\nSurvival Horror · PC\n0%\nNot started\n0/12 objectives\n\nNext: Escape the recurring nightmare visions\n\nOpen Progress\nResources\nEdit\nResident Evil 4\nSurvival Horror · PS5\n0%\nNot started\n0/13 objectives\n\nNext: Survive the initial villager ambush\n\nOpen Progress\nResources\nEdit\nDiablo Immortal\nAction RPG · Mobile\nWeek 2026-W40\n0%\nNot started\n0/7 tasks\n\nNext: Complete daily bounties\n\nOpen Progress\nResources\nEdit\nCyberpunk 2077\nOpen world · PC\n0%\nNot started\n0/6 objectives\n\nNext: Complete the opening mission chain\n\nOpen Progress\nResources\nEdit\nHades\nAction RPG · Nintendo Switch\n0%\nNot started\n0/6 objectives\n\nNext: Escape the first few chambers cleanly\n\nOpen Progress\nResources\nEdit\nDeath Stranding\nAdventure · PS5\n0%\nNot started\n0/6 objectives\n\nNext: Deliver the first major package route\n\nOpen Progress\nResources\nEdit\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "View library",
+    "method": "keyboard",
+    "elapsedMs": 59,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "gvPanel-library",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nGame Library\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n02 / YOUR GAMES\nMy Games\nSearch a game to track or add\n\nMy Games genre\nAll genres\nAction RPG\nAdventure\nOpen world\nSurvival Horror\nSearch My Games\nAlan Wake 2\nSurvival Horror · PC\n0%\nNot started\n0/12 objectives\n\nNext: Escape the recurring nightmare visions\n\nOpen Progress\nResources\nEdit\nResident Evil 4\nSurvival Horror · PS5\n0%\nNot started\n0/13 objectives\n\nNext: Survive the initial villager ambush\n\nOpen Progress\nResources\nEdit\nDiablo Immortal\nAction RPG · Mobile\nWeek 2026-W40\n0%\nNot started\n0/7 tasks\n\nNext: Complete daily bounties\n\nOpen Progress\nResources\nEdit\nCyberpunk 2077\nOpen world · PC\n0%\nNot started\n0/6 objectives\n\nNext: Complete the opening mission chain\n\nOpen Progress\nResources\nEdit\nHades\nAction RPG · Nintendo Switch\n0%\nNot started\n0/6 objectives\n\nNext: Escape the first few chambers cleanly\n\nOpen Progress\nResources\nEdit\nDeath Stranding\nAdventure · PS5\n0%\nNot started\n0/6 objectives\n\nNext: Deliver the first major package route\n\nOpen Progress\nResources\nEdit\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Track progress",
+    "method": "pointer",
+    "elapsedMs": 93,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "gvPanel-missions",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nGame progress\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n03 / YOUR GAMES\nMission Progress\nAlan Wake 2\nResident Evil 4\nCyberpunk 2077\nHades\nDeath Stranding\nAlan Wake 2\n\n0/12 objectives · 0% · Not started\n\nNext up: Escape the recurring nightmare visions\n\nInitiation: Author's Nightmare\n0/3\nEscape the recurring nightmare visions\nFind your way through the misty woods\nConfront the shape in the darkness\nAdd\nReturn 1: Bright Falls Investigation\n0/3\nReturn 2: The Oceanview Motel\n0/3\nInitiation: The Return\n0/3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Track progress",
+    "method": "keyboard",
+    "elapsedMs": 59,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "gvPanel-missions",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nGame progress\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n03 / YOUR GAMES\nMission Progress\nAlan Wake 2\nResident Evil 4\nCyberpunk 2077\nHades\nDeath Stranding\nAlan Wake 2\n\n0/12 objectives · 0% · Not started\n\nNext up: Escape the recurring nightmare visions\n\nInitiation: Author's Nightmare\n0/3\nEscape the recurring nightmare visions\nFind your way through the misty woods\nConfront the shape in the darkness\nAdd\nReturn 1: Bright Falls Investigation\n0/3\nReturn 2: The Oceanview Motel\n0/3\nInitiation: The Return\n0/3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Discover games",
+    "method": "pointer",
+    "elapsedMs": 108,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "gvPanel-suggestions",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nDiscover Games\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n05 / YOUR GAMES\nDiscover your next obsession\nGame Suggestions\n\nTell us what you're into and we'll point you at something worth playing.\n\nMore like this\nAll games\nAlan Wake 2\nResident Evil 4\nDiablo Immortal\nCyberpunk 2077\nHades\nDeath Stranding\nHollow Knight\nElden Ring\nGod of War Ragnarök\nBaldur's Gate 3\nStardew Valley\nIt Takes Two\nForza Horizon 5\nDead Cells\nOuter Wilds\nPersona 5 Royal\nGenshin Impact\nPLATFORMS\nPC\nPS5\nXbox\nNintendo Switch\nMobile\nGENRES\nAction\nHorror\nRPG\nAdventure\nStory-rich\nOpen world\nSurvival\nRacing\nPLAY STYLES\nSingle-player\nMultiplayer\nCo-op\nShort sessions\nLong sessions\nMOOD\nRelaxed\nChallenging\nDark\nAtmospheric\nCompetitive\nGet Suggestions\nClear Filters\nReset Preferences\n\n17 games · full local catalog · matches every active filter group\n\nAlan Wake 2\nAlan Wake 2\nLocal catalog\n\nSurvival Horror, Survival, Horror · PC\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nResident Evil 4\nResident Evil 4\nLocal catalog\n\nSurvival Horror, Survival, Horror · PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nDiablo Immortal\nDiablo Immortal\nLocal catalog\n\nAction RPG · Mobile\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nCyberpunk 2077\nCyberpunk 2077\nLocal catalog\n\nOpen world · PC\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nHades\nHades\nLocal catalog\n\nAction RPG · Nintendo Switch\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nDeath Stranding\nDeath Stranding\nLocal catalog\n\nAdventure · PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nHollow Knight\nHollow Knight\nLocal catalog\n\nAdventure, Action · PC, Nintendo Switch, Xbox, PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nElden Ring\nElden Ring\nLocal catalog\n\nRPG, Open world, Action · PC, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nGod of War Ragnarök\nGod of War Ragnarök\nLocal catalog\n\nAction, Adventure, Story-rich · PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nBaldur's Gate 3\nBaldur's Gate 3\nLocal catalog\n\nRPG, Story-rich, Adventure · PC, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nStardew Valley\nStardew Valley\nLocal catalog\n\nAdventure, Open world · PC, Nintendo Switch, Mobile, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nIt Takes Two\nIt Takes Two\nLocal catalog\n\nAdventure, Action · PC, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nForza Horizon 5\nForza Horizon 5\nLocal catalog\n\nRacing, Open world · PC, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nDead Cells\nDead Cells\nLocal catalog\n\nAction, Survival · PC, PS5, Xbox, Nintendo Switch, Mobile\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nOuter Wilds\nOuter Wilds\nLocal catalog\n\nAdventure, Story-rich · PC, PS5, Xbox, Nintendo Switch\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nPersona 5 Royal\nPersona 5 Royal\nLocal catalog\n\nRPG, Story-rich · PC, PS5, Xbox, Nintendo Switch\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nGenshin Impact\nGenshin Impact\nLocal catalog\n\nRPG, Open world, Adventure · PC, PS5, Mobile\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Discover games",
+    "method": "keyboard",
+    "elapsedMs": 64,
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "gvPanel-suggestions",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nDiscover Games\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n05 / YOUR GAMES\nDiscover your next obsession\nGame Suggestions\n\nTell us what you're into and we'll point you at something worth playing.\n\nMore like this\nAll games\nAlan Wake 2\nResident Evil 4\nDiablo Immortal\nCyberpunk 2077\nHades\nDeath Stranding\nHollow Knight\nElden Ring\nGod of War Ragnarök\nBaldur's Gate 3\nStardew Valley\nIt Takes Two\nForza Horizon 5\nDead Cells\nOuter Wilds\nPersona 5 Royal\nGenshin Impact\nPLATFORMS\nPC\nPS5\nXbox\nNintendo Switch\nMobile\nGENRES\nAction\nHorror\nRPG\nAdventure\nStory-rich\nOpen world\nSurvival\nRacing\nPLAY STYLES\nSingle-player\nMultiplayer\nCo-op\nShort sessions\nLong sessions\nMOOD\nRelaxed\nChallenging\nDark\nAtmospheric\nCompetitive\nGet Suggestions\nClear Filters\nReset Preferences\n\n17 games · full local catalog · matches every active filter group\n\nAlan Wake 2\nAlan Wake 2\nLocal catalog\n\nSurvival Horror, Survival, Horror · PC\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nResident Evil 4\nResident Evil 4\nLocal catalog\n\nSurvival Horror, Survival, Horror · PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nDiablo Immortal\nDiablo Immortal\nLocal catalog\n\nAction RPG · Mobile\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nCyberpunk 2077\nCyberpunk 2077\nLocal catalog\n\nOpen world · PC\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nHades\nHades\nLocal catalog\n\nAction RPG · Nintendo Switch\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nDeath Stranding\nDeath Stranding\nLocal catalog\n\nAdventure · PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nHollow Knight\nHollow Knight\nLocal catalog\n\nAdventure, Action · PC, Nintendo Switch, Xbox, PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nElden Ring\nElden Ring\nLocal catalog\n\nRPG, Open world, Action · PC, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nGod of War Ragnarök\nGod of War Ragnarök\nLocal catalog\n\nAction, Adventure, Story-rich · PS5\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nBaldur's Gate 3\nBaldur's Gate 3\nLocal catalog\n\nRPG, Story-rich, Adventure · PC, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nStardew Valley\nStardew Valley\nLocal catalog\n\nAdventure, Open world · PC, Nintendo Switch, Mobile, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nIt Takes Two\nIt Takes Two\nLocal catalog\n\nAdventure, Action · PC, PS5, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nForza Horizon 5\nForza Horizon 5\nLocal catalog\n\nRacing, Open world · PC, Xbox\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nDead Cells\nDead Cells\nLocal catalog\n\nAction, Survival · PC, PS5, Xbox, Nintendo Switch, Mobile\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nOuter Wilds\nOuter Wilds\nLocal catalog\n\nAdventure, Story-rich · PC, PS5, Xbox, Nintendo Switch\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nPersona 5 Royal\nPersona 5 Royal\nLocal catalog\n\nRPG, Story-rich · PC, PS5, Xbox, Nintendo Switch\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nGenshin Impact\nGenshin Impact\nLocal catalog\n\nRPG, Open world, Adventure · PC, PS5, Mobile\n\nMatches your picks: All local games.\n\nAdd to My Games\nSave to Wishlist\nDismiss\nView Details\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Game sessions",
+    "method": "pointer",
+    "elapsedMs": 93,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "gvPanel-sessions",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nGame Sessions\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n06 / YOUR GAMES\nGaming Sessions\nAlan Wake 2\nResident Evil 4\nDiablo Immortal\nCyberpunk 2077\nHades\nDeath Stranding\nStart Session\nAlan Wake 2\nResident Evil 4\nDiablo Immortal\nCyberpunk 2077\nHades\nDeath Stranding\nLog Session\nAlan Wake 2 — 1m · 10/3/2026\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Game sessions",
+    "method": "keyboard",
+    "elapsedMs": 54,
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "gvPanel-sessions",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Games\nGame Sessions\nGames\nYour collection & progress\nMidnight\nNeon\nCrimson\nAurora\nAdd Game\nOverview\nMy Games\nMission Progress\nWeekly Tasks\nSuggestions\nSessions\nJournal\nAppearance\n06 / YOUR GAMES\nGaming Sessions\nAlan Wake 2\nResident Evil 4\nDiablo Immortal\nCyberpunk 2077\nHades\nDeath Stranding\nStart Session\nAlan Wake 2\nResident Evil 4\nDiablo Immortal\nCyberpunk 2077\nHades\nDeath Stranding\nLog Session\nAlan Wake 2 — 1m · 10/3/2026\nOneSpace · your focused space for work and life"
+    }
+  }
+]

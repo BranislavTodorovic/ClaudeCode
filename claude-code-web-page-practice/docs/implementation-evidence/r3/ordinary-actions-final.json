@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Start",
+    "elapsedMs": 62,
+    "observation": {
+      "client": 375,
+      "dialogs": [],
+      "focus": "focusStart",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 375,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nFocus\n25:00\nONE THING AT A TIME\nPause\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "name": "Pause",
+    "elapsedMs": 28,
+    "observation": {
+      "client": 375,
+      "dialogs": [],
+      "focus": "focusStart",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 375,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nPaused\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "name": "Reset",
+    "elapsedMs": 26,
+    "observation": {
+      "client": 375,
+      "dialogs": [],
+      "focus": "focusReset",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 375,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "name": "25 min",
+    "elapsedMs": 26,
+    "observation": {
+      "client": 375,
+      "dialogs": [],
+      "focus": "focusMode",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 375,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nShort break\n05:00\nONE THING AT A TIME\nStart\nReset\n5 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "name": "5 min",
+    "elapsedMs": 26,
+    "observation": {
+      "client": 375,
+      "dialogs": [],
+      "focus": "focusMode",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 375,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  }
+]

@@ -1139,6 +1139,7 @@
     document.getElementById("gvJournalSave").textContent = "Save Entry";
     document.getElementById("gvJournalCancel").hidden = true;
     document.getElementById("gvJournalError").textContent = "";
+    document.getElementById("gvJournalTitle").focus();
   }
   function deleteJournalEntry(id,confirmed) {
     if(!confirmed){window.OneSpaceUI.confirm('Delete journal entry?','This entry will be removed.',function(){return deleteJournalEntry(id,true);});return;}
@@ -1146,6 +1147,8 @@
     if(!saveJournal())return false;
     if (editingJournalId === id) cancelJournalEdit();
     renderJournalPanel();
+    queueMicrotask(function () { document.getElementById("gvJournalTitle").focus(); });
+    return true;
   }
   function wireJournal() {
     document.getElementById("gvJournalForm").addEventListener("submit", function (e) {

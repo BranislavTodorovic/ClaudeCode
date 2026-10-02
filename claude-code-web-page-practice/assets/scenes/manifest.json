@@ -380,5 +380,5 @@
     }
   ],
   "displayDerivation": "2026-10-01: original PNG masters retained unchanged; 1600px JPEG display copies, quality 85, Windows System.Drawing high-quality bicubic resizing. The shared host defers hidden worlds and reuses loaded images. Artwork never blocks UI readiness.",
-  "rendering": "Reviewed five scene images are capped at native 1672x941 pixels. Architectural CSS side fields extend the viewport; no bitmap upscale. Bottom-aligned short-height crop preserves semantic objects above live cards. Full masters are retained only as fallback and provenance."
+  "rendering": "Home, Work, Personal, Explore and Games use native fullbleed composition: Home2144x1254; other four2508x1254. Runtime JPEGs retain the native canvas with a viewport cover crop. No CSS architectural side fill or capped1672 scene remains. Retained PNG masters, source panels and provenance remain intact. Future worlds retain their existing assets."
 }

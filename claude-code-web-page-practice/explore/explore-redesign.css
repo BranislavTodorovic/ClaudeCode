@@ -43,10 +43,7 @@ body[data-page="explore"] .wrap { width: 100% !important; max-width: none; min-w
 .osr-explore-row small { display: block; font-size: .75rem; color: var(--osr-muted); }
 .osr-explore-portals { grid-template-columns: repeat(5,minmax(0,1fr)); margin-top: 16px; }
 .osr-explore-portal { min-height: clamp(210px,15vw,230px); }
-.osr-explore-portal[data-portal="travel-guides"] img,.osr-explore-portal[data-portal="bucket-list"] img { width: 180%; max-width: none; }
-.osr-explore-portal[data-portal="bucket-list"] img { left: -60%; }
-.osr-explore-portal[data-portal="travel-guides"] img { object-position: 17% center; }
-.osr-explore-portal[data-portal="bucket-list"] img { object-position: 52% 75%; }
+.osr-explore-portal img { object-position:50% 45%; }
 .osr-explore-portal .osr-portal-copy { padding: 18px 56px 18px 17px; }
 .osr-explore-portal .osr-portal-copy small { font-size: .73rem; }
 /* The visible card is the single control; no transparent stretched action overlay.

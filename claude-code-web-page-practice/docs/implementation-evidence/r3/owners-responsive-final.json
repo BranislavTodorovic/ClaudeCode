@@ -1,0 +1,8156 @@
+[
+  {
+    "world": "work",
+    "name": "Board",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Work board & timeline",
+      "height": 1152,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1713,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "work",
+    "name": "Projects",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Projects",
+      "height": 1152,
+      "identity": "projects",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2201,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "work",
+    "name": "Backlog",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Work backlog",
+      "height": 1152,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1311,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "work",
+    "name": "History",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Retained Work History",
+      "height": 1152,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1366,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Personal Life",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Personal goals",
+      "height": 1152,
+      "identity": "personal-life",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1263,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Routine",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Personal routines",
+      "height": 1152,
+      "identity": "recovery",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1263,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Habit",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Personal habits",
+      "height": 1152,
+      "identity": "mindfulness",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1263,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Destinations",
+      "height": 1152,
+      "identity": "destinations",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 623,
+            "x": 60,
+            "y": 2207.953125
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2552,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Bucket List",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Bucket List & trip plans",
+      "height": 1152,
+      "identity": "bucket-list",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 623,
+            "x": 60,
+            "y": 2207.953125
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2552,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Discover More",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Discover More · travel resources",
+      "height": 1152,
+      "identity": "discover-more",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 623,
+            "x": 60,
+            "y": 2207.953125
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2552,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Overview",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "heading": "Games overview",
+      "height": 1152,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1665,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "My Games",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Game Library",
+      "height": 1152,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 623,
+            "x": 60,
+            "y": 705.734375
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 271.5,
+            "y": 840.734375
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 623,
+            "x": 705,
+            "y": 705.734375
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 916.5,
+            "y": 840.734375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 623,
+            "x": 1350,
+            "y": 705.734375
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 1561.5,
+            "y": 840.734375
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 623,
+            "x": 60,
+            "y": 1183.796875
+          },
+          "src": "assets/game-art/cyberpunk-2077-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 271.5,
+            "y": 1318.796875
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 623,
+            "x": 705,
+            "y": 1183.796875
+          },
+          "src": "assets/game-art/hades-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 916.5,
+            "y": 1318.796875
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 623,
+            "x": 1350,
+            "y": 1183.796875
+          },
+          "src": "assets/game-art/death-stranding-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 1561.5,
+            "y": 1318.796875
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1798,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Mission Progress",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Missions & Quests",
+      "height": 1152,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 68,
+            "y": 575
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 224.96875,
+            "y": 575
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 394.046875,
+            "y": 575
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 573.984375,
+            "y": 575
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 694.234375,
+            "y": 575
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 82,
+            "y": 645
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1604,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Weekly Tasks",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Weekly Tasks",
+      "height": 1152,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 68,
+            "y": 575
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 82,
+            "y": 645
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1405,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Suggestions",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Discover Games",
+      "height": 1152,
+      "identity": "discover-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 723.328125,
+            "y": 970.90625
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 1349.65625,
+            "y": 970.90625
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 97,
+            "y": 1353.03125
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 723.328125,
+            "y": 1353.03125
+          },
+          "src": "assets/game-art/cyberpunk-2077-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 1349.65625,
+            "y": 1353.03125
+          },
+          "src": "assets/game-art/hades-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 97,
+            "y": 1735.15625
+          },
+          "src": "assets/game-art/death-stranding-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 723.328125,
+            "y": 1735.15625
+          },
+          "src": "assets/game-art/hollow-knight-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 1349.65625,
+            "y": 1735.15625
+          },
+          "src": "assets/game-art/elden-ring-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 97,
+            "y": 2117.28125
+          },
+          "src": "assets/game-art/gow-ragnarok-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 723.328125,
+            "y": 2117.28125
+          },
+          "src": "assets/game-art/bg3-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 1349.65625,
+            "y": 2117.28125
+          },
+          "src": "assets/game-art/stardew-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 97,
+            "y": 2499.40625
+          },
+          "src": "assets/game-art/it-takes-two-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 723.328125,
+            "y": 2499.40625
+          },
+          "src": "assets/game-art/forza5-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 1349.65625,
+            "y": 2499.40625
+          },
+          "src": "assets/game-art/dead-cells-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 97,
+            "y": 2881.53125
+          },
+          "src": "assets/game-art/outer-wilds-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 586.328125,
+            "x": 723.328125,
+            "y": 2881.53125
+          },
+          "src": "assets/game-art/persona5-hero.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 3415,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Sessions",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "heading": "Game Sessions",
+      "height": 1152,
+      "identity": "game-sessions",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1665,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Journal",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "heading": "Game Journal",
+      "height": 1152,
+      "identity": "my-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1665,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "games",
+    "name": "Appearance",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "heading": "Game Settings",
+      "height": 1152,
+      "identity": "game-settings",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1665,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "heading": "Plan your day",
+      "height": 1152,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1665,
+            "y": 97
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "productivity",
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2048,
+      "heading": "Ideas & Notes",
+      "height": 1152,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1665,
+            "y": 97
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "notes",
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "size": [
+      2048,
+      1152
+    ],
+    "observation": {
+      "client": 2033,
+      "heading": "Quick Access & shortcuts",
+      "height": 1152,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1650,
+            "y": 97
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "shortcuts",
+      "scrollHeight": 1339,
+      "scrollWidth": 2033,
+      "small": [],
+      "width": 2048
+    }
+  },
+  {
+    "world": "work",
+    "name": "Board",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Work board & timeline",
+      "height": 844,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": -260.296875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 3867,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "work",
+    "name": "Projects",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Projects",
+      "height": 844,
+      "identity": "projects",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": -260.296875
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 4224,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "work",
+    "name": "Backlog",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Work backlog",
+      "height": 844,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": -260.296875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 3430,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "work",
+    "name": "History",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Retained Work History",
+      "height": 844,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": -260.296875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 4470,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Personal Life",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Personal goals",
+      "height": 844,
+      "identity": "personal-life",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 452.703125
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 4261,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Routine",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Personal routines",
+      "height": 844,
+      "identity": "recovery",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 452.703125
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 4261,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Habit",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Personal habits",
+      "height": 844,
+      "identity": "mindfulness",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 452.703125
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 4261,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Destinations",
+      "height": 844,
+      "identity": "destinations",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 452.703125
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 315,
+            "x": 30,
+            "y": 3771.96875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 4109,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Bucket List",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Bucket List & trip plans",
+      "height": 844,
+      "identity": "bucket-list",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 452.703125
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 315,
+            "x": 30,
+            "y": 3771.96875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 4109,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Discover More",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Discover More · travel resources",
+      "height": 844,
+      "identity": "discover-more",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 483.40625
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 315,
+            "x": 30,
+            "y": 3802.671875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 4139,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Overview",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Games overview",
+      "height": 844,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 148.703125
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1506,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "My Games",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Game Library",
+      "height": 844,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 148.703125
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 283,
+            "x": 46,
+            "y": 1010.6875
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 226.390625,
+            "x": 94.296875,
+            "y": 1145.6875
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 283,
+            "x": 46,
+            "y": 1509.125
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 226.390625,
+            "x": 94.296875,
+            "y": 1644.125
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 283,
+            "x": 46,
+            "y": 2007.5625
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 226.390625,
+            "x": 94.296875,
+            "y": 2142.5625
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 283,
+            "x": 46,
+            "y": 2506
+          },
+          "src": "assets/game-art/cyberpunk-2077-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 226.390625,
+            "x": 94.296875,
+            "y": 2641
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 283,
+            "x": 46,
+            "y": 3004.4375
+          },
+          "src": "assets/game-art/hades-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 226.390625,
+            "x": 94.296875,
+            "y": 3139.4375
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 283,
+            "x": 46,
+            "y": 3502.875
+          },
+          "src": "assets/game-art/death-stranding-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 226.390625,
+            "x": 94.296875,
+            "y": 3637.875
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 4502,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Mission Progress",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Missions & Quests",
+      "height": 844,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 99.703125
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 729.40625
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 781.40625
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 833.40625
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 885.40625
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 937.40625
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 68,
+            "y": 1013.171875
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 2419,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Weekly Tasks",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Weekly Tasks",
+      "height": 844,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 99.703125
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 729.40625
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 68,
+            "y": 805.171875
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 2184,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Suggestions",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Discover Games",
+      "height": 844,
+      "identity": "discover-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 50.703125
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 1839.875
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 2322
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 2804.125
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 3286.25
+          },
+          "src": "assets/game-art/cyberpunk-2077-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 3768.375
+          },
+          "src": "assets/game-art/hades-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 4250.5
+          },
+          "src": "assets/game-art/death-stranding-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 4732.625
+          },
+          "src": "assets/game-art/hollow-knight-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 5231.4375
+          },
+          "src": "assets/game-art/elden-ring-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 5713.5625
+          },
+          "src": "assets/game-art/gow-ragnarok-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 6217.015625
+          },
+          "src": "assets/game-art/bg3-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 6715.828125
+          },
+          "src": "assets/game-art/stardew-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 7214.640625
+          },
+          "src": "assets/game-art/it-takes-two-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 7696.765625
+          },
+          "src": "assets/game-art/forza5-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 8178.890625
+          },
+          "src": "assets/game-art/dead-cells-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 8677.703125
+          },
+          "src": "assets/game-art/outer-wilds-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 209,
+            "x": 83,
+            "y": 9176.515625
+          },
+          "src": "assets/game-art/persona5-hero.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 10788,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Sessions",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Game Sessions",
+      "height": 844,
+      "identity": "game-sessions",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 50.703125
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1709,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Journal",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Game Journal",
+      "height": 844,
+      "identity": "my-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 1.703125
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1717,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "games",
+    "name": "Appearance",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Game Settings",
+      "height": 844,
+      "identity": "game-settings",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 285,
+            "x": 45,
+            "y": 1.703125
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1511,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Plan your day",
+      "height": 844,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 194.703125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "productivity",
+      "scrollHeight": 2036,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Ideas & Notes",
+      "height": 844,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 221.703125
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "notes",
+      "scrollHeight": 1315,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "size": [
+      390,
+      844
+    ],
+    "observation": {
+      "client": 375,
+      "heading": "Quick Access & shortcuts",
+      "height": 844,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 317,
+            "x": 29,
+            "y": 266.703125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "shortcuts",
+      "scrollHeight": 3400,
+      "scrollWidth": 375,
+      "small": [],
+      "width": 390
+    }
+  },
+  {
+    "world": "work",
+    "name": "Board",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Work board & timeline",
+      "height": 1080,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1738,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "work",
+    "name": "Projects",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Projects",
+      "height": 1080,
+      "identity": "projects",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2249,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "work",
+    "name": "Backlog",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Work backlog",
+      "height": 1080,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1337,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "work",
+    "name": "History",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Retained Work History",
+      "height": 1080,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1392,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Personal Life",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Personal goals",
+      "height": 1080,
+      "identity": "personal-life",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 94
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1263,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Routine",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Personal routines",
+      "height": 1080,
+      "identity": "recovery",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1263,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Habit",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Personal habits",
+      "height": 1080,
+      "identity": "mindfulness",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1263,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Destinations",
+      "height": 1080,
+      "identity": "destinations",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 581.453125,
+            "x": 58.3125,
+            "y": 2200.296875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2544,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Bucket List",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Bucket List & trip plans",
+      "height": 1080,
+      "identity": "bucket-list",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 581.453125,
+            "x": 58.3125,
+            "y": 2200.296875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2544,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Discover More",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Discover More · travel resources",
+      "height": 1080,
+      "identity": "discover-more",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 581.453125,
+            "x": 58.3125,
+            "y": 2200.296875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2544,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Overview",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1920,
+      "heading": "Games overview",
+      "height": 1080,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1538.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "My Games",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Game Library",
+      "height": 1080,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 581.453125,
+            "x": 58.3125,
+            "y": 705.734375
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 249.03125,
+            "y": 840.734375
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 581.453125,
+            "x": 661.765625,
+            "y": 705.734375
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 852.484375,
+            "y": 840.734375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 581.453125,
+            "x": 1265.21875,
+            "y": 705.734375
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 1455.9375,
+            "y": 840.734375
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 581.453125,
+            "x": 58.3125,
+            "y": 1183.796875
+          },
+          "src": "assets/game-art/cyberpunk-2077-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 249.03125,
+            "y": 1318.796875
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 581.453125,
+            "x": 661.765625,
+            "y": 1183.796875
+          },
+          "src": "assets/game-art/hades-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 852.484375,
+            "y": 1318.796875
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 581.453125,
+            "x": 1265.21875,
+            "y": 1183.796875
+          },
+          "src": "assets/game-art/death-stranding-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 1455.9375,
+            "y": 1318.796875
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1798,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Mission Progress",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Missions & Quests",
+      "height": 1080,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 66.3125,
+            "y": 575
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 223.28125,
+            "y": 575
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 392.359375,
+            "y": 575
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 572.296875,
+            "y": 575
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 692.546875,
+            "y": 575
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 80.3125,
+            "y": 645
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1604,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Weekly Tasks",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Weekly Tasks",
+      "height": 1080,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 66.3125,
+            "y": 575
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 80.3125,
+            "y": 645
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1405,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Suggestions",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Discover Games",
+      "height": 1080,
+      "identity": "discover-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 680.09375,
+            "y": 970.90625
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 1264.890625,
+            "y": 970.90625
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.78125,
+            "x": 95.3125,
+            "y": 1353.03125
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 680.09375,
+            "y": 1353.03125
+          },
+          "src": "assets/game-art/cyberpunk-2077-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 1264.890625,
+            "y": 1353.03125
+          },
+          "src": "assets/game-art/hades-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.78125,
+            "x": 95.3125,
+            "y": 1735.15625
+          },
+          "src": "assets/game-art/death-stranding-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 680.09375,
+            "y": 1735.15625
+          },
+          "src": "assets/game-art/hollow-knight-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 1264.890625,
+            "y": 1735.15625
+          },
+          "src": "assets/game-art/elden-ring-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.78125,
+            "x": 95.3125,
+            "y": 2117.28125
+          },
+          "src": "assets/game-art/gow-ragnarok-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 680.09375,
+            "y": 2117.28125
+          },
+          "src": "assets/game-art/bg3-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 1264.890625,
+            "y": 2117.28125
+          },
+          "src": "assets/game-art/stardew-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.78125,
+            "x": 95.3125,
+            "y": 2499.40625
+          },
+          "src": "assets/game-art/it-takes-two-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 680.09375,
+            "y": 2499.40625
+          },
+          "src": "assets/game-art/forza5-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 1264.890625,
+            "y": 2499.40625
+          },
+          "src": "assets/game-art/dead-cells-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.78125,
+            "x": 95.3125,
+            "y": 2881.53125
+          },
+          "src": "assets/game-art/outer-wilds-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 544.796875,
+            "x": 680.09375,
+            "y": 2881.53125
+          },
+          "src": "assets/game-art/persona5-hero.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 3415,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Sessions",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1920,
+      "heading": "Game Sessions",
+      "height": 1080,
+      "identity": "game-sessions",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1538.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Journal",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Game Journal",
+      "height": 1080,
+      "identity": "my-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1149,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "games",
+    "name": "Appearance",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1920,
+      "heading": "Game Settings",
+      "height": 1080,
+      "identity": "game-settings",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1538.6875,
+            "y": 109
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1920,
+      "heading": "Plan your day",
+      "height": 1080,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1538.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "productivity",
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1920,
+      "heading": "Ideas & Notes",
+      "height": 1080,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1538.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "notes",
+      "scrollHeight": 1080,
+      "scrollWidth": 1920,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "size": [
+      1920,
+      1080
+    ],
+    "observation": {
+      "client": 1905,
+      "heading": "Quick Access & shortcuts",
+      "height": 1080,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 320,
+            "x": 1523.6875,
+            "y": 97
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "shortcuts",
+      "scrollHeight": 1339,
+      "scrollWidth": 1905,
+      "small": [],
+      "width": 1920
+    }
+  },
+  {
+    "world": "work",
+    "name": "Board",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Work board & timeline",
+      "height": 900,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 76.59375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1785,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "work",
+    "name": "Projects",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Projects",
+      "height": 900,
+      "identity": "projects",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 76.59375
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2591,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "work",
+    "name": "Backlog",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Work backlog",
+      "height": 900,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 76.59375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1383,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "work",
+    "name": "History",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Retained Work History",
+      "height": 900,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 76.59375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 1731,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Personal Life",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Personal goals",
+      "height": 900,
+      "identity": "personal-life",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 166.59375
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1525,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Routine",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Personal routines",
+      "height": 900,
+      "identity": "recovery",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 166.59375
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1525,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Habit",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Personal habits",
+      "height": 900,
+      "identity": "mindfulness",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 166.59375
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 1525,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Destinations",
+      "height": 900,
+      "identity": "destinations",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 163.59375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 428.171875,
+            "x": 48.234375,
+            "y": 2241.453125
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2585,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Bucket List",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Bucket List & trip plans",
+      "height": 900,
+      "identity": "bucket-list",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 166.59375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 428.171875,
+            "x": 48.234375,
+            "y": 2244.453125
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2585,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Discover More",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Discover More · travel resources",
+      "height": 900,
+      "identity": "discover-more",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 166.59375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 428.171875,
+            "x": 48.234375,
+            "y": 2244.453125
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2585,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Overview",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Games overview",
+      "height": 900,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 976,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "My Games",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Game Library",
+      "height": 900,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 428.171875,
+            "x": 48.234375,
+            "y": 775.328125
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 162.3125,
+            "y": 910.328125
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 428.171875,
+            "x": 498.40625,
+            "y": 775.328125
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 612.484375,
+            "y": 910.328125
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 428.1875,
+            "x": 948.578125,
+            "y": 775.328125
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 1062.671875,
+            "y": 910.328125
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 428.171875,
+            "x": 48.234375,
+            "y": 1253.390625
+          },
+          "src": "assets/game-art/cyberpunk-2077-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 162.3125,
+            "y": 1388.390625
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 428.171875,
+            "x": 498.40625,
+            "y": 1253.390625
+          },
+          "src": "assets/game-art/hades-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 612.484375,
+            "y": 1388.390625
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 428.1875,
+            "x": 948.578125,
+            "y": 1253.390625
+          },
+          "src": "assets/game-art/death-stranding-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 1062.671875,
+            "y": 1388.390625
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1864,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Mission Progress",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Missions & Quests",
+      "height": 900,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 56.234375,
+            "y": 644.59375
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 213.203125,
+            "y": 644.59375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 382.28125,
+            "y": 644.59375
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 562.21875,
+            "y": 644.59375
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 682.46875,
+            "y": 644.59375
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 70.234375,
+            "y": 714.59375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1670,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Weekly Tasks",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Weekly Tasks",
+      "height": 900,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 56.234375,
+            "y": 644.59375
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 70.234375,
+            "y": 714.59375
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1471,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Suggestions",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Discover Games",
+      "height": 900,
+      "identity": "discover-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.515625,
+            "x": 516.734375,
+            "y": 1140.5
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 948.25,
+            "y": 1140.5
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 85.234375,
+            "y": 1572.625
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.515625,
+            "x": 516.734375,
+            "y": 1572.625
+          },
+          "src": "assets/game-art/cyberpunk-2077-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 948.25,
+            "y": 1572.625
+          },
+          "src": "assets/game-art/hades-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 85.234375,
+            "y": 2004.75
+          },
+          "src": "assets/game-art/death-stranding-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.515625,
+            "x": 516.734375,
+            "y": 2004.75
+          },
+          "src": "assets/game-art/hollow-knight-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 948.25,
+            "y": 2004.75
+          },
+          "src": "assets/game-art/elden-ring-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 85.234375,
+            "y": 2436.875
+          },
+          "src": "assets/game-art/gow-ragnarok-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.515625,
+            "x": 516.734375,
+            "y": 2436.875
+          },
+          "src": "assets/game-art/bg3-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 948.25,
+            "y": 2436.875
+          },
+          "src": "assets/game-art/stardew-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 85.234375,
+            "y": 2869
+          },
+          "src": "assets/game-art/it-takes-two-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.515625,
+            "x": 516.734375,
+            "y": 2869
+          },
+          "src": "assets/game-art/forza5-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 948.25,
+            "y": 2869
+          },
+          "src": "assets/game-art/dead-cells-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.5,
+            "x": 85.234375,
+            "y": 3301.125
+          },
+          "src": "assets/game-art/outer-wilds-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 391.515625,
+            "x": 516.734375,
+            "y": 3301.125
+          },
+          "src": "assets/game-art/persona5-hero.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 3881,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Sessions",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Game Sessions",
+      "height": 900,
+      "identity": "game-sessions",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 943,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Journal",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Game Journal",
+      "height": 900,
+      "identity": "my-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1215,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "games",
+    "name": "Appearance",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1440,
+      "heading": "Game Settings",
+      "height": 900,
+      "identity": "game-settings",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1129.578125,
+            "y": 178.59375
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 900,
+      "scrollWidth": 1440,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Plan your day",
+      "height": 900,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 162.59375
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "productivity",
+      "scrollHeight": 1028,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Ideas & Notes",
+      "height": 900,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 162.59375
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "notes",
+      "scrollHeight": 1035,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "size": [
+      1440,
+      900
+    ],
+    "observation": {
+      "client": 1425,
+      "heading": "Quick Access & shortcuts",
+      "height": 900,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 259.1875,
+            "x": 1114.578125,
+            "y": 166.59375
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "shortcuts",
+      "scrollHeight": 1405,
+      "scrollWidth": 1425,
+      "small": [],
+      "width": 1440
+    }
+  },
+  {
+    "world": "work",
+    "name": "Board",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Work board & timeline",
+      "height": 768,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": -101.640625
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2489,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "work",
+    "name": "Projects",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Projects",
+      "height": 768,
+      "identity": "projects",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": -101.640625
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2956,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "work",
+    "name": "Backlog",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Work backlog",
+      "height": 768,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": -101.640625
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2059,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "work",
+    "name": "History",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Retained Work History",
+      "height": 768,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": -101.640625
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2588,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Personal Life",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Personal goals",
+      "height": 768,
+      "identity": "personal-life",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 172.359375
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 2226,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Routine",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Personal routines",
+      "height": 768,
+      "identity": "recovery",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 172.359375
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 2226,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Habit",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Personal habits",
+      "height": 768,
+      "identity": "mindfulness",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 172.359375
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 2226,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Destinations",
+      "height": 768,
+      "identity": "destinations",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 169.359375
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 295.328125,
+            "x": 39.5,
+            "y": 2623.5625
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2967,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Bucket List",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Bucket List & trip plans",
+      "height": 768,
+      "identity": "bucket-list",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 172.359375
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 295.328125,
+            "x": 39.5,
+            "y": 2626.5625
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2967,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Discover More",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Discover More · travel resources",
+      "height": 768,
+      "identity": "discover-more",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 172.359375
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 295.328125,
+            "x": 39.5,
+            "y": 2626.5625
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 2967,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Overview",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Games overview",
+      "height": 768,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 143.359375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1087,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "My Games",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Game Library",
+      "height": 768,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 143.359375
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 432.5,
+            "x": 61,
+            "y": 805.09375
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 177.25,
+            "y": 940.09375
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 432.5,
+            "x": 515.5,
+            "y": 805.09375
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 631.75,
+            "y": 940.09375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 432.5,
+            "x": 61,
+            "y": 1283.15625
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 177.25,
+            "y": 1418.15625
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 432.5,
+            "x": 515.5,
+            "y": 1283.15625
+          },
+          "src": "assets/game-art/cyberpunk-2077-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 631.75,
+            "y": 1418.15625
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 432.5,
+            "x": 61,
+            "y": 1761.21875
+          },
+          "src": "assets/game-art/hades-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 177.25,
+            "y": 1896.21875
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 432.5,
+            "x": 515.5,
+            "y": 1761.21875
+          },
+          "src": "assets/game-art/death-stranding-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 631.75,
+            "y": 1896.21875
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 2469,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Mission Progress",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Missions & Quests",
+      "height": 768,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 143.359375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 69,
+            "y": 658.359375
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 225.96875,
+            "y": 658.359375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 395.046875,
+            "y": 658.359375
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 574.984375,
+            "y": 658.359375
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 695.234375,
+            "y": 658.359375
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 83,
+            "y": 728.359375
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1781,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Weekly Tasks",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Weekly Tasks",
+      "height": 768,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 143.359375
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 69,
+            "y": 658.359375
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 83,
+            "y": 728.359375
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1582,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Suggestions",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Discover Games",
+      "height": 768,
+      "identity": "discover-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 143.359375
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 1149.03125
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 1581.15625
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 1581.15625
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 2013.28125
+          },
+          "src": "assets/game-art/cyberpunk-2077-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 2013.28125
+          },
+          "src": "assets/game-art/hades-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 2445.40625
+          },
+          "src": "assets/game-art/death-stranding-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 2445.40625
+          },
+          "src": "assets/game-art/hollow-knight-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 2877.53125
+          },
+          "src": "assets/game-art/elden-ring-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 2877.53125
+          },
+          "src": "assets/game-art/gow-ragnarok-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 3309.65625
+          },
+          "src": "assets/game-art/bg3-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 3309.65625
+          },
+          "src": "assets/game-art/stardew-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 3741.78125
+          },
+          "src": "assets/game-art/it-takes-two-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 3741.78125
+          },
+          "src": "assets/game-art/forza5-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 4173.90625
+          },
+          "src": "assets/game-art/dead-cells-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 524.5,
+            "y": 4173.90625
+          },
+          "src": "assets/game-art/outer-wilds-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 386.5,
+            "x": 98,
+            "y": 4606.03125
+          },
+          "src": "assets/game-art/persona5-hero.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 5283,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Sessions",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Game Sessions",
+      "height": 768,
+      "identity": "game-sessions",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 143.359375
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1054,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Journal",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Game Journal",
+      "height": 768,
+      "identity": "my-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 94.359375
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1326,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "games",
+    "name": "Appearance",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Game Settings",
+      "height": 768,
+      "identity": "game-settings",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 760.6875,
+            "y": 94.359375
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 989,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Plan your day",
+      "height": 768,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 114.359375
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "productivity",
+      "scrollHeight": 1407,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Ideas & Notes",
+      "height": 768,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 129.359375
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "notes",
+      "scrollHeight": 1020,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "size": [
+      1024,
+      768
+    ],
+    "observation": {
+      "client": 1009,
+      "heading": "Quick Access & shortcuts",
+      "height": 768,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 96,
+            "width": 184.3125,
+            "x": 782.1875,
+            "y": 164.359375
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "shortcuts",
+      "scrollHeight": 1645,
+      "scrollWidth": 1009,
+      "small": [],
+      "width": 1024
+    }
+  },
+  {
+    "world": "work",
+    "name": "Board",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Work board & timeline",
+      "height": 900,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": -174.296875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2925,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "work",
+    "name": "Projects",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Projects",
+      "height": 900,
+      "identity": "projects",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            768
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": -174.296875
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 3498,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "work",
+    "name": "Backlog",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Work backlog",
+      "height": 900,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": -174.296875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 2507,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "work",
+    "name": "History",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Retained Work History",
+      "height": 900,
+      "identity": "kanban-board",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": -174.296875
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "work",
+      "scrollHeight": 3036,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Personal Life",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Personal goals",
+      "height": 900,
+      "identity": "personal-life",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 306.703125
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 3191,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Routine",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Personal routines",
+      "height": 900,
+      "identity": "recovery",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 306.703125
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 3191,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Habit",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Personal habits",
+      "height": 900,
+      "identity": "mindfulness",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            640,
+            960
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 306.703125
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "personal",
+      "scrollHeight": 3191,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Destinations",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Destinations",
+      "height": 900,
+      "identity": "destinations",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 304.703125
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 685,
+            "x": 30,
+            "y": 3427.71875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 3766,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Bucket List",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Bucket List & trip plans",
+      "height": 900,
+      "identity": "bucket-list",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 306.703125
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 685,
+            "x": 30,
+            "y": 3429.71875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 3766,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Discover More",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Discover More · travel resources",
+      "height": 900,
+      "identity": "discover-more",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 306.703125
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            600
+          ],
+          "position": "64% 46%",
+          "render": {
+            "height": 278,
+            "width": 685,
+            "x": 30,
+            "y": 3429.71875
+          },
+          "src": "assets/scenes/explore/travel-inspiration.webp"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "explore",
+      "scrollHeight": 3766,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Overview",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Games overview",
+      "height": 900,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 164.703125
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1249,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "My Games",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Game Library",
+      "height": 900,
+      "identity": "game-library",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 164.703125
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 315.5,
+            "x": 46,
+            "y": 943.421875
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 103.75,
+            "y": 1078.421875
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 315.5,
+            "x": 383.5,
+            "y": 943.421875
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 441.25,
+            "y": 1078.421875
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 315.5,
+            "x": 46,
+            "y": 1426.265625
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 103.75,
+            "y": 1561.265625
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 315.5,
+            "x": 383.5,
+            "y": 1426.265625
+          },
+          "src": "assets/game-art/cyberpunk-2077-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 441.25,
+            "y": 1561.265625
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 315.5,
+            "x": 46,
+            "y": 1909.109375
+          },
+          "src": "assets/game-art/hades-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 103.75,
+            "y": 2044.109375
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            460,
+            215
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 200,
+            "width": 315.5,
+            "x": 383.5,
+            "y": 1909.109375
+          },
+          "src": "assets/game-art/death-stranding-card.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "0% 100%",
+          "render": {
+            "height": 45,
+            "width": 240,
+            "x": 441.25,
+            "y": 2044.109375
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 2731,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Mission Progress",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Missions & Quests",
+      "height": 900,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 164.703125
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            800,
+            166
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 711.140625
+          },
+          "src": "assets/game-art/alan-wake-2-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 210.96875,
+            "y": 711.140625
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 380.046875,
+            "y": 711.140625
+          },
+          "src": "assets/game-art/cyberpunk-2077-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 559.984375,
+            "y": 711.140625
+          },
+          "src": "assets/game-art/hades-logo.png"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            360
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 763.140625
+          },
+          "src": "assets/game-art/death-stranding-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            121
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 68,
+            "y": 833.140625
+          },
+          "src": "assets/game-art/resident-evil-4-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1947,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Weekly Tasks",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Weekly Tasks",
+      "height": 900,
+      "identity": "missions-quests",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 164.703125
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "fit": "contain",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 18,
+            "width": 44,
+            "x": 54,
+            "y": 711.140625
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        },
+        {
+          "fit": "fill",
+          "natural": [
+            640,
+            320
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 52,
+            "width": 96,
+            "x": 68,
+            "y": 781.140625
+          },
+          "src": "assets/game-art/diablo-immortal-logo.png"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1727,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Suggestions",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Discover Games",
+      "height": 900,
+      "identity": "discover-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 115.703125
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            2560,
+            1318
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 1372
+          },
+          "src": "assets/game-art/alan-wake-2.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 1754.125
+          },
+          "src": "assets/game-art/resident-evil-4.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            996
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 2136.25
+          },
+          "src": "assets/game-art/diablo-immortal.webp"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 2518.375
+          },
+          "src": "assets/game-art/cyberpunk-2077-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 2900.5
+          },
+          "src": "assets/game-art/hades-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 3282.625
+          },
+          "src": "assets/game-art/death-stranding-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 3664.75
+          },
+          "src": "assets/game-art/hollow-knight-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 4046.875
+          },
+          "src": "assets/game-art/elden-ring-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 4429
+          },
+          "src": "assets/game-art/gow-ragnarok-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 4811.125
+          },
+          "src": "assets/game-art/bg3-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            1920,
+            620
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 5193.25
+          },
+          "src": "assets/game-art/stardew-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 5575.375
+          },
+          "src": "assets/game-art/it-takes-two-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 5957.5
+          },
+          "src": "assets/game-art/forza5-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 6339.625
+          },
+          "src": "assets/game-art/dead-cells-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 6721.75
+          },
+          "src": "assets/game-art/outer-wilds-hero.jpg"
+        },
+        {
+          "fit": "cover",
+          "natural": [
+            0,
+            0
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 154,
+            "width": 579,
+            "x": 83,
+            "y": 7103.875
+          },
+          "src": "assets/game-art/persona5-hero.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 8271,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Sessions",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Game Sessions",
+      "height": 900,
+      "identity": "game-sessions",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 115.703125
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1269,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Journal",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Game Journal",
+      "height": 900,
+      "identity": "my-games",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 115.703125
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1488,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "games",
+    "name": "Appearance",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Game Settings",
+      "height": 900,
+      "identity": "game-settings",
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 655,
+            "x": 45,
+            "y": 115.703125
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "games",
+      "scrollHeight": 1281,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "home",
+    "name": "Plan my day",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Plan your day",
+      "height": 900,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 265.703125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "productivity",
+      "scrollHeight": 1866,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "home",
+    "name": "Brainstorm ideas",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Ideas & Notes",
+      "height": 900,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 271.703125
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "notes",
+      "scrollHeight": 1144,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "size": [
+      760,
+      900
+    ],
+    "observation": {
+      "client": 745,
+      "heading": "Quick Access & shortcuts",
+      "height": 900,
+      "images": [
+        {
+          "fit": "cover",
+          "natural": [
+            960,
+            640
+          ],
+          "position": "50% 50%",
+          "render": {
+            "height": 110,
+            "width": 687,
+            "x": 29,
+            "y": 301.703125
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        }
+      ],
+      "ownerVisible": true,
+      "page": "shortcuts",
+      "scrollHeight": 2022,
+      "scrollWidth": 745,
+      "small": [],
+      "width": 760
+    }
+  }
+]

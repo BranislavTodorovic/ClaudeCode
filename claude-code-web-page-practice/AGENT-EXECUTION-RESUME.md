@@ -1,10 +1,18 @@
+# OneSpace — current master correction checkpoint
+
+**Current master correction checkpoint (2026-10-03; continuation of 2026-10-02):** Branch main / HEAD 143451f359880c13569ef33d751868aba9b73133. Existing interrupted work and the prior resume path edits were preserved; current changes remain unstaged/uncommitted. The unavailable btodorovic scratch matrix is expected and has been replaced with an honest durable ledger: 80 supported recovered observations, 352 freshly observed trials (349 distinct trial identifiers), four required native checks, and one explicitly superseded unverified attempt. The historical 173-control total is aggregate only. Current Journal focus/CRUD, canonical Productivity/Notes/Shortcuts presentation, retained Work History snapshots/current-item deletion, parent-themed owner/dialog contrast and 44px controls, five lower-cluster/footer layouts, and two Explore generated portals were corrected and verified with supporting evidence. Final checks: 42/42 focused, 265/265 full, 34 direct/reload routes, 126 current-owner size cases, 40 landing cases, 50 quick-action trials, 38 populated summary handoffs, 40 shell-utility trials, and 100 rapid world switches. Normal runtime errors/rejections: none. Existing current main scenes and three prior generated Explore portals remain unchanged. Games stays step 11 IN PROGRESS / IMPLEMENTED / NOT VERIFIED; steps 12–19 PENDING; Gate R3 OPEN; R4/R5 DEFERRED. Earlier Home/Work/Personal/Explore acceptance remains historical; affected current presentation acceptance is reopened. Exact first unresolved authority item: post-correction native Edge Games step-11 hard-refresh acceptance at actual 100% and actual 200% zoom, with explicit user PASS; also review the affected five-world/current-owner scope and actual background/device reduced-motion behavior. No new Games cinematic before legitimate steps 11 and 12 acceptance. Evidence: `docs/implementation-evidence/r3/master-continuation-review-2026-10-02.md` and `review-control-trials-recovered-2026-10-02.json`; detailed final JSON/log/screens are in the same folder.
+
+The latest master continuation request is preserved at `docs/implementation-evidence/r3/master-continuation-request-2026-10-02.md`. All automatable current correction requirements have supporting evidence. Resume at the native acceptance requirements in the report and ledger; do not repeat the missing-old-matrix blocker or promote any later gate. The earlier resume request is retained verbatim below.
+
+---
+
 # OneSpace — Resume From Interrupted Games Journal / Owner-Modernization Audit
 
 Continue the existing OneSpace project from the EXACT persisted working-tree state left when the previous run hit the usage limit.
 
 Project:
 
-`C:\Users\banek\Projects\ClaudeCode\claude-code-web-page-practice\`
+`C:\Users\banek\Documents\Projects\ClaudeCode\claude-code-web-page-practice\`
 
 This is NOT a new implementation plan.
 
@@ -14,7 +22,7 @@ Do NOT reset, clean, discard, overwrite or recreate valid current work.
 
 The previously reported committed baseline at the beginning of the interrupted run was:
 
-`979d3b4 — cinematic redisign fix 02`
+`143451f — added/modified assets, explore, games, outputs, shared, styles, tests, index.html`
 
 but substantial valid work was created AFTER that baseline.
 
@@ -37,7 +45,7 @@ Before editing:
 9. preserve every valid interrupted scene/layout/motion/control/performance change;
 10. identify only genuinely disposable artifacts separately.
 
-Do NOT reset to `979d3b4`.
+Do NOT reset to `143451f`.
 
 Confirm whether the previous 32-file baseline remains intact and which additional files were modified after it.
 

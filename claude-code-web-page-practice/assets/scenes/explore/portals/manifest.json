@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "assets": [
     {
       "slug": "travel-guides",
@@ -48,10 +48,45 @@
       "date": "2026-10-02",
       "focalPoint": "50% 50%",
       "usage": "Original OneSpace decorative artwork"
+    },
+    {
+      "slug": "destinations",
+      "source": "assets/scenes/explore/portals/destinations.png",
+      "display": "assets/scenes/explore/portals/destinations.jpg",
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "displayWidth": 960,
+      "displayHeight": 640,
+      "displayBytes": 295075,
+      "sha256": "17a0afc6f9e0bc68cf5f073c79a40b5b9f8918ae0fb385f2856273b5e28801c3",
+      "sourceId": "exec-4f9679c4-e662-422a-8d8a-ce4bacd37fe6.png",
+      "promptFile": "docs/implementation-evidence/r3/explore-portal-prompts-2026-10-02.md",
+      "production": "Independent OpenAI image generation; original native PNG retained; downsampled JPEG quality92",
+      "date": "2026-10-02",
+      "focalPoint": "50% 45%",
+      "usage": "Original OneSpace decorative artwork"
+    },
+    {
+      "slug": "experiences",
+      "source": "assets/scenes/explore/portals/experiences.png",
+      "display": "assets/scenes/explore/portals/experiences.jpg",
+      "sourceWidth": 1536,
+      "sourceHeight": 1024,
+      "displayWidth": 960,
+      "displayHeight": 640,
+      "displayBytes": 261022,
+      "sha256": "2e8bf3e5a7a233485cc4459a78acc3b9fffd4dcb9bf898eaa9b46ec382bcc2cc",
+      "sourceId": "exec-9b2ab3e7-70cf-48c6-ac68-aa3b3fdb884f.png",
+      "promptFile": "docs/implementation-evidence/r3/explore-portal-prompts-2026-10-02.md",
+      "production": "Independent OpenAI image generation; original native PNG retained; downsampled JPEG quality92",
+      "date": "2026-10-02",
+      "focalPoint": "50% 45%",
+      "usage": "Original OneSpace decorative artwork"
     }
   ],
   "acceptedArtPreserved": [
-    "Destinations: assets/destinations/crete-card.webp",
-    "Experiences: assets/destinations/costa-rica-card.webp"
+    "travel-guides",
+    "bucket-list",
+    "discover-more"
   ]
 }

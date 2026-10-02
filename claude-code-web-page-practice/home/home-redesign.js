@@ -47,12 +47,16 @@
   function oldPage(world) {
     return OS.goToPage(world);
   }
+  function focusCurrentPage(focusId) {
+    var target = focusId ? doc.getElementById(focusId) : doc.querySelector('[data-page-when="' + doc.body.dataset.page + '"] .osr-title');
+    if (target) { if (target.tagName === 'H1') target.tabIndex = -1; target.focus({ preventScroll: true }); }
+  }
   function go(world, focusId) {
     if (!oldPage(world)) { OS.showToast('Could not open that space. Your current page is unchanged.'); return false; }
-    if (focusId) { var target = doc.getElementById(focusId); if (target) target.focus({ preventScroll: true }); }
+    focusCurrentPage(focusId);
     return true;
   }
-  var shell = foundation.createShell(doc, {
+  var shellHandlers = {
     onNavigate: function (event, world) {
       event.preventDefault();
       if (world === 'projects-notes') { showNotice('Projects & Notes is being prepared. Your projects remain in Work and your notes remain in Quick Notes.'); return; }
@@ -64,7 +68,8 @@
       if (utility === 'notes') go('notes');
       if (utility === 'command') doc.getElementById('paletteHint').click();
     }
-  });
+  };
+  var shell = foundation.createShell(doc, shellHandlers);
   foundation.setActiveWorld(shell, 'home');
   frame.appendChild(shell);
   frame.insertAdjacentHTML('beforeend',
@@ -82,10 +87,10 @@
         '</form>' +
         '<p class="osr-capture-hint">Private on this device · <button type="button" id="osrCommandHint">Ctrl + K for commands</button></p>' +
         '<div class="osr-quick-actions" aria-label="Home quick actions">' +
-          '<button class="osr-chip" type="button" data-osr-action="plan">Plan my day</button>' +
-          '<button class="osr-chip" type="button" data-osr-action="brainstorm">Brainstorm ideas</button>' +
-          '<button class="osr-chip" type="button" data-osr-action="progress">Track my progress</button>' +
-          '<button class="osr-chip" type="button" data-osr-action="explore">Find a place to visit</button>' +
+          '<button class="osr-chip" type="button" data-osr-action="plan">' + OS.iconSvg('calendaricon') + 'Plan my day</button>' +
+          '<button class="osr-chip" type="button" data-osr-action="brainstorm">' + OS.iconSvg('edit') + 'Brainstorm ideas</button>' +
+          '<button class="osr-chip" type="button" data-osr-action="progress">' + OS.iconSvg('layers') + 'Track my progress</button>' +
+          '<button class="osr-chip" type="button" data-osr-action="explore">' + OS.iconSvg('compass') + 'Find a place to visit</button>' +
         '</div>' +
         '<p class="osr-action-notice" id="osrHomeNotice" role="status" hidden></p>' +
       '</section>' +
@@ -108,6 +113,26 @@
   var ownerSurface = foundation.createOwnerSurface(homeView, stage, 'home', 'Home', support);
   homeView.classList.add('redesign-home');
   stage.hidden = false;
+  // Reuse the real utility nodes and their existing stores and handlers.
+  ['productivity', 'notes', 'shortcuts'].forEach(function (page) {
+    var view = doc.getElementById(page + 'View');
+    if (!view) return;
+    var utility = doc.createElement('div'); utility.className = 'osr-world osr-utility'; utility.dataset.surface = 'owner';
+    var backdrop = doc.createElement('div'); utility.appendChild(backdrop);
+    var utilityFrame = doc.createElement('div'); utilityFrame.className = 'osr-frame';
+    var utilityShell = foundation.createShell(doc, shellHandlers); foundation.setActiveWorld(utilityShell, 'home'); utilityFrame.appendChild(utilityShell);
+    var tools = doc.createElement('section'); tools.className = 'osr-owner-surface'; tools.dataset.ownerWorld = 'home';
+    var heading = doc.createElement('header'); heading.className = 'osr-owner-heading';
+    var back = doc.createElement('button'); back.type = 'button'; back.className = 'osr-button'; back.textContent = '← Back to Home'; back.onclick = function () { go('home'); };
+    var title = doc.createElement('h1'); title.textContent = page === 'notes' ? 'Ideas & Notes' : page === 'shortcuts' ? 'Quick Access & shortcuts' : 'Plan your day';
+    var art = doc.createElement('img'); art.className = 'osr-owner-art'; art.alt = ''; art.width = 180; art.height = 96; art.loading = 'lazy'; art.src = 'assets/scenes/home/portals/' + (page === 'notes' ? 'projects-notes-review' : 'work-review') + '.jpg'; art.onerror = function () { art.hidden = true; };
+    heading.append(back, title, art); tools.appendChild(heading);
+    var intro = doc.createElement('p'); intro.className = 'osr-owner-intro'; intro.textContent = page === 'notes' ? 'Give an idea room to grow. Capture, pin and revisit your private notes.' : page === 'shortcuts' ? 'Your saved links, favorites and recent places. Keep useful paths close at hand.' : 'Make space for what matters. Your focus timer, daily tasks and important dates stay together.'; tools.appendChild(intro);
+    Array.from(view.children).forEach(function (child) { tools.appendChild(child); });
+    utilityFrame.appendChild(tools); utility.appendChild(utilityFrame); view.appendChild(utility);
+    // Bind the existing view before requesting its scene, so hidden utilities defer art.
+    foundation.createSceneHost(backdrop).show('home');
+  });
 
   var portals = [
     { label: 'Work', subtitle: 'Focus. Create. Ship.', world: 'work' },
@@ -244,7 +269,7 @@
     var route = foundation.parseRoute(root.location.hash);
     applyingHistory = true;
     function openRoutePage(page) {
-      if (oldPage(page)) return true;
+      if (oldPage(page)) { focusCurrentPage(); return true; }
       OS.showToast('Could not save that page change. Your current page is unchanged.');
       root.history.replaceState(null, '', hashForPage(doc.body.dataset.page));
       return false;

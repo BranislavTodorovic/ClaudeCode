@@ -1,0 +1,158 @@
+[
+  {
+    "name": "deleted-snapshot-mobile",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 844,
+        "height": 844,
+        "width": 375,
+        "x": 0,
+        "y": 0
+      },
+      "focus": "",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "work",
+      "scroll": 375,
+      "small": [],
+      "text": "R3 retained history story · saved history\n\nRETAINED AUDIT SNAPSHOT\n\nDeleted · 10/3/2026, 12:03:49 AM\n\nProject: R3 disposable history project · proj-murie22w-lskvo\n\nThe underlying work item has been deleted. This saved snapshot remains available.\n\nSaved work item\nType\nstory\nStatus\nopen\nPriority\nmedium\nProjectId\nproj-murie22w-lskvo\nId\nwork-muriekrk-ulnjc\nCreatedAt\n2026-10-02T22:03:00.128Z\nUpdatedAt\n2026-10-02T22:03:00.128Z\nName\nR3 retained history story\nAnalysis\nOriginal analysis survives record deletion\nPlan\nImplement the next local step\nExecution\nSnapshot execution detail\nDeadline\nReminderAt\nLabels\nLinks\nSaved tasks · 1\nR3 saved child task\nItemId\nwork-muriekrk-ulnjc\nPriority\nmedium\nDone\nfalse\nId\ntask-murif8ba-ernz8\nTitle\nR3 saved child task\nDetails\nChild detail retained in audit\nDueDate\nEstimate\n0\nCreatedAt\n2026-10-02T22:03:30.646Z\nUpdatedAt\n2026-10-02T22:03:30.646Z",
+      "width": 390
+    }
+  },
+  {
+    "name": "history-reverse-tab",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 844,
+        "height": 844,
+        "width": 375,
+        "x": 0,
+        "y": 0
+      },
+      "focus": "",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "work",
+      "scroll": 375,
+      "small": [],
+      "text": "R3 retained history story · saved history\n\nRETAINED AUDIT SNAPSHOT\n\nDeleted · 10/3/2026, 12:03:49 AM\n\nProject: R3 disposable history project · proj-murie22w-lskvo\n\nThe underlying work item has been deleted. This saved snapshot remains available.\n\nSaved work item\nType\nstory\nStatus\nopen\nPriority\nmedium\nProjectId\nproj-murie22w-lskvo\nId\nwork-muriekrk-ulnjc\nCreatedAt\n2026-10-02T22:03:00.128Z\nUpdatedAt\n2026-10-02T22:03:00.128Z\nName\nR3 retained history story\nAnalysis\nOriginal analysis survives record deletion\nPlan\nImplement the next local step\nExecution\nSnapshot execution detail\nDeadline\nReminderAt\nLabels\nLinks\nSaved tasks · 1\nR3 saved child task\nItemId\nwork-muriekrk-ulnjc\nPriority\nmedium\nDone\nfalse\nId\ntask-murif8ba-ernz8\nTitle\nR3 saved child task\nDetails\nChild detail retained in audit\nDueDate\nEstimate\n0\nCreatedAt\n2026-10-02T22:03:30.646Z\nUpdatedAt\n2026-10-02T22:03:30.646Z",
+      "width": 390
+    }
+  },
+  {
+    "name": "games-details-mobile",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 832,
+        "height": 820,
+        "width": 355,
+        "x": 10,
+        "y": 12
+      },
+      "focus": "gameDetailsClose",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "games",
+      "scroll": 375,
+      "small": [],
+      "text": "Alan Wake 2\nAlan Wake 2\n\nSome stories never let you go.\n\nGenres: Survival Horror, Survival, Horror\n\nPlatforms: PC\n\nPlay styles:\n\nMood:\n\nGame resources\nOfficial\nOfficial Alan Wake 2 website\nPlatform\nFind Alan Wake 2 on Steam\nNews / updates\nSearch Steam news for Alan Wake 2\nBuilds / guides\nSearch community guides for Alan Wake 2\nCommunity\nFind Alan Wake 2 communities\nReview\nR3 disposable resource\nSuggested tracker tasks\nFinish the opening chapter\nExplore and collect useful resources\nComplete the next story chapter\nEdit resources",
+      "width": 390
+    }
+  },
+  {
+    "name": "games-nested-resources-mobile",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 609.125,
+        "height": 374.25,
+        "width": 355,
+        "x": 10,
+        "y": 234.875
+      },
+      "focus": "Official | Official Alan Wake 2 website | https://www.alanwake.com/\nPlatform | Find Alan Wake 2 on S",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "games",
+      "scroll": 375,
+      "small": [
+        {
+          "height": 40,
+          "text": "Cancel"
+        },
+        {
+          "height": 40,
+          "text": "Save"
+        }
+      ],
+      "text": "Edit game resources\nOne per line: group | label | https://URL\n\nCancel\nSave",
+      "width": 390
+    }
+  },
+  {
+    "name": "games-nested-resources-mobile-after-44px-fix",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 611.125,
+        "height": 378.25,
+        "width": 355,
+        "x": 10,
+        "y": 232.875
+      },
+      "focus": "Official | Official Alan Wake 2 website | https://www.alanwake.com/\nPlatform | Find Alan Wake 2 on S",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "games",
+      "scroll": 375,
+      "small": [],
+      "text": "Edit game resources\nOne per line: group | label | https://URL\n\nCancel\nSave",
+      "width": 390
+    }
+  },
+  {
+    "name": "resources-final-contrast",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 611.125,
+        "height": 378.25,
+        "width": 355,
+        "x": 10,
+        "y": 232.875
+      },
+      "focus": "Official | Official Alan Wake 2 website | https://www.alanwake.com/\nPlatform | Find Alan Wake 2 on S",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "games",
+      "scroll": 375,
+      "small": [],
+      "text": "Edit game resources\nOne per line: group | label | https://URL\n\nCancel\nSave",
+      "width": 390
+    }
+  },
+  {
+    "name": "history-final-contrast",
+    "observation": {
+      "client": 375,
+      "dialog": {
+        "bottom": 844,
+        "height": 844,
+        "width": 375,
+        "x": 0,
+        "y": 0
+      },
+      "focus": "",
+      "focusInDialog": true,
+      "height": 844,
+      "page": "work",
+      "scroll": 375,
+      "small": [],
+      "text": "R3 retained history story · saved history\n\nRETAINED AUDIT SNAPSHOT\n\nDeleted · 10/3/2026, 12:03:49 AM\n\nProject: R3 disposable history project · proj-murie22w-lskvo\n\nThe underlying work item has been deleted. This saved snapshot remains available.\n\nSaved work item\nType\nstory\nStatus\nopen\nPriority\nmedium\nProjectId\nproj-murie22w-lskvo\nId\nwork-muriekrk-ulnjc\nCreatedAt\n2026-10-02T22:03:00.128Z\nUpdatedAt\n2026-10-02T22:03:00.128Z\nName\nR3 retained history story\nAnalysis\nOriginal analysis survives record deletion\nPlan\nImplement the next local step\nExecution\nSnapshot execution detail\nDeadline\nReminderAt\nLabels\nLinks\nSaved tasks · 1\nR3 saved child task\nItemId\nwork-muriekrk-ulnjc\nPriority\nmedium\nDone\nfalse\nId\ntask-murif8ba-ernz8\nTitle\nR3 saved child task\nDetails\nChild detail retained in audit\nDueDate\nEstimate\n0\nCreatedAt\n2026-10-02T22:03:30.646Z\nUpdatedAt\n2026-10-02T22:03:30.646Z",
+      "width": 390
+    }
+  }
+]

@@ -14,8 +14,8 @@
     };
   }
   var portals = [
-    { slug: 'destinations', label: 'Destinations', subtitle: 'Search your local atlas.', image: 'assets/destinations/crete-card.webp' },
-    { slug: 'experiences', label: 'Experiences', subtitle: 'Activity discovery coming later.', image: 'assets/destinations/costa-rica-card.webp', future: true },
+    { slug: 'destinations', label: 'Destinations', subtitle: 'Search your local atlas.', image: 'assets/scenes/explore/portals/destinations.jpg' },
+    { slug: 'experiences', label: 'Experiences', subtitle: 'Activity discovery coming later.', image: 'assets/scenes/explore/portals/experiences.jpg', future: true },
     { slug: 'travel-guides', label: 'Travel Guides', subtitle: 'Dedicated guides coming later.', image: 'assets/scenes/explore/portals/travel-guides.jpg', future: true },
     { slug: 'bucket-list', label: 'Bucket List', subtitle: 'Your saved places and trip plans.', image: 'assets/scenes/explore/portals/bucket-list.jpg' },
     { slug: 'discover-more', label: 'Discover More', subtitle: 'Explore your travel resources.', image: 'assets/scenes/explore/portals/discover-more.jpg' }
@@ -39,9 +39,9 @@
   foundation.createSceneHost(sceneHost).show('explore');
   var frame = doc.createElement('div'); frame.className = 'osr-frame'; stage.appendChild(frame);
   function notice(message) { var el = doc.getElementById('osrExploreNotice'); el.textContent = message; el.hidden = false; }
-  function focusOwner(target) {
+  function focusOwner(target, name) {
     if (!target) { notice('That travel tool is unavailable. Your saved places are unchanged.'); return false; }
-    ownerSurface.show('Destinations & saved trips');
+    ownerSurface.show(name || 'Destinations');
     target.scrollIntoView({block:'center'});
     if (!target.matches('button,input,select,a,textarea,summary')) { target.setAttribute('tabindex','-1'); }
     target.focus({preventScroll:true}); return true;
@@ -119,8 +119,8 @@
     }
     if (name === 'surprise') { owner.random(); return; }
     if (name === 'destinations') { focusOwner(doc.querySelector('#exploreDestinations [name="q"]')); return; }
-    if (name === 'dates' || name === 'bucket-list') { focusOwner(doc.querySelector('#exploreDestinations .trip-board')); return; }
-    if (name === 'discover-more') { focusOwner(doc.querySelector('#exploreView [data-action="explore-random"]')); return; }
+    if (name === 'dates' || name === 'bucket-list') { focusOwner(doc.querySelector('#exploreDestinations .trip-board'), 'Bucket List & trip plans'); return; }
+    if (name === 'discover-more') { focusOwner(doc.querySelector('#exploreView [data-action="explore-random"]'), 'Discover More · travel resources'); return; }
     var filters = doc.querySelector('#exploreDestinations .discovery-filters');
     if (filters) { filters.open = true; focusOwner(filters.querySelector('[name="' + name + '"]')); }
   });

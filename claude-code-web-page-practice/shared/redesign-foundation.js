@@ -73,8 +73,7 @@
           return el.getAttribute('data-page-when').split(',').indexOf(page) !== -1;
         });
         var frame = view && view.querySelector('.osr-frame');
-        var credits = frame && frame.querySelector('.osr-games-footer, .osr-explore-credits');
-        (credits || frame || footerParent).appendChild(footer);
+        (frame || footerParent).appendChild(footer);
       }
       doc.addEventListener('onespace:page-changed', placeFooter);
       doc.addEventListener('onespace:ready', placeFooter);
@@ -130,6 +129,7 @@
       if (child !== stage) tools.appendChild(child);
     });
     tools.classList.add('osr-owner-surface');
+    tools.dataset.ownerWorld = worldId;
     tools.setAttribute('aria-label', label + ' tools');
     var heading = doc.createElement('div'); heading.className = 'osr-owner-heading';
     var back = doc.createElement('button'); back.type = 'button'; back.className = 'osr-button';
@@ -142,7 +142,7 @@
     function identify(name) {
       title.textContent = name || label + ' tools';
       var slug = worldId === 'work' ? (/project/i.test(title.textContent) ? 'projects' : 'kanban-board') :
-        worldId === 'personal' ? 'personal-life' : worldId === 'home' ? 'work-review' : 'bucket-list';
+        worldId === 'personal' ? (/habit|mindful/i.test(title.textContent) ? 'mindfulness' : /routine|recovery/i.test(title.textContent) ? 'recovery' : 'personal-life') : worldId === 'home' ? 'work-review' : /destination/i.test(title.textContent) ? 'destinations' : /resource|discover/i.test(title.textContent) ? 'discover-more' : 'bucket-list';
       if (worldId === 'games') {
         slug = /mission|progress|weekly/i.test(title.textContent) ? 'missions-quests' :
           /session/i.test(title.textContent) ? 'game-sessions' : /discover|suggest/i.test(title.textContent) ? 'discover-games' :
@@ -165,6 +165,12 @@
         if (['ArrowLeft','ArrowRight','Home','End'].indexOf(event.key) !== -1) identifyGameTab(event);
       });
     }
+    if (worldId === 'work') tools.addEventListener('click', function (event) {
+      var control = event.target.closest('#workTracker [data-view]');
+      if (!control) return;
+      var names = { active:'Work board & timeline', projects:'Projects', backlog:'Work backlog', history:'Retained Work History' };
+      identify(names[control.dataset.view]);
+    });
     frame.appendChild(tools);
     var trigger = null, scroll = 0;
     function present(open, name, focus) {
@@ -172,8 +178,7 @@
       stage.dataset.surface = open ? 'owner' : 'landing';
       var footer = frame.querySelector('.site-footer');
       if (footer && footer.tagName === 'FOOTER') {
-        var credits = !open && landing.querySelector('.osr-games-footer, .osr-explore-credits');
-        (credits || frame).appendChild(footer);
+        frame.appendChild(footer);
       }
       if (open) identify(name);
       if (focus) {

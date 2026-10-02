@@ -1,0 +1,7180 @@
+{
+  "before": {
+    "animations": [
+      {
+        "view": null,
+        "visible": true
+      },
+      {
+        "view": null,
+        "visible": true
+      },
+      {
+        "view": null,
+        "visible": true
+      },
+      {
+        "name": "ambientDrift",
+        "view": null,
+        "visible": true
+      },
+      {
+        "name": "ambientDrift",
+        "view": null,
+        "visible": true
+      }
+    ],
+    "assetTimings": [],
+    "current": {
+      "boot": "ready",
+      "gameVault": false,
+      "hash": "#/w/home",
+      "ms": 326,
+      "oldNav": false,
+      "page": "home",
+      "scrollWidth": 2048,
+      "stages": [
+        {
+          "mounted": true,
+          "view": "homeView",
+          "visible": true
+        }
+      ],
+      "views": [
+        "homeView"
+      ],
+      "width": 2048
+    },
+    "frames": [
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 53,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 67,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 81,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 95,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 112,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 129,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 146,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 163,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 179,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 196,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 216,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 233,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 283,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 303,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 312,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 326,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      }
+    ],
+    "handles": {
+      "intervals": 4,
+      "rafs": 0,
+      "timeouts": 3
+    },
+    "load": "1790984101067-0.4322018386911194",
+    "navigation": [
+      {
+        "ms": 118,
+        "page": "settings",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 284.69999999925494,
+        "page": "home",
+        "previous": "settings",
+        "responseMs": null
+      }
+    ],
+    "requests": [
+      {
+        "bytes": 39298,
+        "end": 54,
+        "path": "/games/games.css",
+        "start": 39,
+        "transfer": 39598
+      },
+      {
+        "bytes": 21052,
+        "end": 60,
+        "path": "/games/games-cinematic.css",
+        "start": 39,
+        "transfer": 21352
+      },
+      {
+        "bytes": 30822,
+        "end": 60,
+        "path": "/styles/pages.css",
+        "start": 39,
+        "transfer": 31122
+      },
+      {
+        "bytes": 21662,
+        "end": 60,
+        "path": "/movies/movies.css",
+        "start": 39,
+        "transfer": 21962
+      },
+      {
+        "bytes": 15428,
+        "end": 60,
+        "path": "/movies/movies-cinematic.css",
+        "start": 39,
+        "transfer": 15728
+      },
+      {
+        "bytes": 51996,
+        "end": 60,
+        "path": "/styles/cinematic-refinement.css",
+        "start": 39,
+        "transfer": 52296
+      },
+      {
+        "bytes": 9241,
+        "end": 61,
+        "path": "/work/tracker.css",
+        "start": 39,
+        "transfer": 9541
+      },
+      {
+        "bytes": 7499,
+        "end": 63,
+        "path": "/explore/discovery.css",
+        "start": 39,
+        "transfer": 7799
+      },
+      {
+        "bytes": 11109,
+        "end": 64,
+        "path": "/styles/redesign-foundation.css",
+        "start": 39,
+        "transfer": 11409
+      },
+      {
+        "bytes": 11347,
+        "end": 64,
+        "path": "/home/home-redesign.css",
+        "start": 39,
+        "transfer": 11647
+      },
+      {
+        "bytes": 10326,
+        "end": 64,
+        "path": "/work/work-redesign.css",
+        "start": 39,
+        "transfer": 10626
+      },
+      {
+        "bytes": 9881,
+        "end": 64,
+        "path": "/personal/personal-redesign.css",
+        "start": 39,
+        "transfer": 10181
+      },
+      {
+        "bytes": 12087,
+        "end": 65,
+        "path": "/explore/explore-redesign.css",
+        "start": 39,
+        "transfer": 12387
+      },
+      {
+        "bytes": 7048,
+        "end": 66,
+        "path": "/games/games-redesign.css",
+        "start": 39,
+        "transfer": 7348
+      },
+      {
+        "bytes": 16736,
+        "end": 67,
+        "path": "/styles/redesign-layout.css",
+        "start": 39,
+        "transfer": 17036
+      },
+      {
+        "bytes": 16265,
+        "end": 67,
+        "path": "/styles/redesign-owners.css",
+        "start": 39,
+        "transfer": 16565
+      },
+      {
+        "bytes": 3006,
+        "end": 67,
+        "path": "/explore/trip-board.js",
+        "start": 39,
+        "transfer": 3306
+      },
+      {
+        "bytes": 16141,
+        "end": 67,
+        "path": "/shared/storage-utils.js",
+        "start": 40,
+        "transfer": 16441
+      },
+      {
+        "bytes": 2599,
+        "end": 68,
+        "path": "/shared/catalog-utils.js",
+        "start": 40,
+        "transfer": 2899
+      },
+      {
+        "bytes": 7162,
+        "end": 69,
+        "path": "/shared/tooltip-utils.js",
+        "start": 40,
+        "transfer": 7462
+      },
+      {
+        "bytes": 3958,
+        "end": 70,
+        "path": "/personal/personal-controller.js",
+        "start": 40,
+        "transfer": 4258
+      },
+      {
+        "bytes": 2584,
+        "end": 71,
+        "path": "/shared/shortcut-utils.js",
+        "start": 40,
+        "transfer": 2884
+      },
+      {
+        "bytes": 2835,
+        "end": 71,
+        "path": "/shared/visual-utils.js",
+        "start": 40,
+        "transfer": 3135
+      },
+      {
+        "bytes": 4311,
+        "end": 71,
+        "path": "/shared/domain-ui.js",
+        "start": 40,
+        "transfer": 4611
+      },
+      {
+        "bytes": 6133,
+        "end": 72,
+        "path": "/shared/shortcut-surface.js",
+        "start": 40,
+        "transfer": 6433
+      },
+      {
+        "bytes": 5025,
+        "end": 74,
+        "path": "/home/home-overview.js",
+        "start": 40,
+        "transfer": 5325
+      },
+      {
+        "bytes": 8717,
+        "end": 73,
+        "path": "/work/projects.js",
+        "start": 40,
+        "transfer": 9017
+      },
+      {
+        "bytes": 31959,
+        "end": 76,
+        "path": "/work/work-tracker.js",
+        "start": 40,
+        "transfer": 32259
+      },
+      {
+        "bytes": 14846,
+        "end": 76,
+        "path": "/explore/explore-data.js",
+        "start": 40,
+        "transfer": 15146
+      },
+      {
+        "bytes": 9039,
+        "end": 76,
+        "path": "/explore/local-discovery.js",
+        "start": 40,
+        "transfer": 9339
+      },
+      {
+        "bytes": 15419,
+        "end": 77,
+        "path": "/explore/discovery-ui.js",
+        "start": 40,
+        "transfer": 15719
+      },
+      {
+        "bytes": 10774,
+        "end": 78,
+        "path": "/explore/explore-global.js",
+        "start": 40,
+        "transfer": 11074
+      },
+      {
+        "bytes": 7456,
+        "end": 78,
+        "path": "/shared/provider-search.js",
+        "start": 40,
+        "transfer": 7756
+      },
+      {
+        "bytes": 8136,
+        "end": 80,
+        "path": "/games/game-resources.js",
+        "start": 40,
+        "transfer": 8436
+      },
+      {
+        "bytes": 15601,
+        "end": 81,
+        "path": "/games/games-data.js",
+        "start": 40,
+        "transfer": 15901
+      },
+      {
+        "bytes": 107971,
+        "end": 81,
+        "path": "/games/games.js",
+        "start": 40,
+        "transfer": 108271
+      },
+      {
+        "bytes": 24345,
+        "end": 82,
+        "path": "/movies/movies-data.js",
+        "start": 40,
+        "transfer": 24645
+      },
+      {
+        "bytes": 4301,
+        "end": 83,
+        "path": "/settings/settings.js",
+        "start": 40,
+        "transfer": 4601
+      },
+      {
+        "bytes": 100487,
+        "end": 83,
+        "path": "/movies/movies.js",
+        "start": 40,
+        "transfer": 100787
+      },
+      {
+        "bytes": 1750,
+        "end": 85,
+        "path": "/explore/discovery-integration.js",
+        "start": 41,
+        "transfer": 2050
+      },
+      {
+        "bytes": 14206,
+        "end": 85,
+        "path": "/shared/cinematic-scenes.js",
+        "start": 41,
+        "transfer": 14506
+      },
+      {
+        "bytes": 18250,
+        "end": 270,
+        "path": "/shared/redesign-foundation.js",
+        "start": 41,
+        "transfer": 18550
+      },
+      {
+        "bytes": 23070,
+        "end": 270,
+        "path": "/home/home-redesign.js",
+        "start": 41,
+        "transfer": 23370
+      },
+      {
+        "bytes": 20770,
+        "end": 271,
+        "path": "/work/work-redesign.js",
+        "start": 41,
+        "transfer": 21070
+      },
+      {
+        "bytes": 15657,
+        "end": 271,
+        "path": "/personal/personal-redesign.js",
+        "start": 41,
+        "transfer": 15957
+      },
+      {
+        "bytes": 13872,
+        "end": 271,
+        "path": "/games/games-redesign.js",
+        "start": 41,
+        "transfer": 14172
+      },
+      {
+        "bytes": 14039,
+        "end": 271,
+        "path": "/explore/explore-redesign.js",
+        "start": 41,
+        "transfer": 14339
+      },
+      {
+        "bytes": 180598,
+        "end": 272,
+        "path": "/assets/page-art/settings-cinematic.webp",
+        "start": 130,
+        "transfer": 180898
+      },
+      {
+        "bytes": 93,
+        "end": 272,
+        "path": "/api/status",
+        "start": 144,
+        "transfer": 393
+      },
+      {
+        "bytes": 2577,
+        "end": 280,
+        "path": "/assets/provider-logos/tmdb.svg",
+        "start": 279,
+        "transfer": 2877
+      },
+      {
+        "bytes": 182401,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/work-review.jpg",
+        "start": 294,
+        "transfer": 182701
+      },
+      {
+        "bytes": 206839,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/explore-review.jpg",
+        "start": 294,
+        "transfer": 207139
+      },
+      {
+        "bytes": 192580,
+        "end": 298,
+        "path": "/assets/scenes/home/portals/personal-review.jpg",
+        "start": 294,
+        "transfer": 192880
+      },
+      {
+        "bytes": 177556,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/media-games-review.jpg",
+        "start": 294,
+        "transfer": 177856
+      },
+      {
+        "bytes": 157868,
+        "end": 299,
+        "path": "/assets/scenes/home/portals/projects-notes-review.jpg",
+        "start": 294,
+        "transfer": 158168
+      },
+      {
+        "bytes": 124585,
+        "end": 300,
+        "path": "/assets/scenes/home/portals/settings-review.jpg",
+        "start": 294,
+        "transfer": 124885
+      }
+    ],
+    "runtime": [],
+    "scenes": [
+      {
+        "id": 1,
+        "src": null,
+        "state": "loading",
+        "visible": true,
+        "world": "home"
+      },
+      {
+        "id": 2,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 3,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 8,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "games"
+      },
+      {
+        "id": 5,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "work"
+      },
+      {
+        "id": 6,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "personal"
+      },
+      {
+        "id": 7,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "explore"
+      },
+      {
+        "id": 4,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      }
+    ],
+    "shifts": [
+      {
+        "ms": 293.19999999925494,
+        "recentInput": false,
+        "value": 0.000017024576663970947
+      },
+      {
+        "ms": 382,
+        "recentInput": false,
+        "value": 0.06587612628936768
+      },
+      {
+        "ms": 392.2999999988824,
+        "recentInput": false,
+        "value": 0.019270051270723343
+      }
+    ]
+  },
+  "switches": [
+    {
+      "world": "work",
+      "elapsedMs": 217,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 109,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 80,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 78,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 72,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 86,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 81,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 81,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 73,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 87,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 86,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 83,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 70,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 83,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 81,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 64,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 72,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 74,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 82,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 65,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 68,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 68,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 92,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 71,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 73,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 84,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 83,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 70,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 66,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 70,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 81,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 72,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 71,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 66,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 66,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 72,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 71,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 84,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 84,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 68,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 70,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 82,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 78,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 66,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 71,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 84,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 86,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 82,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 84,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 70,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 80,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 79,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 66,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 71,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 81,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 72,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 87,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 88,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 87,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 82,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 84,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 70,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 65,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 73,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 88,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 85,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 65,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 65,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 71,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 69,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 66,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 68,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 67,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    },
+    {
+      "world": "work",
+      "elapsedMs": 75,
+      "observation": {
+        "nav": [
+          "work"
+        ],
+        "page": "work",
+        "views": [
+          "workView"
+        ]
+      }
+    },
+    {
+      "world": "personal",
+      "elapsedMs": 82,
+      "observation": {
+        "nav": [
+          "personal"
+        ],
+        "page": "personal",
+        "views": [
+          "personalView"
+        ]
+      }
+    },
+    {
+      "world": "explore",
+      "elapsedMs": 82,
+      "observation": {
+        "nav": [
+          "explore"
+        ],
+        "page": "explore",
+        "views": [
+          "exploreView"
+        ]
+      }
+    },
+    {
+      "world": "home",
+      "elapsedMs": 80,
+      "observation": {
+        "nav": [
+          "home"
+        ],
+        "page": "home",
+        "views": [
+          "homeView"
+        ]
+      }
+    },
+    {
+      "world": "games",
+      "elapsedMs": 65,
+      "observation": {
+        "nav": [
+          "games"
+        ],
+        "page": "games",
+        "views": [
+          "gamesView"
+        ]
+      }
+    }
+  ],
+  "immediate": {
+    "animations": [
+      {
+        "view": null,
+        "visible": true
+      }
+    ],
+    "assetTimings": [
+      {
+        "decodeEnd": 593.8999999985099,
+        "decodeStart": 586.8999999985099,
+        "natural": [
+          2144,
+          1254
+        ],
+        "observedLoadedAt": 586.8999999985099,
+        "src": "assets/scenes/home/hero-fullbleed.jpg",
+        "world": "home"
+      },
+      {
+        "decodeEnd": 996,
+        "decodeStart": 975.5999999996276,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 975.5999999996276,
+        "src": "assets/scenes/work/hero-fullbleed.jpg",
+        "world": "work"
+      },
+      {
+        "decodeEnd": 1095.0999999996277,
+        "decodeStart": 1082.7999999988824,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1082.7999999988824,
+        "src": "assets/scenes/personal/hero-fullbleed.jpg",
+        "world": "personal"
+      },
+      {
+        "decodeEnd": 1195.2999999988824,
+        "decodeStart": 1182.2999999988824,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1182.2999999988824,
+        "src": "assets/scenes/explore/hero-fullbleed.jpg",
+        "world": "explore"
+      },
+      {
+        "decodeEnd": 1398.699999999255,
+        "decodeStart": 1386.699999999255,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1386.699999999255,
+        "src": "assets/scenes/games/hero-fullbleed.jpg",
+        "world": "games"
+      }
+    ],
+    "current": {
+      "boot": "ready",
+      "gameVault": false,
+      "hash": "#/w/games",
+      "ms": 9602,
+      "oldNav": false,
+      "page": "games",
+      "scrollWidth": 2048,
+      "stages": [
+        {
+          "mounted": true,
+          "view": "gamesView",
+          "visible": true
+        }
+      ],
+      "views": [
+        "gamesView"
+      ],
+      "width": 2048
+    },
+    "frames": [
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 53,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 67,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 81,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 95,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 112,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 129,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 146,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 163,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 179,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 196,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 216,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 233,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 283,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 303,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 312,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 326,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 353,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      }
+    ],
+    "handles": {
+      "intervals": 4,
+      "rafs": 0,
+      "timeouts": 3
+    },
+    "load": "1790984101067-0.4322018386911194",
+    "navigation": [
+      {
+        "ms": 118,
+        "page": "settings",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 284.69999999925494,
+        "page": "home",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 623.8999999985099,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 5.599999999627471
+      },
+      {
+        "ms": 751.8999999985099,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.599999999627471
+      },
+      {
+        "ms": 850.5,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 4.200000001117587
+      },
+      {
+        "ms": 951.89999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.299999998882413
+      },
+      {
+        "ms": 1037.2999999988824,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 4.799999998882413
+      },
+      {
+        "ms": 1138.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 1234,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 1319.699999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.300000000745058
+      },
+      {
+        "ms": 1417.5,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 1504.0999999996277,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 1603.0999999996277,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 1702.7999999988824,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 1802.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 1903.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 1985.199999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 2067.2999999988824,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2167,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2267.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.899999998509884
+      },
+      {
+        "ms": 2349.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2435,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 2516.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 2606.5,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 5.200000001117587
+      },
+      {
+        "ms": 2703.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 2785.199999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2867.0999999996275,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.900000000372529
+      },
+      {
+        "ms": 2950.199999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 3034.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 3116.5,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.300000000745058
+      },
+      {
+        "ms": 3234.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.400000000372529
+      },
+      {
+        "ms": 3319.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 3405,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 3503.5999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 3602.0999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.200000001117587
+      },
+      {
+        "ms": 3684.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 3767.5,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 3850,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 3933.699999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4033.099999999627,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 4116.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.399999998509884
+      },
+      {
+        "ms": 4204,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 4285.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 4385.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 4466.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 4550.0999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4633.5,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4718.39999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4804.0999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 4903.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 5003.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5085.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5167.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 5267.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5366.39999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 5449.799999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 5534,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 5617.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 5704,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 5803.799999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 5904.0999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 6004.199999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.900000000372529
+      },
+      {
+        "ms": 6105.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 5
+      },
+      {
+        "ms": 6203.89999999851,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.199999999254942
+      },
+      {
+        "ms": 6304.199999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 6404.89999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 6503.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 6585.39999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 6667.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 6766.5999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 6867,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 6949.799999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 7033.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7117.799999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 7216.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 7303.5999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 7403.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7504.5999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 7604.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 7702.699999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 7803.299999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7886.299999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7967.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8050.0999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8134.5999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 8217.199999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 8303.799999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 8403.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8504.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.799999998882413
+      },
+      {
+        "ms": 8585.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8667.299999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8750.699999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 8834.199999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8917.599999999627,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 9002.199999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 9086.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 9167.599999999627,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 9268.5,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 9367.599999999627,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 9467.39999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.899999998509884
+      },
+      {
+        "ms": 9568.199999999257,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.400000000372529
+      },
+      {
+        "ms": 9650.39999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.799999998882413
+      }
+    ],
+    "requests": [
+      {
+        "bytes": 39298,
+        "end": 54,
+        "path": "/games/games.css",
+        "start": 39,
+        "transfer": 39598
+      },
+      {
+        "bytes": 21052,
+        "end": 60,
+        "path": "/games/games-cinematic.css",
+        "start": 39,
+        "transfer": 21352
+      },
+      {
+        "bytes": 30822,
+        "end": 60,
+        "path": "/styles/pages.css",
+        "start": 39,
+        "transfer": 31122
+      },
+      {
+        "bytes": 21662,
+        "end": 60,
+        "path": "/movies/movies.css",
+        "start": 39,
+        "transfer": 21962
+      },
+      {
+        "bytes": 15428,
+        "end": 60,
+        "path": "/movies/movies-cinematic.css",
+        "start": 39,
+        "transfer": 15728
+      },
+      {
+        "bytes": 51996,
+        "end": 60,
+        "path": "/styles/cinematic-refinement.css",
+        "start": 39,
+        "transfer": 52296
+      },
+      {
+        "bytes": 9241,
+        "end": 61,
+        "path": "/work/tracker.css",
+        "start": 39,
+        "transfer": 9541
+      },
+      {
+        "bytes": 7499,
+        "end": 63,
+        "path": "/explore/discovery.css",
+        "start": 39,
+        "transfer": 7799
+      },
+      {
+        "bytes": 11109,
+        "end": 64,
+        "path": "/styles/redesign-foundation.css",
+        "start": 39,
+        "transfer": 11409
+      },
+      {
+        "bytes": 11347,
+        "end": 64,
+        "path": "/home/home-redesign.css",
+        "start": 39,
+        "transfer": 11647
+      },
+      {
+        "bytes": 10326,
+        "end": 64,
+        "path": "/work/work-redesign.css",
+        "start": 39,
+        "transfer": 10626
+      },
+      {
+        "bytes": 9881,
+        "end": 64,
+        "path": "/personal/personal-redesign.css",
+        "start": 39,
+        "transfer": 10181
+      },
+      {
+        "bytes": 12087,
+        "end": 65,
+        "path": "/explore/explore-redesign.css",
+        "start": 39,
+        "transfer": 12387
+      },
+      {
+        "bytes": 7048,
+        "end": 66,
+        "path": "/games/games-redesign.css",
+        "start": 39,
+        "transfer": 7348
+      },
+      {
+        "bytes": 16736,
+        "end": 67,
+        "path": "/styles/redesign-layout.css",
+        "start": 39,
+        "transfer": 17036
+      },
+      {
+        "bytes": 16265,
+        "end": 67,
+        "path": "/styles/redesign-owners.css",
+        "start": 39,
+        "transfer": 16565
+      },
+      {
+        "bytes": 3006,
+        "end": 67,
+        "path": "/explore/trip-board.js",
+        "start": 39,
+        "transfer": 3306
+      },
+      {
+        "bytes": 16141,
+        "end": 67,
+        "path": "/shared/storage-utils.js",
+        "start": 40,
+        "transfer": 16441
+      },
+      {
+        "bytes": 2599,
+        "end": 68,
+        "path": "/shared/catalog-utils.js",
+        "start": 40,
+        "transfer": 2899
+      },
+      {
+        "bytes": 7162,
+        "end": 69,
+        "path": "/shared/tooltip-utils.js",
+        "start": 40,
+        "transfer": 7462
+      },
+      {
+        "bytes": 3958,
+        "end": 70,
+        "path": "/personal/personal-controller.js",
+        "start": 40,
+        "transfer": 4258
+      },
+      {
+        "bytes": 2584,
+        "end": 71,
+        "path": "/shared/shortcut-utils.js",
+        "start": 40,
+        "transfer": 2884
+      },
+      {
+        "bytes": 2835,
+        "end": 71,
+        "path": "/shared/visual-utils.js",
+        "start": 40,
+        "transfer": 3135
+      },
+      {
+        "bytes": 4311,
+        "end": 71,
+        "path": "/shared/domain-ui.js",
+        "start": 40,
+        "transfer": 4611
+      },
+      {
+        "bytes": 6133,
+        "end": 72,
+        "path": "/shared/shortcut-surface.js",
+        "start": 40,
+        "transfer": 6433
+      },
+      {
+        "bytes": 5025,
+        "end": 74,
+        "path": "/home/home-overview.js",
+        "start": 40,
+        "transfer": 5325
+      },
+      {
+        "bytes": 8717,
+        "end": 73,
+        "path": "/work/projects.js",
+        "start": 40,
+        "transfer": 9017
+      },
+      {
+        "bytes": 31959,
+        "end": 76,
+        "path": "/work/work-tracker.js",
+        "start": 40,
+        "transfer": 32259
+      },
+      {
+        "bytes": 14846,
+        "end": 76,
+        "path": "/explore/explore-data.js",
+        "start": 40,
+        "transfer": 15146
+      },
+      {
+        "bytes": 9039,
+        "end": 76,
+        "path": "/explore/local-discovery.js",
+        "start": 40,
+        "transfer": 9339
+      },
+      {
+        "bytes": 15419,
+        "end": 77,
+        "path": "/explore/discovery-ui.js",
+        "start": 40,
+        "transfer": 15719
+      },
+      {
+        "bytes": 10774,
+        "end": 78,
+        "path": "/explore/explore-global.js",
+        "start": 40,
+        "transfer": 11074
+      },
+      {
+        "bytes": 7456,
+        "end": 78,
+        "path": "/shared/provider-search.js",
+        "start": 40,
+        "transfer": 7756
+      },
+      {
+        "bytes": 8136,
+        "end": 80,
+        "path": "/games/game-resources.js",
+        "start": 40,
+        "transfer": 8436
+      },
+      {
+        "bytes": 15601,
+        "end": 81,
+        "path": "/games/games-data.js",
+        "start": 40,
+        "transfer": 15901
+      },
+      {
+        "bytes": 107971,
+        "end": 81,
+        "path": "/games/games.js",
+        "start": 40,
+        "transfer": 108271
+      },
+      {
+        "bytes": 24345,
+        "end": 82,
+        "path": "/movies/movies-data.js",
+        "start": 40,
+        "transfer": 24645
+      },
+      {
+        "bytes": 4301,
+        "end": 83,
+        "path": "/settings/settings.js",
+        "start": 40,
+        "transfer": 4601
+      },
+      {
+        "bytes": 100487,
+        "end": 83,
+        "path": "/movies/movies.js",
+        "start": 40,
+        "transfer": 100787
+      },
+      {
+        "bytes": 1750,
+        "end": 85,
+        "path": "/explore/discovery-integration.js",
+        "start": 41,
+        "transfer": 2050
+      },
+      {
+        "bytes": 14206,
+        "end": 85,
+        "path": "/shared/cinematic-scenes.js",
+        "start": 41,
+        "transfer": 14506
+      },
+      {
+        "bytes": 18250,
+        "end": 270,
+        "path": "/shared/redesign-foundation.js",
+        "start": 41,
+        "transfer": 18550
+      },
+      {
+        "bytes": 23070,
+        "end": 270,
+        "path": "/home/home-redesign.js",
+        "start": 41,
+        "transfer": 23370
+      },
+      {
+        "bytes": 20770,
+        "end": 271,
+        "path": "/work/work-redesign.js",
+        "start": 41,
+        "transfer": 21070
+      },
+      {
+        "bytes": 15657,
+        "end": 271,
+        "path": "/personal/personal-redesign.js",
+        "start": 41,
+        "transfer": 15957
+      },
+      {
+        "bytes": 13872,
+        "end": 271,
+        "path": "/games/games-redesign.js",
+        "start": 41,
+        "transfer": 14172
+      },
+      {
+        "bytes": 14039,
+        "end": 271,
+        "path": "/explore/explore-redesign.js",
+        "start": 41,
+        "transfer": 14339
+      },
+      {
+        "bytes": 180598,
+        "end": 272,
+        "path": "/assets/page-art/settings-cinematic.webp",
+        "start": 130,
+        "transfer": 180898
+      },
+      {
+        "bytes": 93,
+        "end": 272,
+        "path": "/api/status",
+        "start": 144,
+        "transfer": 393
+      },
+      {
+        "bytes": 2577,
+        "end": 280,
+        "path": "/assets/provider-logos/tmdb.svg",
+        "start": 279,
+        "transfer": 2877
+      },
+      {
+        "bytes": 910490,
+        "end": 542,
+        "path": "/assets/scenes/home/hero-fullbleed.jpg",
+        "start": 289,
+        "transfer": 910790
+      },
+      {
+        "bytes": 182401,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/work-review.jpg",
+        "start": 294,
+        "transfer": 182701
+      },
+      {
+        "bytes": 206839,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/explore-review.jpg",
+        "start": 294,
+        "transfer": 207139
+      },
+      {
+        "bytes": 192580,
+        "end": 298,
+        "path": "/assets/scenes/home/portals/personal-review.jpg",
+        "start": 294,
+        "transfer": 192880
+      },
+      {
+        "bytes": 177556,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/media-games-review.jpg",
+        "start": 294,
+        "transfer": 177856
+      },
+      {
+        "bytes": 157868,
+        "end": 299,
+        "path": "/assets/scenes/home/portals/projects-notes-review.jpg",
+        "start": 294,
+        "transfer": 158168
+      },
+      {
+        "bytes": 124585,
+        "end": 300,
+        "path": "/assets/scenes/home/portals/settings-review.jpg",
+        "start": 294,
+        "transfer": 124885
+      },
+      {
+        "bytes": 1108031,
+        "end": 890,
+        "path": "/assets/scenes/work/hero-fullbleed.jpg",
+        "start": 632,
+        "transfer": 1108331
+      },
+      {
+        "bytes": 80002,
+        "end": 644,
+        "path": "/assets/scenes/work/portals/projects.jpg",
+        "start": 641,
+        "transfer": 80302
+      },
+      {
+        "bytes": 118740,
+        "end": 645,
+        "path": "/assets/scenes/work/portals/kanban-board.jpg",
+        "start": 641,
+        "transfer": 119040
+      },
+      {
+        "bytes": 129098,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/team.jpg",
+        "start": 641,
+        "transfer": 129398
+      },
+      {
+        "bytes": 100055,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/documents.jpg",
+        "start": 641,
+        "transfer": 100355
+      },
+      {
+        "bytes": 94983,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/meetings.jpg",
+        "start": 641,
+        "transfer": 95283
+      },
+      {
+        "bytes": 114686,
+        "end": 647,
+        "path": "/assets/scenes/work/portals/templates.jpg",
+        "start": 641,
+        "transfer": 114986
+      },
+      {
+        "bytes": 1152795,
+        "end": 1023,
+        "path": "/assets/scenes/personal/hero-fullbleed.jpg",
+        "start": 760,
+        "transfer": 1153095
+      },
+      {
+        "bytes": 117081,
+        "end": 772,
+        "path": "/assets/scenes/personal/portals/mindfulness.jpg",
+        "start": 768,
+        "transfer": 117381
+      },
+      {
+        "bytes": 134525,
+        "end": 772,
+        "path": "/assets/scenes/personal/portals/fitness.jpg",
+        "start": 768,
+        "transfer": 134825
+      },
+      {
+        "bytes": 124008,
+        "end": 773,
+        "path": "/assets/scenes/personal/portals/nutrition.jpg",
+        "start": 768,
+        "transfer": 124308
+      },
+      {
+        "bytes": 119070,
+        "end": 773,
+        "path": "/assets/scenes/personal/portals/recovery.jpg",
+        "start": 768,
+        "transfer": 119370
+      },
+      {
+        "bytes": 111059,
+        "end": 775,
+        "path": "/assets/scenes/personal/portals/personal-life.jpg",
+        "start": 768,
+        "transfer": 111359
+      },
+      {
+        "bytes": 129138,
+        "end": 775,
+        "path": "/assets/scenes/personal/portals/home-wellbeing.jpg",
+        "start": 768,
+        "transfer": 129438
+      },
+      {
+        "bytes": 1317840,
+        "end": 1122,
+        "path": "/assets/scenes/explore/hero-fullbleed.jpg",
+        "start": 858,
+        "transfer": 1318140
+      },
+      {
+        "bytes": 295075,
+        "end": 869,
+        "path": "/assets/scenes/explore/portals/destinations.jpg",
+        "start": 866,
+        "transfer": 295375
+      },
+      {
+        "bytes": 261022,
+        "end": 870,
+        "path": "/assets/scenes/explore/portals/experiences.jpg",
+        "start": 866,
+        "transfer": 261322
+      },
+      {
+        "bytes": 235671,
+        "end": 871,
+        "path": "/assets/scenes/explore/portals/travel-guides.jpg",
+        "start": 866,
+        "transfer": 235971
+      },
+      {
+        "bytes": 240919,
+        "end": 872,
+        "path": "/assets/scenes/explore/portals/bucket-list.jpg",
+        "start": 866,
+        "transfer": 241219
+      },
+      {
+        "bytes": 201271,
+        "end": 874,
+        "path": "/assets/scenes/explore/portals/discover-more.jpg",
+        "start": 866,
+        "transfer": 201571
+      },
+      {
+        "bytes": 54202,
+        "end": 874,
+        "path": "/assets/destinations/lisbon-card.webp",
+        "start": 866,
+        "transfer": 54502
+      },
+      {
+        "bytes": 78144,
+        "end": 875,
+        "path": "/assets/destinations/kyoto-card.webp",
+        "start": 866,
+        "transfer": 78444
+      },
+      {
+        "bytes": 27590,
+        "end": 876,
+        "path": "/assets/destinations/azores-card.webp",
+        "start": 866,
+        "transfer": 27890
+      },
+      {
+        "bytes": 1164656,
+        "end": 1305,
+        "path": "/assets/scenes/games/hero-fullbleed.jpg",
+        "start": 1046,
+        "transfer": 1164956
+      },
+      {
+        "bytes": 133892,
+        "end": 1055,
+        "path": "/assets/scenes/games/portals/my-games.jpg",
+        "start": 1052,
+        "transfer": 134192
+      },
+      {
+        "bytes": 138537,
+        "end": 1057,
+        "path": "/assets/scenes/games/portals/missions-quests.jpg",
+        "start": 1052,
+        "transfer": 138837
+      },
+      {
+        "bytes": 148060,
+        "end": 1056,
+        "path": "/assets/scenes/games/portals/game-library.jpg",
+        "start": 1052,
+        "transfer": 148360
+      },
+      {
+        "bytes": 104315,
+        "end": 1057,
+        "path": "/assets/scenes/games/portals/game-sessions.jpg",
+        "start": 1052,
+        "transfer": 104615
+      },
+      {
+        "bytes": 151443,
+        "end": 1058,
+        "path": "/assets/scenes/games/portals/discover-games.jpg",
+        "start": 1052,
+        "transfer": 151743
+      },
+      {
+        "bytes": 105983,
+        "end": 1060,
+        "path": "/assets/scenes/games/portals/game-settings.jpg",
+        "start": 1052,
+        "transfer": 106283
+      }
+    ],
+    "runtime": [],
+    "scenes": [
+      {
+        "id": 1,
+        "src": "assets/scenes/home/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 2,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 3,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 8,
+        "src": "assets/scenes/games/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": true,
+        "world": "games"
+      },
+      {
+        "id": 5,
+        "src": "assets/scenes/work/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "work"
+      },
+      {
+        "id": 6,
+        "src": "assets/scenes/personal/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "personal"
+      },
+      {
+        "id": 7,
+        "src": "assets/scenes/explore/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "explore"
+      },
+      {
+        "id": 4,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      }
+    ],
+    "shifts": [
+      {
+        "ms": 293.19999999925494,
+        "recentInput": false,
+        "value": 0.000017024576663970947
+      },
+      {
+        "ms": 382,
+        "recentInput": false,
+        "value": 0.06587612628936768
+      },
+      {
+        "ms": 392.2999999988824,
+        "recentInput": false,
+        "value": 0.019270051270723343
+      },
+      {
+        "ms": 403.3999999985099,
+        "recentInput": false,
+        "value": 0.013591498136520386
+      },
+      {
+        "ms": 432.0999999996274,
+        "recentInput": false,
+        "value": 0.01720269024372101
+      },
+      {
+        "ms": 443.7999999988824,
+        "recentInput": false,
+        "value": 0.005655169486999512
+      },
+      {
+        "ms": 455.0999999996274,
+        "recentInput": false,
+        "value": 0.004299916326999664
+      },
+      {
+        "ms": 471.3999999985099,
+        "recentInput": false,
+        "value": 0.003156602382659912
+      },
+      {
+        "ms": 491.0999999996274,
+        "recentInput": false,
+        "value": 0.0026091337203979492
+      },
+      {
+        "ms": 506.2999999988824,
+        "recentInput": false,
+        "value": 0.00016843530789224638
+      }
+    ]
+  },
+  "after": {
+    "animations": [],
+    "assetTimings": [
+      {
+        "decodeEnd": 593.8999999985099,
+        "decodeStart": 586.8999999985099,
+        "natural": [
+          2144,
+          1254
+        ],
+        "observedLoadedAt": 586.8999999985099,
+        "src": "assets/scenes/home/hero-fullbleed.jpg",
+        "world": "home"
+      },
+      {
+        "decodeEnd": 996,
+        "decodeStart": 975.5999999996276,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 975.5999999996276,
+        "src": "assets/scenes/work/hero-fullbleed.jpg",
+        "world": "work"
+      },
+      {
+        "decodeEnd": 1095.0999999996277,
+        "decodeStart": 1082.7999999988824,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1082.7999999988824,
+        "src": "assets/scenes/personal/hero-fullbleed.jpg",
+        "world": "personal"
+      },
+      {
+        "decodeEnd": 1195.2999999988824,
+        "decodeStart": 1182.2999999988824,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1182.2999999988824,
+        "src": "assets/scenes/explore/hero-fullbleed.jpg",
+        "world": "explore"
+      },
+      {
+        "decodeEnd": 1398.699999999255,
+        "decodeStart": 1386.699999999255,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1386.699999999255,
+        "src": "assets/scenes/games/hero-fullbleed.jpg",
+        "world": "games"
+      }
+    ],
+    "current": {
+      "boot": "ready",
+      "gameVault": false,
+      "hash": "#/w/games",
+      "ms": 13612,
+      "oldNav": false,
+      "page": "games",
+      "scrollWidth": 2048,
+      "stages": [
+        {
+          "mounted": true,
+          "view": "gamesView",
+          "visible": true
+        }
+      ],
+      "views": [
+        "gamesView"
+      ],
+      "width": 2048
+    },
+    "frames": [
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 53,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 67,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 81,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 95,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 112,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 129,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 146,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 163,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 179,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 196,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 216,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 233,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 283,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 303,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 312,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 326,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 353,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      }
+    ],
+    "handles": {
+      "intervals": 4,
+      "rafs": 0,
+      "timeouts": 0
+    },
+    "load": "1790984101067-0.4322018386911194",
+    "navigation": [
+      {
+        "ms": 118,
+        "page": "settings",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 284.69999999925494,
+        "page": "home",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 623.8999999985099,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 5.599999999627471
+      },
+      {
+        "ms": 751.8999999985099,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.599999999627471
+      },
+      {
+        "ms": 850.5,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 4.200000001117587
+      },
+      {
+        "ms": 951.89999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.299999998882413
+      },
+      {
+        "ms": 1037.2999999988824,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 4.799999998882413
+      },
+      {
+        "ms": 1138.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 1234,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 1319.699999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.300000000745058
+      },
+      {
+        "ms": 1417.5,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 1504.0999999996277,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 1603.0999999996277,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 1702.7999999988824,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 1802.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 1903.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 1985.199999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 2067.2999999988824,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2167,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2267.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.899999998509884
+      },
+      {
+        "ms": 2349.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2435,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 2516.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 2606.5,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 5.200000001117587
+      },
+      {
+        "ms": 2703.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 2785.199999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2867.0999999996275,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.900000000372529
+      },
+      {
+        "ms": 2950.199999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 3034.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 3116.5,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.300000000745058
+      },
+      {
+        "ms": 3234.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.400000000372529
+      },
+      {
+        "ms": 3319.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 3405,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 3503.5999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 3602.0999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.200000001117587
+      },
+      {
+        "ms": 3684.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 3767.5,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 3850,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 3933.699999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4033.099999999627,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 4116.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.399999998509884
+      },
+      {
+        "ms": 4204,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 4285.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 4385.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 4466.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 4550.0999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4633.5,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4718.39999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4804.0999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 4903.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 5003.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5085.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5167.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 5267.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5366.39999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 5449.799999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 5534,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 5617.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 5704,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 5803.799999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 5904.0999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 6004.199999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.900000000372529
+      },
+      {
+        "ms": 6105.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 5
+      },
+      {
+        "ms": 6203.89999999851,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.199999999254942
+      },
+      {
+        "ms": 6304.199999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 6404.89999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 6503.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 6585.39999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 6667.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 6766.5999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 6867,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 6949.799999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 7033.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7117.799999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 7216.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 7303.5999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 7403.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7504.5999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 7604.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 7702.699999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 7803.299999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7886.299999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7967.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8050.0999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8134.5999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 8217.199999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 8303.799999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 8403.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8504.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.799999998882413
+      },
+      {
+        "ms": 8585.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8667.299999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8750.699999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 8834.199999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8917.599999999627,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 9002.199999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 9086.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 9167.599999999627,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 9268.5,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 9367.599999999627,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 9467.39999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.899999998509884
+      },
+      {
+        "ms": 9568.199999999257,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.400000000372529
+      },
+      {
+        "ms": 9650.39999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.799999998882413
+      }
+    ],
+    "requests": [
+      {
+        "bytes": 39298,
+        "end": 54,
+        "path": "/games/games.css",
+        "start": 39,
+        "transfer": 39598
+      },
+      {
+        "bytes": 21052,
+        "end": 60,
+        "path": "/games/games-cinematic.css",
+        "start": 39,
+        "transfer": 21352
+      },
+      {
+        "bytes": 30822,
+        "end": 60,
+        "path": "/styles/pages.css",
+        "start": 39,
+        "transfer": 31122
+      },
+      {
+        "bytes": 21662,
+        "end": 60,
+        "path": "/movies/movies.css",
+        "start": 39,
+        "transfer": 21962
+      },
+      {
+        "bytes": 15428,
+        "end": 60,
+        "path": "/movies/movies-cinematic.css",
+        "start": 39,
+        "transfer": 15728
+      },
+      {
+        "bytes": 51996,
+        "end": 60,
+        "path": "/styles/cinematic-refinement.css",
+        "start": 39,
+        "transfer": 52296
+      },
+      {
+        "bytes": 9241,
+        "end": 61,
+        "path": "/work/tracker.css",
+        "start": 39,
+        "transfer": 9541
+      },
+      {
+        "bytes": 7499,
+        "end": 63,
+        "path": "/explore/discovery.css",
+        "start": 39,
+        "transfer": 7799
+      },
+      {
+        "bytes": 11109,
+        "end": 64,
+        "path": "/styles/redesign-foundation.css",
+        "start": 39,
+        "transfer": 11409
+      },
+      {
+        "bytes": 11347,
+        "end": 64,
+        "path": "/home/home-redesign.css",
+        "start": 39,
+        "transfer": 11647
+      },
+      {
+        "bytes": 10326,
+        "end": 64,
+        "path": "/work/work-redesign.css",
+        "start": 39,
+        "transfer": 10626
+      },
+      {
+        "bytes": 9881,
+        "end": 64,
+        "path": "/personal/personal-redesign.css",
+        "start": 39,
+        "transfer": 10181
+      },
+      {
+        "bytes": 12087,
+        "end": 65,
+        "path": "/explore/explore-redesign.css",
+        "start": 39,
+        "transfer": 12387
+      },
+      {
+        "bytes": 7048,
+        "end": 66,
+        "path": "/games/games-redesign.css",
+        "start": 39,
+        "transfer": 7348
+      },
+      {
+        "bytes": 16736,
+        "end": 67,
+        "path": "/styles/redesign-layout.css",
+        "start": 39,
+        "transfer": 17036
+      },
+      {
+        "bytes": 16265,
+        "end": 67,
+        "path": "/styles/redesign-owners.css",
+        "start": 39,
+        "transfer": 16565
+      },
+      {
+        "bytes": 3006,
+        "end": 67,
+        "path": "/explore/trip-board.js",
+        "start": 39,
+        "transfer": 3306
+      },
+      {
+        "bytes": 16141,
+        "end": 67,
+        "path": "/shared/storage-utils.js",
+        "start": 40,
+        "transfer": 16441
+      },
+      {
+        "bytes": 2599,
+        "end": 68,
+        "path": "/shared/catalog-utils.js",
+        "start": 40,
+        "transfer": 2899
+      },
+      {
+        "bytes": 7162,
+        "end": 69,
+        "path": "/shared/tooltip-utils.js",
+        "start": 40,
+        "transfer": 7462
+      },
+      {
+        "bytes": 3958,
+        "end": 70,
+        "path": "/personal/personal-controller.js",
+        "start": 40,
+        "transfer": 4258
+      },
+      {
+        "bytes": 2584,
+        "end": 71,
+        "path": "/shared/shortcut-utils.js",
+        "start": 40,
+        "transfer": 2884
+      },
+      {
+        "bytes": 2835,
+        "end": 71,
+        "path": "/shared/visual-utils.js",
+        "start": 40,
+        "transfer": 3135
+      },
+      {
+        "bytes": 4311,
+        "end": 71,
+        "path": "/shared/domain-ui.js",
+        "start": 40,
+        "transfer": 4611
+      },
+      {
+        "bytes": 6133,
+        "end": 72,
+        "path": "/shared/shortcut-surface.js",
+        "start": 40,
+        "transfer": 6433
+      },
+      {
+        "bytes": 5025,
+        "end": 74,
+        "path": "/home/home-overview.js",
+        "start": 40,
+        "transfer": 5325
+      },
+      {
+        "bytes": 8717,
+        "end": 73,
+        "path": "/work/projects.js",
+        "start": 40,
+        "transfer": 9017
+      },
+      {
+        "bytes": 31959,
+        "end": 76,
+        "path": "/work/work-tracker.js",
+        "start": 40,
+        "transfer": 32259
+      },
+      {
+        "bytes": 14846,
+        "end": 76,
+        "path": "/explore/explore-data.js",
+        "start": 40,
+        "transfer": 15146
+      },
+      {
+        "bytes": 9039,
+        "end": 76,
+        "path": "/explore/local-discovery.js",
+        "start": 40,
+        "transfer": 9339
+      },
+      {
+        "bytes": 15419,
+        "end": 77,
+        "path": "/explore/discovery-ui.js",
+        "start": 40,
+        "transfer": 15719
+      },
+      {
+        "bytes": 10774,
+        "end": 78,
+        "path": "/explore/explore-global.js",
+        "start": 40,
+        "transfer": 11074
+      },
+      {
+        "bytes": 7456,
+        "end": 78,
+        "path": "/shared/provider-search.js",
+        "start": 40,
+        "transfer": 7756
+      },
+      {
+        "bytes": 8136,
+        "end": 80,
+        "path": "/games/game-resources.js",
+        "start": 40,
+        "transfer": 8436
+      },
+      {
+        "bytes": 15601,
+        "end": 81,
+        "path": "/games/games-data.js",
+        "start": 40,
+        "transfer": 15901
+      },
+      {
+        "bytes": 107971,
+        "end": 81,
+        "path": "/games/games.js",
+        "start": 40,
+        "transfer": 108271
+      },
+      {
+        "bytes": 24345,
+        "end": 82,
+        "path": "/movies/movies-data.js",
+        "start": 40,
+        "transfer": 24645
+      },
+      {
+        "bytes": 4301,
+        "end": 83,
+        "path": "/settings/settings.js",
+        "start": 40,
+        "transfer": 4601
+      },
+      {
+        "bytes": 100487,
+        "end": 83,
+        "path": "/movies/movies.js",
+        "start": 40,
+        "transfer": 100787
+      },
+      {
+        "bytes": 1750,
+        "end": 85,
+        "path": "/explore/discovery-integration.js",
+        "start": 41,
+        "transfer": 2050
+      },
+      {
+        "bytes": 14206,
+        "end": 85,
+        "path": "/shared/cinematic-scenes.js",
+        "start": 41,
+        "transfer": 14506
+      },
+      {
+        "bytes": 18250,
+        "end": 270,
+        "path": "/shared/redesign-foundation.js",
+        "start": 41,
+        "transfer": 18550
+      },
+      {
+        "bytes": 23070,
+        "end": 270,
+        "path": "/home/home-redesign.js",
+        "start": 41,
+        "transfer": 23370
+      },
+      {
+        "bytes": 20770,
+        "end": 271,
+        "path": "/work/work-redesign.js",
+        "start": 41,
+        "transfer": 21070
+      },
+      {
+        "bytes": 15657,
+        "end": 271,
+        "path": "/personal/personal-redesign.js",
+        "start": 41,
+        "transfer": 15957
+      },
+      {
+        "bytes": 13872,
+        "end": 271,
+        "path": "/games/games-redesign.js",
+        "start": 41,
+        "transfer": 14172
+      },
+      {
+        "bytes": 14039,
+        "end": 271,
+        "path": "/explore/explore-redesign.js",
+        "start": 41,
+        "transfer": 14339
+      },
+      {
+        "bytes": 180598,
+        "end": 272,
+        "path": "/assets/page-art/settings-cinematic.webp",
+        "start": 130,
+        "transfer": 180898
+      },
+      {
+        "bytes": 93,
+        "end": 272,
+        "path": "/api/status",
+        "start": 144,
+        "transfer": 393
+      },
+      {
+        "bytes": 2577,
+        "end": 280,
+        "path": "/assets/provider-logos/tmdb.svg",
+        "start": 279,
+        "transfer": 2877
+      },
+      {
+        "bytes": 910490,
+        "end": 542,
+        "path": "/assets/scenes/home/hero-fullbleed.jpg",
+        "start": 289,
+        "transfer": 910790
+      },
+      {
+        "bytes": 182401,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/work-review.jpg",
+        "start": 294,
+        "transfer": 182701
+      },
+      {
+        "bytes": 206839,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/explore-review.jpg",
+        "start": 294,
+        "transfer": 207139
+      },
+      {
+        "bytes": 192580,
+        "end": 298,
+        "path": "/assets/scenes/home/portals/personal-review.jpg",
+        "start": 294,
+        "transfer": 192880
+      },
+      {
+        "bytes": 177556,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/media-games-review.jpg",
+        "start": 294,
+        "transfer": 177856
+      },
+      {
+        "bytes": 157868,
+        "end": 299,
+        "path": "/assets/scenes/home/portals/projects-notes-review.jpg",
+        "start": 294,
+        "transfer": 158168
+      },
+      {
+        "bytes": 124585,
+        "end": 300,
+        "path": "/assets/scenes/home/portals/settings-review.jpg",
+        "start": 294,
+        "transfer": 124885
+      },
+      {
+        "bytes": 1108031,
+        "end": 890,
+        "path": "/assets/scenes/work/hero-fullbleed.jpg",
+        "start": 632,
+        "transfer": 1108331
+      },
+      {
+        "bytes": 80002,
+        "end": 644,
+        "path": "/assets/scenes/work/portals/projects.jpg",
+        "start": 641,
+        "transfer": 80302
+      },
+      {
+        "bytes": 118740,
+        "end": 645,
+        "path": "/assets/scenes/work/portals/kanban-board.jpg",
+        "start": 641,
+        "transfer": 119040
+      },
+      {
+        "bytes": 129098,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/team.jpg",
+        "start": 641,
+        "transfer": 129398
+      },
+      {
+        "bytes": 100055,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/documents.jpg",
+        "start": 641,
+        "transfer": 100355
+      },
+      {
+        "bytes": 94983,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/meetings.jpg",
+        "start": 641,
+        "transfer": 95283
+      },
+      {
+        "bytes": 114686,
+        "end": 647,
+        "path": "/assets/scenes/work/portals/templates.jpg",
+        "start": 641,
+        "transfer": 114986
+      },
+      {
+        "bytes": 1152795,
+        "end": 1023,
+        "path": "/assets/scenes/personal/hero-fullbleed.jpg",
+        "start": 760,
+        "transfer": 1153095
+      },
+      {
+        "bytes": 117081,
+        "end": 772,
+        "path": "/assets/scenes/personal/portals/mindfulness.jpg",
+        "start": 768,
+        "transfer": 117381
+      },
+      {
+        "bytes": 134525,
+        "end": 772,
+        "path": "/assets/scenes/personal/portals/fitness.jpg",
+        "start": 768,
+        "transfer": 134825
+      },
+      {
+        "bytes": 124008,
+        "end": 773,
+        "path": "/assets/scenes/personal/portals/nutrition.jpg",
+        "start": 768,
+        "transfer": 124308
+      },
+      {
+        "bytes": 119070,
+        "end": 773,
+        "path": "/assets/scenes/personal/portals/recovery.jpg",
+        "start": 768,
+        "transfer": 119370
+      },
+      {
+        "bytes": 111059,
+        "end": 775,
+        "path": "/assets/scenes/personal/portals/personal-life.jpg",
+        "start": 768,
+        "transfer": 111359
+      },
+      {
+        "bytes": 129138,
+        "end": 775,
+        "path": "/assets/scenes/personal/portals/home-wellbeing.jpg",
+        "start": 768,
+        "transfer": 129438
+      },
+      {
+        "bytes": 1317840,
+        "end": 1122,
+        "path": "/assets/scenes/explore/hero-fullbleed.jpg",
+        "start": 858,
+        "transfer": 1318140
+      },
+      {
+        "bytes": 295075,
+        "end": 869,
+        "path": "/assets/scenes/explore/portals/destinations.jpg",
+        "start": 866,
+        "transfer": 295375
+      },
+      {
+        "bytes": 261022,
+        "end": 870,
+        "path": "/assets/scenes/explore/portals/experiences.jpg",
+        "start": 866,
+        "transfer": 261322
+      },
+      {
+        "bytes": 235671,
+        "end": 871,
+        "path": "/assets/scenes/explore/portals/travel-guides.jpg",
+        "start": 866,
+        "transfer": 235971
+      },
+      {
+        "bytes": 240919,
+        "end": 872,
+        "path": "/assets/scenes/explore/portals/bucket-list.jpg",
+        "start": 866,
+        "transfer": 241219
+      },
+      {
+        "bytes": 201271,
+        "end": 874,
+        "path": "/assets/scenes/explore/portals/discover-more.jpg",
+        "start": 866,
+        "transfer": 201571
+      },
+      {
+        "bytes": 54202,
+        "end": 874,
+        "path": "/assets/destinations/lisbon-card.webp",
+        "start": 866,
+        "transfer": 54502
+      },
+      {
+        "bytes": 78144,
+        "end": 875,
+        "path": "/assets/destinations/kyoto-card.webp",
+        "start": 866,
+        "transfer": 78444
+      },
+      {
+        "bytes": 27590,
+        "end": 876,
+        "path": "/assets/destinations/azores-card.webp",
+        "start": 866,
+        "transfer": 27890
+      },
+      {
+        "bytes": 1164656,
+        "end": 1305,
+        "path": "/assets/scenes/games/hero-fullbleed.jpg",
+        "start": 1046,
+        "transfer": 1164956
+      },
+      {
+        "bytes": 133892,
+        "end": 1055,
+        "path": "/assets/scenes/games/portals/my-games.jpg",
+        "start": 1052,
+        "transfer": 134192
+      },
+      {
+        "bytes": 138537,
+        "end": 1057,
+        "path": "/assets/scenes/games/portals/missions-quests.jpg",
+        "start": 1052,
+        "transfer": 138837
+      },
+      {
+        "bytes": 148060,
+        "end": 1056,
+        "path": "/assets/scenes/games/portals/game-library.jpg",
+        "start": 1052,
+        "transfer": 148360
+      },
+      {
+        "bytes": 104315,
+        "end": 1057,
+        "path": "/assets/scenes/games/portals/game-sessions.jpg",
+        "start": 1052,
+        "transfer": 104615
+      },
+      {
+        "bytes": 151443,
+        "end": 1058,
+        "path": "/assets/scenes/games/portals/discover-games.jpg",
+        "start": 1052,
+        "transfer": 151743
+      },
+      {
+        "bytes": 105983,
+        "end": 1060,
+        "path": "/assets/scenes/games/portals/game-settings.jpg",
+        "start": 1052,
+        "transfer": 106283
+      }
+    ],
+    "runtime": [],
+    "scenes": [
+      {
+        "id": 1,
+        "src": "assets/scenes/home/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 2,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 3,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 8,
+        "src": "assets/scenes/games/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": true,
+        "world": "games"
+      },
+      {
+        "id": 5,
+        "src": "assets/scenes/work/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "work"
+      },
+      {
+        "id": 6,
+        "src": "assets/scenes/personal/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "personal"
+      },
+      {
+        "id": 7,
+        "src": "assets/scenes/explore/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "explore"
+      },
+      {
+        "id": 4,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      }
+    ],
+    "shifts": [
+      {
+        "ms": 293.19999999925494,
+        "recentInput": false,
+        "value": 0.000017024576663970947
+      },
+      {
+        "ms": 382,
+        "recentInput": false,
+        "value": 0.06587612628936768
+      },
+      {
+        "ms": 392.2999999988824,
+        "recentInput": false,
+        "value": 0.019270051270723343
+      },
+      {
+        "ms": 403.3999999985099,
+        "recentInput": false,
+        "value": 0.013591498136520386
+      },
+      {
+        "ms": 432.0999999996274,
+        "recentInput": false,
+        "value": 0.01720269024372101
+      },
+      {
+        "ms": 443.7999999988824,
+        "recentInput": false,
+        "value": 0.005655169486999512
+      },
+      {
+        "ms": 455.0999999996274,
+        "recentInput": false,
+        "value": 0.004299916326999664
+      },
+      {
+        "ms": 471.3999999985099,
+        "recentInput": false,
+        "value": 0.003156602382659912
+      },
+      {
+        "ms": 491.0999999996274,
+        "recentInput": false,
+        "value": 0.0026091337203979492
+      },
+      {
+        "ms": 506.2999999988824,
+        "recentInput": false,
+        "value": 0.00016843530789224638
+      }
+    ]
+  },
+  "motion": {
+    "hidden": false,
+    "layers": [
+      {
+        "animation": "none",
+        "class": "osr-scene-image",
+        "duration": "0s",
+        "filter": "none",
+        "opacity": "1",
+        "transform": "none"
+      }
+    ],
+    "motionClass": "has-sidebar",
+    "page": "games",
+    "views": [
+      {
+        "hidden": true,
+        "id": "homeView",
+        "intensity": "full",
+        "state": "idle"
+      },
+      {
+        "hidden": true,
+        "id": "shortcutsView",
+        "intensity": "full"
+      },
+      {
+        "hidden": true,
+        "id": "productivityView",
+        "intensity": "full"
+      },
+      {
+        "hidden": false,
+        "id": "gamesView",
+        "intensity": "full",
+        "state": "ambient"
+      },
+      {
+        "hidden": true,
+        "id": "workView",
+        "intensity": "full",
+        "state": "idle"
+      },
+      {
+        "hidden": true,
+        "id": "personalView",
+        "intensity": "full",
+        "state": "idle"
+      },
+      {
+        "hidden": true,
+        "id": "exploreView",
+        "intensity": "full",
+        "state": "idle"
+      },
+      {
+        "hidden": true,
+        "id": "moviesView",
+        "intensity": "full"
+      },
+      {
+        "hidden": true,
+        "id": "notesView",
+        "intensity": "full"
+      },
+      {
+        "hidden": true,
+        "id": "settingsView",
+        "intensity": "full"
+      }
+    ]
+  },
+  "back": {
+    "client": 2048,
+    "dialogs": [],
+    "focus": "osrHomeTitle",
+    "focusVisible": true,
+    "hash": "#/w/home",
+    "page": "home",
+    "scrollWidth": 2048,
+    "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local space\n\nGood morning.\n\nA calmer day. A brighter you.\n\nQuick Capture text\nCapture as\nNote\nTask\nCapture\n\nPrivate on this device · Ctrl + K for commands\n\nPlan my day\nBrainstorm ideas\nTrack my progress\nFind a place to visit\nNow\n↗\n25:00\nReady to focus\nA moment for focused work\n\nStart or adjust your local timer in Productivity.\n\nOpen timer →\nToday 0 priorities\n+\n\nNo tasks due or queued today. Add one small next step.\n\nNext 0 upcoming\n↗\n\nNothing dated next. Add an important date in Productivity.\n\nOneSpace Pulse\n↗\n\nA transparent view of your saved local activity\n\n0\nOpen tasks\n0\nActive projects\n0\nSaved notes\nExplore your worlds\nWork\nFocus. Create. Ship.\nPersonal / Fitness\nA healthier, stronger you.\nDiscover\nExplore. Learn. Be inspired.\nMedia & Games\nTwo worlds for your downtime.\nGames\nMovies & Series\nProjects & Notes\nWorld in preparation · your records remain safe.\nSettings\nMake it yours.\nOneSpace · your focused space for work and life"
+  },
+  "forward": {
+    "client": 2048,
+    "dialogs": [],
+    "focus": "osrGamesTitle",
+    "focusVisible": true,
+    "hash": "#/w/games",
+    "page": "games",
+    "scrollWidth": 2048,
+    "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYOUR PERSONAL GAMING ROOM\n\nGame on.\n\nGood games. A brighter you.\n\nSearch local games\nSearch games →\nClear\n\nSearch the bundled catalogue on this device.\n\nOpen game details\nView library\nTrack progress\nDiscover games\nGame sessions\nContinue Playing\n↗\n\nNo recorded play or unfinished progress yet.\n\nChoose a game →\nToday’s Gaming\n↗\n\n0\nminutes recorded today\n\n0 completed sessions\n\nNo active session.\n\nRecord a sessionWeekly tasks\nGame Progress\n↗\n\nChecked tasks in your current trackers\n\nAlan Wake 2\nStory objectives · 0/12\n0%\nResident Evil 4\nStory objectives · 0/13\n0%\nDiablo Immortal\nWeekly tasks · 0/7\n0%\nOneSpace Gaming Pulse\n↗\n\nYour last seven calendar days\n\n0\nminutes recorded\n\n0\nCompleted sessions\n\n6\nGames in your collection\n\nView session history\nMy Games\nYour collection, in one place.\n↗\nMissions & Quests\nYour story and weekly trackers.\n↗\nGame Library\nBrowse and add games.\n↗\nGame Sessions\nRecord your time playing.\n↗\nDiscover Games\nFind your next local favorite.\n↗\nGame Settings\nMake this room your own.\n↗\nScene credits\n\nPlay your way. Your collection and progress stay on this device.\n\nOneSpace · your focused space for work and life"
+  },
+  "final": {
+    "animations": [],
+    "assetTimings": [
+      {
+        "decodeEnd": 593.8999999985099,
+        "decodeStart": 586.8999999985099,
+        "natural": [
+          2144,
+          1254
+        ],
+        "observedLoadedAt": 586.8999999985099,
+        "src": "assets/scenes/home/hero-fullbleed.jpg",
+        "world": "home"
+      },
+      {
+        "decodeEnd": 996,
+        "decodeStart": 975.5999999996276,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 975.5999999996276,
+        "src": "assets/scenes/work/hero-fullbleed.jpg",
+        "world": "work"
+      },
+      {
+        "decodeEnd": 1095.0999999996277,
+        "decodeStart": 1082.7999999988824,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1082.7999999988824,
+        "src": "assets/scenes/personal/hero-fullbleed.jpg",
+        "world": "personal"
+      },
+      {
+        "decodeEnd": 1195.2999999988824,
+        "decodeStart": 1182.2999999988824,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1182.2999999988824,
+        "src": "assets/scenes/explore/hero-fullbleed.jpg",
+        "world": "explore"
+      },
+      {
+        "decodeEnd": 1398.699999999255,
+        "decodeStart": 1386.699999999255,
+        "natural": [
+          2508,
+          1254
+        ],
+        "observedLoadedAt": 1386.699999999255,
+        "src": "assets/scenes/games/hero-fullbleed.jpg",
+        "world": "games"
+      }
+    ],
+    "current": {
+      "boot": "ready",
+      "gameVault": false,
+      "hash": "#/w/games",
+      "ms": 17711,
+      "oldNav": false,
+      "page": "games",
+      "scrollWidth": 2048,
+      "stages": [
+        {
+          "mounted": true,
+          "view": "gamesView",
+          "visible": true
+        }
+      ],
+      "views": [
+        "gamesView"
+      ],
+      "width": 2048
+    },
+    "frames": [
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 53,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 67,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 81,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 95,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 112,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 129,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 146,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 163,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 179,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 196,
+        "oldNav": false,
+        "page": "settings",
+        "scrollWidth": 2033,
+        "stages": [],
+        "views": [],
+        "width": 2033
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 216,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "pending",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 233,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [],
+        "views": [],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 283,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 303,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 312,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 326,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      },
+      {
+        "boot": "ready",
+        "gameVault": false,
+        "hash": "#/w/home",
+        "ms": 353,
+        "oldNav": false,
+        "page": "home",
+        "scrollWidth": 2048,
+        "stages": [
+          {
+            "mounted": true,
+            "view": "homeView",
+            "visible": true
+          }
+        ],
+        "views": [
+          "homeView"
+        ],
+        "width": 2048
+      }
+    ],
+    "handles": {
+      "intervals": 4,
+      "rafs": 0,
+      "timeouts": 0
+    },
+    "load": "1790984101067-0.4322018386911194",
+    "navigation": [
+      {
+        "ms": 118,
+        "page": "settings",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 284.69999999925494,
+        "page": "home",
+        "previous": "settings",
+        "responseMs": null
+      },
+      {
+        "ms": 623.8999999985099,
+        "page": "work",
+        "previous": "home",
+        "responseMs": 5.599999999627471
+      },
+      {
+        "ms": 751.8999999985099,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.599999999627471
+      },
+      {
+        "ms": 850.5,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 4.200000001117587
+      },
+      {
+        "ms": 951.89999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.299999998882413
+      },
+      {
+        "ms": 1037.2999999988824,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 4.799999998882413
+      },
+      {
+        "ms": 1138.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 1234,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 1319.699999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.300000000745058
+      },
+      {
+        "ms": 1417.5,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 1504.0999999996277,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 1603.0999999996277,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 1702.7999999988824,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 1802.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 1903.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 1985.199999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 2067.2999999988824,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2167,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2267.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.899999998509884
+      },
+      {
+        "ms": 2349.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2435,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 2516.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 2606.5,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 5.200000001117587
+      },
+      {
+        "ms": 2703.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 2785.199999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 2867.0999999996275,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.900000000372529
+      },
+      {
+        "ms": 2950.199999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 3034.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 3116.5,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.300000000745058
+      },
+      {
+        "ms": 3234.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.400000000372529
+      },
+      {
+        "ms": 3319.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 3405,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 3503.5999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 3602.0999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.200000001117587
+      },
+      {
+        "ms": 3684.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 3767.5,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 3850,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 3933.699999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4033.099999999627,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 4116.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.399999998509884
+      },
+      {
+        "ms": 4204,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 4285.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 4385.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 4466.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 4550.0999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4633.5,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4718.39999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 4804.0999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.400000000372529
+      },
+      {
+        "ms": 4903.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 5003.699999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5085.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5167.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 5267.199999999255,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 5366.39999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 5449.799999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 5534,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 5617.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 5704,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 5803.799999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 5904.0999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 6004.199999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.900000000372529
+      },
+      {
+        "ms": 6105.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 5
+      },
+      {
+        "ms": 6203.89999999851,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.199999999254942
+      },
+      {
+        "ms": 6304.199999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 6404.89999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 6503.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 6585.39999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 6667.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 6766.5999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 6867,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.600000001490116
+      },
+      {
+        "ms": 6949.799999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 7033.699999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7117.799999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.299999998882413
+      },
+      {
+        "ms": 7216.89999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 7303.5999999996275,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 7403.89999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7504.5999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.700000001117587
+      },
+      {
+        "ms": 7604.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 7702.699999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 7803.299999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7886.299999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 7967.0999999996275,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8050.0999999996275,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8134.5999999996275,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.099999999627471
+      },
+      {
+        "ms": 8217.199999999255,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 8303.799999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 8403.89999999851,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8504.299999998882,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.799999998882413
+      },
+      {
+        "ms": 8585.299999998882,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.5
+      },
+      {
+        "ms": 8667.299999998882,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8750.699999999255,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 8834.199999999255,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 3.699999999254942
+      },
+      {
+        "ms": 8917.599999999627,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 9002.199999999255,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.199999999254942
+      },
+      {
+        "ms": 9086.39999999851,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 3.599999999627471
+      },
+      {
+        "ms": 9167.599999999627,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.800000000745058
+      },
+      {
+        "ms": 9268.5,
+        "page": "work",
+        "previous": "games",
+        "responseMs": 4.5
+      },
+      {
+        "ms": 9367.599999999627,
+        "page": "personal",
+        "previous": "work",
+        "responseMs": 4.099999999627471
+      },
+      {
+        "ms": 9467.39999999851,
+        "page": "explore",
+        "previous": "personal",
+        "responseMs": 3.899999998509884
+      },
+      {
+        "ms": 9568.199999999257,
+        "page": "home",
+        "previous": "explore",
+        "responseMs": 4.400000000372529
+      },
+      {
+        "ms": 9650.39999999851,
+        "page": "games",
+        "previous": "home",
+        "responseMs": 3.799999998882413
+      },
+      {
+        "ms": 13739.39999999851,
+        "page": "home",
+        "previous": "games",
+        "responseMs": null
+      },
+      {
+        "ms": 13775.299999998882,
+        "page": "games",
+        "previous": "home",
+        "responseMs": null
+      }
+    ],
+    "requests": [
+      {
+        "bytes": 39298,
+        "end": 54,
+        "path": "/games/games.css",
+        "start": 39,
+        "transfer": 39598
+      },
+      {
+        "bytes": 21052,
+        "end": 60,
+        "path": "/games/games-cinematic.css",
+        "start": 39,
+        "transfer": 21352
+      },
+      {
+        "bytes": 30822,
+        "end": 60,
+        "path": "/styles/pages.css",
+        "start": 39,
+        "transfer": 31122
+      },
+      {
+        "bytes": 21662,
+        "end": 60,
+        "path": "/movies/movies.css",
+        "start": 39,
+        "transfer": 21962
+      },
+      {
+        "bytes": 15428,
+        "end": 60,
+        "path": "/movies/movies-cinematic.css",
+        "start": 39,
+        "transfer": 15728
+      },
+      {
+        "bytes": 51996,
+        "end": 60,
+        "path": "/styles/cinematic-refinement.css",
+        "start": 39,
+        "transfer": 52296
+      },
+      {
+        "bytes": 9241,
+        "end": 61,
+        "path": "/work/tracker.css",
+        "start": 39,
+        "transfer": 9541
+      },
+      {
+        "bytes": 7499,
+        "end": 63,
+        "path": "/explore/discovery.css",
+        "start": 39,
+        "transfer": 7799
+      },
+      {
+        "bytes": 11109,
+        "end": 64,
+        "path": "/styles/redesign-foundation.css",
+        "start": 39,
+        "transfer": 11409
+      },
+      {
+        "bytes": 11347,
+        "end": 64,
+        "path": "/home/home-redesign.css",
+        "start": 39,
+        "transfer": 11647
+      },
+      {
+        "bytes": 10326,
+        "end": 64,
+        "path": "/work/work-redesign.css",
+        "start": 39,
+        "transfer": 10626
+      },
+      {
+        "bytes": 9881,
+        "end": 64,
+        "path": "/personal/personal-redesign.css",
+        "start": 39,
+        "transfer": 10181
+      },
+      {
+        "bytes": 12087,
+        "end": 65,
+        "path": "/explore/explore-redesign.css",
+        "start": 39,
+        "transfer": 12387
+      },
+      {
+        "bytes": 7048,
+        "end": 66,
+        "path": "/games/games-redesign.css",
+        "start": 39,
+        "transfer": 7348
+      },
+      {
+        "bytes": 16736,
+        "end": 67,
+        "path": "/styles/redesign-layout.css",
+        "start": 39,
+        "transfer": 17036
+      },
+      {
+        "bytes": 16265,
+        "end": 67,
+        "path": "/styles/redesign-owners.css",
+        "start": 39,
+        "transfer": 16565
+      },
+      {
+        "bytes": 3006,
+        "end": 67,
+        "path": "/explore/trip-board.js",
+        "start": 39,
+        "transfer": 3306
+      },
+      {
+        "bytes": 16141,
+        "end": 67,
+        "path": "/shared/storage-utils.js",
+        "start": 40,
+        "transfer": 16441
+      },
+      {
+        "bytes": 2599,
+        "end": 68,
+        "path": "/shared/catalog-utils.js",
+        "start": 40,
+        "transfer": 2899
+      },
+      {
+        "bytes": 7162,
+        "end": 69,
+        "path": "/shared/tooltip-utils.js",
+        "start": 40,
+        "transfer": 7462
+      },
+      {
+        "bytes": 3958,
+        "end": 70,
+        "path": "/personal/personal-controller.js",
+        "start": 40,
+        "transfer": 4258
+      },
+      {
+        "bytes": 2584,
+        "end": 71,
+        "path": "/shared/shortcut-utils.js",
+        "start": 40,
+        "transfer": 2884
+      },
+      {
+        "bytes": 2835,
+        "end": 71,
+        "path": "/shared/visual-utils.js",
+        "start": 40,
+        "transfer": 3135
+      },
+      {
+        "bytes": 4311,
+        "end": 71,
+        "path": "/shared/domain-ui.js",
+        "start": 40,
+        "transfer": 4611
+      },
+      {
+        "bytes": 6133,
+        "end": 72,
+        "path": "/shared/shortcut-surface.js",
+        "start": 40,
+        "transfer": 6433
+      },
+      {
+        "bytes": 5025,
+        "end": 74,
+        "path": "/home/home-overview.js",
+        "start": 40,
+        "transfer": 5325
+      },
+      {
+        "bytes": 8717,
+        "end": 73,
+        "path": "/work/projects.js",
+        "start": 40,
+        "transfer": 9017
+      },
+      {
+        "bytes": 31959,
+        "end": 76,
+        "path": "/work/work-tracker.js",
+        "start": 40,
+        "transfer": 32259
+      },
+      {
+        "bytes": 14846,
+        "end": 76,
+        "path": "/explore/explore-data.js",
+        "start": 40,
+        "transfer": 15146
+      },
+      {
+        "bytes": 9039,
+        "end": 76,
+        "path": "/explore/local-discovery.js",
+        "start": 40,
+        "transfer": 9339
+      },
+      {
+        "bytes": 15419,
+        "end": 77,
+        "path": "/explore/discovery-ui.js",
+        "start": 40,
+        "transfer": 15719
+      },
+      {
+        "bytes": 10774,
+        "end": 78,
+        "path": "/explore/explore-global.js",
+        "start": 40,
+        "transfer": 11074
+      },
+      {
+        "bytes": 7456,
+        "end": 78,
+        "path": "/shared/provider-search.js",
+        "start": 40,
+        "transfer": 7756
+      },
+      {
+        "bytes": 8136,
+        "end": 80,
+        "path": "/games/game-resources.js",
+        "start": 40,
+        "transfer": 8436
+      },
+      {
+        "bytes": 15601,
+        "end": 81,
+        "path": "/games/games-data.js",
+        "start": 40,
+        "transfer": 15901
+      },
+      {
+        "bytes": 107971,
+        "end": 81,
+        "path": "/games/games.js",
+        "start": 40,
+        "transfer": 108271
+      },
+      {
+        "bytes": 24345,
+        "end": 82,
+        "path": "/movies/movies-data.js",
+        "start": 40,
+        "transfer": 24645
+      },
+      {
+        "bytes": 4301,
+        "end": 83,
+        "path": "/settings/settings.js",
+        "start": 40,
+        "transfer": 4601
+      },
+      {
+        "bytes": 100487,
+        "end": 83,
+        "path": "/movies/movies.js",
+        "start": 40,
+        "transfer": 100787
+      },
+      {
+        "bytes": 1750,
+        "end": 85,
+        "path": "/explore/discovery-integration.js",
+        "start": 41,
+        "transfer": 2050
+      },
+      {
+        "bytes": 14206,
+        "end": 85,
+        "path": "/shared/cinematic-scenes.js",
+        "start": 41,
+        "transfer": 14506
+      },
+      {
+        "bytes": 18250,
+        "end": 270,
+        "path": "/shared/redesign-foundation.js",
+        "start": 41,
+        "transfer": 18550
+      },
+      {
+        "bytes": 23070,
+        "end": 270,
+        "path": "/home/home-redesign.js",
+        "start": 41,
+        "transfer": 23370
+      },
+      {
+        "bytes": 20770,
+        "end": 271,
+        "path": "/work/work-redesign.js",
+        "start": 41,
+        "transfer": 21070
+      },
+      {
+        "bytes": 15657,
+        "end": 271,
+        "path": "/personal/personal-redesign.js",
+        "start": 41,
+        "transfer": 15957
+      },
+      {
+        "bytes": 13872,
+        "end": 271,
+        "path": "/games/games-redesign.js",
+        "start": 41,
+        "transfer": 14172
+      },
+      {
+        "bytes": 14039,
+        "end": 271,
+        "path": "/explore/explore-redesign.js",
+        "start": 41,
+        "transfer": 14339
+      },
+      {
+        "bytes": 180598,
+        "end": 272,
+        "path": "/assets/page-art/settings-cinematic.webp",
+        "start": 130,
+        "transfer": 180898
+      },
+      {
+        "bytes": 93,
+        "end": 272,
+        "path": "/api/status",
+        "start": 144,
+        "transfer": 393
+      },
+      {
+        "bytes": 2577,
+        "end": 280,
+        "path": "/assets/provider-logos/tmdb.svg",
+        "start": 279,
+        "transfer": 2877
+      },
+      {
+        "bytes": 910490,
+        "end": 542,
+        "path": "/assets/scenes/home/hero-fullbleed.jpg",
+        "start": 289,
+        "transfer": 910790
+      },
+      {
+        "bytes": 182401,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/work-review.jpg",
+        "start": 294,
+        "transfer": 182701
+      },
+      {
+        "bytes": 206839,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/explore-review.jpg",
+        "start": 294,
+        "transfer": 207139
+      },
+      {
+        "bytes": 192580,
+        "end": 298,
+        "path": "/assets/scenes/home/portals/personal-review.jpg",
+        "start": 294,
+        "transfer": 192880
+      },
+      {
+        "bytes": 177556,
+        "end": 297,
+        "path": "/assets/scenes/home/portals/media-games-review.jpg",
+        "start": 294,
+        "transfer": 177856
+      },
+      {
+        "bytes": 157868,
+        "end": 299,
+        "path": "/assets/scenes/home/portals/projects-notes-review.jpg",
+        "start": 294,
+        "transfer": 158168
+      },
+      {
+        "bytes": 124585,
+        "end": 300,
+        "path": "/assets/scenes/home/portals/settings-review.jpg",
+        "start": 294,
+        "transfer": 124885
+      },
+      {
+        "bytes": 1108031,
+        "end": 890,
+        "path": "/assets/scenes/work/hero-fullbleed.jpg",
+        "start": 632,
+        "transfer": 1108331
+      },
+      {
+        "bytes": 80002,
+        "end": 644,
+        "path": "/assets/scenes/work/portals/projects.jpg",
+        "start": 641,
+        "transfer": 80302
+      },
+      {
+        "bytes": 118740,
+        "end": 645,
+        "path": "/assets/scenes/work/portals/kanban-board.jpg",
+        "start": 641,
+        "transfer": 119040
+      },
+      {
+        "bytes": 129098,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/team.jpg",
+        "start": 641,
+        "transfer": 129398
+      },
+      {
+        "bytes": 100055,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/documents.jpg",
+        "start": 641,
+        "transfer": 100355
+      },
+      {
+        "bytes": 94983,
+        "end": 646,
+        "path": "/assets/scenes/work/portals/meetings.jpg",
+        "start": 641,
+        "transfer": 95283
+      },
+      {
+        "bytes": 114686,
+        "end": 647,
+        "path": "/assets/scenes/work/portals/templates.jpg",
+        "start": 641,
+        "transfer": 114986
+      },
+      {
+        "bytes": 1152795,
+        "end": 1023,
+        "path": "/assets/scenes/personal/hero-fullbleed.jpg",
+        "start": 760,
+        "transfer": 1153095
+      },
+      {
+        "bytes": 117081,
+        "end": 772,
+        "path": "/assets/scenes/personal/portals/mindfulness.jpg",
+        "start": 768,
+        "transfer": 117381
+      },
+      {
+        "bytes": 134525,
+        "end": 772,
+        "path": "/assets/scenes/personal/portals/fitness.jpg",
+        "start": 768,
+        "transfer": 134825
+      },
+      {
+        "bytes": 124008,
+        "end": 773,
+        "path": "/assets/scenes/personal/portals/nutrition.jpg",
+        "start": 768,
+        "transfer": 124308
+      },
+      {
+        "bytes": 119070,
+        "end": 773,
+        "path": "/assets/scenes/personal/portals/recovery.jpg",
+        "start": 768,
+        "transfer": 119370
+      },
+      {
+        "bytes": 111059,
+        "end": 775,
+        "path": "/assets/scenes/personal/portals/personal-life.jpg",
+        "start": 768,
+        "transfer": 111359
+      },
+      {
+        "bytes": 129138,
+        "end": 775,
+        "path": "/assets/scenes/personal/portals/home-wellbeing.jpg",
+        "start": 768,
+        "transfer": 129438
+      },
+      {
+        "bytes": 1317840,
+        "end": 1122,
+        "path": "/assets/scenes/explore/hero-fullbleed.jpg",
+        "start": 858,
+        "transfer": 1318140
+      },
+      {
+        "bytes": 295075,
+        "end": 869,
+        "path": "/assets/scenes/explore/portals/destinations.jpg",
+        "start": 866,
+        "transfer": 295375
+      },
+      {
+        "bytes": 261022,
+        "end": 870,
+        "path": "/assets/scenes/explore/portals/experiences.jpg",
+        "start": 866,
+        "transfer": 261322
+      },
+      {
+        "bytes": 235671,
+        "end": 871,
+        "path": "/assets/scenes/explore/portals/travel-guides.jpg",
+        "start": 866,
+        "transfer": 235971
+      },
+      {
+        "bytes": 240919,
+        "end": 872,
+        "path": "/assets/scenes/explore/portals/bucket-list.jpg",
+        "start": 866,
+        "transfer": 241219
+      },
+      {
+        "bytes": 201271,
+        "end": 874,
+        "path": "/assets/scenes/explore/portals/discover-more.jpg",
+        "start": 866,
+        "transfer": 201571
+      },
+      {
+        "bytes": 54202,
+        "end": 874,
+        "path": "/assets/destinations/lisbon-card.webp",
+        "start": 866,
+        "transfer": 54502
+      },
+      {
+        "bytes": 78144,
+        "end": 875,
+        "path": "/assets/destinations/kyoto-card.webp",
+        "start": 866,
+        "transfer": 78444
+      },
+      {
+        "bytes": 27590,
+        "end": 876,
+        "path": "/assets/destinations/azores-card.webp",
+        "start": 866,
+        "transfer": 27890
+      },
+      {
+        "bytes": 1164656,
+        "end": 1305,
+        "path": "/assets/scenes/games/hero-fullbleed.jpg",
+        "start": 1046,
+        "transfer": 1164956
+      },
+      {
+        "bytes": 133892,
+        "end": 1055,
+        "path": "/assets/scenes/games/portals/my-games.jpg",
+        "start": 1052,
+        "transfer": 134192
+      },
+      {
+        "bytes": 138537,
+        "end": 1057,
+        "path": "/assets/scenes/games/portals/missions-quests.jpg",
+        "start": 1052,
+        "transfer": 138837
+      },
+      {
+        "bytes": 148060,
+        "end": 1056,
+        "path": "/assets/scenes/games/portals/game-library.jpg",
+        "start": 1052,
+        "transfer": 148360
+      },
+      {
+        "bytes": 104315,
+        "end": 1057,
+        "path": "/assets/scenes/games/portals/game-sessions.jpg",
+        "start": 1052,
+        "transfer": 104615
+      },
+      {
+        "bytes": 151443,
+        "end": 1058,
+        "path": "/assets/scenes/games/portals/discover-games.jpg",
+        "start": 1052,
+        "transfer": 151743
+      },
+      {
+        "bytes": 105983,
+        "end": 1060,
+        "path": "/assets/scenes/games/portals/game-settings.jpg",
+        "start": 1052,
+        "transfer": 106283
+      }
+    ],
+    "runtime": [],
+    "scenes": [
+      {
+        "id": 1,
+        "src": "assets/scenes/home/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 2,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 3,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      },
+      {
+        "id": 8,
+        "src": "assets/scenes/games/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": true,
+        "world": "games"
+      },
+      {
+        "id": 5,
+        "src": "assets/scenes/work/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "work"
+      },
+      {
+        "id": 6,
+        "src": "assets/scenes/personal/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "personal"
+      },
+      {
+        "id": 7,
+        "src": "assets/scenes/explore/hero-fullbleed.jpg",
+        "state": "ready",
+        "visible": false,
+        "world": "explore"
+      },
+      {
+        "id": 4,
+        "src": null,
+        "state": "deferred",
+        "visible": false,
+        "world": "home"
+      }
+    ],
+    "shifts": [
+      {
+        "ms": 293.19999999925494,
+        "recentInput": false,
+        "value": 0.000017024576663970947
+      },
+      {
+        "ms": 382,
+        "recentInput": false,
+        "value": 0.06587612628936768
+      },
+      {
+        "ms": 392.2999999988824,
+        "recentInput": false,
+        "value": 0.019270051270723343
+      },
+      {
+        "ms": 403.3999999985099,
+        "recentInput": false,
+        "value": 0.013591498136520386
+      },
+      {
+        "ms": 432.0999999996274,
+        "recentInput": false,
+        "value": 0.01720269024372101
+      },
+      {
+        "ms": 443.7999999988824,
+        "recentInput": false,
+        "value": 0.005655169486999512
+      },
+      {
+        "ms": 455.0999999996274,
+        "recentInput": false,
+        "value": 0.004299916326999664
+      },
+      {
+        "ms": 471.3999999985099,
+        "recentInput": false,
+        "value": 0.003156602382659912
+      },
+      {
+        "ms": 491.0999999996274,
+        "recentInput": false,
+        "value": 0.0026091337203979492
+      },
+      {
+        "ms": 506.2999999988824,
+        "recentInput": false,
+        "value": 0.00016843530789224638
+      }
+    ]
+  }
+}

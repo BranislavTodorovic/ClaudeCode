@@ -31,7 +31,7 @@
   function mount(root) {
     var OS = root.OneSpace, UI = root.OneSpaceUI, esc = OS.escapeHtml;
     var host = document.getElementById('workTracker'); if (!host) return;
-    var searchTimer = null, detailPanel = null, selected = null, notified = new Set(), filters = { view:document.body.dataset.workView || 'active' };
+    var searchTimer = null, detailPanel = null, historyPanel = null, historySelected = null, selected = null, notified = new Set(), filters = { view:document.body.dataset.workView || 'active' };
     function read() { return { items:OS.safeGetJSON(keys.items,[]), tasks:OS.safeGetJSON(keys.tasks,[]), history:OS.safeGetJSON(keys.history,[]) }; }
     function projects() { return OS.safeGetJSON('orbit-work-projects',[]); }
     function commit(state, message, extra) {
@@ -84,7 +84,7 @@
       host.querySelector('#workFilters').hidden=filters.view==='projects';results.hidden=filters.view==='projects';
       if(filters.view==='history') {
         var history=state.history.filter(function(h){return (!filters.project || h.projectId===filters.project) && (!filters.search || (h.name+' '+h.action).toLowerCase().includes(filters.search.toLowerCase())) && (!filters.type || h.snapshot && h.snapshot.type===filters.type) && (!filters.status || h.snapshot && h.snapshot.status===filters.status) && (!filters.priority || h.snapshot && h.snapshot.priority===filters.priority) && (!filters.deadline || h.snapshot && due(h.snapshot.deadline)===filters.deadline);});
-        patch(results,history.length?history.map(function(h){return '<article class="domain-card" data-history-key="'+esc(h.id)+'"><strong>'+esc(h.name)+'</strong><p>'+esc(h.action)+' · '+esc(new Date(h.at).toLocaleString())+'</p><p>'+esc(projectLabel(h.projectId))+'</p><details><summary>Saved state</summary><p>'+esc(h.snapshot ? h.snapshot.status+' · '+(h.snapshot.execution || 'No execution notes') : 'Legacy event')+'</p><p>'+ (h.tasks || []).filter(function(t){return t.done;}).length+' / '+(h.tasks || []).length+' tasks complete</p></details></article>';}).join(''):'<p class="proof-empty">No matching history yet.</p>');
+        patch(results,history.length?history.map(function(h){return '<button type="button" class="domain-card work-history-card" data-history-key="'+esc(h.id)+'" data-work-action="history-detail" data-id="'+esc(h.id)+'" aria-label="Open history: '+esc(h.name)+' · '+esc(h.action)+'"><span class="work-history-icon">'+OS.iconSvg('calendaricon')+'</span><strong>'+esc(h.name)+'</strong><span>'+esc(label(h.action))+' · '+esc(new Date(h.at).toLocaleString())+'</span><span>'+esc(projectLabel(h.projectId))+'</span><span>'+ (h.tasks || []).filter(function(t){return t.done;}).length+' / '+(h.tasks || []).length+' saved tasks complete</span><span class="work-history-open">View saved details '+OS.iconSvg('arrow')+'</span></button>';}).join(''):'<p class="proof-empty">No matching history yet.</p>');
       } else {
         var items=filter(state.items,filters);
         patch(results,items.length?items.map(function(i){var tasks=state.tasks.filter(function(t){return t.itemId===i.id;}),done=tasks.filter(function(t){return t.done;}).length,percent=tasks.length?Math.round(done/tasks.length*100):0;return '<article class="domain-card work-item-card" data-work-card="'+esc(i.id)+'" data-priority="'+esc(i.priority)+'"><div class="work-card-top"><span class="work-type">'+OS.iconSvg(i.type==='defect'?'target':'book')+esc(label(i.type))+'</span><span class="work-priority" role="img" aria-label="'+esc(label(i.priority))+' priority" title="'+esc(label(i.priority))+' priority"></span></div><p class="domain-eyebrow">'+esc(projectLabel(i.projectId))+'</p><h3>'+esc(i.name)+'</h3><div class="domain-actions"><span class="status-chip status-'+esc(i.status)+'">'+esc(label(i.status))+'</span>'+badge(i.deadline)+'</div><div class="work-progress-label"><span>Task progress</span><strong>'+done+' / '+tasks.length+'</strong></div><div class="work-progress" role="progressbar" aria-label="'+esc(i.name)+' task progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+percent+'"><span style="width:'+percent+'%"></span></div><p class="work-labels">'+esc((i.labels || []).join(' · '))+'</p>'+button('detail',i.id,'Open details','layers')+'</article>';}).join(''):'<div class="proof-empty work-empty">'+OS.iconSvg('layers')+'<h3>No matching work items</h3><p>Create a project, then add a story or defect. Your next step starts here.</p>'+button('add','','New work item','plus')+'</div>');
@@ -97,6 +97,20 @@
       var item=state.items.find(function(i){return i.id===selected;});
       if(item && detailPanel && !detailPanel.overlay.hidden) renderDetail(item,state); else if(!item && detailPanel) detailPanel.close();
       renderTimeline(state);
+      if(historyPanel && !historyPanel.overlay.hidden) renderHistory(state);
+    }
+    function renderHistory(state) {
+      var event=state.history.find(function(h){return h.id===historySelected;});if(!event)return;
+      var exists=state.items.some(function(i){return i.id===event.itemId;});
+      function fields(value){return '<dl class="work-history-fields">'+Object.keys(value || {}).map(function(k){var v=value[k];return '<div><dt>'+esc(label(k))+'</dt><dd>'+esc(Array.isArray(v)?v.join(', '):v==null?'None':String(v))+'</dd></div>';}).join('')+'</dl>';}
+      historyPanel.setTitle(event.name + ' · saved history');
+      patch(historyPanel.body,'<section class="domain-detail"><p class="domain-eyebrow">Retained audit snapshot</p><p>'+esc(label(event.action))+' · '+esc(new Date(event.at).toLocaleString())+'</p><p>Project: '+esc(projectLabel(event.projectId))+' · '+esc(event.projectId)+'</p><p>'+ (exists?'The underlying work item still exists.':'The underlying work item has been deleted. This saved snapshot remains available.')+'</p>'+(exists?'<div class="domain-actions">'+button('history-current',event.itemId,'Open current item','layers')+button('history-delete',event.itemId,'Delete item','trash')+'</div>':'')+'<h3>Saved work item</h3>'+(event.snapshot?fields(event.snapshot):'<p>This legacy event has no stored item snapshot.</p>')+'<h3>Saved tasks · '+(event.tasks || []).length+'</h3>'+(event.tasks || []).map(function(t){return '<section class="work-history-task"><h4>'+esc(t.title)+'</h4>'+fields(t)+'</section>';}).join('')+'</section>');
+    }
+    function openHistory(id) {
+      if(!read().history.some(function(h){return h.id===id;}))return;
+      historySelected=id;
+      if(!historyPanel){historyPanel=UI.panel('Work history','workHistory');historyPanel.body.onclick=host.onclick;}
+      renderHistory(read());historyPanel.show();
     }
     function renderDetail(item,state) {
       var tasks=state.tasks.filter(function(t){return t.itemId===item.id;}), closed=item.status==='closed';
@@ -146,6 +160,9 @@
       var clear=e.target.closest('[data-work-clear]');if(clear){var cleared=clear.dataset.workClear;filters[cleared]='';render();host.querySelector('[name="'+cleared+'"]').focus();return;}
       var view=e.target.closest('[data-view]');if(view){filters.view=view.dataset.view;document.body.dataset.workView=filters.view;filters.status='';selected=null;render();host.querySelector('[data-view="'+filters.view+'"]').focus();return;}
       var b=e.target.closest('button[data-work-action]');if(!b)return;var action=b.dataset.workAction,id=b.dataset.id;
+      if(action==='history-detail')openHistory(id);
+      if(action==='history-current'){historyPanel.close();root.OneSpaceWork.openItem(id);}
+      if(action==='history-delete')UI.confirm('Delete item?','This will be deleted. Continue?',function(){var state=read(),item=state.items.find(function(i){return i.id===id;});if(!item)return false;log(state,item,'deleted');state.items=state.items.filter(function(i){return i.id!==id;});state.tasks=state.tasks.filter(function(t){return t.itemId!==id;});selected=null;return commit(state,'Deleted. History retained.');},'Yes','No');
       if(action==='lifecycle'){var state=read(),item=state.items.find(function(i){return i.id===id;});if(item)commit(lifecycle(state,id,item.status==='closed'?'open':'closed',new Date().toISOString(),OS.uid('event')),item.status==='closed'?'Item reopened. Completed task history retained.':'Item closed. All tasks completed.');}
       if(action==='add' || action==='edit')editItem(action==='edit'?id:null);
       if(action==='detail'){selected=id;if(!detailPanel){detailPanel=UI.panel('Work details');detailPanel.body.onclick=host.onclick;detailPanel.body.onchange=host.onchange;}detailPanel.show();render();}

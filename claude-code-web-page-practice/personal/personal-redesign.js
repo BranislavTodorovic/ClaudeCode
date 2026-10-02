@@ -39,7 +39,7 @@
   }
   function go(page, targetId) {
     if (!OS.goToPage(page)) { notice('Could not open that space. Your current page is unchanged.'); return false; }
-    if (page === 'personal' && targetId) ownerSurface.show('Goals, routines & habits');
+    if (page === 'personal' && targetId) ownerSurface.show(/Habit/.test(targetId) ? 'Personal habits' : /Routine/.test(targetId) ? 'Personal routines' : 'Personal goals');
     if (targetId) {
       var target = doc.getElementById(targetId);
       if (target) {

@@ -1,0 +1,622 @@
+[
+  {
+    "world": "home",
+    "name": "Today",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Today",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "method": "pointer",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Shortcuts",
+    "method": "keyboard",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Notes",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Notes",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Command",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/home",
+      "page": "home",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local space\n\nGood morning.\n\nA calmer day. A brighter you.\n\nQuick Capture text\nCapture as\nNote\nTask\nCapture\n\nPrivate on this device · Ctrl + K for commands\n\nPlan my day\nBrainstorm ideas\nTrack my progress\nFind a place to visit\nNow\n↗\n25:00\nReady to focus\nA moment for focused work\n\nStart or adjust your local timer in Productivity.\n\nOpen timer →\nToday 1 priority\n+\nR3 disposable daily task\nNo time set\nNext 0 upcoming\n↗\n\nNothing dated next. Add an important date in Productivity.\n\nOneSpace Pulse\n↗\n\nA transparent view of your saved local activity\n\n1\nOpen tasks\n1\nActive projects\n1\nSaved notes\nExplore your worlds\nWork\nFocus. Create. Ship.\nPersonal / Fitness\nA healthier, stronger you.\nDiscover\nExplore. Learn. Be inspired.\nMedia & Games\nTwo worlds for your downtime.\nGames\nMovies & Series\nProjects & Notes\nWorld in preparation · your records remain safe.\nSettings\nMake it yours.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "home",
+    "name": "Command",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/home",
+      "page": "home",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local space\n\nGood morning.\n\nA calmer day. A brighter you.\n\nQuick Capture text\nCapture as\nNote\nTask\nCapture\n\nPrivate on this device · Ctrl + K for commands\n\nPlan my day\nBrainstorm ideas\nTrack my progress\nFind a place to visit\nNow\n↗\n25:00\nReady to focus\nA moment for focused work\n\nStart or adjust your local timer in Productivity.\n\nOpen timer →\nToday 1 priority\n+\nR3 disposable daily task\nNo time set\nNext 0 upcoming\n↗\n\nNothing dated next. Add an important date in Productivity.\n\nOneSpace Pulse\n↗\n\nA transparent view of your saved local activity\n\n1\nOpen tasks\n1\nActive projects\n1\nSaved notes\nExplore your worlds\nWork\nFocus. Create. Ship.\nPersonal / Fitness\nA healthier, stronger you.\nDiscover\nExplore. Learn. Be inspired.\nMedia & Games\nTwo worlds for your downtime.\nGames\nMovies & Series\nProjects & Notes\nWorld in preparation · your records remain safe.\nSettings\nMake it yours.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Today",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Today",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Shortcuts",
+    "method": "pointer",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Shortcuts",
+    "method": "keyboard",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Notes",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Notes",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Command",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local workspace\n\nBuild with intention.\n\nFocus today. Create tomorrow.\n\nSearch your Work items\nSearch work →\n\nSaved on this device · Ctrl + K for commands\n\nNew task\nNew project\nOpen board\nMeeting notes\nFocus session\nMy Tasks\nToday\nThis Week\nAll\n0/0\nCompleted\n\nNo dated Work tasks in this period. View all tasks or add one to a work item.\n\nToday’s Schedule\n↗\n\nNo Work reminders set for today. Meeting schedules are coming later.\n\nView Work timeline →\nProject Progress\nView all →\nR3 disposable history project\nSaved progress · 0%\n›\nFocus & Productivity\n↗\n25:00\nReady\nMake space to focus\n\nYour local timer is in Productivity.\n\nOpen timer →\n0\nActive items\n0\nOpen tasks\nProjects\nPlan. Build. Ship.\nKanban Board\nTrack work in progress.\nTeam\nComing in the next rollout.\nDocuments\nComing in the next rollout.\nMeetings\nComing in the next rollout.\nTemplates\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "work",
+    "name": "Command",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/work",
+      "page": "work",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your local workspace\n\nBuild with intention.\n\nFocus today. Create tomorrow.\n\nSearch your Work items\nSearch work →\n\nSaved on this device · Ctrl + K for commands\n\nNew task\nNew project\nOpen board\nMeeting notes\nFocus session\nMy Tasks\nToday\nThis Week\nAll\n0/0\nCompleted\n\nNo dated Work tasks in this period. View all tasks or add one to a work item.\n\nToday’s Schedule\n↗\n\nNo Work reminders set for today. Meeting schedules are coming later.\n\nView Work timeline →\nProject Progress\nView all →\nR3 disposable history project\nSaved progress · 0%\n›\nFocus & Productivity\n↗\n25:00\nReady\nMake space to focus\n\nYour local timer is in Productivity.\n\nOpen timer →\n0\nActive items\n0\nOpen tasks\nProjects\nPlan. Build. Ship.\nKanban Board\nTrack work in progress.\nTeam\nComing in the next rollout.\nDocuments\nComing in the next rollout.\nMeetings\nComing in the next rollout.\nTemplates\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Today",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Today",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "taskInput",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Shortcuts",
+    "method": "pointer",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Shortcuts",
+    "method": "keyboard",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Notes",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Notes",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Command",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "personal",
+    "name": "Command",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/personal",
+      "page": "personal",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nSaturday, October 3 · Your personal space\n\nA calmer, stronger you.\n\nMove well. Eat well. Feel balanced. Right here, in your space.\n\nSearch your goals, routines and habits\nSearch personal →\n\nSaved on this device · Ctrl + K for commands\n\nStart a workout\nMeditate now\nLog a meal\nPlan my day\nTrack a habit\nToday’s Wellness\n↗\n2/2\nPersonal items done\nGoals\n0/0\nRoutines\n1/1\nHabits\n1/1\nToday’s Plan\n↗\n\nUntimed personal routines\n\n✓\nR3 routine presentation check\nCompleted routine\nHabits & Goals\n↗\n✓\nR3 habit presentation check\nHabit\nHealth & Recovery\nYour recovery, when you’re ready\n\nNo health or recovery metrics are connected. Manual recovery logging is coming in the Personal rollout.\n\nMindfulness\nSessions coming in the next rollout.\nFitness\nWorkouts coming in the next rollout.\nNutrition\nMeal logging coming in the next rollout.\nRecovery\nRecovery logging coming in the next rollout.\nPersonal Life\nGoals, routines, habits.\nHome Wellbeing\nComing in the next rollout.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Today",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Today",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Shortcuts",
+    "method": "pointer",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Shortcuts",
+    "method": "keyboard",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Notes",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Notes",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Command",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYour local travel collection\n\nExplore a brighter world.\n\nFind your next place. Keep the ideas that move you.\n\nSearch destinations\nSearch places →\nDestinations\nExperiences\nTravel Dates\nInterests\nBudget\nTravel Style\nFeatured Destinations\nSurprise me\n\nFrom your maintained local collection\n\nLisbon\n\nPortugal\n\nExplore →\nKyoto\n\nJapan\n\nExplore →\nSão Miguel\n\nPortugal / Azores\n\nExplore →\nSaved Places\n↗\n\n1 saved on this device\n\nR3 uploaded destination\nLocal review · Idea\nUpcoming Trips\n↗\n\nPlanned trips with upcoming start dates\n\nNo upcoming dated trips. Set a planned trip’s dates on your board.\n\nDestinations\nSearch your local atlas.\nExperiences\nActivity discovery coming later.\nTravel Guides\nDedicated guides coming later.\nBucket List\nYour saved places and trip plans.\nDiscover More\nExplore your travel resources.\nScene & photo credits\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "explore",
+    "name": "Command",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/explore",
+      "page": "explore",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYour local travel collection\n\nExplore a brighter world.\n\nFind your next place. Keep the ideas that move you.\n\nSearch destinations\nSearch places →\nDestinations\nExperiences\nTravel Dates\nInterests\nBudget\nTravel Style\nFeatured Destinations\nSurprise me\n\nFrom your maintained local collection\n\nLisbon\n\nPortugal\n\nExplore →\nKyoto\n\nJapan\n\nExplore →\nSão Miguel\n\nPortugal / Azores\n\nExplore →\nSaved Places\n↗\n\n1 saved on this device\n\nR3 uploaded destination\nLocal review · Idea\nUpcoming Trips\n↗\n\nPlanned trips with upcoming start dates\n\nNo upcoming dated trips. Set a planned trip’s dates on your board.\n\nDestinations\nSearch your local atlas.\nExperiences\nActivity discovery coming later.\nTravel Guides\nDedicated guides coming later.\nBucket List\nYour saved places and trip plans.\nDiscover More\nExplore your travel resources.\nScene & photo credits\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Today",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Today",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/productivity",
+      "page": "productivity",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nPlan your day\n\nMake space for what matters. Your focus timer, daily tasks and important dates stay together.\n\nFocus timer\nReady\n25:00\nONE THING AT A TIME\nStart\nReset\n25 min\nToday\n1 task\nNew task\nPriority\nNormal\nHigh\nLow\nAdd task\nR3 disposable daily task\nPlanner\nLocal only\nOctober 2026\nToday · 3\nSun\nMon\nTue\nWed\nThu\nFri\nSat\n·\n·\n·\n·\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nCountdown name\nDate\nAdd date\nAdd a date you are looking forward to.\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Shortcuts",
+    "method": "pointer",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Shortcuts",
+    "method": "keyboard",
+    "observation": {
+      "client": 2033,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/shortcuts",
+      "page": "shortcuts",
+      "scrollWidth": 2033,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nQuick Access & shortcuts\n\nYour saved links, favorites and recent places. Keep useful paths close at hand.\n\nWork\nPersonal\nExplore\nQuick open\nCtrl\n+\nK\nQuick notes\nSettings\nAdd shortcut\nFind a shortcut in this space\n\nDevelopment\nCollapse\nGitHub\nCode, repositories, and collaboration\ngithub.com\nOracle Documentation\nOfficial Oracle product documentation\ndocs.oracle.com\nStack Overflow\nProgramming questions and answers\nstackoverflow.com\nChatGPT\nAI assistant and creative workspace\nchatgpt.com\nMDN Web Docs\nHTML, CSS, and JavaScript reference\ndeveloper.mozilla.org\nnpm\nDiscover JavaScript packages\nnpmjs.com\nRegex101\nBuild and explain regular expressions\nregex101.com\nCan I Use\nCheck browser feature support\ncaniuse.com\nCodePen\nExperiment with front-end code\ncodepen.io\nClaude\nAI workspace for coding and ideas\nclaude.ai\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Notes",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Notes",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [],
+      "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n    \n      WorkBuild & focus\n  ",
+      "focusVisible": true,
+      "hash": "#/u/notes",
+      "page": "notes",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n← Back to Home\nIdeas & Notes\n\nGive an idea room to grow. Capture, pin and revisit your private notes.\n\nAdd note\nR3 disposable idea\n\nR3 persisted brainstorming note\n\nOct 3\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Command",
+    "method": "pointer",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYOUR PERSONAL GAMING ROOM\n\nGame on.\n\nGood games. A brighter you.\n\nSearch local games\nSearch games →\nClear\n\nSearch the bundled catalogue on this device.\n\nOpen game details\nView library\nTrack progress\nDiscover games\nGame sessions\nContinue Playing\n↗\nAlan Wake 2\n\nLast recorded 10/3/2026\n\nOpen tracker →\nToday’s Gaming\n↗\n\n1\nminutes recorded today\n\n1 completed session\n\nNo active session.\n\nRecord a sessionWeekly tasks\nGame Progress\n↗\n\nChecked tasks in your current trackers\n\nAlan Wake 2\nStory objectives · 0/12\n0%\nResident Evil 4\nStory objectives · 0/13\n0%\nDiablo Immortal\nWeekly tasks · 0/7\n0%\nOneSpace Gaming Pulse\n↗\n\nYour last seven calendar days\n\n1\nminutes recorded\n\n1\nCompleted sessions\n\n6\nGames in your collection\n\nView session history\nMy Games\nYour collection, in one place.\n↗\nMissions & Quests\nYour story and weekly trackers.\n↗\nGame Library\nBrowse and add games.\n↗\nGame Sessions\nRecord your time playing.\n↗\nDiscover Games\nFind your next local favorite.\n↗\nGame Settings\nMake this room your own.\n↗\nScene credits\n\nPlay your way. Your collection and progress stay on this device.\n\nOneSpace · your focused space for work and life"
+    }
+  },
+  {
+    "world": "games",
+    "name": "Command",
+    "method": "keyboard",
+    "observation": {
+      "client": 2048,
+      "dialogs": [
+        "Command palette\nGitHubDevelopment · github.com\nOracle DocumentationDevelopment · docs.oracle.com\nStack OverflowDevelopment · stackoverflow.com\nChatGPTDevelopment · chatgpt.com\nMDN Web DocsDevelopment · developer.mozilla.org\nnpmDevelopment · npmjs.com\nRegex101Development · regex101.com\nCan I UseDevelopment · caniuse.com\nCodePenDevelopment · codepen.io\nClaudeDevelopment · claude.ai\nePonudaShopping & Home · eponuda.com\nIKEA SerbiaShopping & Home · ikea.com\nKupujemProdajemShopping & Home · kupujemprodajem.com\nAmazonShopping & Home · amazon.com\neBayShopping & Home · ebay.com\nDiablo ImmortalGaming · diabloimmortal.blizzard.com\nMaxrollGaming · maxroll.gg\nPlayStationGaming · playstation.com\nSteamGaming · store.steampowered.com\nEpic GamesGaming · store.epicgames.com\nBattle.netGaming · battle.net\nTwitchGaming · twitch.tv\nPCGamingWikiGaming · pcgamingwiki.com\nGmailDaily · mail.google.com\nYouTubeDaily · youtube.com\nWeatherDaily · weather.com\nGoogle CalendarDaily · calendar.google.com\nGoogle DriveDaily · drive.google.com\nGoogle MapsTravel · maps.google.com\nGoogle TranslateDaily · translate.google.com\nOneDriveDaily · onedrive.live.com\nMidea SmartHomeSmart Home · midea.com\nMTSSmart Home · mts.rs\nGoogle HomeSmart Home · home.google.com\nAmazon AlexaSmart Home · alexa.amazon.com\nPhilips HueSmart Home · philips-hue.com\nHome AssistantSmart Home · home-assistant.io\nGoogle FlightsTravel · google.com\nBooking.comTravel · booking.com\nAirbnbTravel · airbnb.com\nTripadvisorTravel · tripadvisor.com\nRome2RioTravel · rome2rio.com\nRedditRelax & Play · reddit.com\nIMDbRelax & Play · imdb.com\nOpen HomeView\nOpen WorkView\nOpen ProjectsView\nOpen PersonalView\nOpen ExploreView\nOpen GamesView\nOpen MoviesView\nOpen ShortcutsView\nOpen ProductivityView\nOpen quick notesCommand\nAdd a shortcutCommand\nOpen dashboard settingsCommand\nToggle light or dark modeCommand\nToggle Customize modeCommand\nOpen local toolboxCommand\nOpen getting started guideCommand\nExport a OneSpace backupCommand"
+      ],
+      "focus": "paletteInput",
+      "focusVisible": true,
+      "hash": "#/w/games",
+      "page": "games",
+      "scrollWidth": 2048,
+      "viewText": "OneSpace\nHome\nWork\nPersonal / Fitness\nExplore\nGames\nMovies & Series\nProjects & Notes\nSettings\nToday\nShortcuts\nNotes\nCommand\n\nYOUR PERSONAL GAMING ROOM\n\nGame on.\n\nGood games. A brighter you.\n\nSearch local games\nSearch games →\nClear\n\nSearch the bundled catalogue on this device.\n\nOpen game details\nView library\nTrack progress\nDiscover games\nGame sessions\nContinue Playing\n↗\nAlan Wake 2\n\nLast recorded 10/3/2026\n\nOpen tracker →\nToday’s Gaming\n↗\n\n1\nminutes recorded today\n\n1 completed session\n\nNo active session.\n\nRecord a sessionWeekly tasks\nGame Progress\n↗\n\nChecked tasks in your current trackers\n\nAlan Wake 2\nStory objectives · 0/12\n0%\nResident Evil 4\nStory objectives · 0/13\n0%\nDiablo Immortal\nWeekly tasks · 0/7\n0%\nOneSpace Gaming Pulse\n↗\n\nYour last seven calendar days\n\n1\nminutes recorded\n\n1\nCompleted sessions\n\n6\nGames in your collection\n\nView session history\nMy Games\nYour collection, in one place.\n↗\nMissions & Quests\nYour story and weekly trackers.\n↗\nGame Library\nBrowse and add games.\n↗\nGame Sessions\nRecord your time playing.\n↗\nDiscover Games\nFind your next local favorite.\n↗\nGame Settings\nMake this room your own.\n↗\nScene credits\n\nPlay your way. Your collection and progress stay on this device.\n\nOneSpace · your focused space for work and life"
+    }
+  }
+]
