@@ -275,3 +275,69 @@ body[data-page="games"] #gameDetailsBody .resource-grid a { display:flex; margin
  #gamesView .gv-overview-feature .gv-overview-room { min-height:140px; }
  #gamesView .gv-overview-feature { padding:16px; }
 }
+
+/* Reopened acceptance: comfortable discovery, honest progression and uncropped game art. */
+#gamesView .gv-panel { background:linear-gradient(125deg,#221f2bf5,#132332f2); }
+#gamesView .gv-section-heading { min-height:200px; padding:26px 46% 26px 26px; background:linear-gradient(90deg,#1c222c 35%,#1c222cb8 57%,#1c222c08),var(--panel-art) right center/auto 100% no-repeat; }
+#gamesView .gv-section-heading h2 { display:flex; align-items:center; gap:12px; line-height:1.25; overflow-wrap:normal; }
+#gamesView .gv-section-heading .icon { display:block; width:28px; height:28px; flex:none; color:#e2c597; }
+#gamesView .gv-section-heading > span { color:#e2c597; }
+#gamesView .gv-panel[data-panel="overview"] .gv-section-heading { --panel-art:url('../assets/scenes/games/owners/overview-premium.jpg'); }
+#gamesView .gv-panel[data-panel="library"] .gv-section-heading { --panel-art:url('../assets/scenes/games/owners/library-premium.jpg'); }
+#gamesView .gv-panel[data-panel="missions"] .gv-section-heading { --panel-art:url('../assets/scenes/games/owners/missions-premium.jpg'); }
+#gamesView .gv-panel[data-panel="suggestions"] .gv-section-heading { --panel-art:url('../assets/scenes/games/owners/suggestions-premium.jpg'); }
+#gamesView .gv-panel[data-panel="sessions"] .gv-section-heading { --panel-art:url('../assets/scenes/games/owners/sessions-premium.jpg'); }
+#gamesView .gv-panel[data-panel="appearance"] .gv-section-heading { --panel-art:url('../assets/scenes/games/owners/appearance-premium.jpg'); }
+#gamesView .gv-overview-room { background-image:url('../assets/scenes/games/owners/overview-premium.jpg'); }
+.gv-owner-cover { background:radial-gradient(ellipse at 50% 40%,#38424e,#101b28 80%); }
+.gv-owner-cover img { object-fit:contain; object-position:center; max-width:var(--cover-limit,960px); left:0; right:0; margin-inline:auto; }
+.gv-owner-cover:has(img:not([hidden])) > svg { opacity:0; }
+#gamesView .gv-card-logo > .gv-card-art { object-fit:contain; object-position:center; background:radial-gradient(ellipse,#38424e,#101b28); }
+#gamesView .gv-owner-cover img { transform:none !important; }
+body[data-page="games"] .gv-details-cover { aspect-ratio:2.1; background:#101b28; }
+body[data-page="games"] .gv-details-cover > span { position:static; display:block; padding:14px 20px; background:#142332; font-size:1.25rem; }
+body[data-page="games"] .gv-details-cover { aspect-ratio:auto; }
+body[data-page="games"] .gv-details-cover .gv-owner-cover { height:auto; aspect-ratio:2.1; }
+#gamesView .gv-suggestions { grid-template-columns:minmax(340px,390px) minmax(0,1fr); gap:0 28px; align-items:start; }
+#gamesView .gv-suggest-head { margin-bottom:22px; }
+#gamesView .gv-pref-groups { padding:20px; gap:20px; background:#141e2bef; border:1px solid #e2c59735; }
+#gamesView .gv-pref-group { padding:18px; border-color:#e2c5972d; background:#ffffff03; }
+#gamesView .gv-pref-group > :is(h3,label) { margin:0 0 14px; line-height:1.45; font-size:.95rem; }
+#gamesView .btn-icon { min-width:44px; min-height:44px; }
+#gamesView .gv-pref-chip { min-width:44px; }
+#gamesView .gv-pref-options { gap:8px; }
+#gamesView .gv-pref-chip { padding:10px 12px; line-height:1.4; }
+#gamesView .gv-suggest-results { grid-template-columns:1fr; gap:20px; }
+#gamesView .gv-suggest-card { display:grid; grid-template-columns:minmax(180px,29%) minmax(0,1fr); align-items:stretch; }
+#gamesView .gv-suggest-cover { aspect-ratio:auto; min-height:210px; background:#101b28; }
+#gamesView .gv-suggest-cover .gv-owner-cover { height:100%; aspect-ratio:auto; }
+#gamesView .gv-suggest-cover > span { display:none; }
+#gamesView .gv-suggest-body { padding:22px; min-width:0; }
+#gamesView .gv-suggest-top { align-items:flex-start; flex-wrap:wrap; gap:8px; }
+#gamesView .gv-suggest-top h3 { margin:0; font-size:1.25rem; }
+#gamesView .gv-suggest-why { line-height:1.7; margin:14px 0 18px; }
+#gamesView .gv-suggest-actions .btn { flex:1 1 140px; }
+#gamesView .gv-chapter[data-progress-state="current"] { border-color:#e2c59799; box-shadow:inset 3px 0 #e2c597; }
+#gamesView .gv-chapter[data-progress-state="completed"] { border-color:#98cec966; }
+#gamesView .gv-chapter-number { display:grid; place-items:center; width:44px; height:44px; flex:none; border:1px solid #e2c59744; border-radius:50%; color:#e2c597; font-variant-numeric:tabular-nums; }
+#gamesView .gv-chapter-title { min-width:0; text-align:left; line-height:1.5; }
+#gamesView .gv-chapter-title small { display:block; margin-bottom:3px; font-size:.72rem; font-weight:500; color:#e2c597; }
+#gamesView .gv-tracker-next { padding:18px 20px; border:1px solid #e2c59744; border-radius:14px; background:#e2c5970a; line-height:1.7; }
+#gamesView .gv-outline-note { font-size:.82rem; color:var(--gv-muted); line-height:1.7; margin:16px 0 22px; }
+@media(min-width:1750px) { #gamesView .gv-suggest-results { grid-template-columns:repeat(2,minmax(0,1fr)); } #gamesView .gv-suggest-card { grid-template-columns:1fr; } #gamesView .gv-suggest-cover { aspect-ratio:2; min-height:0; } }
+@media(max-width:1100px) { #gamesView .gv-suggest-card { grid-template-columns:1fr; } #gamesView .gv-suggest-cover { aspect-ratio:2; min-height:0; } }
+@media(max-width:760px) {
+ #gamesView .gv-section-heading { min-height:180px; padding:20px 20px 20px; background:linear-gradient(90deg,#1c222cf5 25%,#1c222cd4 62%,#1c222c90),var(--panel-art) right center/auto 100% no-repeat; }
+ #gamesView .gv-section-heading h2 { max-width:24ch; }
+ #gamesView .gv-suggestions { grid-template-columns:1fr; }
+ #gamesView .gv-pref-groups { padding:16px; gap:16px; margin-bottom:20px; }
+ #gamesView .gv-pref-group { padding:16px; }
+ #gamesView .gv-suggest-body { padding:18px; }
+ #gamesView .gv-chapter-head { gap:8px; padding:12px; }
+ #gamesView .gv-chevron { display:none; }
+ #gamesView .gv-chapter-count { padding:6px; flex:none; }
+ #gamesView .gv-overview-stats { gap:8px; }
+ #gamesView .gv-stat-tile { padding:12px; }
+ #gamesView .gv-stat-tile strong { font-size:1.8rem; }
+}
+@media(min-width:761px) and (max-height:800px) { #gamesView .gv-section-heading { min-height:170px; padding-block:20px; } }

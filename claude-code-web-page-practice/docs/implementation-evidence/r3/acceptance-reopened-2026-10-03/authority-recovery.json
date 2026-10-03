@@ -1,0 +1,65 @@
+{
+  "readingOrder": [
+    "docs/agent-instructions.md",
+    "docs/IMPLEMENTATION-STEPS.md",
+    "docs/REVISED-IMPLEMENTATION-PLAN.md",
+    "VERIFICATION.md",
+    "docs/REDESIGN-INTEGRATION-GATE.md",
+    "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md",
+    "docs/ui-reference/MANIFEST.md",
+    "Actual reference images 00–07",
+    "README.md"
+  ],
+  "fullRereadCompleted": true,
+  "duplicateExactLinesSuppressedInSomeReadingOutputs": true,
+  "authorityResolution": "IMPLEMENTATION-STEPS mandatory contract section 11 overrides historical reading lists",
+  "head": "a7c2ed94df0498504787dfe29d8fc26f24a429df",
+  "branch": "main",
+  "initialStaged": 0,
+  "initialModified": 0,
+  "initialUntracked": 0,
+  "runningNodeServersAtRecovery": 0,
+  "conflictsRequiringUndo": [],
+  "hashes": {
+    "docs/agent-instructions.md": "4a704071cc739d4ab59a6359e00589ab90a9bf04fdaad9fa618b3ffdb097465c",
+    "docs/IMPLEMENTATION-STEPS.md": "00ae00ca3f3b4e567b9241c318ac15af63a22c38255a6ba214a10ac77ac4cde0",
+    "docs/REVISED-IMPLEMENTATION-PLAN.md": "5d6c793895a796278df177b01e015d1a118b3f444ad1007a5a13b52bdcbca03a",
+    "VERIFICATION.md": "59dfa1eb32025ca5bc50153c9c90d749114a8299f0661ed7f13f1b1a21c1061b",
+    "docs/REDESIGN-INTEGRATION-GATE.md": "376c3b519f94d6abae4f5574c80c652929f88f16f1f83972240c1dec19ea7e60",
+    "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md": "0722cf2e8f0e7f146f875e50acfa60fbf41c2f03041d9dc4f24a057842dd9535",
+    "docs/ui-reference/MANIFEST.md": "4960d1eb7af977ea4c3c8fdeed5f0d2c59d8984bd539c0567b24c224e5fd6fe7",
+    "docs/ui-reference/00-home.png": "0b2b0fcbd6713116d8063f5b72fd8a9ff5b3d8be63cb3cb14149301b0775e18b",
+    "docs/ui-reference/01-work.png": "96c7c2da46ac1af17ba2636e39618acdf62704b5a73288c2330d5c10c92ba42b",
+    "docs/ui-reference/02-personal-fitness.png": "7bcdb3ab94b1d1d639112d50cf892421c97167d0ad29133418bd7695229076a8",
+    "docs/ui-reference/03-explore.png": "ebaf6e19fcc18d58d8da524f50a30ef668052493ed93649b5fb7c1627d3765bd",
+    "docs/ui-reference/04-games.png": "f62e4eede0dd50f993d15e0c699b66f641df8d2be0042f643eac55ae6541706d",
+    "docs/ui-reference/05-movies-series.png": "8c48525f78984d4689d30bdb94f2bb1dfc028db341d9dc33a919286d02d2db1e",
+    "docs/ui-reference/06-projects-notes.png": "3293479fac1d30af0943d8d538a700ddd2fa18ec479e93c537692a42b1ad4223",
+    "docs/ui-reference/07-settings.png": "629c7db0e7b0fda3317e814d8d77f86b645fe7c7dab1ed16df34706504b5a749",
+    "README.md": "aaca45d70a9579226f730646bf4e4c110ab72bb918da968eb7f17d4992a56b4f"
+  },
+  "formal": {
+    "Games step 11": "IN PROGRESS / IMPLEMENTED / NOT VERIFIED",
+    "Gate R3": "OPEN",
+    "Games 12/13": "PENDING",
+    "R4/R5": "NOT STARTED"
+  },
+  "priorEvidenceClassification": {
+    "PRODUCTION_REQUIRED": "Committed runtime code and production artwork",
+    "TEST_REQUIRED": "Committed regression tests",
+    "CANONICAL_EVIDENCE": "Prior settled frames and accepted requirement-specific receipts; retained historical evidence",
+    "PRELIMINARY_OR_SUPERSEDED_EVIDENCE": "Prior unsuffixed owner/prepaint screenshots: PRELIMINARY / SUPERSEDED / NOT ACCEPTANCE EVIDENCE",
+    "DISPOSABLE_SCRATCH": "Codex-local helper scripts; no broad directory copied"
+  },
+  "referenceObservation": {
+    "Home": "Warm city-view living room, left hero, four summary glass panels and six image portals",
+    "Work": "Amber wood workstation, multiple monitors, cyan foreground controls",
+    "Personal": "Natural-lit training room, equipment/plants and wellness groups",
+    "Explore": "Maps/camera/globe foreground, golden shelves and destination vista",
+    "Games": "Warm oak gaming room, controller/display/PC subjects with controlled cyan-violet",
+    "Movies": "Warm cinema seating, large landscape screen and poster/library rows",
+    "ProjectsNotes": "Planning wall, documents and laptop, amber creation desk",
+    "Settings": "Calm living control room, fireplace and clean setup/privacy panels"
+  },
+  "preservation": "No reset, revert, clean, deletion, automatic staging or commit; no sibling changes."
+}

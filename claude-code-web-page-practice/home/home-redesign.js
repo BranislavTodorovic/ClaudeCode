@@ -114,20 +114,22 @@
   homeView.classList.add('redesign-home');
   stage.hidden = false;
   // Reuse the real utility nodes and their existing stores and handlers.
-  ['productivity', 'notes', 'shortcuts'].forEach(function (page) {
+  ['productivity', 'notes', 'shortcuts', 'settings'].forEach(function (page) {
     var view = doc.getElementById(page + 'View');
     if (!view) return;
     var utility = doc.createElement('div'); utility.className = 'osr-world osr-utility'; utility.dataset.surface = 'owner';
     var backdrop = doc.createElement('div'); utility.appendChild(backdrop);
     var utilityFrame = doc.createElement('div'); utilityFrame.className = 'osr-frame';
-    var utilityShell = foundation.createShell(doc, shellHandlers); foundation.setActiveWorld(utilityShell, 'home'); utilityFrame.appendChild(utilityShell);
+    var utilityShell = foundation.createShell(doc, shellHandlers); foundation.setActiveWorld(utilityShell, page === 'settings' ? 'settings' : 'home'); utilityFrame.appendChild(utilityShell);
     var tools = doc.createElement('section'); tools.className = 'osr-owner-surface'; tools.dataset.ownerWorld = 'home';
     var heading = doc.createElement('header'); heading.className = 'osr-owner-heading';
     var back = doc.createElement('button'); back.type = 'button'; back.className = 'osr-button'; back.textContent = '← Back to Home'; back.onclick = function () { go('home'); };
-    var title = doc.createElement('h1'); title.textContent = page === 'notes' ? 'Ideas & Notes' : page === 'shortcuts' ? 'Quick Access & shortcuts' : 'Plan your day';
+    var title = doc.createElement('h1'); title.textContent = page === 'settings' ? 'Preferences & local data' : page === 'notes' ? 'Ideas & Notes' : page === 'shortcuts' ? 'Your shortcut launchpad' : 'Plan your day';
     var art = doc.createElement('img'); art.className = 'osr-owner-art'; art.alt = ''; art.width = 180; art.height = 96; art.loading = 'lazy'; art.src = 'assets/scenes/home/portals/' + (page === 'notes' ? 'projects-notes-review' : 'work-review') + '.jpg'; art.onerror = function () { art.hidden = true; };
-    heading.append(back, title, art); tools.appendChild(heading);
-    var intro = doc.createElement('p'); intro.className = 'osr-owner-intro'; intro.textContent = page === 'notes' ? 'Give an idea room to grow. Capture, pin and revisit your private notes.' : page === 'shortcuts' ? 'Your saved links, favorites and recent places. Keep useful paths close at hand.' : 'Make space for what matters. Your focus timer, daily tasks and important dates stay together.'; tools.appendChild(intro);
+    heading.append(back, title);
+    if (page === 'shortcuts' || page === 'settings') { var mark = doc.createElement('span'); mark.className = 'osr-utility-mark'; mark.setAttribute('aria-hidden','true'); mark.innerHTML = OS.iconSvg(page === 'shortcuts' ? 'grid' : 'sliders'); heading.appendChild(mark); } else heading.appendChild(art);
+    tools.appendChild(heading);
+    var intro = doc.createElement('p'); intro.className = 'osr-owner-intro'; intro.textContent = page === 'settings' ? 'Tune your current workspace and manage the data saved on this device.' : page === 'notes' ? 'Give an idea room to grow. Capture, pin and revisit your private notes.' : page === 'shortcuts' ? 'Choose a space, find an icon, go. Your saved links and Quick Access stay on this device.' : 'Make space for what matters. Your focus timer, daily tasks and important dates stay together.'; tools.appendChild(intro);
     Array.from(view.children).forEach(function (child) { tools.appendChild(child); });
     utilityFrame.appendChild(tools); utility.appendChild(utilityFrame); view.appendChild(utility);
     // Bind the existing view before requesting its scene, so hidden utilities defer art.

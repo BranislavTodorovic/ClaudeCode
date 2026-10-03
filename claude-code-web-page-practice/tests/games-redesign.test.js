@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {buildModel,portals}=require('../games/games-redesign');
+const {buildModel,portals,closePalette}=require('../games/games-redesign');
 const now=new Date(2026,9,1,12),start=new Date(2026,9,1,9).toISOString(),end=new Date(2026,9,1,10).toISOString();
 const game={id:'g1',name:'My game',trackerType:'story',total:4,completed:0};
 test('starter library does not imply play history or progress',()=>{
@@ -29,4 +29,11 @@ test('unfinished checked objectives can provide continuation without fabricated 
 test('all six reference portals map to original owner workflows including module-local settings',()=>{
   assert.deepEqual(portals.map(p=>p[0]),['my-games','missions-quests','game-library','game-sessions','discover-games','game-settings']);
   assert.equal(portals[5][3],'appearance');assert.equal(portals[3][3],'sessions');
+});
+test('transient room disclosure closes without changing the persisted palette selection or controls',()=>{
+ const selected={value:'aurora'},summary={id:'room-palette-summary'};
+ const menu={open:true,selected,summary,removeAttribute(name){assert.equal(name,'open');this.open=false;}};
+ const view={querySelectorAll(selector){assert.equal(selector,'.gv-palette-menu[open]');return menu.open?[menu]:[];}};
+ closePalette(view);closePalette(view);
+ assert.equal(menu.open,false);assert.equal(menu.selected,selected);assert.equal(selected.value,'aurora');assert.equal(menu.summary,summary);
 });

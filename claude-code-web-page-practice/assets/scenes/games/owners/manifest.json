@@ -80,8 +80,140 @@
       ],
       "displayBytes": 91943,
       "crop": "No crop; proportional downsample; original preserved"
+    },
+    {
+      "slug": "overview-premium",
+      "master": "overview-premium-master.png",
+      "file": "overview-premium.jpg",
+      "masterDimensions": [
+        1672,
+        941
+      ],
+      "displayDimensions": [
+        1280,
+        720
+      ],
+      "masterSha256": "e934b1b238300e8ed745a6b9d72b3bc7a4757b49fb3f2fb90541b1c1bc07eb3f",
+      "displaySha256": "04f2739c9a4b25b5bf23e5e673e9cd783ccef805ec606b21aa6597bfbbe5feb6",
+      "displayBytes": 216609,
+      "source": "OpenAI built-in image_gen; original generated OneSpace artwork",
+      "sourceId": "exec-ad730517-d7c9-4806-844e-6606dddd74f9",
+      "prompt": "Use case: stylized-concept. Asset type: clean photographic environment for OneSpace Games Overview owner. Premium contemporary warm oak gaming control room, amber architectural light, plants, soft sunset city window, a beautiful curved collection desk with two elegant displays showing only abstract colorful landscape imagery, tasteful controller and physical collection objects. Sophisticated realistic architectural visualization, rich material textures, subtle cyan and violet electronic accents, calm dark foreground, immersive but restrained. Wide landscape composition with recognizable gaming objects in central/right region and generous dark oak wall space left for separate HTML content; retain full subjects inside safe center 80%. No people, no lettering, no numbers, no logos, no diagrams, no interface, no baked text, no buttons, no watermarks. Create one original coherent environment; no collage.",
+      "crop": "No crop or distortion; proportional bounded downsample; full composition retained. Header background fits by height; game covers use contain.",
+      "loading": "Only visible owner header and active owner thumbnail; masters never referenced by runtime",
+      "fallback": "Text, icons and canonical controls remain visible on dark oak/glass backing."
+    },
+    {
+      "slug": "library-premium",
+      "master": "library-premium-master.png",
+      "file": "library-premium.jpg",
+      "masterDimensions": [
+        1672,
+        941
+      ],
+      "displayDimensions": [
+        1280,
+        720
+      ],
+      "masterSha256": "cf5d5181ca3216bda81bff5fcaa68a7a64ffdf868de343d2ae6eb6a5aa7d7a45",
+      "displaySha256": "0d81bf5f7e3e8cedd52006c2b2f1f1f673ec481e8468635890c00b49483c6e5f",
+      "displayBytes": 224788,
+      "source": "OpenAI built-in image_gen; original generated OneSpace artwork",
+      "sourceId": "exec-fde72953-8ed5-48b9-ae94-ebfce57c495a",
+      "prompt": "Use case: stylized-concept. Asset type: original photographic environment for OneSpace My Games collection owner. Premium modern private game library, warm walnut and oak display shelves with neatly arranged brandless collector cases, sculptural controller stands and a glass cabinet with small original fantasy figures. Amber practical lighting, a soft cyan reflection, lush plant, sunset window. Realistic architectural visualization, rich restrained material textures, calm dark left foreground for separate HTML content, clear shelves and collection objects center/right, safe central composition. Wide landscape. No people, lettering, numbers, logos, interface, buttons, watermarks or collage. One original coherent scene.",
+      "crop": "No crop or distortion; proportional bounded downsample; full composition retained. Header background fits by height; game covers use contain.",
+      "loading": "Only visible owner header and active owner thumbnail; masters never referenced by runtime",
+      "fallback": "Text, icons and canonical controls remain visible on dark oak/glass backing."
+    },
+    {
+      "slug": "missions-premium",
+      "master": "missions-premium-master.png",
+      "file": "missions-premium.jpg",
+      "masterDimensions": [
+        1774,
+        887
+      ],
+      "displayDimensions": [
+        1280,
+        640
+      ],
+      "masterSha256": "b4ba6249132ff9468fcef9a43ae24e1a6c277dde027d7cf2aef6997a2cec1f6b",
+      "displaySha256": "64444f786d296be8fd957411dfc40d73b2c978dd8f8745264fe4e705c7075b94",
+      "displayBytes": 199255,
+      "source": "OpenAI built-in image_gen; original generated OneSpace artwork",
+      "sourceId": "exec-f5159129-35b1-41cc-bb2a-f4f78c43c539",
+      "prompt": "Use case: stylized-concept. Asset type: original photographic environment for OneSpace Mission Progress owner. Premium warm oak tactical story-path desk in a private gaming room: a large physical unlettered parchment journey map with a winding path through several sculpted terrain islands, brass waypoint pins, three blank chapter folders and a tasteful modern game controller. Realistic architectural visualization, angled desk view, amber lamp glow, restrained cyan glass accents, soft plant background. No official game locations. Clear map and waypoint objects central/right and calm dark wood left for separate HTML copy. Wide landscape. No people, readable letters, numbers, labels, logos, interface, baked buttons, watermarks or collage. One original coherent scene.",
+      "crop": "No crop or distortion; proportional bounded downsample; full composition retained. Header background fits by height; game covers use contain.",
+      "loading": "Only visible owner header and active owner thumbnail; masters never referenced by runtime",
+      "fallback": "Text, icons and canonical controls remain visible on dark oak/glass backing."
+    },
+    {
+      "slug": "suggestions-premium",
+      "master": "suggestions-premium-master.png",
+      "file": "suggestions-premium.jpg",
+      "masterDimensions": [
+        1774,
+        887
+      ],
+      "displayDimensions": [
+        1280,
+        640
+      ],
+      "masterSha256": "5980c054c9c82e931588c40c4a996d3344aa1902495ad56afb7b5d125aaea695",
+      "displaySha256": "17e3af9762026fa051177d9db70ba3fd31b1e27037167442ffe48447589b414a",
+      "displayBytes": 173624,
+      "source": "OpenAI built-in image_gen; original generated OneSpace artwork",
+      "sourceId": "exec-a0324158-5bb5-4c48-ad80-342f28206cfe",
+      "prompt": "Use case: stylized-concept. Asset type: original photographic environment for OneSpace Suggestions game discovery owner. Premium private gaming discovery gallery: three elegant physical display panels arranged on warm walnut wall showing distinct original worlds, a misty forest valley, an amber desert citadel and a serene floating island, with a curatorial desk, controller and plant in front. Realistic sophisticated architectural visualization, amber lamp lighting, subtle cyan glass edge, restrained violet reflection. Displays and discovery objects center/right, calm dark wood left for separate HTML text. Wide landscape; no people, letters, numbers, logos, official game scenes, interface, buttons, watermarks or collage. One coherent believable interior.",
+      "crop": "No crop or distortion; proportional bounded downsample; full composition retained. Header background fits by height; game covers use contain.",
+      "loading": "Only visible owner header and active owner thumbnail; masters never referenced by runtime",
+      "fallback": "Text, icons and canonical controls remain visible on dark oak/glass backing."
+    },
+    {
+      "slug": "appearance-premium",
+      "master": "appearance-premium-master.png",
+      "file": "appearance-premium.jpg",
+      "masterDimensions": [
+        1774,
+        887
+      ],
+      "displayDimensions": [
+        1280,
+        640
+      ],
+      "masterSha256": "1806f2c916ee31fd5574a2ac0701dd1af5dbb71ad702400becd3194bd44cabb6",
+      "displaySha256": "b45f515e4876e88b76022d94f7b4f41d7089b148173b4564293d5268bf273f0e",
+      "displayBytes": 168076,
+      "source": "OpenAI built-in image_gen; original generated OneSpace artwork",
+      "sourceId": "exec-0acff9fc-6071-4fa9-a730-325cc2632ae4",
+      "prompt": "Use case: stylized-concept. Asset type: original photographic environment for OneSpace Games Appearance owner. Premium warm oak gaming-room configuration workbench with three tasteful unbranded controller shells on separate stands, material swatches of dark walnut, pale oak and brushed metal, subtle cyan and violet light bars behind desk, and small architectural room sample model. Amber task lamp, plant, restrained realistic architectural visualization, rich tactile materials. Configuration objects and material swatches central/right; calm dark wood left for separate HTML content. Wide landscape. No people, letters, numbers, logos, labels, interface, baked buttons, watermarks or collage. One coherent original scene.",
+      "crop": "No crop or distortion; proportional bounded downsample; full composition retained. Header background fits by height; game covers use contain.",
+      "loading": "Only visible owner header and active owner thumbnail; masters never referenced by runtime",
+      "fallback": "Text, icons and canonical controls remain visible on dark oak/glass backing."
+    },
+    {
+      "slug": "sessions-premium",
+      "master": "sessions-premium-master.png",
+      "file": "sessions-premium.jpg",
+      "masterDimensions": [
+        1672,
+        941
+      ],
+      "displayDimensions": [
+        1280,
+        720
+      ],
+      "masterSha256": "0907819d20da862c3b1420b0bc688150d914aecbf540a0191719b5b4e2a03297",
+      "displaySha256": "7aa5cdab1bd4709d0ae66e07f934a141f07d77fe9d5dab1e4aaa0ed20e027d5b",
+      "displayBytes": 166690,
+      "source": "OpenAI built-in image_gen; original generated OneSpace artwork",
+      "sourceId": "exec-01d0d190-73bf-4d04-9f88-d6031234f26a",
+      "prompt": "Use case: stylized-concept. Asset type: original photographic environment for OneSpace Games Sessions owner. Premium warm walnut gaming session desk with beautiful physical brass clock without readable numbers, small hourglass, controller on a stand, closed unlettered session-log notebook and a luminous monitor displaying an original calm twilight landscape. Amber task lamp, restrained cyan reflection, soft sunset window and plant, rich realistic architectural visualization. Desk clock, hourglass and controller grouped central/right, generous calm dark wood left for separate HTML content. Wide landscape. No people, letters, numbers, logos, interface, baked buttons, watermarks or collage. One original believable scene.\nFinal cleanup edit: Edit this Sessions environment only to remove the small lettering/logo centered on the monitor's lower bezel. Replace that area with clean plain matte black bezel. Preserve the exact room composition, all furniture, clock, hourglass, controller, lamp, monitor landscape, sunset window, lighting, materials, image size and detail. No letters, logos, text or watermarks anywhere. No other changes.",
+      "crop": "No crop or distortion; proportional bounded downsample; full composition retained. Header background fits by height; game covers use contain.",
+      "loading": "Only visible owner header and active owner thumbnail; masters never referenced by runtime",
+      "fallback": "Text, icons and canonical controls remain visible on dark oak/glass backing."
     }
   ],
   "fallback": "Text heading and functional controls remain visible if decorative art fails; owner cover image errors reveal existing deterministic gameScene SVG.",
-  "loading": "CSS owner headers load only when their panel is visible; both display images <200KB. Masters never referenced by runtime."
+  "loading": "Only visible owner headers and active identity thumbnails use bounded display copies. Masters are retained for provenance and never referenced by production runtime."
 }

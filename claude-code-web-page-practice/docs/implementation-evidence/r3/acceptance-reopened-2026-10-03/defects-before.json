@@ -1,0 +1,21 @@
+{
+  "baseline": "a7c2ed94df0498504787dfe29d8fc26f24a429df",
+  "origin": "http://localhost:18991",
+  "viewport": [1440, 900],
+  "roomPalette": {
+    "sequence": ["Games landing", "Open Game Settings", "Room palette: Enter", "Back to Games: Enter", "Open My Games: Enter"],
+    "observed": "Native details.open remained true after owner hiding and on another owner reentry.",
+    "rootCause": "The retained owner DOM preserved the transient native disclosure state without an owner-exit reset. Canonical theme selection is independent."
+  },
+  "projects": {
+    "owner": "Existing Work compatibility Projects; #/w/work/projects; orbit-work-projects",
+    "disposableRecord": "R3 disposable reopen review",
+    "sequence": ["Work", "New project", "Create project", "Back to Work: Enter", "Home", "Work", "Open Projects: Enter", "Back to Work: Enter"],
+    "observed": "Back to Work remained on Projects repeatedly. Cross-world reopening did expose the saved project; the reproduced failure was the parent return and its history sequence.",
+    "rootCause": "Canonical Projects routing pushed a route entry, then ownerSurface.show pushed a duplicate same-address entry. Back consumed that entry while popstate restored Projects. The same-world focus guard also suppressed parent reset when focus remained in owner tools."
+  },
+  "suggestionsScreenshot": "No user-supplied screenshot pixels were present; diagnosis used current source, visible browser state and new physical screenshots.",
+  "beforeScreenshots": ["shortcuts-before.jpg", "settings-before.jpg"],
+  "classification": "Before-change reproduction evidence; not acceptance of the corrected revision",
+  "formal": "Games step 11 IN PROGRESS / IMPLEMENTED / NOT VERIFIED; Gate R3 OPEN"
+}

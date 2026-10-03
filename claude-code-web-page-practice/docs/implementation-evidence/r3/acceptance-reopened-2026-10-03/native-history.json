@@ -1,0 +1,24 @@
+{
+  "source": "Latest user-provided FINAL CONTINUATION PROMPT section 1",
+  "evidenceType": "User-reported actual Microsoft Edge at real 100% zoom",
+  "historicalResult": "PASS",
+  "acceptedAtThatMoment": [
+    "Hard refresh/no old-world startup flash",
+    "Games landing",
+    "Games credits",
+    "Explore credits spot-check",
+    "Today action alignment",
+    "Current Games tabs",
+    "Basic keyboard/focus"
+  ],
+  "preserved": true,
+  "scopeOfNewRecheck": "Only runtime-affected surfaces after current corrections",
+  "pending": [
+    "Affected Edge 100%",
+    "Actual Edge 200%",
+    "Native background/document.hidden",
+    "Actual OS reduced motion with app Motion=Auto"
+  ],
+  "formalGames11": "IN PROGRESS / IMPLEMENTED / NOT VERIFIED",
+  "GateR3": "OPEN"
+}

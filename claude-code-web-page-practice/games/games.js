@@ -289,8 +289,10 @@
    * ------------------------------------------------------------------- */
   /* Decorative media reuses card-size artwork; canonical records are untouched. */
   function ownerCover(game) {
+    var source = ownerArtworkSource(game);
+    var limit = /^assets\/game-art\/.+-card\.jpg$/.test(source) ? 460 : 960;
     return '<div class="gv-owner-cover" aria-hidden="true">' + gameScene(game) +
-      (game.artwork ? '<img class="gv-owner-cover-image" data-fallback-owner="games-owner" src="' + esc(ownerArtworkSource(game)) + '" alt="" width="600" height="340" loading="lazy" decoding="async">' : '') + '</div>';
+      (game.artwork ? '<img class="gv-owner-cover-image" data-fallback-owner="games-owner" style="--cover-limit:' + limit + 'px" src="' + esc(source) + '" alt="" width="600" height="340" loading="lazy" decoding="async">' : '') + '</div>';
   }
   function ownerArtworkSource(game) {
     var bounded = { 'assets/game-art/alan-wake-2.webp':'alan-wake-2', 'assets/game-art/resident-evil-4.jpg':'resident-evil-4', 'assets/game-art/diablo-immortal.webp':'diablo-immortal' };
@@ -345,8 +347,12 @@
    * ------------------------------------------------------------------- */
   function storyTrackerHtml(game) {
     var stats = storyStats(game);
-    var chaptersHtml = (game.story.chapters || []).map(function (c) {
+    var chapters = game.story.chapters || [];
+    var activeChapter = chapters.findIndex(function (c) { return (c.objectives || []).some(function (o) { return !o.done; }); });
+    var chaptersHtml = chapters.map(function (c, chapterIndex) {
       var done = (c.objectives || []).filter(function (o) { return o.done; }).length;
+      var complete = (c.objectives || []).length > 0 && done === c.objectives.length;
+      var phase = complete ? 'Completed' : chapterIndex === activeChapter ? 'Current chapter' : 'Upcoming';
       var objectivesHtml = (c.objectives || []).map(function (o) {
         return (
           '<div class="gv-objective' + (o.id === lastCheckedObjectiveId ? " is-just-checked" : "") + '" data-objective-id="' + esc(o.id) + '">' +
@@ -362,10 +368,11 @@
         );
       }).join("");
       return (
-        '<div class="gv-chapter' + (c.expanded ? " is-open" : "") + '" data-chapter-id="' + esc(c.id) + '" data-reveal data-reveal-group="missions" data-reveal-key="' + esc(game.id+':'+c.id) + '">' +
+        '<div class="gv-chapter' + (c.expanded ? " is-open" : "") + '" data-progress-state="' + (complete ? 'completed' : chapterIndex === activeChapter ? 'current' : 'upcoming') + '" data-chapter-id="' + esc(c.id) + '" data-reveal data-reveal-group="missions" data-reveal-key="' + esc(game.id+':'+c.id) + '">' +
           '<button type="button" class="gv-chapter-head" data-action="toggle-chapter" data-chapter-id="' + esc(c.id) + '" aria-expanded="' + (!!c.expanded) + '">' +
             '<span class="gv-chevron" aria-hidden="true">' + ICON_CHEVRON + "</span>" +
-            '<span class="gv-chapter-title">' + esc(c.title) + "</span>" +
+            '<span class="gv-chapter-number" aria-hidden="true">' + String(chapterIndex + 1).padStart(2, '0') + '</span>' +
+            '<span class="gv-chapter-title"><small>' + phase + '</small>' + esc(c.title) + "</span>" +
             '<span class="gv-chapter-count">' + done + "/" + (c.objectives || []).length + "</span>" +
           "</button>" +
           '<div class="gv-objectives" ' + (c.expanded ? "" : "hidden") + ">" +
@@ -386,6 +393,7 @@
         "</div>" +
         '<div class="gv-progress-row"><progress max="100" value="' + stats.percent + '" aria-label="Story completion"></progress><strong>' + stats.percent + '%</strong></div>' +
         '<p class="gv-tracker-next"><strong>Next up:</strong> ' + esc(stats.next) + "</p>" +
+        '<p class="gv-outline-note">Your editable story outline · chapters → objectives. Bundled outlines are partial starting points, not verified official walkthroughs. Upcoming chapters remain available to edit.</p>' +
         '<div class="gv-chapters">' + (chaptersHtml || '<form class="gv-add-objective" data-action="add-objective-form" data-chapter-id=""><input type="text" placeholder="Add your first objective…" maxlength="140" aria-label="New objective text"><button type="submit" class="btn">Add</button><span role="alert"></span></form>') + "</div>" +
       "</div>"
     );

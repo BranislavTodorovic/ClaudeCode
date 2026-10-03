@@ -150,6 +150,8 @@
       }
       var folder = worldId === 'games' && /^(weekly-tasks|game-journal)$/.test(slug) ? 'owners' : 'portals';
       var src = 'assets/scenes/' + worldId + '/' + folder + '/' + slug + '.jpg';
+      var ownerArt = { 'my-games':'overview-premium', 'game-library':'library-premium', 'missions-quests':'missions-premium', 'discover-games':'suggestions-premium', 'game-sessions':'sessions-premium', 'game-settings':'appearance-premium' };
+      if (worldId === 'games' && ownerArt[slug]) src = 'assets/scenes/games/owners/' + ownerArt[slug] + '.jpg';
       if (identity.getAttribute('src') !== src) { identity.hidden = false; identity.src = src; }
       tools.dataset.ownerIdentity = slug;
     }
@@ -177,6 +179,7 @@
     function present(open, name, focus) {
       landing.hidden = open; tools.hidden = !open;
       stage.dataset.surface = open ? 'owner' : 'landing';
+      if (win.CustomEvent) doc.dispatchEvent(new win.CustomEvent('onespace:owner-surface-changed', { detail: { world: worldId, open: open } }));
       var footer = frame.querySelector('.site-footer');
       if (footer && footer.tagName === 'FOOTER') {
         frame.appendChild(footer);
@@ -191,19 +194,20 @@
     function show(name, trackHistory) {
       if (tools.hidden) { trigger = doc.activeElement; scroll = win.scrollY; }
       present(true, name, true);
-      if (trackHistory !== false && !(win.history.state && win.history.state.osrOwner === worldId)) {
+      var canonicalProjects = worldId === 'work' && doc.body.dataset.workView === 'projects';
+      if (!canonicalProjects && trackHistory !== false && !(win.history.state && win.history.state.osrOwner === worldId)) {
         var state = Object.assign({}, win.history.state, { osrOwner: worldId, osrOwnerTitle: title.textContent });
         win.history.pushState(state, '', win.location.href);
       }
     }
     function reset(focus) { present(false, null, focus); }
     back.addEventListener('click', function () {
-      if (win.history.state && win.history.state.osrOwner === worldId) win.history.back();
-      else if (worldId === 'work' && doc.body.dataset.workView === 'projects') win.OneSpace.goToPage('work');
+      if (worldId === 'work' && doc.body.dataset.workView === 'projects') { win.OneSpace.goToPage('work'); reset(true); }
+      else if (win.history.state && win.history.state.osrOwner === worldId) win.history.back();
       else reset(true);
     });
     doc.addEventListener('onespace:page-changed', function (event) {
-      if (event.detail.page === worldId && event.detail.previous === worldId && !tools.hidden && tools.contains(doc.activeElement)) return;
+      if (worldId !== 'work' && event.detail.page === worldId && event.detail.previous === worldId && !tools.hidden && tools.contains(doc.activeElement)) return;
       if (event.detail.page === 'work' && worldId === 'work' && doc.body.dataset.workView === 'projects') present(true, 'Projects', false);
       else reset(false);
     });

@@ -56,3 +56,15 @@ test('Games Forward identifies the retained current tab instead of the initial p
  assert.equal(f.surface.tools.children[0].children[2].src,'assets/scenes/games/owners/game-journal.jpg');
  assert.equal(f.stack.length,2,'restoring the current title must not add history entries');
 });
+
+test('Projects return works with focus inside the owner and reopening does not duplicate canonical route history',()=>{
+ const f=fixture('work','projects');
+ f.surface.show('Projects');
+ assert.equal(f.stack.length,1,'the canonical Projects route already identifies its owner');
+ const back=f.surface.tools.children[0].children[0];back.focus();back.listeners.click();
+ assert(f.surface.tools.hidden);assert(!f.landing.hidden);assert.equal(f.doc.body.dataset.workView,'active');
+ f.doc.body.dataset.workView='projects';
+ f.events['onespace:page-changed']({detail:{page:'work',previous:'work'}});
+ f.surface.show('Projects');assert(!f.surface.tools.hidden);assert(f.landing.hidden);
+ back.focus();back.listeners.click();assert(f.surface.tools.hidden);assert(!f.landing.hidden);
+});

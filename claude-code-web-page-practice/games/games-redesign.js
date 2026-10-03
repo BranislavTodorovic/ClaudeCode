@@ -13,6 +13,9 @@
     ['game-settings','Game Settings','Make this room your own.','appearance']
   ];
   function dayKey(date) { return date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0')+'-'+String(date.getDate()).padStart(2,'0'); }
+  function closePalette(container) {
+    container.querySelectorAll('.gv-palette-menu[open]').forEach(function (menu) { menu.removeAttribute('open'); });
+  }
   function buildModel(snapshot, now) {
     now = now || new Date();
     var games = (snapshot.games || []).filter(function(g) { return g && typeof g.id === 'string' && typeof g.name === 'string' && Number.isFinite(g.total) && Number.isFinite(g.completed) && g.total >= 0 && g.completed >= 0 && g.completed <= g.total; });
@@ -65,7 +68,7 @@
     });
     reset();
   }
-  if (!root || !root.document) return { portals: portals, buildModel: buildModel, wireSearch: wireSearch };
+  if (!root || !root.document) return { portals: portals, buildModel: buildModel, wireSearch: wireSearch, closePalette: closePalette };
   var doc=root.document, OS=root.OneSpace, foundation=root.OneSpaceRedesign, owner=root.OneSpaceGames;
   var view=doc.getElementById('gamesView'),stage=doc.getElementById('redesignGames');
   if (!view || !stage || !owner || !foundation) return {};
@@ -83,6 +86,13 @@
   function panel(title,id,action) { return '<article class="osr-panel"><div class="osr-games-card-head"><h2>'+title+'</h2>'+button('↗',action,' aria-label="Open '+title+' tools"')+'</div><div id="'+id+'"></div></article>'; }
   frame.insertAdjacentHTML('beforeend','<main><section class="osr-games-hero" aria-labelledby="osrGamesTitle"><p class="osr-eyebrow">Your personal gaming room</p><h1 class="osr-title" id="osrGamesTitle">Game on.</h1><p class="osr-lead">Good games. A brighter you.</p><div class="osr-games-search"><form class="osr-search" id="osrGamesSearchForm"><label class="visually-hidden" for="osrGamesSearch">Search local games</label>'+OS.iconSvg('search')+'<input id="osrGamesSearch" aria-describedby="osrGamesSearchStatus" aria-controls="osrGamesResults" maxlength="160" placeholder="Search your games and local catalog…" autocomplete="off"><button class="osr-button" type="submit">Search games →</button><button class="osr-chip" type="button" id="osrGamesSearchClear" aria-label="Clear game search">Clear</button></form><p id="osrGamesSearchStatus" role="status" aria-live="polite"></p><div class="osr-games-results" id="osrGamesResults" role="region" aria-label="Local game search results" hidden></div></div><div class="osr-games-quick" aria-label="Games quick actions">'+button('Open game details','details')+button('View library','library')+button('Track progress','progress')+button('Discover games','suggestions')+button('Game sessions','sessions')+'</div></section><section class="osr-grid osr-games-summary" aria-label="Games at a glance">'+panel('Continue Playing','osrGamesContinue','library')+panel("Today’s Gaming",'osrGamesToday','sessions')+panel('Game Progress','osrGamesProgress','progress')+panel('OneSpace Gaming Pulse','osrGamesPulse','sessions')+'</section><section class="osr-grid osr-games-portals" aria-label="Games spaces">'+portals.map(function(p){return '<button class="osr-portal osr-games-portal" type="button" data-games-action="'+p[3]+'" data-portal="'+p[0]+'" aria-label="Open '+p[1]+'"><img src="assets/scenes/games/portals/'+p[0]+'.jpg" alt="" loading="lazy" decoding="async" width="960" height="640" data-fallback-owner="games-portal"><span class="osr-portal-copy"><strong>'+p[1]+'</strong><small>'+p[2]+'</small></span>'+'<span class="osr-games-arrow" aria-hidden="true">↗</span>'+'</button>';}).join('')+'</section><div class="osr-games-footer">'+button('Scene credits','credits',' aria-haspopup="dialog" aria-controls="domainOverlay"')+'<p>Play your way. Your collection and progress stay on this device.</p></div></main>');
   var ownerSurface=foundation.createOwnerSurface(view,stage,'games','Games',tools);
+  doc.addEventListener('onespace:owner-surface-changed',function(event){if(event.detail.world==='games')closePalette(view);});
+  view.addEventListener('click',function(event){if(event.target.closest('[data-gv-tab],.gv-theme-btn'))closePalette(view);});
+  view.addEventListener('keydown',function(event){
+    var menu=view.querySelector('.gv-palette-menu[open]');
+    if(event.key==='Escape'&&menu){event.preventDefault();event.stopPropagation();closePalette(view);menu.querySelector('summary').focus();}
+    else if(['ArrowLeft','ArrowRight','Home','End'].indexOf(event.key)!==-1&&event.target.closest('[data-gv-tab]'))closePalette(view);
+  });
   function info(title,message) { root.OneSpaceUI.open(title,'<p>'+esc(message)+'</p>',null); }
   function openTab(tab) { ownerSurface.show({library:'Game Library',missions:'Missions & Quests',weekly:'Weekly Tasks',sessions:'Game Sessions',suggestions:'Discover Games',appearance:'Game Settings',journal:'Game Journal'}[tab]||'Games tools'); if(owner.open(tab)===false)info('Game tool unavailable','That view could not be saved. Please try again. Your game records are unchanged.'); }
   function row(g,action) { var pct=g.total?Math.round(g.completed/g.total*100):0;return '<button class="osr-games-row" type="button" data-games-action="'+action+'" data-game-id="'+esc(g.id)+'"><span><strong>'+esc(g.name)+'</strong><small>'+(g.trackerType==='weekly'?'Weekly tasks':'Story objectives')+' · '+g.completed+'/'+g.total+'</small></span><span>'+pct+'%</span></button>'; }
@@ -101,6 +111,7 @@
   doc.addEventListener('onespace:games-changed',queuedRefresh);
   doc.addEventListener('onespace:data-changed',function(event){if(event.detail&&/^orbit-games-/.test(event.detail.key))queuedRefresh();});
   doc.addEventListener('onespace:page-changed',function(event){
+    closePalette(view);
     if(event.detail&&event.detail.page==='games')refresh();
     else { var overlay=doc.getElementById('domainOverlay'), title=doc.getElementById('domainTitle'); if(overlay&&!overlay.hidden&&title&&title.textContent==='Games scene credits')OS.closeModal(overlay); }
   });

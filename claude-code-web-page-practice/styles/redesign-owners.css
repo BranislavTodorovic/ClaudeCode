@@ -1,9 +1,59 @@
 /* Current compatibility owners share their parent world. Existing records,
    controls and domain DOM remain the canonical implementation. */
 .modal-overlay[inert] { pointer-events:none; }
-body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) :is(.sidebar,.sidebar-toggle,.mobile-nav,.wrap > .app-header) { display:none !important; }
-body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .wrap { width:100%; max-width:none; margin:0; padding:0; }
-body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"]) .page-view { padding:0; margin:0; }
+.osr-utility .page-hero { display:none !important; }
+#settingsView > .page-hero { display:none !important; }
+.osr-utility-mark { display:grid; place-items:center; width:64px; height:64px; flex:none; border-radius:18px; border:1px solid #e7bb8466; background:#e7bb8412; color:#e7bb84; }
+.osr-utility-mark .icon { width:32px; height:32px; }
+#shortcutsView .osr-owner-heading h1 { overflow-wrap:normal; }
+#shortcutsView .space-picker { display:flex; flex-wrap:wrap; justify-content:flex-start; width:fit-content; gap:8px; padding:8px; margin:0 0 16px; }
+#shortcutsView .toolbar { justify-content:flex-start; margin:0 0 20px; padding:16px; border:1px solid var(--osr-edge); border-radius:16px; background:#122333e8; }
+#shortcutsView :is(.toolbar .btn,.space-picker button,.collapse-btn,.category-tools .btn) { min-height:44px; }
+#shortcutsView .collapse-btn { min-width:88px; }
+#shortcutsView .collapse-btn span { display:inline !important; }
+#shortcutsView .shortcut-search-label { display:block; margin-bottom:10px; font-size:.85rem; color:#e7bb84; }
+#shortcutsView .shortcut-search { min-height:52px; width:100%; padding:14px 18px; }
+#shortcutsView #shortcutSearchStatus { min-height:24px; color:var(--osr-muted); }
+#shortcutsView .group { margin:24px 0 32px; }
+#shortcutsView .section-heading { border:0; border-bottom:1px solid var(--osr-edge); padding:0 0 14px; margin-bottom:18px; }
+#shortcutsView .section-heading h2 { font-size:1.1rem; }
+#shortcutsView .category-title-icon { display:inline-flex; color:#e7bb84; }
+#shortcutsView .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+#shortcutsView .card-wrap { min-width:0; }
+#shortcutsView .card { display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:14px; min-height:205px; padding:22px 18px 64px; background:linear-gradient(125deg,#233443eb,#122231f5); border:1px solid #e7bb8438; border-radius:18px; box-shadow:0 10px 24px #0003; }
+#shortcutsView .card::before { display:none; }
+#shortcutsView .icon-badge { display:grid; place-items:center; width:56px; height:56px; flex:none; border:1px solid #e7bb8455; border-radius:16px; background:#e7bb8412; }
+#shortcutsView .icon-badge .icon { width:28px; height:28px; color:#e7bb84; }
+#shortcutsView .card-copy { display:grid; gap:6px; width:100%; padding:0; }
+#shortcutsView .label { font-size:1rem; font-weight:750; line-height:1.5; }
+#shortcutsView .description { font-size:.8rem; line-height:1.6; color:#c8d2df; }
+#shortcutsView .card-meta { display:none; }
+#shortcutsView .external-indicator { top:20px; right:18px; }
+#shortcutsView .card-actions { left:14px; right:14px; bottom:10px; top:auto; justify-content:flex-end; }
+#shortcutsView .card-actions > button { width:44px; height:44px; min-height:44px; }
+#shortcutsView .card-menu { width:min(240px,calc(100vw - 64px)); z-index:30; background:#152939; border:1px solid #e7bb8466; border-radius:14px; box-shadow:0 12px 32px #0008; }
+#shortcutsView .card-menu button { min-height:44px; line-height:1.4; }
+#settingsView .page-body { display:block; }
+#settingsView .page-section { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; padding:24px; }
+#settingsView .form-field { display:grid; gap:10px; padding:18px; margin:0; border:1px solid #e7bb8435; border-radius:14px; background:#ffffff04; }
+#settingsView .form-field > label { font-size:.95rem; font-weight:650; }
+#settingsView .form-field:has(.theme-choices) { grid-column:1/-1; }
+#settingsView .setting-help { color:#c8d2df; line-height:1.7; font-size:.82rem; }
+#settingsView :is(.settings-group,.settings-data,.form-actions,#sceneIntensitySettings) { grid-column:1/-1; }
+#settingsView :is(.settings-group,.settings-data) { padding:20px; border:1px solid #e7bb8435; border-radius:14px; background:#ffffff04; }
+#settingsView .settings-group { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+#settingsView .settings-group > h2 { grid-column:1/-1; margin:0 0 4px; }
+#settingsView .scene-settings-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+#settingsView :is(button,input:not([type="checkbox"]),select) { min-height:44px; }
+#settingsView .settings-provider-status a { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; padding:4px 8px; border:1px solid var(--osr-edge); border-radius:10px; color:#e7bb84; }
+body[data-page="settings"]::before,body[data-page="settings"]::after { content:none; }
+body[data-page="settings"] .modal { --surface:#111f2e; --surface-2:#1c3043; --surface-3:#233b50; --line:#40576d; --text:#f6f8fc; --muted:#c8d2df; color:var(--text); background:var(--surface); border:1px solid var(--osr-edge); }
+body[data-page="settings"] .modal :is(button,input,select) { min-height:44px; }
+@media(max-width:760px) { #settingsView :is(.page-section,.settings-group) { grid-template-columns:1fr; padding:16px; gap:16px; } #shortcutsView .grid { grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); } #shortcutsView .osr-utility-mark { display:none; } }
+@media(max-width:420px) { #shortcutsView .grid { grid-template-columns:1fr; } #shortcutsView .card { display:grid; grid-template-columns:56px minmax(0,1fr); align-items:start; gap:14px; min-height:170px; padding:18px 18px 64px; } #shortcutsView .external-indicator { display:none; } }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"],[data-page="settings"]) :is(.sidebar,.sidebar-toggle,.mobile-nav,.wrap > .app-header,.today-rail,.mobile-today-toggle) { display:none !important; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"],[data-page="settings"]) .wrap { width:100% !important; max-width:none; margin:0; margin-left:0 !important; padding:0; }
+body:is([data-page="productivity"],[data-page="notes"],[data-page="shortcuts"],[data-page="settings"]) .page-view { padding:0; margin:0; border:0; background:transparent; }
 .osr-owner-surface {
   --text:#f6f8fc; --text-primary:#f6f8fc; --muted:#c8d2df; --text-muted:#c8d2df;
   --surface:rgb(7 18 30 / 80%); --surface-2:rgb(18 33 47 / 88%);
@@ -124,6 +174,7 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
 .osr-utility .widget-grid { width:100%; gap:20px; }
 .osr-utility :is(.widget,.notes-new-form,.notes-search,.notes-grid) { min-width:0; }
 .osr-utility .widget { padding:22px; }
+#workView .osr-owner-surface button { min-width:44px; }
 .osr-utility .focus-dial { width:180px; height:180px; margin:20px auto; background:none; box-shadow:none; }
 .osr-utility .focus-time { color:#fff5e8; text-shadow:none; }
 .osr-utility .focus-track { stroke:#ffffff20; }
