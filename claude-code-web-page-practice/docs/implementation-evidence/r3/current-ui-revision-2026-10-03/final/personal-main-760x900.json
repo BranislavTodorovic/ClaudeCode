@@ -1,0 +1,118 @@
+{
+  "broken": [],
+  "controls": 32,
+  "documentWidth": 745,
+  "images": [
+    {
+      "box": [
+        745,
+        900
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        2508,
+        1254
+      ],
+      "src": "assets/scenes/personal/hero-fullbleed.jpg"
+    },
+    {
+      "box": [
+        348.5,
+        188
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/mindfulness.jpg"
+    },
+    {
+      "box": [
+        348.5,
+        188
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/fitness.jpg"
+    },
+    {
+      "box": [
+        348.5,
+        188
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/nutrition.jpg"
+    },
+    {
+      "box": [
+        348.5,
+        188
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/recovery.jpg"
+    },
+    {
+      "box": [
+        348.5,
+        188
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/personal-life.jpg"
+    },
+    {
+      "box": [
+        348.5,
+        188
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "personal",
+  "paletteOpen": false,
+  "route": "#/w/personal",
+  "scrollY": 480,
+  "small": [],
+  "viewport": [
+    760,
+    900
+  ],
+  "name": "personal-main"
+}

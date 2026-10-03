@@ -1,0 +1,285 @@
+{
+  "sizes": [
+    "2048x1152",
+    "2048x760",
+    "2048x758",
+    "1920x1080",
+    "1440x900",
+    "1024x768",
+    "760x900",
+    "390x844"
+  ],
+  "surfaces": [
+    {
+      "name": "command",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Global Command button; underlying route is Games",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/command-<size>.json and final/sheets/command-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "explore-bucket-list",
+      "route": "#/w/explore",
+      "owner": "explore",
+      "entry": "Explore → bucket-list",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/explore-bucket-list-<size>.json and final/sheets/explore-bucket-list-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "explore-destinations",
+      "route": "#/w/explore",
+      "owner": "explore",
+      "entry": "Explore → destinations",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/explore-destinations-<size>.json and final/sheets/explore-destinations-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "explore-discover-more",
+      "route": "#/w/explore",
+      "owner": "explore",
+      "entry": "Explore → discover-more",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/explore-discover-more-<size>.json and final/sheets/explore-discover-more-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "explore-main",
+      "route": "#/w/explore",
+      "owner": "explore",
+      "entry": "explore-main",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/explore-main-<size>.json and final/sheets/explore-main-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Appearance",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Appearance",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Appearance-<size>.json and final/sheets/games-Appearance-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Journal",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Journal",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Journal-<size>.json and final/sheets/games-Journal-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Mission-Progress",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Mission-Progress",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Mission-Progress-<size>.json and final/sheets/games-Mission-Progress-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-My-Games",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → My-Games",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-My-Games-<size>.json and final/sheets/games-My-Games-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Overview",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Overview",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Overview-<size>.json and final/sheets/games-Overview-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Sessions",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Sessions",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Sessions-<size>.json and final/sheets/games-Sessions-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Suggestions",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Suggestions",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Suggestions-<size>.json and final/sheets/games-Suggestions-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-Weekly-Tasks",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "Games → existing owner → Weekly-Tasks",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-Weekly-Tasks-<size>.json and final/sheets/games-Weekly-Tasks-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "games-main",
+      "route": "#/w/games",
+      "owner": "games",
+      "entry": "games-main",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/games-main-<size>.json and final/sheets/games-main-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "home-current-owner",
+      "route": "#/w/home",
+      "owner": "home",
+      "entry": "Home → local activity summary",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/home-current-owner-<size>.json and final/sheets/home-current-owner-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "notes",
+      "route": "#/u/notes",
+      "owner": "notes",
+      "entry": "notes",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/notes-<size>.json and final/sheets/notes-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "personal-goals-routines-habits",
+      "route": "#/w/personal",
+      "owner": "personal",
+      "entry": "Personal / Fitness → Open Personal Life",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/personal-goals-routines-habits-<size>.json and final/sheets/personal-goals-routines-habits-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "personal-main",
+      "route": "#/w/personal",
+      "owner": "personal",
+      "entry": "personal-main",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/personal-main-<size>.json and final/sheets/personal-main-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "projects-current-owner",
+      "route": "#/w/work/projects",
+      "owner": "work",
+      "entry": "projects-current-owner",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/projects-current-owner-<size>.json and final/sheets/projects-current-owner-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "settings",
+      "route": "#/w/settings",
+      "owner": "settings",
+      "entry": "settings",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/settings-<size>.json and final/sheets/settings-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "shortcuts",
+      "route": "#/u/shortcuts",
+      "owner": "shortcuts",
+      "entry": "shortcuts",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/shortcuts-<size>.json and final/sheets/shortcuts-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "today",
+      "route": "#/u/productivity",
+      "owner": "productivity",
+      "entry": "today",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/today-<size>.json and final/sheets/today-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "work-backlog",
+      "route": "#/w/work",
+      "owner": "work",
+      "entry": "Work → Open Kanban Board → backlog",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/work-backlog-<size>.json and final/sheets/work-backlog-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "work-board",
+      "route": "#/w/work",
+      "owner": "work",
+      "entry": "Work → Open Kanban Board → board",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/work-board-<size>.json and final/sheets/work-board-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "work-history",
+      "route": "#/w/work",
+      "owner": "work",
+      "entry": "Work → Open Kanban Board → history",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/work-history-<size>.json and final/sheets/work-history-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "name": "work-main",
+      "route": "#/w/work",
+      "owner": "work",
+      "entry": "work-main",
+      "result": "MODERN / ACCEPTED-CANDIDATE",
+      "scope": "Current implemented landing or compatibility owner; no future module completion",
+      "evidence": "final/work-main-<size>.json and final/sheets/work-main-{top,content}.jpg",
+      "nativeAcceptance": "PENDING"
+    }
+  ],
+  "observations": [
+    {
+      "surface": "Command",
+      "observation": "Retained compact search-result typography and adjacent label/category text; readable and keyboard usable in current rendered compatibility review. Formal future shell rollout remains deferred."
+    },
+    {
+      "surface": "Work tracker",
+      "observation": "Development tracker heading remains over scene art. Full-resolution 1024 capture remains legible; no speculative CSS churn. Include in native visual review."
+    }
+  ],
+  "excluded": "Future Movies & Series, Projects & Notes and full Settings worlds are not claimed complete."
+}

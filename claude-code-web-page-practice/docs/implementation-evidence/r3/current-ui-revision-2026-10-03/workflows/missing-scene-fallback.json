@@ -1,0 +1,17 @@
+{
+  "expectedMissing": "assets/scenes/games/hero-sanctuary.jpg",
+  "fallbackState": {
+    "assetState": "fallback",
+    "boot": "ready",
+    "route": "#/w/games"
+  },
+  "fallbackUsable": {
+    "heading": [
+      "Game Library"
+    ],
+    "selectedTab": [
+      "My Games"
+    ]
+  },
+  "logs": []
+}

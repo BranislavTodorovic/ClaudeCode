@@ -1,0 +1,176 @@
+{
+  "commandRows": [
+    {
+      "broken": [],
+      "dialog": [
+        684,
+        123.671875,
+        680,
+        509
+      ],
+      "documentWidth": 2048,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        2048,
+        1152
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        684,
+        88.390625,
+        680,
+        509
+      ],
+      "documentWidth": 2048,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        2048,
+        760
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        684,
+        88.21875,
+        680,
+        509
+      ],
+      "documentWidth": 2048,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        2048,
+        758
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        620,
+        117.1875,
+        680,
+        509
+      ],
+      "documentWidth": 1920,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        372.5,
+        101,
+        680,
+        509
+      ],
+      "documentWidth": 1425,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        164.5,
+        89.109375,
+        680,
+        509
+      ],
+      "documentWidth": 1009,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        1024,
+        768
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        10,
+        381,
+        725,
+        509
+      ],
+      "documentWidth": 745,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        760,
+        900
+      ]
+    },
+    {
+      "broken": [],
+      "dialog": [
+        10,
+        325,
+        355,
+        509
+      ],
+      "documentWidth": 375,
+      "focus": "Find links, commands, or calculate",
+      "legacyHero": false,
+      "legacySidebar": false,
+      "name": "command",
+      "overflow": [],
+      "route": "#/w/games",
+      "small": [],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "escape": {
+    "focus": "Command",
+    "open": false
+  }
+}

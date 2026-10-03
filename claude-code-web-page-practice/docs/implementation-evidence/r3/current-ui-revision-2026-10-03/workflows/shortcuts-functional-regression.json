@@ -1,0 +1,273 @@
+{
+  "origin": "http://localhost:18991",
+  "createdEditedReloaded": true,
+  "favoriteSpaceReload": true,
+  "reorderedBeforeClaudeReload": true,
+  "hidden": true,
+  "restored": true,
+  "collections": [
+    {
+      "headings": [
+        "Shopping & Home",
+        "Daily",
+        "Smart Home"
+      ],
+      "links": [
+        {
+          "href": "https://www.eponuda.com",
+          "text": "ePonudaCompare prices before you buyeponuda.com"
+        },
+        {
+          "href": "https://www.ikea.com/rs/sr/",
+          "text": "IKEA SerbiaFurniture and home inspirationikea.com"
+        },
+        {
+          "href": "https://www.kupujemprodajem.com",
+          "text": "KupujemProdajemSerbia's online marketplacekupujemprodajem.com"
+        },
+        {
+          "href": "https://www.amazon.com",
+          "text": "AmazonProducts, lists, and order trackingamazon.com"
+        },
+        {
+          "href": "https://www.ebay.com",
+          "text": "eBayMarketplace, auctions, and dealsebay.com"
+        },
+        {
+          "href": "https://mail.google.com",
+          "text": "GmailEmail and daily communicationmail.google.com"
+        },
+        {
+          "href": "https://www.youtube.com",
+          "text": "YouTubeVideos, music, and learningyoutube.com"
+        },
+        {
+          "href": "https://weather.com",
+          "text": "WeatherForecasts without dashboard trackingweather.com"
+        },
+        {
+          "href": "https://calendar.google.com",
+          "text": "Google CalendarSchedule, events, and reminderscalendar.google.com"
+        },
+        {
+          "href": "https://drive.google.com",
+          "text": "Google DriveFiles, documents, and sharingdrive.google.com"
+        },
+        {
+          "href": "https://translate.google.com",
+          "text": "Google TranslateTranslate words, documents, and websitestranslate.google.com"
+        },
+        {
+          "href": "https://onedrive.live.com",
+          "text": "OneDriveMicrosoft cloud files and photosonedrive.live.com"
+        },
+        {
+          "href": "https://www.midea.com/global",
+          "text": "Midea SmartHomeConnected home and appliancesmidea.com"
+        },
+        {
+          "href": "https://mts.rs",
+          "text": "MTSInternet, mobile, and TV servicesmts.rs"
+        },
+        {
+          "href": "https://home.google.com",
+          "text": "Google HomeGoogle smart-home informationhome.google.com"
+        },
+        {
+          "href": "https://alexa.amazon.com",
+          "text": "Amazon AlexaAlexa devices and smart-home accessalexa.amazon.com"
+        },
+        {
+          "href": "https://www.philips-hue.com",
+          "text": "Philips HueSmart lighting, scenes, and supportphilips-hue.com"
+        },
+        {
+          "href": "https://www.home-assistant.io",
+          "text": "Home AssistantOpen-source home automation platformhome-assistant.io"
+        }
+      ],
+      "pressed": []
+    },
+    {
+      "headings": [
+        "Gaming",
+        "Travel",
+        "Relax & Play"
+      ],
+      "links": [
+        {
+          "href": "https://diabloimmortal.blizzard.com",
+          "text": "Diablo ImmortalNews and updates from Sanctuarydiabloimmortal.blizzard.com"
+        },
+        {
+          "href": "https://maxroll.gg",
+          "text": "MaxrollBuild guides and game resourcesmaxroll.gg"
+        },
+        {
+          "href": "https://www.playstation.com",
+          "text": "PlayStationGames, consoles, and PlayStation newsplaystation.com"
+        },
+        {
+          "href": "https://store.steampowered.com",
+          "text": "SteamPC games, library, and communitystore.steampowered.com"
+        },
+        {
+          "href": "https://store.epicgames.com",
+          "text": "Epic GamesPC games and weekly offersstore.epicgames.com"
+        },
+        {
+          "href": "https://battle.net",
+          "text": "Battle.netBlizzard games and accountbattle.net"
+        },
+        {
+          "href": "https://www.twitch.tv",
+          "text": "TwitchLive streams and gaming communitiestwitch.tv"
+        },
+        {
+          "href": "https://www.pcgamingwiki.com",
+          "text": "PCGamingWikiPC game fixes and technical informationpcgamingwiki.com"
+        },
+        {
+          "href": "https://maps.google.com",
+          "text": "Google MapsDirections, places, and travel planningmaps.google.com"
+        },
+        {
+          "href": "https://www.google.com/travel/flights",
+          "text": "Google FlightsCompare flights and plan a tripgoogle.com"
+        },
+        {
+          "href": "https://www.booking.com",
+          "text": "Booking.comHotels, stays, and travel planningbooking.com"
+        },
+        {
+          "href": "https://www.airbnb.com",
+          "text": "AirbnbHomes and memorable staysairbnb.com"
+        },
+        {
+          "href": "https://www.tripadvisor.com",
+          "text": "TripadvisorPlaces, reviews, and trip ideastripadvisor.com"
+        },
+        {
+          "href": "https://www.rome2rio.com",
+          "text": "Rome2RioDiscover how to get anywhererome2rio.com"
+        },
+        {
+          "href": "https://www.reddit.com",
+          "text": "RedditCommunities, conversations, and discoveryreddit.com"
+        },
+        {
+          "href": "https://www.imdb.com",
+          "text": "IMDbMovies, television, and watchlistsimdb.com"
+        }
+      ],
+      "pressed": []
+    },
+    {
+      "headings": [
+        "Development"
+      ],
+      "links": [
+        {
+          "href": "https://github.com",
+          "text": "GitHubCode, repositories, and collaborationgithub.com"
+        },
+        {
+          "href": "https://docs.oracle.com",
+          "text": "Oracle DocumentationOfficial Oracle product documentationdocs.oracle.com"
+        },
+        {
+          "href": "https://stackoverflow.com",
+          "text": "Stack OverflowProgramming questions and answersstackoverflow.com"
+        },
+        {
+          "href": "https://chatgpt.com",
+          "text": "ChatGPTAI assistant and creative workspacechatgpt.com"
+        },
+        {
+          "href": "https://developer.mozilla.org",
+          "text": "MDN Web DocsHTML, CSS, and JavaScript referencedeveloper.mozilla.org"
+        },
+        {
+          "href": "https://www.npmjs.com",
+          "text": "npmDiscover JavaScript packagesnpmjs.com"
+        },
+        {
+          "href": "https://regex101.com",
+          "text": "Regex101Build and explain regular expressionsregex101.com"
+        },
+        {
+          "href": "https://caniuse.com",
+          "text": "Can I UseCheck browser feature supportcaniuse.com"
+        },
+        {
+          "href": "https://codepen.io",
+          "text": "CodePenExperiment with front-end codecodepen.io"
+        },
+        {
+          "href": "https://example.com/r3-launcher",
+          "text": "R3 launcher review editedDisposable-origin canonical shortcut reviewCustomexample.com"
+        },
+        {
+          "href": "https://claude.ai",
+          "text": "ClaudeAI workspace for coding and ideasclaude.ai"
+        }
+      ],
+      "pressed": []
+    }
+  ],
+  "edgeMenu": {
+    "left": 520.484375,
+    "right": 760.484375,
+    "width": 1440
+  },
+  "escapeFocus": {
+    "label": "More actions for Claude",
+    "menuOpen": false
+  },
+  "order": [
+    {
+      "label": "GitHubCode, repositories, and collaborationgithub.com",
+      "url": "https://github.com"
+    },
+    {
+      "label": "Oracle DocumentationOfficial Oracle product documentationdocs.oracle.com",
+      "url": "https://docs.oracle.com"
+    },
+    {
+      "label": "Stack OverflowProgramming questions and answersstackoverflow.com",
+      "url": "https://stackoverflow.com"
+    },
+    {
+      "label": "ChatGPTAI assistant and creative workspacechatgpt.com",
+      "url": "https://chatgpt.com"
+    },
+    {
+      "label": "MDN Web DocsHTML, CSS, and JavaScript referencedeveloper.mozilla.org",
+      "url": "https://developer.mozilla.org"
+    },
+    {
+      "label": "npmDiscover JavaScript packagesnpmjs.com",
+      "url": "https://www.npmjs.com"
+    },
+    {
+      "label": "Regex101Build and explain regular expressionsregex101.com",
+      "url": "https://regex101.com"
+    },
+    {
+      "label": "Can I UseCheck browser feature supportcaniuse.com",
+      "url": "https://caniuse.com"
+    },
+    {
+      "label": "CodePenExperiment with front-end codecodepen.io",
+      "url": "https://codepen.io"
+    },
+    {
+      "label": "R3 launcher review editedDisposable-origin canonical shortcut reviewCustomexample.com",
+      "url": "https://example.com/r3-launcher"
+    },
+    {
+      "label": "ClaudeAI workspace for coding and ideasclaude.ai",
+      "url": "https://claude.ai"
+    }
+  ]
+}

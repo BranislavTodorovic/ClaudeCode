@@ -1,0 +1,118 @@
+{
+  "broken": [],
+  "controls": 39,
+  "documentWidth": 1009,
+  "images": [
+    {
+      "box": [
+        1009,
+        768
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        2508,
+        1254
+      ],
+      "src": "assets/scenes/games/hero-sanctuary.jpg"
+    },
+    {
+      "box": [
+        312,
+        228
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/my-games.jpg"
+    },
+    {
+      "box": [
+        312,
+        228
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/missions-quests.jpg"
+    },
+    {
+      "box": [
+        312,
+        228
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/game-library.jpg"
+    },
+    {
+      "box": [
+        312,
+        228
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/game-sessions.jpg"
+    },
+    {
+      "box": [
+        312,
+        228
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/discover-games.jpg"
+    },
+    {
+      "box": [
+        312,
+        228
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/game-settings.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 973,
+  "small": [],
+  "viewport": [
+    1024,
+    768
+  ],
+  "name": "games-main"
+}

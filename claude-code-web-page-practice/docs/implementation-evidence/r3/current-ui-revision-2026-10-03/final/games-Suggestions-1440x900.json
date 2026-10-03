@@ -1,0 +1,246 @@
+{
+  "broken": [],
+  "controls": 95,
+  "documentWidth": 1425,
+  "heading": "Discover Games",
+  "images": [
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        494
+      ],
+      "src": "assets/scenes/games/owners/alan-wake-2-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        310
+      ],
+      "src": "assets/scenes/games/owners/resident-evil-4-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        498
+      ],
+      "src": "assets/scenes/games/owners/diablo-immortal-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/cyberpunk-2077-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/hades-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/death-stranding-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/hollow-knight-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/elden-ring-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/gow-ragnarok-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/bg3-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/stardew-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/it-takes-two-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/forza5-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/dead-cells-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/outer-wilds-card.jpg"
+    },
+    {
+      "box": [
+        261.71875,
+        243.21875
+      ],
+      "complete": false,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        0,
+        0
+      ],
+      "src": "assets/game-art/persona5-card.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 706,
+  "small": [],
+  "tab": "suggestions",
+  "viewport": [
+    1440,
+    900
+  ],
+  "name": "games-Suggestions"
+}

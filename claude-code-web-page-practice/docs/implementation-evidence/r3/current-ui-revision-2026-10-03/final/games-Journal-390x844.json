@@ -1,0 +1,21 @@
+{
+  "broken": [],
+  "controls": 4,
+  "documentWidth": 375,
+  "heading": "Game Journal",
+  "images": [],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 961,
+  "small": [],
+  "tab": "journal",
+  "viewport": [
+    390,
+    844
+  ],
+  "name": "games-Journal"
+}

@@ -279,70 +279,70 @@
     },
     {
       "reference": "docs/ui-reference/04-games.png",
-      "subject": "unmistakable premium gaming den: dominant ultrawide gaming screen high right showing an original colorful fantasy landscape no text, illuminated PC tower with restrained cyan/violet rings, visible game controllers and headset on raised console beside screen, racing wheel near center-right, geometric collectibles shelves, warm walnut and amber architectural lights, deep indigo city night window. No branded games. Distinct expressive violet/cyan/amber technology environment, hardware clearly readable in upper 55%.",
+      "subject": "Curved walnut gaming sanctuary, landscape ultrawide display, cyan/violet PC, original collectibles and dusk city mountain windows",
       "world": "games",
       "naturalWidth": 2508,
       "naturalHeight": 1254,
-      "runtimeBytes": 1164656,
-      "runtimeSha256": "f4ac36bc27e7b02c1bea7184724fd6c8d0698deba634198733fbd8f80cfc389c",
-      "masterSha256": "1edd70ddc420e45d470511d1cf8ae4b9198648938333e78c84610ff82624d06e",
-      "file": "assets/scenes/games/hero-fullbleed.png",
-      "runtimeFile": "assets/scenes/games/hero-fullbleed.jpg",
+      "runtimeBytes": 1294426,
+      "runtimeSha256": "ec7a910584cb4c365f91e366b44909db22afc377eef138bee24d49fc1cc72df0",
+      "masterSha256": "0d961436c59c1888cc874b188686239b99bfee77e90c7de769e2a93060388f2e",
+      "file": "assets/scenes/games/hero-sanctuary.png",
+      "runtimeFile": "assets/scenes/games/hero-sanctuary.jpg",
       "sources": [
         {
-          "file": "assets/scenes/games/hero-fullbleed-left.png",
+          "file": "assets/scenes/games/hero-sanctuary-left.png",
           "width": 1254,
           "height": 1254,
-          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel of the attached environment. gaming lounge left wing, game collectibles on warm amber shelves, board game table, controllers and small arcade cabinet with blue-purple screen, night skyline windows and lounge chair; same slatted walnut ceiling and dark marble floor. Camera faces left wing of the SAME room, same horizon/camera height, floor joins reference at equal height; rightmost edge narrow vertical matching stone or walnut column, compatible ceiling perspective. Photoreal sharp architectural detail over ALL the image. Complementary objects: do not duplicate the main right-panel large television. No UI, no legible text, no collage frame, no flat dark slabs. This source will be composed beside the reference at native resolution to create a coherent wide panorama. Highest actual native square output.",
-          "sourceId": "exec-36f03976-45c0-4c30-9b35-4c03065fa7de",
-          "sha256": "22e10df698c6fad73a5fe19640768758162dbefaae19175ca7f2fdbbaa2573b1"
+          "prompt": "Use case precise-object-edit. Generate SQUARE 1:1 matching LEFT EXTENSION native source panel for attached premium gaming sanctuary photograph. Same camera horizon and textured stone floor angle, tall city/mountain sunset windows, curved walnut ceiling indirect amber lighting and gaming architecture. This panel will be placed immediately to LEFT of reference at native 1:1 pixels. Focus left wing on a sculptural stone fireplace, comfortable warm suede reading chaise, original collectible shelf and plants, small unbranded console controller on low walnut table. No second computer station: main gaming PC desk stays in right reference. Rightmost edge a thin stone pier/window mullion compatible with reference left edge, equal floor/ceiling heights. Sharp material details everywhere, physically coherent architecture, luxurious relaxing gaming lounge. Highest actual native square resolution. No text, labels, logos, UI, people, watermark, collage frame or blank slab.",
+          "sourceId": "exec-7206b6b9-d95e-4153-ab17-404c4b2f8936",
+          "sha256": "e8bd525d73c7109845df901188d0bdfa4200c7f2c282ea3233972b21f2608b08"
         },
         {
-          "file": "assets/scenes/games/hero-fullbleed-right.png",
+          "file": "assets/scenes/games/hero-sanctuary-right.png",
           "width": 1254,
           "height": 1254,
-          "prompt": "Use case: precise-object-edit. Reframe this existing environment as a SQUARE 1:1 native SOURCE PANEL. Preserve its identity and improve photographic detail. Scene: luxury gaming lounge, huge fantasy game screen, RGB PC case, controllers, headset and racing steering wheel, warm amber shelving and purple-blue reflections, night city windows. Full-bleed photoreal architecture, realistic coherent perspective, layered lighting and rich detailed environment everywhere. Main semantic objects visible in upper middle and right, floor limited to lower quarter, window and ceiling details. This will be the right half of a wider panorama joined to a matching left room extension. No UI, no text or watermark, no blank dark slab. Request highest actual native resolution; do not enlarge a smaller source.",
-          "sourceId": "exec-0ba5852f-d1ac-48ed-963d-f3b9ff9156df",
-          "sha256": "db8f44e49ada01925f9fb0461884d5d32a4cec2408d73383540a871508f7369b"
+          "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 native source panel, highest actual native resolution. Reframe attached premium OneSpace gaming sanctuary into the RIGHT HALF of a wider architectural photograph. Retain gaming identity: huge curved walnut desk with single large landscape screen, cyan/violet glass PC, unbranded controller and headset, ergonomic chair, walnut shelves of original fantasy collectibles, curved timber ceiling with indirect amber illumination, city and mountains at dusk through windows, stone floor. Main gaming equipment right half of frame. Leftmost quarter primarily window, plants and continuous textured stone floor so adjoining left extension can connect. Same camera height and perspective. Whole scene sharp naturally lit, realistic premium materials, no UI/text/logo/people/collage/borders. SQUARE framing, retain full environment vertically. Never upscale a smaller output.",
+          "sourceId": "exec-836008b1-f4ac-4c77-bd43-f009950f4c05",
+          "sha256": "70721da302256987008d6cedd0dfd683fc3ab24b3d49e3926583015f6d7516d0"
         }
       ],
-      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=627. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
-      "reviewDate": "2026-10-02",
-      "supersedes": "assets/scenes/games/hero-review.png and hero-review.jpg retained as historical review sources",
+      "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with independently generated native 1254x1254 continuity repair inserted at x=627. Only outer 64-pixel patch edges feathered. No image or patch enlargement. JPEG quality 88, 4:4:4.",
+      "reviewDate": "2026-10-03",
+      "supersedes": "assets/scenes/games/hero-fullbleed.png and hero-fullbleed.jpg retained with historical provenance",
       "repair": {
-        "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. Remove the cut-off sofa/table at center and unify the floor and rugs; the two chairs can be separate chairs in one large room. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
-        "x": 627,
-        "file": "assets/scenes/games/hero-fullbleed-repair.png",
-        "edgeFeather": 64,
+        "file": "assets/scenes/games/hero-sanctuary-repair.png",
         "width": 1254,
         "height": 1254,
-        "sourceId": "exec-7d79f173-12af-4d9c-b972-5278795609c9",
-        "sha256": "ac0abf062d8a55507cd8638ef3b08b06b4fd30a473593aa756ee186ec4565b27"
+        "x": 627,
+        "edgeFeather": 64,
+        "prompt": "Use case precise-object-edit. Repair CENTER seam of this SQUARE 1254x1254 photograph so ONE physically coherent luxury gaming room, no abrupt vertical boundary. Preserve OUTER leftmost quarter and OUTER rightmost quarter as near identical as possible because they join unchanged adjacent native panels. Edit central half only: turn duplicated mismatched planted stone piers into one elegant continuous structural pier; continue single smooth curved walnut ceiling and indirect amber light; align distant mountain skyline and city windows naturally; merge continuous stone floor and rug perspective, remove duplicated central foreground bush and disjoint floor line. No ghosting, no pasted seam, no transparency, no doubled cut-off furniture. Retain rich amber/magenta dusk, high detail naturally lit material textures. No words/text/UI/logos/people. Exact square framing, native pixel scale.",
+        "sourceId": "exec-878d8b46-0207-476e-8834-ef9dd6d9ed93",
+        "sha256": "a50bc300524a53cf569b964ed8484ee5233fa0da150bf752f0d0a93d28b6ba3a"
       },
       "composition": {
         "leftSourceCrop": {
-          "width": 1254,
+          "x": 0,
           "y": 0,
-          "height": 1254,
-          "x": 0
+          "width": 1254,
+          "height": 1254
         },
-        "runtimeJpegQuality": 92,
         "rightPlacement": {
-          "width": 1254,
+          "x": 1254,
           "y": 0,
-          "height": 1254,
-          "x": 1254
+          "width": 1254,
+          "height": 1254
         },
-        "repairEdgeFeather": 64,
         "repairPlacement": {
-          "width": 1254,
+          "x": 627,
           "y": 0,
-          "height": 1254,
-          "x": 627
+          "width": 1254,
+          "height": 1254
         },
-        "nativeScale": 1
+        "nativeScale": 1,
+        "repairEdgeFeather": 64,
+        "runtimeJpegQuality": 88
       },
-      "sourceId": "native-multipanel-composition-2026-10-02",
+      "sourceId": "native-multipanel-composition-2026-10-03",
       "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
     },
     {

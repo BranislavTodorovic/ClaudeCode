@@ -1,0 +1,97 @@
+{
+  "source": "Latest user continuation prompt, sections 5–20; written visual rejection preserved as baseline FAIL. Original screenshot pixels were not supplied in current attachment.",
+  "requirements": [
+    {
+      "requirement": "New Games static main scene",
+      "change": "hero-sanctuary.jpg + provenance + final/games-main-*",
+      "evidence": "Agent visual candidate; native pending",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Eight Games owners",
+      "change": "visual-review.json + final/games-*",
+      "evidence": "KEEP all eight; native pending",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Settings modern compatibility",
+      "change": "Six grouped sections, responsive palette/control presentation",
+      "evidence": "workflows/settings-theme-regression.json; settings-integration-regression.json; final/settings-*",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Themes no-op",
+      "change": "Retained controls/handlers, canonical tokens + mode toggle now reachable",
+      "evidence": "14 palette/mode reload cases, three backgrounds, Classic accents, leave/reenter",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Shortcuts premium launcher",
+      "change": "Icon tiles, three semantic collections, clamped menu",
+      "evidence": "workflows/shortcuts-functional-regression.json; shortcut-menu-geometry.json; final/shortcuts-*",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Explore owner rejection",
+      "change": "Atlas headers, postcard results, travel filters, trip columns",
+      "evidence": "workflows/explore-trip-regression.json; explore-filter-regression.json; final/explore-*",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Consistent current icons",
+      "change": "Local SVG family, action boxes and ≥44 controls",
+      "evidence": "final eight-size screenshots/geometry; branded shortcut marks retain semantics",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Palette transient/focus",
+      "change": "Preserved close behavior plus explicit focus after selection",
+      "evidence": "workflows/room-palette-regression.json; room-palette-focus-final.json",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Projects parent/history",
+      "change": "Preserved committed ownership/history fix",
+      "evidence": "workflows/projects-regression.json",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Mission source truth",
+      "change": "games/games-data.js and games/game-resources.js; canonical saved library",
+      "evidence": "Partial editable bundle; game → chapter → objectives → next unfinished",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Final tests",
+      "change": "Fresh focused 136/136; full 269/269 after last production edit",
+      "evidence": "workflows/focused-final.log; full-final.log",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Final browser matrix",
+      "change": "26 surfaces × eight sizes; 208 JSON cases, 424 screenshots, 52 sheets",
+      "evidence": "final/matrix-summary.json; visual-review.json; corrected dialogs-final",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Routes/runtime/loading",
+      "change": "10 canonical direct-load/reload routes, 40 rapid transitions, fresh console empty; fallback usable",
+      "evidence": "workflows/routes-and-rapid-navigation.json; console-final-fresh-origin.json; missing-scene-fallback.json; asset traces",
+      "status": "Automatable review complete / native pending where applicable"
+    },
+    {
+      "requirement": "Native acceptance",
+      "change": "Historical Edge100 PASS preserved; affected acceptance reopened",
+      "evidence": "Four requirements pending in native-history.json; formal state unchanged",
+      "status": "Automatable review complete / native pending where applicable"
+    }
+  ],
+  "formal": {
+    "games11": "IN PROGRESS / IMPLEMENTED / NOT VERIFIED",
+    "games12to19": "PENDING",
+    "R3": "OPEN",
+    "gamesCinematic": "NOT IMPLEMENTED",
+    "R4": "NOT STARTED",
+    "R5": "NOT STARTED"
+  }
+}

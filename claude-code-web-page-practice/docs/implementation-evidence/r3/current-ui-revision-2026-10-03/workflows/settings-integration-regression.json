@@ -1,0 +1,59 @@
+{
+  "integration": [
+    {
+      "background": "clean",
+      "chosen": [
+        "Clean"
+      ],
+      "sceneVisibility": "hidden",
+      "surfaceBackground": "none"
+    },
+    {
+      "background": "gradient",
+      "chosen": [
+        "Gradient"
+      ],
+      "sceneVisibility": "hidden",
+      "surfaceBackground": "radial-gradient(at 80% 5%, rgb(91, 49, 73), rgb(33, 21, 30) 70%)"
+    },
+    {
+      "background": "orbit",
+      "chosen": [
+        "Atmosphere"
+      ],
+      "sceneVisibility": "visible",
+      "surfaceBackground": "none"
+    },
+    {
+      "accent": "blue",
+      "color": "rgb(122, 143, 255)"
+    },
+    {
+      "accent": "purple",
+      "color": "rgb(204, 177, 255)"
+    },
+    {
+      "accent": "green",
+      "color": "rgb(141, 227, 185)"
+    },
+    {
+      "accent": "amber",
+      "color": "rgb(241, 195, 133)"
+    }
+  ],
+  "domainReload": {
+    "accent": "amber",
+    "background": "orbit",
+    "games": "crimson",
+    "movies": "golden"
+  },
+  "reenter": {
+    "background": "color(srgb 0.0666667 0.109804 0.192157 / 0.96)",
+    "checked": [
+      "classic"
+    ],
+    "mode": "dark",
+    "status": "Classic · dark mode",
+    "text": "rgb(244, 247, 255)"
+  }
+}

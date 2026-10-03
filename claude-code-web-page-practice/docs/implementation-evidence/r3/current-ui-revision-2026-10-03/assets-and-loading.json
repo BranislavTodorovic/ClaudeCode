@@ -1,0 +1,307 @@
+{
+  "scene": {
+    "reference": "docs/ui-reference/04-games.png",
+    "subject": "Curved walnut gaming sanctuary, landscape ultrawide display, cyan/violet PC, original collectibles and dusk city mountain windows",
+    "world": "games",
+    "naturalWidth": 2508,
+    "naturalHeight": 1254,
+    "runtimeBytes": 1294426,
+    "runtimeSha256": "ec7a910584cb4c365f91e366b44909db22afc377eef138bee24d49fc1cc72df0",
+    "masterSha256": "0d961436c59c1888cc874b188686239b99bfee77e90c7de769e2a93060388f2e",
+    "file": "assets/scenes/games/hero-sanctuary.png",
+    "runtimeFile": "assets/scenes/games/hero-sanctuary.jpg",
+    "sources": [
+      {
+        "file": "assets/scenes/games/hero-sanctuary-left.png",
+        "width": 1254,
+        "height": 1254,
+        "prompt": "Use case precise-object-edit. Generate SQUARE 1:1 matching LEFT EXTENSION native source panel for attached premium gaming sanctuary photograph. Same camera horizon and textured stone floor angle, tall city/mountain sunset windows, curved walnut ceiling indirect amber lighting and gaming architecture. This panel will be placed immediately to LEFT of reference at native 1:1 pixels. Focus left wing on a sculptural stone fireplace, comfortable warm suede reading chaise, original collectible shelf and plants, small unbranded console controller on low walnut table. No second computer station: main gaming PC desk stays in right reference. Rightmost edge a thin stone pier/window mullion compatible with reference left edge, equal floor/ceiling heights. Sharp material details everywhere, physically coherent architecture, luxurious relaxing gaming lounge. Highest actual native square resolution. No text, labels, logos, UI, people, watermark, collage frame or blank slab.",
+        "sourceId": "exec-7206b6b9-d95e-4153-ab17-404c4b2f8936",
+        "sha256": "e8bd525d73c7109845df901188d0bdfa4200c7f2c282ea3233972b21f2608b08"
+      },
+      {
+        "file": "assets/scenes/games/hero-sanctuary-right.png",
+        "width": 1254,
+        "height": 1254,
+        "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 native source panel, highest actual native resolution. Reframe attached premium OneSpace gaming sanctuary into the RIGHT HALF of a wider architectural photograph. Retain gaming identity: huge curved walnut desk with single large landscape screen, cyan/violet glass PC, unbranded controller and headset, ergonomic chair, walnut shelves of original fantasy collectibles, curved timber ceiling with indirect amber illumination, city and mountains at dusk through windows, stone floor. Main gaming equipment right half of frame. Leftmost quarter primarily window, plants and continuous textured stone floor so adjoining left extension can connect. Same camera height and perspective. Whole scene sharp naturally lit, realistic premium materials, no UI/text/logo/people/collage/borders. SQUARE framing, retain full environment vertically. Never upscale a smaller output.",
+        "sourceId": "exec-836008b1-f4ac-4c77-bd43-f009950f4c05",
+        "sha256": "70721da302256987008d6cedd0dfd683fc3ab24b3d49e3926583015f6d7516d0"
+      }
+    ],
+    "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with independently generated native 1254x1254 continuity repair inserted at x=627. Only outer 64-pixel patch edges feathered. No image or patch enlargement. JPEG quality 88, 4:4:4.",
+    "reviewDate": "2026-10-03",
+    "supersedes": "assets/scenes/games/hero-fullbleed.png and hero-fullbleed.jpg retained with historical provenance",
+    "repair": {
+      "file": "assets/scenes/games/hero-sanctuary-repair.png",
+      "width": 1254,
+      "height": 1254,
+      "x": 627,
+      "edgeFeather": 64,
+      "prompt": "Use case precise-object-edit. Repair CENTER seam of this SQUARE 1254x1254 photograph so ONE physically coherent luxury gaming room, no abrupt vertical boundary. Preserve OUTER leftmost quarter and OUTER rightmost quarter as near identical as possible because they join unchanged adjacent native panels. Edit central half only: turn duplicated mismatched planted stone piers into one elegant continuous structural pier; continue single smooth curved walnut ceiling and indirect amber light; align distant mountain skyline and city windows naturally; merge continuous stone floor and rug perspective, remove duplicated central foreground bush and disjoint floor line. No ghosting, no pasted seam, no transparency, no doubled cut-off furniture. Retain rich amber/magenta dusk, high detail naturally lit material textures. No words/text/UI/logos/people. Exact square framing, native pixel scale.",
+      "sourceId": "exec-878d8b46-0207-476e-8834-ef9dd6d9ed93",
+      "sha256": "a50bc300524a53cf569b964ed8484ee5233fa0da150bf752f0d0a93d28b6ba3a"
+    },
+    "composition": {
+      "leftSourceCrop": {
+        "x": 0,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      },
+      "rightPlacement": {
+        "x": 1254,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      },
+      "repairPlacement": {
+        "x": 627,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      },
+      "nativeScale": 1,
+      "repairEdgeFeather": 64,
+      "runtimeJpegQuality": 88
+    },
+    "sourceId": "native-multipanel-composition-2026-10-03",
+    "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
+  },
+  "masterBytes": 5521665,
+  "provenance": "assets/scenes/manifest.json, assets/scenes/games/hero-sanctuary-prompts.json and retained native panels/repair; original image_gen outputs",
+  "loadingTrigger": "Scene host activates new static Games JPEG when Games is visible; compatibility scene hosts defer until their owner becomes visible",
+  "fallback": "Missing scene server tested; gradient fallback, functional library, no broken visible image or runtime log",
+  "ownerArt": [
+    {
+      "owner": "Overview",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "gaming dashboard vignette and game overview",
+      "artwork": "assets/scenes/games/owners/overview-premium.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 216609,
+      "sha256": "04f2739c9a4b25b5bf23e5e673e9cd783ccef805ec606b21aa6597bfbbe5feb6",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "My Games",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "physical game-library identity",
+      "artwork": "assets/scenes/games/owners/library-premium.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 224788,
+      "sha256": "0d81bf5f7e3e8cedd52006c2b2f1f1f673ec481e8468635890c00b49483c6e5f",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "Mission Progress",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "quest/progression identity with chapter hierarchy",
+      "artwork": "assets/scenes/games/owners/missions-premium.jpg",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "bytes": 199255,
+      "sha256": "64444f786d296be8fd957411dfc40d73b2c978dd8f8745264fe4e705c7075b94",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "Weekly Tasks",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "physical weekly quest board",
+      "artwork": "assets/scenes/games/owners/weekly-tasks.jpg",
+      "dimensions": [
+        960,
+        640
+      ],
+      "bytes": 171472,
+      "sha256": "cc76957fad41935408043eba200f213d3207f3bc757f4b3441b8b93b2ea4b232",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "Suggestions",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "discovery identity with non-destructive publisher covers",
+      "artwork": "assets/scenes/games/owners/suggestions-premium.jpg",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "bytes": 173624,
+      "sha256": "17e3af9762026fa051177d9db70ba3fd31b1e27037167442ffe48447589b414a",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "Sessions",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "gaming-session identity with recording workspace",
+      "artwork": "assets/scenes/games/owners/sessions-premium.jpg",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 166690,
+      "sha256": "7aa5cdab1bd4709d0ae66e07f934a141f07d77fe9d5dab1e4aaa0ed20e027d5b",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "Journal",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "gaming journal identity with entry workspace",
+      "artwork": "assets/scenes/games/owners/game-journal.jpg",
+      "dimensions": [
+        960,
+        640
+      ],
+      "bytes": 148347,
+      "sha256": "690750bdccb0f50084dad20e9ebaa8d07aa859fc8ae952556ba389e63bdbde08",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    },
+    {
+      "owner": "Appearance",
+      "decision": "KEEP",
+      "visual": "MODERN / ACCEPTED-CANDIDATE",
+      "reason": "hardware/lighting identity with room palette",
+      "artwork": "assets/scenes/games/owners/appearance-premium.jpg",
+      "dimensions": [
+        1280,
+        640
+      ],
+      "bytes": 168076,
+      "sha256": "b45f515e4876e88b76022d94f7b4f41d7089b148173b4564293d5268bf273f0e",
+      "provenance": "assets/scenes/games/owners/manifest.json",
+      "responsive": "All eight final viewport cases; physically inspected top/content contact sheets; no reported horizontal overflow, small applicable target or broken visible image",
+      "functional": "Current owner regression tests pass; eight-owner keyboard activation and final console review pass",
+      "nativeAcceptance": "PENDING"
+    }
+  ],
+  "landingImages": [
+    {
+      "time": "2026-10-03T21:11:47.193Z",
+      "url": "/assets/provider-logos/tmdb.svg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.230Z",
+      "url": "/assets/scenes/games/hero-sanctuary.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.236Z",
+      "url": "/assets/scenes/home/portals/media-games-review.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.258Z",
+      "url": "/assets/scenes/games/portals/my-games.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.259Z",
+      "url": "/assets/scenes/games/portals/missions-quests.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.259Z",
+      "url": "/assets/scenes/games/portals/game-library.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.260Z",
+      "url": "/assets/scenes/games/portals/game-sessions.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.261Z",
+      "url": "/assets/scenes/games/portals/discover-games.jpg",
+      "status": 200
+    },
+    {
+      "time": "2026-10-03T21:11:47.262Z",
+      "url": "/assets/scenes/games/portals/game-settings.jpg",
+      "status": 200
+    }
+  ],
+  "landingOwnerArtRequests": [],
+  "landingHiddenSceneRequests": [],
+  "sourceMasterRequests": [],
+  "boundedPublisherCards": [
+    {
+      "file": "alan-wake-2-card.jpg",
+      "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+      "original": "assets\\game-art\\alan-wake-2.webp",
+      "originalSha256": "be97566ca5b1f4e040b5e396fa645ae57b32ae5fee9a954fdd5f6c489be843e7",
+      "displaySha256": "0db031dbd0b1ee9a4fb7c15c08fd462a2d0e2f91459342feb4b1d328060b1148",
+      "displayDimensions": [
+        960,
+        494
+      ],
+      "displayBytes": 109118,
+      "crop": "No crop; proportional downsample; original preserved"
+    },
+    {
+      "file": "resident-evil-4-card.jpg",
+      "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+      "original": "assets\\game-art\\resident-evil-4.jpg",
+      "originalSha256": "31e6ab296f5fd1cb0691cc493286bc3cc755108e9a96c6efc113105499221a63",
+      "displaySha256": "e72185e18a7141447d36e0fb2ad7a9eeefdf465ca69cb2f9ea6697eabb65e359",
+      "displayDimensions": [
+        960,
+        310
+      ],
+      "displayBytes": 43889,
+      "crop": "No crop; proportional downsample; original preserved"
+    },
+    {
+      "file": "diablo-immortal-card.jpg",
+      "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+      "original": "assets\\game-art\\diablo-immortal.webp",
+      "originalSha256": "625d10be74cb7a261bd684d507e68b5f9b8de31344a8bba82a26a23d1d0a3865",
+      "displaySha256": "019ff3cd9dc5af13f0f2247ae4e63158aebad1a54256583237c578a85c4bc53a",
+      "displayDimensions": [
+        960,
+        498
+      ],
+      "displayBytes": 91943,
+      "crop": "No crop; proportional downsample; original preserved"
+    }
+  ],
+  "knownCompatibilityRequest": "One inherited Home portal media-games-review.jpg requests at initial shared Home construction. It is a bounded portal, not a Home main scene or hidden owner family; no claim of zero hidden requests.",
+  "productionSceneRequestCount": 1,
+  "cinematic": "NOT IMPLEMENTED",
+  "timing": "No artificial loading delay added. No CPU/network benchmark claim; trace verifies requests and visible boot/rapid navigation verifies usability."
+}

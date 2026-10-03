@@ -1,0 +1,133 @@
+{
+  "broken": [],
+  "controls": 90,
+  "documentWidth": 2033,
+  "heading": "Destinations",
+  "images": [
+    {
+      "box": [
+        612.328125,
+        360.1875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/azores-card.webp"
+    },
+    {
+      "box": [
+        619.7514038085938,
+        364.5540771484375
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/bali-card.webp"
+    },
+    {
+      "box": [
+        612.328125,
+        360.1875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/budapest-card.webp"
+    },
+    {
+      "box": [
+        612.328125,
+        360.1875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/chiang-mai-card.webp"
+    },
+    {
+      "box": [
+        612.328125,
+        360.1875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/costa-rica-card.webp"
+    },
+    {
+      "box": [
+        612.328125,
+        360.1875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/crete-card.webp"
+    },
+    {
+      "box": [
+        440.25,
+        293.5
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/lisbon-card.webp"
+    },
+    {
+      "box": [
+        617.65625,
+        278
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        600
+      ],
+      "src": "assets/scenes/explore/travel-inspiration.webp"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "explore",
+  "paletteOpen": false,
+  "route": "#/w/explore",
+  "scrollY": 697,
+  "small": [],
+  "viewport": [
+    2048,
+    1152
+  ],
+  "name": "explore-destinations"
+}

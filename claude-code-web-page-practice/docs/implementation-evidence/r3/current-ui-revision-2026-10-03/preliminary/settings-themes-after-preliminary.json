@@ -1,0 +1,58 @@
+[
+  {
+    "bg": "color(srgb 1 1 1 / 0.96)",
+    "mode": "light",
+    "palette": "classic/auto",
+    "preview": "Auto · light mode",
+    "selected": "AutoFollow your device",
+    "text": "rgb(17, 24, 43)"
+  },
+  {
+    "bg": "color(srgb 1 1 1 / 0.96)",
+    "mode": "light",
+    "palette": "classic/auto",
+    "preview": "Classic · light mode",
+    "selected": "ClassicCool neutrals",
+    "text": "rgb(17, 24, 43)"
+  },
+  {
+    "bg": "color(srgb 1 1 1 / 0.96)",
+    "mode": "light",
+    "palette": "midnight",
+    "preview": "Deep Space · light mode",
+    "selected": "Deep SpaceNavy and violet",
+    "text": "rgb(23, 33, 63)"
+  },
+  {
+    "bg": "color(srgb 1 1 1 / 0.96)",
+    "mode": "light",
+    "palette": "aurora",
+    "preview": "Aurora · light mode",
+    "selected": "AuroraGreen and teal",
+    "text": "rgb(21, 58, 45)"
+  },
+  {
+    "bg": "color(srgb 1 1 1 / 0.96)",
+    "mode": "light",
+    "palette": "graphite",
+    "preview": "Graphite · light mode",
+    "selected": "GraphiteQuiet monochrome",
+    "text": "rgb(37, 42, 51)"
+  },
+  {
+    "bg": "color(srgb 1 0.980392 0.952941 / 0.96)",
+    "mode": "light",
+    "palette": "sandstone",
+    "preview": "Sandstone · light mode",
+    "selected": "SandstoneWarm mineral light",
+    "text": "rgb(57, 43, 32)"
+  },
+  {
+    "bg": "color(srgb 1 0.980392 0.984314 / 0.96)",
+    "mode": "light",
+    "palette": "rosewood",
+    "preview": "Rosewood · light mode",
+    "selected": "RosewoodSoft rose and plum",
+    "text": "rgb(59, 37, 50)"
+  }
+]

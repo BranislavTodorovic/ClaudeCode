@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 98,
+  "documentWidth": 1905,
+  "heading": "Personal goals",
+  "images": [
+    {
+      "box": [
+        320,
+        96
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/personal/portals/personal-life.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "personal",
+  "paletteOpen": false,
+  "route": "#/w/personal",
+  "scrollY": 152,
+  "small": [],
+  "viewport": [
+    1920,
+    1080
+  ],
+  "name": "personal-goals-routines-habits"
+}

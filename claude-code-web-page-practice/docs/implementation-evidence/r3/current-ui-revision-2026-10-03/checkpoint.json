@@ -1,0 +1,27 @@
+{
+  "games11": "IN PROGRESS / IMPLEMENTED / NOT VERIFIED",
+  "games12to19": "PENDING",
+  "R3": "OPEN",
+  "gamesCinematic": "NOT IMPLEMENTED",
+  "R4": "NOT STARTED",
+  "R5": "NOT STARTED",
+  "automation": "Final focused/full tests and current browser review complete",
+  "visualAcceptance": "ACCEPTED-CANDIDATE; user/native acceptance remains open",
+  "remainingNative": [
+    "Affected current surfaces: actual Edge 100%, hard refresh",
+    "Actual Edge 200%, hard refresh",
+    "Real browser background / document.hidden lifecycle",
+    "Actual OS reduced motion with app Motion = Auto"
+  ],
+  "cleanup": {
+    "ownedReviewPorts": [
+      18991,
+      18992,
+      18993,
+      18994
+    ],
+    "status": "All four owned sessions stopped; owned review tab closed",
+    "normalSetup": "Untouched; native review requires the normal project server to be running"
+  },
+  "preservation": "No reset, revert, clean, discard, stage, commit, push or sibling change"
+}

@@ -1,0 +1,21 @@
+{
+  "broken": [],
+  "controls": 4,
+  "documentWidth": 2048,
+  "heading": "Game Settings",
+  "images": [],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 0,
+  "small": [],
+  "tab": "appearance",
+  "viewport": [
+    2048,
+    1152
+  ],
+  "name": "games-Appearance"
+}

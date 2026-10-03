@@ -1,0 +1,118 @@
+{
+  "broken": [],
+  "controls": 38,
+  "documentWidth": 2033,
+  "images": [
+    {
+      "box": [
+        2033,
+        758
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        2508,
+        1254
+      ],
+      "src": "assets/scenes/work/hero-fullbleed.jpg"
+    },
+    {
+      "box": [
+        318.15625,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        768
+      ],
+      "src": "assets/scenes/work/portals/projects.jpg"
+    },
+    {
+      "box": [
+        318.171875,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/kanban-board.jpg"
+    },
+    {
+      "box": [
+        318.15625,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/team.jpg"
+    },
+    {
+      "box": [
+        318.171875,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/documents.jpg"
+    },
+    {
+      "box": [
+        318.171875,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/meetings.jpg"
+    },
+    {
+      "box": [
+        318.15625,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/templates.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "work",
+  "paletteOpen": false,
+  "route": "#/w/work",
+  "scrollY": 13,
+  "small": [],
+  "viewport": [
+    2048,
+    758
+  ],
+  "name": "work-main"
+}

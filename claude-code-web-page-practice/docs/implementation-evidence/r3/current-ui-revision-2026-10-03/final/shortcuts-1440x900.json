@@ -1,0 +1,20 @@
+{
+  "broken": [],
+  "controls": 41,
+  "documentWidth": 1425,
+  "heading": "Your shortcut launchpad",
+  "images": [],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "shortcuts",
+  "paletteOpen": false,
+  "route": "#/u/shortcuts",
+  "scrollY": 533,
+  "small": [],
+  "viewport": [
+    1440,
+    900
+  ],
+  "name": "shortcuts"
+}

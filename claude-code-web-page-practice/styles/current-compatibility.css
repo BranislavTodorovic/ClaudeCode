@@ -1,0 +1,143 @@
+/* Current utility/owner presentation; no future-world rollout or record owner. */
+.osr-action-copy { display:inline-flex; align-items:center; gap:8px; }
+:is(.osr-world,.modal) :is(button,a,summary) > .icon,
+.osr-action-copy > .icon { width:20px; height:20px; flex:none; stroke-width:1.8; vertical-align:middle; }
+.osr-world :is(button,a,summary) { gap:8px; }
+.osr-world :is(button,summary,.btn) { min-width:44px; min-height:44px; }
+.osr-world .osr-nav-link { min-height:44px; }
+.osr-world :is(h2,h3) > .icon { width:24px; height:24px; flex:none; stroke-width:1.8; }
+.osr-shell .osr-icon-button { display:inline-flex; align-items:center; justify-content:center; }
+
+/* Resolve tokens at the view boundary before the retained owner overrides them. */
+#settingsView { --settings-text:var(--text); --settings-muted:var(--muted); --settings-bg:var(--bg); --settings-surface:var(--surface); --settings-surface-2:var(--surface-2); --settings-surface-3:var(--surface-3); --settings-line:var(--line); --settings-accent:var(--accent); --settings-soft:var(--accent-soft); }
+#settingsView .osr-utility { --osr-bg:var(--settings-bg); --osr-ink:var(--settings-text); --osr-muted:var(--settings-muted); --osr-accent:var(--settings-accent); --osr-edge:color-mix(in srgb,var(--settings-line) 60%,transparent); --osr-glass:color-mix(in srgb,var(--settings-surface) 94%,transparent); background:var(--settings-bg); }
+#settingsView .osr-nav-link[aria-current="page"] { background:var(--settings-soft); color:var(--settings-accent); border-color:var(--settings-accent); }
+#settingsView .osr-owner-surface { --text:var(--settings-text); --muted:var(--settings-muted); --surface:var(--settings-surface); --surface-2:var(--settings-surface-2); --surface-3:var(--settings-surface-3); --line:var(--settings-line); --owner-warm:var(--settings-accent); color:var(--settings-text); }
+#settingsView .osr-scene-host { opacity:.18; }
+body[data-background="clean"] #settingsView .osr-scene-host { visibility:hidden; }
+body[data-background="gradient"] #settingsView .osr-scene-host { visibility:hidden; }
+body[data-background="gradient"] #settingsView .osr-utility { background:radial-gradient(ellipse at 80% 5%,var(--settings-soft),var(--settings-bg) 70%); }
+#settingsView .osr-owner-heading { padding:30px; background:color-mix(in srgb,var(--settings-surface) 94%,transparent); border-color:var(--settings-line); box-shadow:none; }
+#settingsView .osr-owner-heading h1 { color:var(--settings-text); }
+#settingsView .osr-owner-intro { color:var(--settings-muted); margin-left:4px; }
+#settingsView .osr-utility-mark { color:var(--settings-accent); background:var(--settings-soft); border-color:var(--settings-line); }
+#settingsView .settings-card { display:block; padding:0; border:0; background:none; box-shadow:none; backdrop-filter:none; }
+.settings-layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:32px; align-items:start; }
+.settings-index { display:grid; gap:8px; position:sticky; top:20px; padding:20px 0; }
+.settings-kicker { margin:0 12px 14px; font-size:.7rem; letter-spacing:.16em; font-weight:700; }
+#settingsView .settings-index button { display:flex; align-items:center; gap:12px; text-align:left; padding:12px; background:transparent; border-color:transparent; color:var(--settings-muted); }
+#settingsView .settings-index button:hover { background:var(--settings-soft); color:var(--settings-accent); }
+.settings-content { display:grid; gap:28px; min-width:0; }
+#settingsView .settings-section { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; padding:28px; background:color-mix(in srgb,var(--settings-surface) 96%,transparent); border:1px solid color-mix(in srgb,var(--settings-line) 50%,transparent); border-radius:24px; scroll-margin-top:20px; }
+.settings-section-title { display:flex; align-items:center; gap:16px; grid-column:1/-1; margin:0 0 4px; }
+.settings-section-icon { display:grid; place-items:center; width:52px; height:52px; flex:none; border-radius:16px; background:var(--settings-soft); color:var(--settings-accent); }
+.settings-section-icon .icon { width:24px; height:24px; }
+#settingsView .settings-section-title :is(h2,h4) { margin:0 0 6px; color:var(--settings-text); font-size:1.3rem; }
+#settingsView .settings-section-title h2 > .icon { display:none; }
+#settingsView .settings-section-title p { margin:0; color:var(--settings-muted); font-size:.9rem; line-height:1.6; }
+#settingsView .form-field { display:grid; align-content:start; gap:12px; border:0; border-top:1px solid color-mix(in srgb,var(--settings-line) 35%,transparent); border-radius:0; background:none; padding:20px 0 0; }
+#settingsView :is(.form-field > label,.settings-field-label) { font-weight:650; color:var(--settings-text); }
+#settingsView :is(input,select,textarea,button,.btn) { background:var(--settings-surface-2); color:var(--settings-text); border-color:var(--settings-line); }
+#settingsView select option { background:var(--settings-surface); color:var(--settings-text); }
+#settingsView :is(button,.btn):hover { background:var(--settings-surface-3); border-color:var(--settings-accent); }
+#settingsView .theme-choices { grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+#settingsView .theme-choices button { padding:12px; gap:9px; border-radius:16px; min-height:118px; }
+#settingsView .theme-preview { width:100%; height:44px; border-radius:10px; }
+#settingsView :is(.theme-choices,.choice-pills) [aria-checked="true"] { border:2px solid var(--settings-accent); background:var(--settings-soft); color:var(--settings-accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--settings-accent) 12%,transparent); }
+#settingsView :is(.setting-help,.theme-choices small) { color:var(--settings-muted); }
+#settingsView :is(button,a,select,input,textarea):focus-visible { outline:3px solid var(--settings-accent); outline-offset:3px; }
+.settings-live-preview { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px; border:1px solid var(--settings-line); border-radius:18px; background:var(--settings-surface-2); }
+.settings-live-preview p { margin:6px 0 0; font-size:.85rem; }
+.settings-preview-mark { color:var(--settings-accent); }
+.settings-preview-mark .icon { width:32px; height:32px; }
+.settings-preview-swatches { display:flex; gap:4px; }
+.settings-preview-swatches i { width:16px; height:38px; border-radius:6px; background:var(--settings-accent); }
+.settings-preview-swatches i:nth-child(2) { background:var(--settings-text); }
+.settings-preview-swatches i:nth-child(3) { background:var(--settings-muted); }
+#settingsView .settings-mode-toggle { width:100%; display:flex; justify-content:space-between; padding:14px 18px; font-size:1rem; }
+#settingsView :is(#removedShortcutsList,.settings-provider-status > p,.settings-data > p,.settings-data > .tool-row,.settings-data > .setting-help) { grid-column:1/-1; }
+#settingsView .settings-data > p { color:var(--settings-muted); line-height:1.7; }
+#settingsView .scene-settings-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+#settingsView .settings-final-actions { padding:20px 0; flex-wrap:wrap; justify-content:flex-end; }
+#settingsView .settings-final-actions .btn-primary { background:var(--settings-accent); color:var(--accent-contrast); }
+
+/* Launcher items use a generous icon stage rather than CRUD card framing. */
+#shortcutsView .osr-utility { background:radial-gradient(ellipse at 70% 0,#253750,#101923 60%); }
+#shortcutsView .osr-owner-heading { background:none; border:0; box-shadow:none; padding:26px 0; }
+#shortcutsView .launcher-space-label { margin:24px 0 12px; color:#dcc49e; font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+#shortcutsView .space-picker { background:none; border:0; padding:0; gap:16px; width:100%; }
+#shortcutsView .space-picker button { display:flex; align-items:center; gap:14px; padding:16px 22px; min-width:200px; text-align:left; background:#ffffff05; border:1px solid #ffffff20; border-radius:18px; }
+#shortcutsView .space-picker button .icon { width:24px; height:24px; color:#dcc49e; }
+#shortcutsView .space-picker button span { display:grid; gap:4px; }
+#shortcutsView .space-picker small { font-size:.75rem; font-weight:400; color:#b6c8d9; }
+#shortcutsView .space-picker button.active { background:#d3b78b15; border-color:#d3b78b90; color:#fff3df; box-shadow:inset 3px 0 #d3b78b; }
+#shortcutsView .toolbar { padding:8px 0 18px; border:0; background:none; gap:12px; flex-wrap:wrap; }
+#shortcutsView .toolbar :is(#notesToggle,#settingsBtn) { display:none; }
+#shortcutsView .shortcut-search-label { color:#c8d2df; }
+#shortcutsView .shortcut-search { max-width:700px; background:#ffffff08; border-radius:16px; font-size:1.05rem; }
+#shortcutsView .section-heading { margin-top:32px; padding-bottom:12px; }
+#shortcutsView .grid { grid-template-columns:repeat(auto-fill,minmax(165px,1fr)); gap:24px 20px; }
+#shortcutsView .card { display:flex; align-items:center; text-align:center; min-height:244px; padding:18px 10px 60px; gap:14px; background:#ffffff03; border:1px solid transparent; box-shadow:none; border-radius:22px; }
+#shortcutsView .card:hover { background:#ffffff08; border-color:#ffffff25; box-shadow:0 12px 24px #0002; }
+#shortcutsView .card::after { display:none; }
+#shortcutsView .icon-badge { width:80px; height:80px; margin:0; border-radius:24px; background:linear-gradient(145deg,color-mix(in srgb,var(--brand) 26%,#29374b),#172638); border:1px solid color-mix(in srgb,var(--brand) 45%,#496174); box-shadow:inset 0 1px #ffffff20,0 10px 26px #0003; color:#f4ebdf; }
+#shortcutsView .icon-badge .icon { width:36px; height:36px; color:inherit; }
+#shortcutsView .label { margin:0; font-size:.94rem; line-height:1.4; }
+#shortcutsView .card-copy { flex:none; gap:8px; }
+#shortcutsView .description { margin:0; font-size:.75rem; line-height:1.5; color:#bbcad8; }
+#shortcutsView .external-indicator { display:none; }
+#shortcutsView .card-actions { justify-content:center; gap:8px; opacity:1; transform:none; bottom:10px; }
+#shortcutsView .card-actions > button { border:0; background:#ffffff05; }
+#shortcutsView .card-menu { top:48px; left:0; right:auto; }
+#shortcutsView .custom-badge { align-self:center; margin:0; }
+:root[data-density="compact"] #shortcutsView .description { display:none; }
+:root[data-density="compact"] #shortcutsView .card { min-height:215px; }
+
+/* An atlas desk, postcard results and a planning board retain the Explore owner DOM. */
+#exploreView .osr-owner-surface .osr-owner-heading { min-height:180px; padding:28px; background:linear-gradient(90deg,#162b29 25%,#162b29d9 55%,#162b2940),url('../assets/scenes/explore/portals/bucket-list.jpg') right center/auto 100% no-repeat; }
+#exploreView .osr-owner-surface .osr-owner-heading .osr-owner-art { display:none; }
+#exploreView [data-owner-identity="destinations"] .osr-owner-heading { background-image:linear-gradient(90deg,#162b29 25%,#162b29d9 55%,#162b2940),url('../assets/scenes/explore/portals/destinations.jpg'); }
+#exploreView [data-owner-identity="discover-more"] .osr-owner-heading { background-image:linear-gradient(90deg,#162b29 25%,#162b29d9 55%,#162b2940),url('../assets/scenes/explore/portals/discover-more.jpg'); }
+#exploreView .osr-owner-surface #exploreDestinations { padding:0; border:0; background:none; box-shadow:none; backdrop-filter:none; }
+#exploreView .osr-owner-surface .discovery-workspace { padding:28px; background:linear-gradient(100deg,#182c2bf5,#1c3430e8); border:1px solid #8aada64d; }
+#exploreView .discovery-heading { padding:0 0 20px; border-color:#8aada64d; }
+#exploreView .discovery-kicker { color:#e2c48c; letter-spacing:.13em; font-size:.7rem; }
+#exploreView .discovery-search { display:flex; align-items:end; gap:16px; }
+#exploreView .discovery-search label { flex:1; display:grid; gap:10px; font-size:.85rem; }
+#exploreView .discovery-search input { min-height:56px; padding:16px; font-size:1.1rem; background:#102521; border-color:#8aada64d; }
+#exploreView .discovery-search > button { min-height:56px; padding:14px 24px; background:#dab986; color:#182a28; }
+#exploreView .discovery-filters { padding:16px 0 0; margin:0; border:0; background:none; }
+#exploreView .discovery-filters summary { display:flex; align-items:center; gap:10px; width:fit-content; padding:10px 14px; border:1px solid #8aada650; border-radius:12px; cursor:pointer; }
+#exploreView .domain-filters { margin:20px 0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; padding:20px; border-radius:18px; background:#ffffff04; }
+#exploreView .domain-filters label { display:grid; gap:10px; font-size:.8rem; }
+#exploreView .provider-status { margin:22px 0 0; font-size:.85rem; color:#c2d3cf; }
+#exploreView .discovery-results { margin-top:24px; gap:24px; }
+#exploreView .discovery-card { background:#1c302c; border:1px solid #abcbb830; border-radius:20px; overflow:hidden; }
+#exploreView .discovery-card .discovery-photo { aspect-ratio:1.7; }
+#exploreView :is(.discovery-photo figcaption,.discovery-card > p,.provider-credit) a { display:inline-flex; align-items:center; min-height:44px; min-width:44px; }
+#exploreView .trip-board { margin:36px 0; padding:0; background:none; border:0; box-shadow:none; }
+#exploreView .trip-board > .discovery-heading { margin-bottom:24px; padding:24px; background:#172d29ef; border:1px solid #abcbb830; border-radius:20px; }
+#exploreView .trip-columns { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+#exploreView .trip-column { padding:14px; min-width:0; border-radius:20px; background:#182d29f5; border:1px solid #b8ccbb40; }
+#exploreView .trip-column h3 { margin:0 0 20px; display:flex; justify-content:space-between; background:none; border-radius:0; border-bottom:2px solid #dabb85; font-size:1rem; }
+#exploreView .trip-column:nth-child(2) h3 { border-color:#83b8c8; }
+#exploreView .trip-column:nth-child(3) h3 { border-color:#90bd98; }
+#exploreView .trip-column:nth-child(4) h3 { border-color:#b4a0cc; }
+#exploreView .trip-card { overflow:hidden; margin-bottom:18px; background:#20362e; box-shadow:0 10px 26px #0002; }
+#exploreView .trip-card .discovery-photo { aspect-ratio:1.5; }
+#exploreView .trip-card-copy { padding:18px; }
+#exploreView .trip-card h4 { margin:0; font-size:1.25rem; }
+#exploreView .trip-card .domain-actions { padding:0; background:none; gap:8px; flex-wrap:wrap; }
+#exploreView .trip-card .domain-actions button { flex:1 1 95px; padding:10px; font-size:.8rem; }
+#exploreView .trip-empty { min-height:210px; padding:30px 38% 30px 30px; background:linear-gradient(90deg,#20362e 42%,#20362e40),url('../assets/scenes/explore/portals/destinations.jpg') right center/auto 100% no-repeat; box-shadow:none; }
+#exploreView .trip-empty p { line-height:1.7; max-width:45ch; }
+#exploreView .trip-empty { text-align:left; }
+#exploreView .trip-empty h3 { margin:0 0 14px; }
+#exploreView .trip-empty .btn { width:fit-content; }
+#exploreView .trip-column-empty { font-size:.85rem; padding:12px; color:#bcd0c0; }
+#exploreView .osr-owner-surface .page-section:not(#exploreDestinations) { margin-top:32px; padding:24px; background:#1b302ce8; }
+
+@media(max-width:1200px) { .settings-layout { grid-template-columns:190px minmax(0,1fr); gap:20px; } #settingsView .theme-choices { grid-template-columns:repeat(3,minmax(0,1fr)); } #exploreView .trip-columns { grid-template-columns:repeat(2,minmax(0,1fr)); } #exploreView .domain-filters { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:900px) { .settings-layout { grid-template-columns:1fr; } .settings-index { position:static; display:flex; flex-wrap:wrap; padding:0; } .settings-kicker { width:100%; margin:0; } #settingsView .settings-index button { flex:1 1 170px; } #settingsView .settings-section { padding:22px; gap:20px; } #settingsView .scene-settings-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:760px) { #settingsView .settings-section { grid-template-columns:1fr; padding:18px; } #settingsView .theme-choices { grid-template-columns:repeat(2,minmax(0,1fr)); } .settings-live-preview { flex-wrap:wrap; } #settingsView .osr-owner-heading { padding:18px; } #shortcutsView .space-picker button { flex:1 1 170px; min-width:0; padding:14px; } #shortcutsView .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 10px; } #shortcutsView .card { padding:16px 8px 60px; min-height:260px; } #shortcutsView .icon-badge { width:72px; height:72px; border-radius:22px; } #shortcutsView .card .label { overflow-wrap:normal; } #exploreView .domain-filters { grid-template-columns:repeat(2,minmax(0,1fr)); padding:16px 10px; } #exploreView .discovery-workspace { padding:18px; } #exploreView .discovery-search { flex-direction:column; align-items:stretch; } #exploreView .trip-columns { grid-template-columns:1fr; } #exploreView .trip-empty { padding:24px; background:linear-gradient(90deg,#20362eef,#20362ec9),url('../assets/scenes/explore/portals/destinations.jpg') right center/auto 100% no-repeat; } #exploreView .osr-owner-surface .osr-owner-heading { padding:20px; min-height:160px; } }
+@media(max-width:420px) { #settingsView .scene-settings-grid,#exploreView .domain-filters { grid-template-columns:1fr; } #shortcutsView .card { display:flex; } }

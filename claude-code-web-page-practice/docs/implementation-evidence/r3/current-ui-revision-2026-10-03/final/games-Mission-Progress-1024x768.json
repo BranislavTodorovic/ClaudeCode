@@ -1,0 +1,120 @@
+{
+  "broken": [],
+  "controls": 20,
+  "documentWidth": 1009,
+  "heading": "Missions & Quests",
+  "images": [
+    {
+      "box": [
+        44,
+        18
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        800,
+        166
+      ],
+      "src": "assets/game-art/alan-wake-2-logo.png"
+    },
+    {
+      "box": [
+        44,
+        18
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        121
+      ],
+      "src": "assets/game-art/resident-evil-4-logo.png"
+    },
+    {
+      "box": [
+        44,
+        18
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/cyberpunk-2077-logo.png"
+    },
+    {
+      "box": [
+        44,
+        18
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/hades-logo.png"
+    },
+    {
+      "box": [
+        44,
+        18
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/death-stranding-logo.png"
+    },
+    {
+      "box": [
+        264.59375,
+        149.921875
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        494
+      ],
+      "src": "assets/scenes/games/owners/alan-wake-2-card.jpg"
+    },
+    {
+      "box": [
+        96,
+        52
+      ],
+      "complete": true,
+      "fit": "fill",
+      "hidden": false,
+      "natural": [
+        800,
+        166
+      ],
+      "src": "assets/game-art/alan-wake-2-logo.png"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 944,
+  "small": [],
+  "tab": "missions",
+  "viewport": [
+    1024,
+    768
+  ],
+  "name": "games-Mission-Progress"
+}

@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 5,
+  "documentWidth": 1920,
+  "heading": "Ideas & Notes",
+  "images": [
+    {
+      "box": [
+        320,
+        96
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "notes",
+  "paletteOpen": false,
+  "route": "#/u/notes",
+  "scrollY": 0,
+  "small": [],
+  "viewport": [
+    1920,
+    1080
+  ],
+  "name": "notes"
+}

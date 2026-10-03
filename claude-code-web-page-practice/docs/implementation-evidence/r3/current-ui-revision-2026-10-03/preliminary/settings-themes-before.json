@@ -1,0 +1,63 @@
+[
+  {
+    "accent": "#536dff",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "auto",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  },
+  {
+    "accent": "#536dff",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "classic",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  },
+  {
+    "accent": "#4a3b9c",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "palette": "midnight",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "midnight",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  },
+  {
+    "accent": "#176744",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "palette": "aurora",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "aurora",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  },
+  {
+    "accent": "#3e4e67",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "palette": "graphite",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "graphite",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  },
+  {
+    "accent": "#805019",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "palette": "sandstone",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "sandstone",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  },
+  {
+    "accent": "#8b365c",
+    "ownerBg": "rgba(0, 0, 0, 0)",
+    "palette": "rosewood",
+    "panelBg": "rgba(0, 0, 0, 0)",
+    "selected": "rosewood",
+    "text": "rgb(246, 248, 252)",
+    "theme": "light"
+  }
+]

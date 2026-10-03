@@ -1,0 +1,22 @@
+{
+  "created": true,
+  "reopened": true,
+  "edited": true,
+  "projectReload": {
+    "count": 2,
+    "route": "#/w/work/projects"
+  },
+  "back": {
+    "route": "#/w/work"
+  },
+  "historyBack": {
+    "owner": [
+      "Projects",
+      "Build withintention."
+    ],
+    "route": "#/w/work/projects"
+  },
+  "historyForward": "#/w/work",
+  "singleEntry": "#/w/work",
+  "formalR4": "NOT STARTED"
+}

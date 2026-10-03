@@ -1,0 +1,133 @@
+{
+  "broken": [],
+  "controls": 89,
+  "documentWidth": 1905,
+  "heading": "Bucket List & trip plans",
+  "images": [
+    {
+      "box": [
+        570.78125,
+        335.75
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/azores-card.webp"
+    },
+    {
+      "box": [
+        570.796875,
+        335.75
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/bali-card.webp"
+    },
+    {
+      "box": [
+        570.796875,
+        335.75
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/budapest-card.webp"
+    },
+    {
+      "box": [
+        570.78125,
+        335.75
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/chiang-mai-card.webp"
+    },
+    {
+      "box": [
+        570.796875,
+        335.75
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/costa-rica-card.webp"
+    },
+    {
+      "box": [
+        570.796875,
+        335.75
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/crete-card.webp"
+    },
+    {
+      "box": [
+        409.09375,
+        272.71875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/lisbon-card.webp"
+    },
+    {
+      "box": [
+        576.125,
+        278
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        600
+      ],
+      "src": "assets/scenes/explore/travel-inspiration.webp"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "explore",
+  "paletteOpen": false,
+  "route": "#/w/explore",
+  "scrollY": 2198,
+  "small": [],
+  "viewport": [
+    1920,
+    1080
+  ],
+  "name": "explore-bucket-list"
+}

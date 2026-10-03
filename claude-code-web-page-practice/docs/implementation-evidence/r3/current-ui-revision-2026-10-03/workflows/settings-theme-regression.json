@@ -1,0 +1,344 @@
+[
+  {
+    "interaction": "pointer",
+    "paletteName": "Auto Follow your device",
+    "before": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "auto"
+      ],
+      "mode": "light",
+      "status": "Auto · light mode",
+      "text": "rgb(17, 24, 43)"
+    },
+    "after": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "auto"
+      ],
+      "mode": "light",
+      "status": "Auto · light mode",
+      "text": "rgb(17, 24, 43)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "pointer",
+    "paletteName": "Classic Cool neutrals",
+    "before": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "classic"
+      ],
+      "mode": "light",
+      "status": "Classic · light mode",
+      "text": "rgb(17, 24, 43)"
+    },
+    "after": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "classic"
+      ],
+      "mode": "light",
+      "status": "Classic · light mode",
+      "text": "rgb(17, 24, 43)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "pointer",
+    "paletteName": "Deep Space Navy and violet",
+    "before": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "midnight"
+      ],
+      "mode": "light",
+      "palette": "midnight",
+      "status": "Deep Space · light mode",
+      "text": "rgb(23, 33, 63)"
+    },
+    "after": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "midnight"
+      ],
+      "mode": "light",
+      "palette": "midnight",
+      "status": "Deep Space · light mode",
+      "text": "rgb(23, 33, 63)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "pointer",
+    "paletteName": "Aurora Green and teal",
+    "before": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "aurora"
+      ],
+      "mode": "light",
+      "palette": "aurora",
+      "status": "Aurora · light mode",
+      "text": "rgb(21, 58, 45)"
+    },
+    "after": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "aurora"
+      ],
+      "mode": "light",
+      "palette": "aurora",
+      "status": "Aurora · light mode",
+      "text": "rgb(21, 58, 45)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "pointer",
+    "paletteName": "Graphite Quiet monochrome",
+    "before": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "graphite"
+      ],
+      "mode": "light",
+      "palette": "graphite",
+      "status": "Graphite · light mode",
+      "text": "rgb(37, 42, 51)"
+    },
+    "after": {
+      "background": "color(srgb 1 1 1 / 0.96)",
+      "checked": [
+        "graphite"
+      ],
+      "mode": "light",
+      "palette": "graphite",
+      "status": "Graphite · light mode",
+      "text": "rgb(37, 42, 51)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "pointer",
+    "paletteName": "Sandstone Warm mineral light",
+    "before": {
+      "background": "color(srgb 1 0.980392 0.952941 / 0.96)",
+      "checked": [
+        "sandstone"
+      ],
+      "mode": "light",
+      "palette": "sandstone",
+      "status": "Sandstone · light mode",
+      "text": "rgb(57, 43, 32)"
+    },
+    "after": {
+      "background": "color(srgb 1 0.980392 0.952941 / 0.96)",
+      "checked": [
+        "sandstone"
+      ],
+      "mode": "light",
+      "palette": "sandstone",
+      "status": "Sandstone · light mode",
+      "text": "rgb(57, 43, 32)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "pointer",
+    "paletteName": "Rosewood Soft rose and plum",
+    "before": {
+      "background": "color(srgb 1 0.980392 0.984314 / 0.96)",
+      "checked": [
+        "rosewood"
+      ],
+      "mode": "light",
+      "palette": "rosewood",
+      "status": "Rosewood · light mode",
+      "text": "rgb(59, 37, 50)"
+    },
+    "after": {
+      "background": "color(srgb 1 0.980392 0.984314 / 0.96)",
+      "checked": [
+        "rosewood"
+      ],
+      "mode": "light",
+      "palette": "rosewood",
+      "status": "Rosewood · light mode",
+      "text": "rgb(59, 37, 50)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Auto Follow your device",
+    "before": {
+      "background": "color(srgb 0.0666667 0.109804 0.192157 / 0.96)",
+      "checked": [
+        "auto"
+      ],
+      "mode": "dark",
+      "status": "Auto · dark mode",
+      "text": "rgb(244, 247, 255)"
+    },
+    "after": {
+      "background": "color(srgb 0.0666667 0.109804 0.192157 / 0.96)",
+      "checked": [
+        "auto"
+      ],
+      "mode": "dark",
+      "status": "Auto · dark mode",
+      "text": "rgb(244, 247, 255)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Classic Cool neutrals",
+    "before": {
+      "background": "color(srgb 0.0666667 0.109804 0.192157 / 0.96)",
+      "checked": [
+        "classic"
+      ],
+      "mode": "dark",
+      "status": "Classic · dark mode",
+      "text": "rgb(244, 247, 255)"
+    },
+    "after": {
+      "background": "color(srgb 0.0666667 0.109804 0.192157 / 0.96)",
+      "checked": [
+        "classic"
+      ],
+      "mode": "dark",
+      "status": "Classic · dark mode",
+      "text": "rgb(244, 247, 255)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Deep Space Navy and violet",
+    "before": {
+      "background": "color(srgb 0.0823529 0.117647 0.223529 / 0.96)",
+      "checked": [
+        "midnight"
+      ],
+      "mode": "dark",
+      "palette": "midnight",
+      "status": "Deep Space · dark mode",
+      "text": "rgb(243, 244, 255)"
+    },
+    "after": {
+      "background": "color(srgb 0.0823529 0.117647 0.223529 / 0.96)",
+      "checked": [
+        "midnight"
+      ],
+      "mode": "dark",
+      "palette": "midnight",
+      "status": "Deep Space · dark mode",
+      "text": "rgb(243, 244, 255)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Aurora Green and teal",
+    "before": {
+      "background": "color(srgb 0.0784314 0.211765 0.172549 / 0.96)",
+      "checked": [
+        "aurora"
+      ],
+      "mode": "dark",
+      "palette": "aurora",
+      "status": "Aurora · dark mode",
+      "text": "rgb(241, 252, 246)"
+    },
+    "after": {
+      "background": "color(srgb 0.0784314 0.211765 0.172549 / 0.96)",
+      "checked": [
+        "aurora"
+      ],
+      "mode": "dark",
+      "palette": "aurora",
+      "status": "Aurora · dark mode",
+      "text": "rgb(241, 252, 246)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Graphite Quiet monochrome",
+    "before": {
+      "background": "color(srgb 0.12549 0.14902 0.188235 / 0.96)",
+      "checked": [
+        "graphite"
+      ],
+      "mode": "dark",
+      "palette": "graphite",
+      "status": "Graphite · dark mode",
+      "text": "rgb(243, 245, 250)"
+    },
+    "after": {
+      "background": "color(srgb 0.12549 0.14902 0.188235 / 0.96)",
+      "checked": [
+        "graphite"
+      ],
+      "mode": "dark",
+      "palette": "graphite",
+      "status": "Graphite · dark mode",
+      "text": "rgb(243, 245, 250)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Sandstone Warm mineral light",
+    "before": {
+      "background": "color(srgb 0.223529 0.160784 0.105882 / 0.96)",
+      "checked": [
+        "sandstone"
+      ],
+      "mode": "dark",
+      "palette": "sandstone",
+      "status": "Sandstone · dark mode",
+      "text": "rgb(255, 244, 227)"
+    },
+    "after": {
+      "background": "color(srgb 0.223529 0.160784 0.105882 / 0.96)",
+      "checked": [
+        "sandstone"
+      ],
+      "mode": "dark",
+      "palette": "sandstone",
+      "status": "Sandstone · dark mode",
+      "text": "rgb(255, 244, 227)"
+    },
+    "reloadPersisted": true
+  },
+  {
+    "interaction": "Enter, Space for mode",
+    "paletteName": "Rosewood Soft rose and plum",
+    "before": {
+      "background": "color(srgb 0.223529 0.145098 0.207843 / 0.96)",
+      "checked": [
+        "rosewood"
+      ],
+      "mode": "dark",
+      "palette": "rosewood",
+      "status": "Rosewood · dark mode",
+      "text": "rgb(255, 240, 248)"
+    },
+    "after": {
+      "background": "color(srgb 0.223529 0.145098 0.207843 / 0.96)",
+      "checked": [
+        "rosewood"
+      ],
+      "mode": "dark",
+      "palette": "rosewood",
+      "status": "Rosewood · dark mode",
+      "text": "rgb(255, 240, 248)"
+    },
+    "reloadPersisted": true
+  }
+]

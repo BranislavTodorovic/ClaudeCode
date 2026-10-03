@@ -1,0 +1,74 @@
+[
+  {
+    "case": "keyboard open",
+    "focus": "Room palette",
+    "open": true,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "leave Appearance",
+    "focus": "Mission Progress",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "leave owner",
+    "focus": "Game SettingsMake this room your own.",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "return does not reopen",
+    "focus": "08 / YOUR GAMESMake it your world\n        Choose your room’s accentFour palettes for your ",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "Escape focus",
+    "focus": "Room palette",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "world leave",
+    "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n ",
+    "open": false,
+    "route": "#/w/work",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "history return",
+    "focus": "Game Settings",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  },
+  {
+    "case": "reload theme preserved transient closed",
+    "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n ",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Aurora"
+    ]
+  }
+]

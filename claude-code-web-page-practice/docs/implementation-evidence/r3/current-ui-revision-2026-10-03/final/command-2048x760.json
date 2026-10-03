@@ -1,0 +1,21 @@
+{
+  "broken": [],
+  "dialog": [
+    684,
+    88.390625,
+    680,
+    509
+  ],
+  "documentWidth": 2048,
+  "focus": "Find links, commands, or calculate",
+  "legacyHero": false,
+  "legacySidebar": false,
+  "name": "command",
+  "overflow": [],
+  "route": "#/w/games",
+  "small": [],
+  "viewport": [
+    2048,
+    760
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 80,
+  "documentWidth": 2033,
+  "heading": "Projects",
+  "images": [
+    {
+      "box": [
+        320,
+        96
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        768
+      ],
+      "src": "assets/scenes/work/portals/projects.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "work",
+  "paletteOpen": false,
+  "route": "#/w/work/projects",
+  "scrollY": 394,
+  "small": [],
+  "viewport": [
+    2048,
+    758
+  ],
+  "name": "projects-current-owner"
+}

@@ -1,0 +1,742 @@
+{
+  "tripPersist": [
+    {
+      "id": "",
+      "value": "researching"
+    },
+    {
+      "id": "",
+      "value": "Current UI review — updated riverside walk\nMuseum day"
+    },
+    {
+      "id": "",
+      "value": "2026-10-15"
+    },
+    {
+      "id": "",
+      "value": "2026-10-17"
+    },
+    {
+      "id": "",
+      "value": "2"
+    },
+    {
+      "id": "",
+      "value": "Lisbon autumn review edited"
+    },
+    {
+      "id": "",
+      "value": "1 | Arrive and walk\n2 | Museum visit\n3 | Riverside morning"
+    }
+  ],
+  "dialogSizes": [
+    {
+      "dialog": [
+        731.5,
+        234.0625,
+        570,
+        683.875
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 1226.5,
+          "right": 1278.5,
+          "width": 52
+        },
+        {
+          "height": 63.75,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 754.5,
+          "right": 1008.5,
+          "width": 254
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 1024.5,
+          "right": 1278.5,
+          "width": 254
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 754.5,
+          "right": 1008.5,
+          "width": 254
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 1024.5,
+          "right": 1278.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 754.5,
+          "right": 1008.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 1024.5,
+          "right": 1278.5,
+          "width": 254
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 754.5,
+          "right": 1008.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 754.5,
+          "right": 826.8125,
+          "width": 72.3125
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 834.8125,
+          "right": 921.171875,
+          "width": 86.359375
+        }
+      ],
+      "scroll": [
+        682,
+        682
+      ],
+      "viewport": [
+        2048,
+        1152
+      ]
+    },
+    {
+      "dialog": [
+        731.5,
+        45.59375,
+        570,
+        668.796875
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 1211.5,
+          "right": 1263.5,
+          "width": 52
+        },
+        {
+          "height": 63.75,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 1017,
+          "right": 1263.5,
+          "width": 246.5
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 1017,
+          "right": 1263.5,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 1017,
+          "right": 1263.5,
+          "width": 246.5
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 754.5,
+          "right": 826.8125,
+          "width": 72.3125
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 834.8125,
+          "right": 921.171875,
+          "width": 86.359375
+        }
+      ],
+      "scroll": [
+        682,
+        667
+      ],
+      "viewport": [
+        2048,
+        760
+      ]
+    },
+    {
+      "dialog": [
+        731.5,
+        45.484375,
+        570,
+        667.03125
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 1211.5,
+          "right": 1263.5,
+          "width": 52
+        },
+        {
+          "height": 63.75,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 1017,
+          "right": 1263.5,
+          "width": 246.5
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 1017,
+          "right": 1263.5,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 1017,
+          "right": 1263.5,
+          "width": 246.5
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 754.5,
+          "right": 1001,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 754.5,
+          "right": 826.8125,
+          "width": 72.3125
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 834.8125,
+          "right": 921.171875,
+          "width": 86.359375
+        }
+      ],
+      "scroll": [
+        682,
+        665
+      ],
+      "viewport": [
+        2048,
+        758
+      ]
+    },
+    {
+      "dialog": [
+        667.5,
+        198.0625,
+        570,
+        683.875
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 1162.5,
+          "right": 1214.5,
+          "width": 52
+        },
+        {
+          "height": 63.75,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 690.5,
+          "right": 944.5,
+          "width": 254
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 960.5,
+          "right": 1214.5,
+          "width": 254
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 690.5,
+          "right": 944.5,
+          "width": 254
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 960.5,
+          "right": 1214.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 690.5,
+          "right": 944.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 960.5,
+          "right": 1214.5,
+          "width": 254
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 690.5,
+          "right": 944.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 690.5,
+          "right": 762.8125,
+          "width": 72.3125
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 770.8125,
+          "right": 857.171875,
+          "width": 86.359375
+        }
+      ],
+      "scroll": [
+        682,
+        682
+      ],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "dialog": [
+        427.5,
+        108.0625,
+        570,
+        683.875
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 922.5,
+          "right": 974.5,
+          "width": 52
+        },
+        {
+          "height": 63.75,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 450.5,
+          "right": 704.5,
+          "width": 254
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 720.5,
+          "right": 974.5,
+          "width": 254
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 450.5,
+          "right": 704.5,
+          "width": 254
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 720.5,
+          "right": 974.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 450.5,
+          "right": 704.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 720.5,
+          "right": 974.5,
+          "width": 254
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 450.5,
+          "right": 704.5,
+          "width": 254
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 450.5,
+          "right": 522.8125,
+          "width": 72.3125
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 530.8125,
+          "right": 617.171875,
+          "width": 86.359375
+        }
+      ],
+      "scroll": [
+        682,
+        682
+      ],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "dialog": [
+        219.5,
+        46.078125,
+        570,
+        675.828125
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 699.5,
+          "right": 751.5,
+          "width": 52
+        },
+        {
+          "height": 63.75,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 242.5,
+          "right": 489,
+          "width": 246.5
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 505,
+          "right": 751.5,
+          "width": 246.5
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 242.5,
+          "right": 489,
+          "width": 246.5
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 505,
+          "right": 751.5,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 242.5,
+          "right": 489,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 505,
+          "right": 751.5,
+          "width": 246.5
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 242.5,
+          "right": 489,
+          "width": 246.5
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 242.5,
+          "right": 314.8125,
+          "width": 72.3125
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 322.8125,
+          "right": 409.171875,
+          "width": 86.359375
+        }
+      ],
+      "scroll": [
+        682,
+        674
+      ],
+      "viewport": [
+        1024,
+        768
+      ]
+    },
+    {
+      "dialog": [
+        10,
+        12,
+        725,
+        876
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 645,
+          "right": 697,
+          "width": 52
+        },
+        {
+          "height": 44,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 33,
+          "right": 697,
+          "width": 664
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 41,
+          "right": 353.96875,
+          "width": 312.96875
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 361.96875,
+          "right": 689,
+          "width": 327.03125
+        }
+      ],
+      "scroll": [
+        940,
+        874
+      ],
+      "viewport": [
+        760,
+        900
+      ]
+    },
+    {
+      "dialog": [
+        10,
+        12,
+        355,
+        820
+      ],
+      "fields": [
+        {
+          "height": 44,
+          "label": "Close dialog",
+          "left": 275,
+          "right": 327,
+          "width": 52
+        },
+        {
+          "height": 44,
+          "label": "IdeaResearchingPlannedVisited",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 83.484375,
+          "label": "Current UI review — riverside walk\nMuseum day",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 45.828125,
+          "label": "",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 44,
+          "label": "1 · Highest2 · High3 · Normal4 · Low5 · Someday",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 44,
+          "label": "",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 83.484375,
+          "label": "1 | Arrive and walk\n2 | Museum visit",
+          "left": 33,
+          "right": 327,
+          "width": 294
+        },
+        {
+          "height": 44,
+          "label": "Cancel",
+          "left": 41,
+          "right": 168.96875,
+          "width": 127.96875
+        },
+        {
+          "height": 44,
+          "label": "Save trip",
+          "left": 176.96875,
+          "right": 319,
+          "width": 142.03125
+        }
+      ],
+      "scroll": [
+        940,
+        818
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "searchShortlistCreatedEarlier": true,
+  "tripEditReload": true,
+  "statusReload": "researching",
+  "canonicalLocalOnly": true
+}

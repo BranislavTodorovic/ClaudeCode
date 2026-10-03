@@ -1,0 +1,133 @@
+{
+  "broken": [],
+  "controls": 89,
+  "documentWidth": 2033,
+  "heading": "Discover More · travel resources",
+  "images": [
+    {
+      "box": [
+        623,
+        366.46875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/azores-card.webp"
+    },
+    {
+      "box": [
+        623,
+        366.46875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/bali-card.webp"
+    },
+    {
+      "box": [
+        623,
+        366.46875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/budapest-card.webp"
+    },
+    {
+      "box": [
+        623,
+        366.46875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/chiang-mai-card.webp"
+    },
+    {
+      "box": [
+        623,
+        366.46875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/costa-rica-card.webp"
+    },
+    {
+      "box": [
+        623,
+        366.46875
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/crete-card.webp"
+    },
+    {
+      "box": [
+        448.25,
+        298.828125
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/lisbon-card.webp"
+    },
+    {
+      "box": [
+        628.328125,
+        278
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        600
+      ],
+      "src": "assets/scenes/explore/travel-inspiration.webp"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "explore",
+  "paletteOpen": false,
+  "route": "#/w/explore",
+  "scrollY": 3648,
+  "small": [],
+  "viewport": [
+    2048,
+    758
+  ],
+  "name": "explore-discover-more"
+}

@@ -1,0 +1,190 @@
+{
+  "broken": [],
+  "controls": 33,
+  "documentWidth": 1905,
+  "heading": "Game Library",
+  "images": [
+    {
+      "box": [
+        578.78125,
+        325.5625
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        494
+      ],
+      "src": "assets/scenes/games/owners/alan-wake-2-card.jpg"
+    },
+    {
+      "box": [
+        185.484375,
+        48
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        800,
+        166
+      ],
+      "src": "assets/game-art/alan-wake-2-logo.png"
+    },
+    {
+      "box": [
+        578.796875,
+        325.5625
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        310
+      ],
+      "src": "assets/scenes/games/owners/resident-evil-4-card.jpg"
+    },
+    {
+      "box": [
+        202.40625,
+        48
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        121
+      ],
+      "src": "assets/game-art/resident-evil-4-logo.png"
+    },
+    {
+      "box": [
+        578.796875,
+        325.5625
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        498
+      ],
+      "src": "assets/scenes/games/owners/diablo-immortal-card.jpg"
+    },
+    {
+      "box": [
+        84,
+        48
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        320
+      ],
+      "src": "assets/game-art/diablo-immortal-logo.png"
+    },
+    {
+      "box": [
+        460,
+        325.5625
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/cyberpunk-2077-card.jpg"
+    },
+    {
+      "box": [
+        80,
+        48
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/cyberpunk-2077-logo.png"
+    },
+    {
+      "box": [
+        460,
+        325.5625
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/hades-card.jpg"
+    },
+    {
+      "box": [
+        80,
+        48
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/hades-logo.png"
+    },
+    {
+      "box": [
+        460,
+        325.5625
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        460,
+        215
+      ],
+      "src": "assets/game-art/death-stranding-card.jpg"
+    },
+    {
+      "box": [
+        80,
+        48
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/death-stranding-logo.png"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 719,
+  "small": [],
+  "tab": "library",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "name": "games-My-Games"
+}

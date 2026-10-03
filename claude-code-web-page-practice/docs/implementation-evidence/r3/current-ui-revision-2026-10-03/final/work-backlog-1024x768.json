@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 74,
+  "documentWidth": 1009,
+  "heading": "Work backlog",
+  "images": [
+    {
+      "box": [
+        184.3125,
+        96
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/kanban-board.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "work",
+  "paletteOpen": false,
+  "route": "#/w/work",
+  "scrollY": 401,
+  "small": [],
+  "viewport": [
+    1024,
+    768
+  ],
+  "name": "work-backlog"
+}

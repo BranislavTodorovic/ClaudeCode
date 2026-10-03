@@ -125,15 +125,15 @@
     var heading = doc.createElement('header'); heading.className = 'osr-owner-heading';
     var back = doc.createElement('button'); back.type = 'button'; back.className = 'osr-button'; back.textContent = '← Back to Home'; back.onclick = function () { go('home'); };
     var title = doc.createElement('h1'); title.textContent = page === 'settings' ? 'Preferences & local data' : page === 'notes' ? 'Ideas & Notes' : page === 'shortcuts' ? 'Your shortcut launchpad' : 'Plan your day';
-    var art = doc.createElement('img'); art.className = 'osr-owner-art'; art.alt = ''; art.width = 180; art.height = 96; art.loading = 'lazy'; art.src = 'assets/scenes/home/portals/' + (page === 'notes' ? 'projects-notes-review' : 'work-review') + '.jpg'; art.onerror = function () { art.hidden = true; };
     heading.append(back, title);
-    if (page === 'shortcuts' || page === 'settings') { var mark = doc.createElement('span'); mark.className = 'osr-utility-mark'; mark.setAttribute('aria-hidden','true'); mark.innerHTML = OS.iconSvg(page === 'shortcuts' ? 'grid' : 'sliders'); heading.appendChild(mark); } else heading.appendChild(art);
+    if (page === 'shortcuts' || page === 'settings') { var mark = doc.createElement('span'); mark.className = 'osr-utility-mark'; mark.setAttribute('aria-hidden','true'); mark.innerHTML = OS.iconSvg(page === 'shortcuts' ? 'grid' : 'sliders'); heading.appendChild(mark); }
+    else { var art = doc.createElement('img'); art.className = 'osr-owner-art'; art.alt = ''; art.width = 180; art.height = 96; art.loading = 'lazy'; art.src = 'assets/scenes/home/portals/' + (page === 'notes' ? 'projects-notes-review' : 'work-review') + '.jpg'; art.onerror = function () { art.hidden = true; }; heading.appendChild(art); }
     tools.appendChild(heading);
     var intro = doc.createElement('p'); intro.className = 'osr-owner-intro'; intro.textContent = page === 'settings' ? 'Tune your current workspace and manage the data saved on this device.' : page === 'notes' ? 'Give an idea room to grow. Capture, pin and revisit your private notes.' : page === 'shortcuts' ? 'Choose a space, find an icon, go. Your saved links and Quick Access stay on this device.' : 'Make space for what matters. Your focus timer, daily tasks and important dates stay together.'; tools.appendChild(intro);
     Array.from(view.children).forEach(function (child) { tools.appendChild(child); });
     utilityFrame.appendChild(tools); utility.appendChild(utilityFrame); view.appendChild(utility);
     // Bind the existing view before requesting its scene, so hidden utilities defer art.
-    foundation.createSceneHost(backdrop).show('home');
+    if (page !== 'shortcuts') foundation.createSceneHost(backdrop).show(page === 'settings' ? 'settings' : 'home');
   });
 
   var portals = [

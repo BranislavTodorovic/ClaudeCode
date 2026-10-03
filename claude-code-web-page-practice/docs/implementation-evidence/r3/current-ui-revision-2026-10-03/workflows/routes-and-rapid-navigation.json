@@ -1,0 +1,758 @@
+{
+  "origin": "http://localhost:18994",
+  "routes": [
+    {
+      "requested": "#/w/games",
+      "initial": {
+        "boot": "ready",
+        "page": "games",
+        "route": "#/w/games",
+        "visibleViews": [
+          "games"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "games",
+        "route": "#/w/games",
+        "visibleViews": [
+          "games"
+        ]
+      }
+    },
+    {
+      "requested": "#/w/explore",
+      "initial": {
+        "boot": "ready",
+        "page": "explore",
+        "route": "#/w/explore",
+        "visibleViews": [
+          "explore"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "explore",
+        "route": "#/w/explore",
+        "visibleViews": [
+          "explore"
+        ]
+      }
+    },
+    {
+      "requested": "#/w/home",
+      "initial": {
+        "boot": "ready",
+        "page": "home",
+        "route": "#/w/home",
+        "visibleViews": [
+          "home"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "home",
+        "route": "#/w/home",
+        "visibleViews": [
+          "home"
+        ]
+      }
+    },
+    {
+      "requested": "#/u/notes",
+      "initial": {
+        "boot": "ready",
+        "page": "notes",
+        "route": "#/u/notes",
+        "visibleViews": [
+          "notes"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "notes",
+        "route": "#/u/notes",
+        "visibleViews": [
+          "notes"
+        ]
+      }
+    },
+    {
+      "requested": "#/w/personal",
+      "initial": {
+        "boot": "ready",
+        "page": "personal",
+        "route": "#/w/personal",
+        "visibleViews": [
+          "personal"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "personal",
+        "route": "#/w/personal",
+        "visibleViews": [
+          "personal"
+        ]
+      }
+    },
+    {
+      "requested": "#/w/work/projects",
+      "initial": {
+        "boot": "ready",
+        "page": "work",
+        "route": "#/w/work/projects",
+        "visibleViews": [
+          "work"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "work",
+        "route": "#/w/work/projects",
+        "visibleViews": [
+          "work"
+        ]
+      }
+    },
+    {
+      "requested": "#/w/settings",
+      "initial": {
+        "boot": "ready",
+        "page": "settings",
+        "route": "#/w/settings",
+        "visibleViews": [
+          "settings"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "settings",
+        "route": "#/w/settings",
+        "visibleViews": [
+          "settings"
+        ]
+      }
+    },
+    {
+      "requested": "#/u/shortcuts",
+      "initial": {
+        "boot": "ready",
+        "page": "shortcuts",
+        "route": "#/u/shortcuts",
+        "visibleViews": [
+          "shortcuts"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "shortcuts",
+        "route": "#/u/shortcuts",
+        "visibleViews": [
+          "shortcuts"
+        ]
+      }
+    },
+    {
+      "requested": "#/u/productivity",
+      "initial": {
+        "boot": "ready",
+        "page": "productivity",
+        "route": "#/u/productivity",
+        "visibleViews": [
+          "productivity"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "productivity",
+        "route": "#/u/productivity",
+        "visibleViews": [
+          "productivity"
+        ]
+      }
+    },
+    {
+      "requested": "#/w/work",
+      "initial": {
+        "boot": "ready",
+        "page": "work",
+        "route": "#/w/work",
+        "visibleViews": [
+          "work"
+        ]
+      },
+      "reload": {
+        "boot": "ready",
+        "page": "work",
+        "route": "#/w/work",
+        "visibleViews": [
+          "work"
+        ]
+      }
+    }
+  ],
+  "rapid": [
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "home"
+        }
+      ],
+      "page": "home",
+      "route": "#/w/home",
+      "views": [
+        "home"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "work"
+        }
+      ],
+      "page": "work",
+      "route": "#/w/work",
+      "views": [
+        "work"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "personal"
+        }
+      ],
+      "page": "personal",
+      "route": "#/w/personal",
+      "views": [
+        "personal"
+      ]
+    },
+    {
+      "gameTheme": null,
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "explore"
+        }
+      ],
+      "page": "explore",
+      "route": "#/w/explore",
+      "views": [
+        "explore"
+      ]
+    },
+    {
+      "gameTheme": "midnight",
+      "liveScenes": [
+        {
+          "state": "ready",
+          "world": "games"
+        }
+      ],
+      "page": "games",
+      "route": "#/w/games",
+      "views": [
+        "games"
+      ]
+    }
+  ],
+  "consoleFinal": []
+}

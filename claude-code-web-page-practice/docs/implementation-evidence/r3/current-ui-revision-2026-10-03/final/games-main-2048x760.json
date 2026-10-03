@@ -1,0 +1,118 @@
+{
+  "broken": [],
+  "controls": 39,
+  "documentWidth": 2048,
+  "images": [
+    {
+      "box": [
+        2048,
+        760
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        2508,
+        1254
+      ],
+      "src": "assets/scenes/games/hero-sanctuary.jpg"
+    },
+    {
+      "box": [
+        320.65625,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/my-games.jpg"
+    },
+    {
+      "box": [
+        320.671875,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/missions-quests.jpg"
+    },
+    {
+      "box": [
+        320.65625,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/game-library.jpg"
+    },
+    {
+      "box": [
+        320.671875,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/game-sessions.jpg"
+    },
+    {
+      "box": [
+        320.671875,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/discover-games.jpg"
+    },
+    {
+      "box": [
+        320.65625,
+        140
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/games/portals/game-settings.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 0,
+  "small": [],
+  "viewport": [
+    2048,
+    760
+  ],
+  "name": "games-main"
+}

@@ -1,0 +1,68 @@
+{
+  "reference": "docs/ui-reference/04-games.png",
+  "subject": "unmistakable premium gaming den: dominant ultrawide gaming screen high right showing an original colorful fantasy landscape no text, illuminated PC tower with restrained cyan/violet rings, visible game controllers and headset on raised console beside screen, racing wheel near center-right, geometric collectibles shelves, warm walnut and amber architectural lights, deep indigo city night window. No branded games. Distinct expressive violet/cyan/amber technology environment, hardware clearly readable in upper 55%.",
+  "world": "games",
+  "naturalWidth": 2508,
+  "naturalHeight": 1254,
+  "runtimeBytes": 1164656,
+  "runtimeSha256": "f4ac36bc27e7b02c1bea7184724fd6c8d0698deba634198733fbd8f80cfc389c",
+  "masterSha256": "1edd70ddc420e45d470511d1cf8ae4b9198648938333e78c84610ff82624d06e",
+  "file": "assets/scenes/games/hero-fullbleed.png",
+  "runtimeFile": "assets/scenes/games/hero-fullbleed.jpg",
+  "sources": [
+    {
+      "file": "assets/scenes/games/hero-fullbleed-left.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Use case precise-object-edit. Generate a SQUARE 1:1 matching LEFT EXTENSION panel of the attached environment. gaming lounge left wing, game collectibles on warm amber shelves, board game table, controllers and small arcade cabinet with blue-purple screen, night skyline windows and lounge chair; same slatted walnut ceiling and dark marble floor. Camera faces left wing of the SAME room, same horizon/camera height, floor joins reference at equal height; rightmost edge narrow vertical matching stone or walnut column, compatible ceiling perspective. Photoreal sharp architectural detail over ALL the image. Complementary objects: do not duplicate the main right-panel large television. No UI, no legible text, no collage frame, no flat dark slabs. This source will be composed beside the reference at native resolution to create a coherent wide panorama. Highest actual native square output.",
+      "sourceId": "exec-36f03976-45c0-4c30-9b35-4c03065fa7de",
+      "sha256": "22e10df698c6fad73a5fe19640768758162dbefaae19175ca7f2fdbbaa2573b1"
+    },
+    {
+      "file": "assets/scenes/games/hero-fullbleed-right.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Use case: precise-object-edit. Reframe this existing environment as a SQUARE 1:1 native SOURCE PANEL. Preserve its identity and improve photographic detail. Scene: luxury gaming lounge, huge fantasy game screen, RGB PC case, controllers, headset and racing steering wheel, warm amber shelving and purple-blue reflections, night city windows. Full-bleed photoreal architecture, realistic coherent perspective, layered lighting and rich detailed environment everywhere. Main semantic objects visible in upper middle and right, floor limited to lower quarter, window and ceiling details. This will be the right half of a wider panorama joined to a matching left room extension. No UI, no text or watermark, no blank dark slab. Request highest actual native resolution; do not enlarge a smaller source.",
+      "sourceId": "exec-0ba5852f-d1ac-48ed-963d-f3b9ff9156df",
+      "sha256": "db8f44e49ada01925f9fb0461884d5d32a4cec2408d73383540a871508f7369b"
+    }
+  ],
+  "production": "Two separately generated native 1254x1254 room panels composed at 1:1 pixels, with an independently generated native 1254x1254 continuity repair inserted at x=627. Only the outer 64-pixel patch edges are feathered; the central repair is opaque. No image or patch enlargement. JPEG quality 92.",
+  "reviewDate": "2026-10-02",
+  "supersedes": "assets/scenes/games/hero-review.png and hero-review.jpg retained as historical review sources",
+  "repair": {
+    "prompt": "Use case precise-object-edit. Fix the CENTER compositing seam in this SQUARE 1254x1254 architectural photograph. Keep exact square framing and pixel scale, retain the OUTER left quarter and OUTER right quarter as close to identical as possible: these edges must join unchanged adjacent scene panels. Repair only the central half to form ONE physically coherent room with continuous realistic floor, ceiling and perspective, no abrupt vertical crop boundary, no doubled cut-off furniture, no duplicated identical props, no transparent ghosting. The image is currently two panels with a visible join at x=50%; remove that join naturally. Remove the cut-off sofa/table at center and unify the floor and rugs; the two chairs can be separate chairs in one large room. Preserve sharp fine textures, warm practical lights and the original world mood. No text, no interface, no new framing, no global resizing. Native square output.",
+    "x": 627,
+    "file": "assets/scenes/games/hero-fullbleed-repair.png",
+    "edgeFeather": 64,
+    "width": 1254,
+    "height": 1254,
+    "sourceId": "exec-7d79f173-12af-4d9c-b972-5278795609c9",
+    "sha256": "ac0abf062d8a55507cd8638ef3b08b06b4fd30a473593aa756ee186ec4565b27"
+  },
+  "composition": {
+    "leftSourceCrop": {
+      "width": 1254,
+      "y": 0,
+      "height": 1254,
+      "x": 0
+    },
+    "runtimeJpegQuality": 92,
+    "rightPlacement": {
+      "width": 1254,
+      "y": 0,
+      "height": 1254,
+      "x": 1254
+    },
+    "repairEdgeFeather": 64,
+    "repairPlacement": {
+      "width": 1254,
+      "y": 0,
+      "height": 1254,
+      "x": 627
+    },
+    "nativeScale": 1
+  },
+  "sourceId": "native-multipanel-composition-2026-10-02",
+  "prompt": "See independently generated native source panel and repair prompts in sources and repair. Composition at 1:1 scale; no upsampling."
+}

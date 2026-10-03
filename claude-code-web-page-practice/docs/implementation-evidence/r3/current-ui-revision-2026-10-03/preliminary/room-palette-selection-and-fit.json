@@ -1,0 +1,356 @@
+{
+  "sizes": [
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 71,
+          "right": 190,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 196,
+          "right": 315,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 71,
+          "right": 190,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 196,
+          "right": 315,
+          "width": 119
+        }
+      ],
+      "rect": [
+        58,
+        206,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        2048,
+        1152
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 55,
+          "right": 174,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 180,
+          "right": 299,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 55,
+          "right": 174,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 180,
+          "right": 299,
+          "width": 119
+        }
+      ],
+      "rect": [
+        42,
+        206,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        2048,
+        760
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 55,
+          "right": 174,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 180,
+          "right": 299,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 55,
+          "right": 174,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 180,
+          "right": 299,
+          "width": 119
+        }
+      ],
+      "rect": [
+        42,
+        206,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        2048,
+        758
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 69.3125,
+          "right": 188.3125,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 194.3125,
+          "right": 313.3125,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 69.3125,
+          "right": 188.3125,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 194.3125,
+          "right": 313.3125,
+          "width": 119
+        }
+      ],
+      "rect": [
+        56.3125,
+        206,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 59.234375,
+          "right": 178.234375,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 184.234375,
+          "right": 303.234375,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 59.234375,
+          "right": 178.234375,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 184.234375,
+          "right": 303.234375,
+          "width": 119
+        }
+      ],
+      "rect": [
+        46.234375,
+        275.59375,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        1440,
+        900
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 50.5,
+          "right": 169.5,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 175.5,
+          "right": 294.5,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 50.5,
+          "right": 169.5,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 175.5,
+          "right": 294.5,
+          "width": 119
+        }
+      ],
+      "rect": [
+        37.5,
+        281.359375,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        1024,
+        768
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 45,
+          "right": 164,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 170,
+          "right": 289,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 45,
+          "right": 164,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 170,
+          "right": 289,
+          "width": 119
+        }
+      ],
+      "rect": [
+        32,
+        305,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        760,
+        900
+      ]
+    },
+    {
+      "buttons": [
+        {
+          "height": 44,
+          "label": "Midnight",
+          "left": 45,
+          "right": 164,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Neon",
+          "left": 170,
+          "right": 289,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Crimson",
+          "left": 45,
+          "right": 164,
+          "width": 119
+        },
+        {
+          "height": 44,
+          "label": "Aurora",
+          "left": 170,
+          "right": 289,
+          "width": 119
+        }
+      ],
+      "rect": [
+        32,
+        430.953125,
+        145.953125,
+        49.1875
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "selected": {
+    "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n ",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Neon"
+    ]
+  },
+  "selectedReload": {
+    "focus": "OneSpaceOpening your space…\n    Reload OneSpace\n  \n  \n    \n  \n  \n    OneSpace\n    Spaces\n ",
+    "open": false,
+    "route": "#/w/games",
+    "selected": [
+      "Neon"
+    ]
+  }
+}

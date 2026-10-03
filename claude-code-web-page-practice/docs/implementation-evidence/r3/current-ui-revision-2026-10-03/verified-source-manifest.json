@@ -1,0 +1,71 @@
+{
+  "head": "176027fc11b7d7bdf9c29082c8a86176ea18cd07",
+  "files": [
+    {
+      "path": "assets/scenes/manifest.json",
+      "bytes": 31576,
+      "sha256": "b48222ab25c9cec233b536823d09d87742218cc848bf908eba4feba3ecd8a175"
+    },
+    {
+      "path": "games/games-redesign.js",
+      "bytes": 15218,
+      "sha256": "def527699af55e34e10f411aeb59307677f3e232cb458d207a286cd0cbb6f7c9"
+    },
+    {
+      "path": "home/home-redesign.js",
+      "bytes": 23639,
+      "sha256": "373c3522c0d5dc4d083307e89fe0a6c0db55c5097ffd73252e5835af68c50fea"
+    },
+    {
+      "path": "index.html",
+      "bytes": 271617,
+      "sha256": "a7291353df3c048d454a84ee9af071a100865eb216475d74c0f11c9a15bd7f1d"
+    },
+    {
+      "path": "shared/redesign-foundation.js",
+      "bytes": 19350,
+      "sha256": "a1b3a9471ec0a485ea2e14f29861e4c48f3c563cadd666fdfa102d4742d39a05"
+    },
+    {
+      "path": "shared/current-compatibility.js",
+      "bytes": 7319,
+      "sha256": "a1e0fe4b8fd1f0bd1fb9ad2f6ee9307b169a22d0138812c208cdf0af85be7ff2"
+    },
+    {
+      "path": "styles/current-compatibility.css",
+      "bytes": 17234,
+      "sha256": "5740b687347f2f5252fb08232b5abbf48f1534710793a9c567e749855837bde0"
+    },
+    {
+      "path": "tests/data-regression.test.js",
+      "bytes": 8198,
+      "sha256": "51c4bb34cd15daef66e4f8a358967e2c046fffac946c13ec0777a1fc7f4e8a99"
+    },
+    {
+      "path": "tests/redesign-foundation.test.js",
+      "bytes": 7871,
+      "sha256": "e1f70c79188b405cc6bf115716ddb6920b2569f6dfb7dd35e7d65f6f34609983"
+    },
+    {
+      "path": "tests/structure.test.js",
+      "bytes": 6377,
+      "sha256": "fd985e898ff14ebf0d529a5269cfb865f990c3b159fe15d62f2661ae4fde880d"
+    },
+    {
+      "path": "assets/scenes/games/hero-sanctuary.jpg",
+      "bytes": 1294426,
+      "sha256": "ec7a910584cb4c365f91e366b44909db22afc377eef138bee24d49fc1cc72df0"
+    },
+    {
+      "path": "assets/scenes/games/hero-sanctuary.png",
+      "bytes": 5521665,
+      "sha256": "0d961436c59c1888cc874b188686239b99bfee77e90c7de769e2a93060388f2e"
+    },
+    {
+      "path": "assets/scenes/games/owners/manifest.json",
+      "bytes": 15383,
+      "sha256": "7a59dc184531360984beb4067c368c6a6044394fb4673d90e03e5bfd059cca0b"
+    }
+  ],
+  "note": "Final tests and browser matrix refer to these production/source files. Evidence packaging made no runtime edits."
+}

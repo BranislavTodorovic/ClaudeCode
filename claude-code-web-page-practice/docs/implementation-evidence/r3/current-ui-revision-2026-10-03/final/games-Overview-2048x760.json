@@ -1,0 +1,106 @@
+{
+  "broken": [],
+  "controls": 7,
+  "documentWidth": 2033,
+  "heading": "Games overview",
+  "images": [
+    {
+      "box": [
+        52,
+        52
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        800,
+        166
+      ],
+      "src": "assets/game-art/alan-wake-2-logo.png"
+    },
+    {
+      "box": [
+        52,
+        52
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        121
+      ],
+      "src": "assets/game-art/resident-evil-4-logo.png"
+    },
+    {
+      "box": [
+        52,
+        52
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        320
+      ],
+      "src": "assets/game-art/diablo-immortal-logo.png"
+    },
+    {
+      "box": [
+        52,
+        52
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/cyberpunk-2077-logo.png"
+    },
+    {
+      "box": [
+        52,
+        52
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/hades-logo.png"
+    },
+    {
+      "box": [
+        52,
+        52
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        360
+      ],
+      "src": "assets/game-art/death-stranding-logo.png"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 604,
+  "small": [],
+  "tab": "overview",
+  "viewport": [
+    2048,
+    760
+  ],
+  "name": "games-Overview"
+}

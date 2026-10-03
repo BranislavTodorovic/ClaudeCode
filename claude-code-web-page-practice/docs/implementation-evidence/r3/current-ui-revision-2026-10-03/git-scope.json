@@ -1,0 +1,3875 @@
+{
+  "root": "C:/Users/banek/Documents/Projects/ClaudeCode",
+  "project": "C:/Users/banek/Documents/Projects/ClaudeCode/claude-code-web-page-practice",
+  "branch": "main",
+  "head": "176027fc11b7d7bdf9c29082c8a86176ea18cd07",
+  "staged": 0,
+  "modified": 8,
+  "untracked": 764,
+  "classifications": [
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/assets/scenes/manifest.json",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/games/games-redesign.js",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/home/home-redesign.js",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/index.html",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/shared/redesign-foundation.js",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/tests/data-regression.test.js",
+      "classification": "TEST_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/tests/redesign-foundation.test.js",
+      "classification": "TEST_REQUIRED"
+    },
+    {
+      "status": " M",
+      "path": "claude-code-web-page-practice/tests/structure.test.js",
+      "classification": "TEST_REQUIRED"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-fullbleed-historical-provenance.json",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-left.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-master.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-prompts.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-repair-input.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-repair.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-right.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary-unrepaired.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary.jpg",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/assets/scenes/games/hero-sanctuary.png",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/CONTINUATION-CHECKPOINT.md",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/REPORT.md",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/assets-and-loading.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/authority-recovery.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/checkpoint.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/current-audit.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-dialog-matrix.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-1024x768.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-1440x900.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-1920x1080.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-2048x1152.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-2048x758.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-2048x760.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-390x844.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/dialogs-final/trip-edit-760x900.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/evidence-inventory.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/command-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-bucket-list-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-destinations-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-discover-more-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/explore-main-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Appearance-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Journal-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Mission-Progress-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-My-Games-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Overview-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Sessions-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1024x768-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1440x900-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1920x1080-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x1152-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x758-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x760-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-390x844-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-760x900-filters.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Suggestions-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-Weekly-Tasks-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/games-main-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/home-current-owner-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/matrix-summary.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/notes-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-goals-routines-habits-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/personal-main-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/projects-current-owner-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/settings-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/command-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/command-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-bucket-list-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-bucket-list-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-destinations-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-destinations-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-discover-more-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-discover-more-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-main-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/explore-main-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Appearance-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Appearance-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Journal-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Journal-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Mission-Progress-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Mission-Progress-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-My-Games-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-My-Games-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Overview-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Overview-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Sessions-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Sessions-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Suggestions-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Suggestions-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Weekly-Tasks-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-Weekly-Tasks-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-main-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/games-main-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/home-current-owner-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/home-current-owner-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/notes-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/notes-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/personal-goals-routines-habits-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/personal-goals-routines-habits-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/personal-main-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/personal-main-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/projects-current-owner-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/projects-current-owner-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/settings-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/settings-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/shortcuts-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/shortcuts-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/today-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/today-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-backlog-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-backlog-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-board-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-board-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-history-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-history-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-main-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/sheets/work-main-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/shortcuts-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/today-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-backlog-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-board-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-history-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1024x768-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1024x768-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1024x768.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1440x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1440x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1440x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1920x1080-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1920x1080-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-1920x1080.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x1152-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x1152-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x1152.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x758-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x758-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x758.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x760-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x760-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-2048x760.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-390x844-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-390x844-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-390x844.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-760x900-content.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-760x900-top.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/final/work-main-760x900.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/git-scope.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/native-history.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/asset-landing-trace.jsonl",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/asset-request-trace.jsonl",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/explore-before.png",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/room-palette-selection-and-fit.json",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/settings-before.png",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/settings-rebuilt-preliminary.png",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/settings-themes-after-preliminary.json",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/settings-themes-before.json",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/shortcuts-before.png",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-1024x768.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-1440x900.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-1920x1080.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-2048x1152.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-2048x758.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-2048x760.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-390x844.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/preliminary/trip-edit-760x900.jpg",
+      "classification": "PRELIMINARY/SUPERSEDED_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/requirement-ledger.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/games-main-missing-scene.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-1024x768.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-1440x900.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-1920x1080.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-2048x1152.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-2048x758.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-2048x760.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-390x844.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/room-palette-760x900.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/shortcuts-explore-1440.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/shortcuts-personal-1440.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/supplemental/shortcuts-work-1440.jpg",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/verification.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/verified-source-manifest.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/visual-review.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/asset-landing-trace-final.jsonl",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/asset-request-trace-final.jsonl",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/command-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/command-route-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/console-final-fresh-origin.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/explore-filter-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/explore-trip-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/missing-scene-fallback.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/projects-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/room-palette-focus-final.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/room-palette-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/routes-and-rapid-navigation.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/settings-integration-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/settings-theme-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/shortcut-menu-geometry.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/docs/implementation-evidence/r3/current-ui-revision-2026-10-03/workflows/shortcuts-functional-regression.json",
+      "classification": "CANONICAL_EVIDENCE"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/shared/current-compatibility.js",
+      "classification": "PRODUCTION_REQUIRED"
+    },
+    {
+      "status": "??",
+      "path": "claude-code-web-page-practice/styles/current-compatibility.css",
+      "classification": "PRODUCTION_REQUIRED"
+    }
+  ],
+  "siblingChanges": [],
+  "diffCheck": "PASS",
+  "noStageCommitPush": true,
+  "externalScratch": "Chat-local helpers, preliminary-wrong-tab-captures, disposable browser servers; retained outside production Git tree"
+}

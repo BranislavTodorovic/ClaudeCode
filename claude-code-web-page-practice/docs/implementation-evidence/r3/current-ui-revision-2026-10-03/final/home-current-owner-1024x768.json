@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 26,
+  "documentWidth": 1009,
+  "heading": "Your local activity & Quick Access",
+  "images": [
+    {
+      "box": [
+        184.3125,
+        96
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/home/portals/work-review.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "home",
+  "paletteOpen": false,
+  "route": "#/w/home",
+  "scrollY": 464,
+  "small": [],
+  "viewport": [
+    1024,
+    768
+  ],
+  "name": "home-current-owner"
+}

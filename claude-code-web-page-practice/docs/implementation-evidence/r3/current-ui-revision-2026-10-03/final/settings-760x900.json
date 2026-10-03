@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 47,
+  "documentWidth": 745,
+  "heading": "Preferences & local data",
+  "images": [
+    {
+      "box": [
+        70,
+        50.453125
+      ],
+      "complete": true,
+      "fit": "fill",
+      "hidden": false,
+      "natural": [
+        208,
+        150
+      ],
+      "src": "assets/provider-logos/tmdb.svg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "settings",
+  "paletteOpen": false,
+  "route": "#/w/settings",
+  "scrollY": 528,
+  "small": [],
+  "viewport": [
+    760,
+    900
+  ],
+  "name": "settings"
+}

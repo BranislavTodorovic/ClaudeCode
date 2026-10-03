@@ -1,0 +1,118 @@
+{
+  "broken": [],
+  "controls": 38,
+  "documentWidth": 1009,
+  "images": [
+    {
+      "box": [
+        1009,
+        768
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        2508,
+        1254
+      ],
+      "src": "assets/scenes/work/hero-fullbleed.jpg"
+    },
+    {
+      "box": [
+        312,
+        186
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        768
+      ],
+      "src": "assets/scenes/work/portals/projects.jpg"
+    },
+    {
+      "box": [
+        312,
+        186
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/kanban-board.jpg"
+    },
+    {
+      "box": [
+        312,
+        186
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/team.jpg"
+    },
+    {
+      "box": [
+        312,
+        186
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/documents.jpg"
+    },
+    {
+      "box": [
+        312,
+        186
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/meetings.jpg"
+    },
+    {
+      "box": [
+        312,
+        186
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        640,
+        960
+      ],
+      "src": "assets/scenes/work/portals/templates.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "work",
+  "paletteOpen": false,
+  "route": "#/w/work",
+  "scrollY": 401,
+  "small": [],
+  "viewport": [
+    1024,
+    768
+  ],
+  "name": "work-main"
+}

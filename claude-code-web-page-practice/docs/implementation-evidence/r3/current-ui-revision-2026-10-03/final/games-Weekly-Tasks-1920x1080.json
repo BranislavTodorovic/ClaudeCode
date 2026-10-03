@@ -1,0 +1,64 @@
+{
+  "broken": [],
+  "controls": 9,
+  "documentWidth": 1905,
+  "heading": "Weekly Tasks",
+  "images": [
+    {
+      "box": [
+        44,
+        18
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        640,
+        320
+      ],
+      "src": "assets/game-art/diablo-immortal-logo.png"
+    },
+    {
+      "box": [
+        522.109375,
+        295.859375
+      ],
+      "complete": true,
+      "fit": "contain",
+      "hidden": false,
+      "natural": [
+        960,
+        498
+      ],
+      "src": "assets/scenes/games/owners/diablo-immortal-card.jpg"
+    },
+    {
+      "box": [
+        96,
+        52
+      ],
+      "complete": true,
+      "fit": "fill",
+      "hidden": false,
+      "natural": [
+        640,
+        320
+      ],
+      "src": "assets/game-art/diablo-immortal-logo.png"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 585,
+  "small": [],
+  "tab": "weekly",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "name": "games-Weekly-Tasks"
+}

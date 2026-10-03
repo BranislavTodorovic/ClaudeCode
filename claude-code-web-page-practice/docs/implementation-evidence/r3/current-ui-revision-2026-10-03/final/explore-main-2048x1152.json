@@ -1,0 +1,146 @@
+{
+  "broken": [],
+  "controls": 34,
+  "documentWidth": 2048,
+  "images": [
+    {
+      "box": [
+        2048,
+        1152
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        2508,
+        1254
+      ],
+      "src": "assets/scenes/explore/hero-fullbleed.jpg"
+    },
+    {
+      "box": [
+        305.5625,
+        125
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/lisbon-card.webp"
+    },
+    {
+      "box": [
+        305.5625,
+        125
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/kyoto-card.webp"
+    },
+    {
+      "box": [
+        305.5625,
+        125
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        360,
+        236
+      ],
+      "src": "assets/destinations/azores-card.webp"
+    },
+    {
+      "box": [
+        373.1875,
+        208
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/explore/portals/destinations.jpg"
+    },
+    {
+      "box": [
+        373.203125,
+        208
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/explore/portals/experiences.jpg"
+    },
+    {
+      "box": [
+        373.203125,
+        208
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/explore/portals/travel-guides.jpg"
+    },
+    {
+      "box": [
+        373.203125,
+        208
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/explore/portals/bucket-list.jpg"
+    },
+    {
+      "box": [
+        373.203125,
+        208
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/explore/portals/discover-more.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "explore",
+  "paletteOpen": false,
+  "route": "#/w/explore",
+  "scrollY": 0,
+  "small": [],
+  "viewport": [
+    2048,
+    1152
+  ],
+  "name": "explore-main"
+}

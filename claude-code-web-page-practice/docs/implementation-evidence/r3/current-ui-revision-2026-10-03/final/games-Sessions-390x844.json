@@ -1,0 +1,21 @@
+{
+  "broken": [],
+  "controls": 7,
+  "documentWidth": 375,
+  "heading": "Game Sessions",
+  "images": [],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "games",
+  "paletteOpen": false,
+  "route": "#/w/games",
+  "scrollY": 961,
+  "small": [],
+  "tab": "sessions",
+  "viewport": [
+    390,
+    844
+  ],
+  "name": "games-Sessions"
+}

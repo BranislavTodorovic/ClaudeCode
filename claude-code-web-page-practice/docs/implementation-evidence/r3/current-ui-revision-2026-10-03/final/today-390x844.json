@@ -1,0 +1,35 @@
+{
+  "broken": [],
+  "controls": 10,
+  "documentWidth": 375,
+  "heading": "Plan your day",
+  "images": [
+    {
+      "box": [
+        317,
+        110
+      ],
+      "complete": true,
+      "fit": "cover",
+      "hidden": false,
+      "natural": [
+        960,
+        640
+      ],
+      "src": "assets/scenes/home/portals/work-review.jpg"
+    }
+  ],
+  "legacyHero": false,
+  "legacySidebar": false,
+  "overflow": [],
+  "page": "productivity",
+  "paletteOpen": false,
+  "route": "#/u/productivity",
+  "scrollY": 631,
+  "small": [],
+  "viewport": [
+    390,
+    844
+  ],
+  "name": "today"
+}
