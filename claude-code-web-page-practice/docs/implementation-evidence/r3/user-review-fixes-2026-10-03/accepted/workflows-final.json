@@ -1,0 +1,323 @@
+{
+  "keyboard": [
+    {
+      "key": "overview",
+      "selected": "overview",
+      "title": "Games overview"
+    },
+    {
+      "key": "library",
+      "selected": "library",
+      "title": "Game Library"
+    },
+    {
+      "key": "appearance",
+      "selected": "appearance",
+      "title": "Game Settings"
+    }
+  ],
+  "typing": {
+    "cards": [
+      "Alan Wake 2"
+    ],
+    "caret": 4,
+    "focus": "",
+    "value": "Alan"
+  },
+  "journalBefore": true,
+  "ownerBack": {
+    "focus": "My GamesYour collection, in one place.↗",
+    "title": "Game on."
+  },
+  "ownerForward": {
+    "heading": "Game Journal",
+    "selected": "journal"
+  },
+  "routes": [
+    {
+      "hash": "#/w/home",
+      "legacy": false,
+      "page": "home",
+      "trial": "direct"
+    },
+    {
+      "hash": "#/w/home",
+      "page": "home",
+      "trial": "full-document-reload",
+      "viewport": 2048,
+      "width": 2048
+    },
+    {
+      "hash": "#/w/work",
+      "legacy": false,
+      "page": "work",
+      "trial": "direct"
+    },
+    {
+      "hash": "#/w/work",
+      "page": "work",
+      "trial": "full-document-reload",
+      "viewport": 2048,
+      "width": 2048
+    },
+    {
+      "hash": "#/w/personal",
+      "legacy": false,
+      "page": "personal",
+      "trial": "direct"
+    },
+    {
+      "hash": "#/w/personal",
+      "page": "personal",
+      "trial": "full-document-reload",
+      "viewport": 2048,
+      "width": 2048
+    },
+    {
+      "hash": "#/w/explore",
+      "legacy": false,
+      "page": "explore",
+      "trial": "direct"
+    },
+    {
+      "hash": "#/w/explore",
+      "page": "explore",
+      "trial": "full-document-reload",
+      "viewport": 2048,
+      "width": 2048
+    },
+    {
+      "hash": "#/w/games",
+      "legacy": false,
+      "page": "games",
+      "trial": "direct"
+    },
+    {
+      "hash": "#/w/games",
+      "page": "games",
+      "trial": "full-document-reload",
+      "viewport": 2048,
+      "width": 2048
+    }
+  ],
+  "reloadLibrary": {
+    "cards": 6,
+    "theme": "library"
+  },
+  "reload Journal": true,
+  "reload Sessions": true,
+  "reload Weekly Tasks": true,
+  "reload Mission Progress": true,
+  "reload Suggestions": true,
+  "reload Appearance": true,
+  "rapid": [
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/home",
+      "page": "home"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/work",
+      "page": "work"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/personal",
+      "page": "personal"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/explore",
+      "page": "explore"
+    },
+    {
+      "dialogs": 0,
+      "hash": "#/w/games",
+      "page": "games"
+    }
+  ],
+  "errors": [],
+  "nestedDialogs": {
+    "resourceCancel": true,
+    "objectiveCancel": true,
+    "gameDeleteCancel": true,
+    "mobileFormActionsReachable": true,
+    "errors": []
+  }
+}

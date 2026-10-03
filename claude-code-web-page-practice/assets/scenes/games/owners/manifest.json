@@ -1,0 +1,87 @@
+{
+  "assets": [
+    {
+      "slug": "weekly-tasks",
+      "sourceId": "exec-0a7ed546-914d-497f-a4cf-1159d70ae3ad",
+      "master": "weekly-tasks-master.png",
+      "file": "weekly-tasks.jpg",
+      "masterDimensions": [
+        1536,
+        1024
+      ],
+      "displayDimensions": [
+        960,
+        640
+      ],
+      "masterSha256": "7619a3005a06c6c1bb484627a1e0aa570d85667ff6da57ce38edc6d5a2f3cc01",
+      "displaySha256": "cc76957fad41935408043eba200f213d3207f3bc757f4b3441b8b93b2ea4b232",
+      "displayBytes": 171472,
+      "source": "OpenAI built-in image_gen tool; original generated OneSpace artwork",
+      "promptSubject": "Seven-column physical quest board with blank parchment cards, checkmark pins and controller, oak wall, evening practical lighting and cyan/violet glass",
+      "constraints": "1536x1024 premium warm architectural 3D gaming vignette; no readable text, people, logos, watermark or UI controls",
+      "crop": "No crop. Proportional downsample from retained master. CSS object-fit only at presentation time."
+    },
+    {
+      "slug": "game-journal",
+      "sourceId": "exec-61e387e7-b9a1-4243-a927-7cd5c917cdf7",
+      "master": "game-journal-master.png",
+      "file": "game-journal.jpg",
+      "masterDimensions": [
+        1536,
+        1024
+      ],
+      "displayDimensions": [
+        960,
+        640
+      ],
+      "masterSha256": "5fe874e14df6fdfa431b35925c91758a4c57bea1237ac097784db99202e4b8fd",
+      "displaySha256": "690750bdccb0f50084dad20e9ebaa8d07aa859fc8ae952556ba389e63bdbde08",
+      "displayBytes": 148347,
+      "source": "OpenAI built-in image_gen tool; original generated OneSpace artwork",
+      "promptSubject": "Open leather gaming journal, blank creamy pages, fountain pen, controller, small game landscape pictures, brass lamp and warm oak desk",
+      "constraints": "1536x1024 premium warm architectural 3D gaming vignette; no readable text, people, logos, watermark or UI controls",
+      "crop": "No crop. Proportional downsample from retained master. CSS object-fit only at presentation time."
+    },
+    {
+      "file": "alan-wake-2-card.jpg",
+      "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+      "original": "assets\\game-art\\alan-wake-2.webp",
+      "originalSha256": "be97566ca5b1f4e040b5e396fa645ae57b32ae5fee9a954fdd5f6c489be843e7",
+      "displaySha256": "0db031dbd0b1ee9a4fb7c15c08fd462a2d0e2f91459342feb4b1d328060b1148",
+      "displayDimensions": [
+        960,
+        494
+      ],
+      "displayBytes": 109118,
+      "crop": "No crop; proportional downsample; original preserved"
+    },
+    {
+      "file": "resident-evil-4-card.jpg",
+      "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+      "original": "assets\\game-art\\resident-evil-4.jpg",
+      "originalSha256": "31e6ab296f5fd1cb0691cc493286bc3cc755108e9a96c6efc113105499221a63",
+      "displaySha256": "e72185e18a7141447d36e0fb2ad7a9eeefdf465ca69cb2f9ea6697eabb65e359",
+      "displayDimensions": [
+        960,
+        310
+      ],
+      "displayBytes": 43889,
+      "crop": "No crop; proportional downsample; original preserved"
+    },
+    {
+      "file": "diablo-immortal-card.jpg",
+      "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+      "original": "assets\\game-art\\diablo-immortal.webp",
+      "originalSha256": "625d10be74cb7a261bd684d507e68b5f9b8de31344a8bba82a26a23d1d0a3865",
+      "displaySha256": "019ff3cd9dc5af13f0f2247ae4e63158aebad1a54256583237c578a85c4bc53a",
+      "displayDimensions": [
+        960,
+        498
+      ],
+      "displayBytes": 91943,
+      "crop": "No crop; proportional downsample; original preserved"
+    }
+  ],
+  "fallback": "Text heading and functional controls remain visible if decorative art fails; owner cover image errors reveal existing deterministic gameScene SVG.",
+  "loading": "CSS owner headers load only when their panel is visible; both display images <200KB. Masters never referenced by runtime."
+}

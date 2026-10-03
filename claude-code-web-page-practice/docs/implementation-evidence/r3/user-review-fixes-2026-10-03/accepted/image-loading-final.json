@@ -1,0 +1,48 @@
+{
+  "origin": "localhost:18990, fresh disposable origin after last runtime edit",
+  "initialLandingOwnerRequests": 0,
+  "activation": "Open My Games then all eight current tabs via canonical UI",
+  "ownerRequests": [
+    {
+      "url": "/assets/scenes/games/owners/alan-wake-2-card.jpg",
+      "status": 200,
+      "bytes": 0,
+      "ms": 1,
+      "at": "2026-10-03T16:04:34.531Z"
+    },
+    {
+      "url": "/assets/scenes/games/owners/resident-evil-4-card.jpg",
+      "status": 200,
+      "bytes": 0,
+      "ms": 2,
+      "at": "2026-10-03T16:04:34.535Z"
+    },
+    {
+      "url": "/assets/scenes/games/owners/diablo-immortal-card.jpg",
+      "status": 200,
+      "bytes": 0,
+      "ms": 3,
+      "at": "2026-10-03T16:04:34.537Z"
+    },
+    {
+      "url": "/assets/scenes/games/owners/weekly-tasks.jpg",
+      "status": 200,
+      "bytes": 0,
+      "ms": 0,
+      "at": "2026-10-03T16:04:34.828Z"
+    },
+    {
+      "url": "/assets/scenes/games/owners/game-journal.jpg",
+      "status": 200,
+      "bytes": 0,
+      "ms": 1,
+      "at": "2026-10-03T16:04:34.959Z"
+    }
+  ],
+  "uniqueRuntimeAssets": 5,
+  "runtimeDisplayBytesFromFiles": 564769,
+  "masterRequests": 0,
+  "fullOriginalCoverRequests": 0,
+  "bytesFieldMeaning": "0 means content-length omitted on chunked responses, not zero transfer. File sizes and hashes supply the payload measurement.",
+  "limits": "Local request observation and static sizes; no native Edge GPU/FPS, background lifecycle or OS motion claim."
+}

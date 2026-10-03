@@ -1,0 +1,21 @@
+{
+  "ownedBrowserTab": "3, closed",
+  "browserViewport": "reset",
+  "ownedDisposableServersStopped": [
+    18986,
+    18987,
+    18988,
+    18989,
+    18990
+  ],
+  "execSessions": [
+    80328,
+    96269,
+    30814,
+    67413,
+    14643
+  ],
+  "stop": "Controlled Ctrl+C; exec sessions exited; subsequent listener audit returned no listeners on these ports.",
+  "userNormalOrigin": "No browser data or existing user server was changed; all review fixture writes occurred on disposable origins.",
+  "temporaryFiles": "Preserved as requested, including preliminary evidence and prior finalization ZIP."
+}

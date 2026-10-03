@@ -1,0 +1,91 @@
+[
+  {
+    "requirement": "Explore credits",
+    "automatable": "PASS",
+    "evidence": [
+      "accepted/credits-explore-*.json",
+      "accepted/credits-history.json"
+    ],
+    "boundary": "native review pending"
+  },
+  {
+    "requirement": "Games credits",
+    "automatable": "PASS",
+    "evidence": [
+      "accepted/credits-games-*.json",
+      "accepted/credits-history.json"
+    ]
+  },
+  {
+    "requirement": "All eight current Games owner presentations",
+    "automatable": "PASS, 64 measured combinations, 128 inspected owner frames",
+    "evidence": [
+      "accepted/owners-*.json",
+      "visual-inspection.json"
+    ],
+    "boundary": "user visual/native acceptance pending"
+  },
+  {
+    "requirement": "Today action row",
+    "automatable": "PASS, eight sizes, equal top/height; >=44px, gap8",
+    "evidence": [
+      "accepted/landing-*.json",
+      "accepted/today-actions-*.jpg"
+    ]
+  },
+  {
+    "requirement": "Canonical data, actions and storage preserved",
+    "automatable": "PASS, 38 unchanged function sections; fresh reload retention",
+    "evidence": [
+      "accepted/revision-integrity.json",
+      "accepted/workflows-final.json",
+      "accepted/preserved-workflows-final-part1.json",
+      "accepted/preserved-workflows-final-part2.json"
+    ]
+  },
+  {
+    "requirement": "Post-last-runtime regression",
+    "automatable": "94/94 focused, 267/267 full, zero failures/skips",
+    "evidence": [
+      "accepted/focused-tests.txt",
+      "accepted/full-tests.txt"
+    ]
+  },
+  {
+    "requirement": "Affected routing, keyboard/focus, rapid navigation and runtime",
+    "automatable": "PASS, 10 route/reloads, 40 rapid switches, no observed browser errors or unhandled rejections",
+    "evidence": [
+      "accepted/workflows-final.json",
+      "accepted/dialogs-final.json"
+    ]
+  },
+  {
+    "requirement": "Image load, fallback and provenance",
+    "automatable": "PASS, 5 bounded display files 564769B, zero hidden owner requests on landing; zero master/original-cover requests",
+    "evidence": [
+      "accepted/image-loading-final.json",
+      "accepted/image-requests.jsonl",
+      "accepted/fallback-final.json",
+      "art/manifest.json",
+      "art-prompts.md"
+    ]
+  },
+  {
+    "requirement": "Formal status",
+    "status": {
+      "Games step 11": "IN PROGRESS / IMPLEMENTED / NOT VERIFIED",
+      "Games steps 12–19": "PENDING",
+      "Gate R3": "OPEN",
+      "R4": "NOT STARTED / DEFERRED",
+      "R5": "NOT STARTED / DEFERRED",
+      "Games cinematic": "Not implemented or started in this correction",
+      "nextRequired": [
+        "Actual Edge 100% hard-refresh review",
+        "Actual Edge 200% hard-refresh review",
+        "Native browser background/document-hidden lifecycle",
+        "Actual OS reduced motion with app Motion=Auto"
+      ],
+      "preservation": "All prior valid work/evidence retained; no reset/revert/clean/discard, stage, commit or push."
+    }
+  }
+]

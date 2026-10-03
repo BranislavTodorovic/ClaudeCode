@@ -1,0 +1,59 @@
+{
+  "buttons": [
+    {
+      "margin": "0px",
+      "rect": {
+        "bottom": 775.46875,
+        "height": 44,
+        "left": 739.40625,
+        "right": 1053.578125,
+        "top": 731.46875,
+        "width": 314.171875,
+        "x": 739.40625,
+        "y": 731.46875
+      },
+      "text": "Record a session"
+    },
+    {
+      "margin": "0px",
+      "rect": {
+        "bottom": 775.46875,
+        "height": 44,
+        "left": 1061.578125,
+        "right": 1375.765625,
+        "top": 731.46875,
+        "width": 314.1875,
+        "x": 1061.578125,
+        "y": 731.46875
+      },
+      "text": "Weekly tasks"
+    }
+  ],
+  "display": "flex",
+  "documentWidth": 1425,
+  "footer": {
+    "bottom": 1761.984375,
+    "height": 28.6875,
+    "left": 30.234375,
+    "right": 1394.765625,
+    "top": 1733.296875,
+    "width": 1364.53125,
+    "x": 30.234375,
+    "y": 1733.296875
+  },
+  "gap": "8px",
+  "scene": {
+    "bottom": 900,
+    "height": 900,
+    "left": 0,
+    "right": 1425,
+    "top": 0,
+    "width": 1425,
+    "x": 0,
+    "y": 0
+  },
+  "viewport": [
+    1440,
+    900
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "world": "games",
+    "trapped": true,
+    "back": {
+      "closed": true,
+      "page": "home"
+    },
+    "forward": {
+      "closed": true,
+      "page": "games"
+    }
+  },
+  {
+    "world": "explore",
+    "trapped": true,
+    "back": {
+      "closed": true,
+      "page": "home"
+    },
+    "forward": {
+      "closed": true,
+      "page": "explore"
+    }
+  }
+]

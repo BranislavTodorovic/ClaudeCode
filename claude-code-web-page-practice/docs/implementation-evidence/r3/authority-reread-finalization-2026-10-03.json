@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-03T09:58:36.889Z",
+  "head": "b01837d1c3498b8e0acd6f19d6a9a4d86b57815e",
+  "branch": "main",
+  "sourceOfOrder": "docs/IMPLEMENTATION-STEPS.md, Mandatory execution contract section 11, source line 296; active redesign image inspection before README",
+  "order": [
+    "docs/agent-instructions.md",
+    "docs/IMPLEMENTATION-STEPS.md",
+    "docs/REVISED-IMPLEMENTATION-PLAN.md",
+    "VERIFICATION.md",
+    "docs/REDESIGN-INTEGRATION-GATE.md",
+    "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md",
+    "docs/ui-reference/MANIFEST.md",
+    "ACTUAL_REFERENCE_IMAGES",
+    "README.md"
+  ],
+  "authority": [
+    {
+      "file": "docs/agent-instructions.md",
+      "bytes": 158468,
+      "sha256": "4a704071cc739d4ab59a6359e00589ab90a9bf04fdaad9fa618b3ffdb097465c",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "docs/IMPLEMENTATION-STEPS.md",
+      "bytes": 325533,
+      "sha256": "0ca72bb2693b10df621bc5df07c2fa812424f8080dc16c3dcf959dacd67d0a92",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "docs/REVISED-IMPLEMENTATION-PLAN.md",
+      "bytes": 20197,
+      "sha256": "5d6c793895a796278df177b01e015d1a118b3f444ad1007a5a13b52bdcbca03a",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "VERIFICATION.md",
+      "bytes": 50364,
+      "sha256": "c76e838da97286e106d256e50fd1ae8f60a99f961136232125f1920fc72b417a",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "docs/REDESIGN-INTEGRATION-GATE.md",
+      "bytes": 18496,
+      "sha256": "bf5d1d9275a5967a7225c75fc6da2088d59fd47020abc60e46ed8b58d86ca633",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md",
+      "bytes": 51331,
+      "sha256": "0722cf2e8f0e7f146f875e50acfa60fbf41c2f03041d9dc4f24a057842dd9535",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "docs/ui-reference/MANIFEST.md",
+      "bytes": 9847,
+      "sha256": "4960d1eb7af977ea4c3c8fdeed5f0d2c59d8984bd539c0567b24c224e5fd6fe7",
+      "read": "COMPLETE_FROM_BEGINNING"
+    },
+    {
+      "file": "README.md",
+      "bytes": 38261,
+      "sha256": "aaca45d70a9579226f730646bf4e4c110ab72bb918da968eb7f17d4992a56b4f",
+      "read": "COMPLETE_FROM_BEGINNING"
+    }
+  ],
+  "referenceImages": [
+    {
+      "file": "docs/ui-reference/00-home.png",
+      "sha256": "0b2b0fcbd6713116d8063f5b72fd8a9ff5b3d8be63cb3cb14149301b0775e18b",
+      "physicallyOpened": true,
+      "observation": "Sunset lounge/fireplace, city windows, upper-left hero, four glass summaries and six large portals; practical light and depth motion."
+    },
+    {
+      "file": "docs/ui-reference/01-work.png",
+      "sha256": "96c7c2da46ac1af17ba2636e39618acdf62704b5a73288c2330d5c10c92ba42b",
+      "physicallyOpened": true,
+      "observation": "Monitor workstation, warm shelving, cyan accents, four summaries and six portals; monitor wake and practical lighting."
+    },
+    {
+      "file": "docs/ui-reference/02-personal-fitness.png",
+      "sha256": "7bcdb3ab94b1d1d639112d50cf892421c97167d0ad29133418bd7695229076a8",
+      "physicallyOpened": true,
+      "observation": "Weights/yoga/rest interior, natural window light, green accents and six wellbeing portals; calm window-beam motion."
+    },
+    {
+      "file": "docs/ui-reference/03-explore.png",
+      "sha256": "ebaf6e19fcc18d58d8da524f50a30ef668052493ed93649b5fb7c1627d3765bd",
+      "physicallyOpened": true,
+      "observation": "Atlas/books/cameras/globe with coastal vista; three summaries and five distinct portals; sunset and coastal light."
+    },
+    {
+      "file": "docs/ui-reference/04-games.png",
+      "sha256": "f62e4eede0dd50f993d15e0c699b66f641df8d2be0042f643eac55ae6541706d",
+      "physicallyOpened": true,
+      "observation": "PC/display/controllers/collectibles, violet/cyan accents, four summaries and six gaming portals; future screen wake belongs to step 13."
+    },
+    {
+      "file": "docs/ui-reference/05-movies-series.png",
+      "sha256": "8c48525f78984d4689d30bdb94f2bb1dfc028db341d9dc33a919286d02d2db1e",
+      "physicallyOpened": true,
+      "observation": "Home cinema, large screen/reels/popcorn, evening practical light, three summaries and genre rail; future R3 acceptance."
+    },
+    {
+      "file": "docs/ui-reference/06-projects-notes.png",
+      "sha256": "3293479fac1d30af0943d8d538a700ddd2fa18ec479e93c537692a42b1ad4223",
+      "physicallyOpened": true,
+      "observation": "Planning wall/laptop/paper, warm desk lighting, four summaries and six creative portals; canonical Work and Notes aggregation pending."
+    },
+    {
+      "file": "docs/ui-reference/07-settings.png",
+      "sha256": "629c7db0e7b0fda3317e814d8d77f86b645fe7c7dab1ed16df34706504b5a749",
+      "physicallyOpened": true,
+      "observation": "Calm fireplace/control interior, four summaries and eight settings portals; devices/account sample values require real sources."
+    }
+  ],
+  "relevantEvidence": [
+    "games-acceptance-progress-2026-10-01.md",
+    "continuation-verification-2026-10-02.md",
+    "continuation-delta-2026-10-02.md",
+    "eight-world-audit-2026-10-02.md",
+    "master-continuation-review-2026-10-02.md",
+    "review-control-trials-recovered-2026-10-02.json",
+    "final-revision-hashes.json",
+    "motion-final.json",
+    "provenance-final.json",
+    "master-focused-tests-2026-10-02.txt",
+    "master-continuation-tests-2026-10-02.txt"
+  ],
+  "finding": "No proven production or phase-order conflict. Valid work preserved; completed review not restarted. Current checkpoint metadata supplemented for committed b01837d revision. Earlier primary landing captures contain startup/loading artwork, so five settled screenshots added without removing prior captures.",
+  "checkpoint": "Games step 11 — IN PROGRESS / IMPLEMENTED / NOT VERIFIED; steps 12–19 PENDING; Gate R3 OPEN; R4/R5 DEFERRED",
+  "authorityHashesDescribe": "Current source versions read, before adding evidence-only checkpoint supplements"
+}

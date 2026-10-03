@@ -8,7 +8,7 @@ function fixture(world='games',workView='active'){
   appendChild(child){if(child.parent)child.parent.children.splice(child.parent.children.indexOf(child),1);child.parent=this;this.children.push(child);return child;}
   prepend(child){this.appendChild(child);this.children.splice(this.children.indexOf(child),1);this.children.unshift(child);}
   contains(child){return this===child||this.children.some(el=>el.contains(child));}
-  querySelector(selector){return selector==='.osr-frame'?frame:selector==='main'?landing:selector==='h1'?landingTitle:null;}
+  querySelector(selector){return selector==='.osr-frame'?frame:selector==='main'?landing:selector==='h1'?landingTitle:selector==='[data-gv-tab][aria-selected="true"]'?doc.currentGameTab:null;}
   setAttribute(k,v){this.attrs[k]=v;}getAttribute(k){return this.attrs[k]??(k==='src'?this.src:null);}hasAttribute(k){return k in this.attrs;}
   addEventListener(name,fn){this.listeners[name]=fn;}focus(){doc.activeElement=this;}
  }
@@ -46,4 +46,13 @@ test('existing Work Projects deep link exposes its owner and explicit return res
  assert.equal(f.stack.length,1,'compatibility deep link does not manufacture a nested module history entry');
  f.surface.tools.children[0].children[0].listeners.click();assert(!f.landing.hidden);assert(f.surface.tools.hidden);
  assert.equal(f.doc.body.dataset.workView,'active');
+});
+
+test('Games Forward identifies the retained current tab instead of the initial portal title',()=>{
+ const f=fixture();f.surface.show('Game Library');
+ f.doc.currentGameTab={dataset:{gvTab:'journal'}};
+ f.win.history.back();f.win.history.forward();
+ assert.equal(f.surface.tools.children[0].children[1].textContent,'Game Journal');
+ assert.equal(f.surface.tools.children[0].children[2].src,'assets/scenes/games/owners/game-journal.jpg');
+ assert.equal(f.stack.length,2,'restoring the current title must not add history entries');
 });

@@ -1,0 +1,740 @@
+{
+  "head": "b01837d1c3498b8e0acd6f19d6a9a4d86b57815e",
+  "at": "2026-10-03T09:40:18.305Z",
+  "purpose": "Settled final visual evidence; prior primary captures preserved as startup frames",
+  "cases": [
+    {
+      "world": "home",
+      "file": "settled-final-home-2048x1152.jpg",
+      "footers": [
+        {
+          "rect": {
+            "bottom": 1148,
+            "height": 44,
+            "left": 42,
+            "right": 2006,
+            "top": 1104,
+            "width": 1964,
+            "x": 42,
+            "y": 1104
+          },
+          "text": "OneSpace · your focused space for work and life"
+        }
+      ],
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "naturalHeight": 1254,
+          "naturalWidth": 2144,
+          "rect": {
+            "bottom": 1152,
+            "height": 1152,
+            "left": 0,
+            "right": 2048,
+            "top": 0,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/home/hero-fullbleed.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "left": 43,
+            "right": 350,
+            "top": 791.0625,
+            "width": 307,
+            "x": 43,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/work-review.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "left": 374,
+            "right": 681,
+            "top": 791.0625,
+            "width": 307,
+            "x": 374,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/personal-review.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "left": 705,
+            "right": 1012,
+            "top": 791.0625,
+            "width": 307,
+            "x": 705,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/explore-review.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "left": 1036,
+            "right": 1343,
+            "top": 791.0625,
+            "width": 307,
+            "x": 1036,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/media-games-review.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "left": 1367,
+            "right": 1674,
+            "top": 791.0625,
+            "width": 307,
+            "x": 1367,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/projects-notes-review.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1089.0625,
+            "height": 298,
+            "left": 1698,
+            "right": 2005,
+            "top": 791.0625,
+            "width": 307,
+            "x": 1698,
+            "y": 791.0625
+          },
+          "src": "assets/scenes/home/portals/settings-review.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "width": 2048,
+      "physicallyInspected": true,
+      "sha256": "b28e8956e7439bf1cebc2f0a112c446944fe945ac0b3485f9c54e146c13e61f7",
+      "result": "Loaded scene and portals, readable controls, centred footer, no visible clipping at reference size"
+    },
+    {
+      "world": "work",
+      "file": "settled-final-work-2048x1152.jpg",
+      "footers": [
+        {
+          "rect": {
+            "bottom": 1148,
+            "height": 44,
+            "left": 42,
+            "right": 2006,
+            "top": 1104,
+            "width": 1964,
+            "x": 42,
+            "y": 1104
+          },
+          "text": "OneSpace · your focused space for work and life"
+        }
+      ],
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "naturalHeight": 1254,
+          "naturalWidth": 2508,
+          "rect": {
+            "bottom": 1152,
+            "height": 1152,
+            "left": 0,
+            "right": 2048,
+            "top": 0,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/work/hero-fullbleed.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 768,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "left": 43,
+            "right": 350,
+            "top": 816.109375,
+            "width": 307,
+            "x": 43,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/projects.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "left": 374,
+            "right": 681,
+            "top": 816.109375,
+            "width": 307,
+            "x": 374,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/kanban-board.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "left": 705,
+            "right": 1012,
+            "top": 816.109375,
+            "width": 307,
+            "x": 705,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/team.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "left": 1036,
+            "right": 1343,
+            "top": 816.109375,
+            "width": 307,
+            "x": 1036,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/documents.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "left": 1367,
+            "right": 1674,
+            "top": 816.109375,
+            "width": 307,
+            "x": 1367,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/meetings.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1062.109375,
+            "height": 246,
+            "left": 1698,
+            "right": 2005,
+            "top": 816.109375,
+            "width": 307,
+            "x": 1698,
+            "y": 816.109375
+          },
+          "src": "assets/scenes/work/portals/templates.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "width": 2048,
+      "physicallyInspected": true,
+      "sha256": "cfa749244fcc9d235c2e379cef0c12581de9e8e65b253e666e6f73a52c51e194",
+      "result": "Loaded scene and portals, readable controls, centred footer, no visible clipping at reference size"
+    },
+    {
+      "world": "personal",
+      "file": "settled-final-personal-2048x1152.jpg",
+      "footers": [
+        {
+          "rect": {
+            "bottom": 1148,
+            "height": 44,
+            "left": 42,
+            "right": 2006,
+            "top": 1104,
+            "width": 1964,
+            "x": 42,
+            "y": 1104
+          },
+          "text": "OneSpace · your focused space for work and life"
+        }
+      ],
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "naturalHeight": 1254,
+          "naturalWidth": 2508,
+          "rect": {
+            "bottom": 1152,
+            "height": 1152,
+            "left": 0,
+            "right": 2048,
+            "top": 0,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/personal/hero-fullbleed.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "left": 43,
+            "right": 350,
+            "top": 807.921875,
+            "width": 307,
+            "x": 43,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/mindfulness.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "left": 374,
+            "right": 681,
+            "top": 807.921875,
+            "width": 307,
+            "x": 374,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/fitness.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "left": 705,
+            "right": 1012,
+            "top": 807.921875,
+            "width": 307,
+            "x": 705,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/nutrition.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "left": 1036,
+            "right": 1343,
+            "top": 807.921875,
+            "width": 307,
+            "x": 1036,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/recovery.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "left": 1367,
+            "right": 1674,
+            "top": 807.921875,
+            "width": 307,
+            "x": 1367,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/personal-life.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 960,
+          "naturalWidth": 640,
+          "rect": {
+            "bottom": 1053.921875,
+            "height": 246,
+            "left": 1698,
+            "right": 2005,
+            "top": 807.921875,
+            "width": 307,
+            "x": 1698,
+            "y": 807.921875
+          },
+          "src": "assets/scenes/personal/portals/home-wellbeing.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "width": 2048,
+      "physicallyInspected": true,
+      "sha256": "6af88d5bdf2541a270ba95421b84967920f2be25f03484ecfdeb12b5d9561c8e",
+      "result": "Loaded scene and portals, readable controls, centred footer, no visible clipping at reference size"
+    },
+    {
+      "world": "explore",
+      "file": "settled-final-explore-2048x1152.jpg",
+      "footers": [
+        {
+          "rect": {
+            "bottom": 1148,
+            "height": 44,
+            "left": 42,
+            "right": 2006,
+            "top": 1104,
+            "width": 1964,
+            "x": 42,
+            "y": 1104
+          },
+          "text": "OneSpace · your focused space for work and life"
+        }
+      ],
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "naturalHeight": 1254,
+          "naturalWidth": 2508,
+          "rect": {
+            "bottom": 1152,
+            "height": 1152,
+            "left": 0,
+            "right": 2048,
+            "top": 0,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/explore/hero-fullbleed.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 236,
+          "naturalWidth": 360,
+          "rect": {
+            "bottom": 718.40625,
+            "height": 125,
+            "left": 67,
+            "right": 372.5625,
+            "top": 593.40625,
+            "width": 305.5625,
+            "x": 67,
+            "y": 593.40625
+          },
+          "src": "assets/destinations/lisbon-card.webp"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 236,
+          "naturalWidth": 360,
+          "rect": {
+            "bottom": 718.40625,
+            "height": 125,
+            "left": 386.5625,
+            "right": 692.125,
+            "top": 593.40625,
+            "width": 305.5625,
+            "x": 386.5625,
+            "y": 593.40625
+          },
+          "src": "assets/destinations/kyoto-card.webp"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 236,
+          "naturalWidth": 360,
+          "rect": {
+            "bottom": 718.40625,
+            "height": 125,
+            "left": 706.125,
+            "right": 1011.6875,
+            "top": 593.40625,
+            "width": 305.5625,
+            "x": 706.125,
+            "y": 593.40625
+          },
+          "src": "assets/destinations/azores-card.webp"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "left": 43,
+            "right": 416.1875,
+            "top": 877.6875,
+            "width": 373.1875,
+            "x": 43,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/destinations.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "left": 440.1875,
+            "right": 813.390625,
+            "top": 877.6875,
+            "width": 373.203125,
+            "x": 440.1875,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/experiences.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "left": 837.390625,
+            "right": 1210.59375,
+            "top": 877.6875,
+            "width": 373.203125,
+            "x": 837.390625,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/travel-guides.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "left": 1234.59375,
+            "right": 1607.796875,
+            "top": 877.6875,
+            "width": 373.203125,
+            "x": 1234.59375,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/bucket-list.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1085.6875,
+            "height": 208,
+            "left": 1631.796875,
+            "right": 2005,
+            "top": 877.6875,
+            "width": 373.203125,
+            "x": 1631.796875,
+            "y": 877.6875
+          },
+          "src": "assets/scenes/explore/portals/discover-more.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "width": 2048,
+      "physicallyInspected": true,
+      "sha256": "59f40290094aea0e8b2070fa66313760b6110c6cbe43539a118a9e80bc40df89",
+      "result": "Loaded scene and portals, readable controls, centred footer, no visible clipping at reference size"
+    },
+    {
+      "world": "games",
+      "file": "settled-final-games-2048x1152.jpg",
+      "footers": [
+        {
+          "rect": {
+            "bottom": 1148,
+            "height": 44,
+            "left": 42,
+            "right": 2006,
+            "top": 1104,
+            "width": 1964,
+            "x": 42,
+            "y": 1104
+          },
+          "text": "OneSpace · your focused space for work and life"
+        }
+      ],
+      "height": 1152,
+      "images": [
+        {
+          "complete": true,
+          "naturalHeight": 1254,
+          "naturalWidth": 2508,
+          "rect": {
+            "bottom": 1152,
+            "height": 1152,
+            "left": 0,
+            "right": 2048,
+            "top": 0,
+            "width": 2048,
+            "x": 0,
+            "y": 0
+          },
+          "src": "assets/scenes/games/hero-fullbleed.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1084.75,
+            "height": 208,
+            "left": 43,
+            "right": 350,
+            "top": 876.75,
+            "width": 307,
+            "x": 43,
+            "y": 876.75
+          },
+          "src": "assets/scenes/games/portals/my-games.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1084.75,
+            "height": 208,
+            "left": 374,
+            "right": 681,
+            "top": 876.75,
+            "width": 307,
+            "x": 374,
+            "y": 876.75
+          },
+          "src": "assets/scenes/games/portals/missions-quests.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1084.75,
+            "height": 208,
+            "left": 705,
+            "right": 1012,
+            "top": 876.75,
+            "width": 307,
+            "x": 705,
+            "y": 876.75
+          },
+          "src": "assets/scenes/games/portals/game-library.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1084.75,
+            "height": 208,
+            "left": 1036,
+            "right": 1343,
+            "top": 876.75,
+            "width": 307,
+            "x": 1036,
+            "y": 876.75
+          },
+          "src": "assets/scenes/games/portals/game-sessions.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1084.75,
+            "height": 208,
+            "left": 1367,
+            "right": 1674,
+            "top": 876.75,
+            "width": 307,
+            "x": 1367,
+            "y": 876.75
+          },
+          "src": "assets/scenes/games/portals/discover-games.jpg"
+        },
+        {
+          "complete": true,
+          "naturalHeight": 640,
+          "naturalWidth": 960,
+          "rect": {
+            "bottom": 1084.75,
+            "height": 208,
+            "left": 1698,
+            "right": 2005,
+            "top": 876.75,
+            "width": 307,
+            "x": 1698,
+            "y": 876.75
+          },
+          "src": "assets/scenes/games/portals/game-settings.jpg"
+        }
+      ],
+      "scrollHeight": 1152,
+      "scrollWidth": 2048,
+      "width": 2048,
+      "physicallyInspected": true,
+      "sha256": "0ca656b4ea8aac3431b1113d3765f2bba98f7980dd409f04081cbb9ee7575b7c",
+      "result": "Loaded scene and portals, readable controls, centred footer, no visible clipping at reference size"
+    }
+  ],
+  "physicallyInspected": true
+}

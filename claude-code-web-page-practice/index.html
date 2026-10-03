@@ -380,12 +380,12 @@ body.force-full-motion { scroll-behavior:smooth; }
           <span class="gv-tagline">Your collection &amp; progress</span>
         </div>
         <div class="gv-header-actions">
-          <div class="gv-theme-switch" role="group" aria-label="Games theme">
+          <details class="gv-palette-menu"><summary>Room palette</summary><div class="gv-theme-switch" role="group" aria-label="Games theme">
             <button type="button" class="gv-theme-btn" data-games-theme-choice="midnight" aria-pressed="false">Midnight</button>
             <button type="button" class="gv-theme-btn" data-games-theme-choice="neon" aria-pressed="false">Neon</button>
             <button type="button" class="gv-theme-btn" data-games-theme-choice="crimson" aria-pressed="false">Crimson</button>
             <button type="button" class="gv-theme-btn" data-games-theme-choice="aurora" aria-pressed="false">Aurora</button>
-          </div>
+          </div></details>
           <button type="button" class="btn btn-primary" id="addGameBtn">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
             Add Game
@@ -467,38 +467,38 @@ body.force-full-motion { scroll-behavior:smooth; }
       </section>
 
       <section class="gv-panel" data-panel="sessions" role="tabpanel" hidden>
-        <div class="gv-session-active" id="gvSessionActive"></div>
+        <div class="gv-session-active" id="gvSessionActive"></div><div class="gv-session-workspace"><section class="gv-tool-card"><h3>Play now</h3><p>Start a timer for the game you are playing.</p>
         <form class="gv-session-form" id="gvSessionStartForm">
-          <select id="gvSessionGame" aria-label="Game to play"></select>
+          <label class="gv-field" for="gvSessionGame"><span>Game to play</span><select id="gvSessionGame" aria-label="Game to play"></select></label>
           <button type="submit" class="btn btn-primary">Start Session</button>
         </form>
-        <form class="gv-session-form gv-session-log-form" id="gvSessionLogForm">
-          <select id="gvLogSessionGame" aria-label="Game played"></select>
-          <input type="number" id="gvLogSessionMinutes" min="1" max="1440" placeholder="Minutes" aria-label="Minutes played" required>
-          <input type="date" id="gvLogSessionDate" aria-label="Date played">
-          <input type="text" id="gvLogSessionNote" placeholder="Note (optional)" maxlength="140" aria-label="Session note">
+        </section><section class="gv-tool-card"><h3>Record past play</h3><p>Add time you already spent playing.</p><form class="gv-session-form gv-session-log-form" id="gvSessionLogForm">
+          <label class="gv-field" for="gvLogSessionGame"><span>Game played</span><select id="gvLogSessionGame" aria-label="Game played"></select></label>
+          <label class="gv-field" for="gvLogSessionMinutes"><span>Minutes played</span><input type="number" id="gvLogSessionMinutes" min="1" max="1440" placeholder="Minutes" aria-label="Minutes played" required></label>
+          <label class="gv-field" for="gvLogSessionDate"><span>Date played</span><input type="date" id="gvLogSessionDate" aria-label="Date played"></label>
+          <label class="gv-field" for="gvLogSessionNote"><span>Session note</span><input type="text" id="gvLogSessionNote" placeholder="Note (optional)" maxlength="140" aria-label="Session note"></label>
           <button type="submit" class="btn">Log Session</button>
         </form>
-        <div class="gv-session-log" id="gvSessionLog"></div>
+        </section></div><h3 class="gv-feed-heading">Your play history</h3><div class="gv-session-log" id="gvSessionLog"></div>
       </section>
 
       <section class="gv-panel" data-panel="journal" role="tabpanel" hidden>
-        <form id="gvJournalForm">
+        <div class="gv-journal-workspace"><section class="gv-tool-card gv-journal-compose"><h3>A moment worth keeping</h3><p>Capture a discovery, a milestone or your next idea.</p><form id="gvJournalForm">
           <input type="hidden" id="gvJournalId">
-          <select id="gvJournalGame" aria-label="Related game (optional)"><option value="">General entry</option></select>
-          <input type="text" id="gvJournalTitle" placeholder="Entry title" maxlength="80" required aria-label="Entry title">
-          <textarea id="gvJournalBody" placeholder="Write your thoughts…" maxlength="2000" required aria-label="Entry body"></textarea>
+          <label class="gv-field" for="gvJournalGame"><span>Related game (optional)</span><select id="gvJournalGame" aria-label="Related game (optional)"><option value="">General entry</option></select></label>
+          <label class="gv-field" for="gvJournalTitle"><span>Entry title</span><input type="text" id="gvJournalTitle" placeholder="Entry title" maxlength="80" required aria-label="Entry title"></label>
+          <label class="gv-field" for="gvJournalBody"><span>Entry body</span><textarea id="gvJournalBody" placeholder="Write your thoughts…" maxlength="2000" required aria-label="Entry body"></textarea></label>
           <p class="form-error" id="gvJournalError" role="alert" aria-live="polite"></p>
           <div class="gv-journal-form-actions">
             <button type="button" class="btn" id="gvJournalCancel" hidden>Cancel edit</button>
             <button type="submit" class="btn btn-primary" id="gvJournalSave">Save Entry</button>
           </div>
         </form>
-        <div class="gv-journal-list" id="gvJournalList"></div>
+        </section><section class="gv-journal-archive"><h3 class="gv-feed-heading">Your journal</h3><div class="gv-journal-list" id="gvJournalList"></div></section></div>
       </section>
 
       <section class="gv-panel" data-panel="appearance" role="tabpanel" hidden>
-        <div class="gv-theme-swatches" id="gvThemeSwatches"></div>
+        <div class="gv-appearance-intro"><h3>Choose your room’s accent</h3><p>Four palettes for your collection and trackers. Your games and progress stay exactly where they are.</p></div><div class="gv-theme-swatches" id="gvThemeSwatches"></div>
       </section>
     </section>
 

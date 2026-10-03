@@ -125,7 +125,10 @@
     if (filters) { filters.open = true; focusOwner(filters.querySelector('[name="' + name + '"]')); }
   });
   doc.addEventListener('onespace:data-changed',function (event) { if (event.detail.key === 'orbit-trip-board') render(); });
-  doc.addEventListener('onespace:page-changed',function (event) { if (event.detail.page === 'explore') render(); });
+  doc.addEventListener('onespace:page-changed',function (event) {
+    if (event.detail.page === 'explore') render();
+    else { var overlay=doc.getElementById('domainOverlay'), title=doc.getElementById('domainTitle'); if(overlay&&!overlay.hidden&&title&&title.textContent==='Scene & photo credits')OS.closeModal(overlay); }
+  });
   render();
   return { portals: portals, buildModel: buildModel, wireInspirationImage: wireInspirationImage };
 });

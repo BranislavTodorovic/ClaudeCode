@@ -2,6 +2,14 @@ const {test}=require('node:test'),assert=require('node:assert/strict'),fs=requir
 const resources=require('../games/game-resources'),storage=require('./storage-setup');
 const read=p=>fs.readFileSync(path.join(__dirname,'..',p),'utf8');
 function fn(name){const s=read('games/games.js'),start=s.indexOf('  function '+name+'('),end=s.indexOf('\n  function ',start+10);if(start<0)throw Error('Missing '+name);return s.slice(start,end<0?undefined:end);}
+test('owner cover errors tolerate detached targets and reveal the retained SVG for attached images',()=>{
+ const handlers={},roots={gamesView:{addEventListener:(name,fn)=>handlers.games=fn},gameDetailsBody:{addEventListener:(name,fn)=>handlers.details=fn}};
+ const context={document:{getElementById:id=>roots[id]},console};vm.runInNewContext(fn('wireLogoFallback'),context);context.wireLogoFallback();
+ const detached={classList:{contains:name=>name==='gv-owner-cover-image'},parentElement:null};
+ assert.doesNotThrow(()=>handlers.games({target:detached}));assert.doesNotThrow(()=>handlers.details({target:detached}));
+ const attached={classList:detached.classList,parentElement:{dataset:{}},hidden:false};handlers.games({target:attached});
+ assert.equal(attached.hidden,true);assert.equal(attached.parentElement.dataset.assetState,'fallback');
+});
 test('live-service inference and catalog chapter outlines select the appropriate tracker',()=>{
  assert.equal(resources.infer({tags:['MMO']}),'weekly');assert.equal(resources.infer({genres:['Story-rich']}),'story');assert.equal(resources.infer({tags:['Battle royale']}),'weekly');
  const context={window:{OneSpaceGameResources:resources}};vm.runInNewContext(read('games/games-data.js'),context);

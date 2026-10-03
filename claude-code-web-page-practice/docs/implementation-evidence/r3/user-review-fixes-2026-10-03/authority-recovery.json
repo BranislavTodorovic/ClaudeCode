@@ -1,0 +1,58 @@
+{
+  "order": [
+    "docs/agent-instructions.md",
+    "docs/IMPLEMENTATION-STEPS.md",
+    "docs/REVISED-IMPLEMENTATION-PLAN.md",
+    "VERIFICATION.md",
+    "docs/REDESIGN-INTEGRATION-GATE.md",
+    "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md",
+    "docs/ui-reference/MANIFEST.md",
+    "actual reference images 00\u201307",
+    "README.md"
+  ],
+  "orderAuthority": "IMPLEMENTATION-STEPS mandatory execution contract \u00a711",
+  "completeReread": "completed before runtime edits; historical ordering resolved by current contract",
+  "hashes": {
+    "docs/agent-instructions.md": "4a704071cc739d4ab59a6359e00589ab90a9bf04fdaad9fa618b3ffdb097465c",
+    "docs/IMPLEMENTATION-STEPS.md": "e75f9ea49d9f37b5c0326cff2457393923de6d947bbcadcdc8ce0499368a6688",
+    "docs/REVISED-IMPLEMENTATION-PLAN.md": "5d6c793895a796278df177b01e015d1a118b3f444ad1007a5a13b52bdcbca03a",
+    "VERIFICATION.md": "874df647a207959b77ae1169e37cdc4ec23264f075375b684640318feff18dd6",
+    "docs/REDESIGN-INTEGRATION-GATE.md": "72d4ace3727ff3b4465f5eb435199baa04778676655ea6fddb974138c736b1c3",
+    "docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md": "0722cf2e8f0e7f146f875e50acfa60fbf41c2f03041d9dc4f24a057842dd9535",
+    "docs/ui-reference/MANIFEST.md": "4960d1eb7af977ea4c3c8fdeed5f0d2c59d8984bd539c0567b24c224e5fd6fe7",
+    "README.md": "aaca45d70a9579226f730646bf4e4c110ab72bb918da968eb7f17d4992a56b4f"
+  },
+  "head": "b01837d1c3498b8e0acd6f19d6a9a4d86b57815e",
+  "initialStatus": "4 modified authority/checkpoint files, 12 untracked finalization files, no staged or sibling changes",
+  "checkpoint": "Games 11 IN PROGRESS / IMPLEMENTED / NOT VERIFIED; Gate R3 OPEN",
+  "conflicts": "Existing authority explicitly requires structural modernization of current compatibility owners. User review reopens only affected acceptance; no valid work discarded.",
+  "creditBefore": {
+    "Games": {
+      "viewport": [
+        2048,
+        1152
+      ],
+      "button": [
+        42,
+        1104,
+        147.65625,
+        44
+      ],
+      "hit": "FOOTER.site-footer",
+      "Enter": "opens Games scene credits"
+    },
+    "Explore": {
+      "viewport": [
+        2048,
+        1152
+      ],
+      "button": [
+        42,
+        1102,
+        204.203125,
+        46
+      ],
+      "hit": "FOOTER.site-footer"
+    }
+  }
+}

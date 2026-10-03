@@ -1,502 +1,319 @@
-# OneSpace — current master correction checkpoint
+**Current user-review correction checkpoint (2026-10-03):** User-visible Explore/Games credits, all eight current Games compatibility owner presentations and Today’s Gaming action alignment have been corrected. Full current authority reread completed before production edits in IMPLEMENTATION-STEPS mandatory contract §11 order, including actual reference images. Prior work/evidence preserved. Fresh post-last-runtime regression: 94/94 focused and 267/267 full; 64 owner/size geometry cases; 128 physically inspected settled owner header/content screenshots; 24 credit activation paths, close/focus/history; 10 affected route/reloads and 40 rapid switches; canonical reload retention; bounded images/provenance/missing-art fallback; no observed app errors/rejections. Branch main / HEAD b01837d1c3498b8e0acd6f19d6a9a4d86b57815e; corrections remain unstaged/uncommitted. **Games step 11 — IN PROGRESS / IMPLEMENTED / NOT VERIFIED; Gate R3 — OPEN; Games 12–19 PENDING; R4/R5 NOT STARTED / DEFERRED.** Exact next action: four user native checks — actual Edge 100%, actual Edge 200%, real background/document-hidden lifecycle and actual OS reduced motion with app Motion=Auto. No new Games cinematic. Evidence: `docs/implementation-evidence/r3/user-review-fixes-2026-10-03/REPORT.md`, requirement ledger, visual/revision/Git receipts and accepted logs/screens. Earlier dated checkpoint descriptions below are historical and do not override this reopened-review checkpoint.
 
-**Current master correction checkpoint (2026-10-03; continuation of 2026-10-02):** Branch main / HEAD 143451f359880c13569ef33d751868aba9b73133. Existing interrupted work and the prior resume path edits were preserved; current changes remain unstaged/uncommitted. The unavailable btodorovic scratch matrix is expected and has been replaced with an honest durable ledger: 80 supported recovered observations, 352 freshly observed trials (349 distinct trial identifiers), four required native checks, and one explicitly superseded unverified attempt. The historical 173-control total is aggregate only. Current Journal focus/CRUD, canonical Productivity/Notes/Shortcuts presentation, retained Work History snapshots/current-item deletion, parent-themed owner/dialog contrast and 44px controls, five lower-cluster/footer layouts, and two Explore generated portals were corrected and verified with supporting evidence. Final checks: 42/42 focused, 265/265 full, 34 direct/reload routes, 126 current-owner size cases, 40 landing cases, 50 quick-action trials, 38 populated summary handoffs, 40 shell-utility trials, and 100 rapid world switches. Normal runtime errors/rejections: none. Existing current main scenes and three prior generated Explore portals remain unchanged. Games stays step 11 IN PROGRESS / IMPLEMENTED / NOT VERIFIED; steps 12–19 PENDING; Gate R3 OPEN; R4/R5 DEFERRED. Earlier Home/Work/Personal/Explore acceptance remains historical; affected current presentation acceptance is reopened. Exact first unresolved authority item: post-correction native Edge Games step-11 hard-refresh acceptance at actual 100% and actual 200% zoom, with explicit user PASS; also review the affected five-world/current-owner scope and actual background/device reduced-motion behavior. No new Games cinematic before legitimate steps 11 and 12 acceptance. Evidence: `docs/implementation-evidence/r3/master-continuation-review-2026-10-02.md` and `review-control-trials-recovered-2026-10-02.json`; detailed final JSON/log/screens are in the same folder.
+# OneSpace — Resume From Native Acceptance Boundary / Games R3 Step 11
 
-The latest master continuation request is preserved at `docs/implementation-evidence/r3/master-continuation-request-2026-10-02.md`. All automatable current correction requirements have supporting evidence. Resume at the native acceptance requirements in the report and ledger; do not repeat the missing-old-matrix blocker or promote any later gate. The earlier resume request is retained verbatim below.
-
----
-
-# OneSpace — Resume From Interrupted Games Journal / Owner-Modernization Audit
-
-Continue the existing OneSpace project from the EXACT persisted working-tree state left when the previous run hit the usage limit.
+Continue the existing OneSpace project from the EXACT repository state left by the previous completed automatable finalization run.
 
 Project:
 
-`C:\Users\banek\Documents\Projects\ClaudeCode\claude-code-web-page-practice\`
+`C:\Users\banek\Documents\Projects\ClaudeCode\claude-code-web-page-practice`
 
-This is NOT a new implementation plan.
+Git root:
 
-Resume the existing R3 review from the exact interruption point.
+`C:\Users\banek\Documents\Projects\ClaudeCode`
 
-Do NOT reset, clean, discard, overwrite or recreate valid current work.
+Last reported HEAD:
 
-The previously reported committed baseline at the beginning of the interrupted run was:
+`b01837d1c3498b8e0acd6f19d6a9a4d86b57815e`
 
-`143451f — added/modified assets, explore, games, outputs, shared, styles, tests, index.html`
+IMPORTANT:
 
-but substantial valid work was created AFTER that baseline.
+The current repository state wins over this historical HEAD if it has changed.
 
-The ACTUAL current working tree and persisted review evidence win.
+Do NOT reset, clean, revert, discard, overwrite or recreate any existing work.
+
+Do NOT restart the completed automated Games review.
+
+The previous run reached the legitimate native/manual acceptance boundary for Games step 11.
 
 ---
 
-# 1. Reconstruct the exact interrupted state first
+# 1. Recover the exact current Git state first
 
-Before editing:
+Before editing anything:
 
 1. confirm working directory;
 2. confirm Git root;
 3. confirm branch;
 4. confirm HEAD;
-5. inspect `git status --short --untracked-files=all`;
+5. inspect:
+
+   `git status --short --untracked-files=all`
+
 6. inspect staged diff;
 7. inspect complete unstaged diff;
-8. inspect all current review/evidence scripts and files;
-9. preserve every valid interrupted scene/layout/motion/control/performance change;
-10. identify only genuinely disposable artifacts separately.
+8. inspect all current modified and untracked OneSpace files;
+9. preserve every valid evidence/checkpoint file;
+10. confirm no sibling Gym project file has been touched.
 
-Do NOT reset to `143451f`.
+The previous finalization reported:
 
-Confirm whether the previous 32-file baseline remains intact and which additional files were modified after it.
+- 0 staged;
+- 4 modified;
+- 12 untracked.
 
-Preserve unfinished current work before making any new changes.
+Modified files were:
+
+- `AGENT-EXECUTION-RESUME.md`
+- `VERIFICATION.md`
+- `docs/IMPLEMENTATION-STEPS.md`
+- `docs/REDESIGN-INTEGRATION-GATE.md`
+
+The untracked files were R3 finalization evidence under:
+
+`docs/implementation-evidence/r3/`
+
+Do NOT delete them merely because they are untracked.
+
+Inspect the actual current state.
+
+Do not automatically stage or commit anything unless current authority explicitly requires it.
 
 ---
 
-# 2. Re-read the complete current authority after the usage interruption
+# 2. Re-read the COMPLETE current authority set before changing checkpoint state
 
-Before changing implementation/checklist state, reread the complete canonical authority set in the repository-required order.
+This is a new continuation after an interruption.
 
-At minimum inspect the current canonical versions of:
+Do NOT rely only on the previous agent's summary.
 
-- `docs/agent-instructions.md`
-- `docs/IMPLEMENTATION-STEPS.md`
-- `docs/REVISED-IMPLEMENTATION-PLAN.md`
-- `VERIFICATION.md`
-- `docs/REDESIGN-INTEGRATION-GATE.md`
-- `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`
-- `docs/ui-reference/MANIFEST.md`
-- `README.md`
+Resolve the CURRENT repository-required Resume-after-interruption order first.
 
-Also inspect:
+The previous run found this order:
 
-- current continuation evidence;
-- eight-world audit;
-- current control-audit matrix;
-- current scene/provenance records;
-- any minimal desktop-height authority clarification made by the interrupted run.
+1. `docs/agent-instructions.md`
+2. `docs/IMPLEMENTATION-STEPS.md`
+3. `docs/REVISED-IMPLEMENTATION-PLAN.md`
+4. `VERIFICATION.md`
+5. `docs/REDESIGN-INTEGRATION-GATE.md`
+6. `docs/LIVE-EXPERIENCE-REDESIGN-SPEC.md`
+7. `docs/ui-reference/MANIFEST.md`
+8. physically inspect all eight current reference images
+9. `README.md`
 
-If the current repository authority specifies a different exact reading order, follow the CURRENT authority order and report the difference.
+Verify that this is still the current mandatory order before relying on it.
 
-If a new user requirement below is already covered by authority:
+Then read the COMPLETE current authority set from the beginning in that order.
 
-→ do not duplicate it.
+Also inspect the active persisted R3/Games evidence, especially:
 
-If it exposes a real durable gap:
+- the recovered control ledger;
+- finalization review;
+- authority-reread evidence;
+- revision-integrity evidence;
+- settled-visual evidence;
+- current continuation/checkpoint evidence;
+- scene/provenance manifests.
 
-→ make only the smallest targeted canonical clarification.
+Use repository-persisted evidence as the canonical continuation source.
+
+Do NOT depend on Codex-session-local paths such as:
+
+`C:\Users\banek\Documents\Codex\...`
+
+Those may disappear across machines/sessions.
+
+Before editing authority ask:
+
+> Is this requirement already clearly present?
+
+If YES:
+do not duplicate it.
 
 If it is only an implementation defect:
-
-→ fix implementation/evidence, not authority.
-
-Do NOT alter the canonical:
-
-`R3 → Gate R3 → R4 Work -> Projects → Gate R4 → R5`
-
-sequence.
-
-Do NOT create a parallel authority plan from this continuation prompt.
-
----
-
-# 3. Preserve the current formal checkpoint
-
-Games remains the current R3 world.
-
-Games step 11 remains:
-
-`IN PROGRESS / IMPLEMENTED / NOT VERIFIED`
+fix implementation/evidence, not authority.
 
 Do NOT:
 
-- mark Games step 11 VERIFIED;
-- start Games step 12;
-- start the new Games step-13 cinematic;
-- close Gate R3;
-- start formal R4;
-- start formal R5.
-
-All current work remains regression/current-surface correction while Games step 11 is still open.
-
-Preserve historical VERIFIED evidence.
-
-If a new user review exposes a real regression in a previously accepted dimension:
-
-- preserve the old evidence;
-- reopen/reverify only the affected dimension unless current authority requires broader reverification;
-- capture superseding evidence.
+- create a second implementation plan;
+- rewrite historical evidence;
+- change the R3 → Gate R3 → R4 → Gate R4 → R5 order;
+- change the main-world cinematic timing contract without current-authority reason;
+- claim planned behavior as delivered in README.
 
 ---
 
-# 4. Recover what the interrupted run already completed
+# 3. Confirm the formal checkpoint
 
-Do NOT redo valid completed work.
+Unless CURRENT authority/evidence proves otherwise, the checkpoint must still be:
 
-The interrupted run already completed or substantially completed:
+`Games step 11 — IN PROGRESS / IMPLEMENTED / NOT VERIFIED`
 
-## Scene/full-screen work
+and:
 
-- diagnosed the 1672px scene-cap/right-panel problem;
-- generated/recomposed wider scene sources;
-- final composed sources reached approximately:
-  - Home `2144×1254`;
-  - other current worlds approximately `2508×1254`;
-- verified Home scene covering the complete `2048×760` viewport;
-- preserved native-scale source detail rather than simply stretching the smaller source;
-- installed new current-world scene assets.
+`Gate R3 — OPEN`
 
-## Scene lifecycle
+Games steps 12–19 remain pending.
 
-- updated earlier-world motion for:
-  - Home;
-  - Work;
-  - Personal;
-  - Explore;
-- kept Games static because Games has not reached its motion step;
-- fixed hidden-document cinematic timers so hidden pages settle instead of continuing decorative motion.
+Do NOT:
 
-## Work controls
+- mark Games 11 VERIFIED without legitimate native acceptance;
+- start Games 12 prematurely;
+- start Games 13 cinematic prematurely;
+- close Gate R3;
+- start R4;
+- start R5.
 
-- work-item dialog field/validation/close/cancel;
-- Story creation;
-- task creation/edit;
-- task completion toggles;
-- task history retention;
-- project/item/task delete cancellation and confirmation;
-- keyboard confirmation;
-- reload persistence;
-- modal stacking defect.
+---
 
-## Personal
+# 4. Preserve the completed automatable verification
 
-- creation;
-- editing;
-- completion;
-- deletion;
-- reload persistence;
-- empty/whitespace validation;
-- habit target validation.
+The previous run completed the automatable correction/finalization work.
+
+Do NOT blindly rerun it.
+
+Persisted final results include:
+
+- `42/42` focused tests;
+- `265/265` full suite;
+- `34` direct/reload checks;
+- `126` owner responsive cases;
+- `40` landing cases;
+- `10` missing-art fixtures;
+- clean runtime error/rejection checks;
+- `git diff --check` PASS.
+
+The previous run also established that these tests ran after the last production edit.
+
+Later edits were evidence-only.
+
+First inspect current diffs/hashes.
+
+If no production/runtime file has changed since that validated revision:
+
+preserve these results.
+
+If any runtime-affecting file has changed:
+
+rerun the affected regression and any final suite required by current authority before relying on the previous totals.
+
+Do not rerun everything merely because this is a new session.
+
+---
+
+# 5. Preserve the durable recovery ledger
+
+The repository-persisted recovery ledger is:
+
+`review-control-trials-recovered-2026-10-02.json`
+
+under the current R3 evidence directory.
+
+The last report stated:
+
+- 437 observations;
+- 80 `RECOVERED_FROM_PERSISTED_EVIDENCE`;
+- 352 newly verified;
+- 5 unverified observations.
+
+Of those five:
+
+- FOUR are legitimate remaining native/manual checks;
+- ONE is a preserved superseded wishlist attempt with later successful evidence.
+
+Do NOT treat the superseded wishlist observation as a current blocker.
+
+Do NOT fabricate the old lost 173 individual scratch rows.
+
+The historical 173 total remains aggregate historical evidence.
+
+---
+
+# 6. Preserve completed user-review fixes
+
+Do not reopen these from zero unless current changes invalidate them.
+
+## Games Journal
+
+Final automatable evidence covers:
+
+- create;
+- edit;
+- invalid-update rejection;
+- cancellation;
+- pointer;
+- keyboard;
+- save;
+- reload;
+- delete;
+- focus restoration.
+
+## Work History
+
+Final behavior:
+
+- whole-card pointer;
+- Enter;
+- Space;
+- truthful detail surface;
+- real stored fields;
+- child-task snapshots;
+- Delete only for still-existing underlying record;
+- Yes/No confirmation;
+- cancellation preserves record/focus;
+- confirmation removes current record;
+- audit snapshot remains;
+- already-deleted records have no fake Delete action.
+
+Do NOT add audit-event deletion.
+
+## Quick actions / compatibility utilities
+
+Preserve canonical owners.
+
+Completed:
+
+- Plan my day → Productivity;
+- Brainstorm ideas → Notes;
+- Shortcuts → existing Shortcuts owner/store;
+- 25 current quick actions;
+- 38 populated summary handoffs;
+- 40 shell utility handoffs;
+- no tested current handoff visibly falls into legacy presentation.
 
 ## Explore
 
-- trip dates;
-- notes;
-- itinerary;
+Final five generated/local portal artworks:
+
+- Destinations;
+- Experiences;
+- Travel Guides;
+- Bucket List;
+- Discover More.
+
+Explore local image upload is now VERIFIED on this machine:
+
+- selection;
+- save;
 - reload;
-- ordering;
-- removal/cancel;
-- exact/partial/no-match/empty search;
-- destination details;
-- shortlist;
-- filters/preferences;
-- fixed the real UI-option/storage-validator mismatch;
-- added regression coverage.
+- decode;
+- oversized-image rejection;
+- removal.
 
-Note:
+It is no longer a pending manual blocker.
 
-local image upload through the native Windows file picker remained unverified because the in-app browser could not target the chooser.
+## Owner/subtab modernization
 
-Preserve that limitation explicitly unless it is successfully verified in this run.
+The compatibility-owner modernization remains presentation/current-regression work only.
 
-## Games
+It does NOT constitute R4/R5 completion.
 
-Already exercised:
+Preserve:
 
-- all eight owner tabs;
-- pointer;
-- roving arrow-key navigation;
-- Enter/Space;
-- visible focus;
-- Add Game;
-- game save;
-- mission pickers;
-- chapter disclosures;
-- objective edit/create/delete;
-- repeated completion;
-- weekly reset;
-- sessions;
-- invalid duration validation;
-- session delete;
-- journal save.
-
-Do not rerun all of these blindly.
-
-Rerun only:
-
-- the subset invalidated by later shared changes;
-- controls affected by new routing/UI changes;
-- the unfinished controls required to complete the owner audit.
+- canonical data ownership;
+- canonical APIs/stores;
+- routes;
+- business logic.
 
 ---
 
-# 5. EXACT interruption point — resume here
+# 7. Preserve final visual evidence
 
-The previous run stopped inside the Games Journal owner-control batch.
+The finalization produced five settled:
 
-The final saved sequence had reached:
+`2048×1152`
 
-- reconnect browser after timeout;
-- restore audit helpers;
-- resume four unfinished Journal controls;
-- Journal editing;
-- cancellation;
-- validation;
-- recover saved Journal-edit checkpoint;
-- save Journal update with Enter and persist it;
-- invalid Journal update;
-- pointer save;
-- keyboard validation;
-- Space update;
-- Journal reload;
-- deletion-dialog controls;
-- inspect the last saved control rows.
-
-Usage expired during this sequence.
-
-FIRST:
-
-inspect the existing persisted control matrix, especially:
-
-`work/review-control-trials.json`
-
-and the latest review helper scripts.
-
-Find the FIRST Journal trial that does not already have valid persisted evidence.
-
-Resume from that exact control.
-
-Do NOT create a second audit matrix.
-
-Finish:
-
-- Journal edit;
-- invalid update;
-- cancel;
-- pointer;
-- Enter;
-- Space;
-- reload;
-- delete confirmation;
-- delete cancellation;
-- delete persistence;
-- focus return;
-- repeated activation;
-- dialog close.
-
-Then continue any remaining deeper Games owner controls.
-
----
-
-# 6. NEW user FAIL — quick actions must never fall back to legacy UI
-
-The user has now verified that some redesigned quick actions still route into the OLD legacy UI.
-
-Confirmed examples include:
-
-- `Plan my day`
-- `Brainstorm ideas`
-
-This is NOT acceptable.
-
-Treat any previous PASS evidence for those exact actions as superseded.
-
-Audit their CURRENT canonical destination/data owner.
-
-Do not guess destinations.
-
-Use current architecture/data ownership to determine the correct destination.
-
-For example, depending on current authority:
-
-- `Plan my day` may belong to the current Today/planning experience;
-- `Brainstorm ideas` may belong to the current Notes/idea experience;
-- another canonical existing OneSpace-compatible owner may be correct.
-
-Required rule:
-
-A quick action launched from the redesigned OneSpace experience must NOT visibly dump the user into the old legacy application presentation.
-
-If the canonical feature already exists:
-
-→ route/open the current OneSpace-compatible surface.
-
-If only a compatibility owner exists:
-
-→ modernize/present that owner inside the current OneSpace shell.
-
-If no real supported destination exists:
-
-→ use truthful current-phase unavailable/future-disabled feedback rather than old UI or fake success.
-
-Recheck ALL current quick actions for the same legacy fallback problem.
-
-For every affected quick action verify:
-
-- pointer;
-- Enter/Space where applicable;
-- focus;
-- correct destination;
-- visible response;
-- reload-safe result where state changes;
-- no legacy first paint;
-- no unexpected layout jump;
-- response latency.
-
----
-
-# 7. NEW Work History requirement
-
-Current Work History entries/icons are not sufficiently interactive.
-
-Fix the current Work History experience.
-
-A real History record representing or referring to a canonical:
-
-- Story;
-- Defect;
-- Project;
-- Task;
-- Work item;
-
-must be accessible through pointer and keyboard.
-
-Activating the History record must show a truthful detail surface containing available canonical information such as:
-
-- type;
-- title/name;
-- description/details;
-- relevant project/story/defect association;
-- status;
-- actual stored timestamps/dates where available;
-- actual recorded change/action information.
-
-Do NOT invent missing values.
-
-## IMPORTANT — inspect canonical History semantics before implementing deletion
-
-Before implementing deletion from History, inspect the canonical Work data model and determine what a History entry actually represents.
-
-A History entry must always be interactive and must open a truthful detail surface showing the real canonical information behind that entry.
-
-Deletion behavior must preserve canonical semantics:
-
-- if the History entry represents or links to a user-owned Story / Defect / Project / Task / Work item that is canonically deletable, the detail surface must provide access to the supported Delete action for that underlying record;
-- if History entries themselves are defined as user-owned deletable records, they may be deleted directly;
-- if History is an immutable/audit/event log by current authority/data model, do NOT silently delete audit history merely to satisfy the UI request.
-
-If the user's requirement for direct History-entry deletion conflicts with the current canonical data model:
-
-- report the conflict;
-- inspect current authority/data ownership;
-- make only the minimum authority/data-model clarification required before changing semantics;
-- do not silently fork or reinterpret the Work store.
-
-Where deletion is legitimately supported, require explicit confirmation:
-
-`This will be deleted. Continue?`
-
-with clear:
-
-- `Yes`
-- `No`
-
-behavior.
-
-Required verification:
-
-- click History record;
-- Enter/Space where appropriate;
-- detail opens;
-- correct canonical information is shown;
-- Escape/close;
-- focus return;
-- Delete where canonically supported;
-- `No` leaves the intended record intact;
-- `Yes` deletes the intended underlying record/history record according to canonical semantics;
-- keyboard confirmation;
-- reload verifies the correct persisted result;
-- repeated activation does not duplicate dialogs/actions.
-
----
-
-# 8. NEW visual positioning review — center and lower the main content cluster
-
-The user has reviewed the current full-screen Home result.
-
-The full-screen scene direction is now correct and must be preserved.
-
-However, the main lower content cluster is positioned too high / not ideally centered.
-
-The user specifically means the block containing:
-
-- summary/status cards;
-- portal/destination card row;
-
-not the top global navigation or main hero.
-
-For CURRENT/PREVIOUSLY-IMPLEMENTED main-world landings:
-
-- horizontally center this main card/content frame relative to the viewport;
-- move it visually downward by approximately another 2 cm.
-
-Do not use literal CSS `2cm` blindly.
-
-At native 100% desktop, use approximately:
-
-`60–80 CSS px`
-
-as a starting visual target, then tune based on the actual rendered composition.
-
-The final result must still:
-
-- fit within the intended single desktop viewport where fixed content reasonably fits;
-- keep the footer visible;
-- preserve readable text;
-- preserve card hit targets;
-- avoid overlap;
-- avoid clipping;
-- preserve the cinematic focal subject.
-
-Do NOT move the top navigation/hero down unless actual composition requires it.
-
-Reverify at least:
-
-- `2048×760`;
-- `2048×1152`;
-- a 1920-class desktop;
-- `1440`;
-- `1024`;
-- `760`;
-- `390`;
-
-and true native `200%` zoom wherever current authority requires it.
-
-For current owner/subtab surfaces:
-
-use the same visual principle of a centered, balanced content frame, but do not mechanically add 80px to dynamic long-data surfaces.
-
----
-
-# 9. NEW footer consistency requirement
-
-Explore and Games currently show:
-
-`OneSpace · your focused space for work and life`
-
-off to the right.
-
-The user requires the implemented main-world footer treatment to match the correct centered presentation used by Work.
-
-For current implemented main worlds:
-
-- place this footer/attribution at the bottom center;
-- use one shared consistent alignment rule where possible;
-- keep it integrated with the full-screen scene;
-- do not create extra page height;
-- do not reintroduce the old dark empty footer band.
-
-Verify:
+captures for:
 
 - Home;
 - Work;
@@ -504,714 +321,289 @@ Verify:
 - Explore;
 - Games.
 
-At desktop native 100%, the footer should not force pointless scrolling when the fixed content clearly fits within one viewport.
+They were visually inspected after all scene/portal imagery loaded.
+
+Current accepted automatable state records:
+
+- full-viewport scenes;
+- recognizable world subjects;
+- centered/downshifted lower content;
+- bottom-center footer;
+- no desktop overflow.
+
+The footer text is:
+
+`OneSpace · your focused space for work and life`
+
+Do NOT regress this while processing native acceptance.
+
+The landing evidence covers:
+
+- 2048×758;
+- 2048×760;
+- 2048×1152;
+- 1920×1080;
+- 1440×900;
+- 1024×768;
+- 760×900;
+- 390×844.
 
 ---
 
-# 10. Explore portal artwork — ALL five now require a coherent generated visual family
+# 8. Preserve cinematic evidence
 
-IMPORTANT:
-
-The previous run correctly followed the previous instruction by replacing only:
-
-- Travel Guides;
-- Bucket List;
-- Discover More.
-
-That was not an implementation error.
-
-The user has now changed the visual acceptance.
-
-The current Explore portal set must now be treated as a single coherent locally-produced / AI-generated visual family.
-
-Replace/refine the remaining real-photo portal art for:
-
-- Destinations;
-- Experiences;
-
-as well.
-
-The final five must be:
-
-1. Destinations
-2. Experiences
-3. Travel Guides
-4. Bucket List
-5. Discover More
-
-Each must:
-
-- clearly represent itself;
-- use genuinely distinct semantic artwork;
-- belong to the same Explore visual family;
-- not be a crop of another portal;
-- not reuse the main Explore scene;
-- not rely only on a filter/color change.
-
-Semantic guidance:
-
-## Destinations
-
-Should communicate:
-
-- places;
-- destination atlas;
-- place discovery;
-- travel locations.
-
-## Experiences
-
-Should communicate:
-
-- activities;
-- adventures;
-- things to do;
-- memorable travel experiences.
-
-## Travel Guides
-
-Should communicate:
-
-- guidebook;
-- annotated map;
-- itinerary/reference material;
-- destination knowledge.
-
-Do NOT use another generic coastline photo.
-
-## Bucket List
-
-Should communicate:
-
-- dream destinations;
-- pins;
-- checklist;
-- places-to-go planning;
-- travel goals.
-
-Do NOT simply reuse the main Explore globe scene.
-
-## Discover More
-
-Should communicate:
-
-- discovery;
-- travel inspiration/resources;
-- compass/exploration;
-- additional places/resources.
-
-Do NOT reuse a Featured Destination/Azores-style landscape and call it different.
-
-AI-generated/local generic artwork is acceptable.
-
-Preserve provenance.
-
-Verify:
-
-- natural size;
-- rendered size;
-- crop;
-- sharpness;
-- focal point;
-- semantic identity;
-- responsive behavior;
-- fallback;
-- text readability.
-
----
-
-# 11. Continue modernizing CURRENT reachable owner/subtab surfaces — current result is still NOT accepted
-
-The interrupted run began this work and added owner styling and semantic header art.
-
-Do NOT discard that work.
-
-However, the user has reviewed the current result and it is still too simple / too close to the legacy application.
-
-That is NOT sufficient visual acceptance.
-
-Modernize CURRENTLY REACHABLE compatibility-owner/subtab surfaces for current/previously-implemented worlds.
-
-This includes existing reachable surfaces in:
-
-- Work;
-- Personal;
-- Explore;
-- Games;
-- current utilities reached by redesigned quick actions where they still visibly look legacy.
-
-Do NOT create missing future R5 modules.
-
-Do NOT mark these compatibility surfaces as completed formal R4/R5 modules.
-
-Preserve:
-
-- data stores;
-- APIs;
-- routes;
-- business logic;
-- persistence;
-- forms;
-- tests.
-
-Modernize presentation.
-
-## IMPORTANT SCOPE BOUNDARY
-
-During this R3 regression work, modernization of an already-reachable compatibility-owner surface is **presentation-only** unless a current R3 defect requires a small behavioral correction.
-
-Do NOT:
-
-- create a new missing Level-3 route merely to complete the visual redesign;
-- implement a future submodule that does not already exist;
-- migrate or fork canonical data ownership;
-- create a duplicate store;
-- treat visual modernization of an existing compatibility surface as the formal R4/R5 dedicated-submodule implementation;
-- silently mark R4/R5 work complete.
-
-Formal nested-route/submodule implementation remains governed by:
-
-`Gate R3`
-→ `R4 Work -> Projects pilot`
-→ `Gate R4`
-→ `R5`.
-
-If an already-reachable compatibility surface currently has a small real behavioral defect required for correct R3 operation, fix that defect without expanding into broad future submodule implementation.
-
----
-
-# 12. Parent-theme requirement for current subtabs/owner surfaces
-
-Each existing owner/subtab experience must visually belong to its parent world.
-
-The current visual standard is NOT satisfied by merely changing:
-
-- one border;
-- one header;
-- one accent color;
-- background color.
-
-The entire currently reachable surface should feel intentionally designed as part of the parent world.
-
-## Games
-
-Current Games owner/subtab UI must unmistakably feel like Games.
-
-Improve as appropriate:
-
-- game-specific semantic header art;
-- richer iconography;
-- modern tab system;
-- clear active tab;
-- game imagery/covers;
-- progress visuals;
-- polished cards;
-- better spacing;
-- modern buttons;
-- stronger hierarchy;
-- parent Games visual DNA;
-- responsive layout;
-- accessible focus states.
-
-Avoid a generic flat navy CRUD application.
-
-Current existing Games owner tabs include the already-reachable set such as:
-
-- Overview;
-- My Games;
-- Mission Progress;
-- Weekly Tasks;
-- Suggestions;
-- Sessions;
-- Journal;
-- Appearance.
-
-They should belong to one coherent Games experience while each tab still clearly communicates its own purpose.
-
-Do NOT reuse one identical image for all Games tabs with only crop/zoom/filter differences.
-
-## Work
-
-Use professional/project/workflow/task visual language.
-
-Current:
-
-- Board;
-- Projects;
-- Backlog;
-- History;
-- owner/detail surfaces
-
-must visually belong to Work.
-
-Use:
-
-- clear icons;
-- modern navigation;
-- semantic cards;
-- polished filters;
-- professional visual identity;
-- useful contextual art where appropriate.
-
-## Personal
-
-Current:
-
-- goals;
-- routines;
-- habits;
-- planning;
-- owner/detail surfaces
-
-must use Personal / wellness / lifestyle visual language.
-
-## Explore
-
-Current:
-
-- trips;
-- destinations;
-- planning;
-- resources;
-- owner/detail surfaces
-
-must visually belong to Explore.
-
-Use:
-
-- maps;
-- routes;
-- destination/travel motifs;
-- guide/reference iconography;
-- parent Explore visual DNA.
-
-Do not reuse an identical parent image by simple crop for every subtab.
-
-Use semantic imagery/icons/art where it improves recognition.
-
-For future Movies & Series / Projects & Notes / Settings surfaces:
-
-record the same design requirement now, but defer actual implementation until their legitimate authority turn.
-
----
-
-# 13. Clarify “every tab, subtab and button”
-
-Do NOT misinterpret this requirement.
-
-## Main-world tabs
-
-Examples:
-
-- Work
-- Personal
-- Explore
-- Games
-
-require:
-
-- full-screen semantic environment;
-- world identity;
-- authority-defined 2–5 second cinematic when their motion step is legitimately active.
-
-## Real destination/subtab surfaces
-
-Examples:
-
-- Game Library;
-- Missions & Quests;
-- Work Projects;
-- Work History;
-- Explore Destinations;
-
-require, when already reachable or legitimately implemented:
-
-- semantic visual identity;
-- appropriate scene/art/image;
-- quality iconography;
-- modern parent-themed presentation;
-- correct navigation;
-- correct functionality;
-- truthful state;
-- parent-world continuity.
-
-## Ordinary action controls
-
-Examples:
-
-- Search;
-- Save;
-- Delete;
-- Edit;
-- Add;
-- Reset;
-- Confirm;
-- Cancel;
-
-do NOT get their own cinematic page.
-
-They must instead:
-
-- look modern;
-- visually belong to the current theme;
-- use an icon where appropriate;
-- respond quickly;
-- be keyboard accessible;
-- provide immediate truthful feedback;
-- have correct focus behavior;
-- have appropriate confirmation where destructive.
-
----
-
-# 14. Earlier-world 2–5 second cinematic — visually verify, do not merely assert
-
-Preserve the current approximately 2–5 second contract.
-
-The interrupted run already modified motion for:
+For:
 
 - Home;
 - Work;
 - Personal;
-- Explore.
+- Explore;
 
-Do not rewrite those blindly.
+the previous finalization records approximately:
 
-Now perform final VISUAL verification against the new full-screen scenes.
+Full track:
+`~2.35 seconds`
 
-For each, capture/observe:
+ambient:
+`~3.35 seconds`
 
-- entry state;
-- mid-entry state;
-- settled state;
-- approximate actual duration;
-- scene-specific change;
-- cleanup when leaving.
+Subtle ambient:
+`~1.55 seconds`
 
-It must feel like a visible living image / short mini-film, not only:
+Off:
+still
 
-- an imperceptible opacity change;
-- generic zoom;
-- identical movement on all worlds.
+app Reduced motion:
+still
 
-Examples of acceptable world-specific motion include:
+Distinct world-specific effects include:
 
-- lighting transitions;
-- fireplace/window light;
-- monitor/screen glow;
-- subtle environmental movement;
-- reflections;
-- restrained depth/parallax;
-- coastal/daylight atmospheric change.
+- firelight;
+- monitor light;
+- window beam;
+- coastal light.
 
-UI must remain usable during the effect.
+The 100-switch rapid-navigation test finished with:
+
+- correct final world;
+- no pending RAF;
+- no pending timeout;
+- no stale hidden-scene animation;
+- no warnings/errors/rejections.
 
 Do NOT implement the new Games cinematic yet.
 
-Games remains step 11.
-
-Games cinematic still belongs to its later authority motion step after step 11 and step 12.
-
-For Full/Subtle/Off/reduced-motion:
-
-follow CURRENT authority exactly.
-
-Do not invent a new timing contract.
+Games cinematic belongs to its legitimate later step after Games 11 and Games 12.
 
 ---
 
-# 15. Preserve the full-screen scene architecture
+# 9. The only legitimate current blockers are native/manual acceptance
 
-The current Home screenshot demonstrates the correct broad direction:
+The previous automatable run is complete.
 
-the semantic scene fills the entire viewport behind the UI.
+The active remaining native checks are:
 
-Preserve this.
+1. actual Edge 100% acceptance;
+2. actual Edge 200% acceptance;
+3. actual native background/document-hidden lifecycle;
+4. actual OS reduced-motion behavior.
 
-For current main worlds:
-
-- no return to `dark left panel | image right`;
-- no third-of-screen image;
-- no obvious procedural empty filler;
-- no visible low-resolution stretching;
-- no abrupt scene cutoff.
-
-Continue to verify:
-
-- natural image dimensions;
-- rendered dimensions;
-- encoded file weight;
-- focal subject;
-- crop at responsive widths.
-
-If a larger scene file damages load performance:
-
-optimize format/compression/display asset intelligently rather than shrinking the scene back to one side of the page.
-
-Do not preload all large scenes at startup.
+Do not invent additional manual blockers unless current authority or new evidence proves one.
 
 ---
 
-# 16. Finish the control audit without starting over
+# 10. If native results are NOT supplied with this continuation
 
-Do NOT rerun all previously completed controls from zero.
+If the user has not yet provided native PASS/FAIL results:
 
-Resume from the existing persisted matrix.
+do NOT start new implementation work.
 
-However, user feedback has now invalidated specific previous PASS rows.
+Do NOT advance Games step 11.
 
-Explicitly reopen/reverify:
+After repository/authority recovery, request ONLY the remaining native results.
 
-- Plan my day;
-- Brainstorm ideas;
-- any other quick action that opens legacy UI;
-- Work History records;
-- History detail;
-- supported History/underlying-record Delete;
-- any control whose route/UI is changed by the owner modernization;
-- any control affected by shared tab/header/dialog changes.
+Use the current normal application origin:
 
-Finish the unfinished deeper owner controls.
+`http://localhost:8973/#/w/games`
 
-Persist results into the SAME existing audit matrix.
+if it is still the authority-approved local origin.
 
-For every reopened/remaining control record:
+If the normal origin is not running:
 
-- surface;
-- control;
-- semantic role;
-- pointer;
-- keyboard;
-- focus;
-- visible result;
-- route/action;
-- validation;
-- repeated activation;
-- performance;
-- PASS/FAIL;
-- evidence.
+start only the normal required local server according to current repository instructions.
+
+Do not recreate the old disposable diagnostic environment unnecessarily.
+
+Ask the user for separate PASS/FAIL results for the four native categories below.
 
 ---
 
-# 17. Explore local-image upload remains unresolved
+# 11. Native check A — actual Edge 100%
 
-The prior run could not fully verify Explore local-image upload because the native Windows chooser was not targetable through the in-app browser.
+At REAL browser zoom:
 
-Do not silently mark it PASS.
+`100%`
 
-Attempt verification again only if the available Computer Use/native picker workflow can do so reliably.
+Hard refresh.
 
-If it remains genuinely manual-only:
+Verify according to current authority and the final shared-regression scope:
 
-preserve it as an explicit remaining manual verification item.
+- no legacy/wrong-world first paint;
+- scene readable/sharp;
+- search;
+- summaries;
+- portals;
+- footer;
+- owner/session handoffs;
+- no clipping;
+- no unexpected overflow;
+- correct current visual composition.
 
-Do not fabricate evidence.
+Where shared layout/owner changes affected previous worlds/utilities, include the required affected-world spot checks according to current authority/evidence.
 
-Do not let this unrelated native-picker limitation cause unrelated completed Explore tests to be reset.
-
----
-
-# 18. Re-run performance after the final scene/subtab changes
-
-Preserve the already-fixed performance improvements:
-
-- reduced irrelevant Home storage rebuilds;
-- deferred hidden legacy Games artwork;
-- deferred hidden Movies artwork;
-- scene lifecycle cleanup;
-- previous hidden-scene optimizations.
-
-After final visual changes, measure fresh:
-
-- cold/direct load;
-- hard refresh;
-- warm world switch;
-- owner/subtab switch;
-- quick-action response;
-- ordinary button/action response;
-- first correct-world paint;
-- first usable UI;
-- scene load/decode;
-- hidden asset requests;
-- DOM rebuild/reflow;
-- rapid navigation.
-
-Pay particular attention to the larger composed scene files.
-
-Do NOT:
-
-- sacrifice full-screen visual quality;
-- eagerly preload every large world scene;
-- add arbitrary delays;
-- hide performance defects behind loaders;
-- block interaction while cinematic runs.
-
-Persist current before/after measurements for every actual optimization made.
+Do not substitute viewport resizing for real browser zoom.
 
 ---
 
-# 19. Motion / race / cleanup verification
+# 12. Native check B — actual Edge 200%
 
-Finish the previously pending lifecycle verification.
+At REAL browser zoom:
+
+`200%`
+
+Hard refresh.
 
 Verify:
 
-- rapid `A → B → C` navigation;
-- last intent wins;
-- no stale async scene completion;
-- no old world remount;
-- no overlapping cinematic;
-- no hidden RAF;
-- no stale timeout;
-- no duplicate listeners;
-- no incorrect active navigation;
-- hidden document settles correctly;
-- returning does not restart the wrong sequence;
-- settled cinematic does not steal focus;
-- Off/reduced-motion does not leave unnecessary background work running.
+- no horizontal overflow that traps required content;
+- no unacceptable overlap;
+- no hidden required control;
+- keyboard navigation;
+- visible focus;
+- sensible scrolling;
+- usable owner/utility handoffs;
+- correct current-world state.
+
+Use real Edge zoom.
+
+Viewport resizing does NOT satisfy this requirement.
 
 ---
 
-# 20. Phase boundary protection
+# 13. Native check C — real background lifecycle
 
-Modernizing already-reachable compatibility-owner/subtab surfaces does NOT mean:
+The in-app browser could not prove this because its internal tab switching kept:
 
-- Work -> Projects R4 is complete;
-- Games R5 is complete;
-- broad R5 has started.
+`document.hidden = false`.
 
-Do not mark those gates complete.
+Use actual Edge/Windows behavior.
 
-For future:
+For each previously implemented cinematic world required by current authority:
 
-- Movies & Series;
-- Projects & Notes;
-- Settings;
-- missing future submodules;
+- start Full entry;
+- background/minimize/switch away during entry;
+- return.
 
-record the same design requirement now but defer implementation until their legitimate authority turn.
+Verify:
 
-The canonical execution order remains unchanged.
+- no stale animation continues incorrectly;
+- no old world restores;
+- correct current world remains;
+- current scene returns settled/correctly;
+- no focus disruption;
+- no duplicate cinematic;
+- no runaway background activity.
 
-Cross-world audit may inspect future worlds, but must not execute their full implementation workflow early.
-
----
-
-# 21. Preserve functional honesty and canonical data ownership
-
-For every dynamic card, metric, status, History record, owner surface and action affected by this work:
-
-preserve the existing current-authority classifications and ownership rules.
-
-Do not:
-
-- fabricate live values;
-- duplicate stores;
-- create decorative fake records;
-- silently add remote providers;
-- fork canonical Work/Games/Explore/Personal data.
-
-Where a real value does not exist:
-
-- use real local data;
-- show truthful unavailable/not-configured state;
-- hide unsupported live value;
-- or use current authority's approved future-disabled behavior.
-
-Presentation modernization must not change the canonical source of truth.
+Record separate PASS/FAIL.
 
 ---
 
-# 22. Fresh regression after the LAST implementation change
+# 14. Native check D — actual OS reduced motion
 
-After the final code/CSS/asset/motion change, run fresh:
+Use the REAL Windows/device reduced-motion/accessibility preference.
 
-- focused tests;
-- full suite;
-- direct/reload route checks;
-- no legacy/wrong-world first paint;
-- quick-action routing;
-- Plan my day;
-- Brainstorm ideas;
-- Work History;
-- Work forms;
-- Personal affected flows;
-- Explore search/trips/preferences;
-- Explore five portal artworks;
-- Games owner tabs;
-- Games Journal;
-- Games sessions/objectives;
-- Search regression;
-- scene full-screen coverage;
-- central content-frame positioning;
-- footer centering;
-- earlier-world 2–5 second motion;
-- owner/subtab visual containment;
-- owner/subtab route/return behavior;
-- rapid-navigation cleanup;
-- image fallback;
-- provenance;
-- runtime/console errors;
-- unhandled rejections;
-- `git diff --check`.
+Set the app Motion mode to:
 
-Do not reuse an earlier test count as the final result unless it was rerun after the final change.
+`Auto`
 
-Where shared code changed:
+Enable OS reduced motion.
 
-rerun the affected shared regression rather than assuming earlier PASS evidence remains valid.
+Verify required current worlds remain appropriately still/minimized according to current authority.
+
+Do not substitute the app's own Reduced setting for this OS-level check.
+
+Record PASS/FAIL.
+
+Return the OS preference to the user's desired setting afterwards.
 
 ---
 
-# 23. Static fidelity before motion remains mandatory
+# 15. If ANY native check FAILS
 
-Do not use animation to hide:
+Do NOT mark Games step 11 VERIFIED.
 
-- wrong layout;
-- bad crop;
-- poor owner styling;
-- misplaced footer;
-- poor content centering;
-- legacy UI;
-- broken responsive behavior.
+Do NOT reset the whole Games world.
 
-For any reopened world dimension:
+Record the exact failed dimension.
 
-static visual correctness must be accepted before cinematic acceptance.
+Reopen only:
 
-Preserve current authority's responsive/accessibility sequence.
+- the failed requirement;
+- any directly dependent evidence;
+- any regression affected by the necessary fix.
 
-Do not move Games into its cinematic step before Games step 11 and step 12 legitimately pass.
+Make the smallest legitimate correction.
+
+After any runtime fix:
+
+rerun the affected automated regression and the required final tests according to current authority.
+
+Then request only the native acceptance that was invalidated by the change, plus any dependent check.
+
+Preserve all unrelated previous PASS evidence.
 
 ---
 
-# 24. Games step 11 remains open until final shared regression is stable
+# 16. If ALL required native checks PASS
 
-Do NOT request native Games 100%/200% acceptance until:
+First persist requirement-specific native evidence.
 
-- the Journal/deeper owner audit is finished;
-- quick-action legacy fallbacks are fixed;
-- Work History is fixed/reconciled with canonical semantics;
-- owner/subtab modernization is stable;
-- shared scene/layout CSS is stable;
-- Explore art is final;
-- performance regression is complete;
-- motion/race checks are complete;
-- fresh tests pass;
-- relevant changed controls pass.
+Do NOT merely write "user says PASS".
 
-Then request final native Edge Games review at actual:
+Record:
 
-- `100%`;
-- `200%`.
+- test;
+- actual zoom/state;
+- world/surface;
+- result;
+- date/checkpoint;
+- any observation needed by current verification rules.
 
-Do not substitute viewport resizing for true browser zoom.
+Then reconcile the Games step-11 checklist/evidence.
 
-Only after user PASS may Games step 11 be marked VERIFIED.
+Only if ALL actual step-11 requirements are legitimately satisfied:
 
-Then continue:
+mark:
 
-Games step 12
-→ Games step 13 cinematic
+`Games step 11 — VERIFIED`
+
+Do not batch-close later steps.
+
+Immediately determine the exact next unresolved item from CURRENT authority.
+
+Expected canonical next step is:
+
+`Games step 12`
+
+but verify that from the current checklist rather than assuming it.
+
+Then execute Games step 12 in its complete documented order.
+
+Do NOT skip to Games cinematic.
+
+Only after Games step 12 legitimately passes may the canonical sequence continue to:
+
+Games step 13
 → 14
 → 15
 → 16
@@ -1219,268 +611,115 @@ Games step 12
 → 18
 → 19
 
-in exact order.
+one at a time.
 
-Then continue remaining R3 worlds one at a time according to current authority.
+Then continue remaining R3 worlds according to authority.
 
-Only after Gate R3 legitimately passes:
+Only after legitimate Gate R3 closure:
 
-→ execute formal R4 Work -> Projects pilot.
+→ R4 Work → Projects pilot.
 
-Only after Gate R4 passes:
+Only after Gate R4:
 
-→ execute R5 in canonical family order.
+→ R5.
 
-Do not skip or batch-close any gate.
+No skipping and no batch-closing.
 
 ---
 
-# 25. Required initial report
+# 17. Evidence/Git discipline
 
-Before broad new edits, report:
+Use repository-persisted evidence as the continuation source.
+
+Do not depend on Codex-local output copies.
+
+Before changing checkpoint state inspect:
+
+- modified checkpoint documents;
+- untracked R3 finalization evidence;
+- revision-integrity evidence;
+- recovery ledger;
+- settled visual evidence.
+
+Preserve all legitimate current evidence.
+
+Do not reset/clean untracked evidence.
+
+Do not automatically commit unless current project workflow or explicit user instruction requires it.
+
+If you do make runtime changes after a native FAIL, clearly separate:
+
+- runtime code changes;
+- evidence changes;
+- checkpoint/documentation changes.
+
+---
+
+# 18. Required initial report
+
+Before doing anything beyond safe recovery, report briefly:
 
 ## Repository
-
 - working directory;
 - Git root;
 - branch;
 - HEAD;
-- full Git state;
-- modified files;
-- staged files;
-- untracked files.
-
-## Recovery
-
-- current control-matrix row count;
-- exact last completed Journal row;
-- exact first missing Journal/control row;
-- current scene assets recovered;
-- current owner styling recovered;
-- current motion changes recovered;
-- current performance changes recovered;
-- latest relevant evidence files.
+- staged;
+- modified;
+- untracked.
 
 ## Authority
+- complete authority reread completed;
+- exact current reading order;
+- whether anything changed since the previous finalization.
 
-- authority files reread;
-- actual authority reading order;
-- any contradiction found;
-- whether any minimal authority clarification is required.
+## Evidence
+- recovery ledger path;
+- finalization evidence present;
+- modified/untracked evidence preserved;
+- whether current production hashes still match the validated revision.
 
-## Checkpoint
-
+## Formal status
 - Games current step;
-- Gate R3 status;
-- exact first implementation action.
+- Gate R3 state;
+- exact unresolved blocker.
 
-Then continue automatically.
+If native PASS/FAIL has not been provided:
 
-Do not stop merely for approval unless there is a real destructive decision, authority contradiction, genuine manual-only blocker or missing required input.
+request the four native checks and stop at that legitimate manual boundary.
 
 ---
 
-# 26. Required final report — INLINE
+# 19. Required report after native acceptance
 
-Do not finish only with a local report path.
+After the user returns native results, report:
 
-Persist evidence files as normal, but also report the substantive result inline.
+## Native acceptance
+- Edge 100% PASS/FAIL;
+- Edge 200% PASS/FAIL;
+- background lifecycle PASS/FAIL;
+- OS reduced-motion PASS/FAIL.
 
-## Repository
+## Evidence
+- exact persisted native evidence path;
+- any superseded/reopened requirement.
 
-Report:
-
-- branch / HEAD;
-- final Git status;
-- modified/new files;
-- staged state.
-
-## Exact resume
-
-Report:
-
-- first Journal control resumed;
-- number of new control trials completed;
-- remaining manual-only checks;
-- whether Explore native image upload remains unresolved.
-
-## Quick actions
-
-Report separately:
-
-- Plan my day;
-- Brainstorm ideas;
-- all other relevant quick actions checked;
-- canonical destination;
-- pointer result;
-- keyboard result;
-- focus result;
-- confirmation that no current redesigned quick action visibly falls back into legacy UI.
-
-## Work History
-
-Report:
-
-- what a canonical History entry represents;
-- whether History is mutable or immutable by the current model;
-- record activation;
-- detail view;
-- canonical data shown;
-- supported Delete behavior;
-- Yes;
-- No;
-- keyboard;
-- focus;
-- reload persistence;
-- any authority/data-model clarification required.
-
-## Layout
-
-For current implemented main worlds report:
-
-- horizontal content-frame centering;
-- approximate vertical shift;
-- `2048×760` result;
-- `2048×1152` result;
-- footer position;
-- one-viewport fit where applicable;
-- responsive regression result.
-
-## Explore artwork
-
-Report separately:
-
-- Destinations;
-- Experiences;
-- Travel Guides;
-- Bucket List;
-- Discover More.
-
-For each include:
-
-- asset path;
-- natural size;
-- rendered size;
-- provenance;
-- semantic identity;
-- crop/focal point;
-- fallback;
-- responsive result.
-
-## Main scenes
-
-For:
-
-- Home;
-- Work;
-- Personal;
-- Explore;
-- Games static scene;
-
-report:
-
-- source asset;
-- natural size;
-- rendered size;
-- full-screen coverage;
-- sharpness;
-- encoded size;
-- focal subject;
-- responsive crop.
-
-## Earlier cinematics
-
-For:
-
-- Home;
-- Work;
-- Personal;
-- Explore;
-
-report:
-
-- approximate duration;
-- initial/mid/settled evidence;
-- scene-specific movement;
-- cleanup;
-- Full/Subtle/Off/reduced-motion result as applicable.
-
-For Games:
-
-explicitly confirm why its new cinematic has not yet been implemented.
-
-## Owner/subtab modernization
-
-List all currently reachable compatibility-owner surfaces updated.
-
-For each parent world report:
-
-- theme/art;
-- header;
-- tab styling;
-- iconography;
-- card styling;
-- buttons;
-- responsive result;
-- focus/accessibility result.
-
-Confirm:
-
-- no duplicate store was introduced;
-- business/data ownership remained canonical;
-- none of this was counted as formal R4/R5 completion.
-
-## Controls
-
-Report:
-
-- previous completed landing-control evidence preserved;
-- number of deeper owner controls completed;
-- reopened controls;
-- form create/edit/delete result;
-- Journal result;
-- dialog result;
-- keyboard/focus result;
-- History result;
-- quick-action result;
-- failures and fixes.
-
-## Performance
-
-Report fresh measurements for:
-
-- refresh;
-- cold/direct load;
-- world switch;
-- owner/subtab switch;
-- quick actions;
-- ordinary actions/buttons;
-- scene load/decode;
-- hidden requests;
-- rapid navigation.
+## Runtime
+- whether any runtime fix was required;
+- affected regression rerun if applicable.
 
 ## Verification
+- current valid focused/full totals;
+- any new targeted tests;
+- diff check/runtime status.
 
-Report:
-
-- focused tests;
-- full tests;
-- route checks;
-- Back/Forward/reload checks where affected;
-- race/cleanup;
-- runtime/console;
-- unhandled rejections;
-- fallbacks;
-- provenance;
-- `git diff --check`.
-
-## Final status
-
-Report:
-
-- Games current step/status;
+## Formal checkpoint
+- Games step 11 status;
 - Gate R3 status;
-- exact first unresolved authority item;
-- exact native/manual test required next.
+- exact next unresolved step.
 
-Continue automatically until the only remaining blocker is genuinely manual native acceptance or another real authority blocker.
+If Games 11 legitimately becomes VERIFIED:
+
+continue to Games step 12 only, following the complete current authority sequence.
+
+Do not skip ahead.

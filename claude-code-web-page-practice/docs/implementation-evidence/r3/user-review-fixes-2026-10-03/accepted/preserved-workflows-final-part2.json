@@ -1,0 +1,31 @@
+{
+  "customGame": {
+    "addEmptyValidation": true,
+    "add": true,
+    "edit": true,
+    "deleteCancelRetains": true,
+    "deleteConfirmed": true
+  },
+  "suggestions": {
+    "PCFilterCount": 12,
+    "clear": true,
+    "wishlist": true,
+    "dismiss": true,
+    "details": true
+  },
+  "persistence": {
+    "persistedJournal": true,
+    "persistedSession": true,
+    "persistedWeekly": true,
+    "persistedStory": {
+      "added": true,
+      "checked": true
+    },
+    "persistedSuggestions": {
+      "dismissed": true,
+      "wishlist": true
+    },
+    "persistedTheme": "aurora"
+  },
+  "dataOrigin": "Disposable localhost:18986; user origin untouched"
+}

@@ -17,7 +17,9 @@ body:is([data-page="home"],[data-page="work"],[data-page="personal"],[data-page=
 .osr-world { min-height:0; }
 .osr-world .osr-frame { display:flex; flex-direction:column; min-height:100vh !important; padding-block:12px 4px; }
 .osr-world .osr-frame > .site-footer { margin-top:auto; padding:6px 0; flex-shrink:0; }
-.osr-world .osr-frame > .site-footer { width:100%; text-align:center; align-self:center; background:none; border:0; box-shadow:none; }
+.osr-world .osr-frame > .site-footer { width:100%; text-align:center; align-self:center; background:none; border:0; box-shadow:none; pointer-events:none; }
+/* The plain-text footer shares a desktop row with the bounded credit launchers. */
+.osr-world .osr-frame > .site-footer :is(a,button) { pointer-events:auto; }
 @media(min-width:1460px) {
  .osr-world .osr-frame > .site-footer { min-height:44px; display:flex; align-items:center; justify-content:center; }
  .osr-world :is(.osr-explore-credits,.osr-games-footer) { position:absolute; left:var(--osr-page-pad); bottom:4px; max-width:calc(50% - 220px); margin:0 !important; min-height:44px; }

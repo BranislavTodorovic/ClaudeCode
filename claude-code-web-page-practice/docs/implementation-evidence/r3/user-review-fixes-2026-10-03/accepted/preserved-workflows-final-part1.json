@@ -1,0 +1,36 @@
+{
+  "journal": {
+    "create": true,
+    "literalMarkup": true,
+    "multiline": true,
+    "edit": true,
+    "cancelFocus": "gvJournalTitle",
+    "fullDocumentReload": true,
+    "deleteCancelRetains": true,
+    "deleteConfirmed": true,
+    "deleteFocus": "gvJournalTitle"
+  },
+  "history": {
+    "back": {
+      "focus": "library",
+      "landing": true
+    },
+    "forward": {
+      "tab": "journal",
+      "title": "Game Journal"
+    }
+  },
+  "sessions": {
+    "manual25m": true,
+    "note": "R3 reviewed play",
+    "startSpace": true,
+    "activeStartDisabled": true,
+    "stop": true
+  },
+  "weekly": {
+    "checked": true,
+    "focus": "toggle-weekly-task",
+    "gameId": "game-diablo-immortal",
+    "ring": "14%"
+  }
+}

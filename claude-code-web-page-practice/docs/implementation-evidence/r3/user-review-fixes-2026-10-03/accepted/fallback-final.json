@@ -1,0 +1,16 @@
+{
+  "cover": {
+    "hidden": true,
+    "state": "fallback",
+    "svg": true,
+    "title": "Alan Wake 2"
+  },
+  "coverErrors": [],
+  "header": {
+    "heading": "Game Journal",
+    "hidden": false,
+    "saveEnabled": true,
+    "titleVisible": true
+  },
+  "headerErrors": []
+}

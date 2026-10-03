@@ -1,0 +1,357 @@
+{
+  "date": "2026-10-03T09:58:36.950Z",
+  "head": "b01837d1c3498b8e0acd6f19d6a9a4d86b57815e",
+  "testedHistoricalHead": "143451f359880c13569ef33d751868aba9b73133",
+  "productionFiles": [
+    {
+      "file": "explore/explore-redesign.css",
+      "bytes": 12087,
+      "sha256": "54e2718847336bcd668afee8172a367a2bf83bb2ae1730ea973b3e96c1df4251",
+      "currentSha256": "54e2718847336bcd668afee8172a367a2bf83bb2ae1730ea973b3e96c1df4251",
+      "matches": true
+    },
+    {
+      "file": "explore/explore-redesign.js",
+      "bytes": 14039,
+      "sha256": "265bef405b9d33a408440f6ae73a125171aea52d1f497cb577e3cd6800f74c4b",
+      "currentSha256": "265bef405b9d33a408440f6ae73a125171aea52d1f497cb577e3cd6800f74c4b",
+      "matches": true
+    },
+    {
+      "file": "games/games-redesign.js",
+      "bytes": 13872,
+      "sha256": "e8e8025e80dd091a18a9ac1d8bec9b9713ea1307029ba5e68e8c1cb5abd15a5d",
+      "currentSha256": "e8e8025e80dd091a18a9ac1d8bec9b9713ea1307029ba5e68e8c1cb5abd15a5d",
+      "matches": true
+    },
+    {
+      "file": "games/games.js",
+      "bytes": 107971,
+      "sha256": "f78515eef916f7dc5001aa68d7501ff2f59db2fa98b4b5d752be14db09f64e9d",
+      "currentSha256": "f78515eef916f7dc5001aa68d7501ff2f59db2fa98b4b5d752be14db09f64e9d",
+      "matches": true
+    },
+    {
+      "file": "home/home-redesign.js",
+      "bytes": 23070,
+      "sha256": "909fdf862f033ff6d517a9ae77ba84ba25d5abccb18db098207e5f44f0a32dfe",
+      "currentSha256": "909fdf862f033ff6d517a9ae77ba84ba25d5abccb18db098207e5f44f0a32dfe",
+      "matches": true
+    },
+    {
+      "file": "personal/personal-redesign.js",
+      "bytes": 15657,
+      "sha256": "8c9abb3f941067aaeb770b06ea07a0a6d068c8063e4c8dce291e353ae272c3a3",
+      "currentSha256": "8c9abb3f941067aaeb770b06ea07a0a6d068c8063e4c8dce291e353ae272c3a3",
+      "matches": true
+    },
+    {
+      "file": "shared/domain-ui.js",
+      "bytes": 4311,
+      "sha256": "79751fc6fa813adac605cf7d65740037188e4f44a2c02a0e9d994d83e495615b",
+      "currentSha256": "79751fc6fa813adac605cf7d65740037188e4f44a2c02a0e9d994d83e495615b",
+      "matches": true
+    },
+    {
+      "file": "shared/redesign-foundation.js",
+      "bytes": 18250,
+      "sha256": "106bd5338ec82f4b74d23cfb1bdb66006e5746b21f62832c2f0a540b7682a99d",
+      "currentSha256": "106bd5338ec82f4b74d23cfb1bdb66006e5746b21f62832c2f0a540b7682a99d",
+      "matches": true
+    },
+    {
+      "file": "styles/redesign-layout.css",
+      "bytes": 16736,
+      "sha256": "89bc88bd3b89743ab265bb8e8380e5397f6a9f9783b73484d0957751bc409683",
+      "currentSha256": "89bc88bd3b89743ab265bb8e8380e5397f6a9f9783b73484d0957751bc409683",
+      "matches": true
+    },
+    {
+      "file": "styles/redesign-owners.css",
+      "bytes": 16265,
+      "sha256": "1bf8815c5ca6c27eb6ca216f308287163184759a92f4f02e1f771b25fdb33006",
+      "currentSha256": "1bf8815c5ca6c27eb6ca216f308287163184759a92f4f02e1f771b25fdb33006",
+      "matches": true
+    },
+    {
+      "file": "work/work-tracker.js",
+      "bytes": 31959,
+      "sha256": "c076831eb513287de708aa8415cfb28201eeae9a3b7205c7a90b6e803c1130d2",
+      "currentSha256": "c076831eb513287de708aa8415cfb28201eeae9a3b7205c7a90b6e803c1130d2",
+      "matches": true
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "scene",
+      "world": "home",
+      "file": "assets/scenes/home/hero-fullbleed.jpg",
+      "bytes": 910490,
+      "expected": "4e7557655ea9da2f0f238ba891da38b6bed7897cff78f988557db048309080df",
+      "actual": "4e7557655ea9da2f0f238ba891da38b6bed7897cff78f988557db048309080df",
+      "matches": true,
+      "currentSha256": "4e7557655ea9da2f0f238ba891da38b6bed7897cff78f988557db048309080df"
+    },
+    {
+      "kind": "scene",
+      "world": "work",
+      "file": "assets/scenes/work/hero-fullbleed.jpg",
+      "bytes": 1108031,
+      "expected": "e4db18d36975bf7fb0bd9c04e002f1321c2ab1654f86f3d68cab16418670cdad",
+      "actual": "e4db18d36975bf7fb0bd9c04e002f1321c2ab1654f86f3d68cab16418670cdad",
+      "matches": true,
+      "currentSha256": "e4db18d36975bf7fb0bd9c04e002f1321c2ab1654f86f3d68cab16418670cdad"
+    },
+    {
+      "kind": "scene",
+      "world": "personal",
+      "file": "assets/scenes/personal/hero-fullbleed.jpg",
+      "bytes": 1152795,
+      "expected": "e592908ae8184f8128850d08549dc8a476a4ede21795ca5c1c9c35463dcaf7a1",
+      "actual": "e592908ae8184f8128850d08549dc8a476a4ede21795ca5c1c9c35463dcaf7a1",
+      "matches": true,
+      "currentSha256": "e592908ae8184f8128850d08549dc8a476a4ede21795ca5c1c9c35463dcaf7a1"
+    },
+    {
+      "kind": "scene",
+      "world": "explore",
+      "file": "assets/scenes/explore/hero-fullbleed.jpg",
+      "bytes": 1317840,
+      "expected": "f54c0622b77b9cca4ea5b3be4497f4be8b31f775bc5e023165d701497c62edf7",
+      "actual": "f54c0622b77b9cca4ea5b3be4497f4be8b31f775bc5e023165d701497c62edf7",
+      "matches": true,
+      "currentSha256": "f54c0622b77b9cca4ea5b3be4497f4be8b31f775bc5e023165d701497c62edf7"
+    },
+    {
+      "kind": "scene",
+      "world": "games",
+      "file": "assets/scenes/games/hero-fullbleed.jpg",
+      "bytes": 1164656,
+      "expected": "f4ac36bc27e7b02c1bea7184724fd6c8d0698deba634198733fbd8f80cfc389c",
+      "actual": "f4ac36bc27e7b02c1bea7184724fd6c8d0698deba634198733fbd8f80cfc389c",
+      "matches": true,
+      "currentSha256": "f4ac36bc27e7b02c1bea7184724fd6c8d0698deba634198733fbd8f80cfc389c"
+    },
+    {
+      "kind": "scene",
+      "world": "movies",
+      "file": "assets/scenes/movies/hero-fast.jpg",
+      "bytes": 218731,
+      "expected": "ae1e67075d120d9cc4c9c3dae2386558382dc35368b21fc41f44cea4729bc238",
+      "actual": "ae1e67075d120d9cc4c9c3dae2386558382dc35368b21fc41f44cea4729bc238",
+      "matches": true,
+      "currentSha256": "ae1e67075d120d9cc4c9c3dae2386558382dc35368b21fc41f44cea4729bc238"
+    },
+    {
+      "kind": "scene",
+      "world": "projects-notes",
+      "file": "assets/scenes/projects-notes/hero-fast.jpg",
+      "bytes": 201825,
+      "expected": "4bc9c44f4b42cf125d6d364334083a80c40cde2d294fc9c4456240634ab94d35",
+      "actual": "4bc9c44f4b42cf125d6d364334083a80c40cde2d294fc9c4456240634ab94d35",
+      "matches": true,
+      "currentSha256": "4bc9c44f4b42cf125d6d364334083a80c40cde2d294fc9c4456240634ab94d35"
+    },
+    {
+      "kind": "scene",
+      "world": "settings",
+      "file": "assets/scenes/settings/hero-fast.jpg",
+      "bytes": 212764,
+      "expected": "66e3996bd415a5d2ac50bef50130f5d55280f49844d1330c1ce4787dc2c8ff20",
+      "actual": "66e3996bd415a5d2ac50bef50130f5d55280f49844d1330c1ce4787dc2c8ff20",
+      "matches": true,
+      "currentSha256": "66e3996bd415a5d2ac50bef50130f5d55280f49844d1330c1ce4787dc2c8ff20"
+    },
+    {
+      "kind": "explore-portal",
+      "world": "travel-guides",
+      "file": "assets/scenes/explore/portals/travel-guides.jpg",
+      "bytes": 235671,
+      "expected": "f53b6b41fc4fb646fdb81cfa0b28ad7b29d7100aba33b9eac4a3673c54bc6c14",
+      "actual": "f53b6b41fc4fb646fdb81cfa0b28ad7b29d7100aba33b9eac4a3673c54bc6c14",
+      "matches": true,
+      "source": "assets/scenes/explore/portals/travel-guides.png",
+      "sourceHash": "8ad515eb114aa4c67993940878bf68439e58ec33e755553cde6d6bce743af9c8",
+      "currentSha256": "f53b6b41fc4fb646fdb81cfa0b28ad7b29d7100aba33b9eac4a3673c54bc6c14"
+    },
+    {
+      "kind": "explore-portal",
+      "world": "bucket-list",
+      "file": "assets/scenes/explore/portals/bucket-list.jpg",
+      "bytes": 240919,
+      "expected": "901f442dd13d000df50b30e68db9c2c62d391c3543293191f13cea692cc85422",
+      "actual": "901f442dd13d000df50b30e68db9c2c62d391c3543293191f13cea692cc85422",
+      "matches": true,
+      "source": "assets/scenes/explore/portals/bucket-list.png",
+      "sourceHash": "bf1df1a41f0dacda9f9e8a620558bbf386b6fc30cef8aa3edb062f730cbe0e7a",
+      "currentSha256": "901f442dd13d000df50b30e68db9c2c62d391c3543293191f13cea692cc85422"
+    },
+    {
+      "kind": "explore-portal",
+      "world": "discover-more",
+      "file": "assets/scenes/explore/portals/discover-more.jpg",
+      "bytes": 201271,
+      "expected": "5191f9d823b7887a10c59fd7c8e9121beca3505d42de3cdd2ba1a455f36cf940",
+      "actual": "5191f9d823b7887a10c59fd7c8e9121beca3505d42de3cdd2ba1a455f36cf940",
+      "matches": true,
+      "source": "assets/scenes/explore/portals/discover-more.png",
+      "sourceHash": "342bc3dfc1f2fb9140b00a740d578b7bfa5cbbdb2eb104daa6e7da342ccdbcbe",
+      "currentSha256": "5191f9d823b7887a10c59fd7c8e9121beca3505d42de3cdd2ba1a455f36cf940"
+    },
+    {
+      "kind": "explore-portal",
+      "world": "destinations",
+      "file": "assets/scenes/explore/portals/destinations.jpg",
+      "bytes": 295075,
+      "expected": "17a0afc6f9e0bc68cf5f073c79a40b5b9f8918ae0fb385f2856273b5e28801c3",
+      "actual": "17a0afc6f9e0bc68cf5f073c79a40b5b9f8918ae0fb385f2856273b5e28801c3",
+      "matches": true,
+      "source": "assets/scenes/explore/portals/destinations.png",
+      "sourceHash": "44c8202e5128815477692c54ecd17727bafd7f159e3efa32ba88d05b21d7802e",
+      "currentSha256": "17a0afc6f9e0bc68cf5f073c79a40b5b9f8918ae0fb385f2856273b5e28801c3"
+    },
+    {
+      "kind": "explore-portal",
+      "world": "experiences",
+      "file": "assets/scenes/explore/portals/experiences.jpg",
+      "bytes": 261022,
+      "expected": "2e8bf3e5a7a233485cc4459a78acc3b9fffd4dcb9bf898eaa9b46ec382bcc2cc",
+      "actual": "2e8bf3e5a7a233485cc4459a78acc3b9fffd4dcb9bf898eaa9b46ec382bcc2cc",
+      "matches": true,
+      "source": "assets/scenes/explore/portals/experiences.png",
+      "sourceHash": "2d2ca5c693f1a6d1db45d3f1f8bb663a053dcf795a35cda5571843606b0b73aa",
+      "currentSha256": "2e8bf3e5a7a233485cc4459a78acc3b9fffd4dcb9bf898eaa9b46ec382bcc2cc"
+    }
+  ],
+  "postTestClassification": "EVIDENCE_ONLY",
+  "rerunFullRegressionRequired": false,
+  "reason": "All 11 production source hashes and 13 runtime art hashes match saved final revision. Last production CSS edit 01:23:51 +02; focused log 01:26:18; checkpoint/hash/ledger edits 01:41:45 are evidence-only; full log 01:42:37. Later AGENT replacement 11:26:21 is evidence-only. No runtime change this finalization.",
+  "exploreNativeMasterChecks": [
+    {
+      "file": "assets/scenes/explore/portals/travel-guides.png",
+      "expected": "8ad515eb114aa4c67993940878bf68439e58ec33e755553cde6d6bce743af9c8",
+      "actual": "8ad515eb114aa4c67993940878bf68439e58ec33e755553cde6d6bce743af9c8",
+      "matches": true,
+      "expectedFrom": "provenance-final.json sourceHash; manifest sha256 describes display JPEG"
+    },
+    {
+      "file": "assets/scenes/explore/portals/bucket-list.png",
+      "expected": "bf1df1a41f0dacda9f9e8a620558bbf386b6fc30cef8aa3edb062f730cbe0e7a",
+      "actual": "bf1df1a41f0dacda9f9e8a620558bbf386b6fc30cef8aa3edb062f730cbe0e7a",
+      "matches": true,
+      "expectedFrom": "provenance-final.json sourceHash; manifest sha256 describes display JPEG"
+    },
+    {
+      "file": "assets/scenes/explore/portals/discover-more.png",
+      "expected": "342bc3dfc1f2fb9140b00a740d578b7bfa5cbbdb2eb104daa6e7da342ccdbcbe",
+      "actual": "342bc3dfc1f2fb9140b00a740d578b7bfa5cbbdb2eb104daa6e7da342ccdbcbe",
+      "matches": true,
+      "expectedFrom": "provenance-final.json sourceHash; manifest sha256 describes display JPEG"
+    },
+    {
+      "file": "assets/scenes/explore/portals/destinations.png",
+      "expected": "44c8202e5128815477692c54ecd17727bafd7f159e3efa32ba88d05b21d7802e",
+      "actual": "44c8202e5128815477692c54ecd17727bafd7f159e3efa32ba88d05b21d7802e",
+      "matches": true,
+      "expectedFrom": "provenance-final.json sourceHash; manifest sha256 describes display JPEG"
+    },
+    {
+      "file": "assets/scenes/explore/portals/experiences.png",
+      "expected": "2d2ca5c693f1a6d1db45d3f1f8bb663a053dcf795a35cda5571843606b0b73aa",
+      "actual": "2d2ca5c693f1a6d1db45d3f1f8bb663a053dcf795a35cda5571843606b0b73aa",
+      "matches": true,
+      "expectedFrom": "provenance-final.json sourceHash; manifest sha256 describes display JPEG"
+    }
+  ],
+  "javaScriptSyntax": [
+    {
+      "file": "explore/explore-redesign.js",
+      "result": "PASS"
+    },
+    {
+      "file": "games/games-redesign.js",
+      "result": "PASS"
+    },
+    {
+      "file": "games/games.js",
+      "result": "PASS"
+    },
+    {
+      "file": "home/home-redesign.js",
+      "result": "PASS"
+    },
+    {
+      "file": "personal/personal-redesign.js",
+      "result": "PASS"
+    },
+    {
+      "file": "shared/domain-ui.js",
+      "result": "PASS"
+    },
+    {
+      "file": "shared/redesign-foundation.js",
+      "result": "PASS"
+    },
+    {
+      "file": "work/work-tracker.js",
+      "result": "PASS"
+    }
+  ],
+  "finalProductionChecks": [
+    {
+      "file": "explore/explore-redesign.css",
+      "actual": "54e2718847336bcd668afee8172a367a2bf83bb2ae1730ea973b3e96c1df4251",
+      "matches": true
+    },
+    {
+      "file": "explore/explore-redesign.js",
+      "actual": "265bef405b9d33a408440f6ae73a125171aea52d1f497cb577e3cd6800f74c4b",
+      "matches": true
+    },
+    {
+      "file": "games/games-redesign.js",
+      "actual": "e8e8025e80dd091a18a9ac1d8bec9b9713ea1307029ba5e68e8c1cb5abd15a5d",
+      "matches": true
+    },
+    {
+      "file": "games/games.js",
+      "actual": "f78515eef916f7dc5001aa68d7501ff2f59db2fa98b4b5d752be14db09f64e9d",
+      "matches": true
+    },
+    {
+      "file": "home/home-redesign.js",
+      "actual": "909fdf862f033ff6d517a9ae77ba84ba25d5abccb18db098207e5f44f0a32dfe",
+      "matches": true
+    },
+    {
+      "file": "personal/personal-redesign.js",
+      "actual": "8c9abb3f941067aaeb770b06ea07a0a6d068c8063e4c8dce291e353ae272c3a3",
+      "matches": true
+    },
+    {
+      "file": "shared/domain-ui.js",
+      "actual": "79751fc6fa813adac605cf7d65740037188e4f44a2c02a0e9d994d83e495615b",
+      "matches": true
+    },
+    {
+      "file": "shared/redesign-foundation.js",
+      "actual": "106bd5338ec82f4b74d23cfb1bdb66006e5746b21f62832c2f0a540b7682a99d",
+      "matches": true
+    },
+    {
+      "file": "styles/redesign-layout.css",
+      "actual": "89bc88bd3b89743ab265bb8e8380e5397f6a9f9783b73484d0957751bc409683",
+      "matches": true
+    },
+    {
+      "file": "styles/redesign-owners.css",
+      "actual": "1bf8815c5ca6c27eb6ca216f308287163184759a92f4f02e1f771b25fdb33006",
+      "matches": true
+    },
+    {
+      "file": "work/work-tracker.js",
+      "actual": "c076831eb513287de708aa8415cfb28201eeae9a3b7205c7a90b6e803c1130d2",
+      "matches": true
+    }
+  ]
+}

@@ -269,8 +269,10 @@
   function wireLogoFallback() {
     var gamesView = document.getElementById("gamesView");
     if (!gamesView) return;
+    document.getElementById("gameDetailsBody").addEventListener("error", function (e) { if (e.target.classList?.contains("gv-owner-cover-image") && e.target.parentElement) { e.target.hidden = true; e.target.parentElement.dataset.assetState = "fallback"; } }, true);
     gamesView.addEventListener("error", function (e) {
       var img = e.target;
+      if (img.classList?.contains("gv-owner-cover-image")) { if (img.parentElement) { img.hidden = true; img.parentElement.dataset.assetState = "fallback"; } return; }
       if (!img.classList || !img.classList.contains("gv-logo-img")) return;
       var name = img.getAttribute("data-fallback-name") || ""; console.warn('[OneSpace logo]',name,img.getAttribute('src'));
       var accent = img.getAttribute("data-fallback-accent") || "#7a8fff";
@@ -285,6 +287,16 @@
   /* ---------------------------------------------------------------------
    * My Games card rendering
    * ------------------------------------------------------------------- */
+  /* Decorative media reuses card-size artwork; canonical records are untouched. */
+  function ownerCover(game) {
+    return '<div class="gv-owner-cover" aria-hidden="true">' + gameScene(game) +
+      (game.artwork ? '<img class="gv-owner-cover-image" data-fallback-owner="games-owner" src="' + esc(ownerArtworkSource(game)) + '" alt="" width="600" height="340" loading="lazy" decoding="async">' : '') + '</div>';
+  }
+  function ownerArtworkSource(game) {
+    var bounded = { 'assets/game-art/alan-wake-2.webp':'alan-wake-2', 'assets/game-art/resident-evil-4.jpg':'resident-evil-4', 'assets/game-art/diablo-immortal.webp':'diablo-immortal' };
+    var source = game.cardArtwork || game.artwork;
+    return bounded[source] ? 'assets/scenes/games/owners/' + bounded[source] + '-card.jpg' : source;
+  }
   function cardHtml(game) {
     var isWeekly = game.trackerType === "weekly";
     var stats = statsFor(game);
@@ -294,7 +306,7 @@
     var weekBadge = isWeekly ? '<span class="gv-week-badge">Week ' + esc(stats.weekKey || "") + "</span>" : "";
     return (
       '<article class="gv-card" data-game-id="' + esc(game.id) + '" data-reveal data-reveal-group="library" data-reveal-key="' + esc(game.id) + '" style="--gv-brand:' + esc(game.accent || "#7a8fff") + '">' +
-        '<button type="button" class="gv-card-logo" data-action="spotlight-game" data-id="' + esc(game.id) + '" aria-label="Spotlight ' + esc(game.name) + '">' + (game.artwork ? '<img class="gv-card-art" src="' + esc(game.cardArtwork || game.artwork) + '" alt="" loading="lazy" width="600" height="340">' : gameScene(game)) + renderLogo(game) + "</button>" +
+        '<button type="button" class="gv-card-logo" data-action="spotlight-game" data-id="' + esc(game.id) + '" aria-label="Spotlight ' + esc(game.name) + '">' + ownerCover(game) + renderLogo(game) + "</button>" +
         '<div class="gv-card-body">' +
           '<h3 class="gv-card-title">' + esc(game.name) + "</h3>" +
           '<div class="gv-card-meta"><span>' + esc(game.genre || "Custom") + " · " + esc(game.platform || "") + "</span>" + weekBadge + "</div>" +
@@ -369,9 +381,10 @@
     }).join("");
     return (
       '<div class="gv-tracker" data-game-id="' + esc(game.id) + '">' +
-        '<div class="gv-tracker-head">' +
+        '<div class="gv-tracker-head">' + ownerCover(game) +
           '<div class="gv-tracker-title">' + renderLogo(game) + "<div><h2>" + esc(game.name) + "</h2><p>" + stats.completed + "/" + stats.total + " objectives · " + stats.percent + "% · " + esc(stats.status) + "</p></div></div>" +
         "</div>" +
+        '<div class="gv-progress-row"><progress max="100" value="' + stats.percent + '" aria-label="Story completion"></progress><strong>' + stats.percent + '%</strong></div>' +
         '<p class="gv-tracker-next"><strong>Next up:</strong> ' + esc(stats.next) + "</p>" +
         '<div class="gv-chapters">' + (chaptersHtml || '<form class="gv-add-objective" data-action="add-objective-form" data-chapter-id=""><input type="text" placeholder="Add your first objective…" maxlength="140" aria-label="New objective text"><button type="submit" class="btn">Add</button><span role="alert"></span></form>') + "</div>" +
       "</div>"
@@ -388,7 +401,7 @@
     }).join("");
     return (
       '<div class="gv-tracker" data-game-id="' + esc(game.id) + '">' +
-        '<div class="gv-tracker-head">' +
+        '<div class="gv-tracker-head">' + ownerCover(game) +
           '<div class="gv-tracker-title">' + renderLogo(game) + "<div><h2>" + esc(game.name) + "</h2><p>Week of " + esc(weekRangeLabel(new Date())) + " · " + esc(stats.weekKey) + "</p></div></div>" +
         "</div>" +
         '<div class="gv-weekly-body">' +
@@ -724,7 +737,7 @@
     if (!el) return;
     var current = safeGet(GK.theme) || "midnight";
     el.innerHTML = THEME_DEFS.map(function (t) {
-      return '<button type="button" class="gv-swatch-card' + (t.key === current ? " active" : "") + '" data-action="apply-games-theme" data-theme="' + t.key + '"><div class="gv-swatch-preview" style="background:' + t.preview + '"></div><strong>' + t.label + "</strong></button>";
+      return '<button type="button" class="gv-swatch-card' + (t.key === current ? " active" : "") + '" data-action="apply-games-theme" aria-pressed="' + (t.key === current) + '" data-theme="' + t.key + '"><div class="gv-swatch-preview" style="background:' + t.preview + '"></div><strong>' + t.label + "</strong></button>";
     }).join("");
   }
 
@@ -754,14 +767,10 @@
       '<div class="gv-stat-tile"><strong>' + agg.avg + '%</strong><span>Average completion</span></div>' +
       '<div class="gv-stat-tile"><strong>' + (agg.weeklyPercent == null ? "—" : agg.weeklyPercent + "%") + "</strong><span>Weekly game progress</span></div>";
     var entry = findContinueGame();
-    if (!entry) {
-      continueEl.innerHTML = "<h3>Continue Playing</h3><p>Nothing in progress yet — open a game from My Games to get started.</p>";
-    } else {
-      continueEl.innerHTML =
-        "<h3>Continue Playing</h3>" +
-        "<p>" + esc(entry.game.name) + " — " + entry.stats.percent + "% complete. Next: " + esc(entry.stats.next) + "</p>" +
-        '<button type="button" class="btn btn-primary" data-action="open-progress" data-id="' + esc(entry.game.id) + '">Continue</button>';
-    }
+    continueEl.innerHTML = '<div class="gv-overview-feature">' + (entry ? ownerCover(entry.game) : '<div class="gv-overview-room" aria-hidden="true"></div>') + '<div><p class="gv-kicker">YOUR NEXT CHAPTER</p><h3>Continue Playing</h3>' +
+      (entry ? '<h4>' + esc(entry.game.name) + '</h4><p>' + entry.stats.percent + '% complete · Next: ' + esc(entry.stats.next) + '</p><button type="button" class="btn btn-primary" data-action="open-progress" data-id="' + esc(entry.game.id) + '">Continue</button>' : '<p>Nothing in progress yet. Choose a game and make your first step.</p><button type="button" class="btn btn-primary" data-action="explore-library">Choose a game</button>') + '</div></div>' +
+      '<div class="gv-overview-collection"><h3>Your collection at a glance</h3><div class="gv-overview-rows">' + library.map(function (game) { var stats=statsFor(game); return '<button type="button" class="gv-collection-row" data-action="open-progress" data-id="' + esc(game.id) + '">' + renderLogo(game) + '<span><strong>' + esc(game.name) + '</strong><small>' + (game.trackerType === 'weekly' ? 'Weekly tasks' : 'Story objectives') + ' · ' + stats.completed + '/' + stats.total + '</small></span><strong>' + stats.percent + '%</strong></button>'; }).join('') + '</div></div>';
+
   }
 
   /* ---------------------------------------------------------------------
@@ -831,7 +840,7 @@
       var g = r.game;
       return (
         '<article class="gv-suggest-card" data-reveal data-reveal-group="suggestions" data-reveal-key="' + esc(g.id) + '" style="--gv-brand:' + esc(g.accent) + '">' +
-          '<div class="gv-suggest-cover gv-illustrated-cover">' + (g.artwork ? '<img class="gv-drawn-scene" src="' + esc(g.artwork) + '" alt="" loading="lazy">' : gameScene(g)) + '<span>' + esc(g.title) + "</span></div>" +
+          '<div class="gv-suggest-cover gv-illustrated-cover">' + ownerCover(g) + '<span>' + esc(g.title) + "</span></div>" +
           '<div class="gv-suggest-body">' +
             '<div class="gv-suggest-top"><h3>' + esc(g.title) + "</h3><span class=\"gv-match\">" + "Local catalog</span></div>" +
             '<p class="gv-suggest-genre">' + esc(g.genres.join(", ")) + " · " + esc(g.platforms.join(", ")) + "</p>" +
@@ -902,8 +911,8 @@
       if (!g) return "";
       return (
         '<div class="gv-wishlist-item" style="--gv-brand:' + esc(g.accent) + '">' +
-          '<span class="gv-wishlist-cover" style="' + suggestCoverStyle(g.accent) + '">' + esc(g.title) + "</span>" +
-          '<span class="gv-wishlist-name">' + esc(g.title) + "</span>" +
+          ownerCover(g) +
+          '<span class="gv-wishlist-name"><strong>' + esc(g.title) + '</strong><small>' + esc(g.genres.join(', ')) + ' · ' + esc(g.platforms.join(', ')) + '</small></span>' +
           '<div class="gv-wishlist-actions">' +
             '<button type="button" class="btn" data-action="wishlist-add" data-id="' + g.id + '">Move to My Games</button>' +
             '<button type="button" class="btn btn-ghost" data-action="wishlist-remove" data-id="' + g.id + '">Remove</button>' +
@@ -921,7 +930,7 @@
     if (!g) return;
     document.getElementById("gameDetailsTitle").textContent = g.title;
     document.getElementById("gameDetailsBody").innerHTML =
-      '<div class="gv-details-cover" style="' + suggestCoverStyle(g.accent) + '">' + esc(g.title) + "</div>" +
+      '<div class="gv-details-cover">' + ownerCover(g) + '<span>' + esc(g.title) + '</span></div>' +
       "<p>" + esc(g.blurb) + "</p>" +
       "<p><strong>Genres:</strong> " + esc(g.genres.join(", ")) + "</p>" +
       "<p><strong>Platforms:</strong> " + esc(g.platforms.join(", ")) + "</p>" +
@@ -1065,7 +1074,7 @@
       var label = s.end === null ? "In progress…" : formatMinutes(s.minutes || 0);
       var dateLabel = new Date(s.start).toLocaleDateString();
       return (
-        '<div class="gv-session-row" data-reveal data-reveal-group="sessions" data-reveal-key="' + esc(s.id) + '"><span>' + esc(game ? game.name : "Unknown") + " — " + label + " · " + dateLabel + (s.note ? " · " + esc(s.note) : "") + "</span>" +
+        '<div class="gv-session-row" data-reveal data-reveal-group="sessions" data-reveal-key="' + esc(s.id) + '">' + (game ? renderLogo(game) : '') + '<div class="gv-session-record"><strong>' + esc(game ? game.name : "Unknown") + '</strong><time>' + dateLabel + '</time>' + (s.note ? '<p>' + esc(s.note) + '</p>' : '') + '</div><span class="gv-session-duration">' + label + '</span>' +
         (s.end === null ? "" : '<button type="button" class="btn btn-icon btn-ghost" data-action="session-delete" data-id="' + esc(s.id) + '" aria-label="Delete session">' + ICON_DELETE + "</button>") +
         "</div>"
       );
@@ -1109,7 +1118,7 @@
     listEl.innerHTML = journal.map(function (entry) {
       var game = entry.gameId ? library.find(function (g) { return g.id === entry.gameId; }) : null;
       return (
-        '<article class="gv-journal-entry" data-reveal data-reveal-group="journal" data-reveal-key="' + esc(entry.id) + '"><div class="gv-journal-entry-head"><h3>' + esc(entry.title) + '</h3><span class="gv-journal-meta">' + new Date(entry.date).toLocaleDateString() + (game ? " · " + esc(game.name) : "") + "</span></div>" +
+        '<article class="gv-journal-entry" data-entry-kind="' + (game ? 'game' : 'general') + '" data-reveal data-reveal-group="journal" data-reveal-key="' + esc(entry.id) + '">' + (game ? '<div class="gv-journal-game">' + renderLogo(game) + '<span>' + esc(game.name) + '</span></div>' : '<p class="gv-kicker">GENERAL ENTRY</p>') + '<div class="gv-journal-entry-head"><h3>' + esc(entry.title) + '</h3><span class="gv-journal-meta">' + new Date(entry.date).toLocaleDateString() + (game ? " · " + esc(game.name) : "") + "</span></div>" +
         "<p>" + esc(entry.body) + "</p>" +
         '<div class="gv-journal-entry-actions">' +
           '<button type="button" class="btn btn-ghost" data-action="journal-edit" data-id="' + esc(entry.id) + '">' + ICON_EDIT + " Edit</button>" +
@@ -1223,7 +1232,8 @@
     if (!panel) return;
     panel.tabIndex = -1;
     panel.focus({preventScroll:true});
-    panel.scrollIntoView({behavior: immediate || motionQuery.matches ? "instant" : "smooth", block:"start"});
+    var workspace = panel.closest('.osr-games-tools');
+    (workspace || panel).scrollIntoView({behavior: workspace || immediate || motionQuery.matches ? "instant" : "smooth", block:"start"});
   }
   function selectSpotlight(id, reason) {
     var game = library.find(function (g) { return g.id === id; });

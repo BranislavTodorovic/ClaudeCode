@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Overview",
+    "selected": "overview",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/portals/my-games.jpg\")",
+    "controlCount": 7
+  },
+  {
+    "name": "My Games",
+    "selected": "library",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/portals/game-library.jpg\")",
+    "controlCount": 33
+  },
+  {
+    "name": "Mission Progress",
+    "selected": "missions",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/portals/missions-quests.jpg\")",
+    "controlCount": 23
+  },
+  {
+    "name": "Weekly Tasks",
+    "selected": "weekly",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/owners/weekly-tasks.jpg\")",
+    "controlCount": 9
+  },
+  {
+    "name": "Suggestions",
+    "selected": "suggestions",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/portals/discover-games.jpg\")",
+    "controlCount": 93
+  },
+  {
+    "name": "Sessions",
+    "selected": "sessions",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/portals/game-sessions.jpg\")",
+    "controlCount": 9
+  },
+  {
+    "name": "Journal",
+    "selected": "journal",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/owners/game-journal.jpg\")",
+    "controlCount": 6
+  },
+  {
+    "name": "Appearance",
+    "selected": "appearance",
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 30%, rgba(16, 28, 41, 0.69) 70%, rgba(16, 28, 41, 0.125)), url(\"http://localhost:18986/assets/scenes/games/portals/game-settings.jpg\")",
+    "controlCount": 4
+  }
+]

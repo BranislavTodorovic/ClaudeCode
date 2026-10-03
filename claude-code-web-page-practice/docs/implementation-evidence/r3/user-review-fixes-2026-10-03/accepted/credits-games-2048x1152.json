@@ -1,0 +1,41 @@
+{
+  "world": "games",
+  "width": 2048,
+  "height": 1152,
+  "actions": [
+    {
+      "input": "pointer",
+      "dialog": true,
+      "text": "- dialog \"Games scene credits\":\n  - heading \"Games scene credits\" [level=3]\n  - button \"Close dialog\" [active]:\n  - paragraph: Decorative gaming room artwork created for OneSpace with OpenAI image generation. The room, six separate portal scenes, weekly quest board and gaming journal desk are original project artwork. Collection shelves, quest map, catalogue archive, session desk, discovery landscape and configuration workbench each represent their own action. Local display copies and retained masters are documented in assets/scenes/manifest.json and assets/scenes/games/portals/manifest.json and assets/scenes/games/owners/manifest.json.\n  - alert\n  - button \"Cancel\"",
+      "focusReturned": true
+    },
+    {
+      "input": "Enter",
+      "dialog": true,
+      "text": "- dialog \"Games scene credits\":\n  - heading \"Games scene credits\" [level=3]\n  - button \"Close dialog\" [active]:\n  - paragraph: Decorative gaming room artwork created for OneSpace with OpenAI image generation. The room, six separate portal scenes, weekly quest board and gaming journal desk are original project artwork. Collection shelves, quest map, catalogue archive, session desk, discovery landscape and configuration workbench each represent their own action. Local display copies and retained masters are documented in assets/scenes/manifest.json and assets/scenes/games/portals/manifest.json and assets/scenes/games/owners/manifest.json.\n  - alert\n  - button \"Cancel\"",
+      "focusReturned": true
+    },
+    {
+      "input": "Space",
+      "dialog": true,
+      "text": "- dialog \"Games scene credits\":\n  - heading \"Games scene credits\" [level=3]\n  - button \"Close dialog\" [active]:\n  - paragraph: Decorative gaming room artwork created for OneSpace with OpenAI image generation. The room, six separate portal scenes, weekly quest board and gaming journal desk are original project artwork. Collection shelves, quest map, catalogue archive, session desk, discovery landscape and configuration workbench each represent their own action. Local display copies and retained masters are documented in assets/scenes/manifest.json and assets/scenes/games/portals/manifest.json and assets/scenes/games/owners/manifest.json.\n  - alert\n  - button \"Cancel\"",
+      "focusReturned": true
+    }
+  ],
+  "hit": {
+    "button": {
+      "bottom": 1148,
+      "height": 44,
+      "left": 42,
+      "right": 189.65625,
+      "top": 1104,
+      "width": 147.65625,
+      "x": 42,
+      "y": 1104
+    },
+    "focusOutline": "rgb(47, 231, 176) solid 2px",
+    "focusVisible": true,
+    "footerPointer": "none",
+    "hit": "Scene credits"
+  }
+}

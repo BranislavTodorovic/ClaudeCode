@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-03T10:05:50.074Z",
+  "ownServer": {
+    "port": 18985,
+    "session": 44605,
+    "stopped": "Ctrl+C; session completed exit1"
+  },
+  "oldPorts": [
+    18981,
+    18983,
+    18984
+  ],
+  "portCheck": "netstat TCP returned no matches for all four diagnostic ports after shutdown",
+  "oldPids": [
+    10640,
+    18468,
+    13040
+  ],
+  "oldPidCheck": "Get-Process found none; none killed",
+  "browser": {
+    "tab": "2",
+    "origin": "http://localhost:18985",
+    "viewport": "reset to default",
+    "closed": true,
+    "remainingTabs": []
+  },
+  "normalOrigin8973": "untouched",
+  "siblings": "untouched"
+}

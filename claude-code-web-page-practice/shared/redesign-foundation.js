@@ -144,20 +144,21 @@
       var slug = worldId === 'work' ? (/project/i.test(title.textContent) ? 'projects' : 'kanban-board') :
         worldId === 'personal' ? (/habit|mindful/i.test(title.textContent) ? 'mindfulness' : /routine|recovery/i.test(title.textContent) ? 'recovery' : 'personal-life') : worldId === 'home' ? 'work-review' : /destination/i.test(title.textContent) ? 'destinations' : /resource|discover/i.test(title.textContent) ? 'discover-more' : 'bucket-list';
       if (worldId === 'games') {
-        slug = /mission|progress|weekly/i.test(title.textContent) ? 'missions-quests' :
+        slug = /weekly/i.test(title.textContent) ? 'weekly-tasks' : /mission|progress/i.test(title.textContent) ? 'missions-quests' :
           /session/i.test(title.textContent) ? 'game-sessions' : /discover|suggest/i.test(title.textContent) ? 'discover-games' :
-          /setting|appearance/i.test(title.textContent) ? 'game-settings' : /journal/i.test(title.textContent) ? 'my-games' : 'game-library';
+          /setting|appearance/i.test(title.textContent) ? 'game-settings' : /journal/i.test(title.textContent) ? 'game-journal' : /overview/i.test(title.textContent) ? 'my-games' : 'game-library';
       }
-      var src = 'assets/scenes/' + worldId + '/portals/' + slug + '.jpg';
+      var folder = worldId === 'games' && /^(weekly-tasks|game-journal)$/.test(slug) ? 'owners' : 'portals';
+      var src = 'assets/scenes/' + worldId + '/' + folder + '/' + slug + '.jpg';
       if (identity.getAttribute('src') !== src) { identity.hidden = false; identity.src = src; }
       tools.dataset.ownerIdentity = slug;
     }
+    var gameTabLabels = { overview:'Games overview', library:'Game Library', missions:'Missions & Quests', weekly:'Weekly Tasks', suggestions:'Discover Games', sessions:'Game Sessions', journal:'Game Journal', appearance:'Game Settings' };
     function identifyGameTab(event) {
       if (!event.target.closest('[data-gv-tab]')) return;
       var tab = tools.querySelector('[data-gv-tab][aria-selected="true"]');
       if (!tab || tab.getAttribute('aria-selected') !== 'true') return;
-      var names = { overview:'Games overview', library:'Game Library', missions:'Missions & Quests', weekly:'Weekly Tasks', suggestions:'Discover Games', sessions:'Game Sessions', journal:'Game Journal', appearance:'Game Settings' };
-      identify(names[tab.dataset.gvTab]);
+      identify(gameTabLabels[tab.dataset.gvTab]);
     }
     if (worldId === 'games') {
       tools.addEventListener('click', identifyGameTab);
@@ -209,7 +210,10 @@
     win.addEventListener('popstate', function () {
       if (doc.body.dataset.page !== worldId) return;
       var state = win.history.state;
-      if (state && state.osrOwner === worldId) present(true, state.osrOwnerTitle, true);
+      if (state && state.osrOwner === worldId) {
+        var currentGameTab = worldId === 'games' && tools.querySelector('[data-gv-tab][aria-selected="true"]');
+        present(true, currentGameTab ? gameTabLabels[currentGameTab.dataset.gvTab] : state.osrOwnerTitle, true);
+      }
       else if (worldId === 'work' && doc.body.dataset.workView === 'projects') present(true, 'Projects', true);
       else reset(true);
     });

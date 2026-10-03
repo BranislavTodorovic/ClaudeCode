@@ -1,0 +1,41 @@
+{
+  "world": "explore",
+  "width": 390,
+  "height": 844,
+  "actions": [
+    {
+      "input": "pointer",
+      "dialog": true,
+      "text": "- dialog \"Scene & photo credits\":\n  - heading \"Scene & photo credits\" [level=3]\n  - button \"Close dialog\" [active]:\n  - paragraph: The travel room is generated local artwork. Destination photographs retain their original licenses. These credits describe the imagery; open destination details for travel descriptions.\n  - paragraph:\n    - text: Lisbon —\n    - link \"Dale Cruse\":\n      - /url: https://commons.wikimedia.org/wiki/File:Lisbon_Skyline_from_Miradouro_de_S%C3%A3o_Pedro_de_Alc%C3%A2ntara_at_Twilight_(54714276547).jpg\n    - text: ·\n    - link \"CC BY 4.0\":\n      - /url: https://creativecommons.org/licenses/by/4.0/\n  - paragraph:\n    - text: Kyoto —\n    - link \"Basile Morin\":\n      - /url: https://commons.wikimedia.org/wiki/File:Dry-sand_Zen_garden_made_of_beige_stripes_a_sunny_day_at_Higashiyama_Jisho-ji_Buddhist_temple_Ginkaku-ji_Kyoto_Japan.jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - paragraph:\n    - text: São Miguel —\n    - link \"Gonçalo Torres\":\n      - /url: https://commons.wikimedia.org/wiki/File:View_overlooking_the_Sete_Cidades_Lagoon,_S%C3%A3o_Miguel_island,_Azores_(Portugal).jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - paragraph:\n    - text: Crete —\n    - link \"Ввласенко\":\n      - /url: https://commons.wikimedia.org/wiki/File:Coast_in_Agioi_apostoli._Crete,_Greece.jpg\n    - text: ·\n    - link \"CC BY-SA 3.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/3.0/\n  - paragraph:\n    - text: Monteverde —\n    - link \"Cephas\":\n      - /url: https://commons.wikimedia.org/wiki/File:Monteverde_Reserve_Costa_Rica_02.jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - alert\n  - button \"Cancel\"",
+      "focusReturned": true
+    },
+    {
+      "input": "Enter",
+      "dialog": true,
+      "text": "- dialog \"Scene & photo credits\":\n  - heading \"Scene & photo credits\" [level=3]\n  - button \"Close dialog\" [active]:\n  - paragraph: The travel room is generated local artwork. Destination photographs retain their original licenses. These credits describe the imagery; open destination details for travel descriptions.\n  - paragraph:\n    - text: Lisbon —\n    - link \"Dale Cruse\":\n      - /url: https://commons.wikimedia.org/wiki/File:Lisbon_Skyline_from_Miradouro_de_S%C3%A3o_Pedro_de_Alc%C3%A2ntara_at_Twilight_(54714276547).jpg\n    - text: ·\n    - link \"CC BY 4.0\":\n      - /url: https://creativecommons.org/licenses/by/4.0/\n  - paragraph:\n    - text: Kyoto —\n    - link \"Basile Morin\":\n      - /url: https://commons.wikimedia.org/wiki/File:Dry-sand_Zen_garden_made_of_beige_stripes_a_sunny_day_at_Higashiyama_Jisho-ji_Buddhist_temple_Ginkaku-ji_Kyoto_Japan.jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - paragraph:\n    - text: São Miguel —\n    - link \"Gonçalo Torres\":\n      - /url: https://commons.wikimedia.org/wiki/File:View_overlooking_the_Sete_Cidades_Lagoon,_S%C3%A3o_Miguel_island,_Azores_(Portugal).jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - paragraph:\n    - text: Crete —\n    - link \"Ввласенко\":\n      - /url: https://commons.wikimedia.org/wiki/File:Coast_in_Agioi_apostoli._Crete,_Greece.jpg\n    - text: ·\n    - link \"CC BY-SA 3.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/3.0/\n  - paragraph:\n    - text: Monteverde —\n    - link \"Cephas\":\n      - /url: https://commons.wikimedia.org/wiki/File:Monteverde_Reserve_Costa_Rica_02.jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - alert\n  - button \"Cancel\"",
+      "focusReturned": true
+    },
+    {
+      "input": "Space",
+      "dialog": true,
+      "text": "- dialog \"Scene & photo credits\":\n  - heading \"Scene & photo credits\" [level=3]\n  - button \"Close dialog\" [active]:\n  - paragraph: The travel room is generated local artwork. Destination photographs retain their original licenses. These credits describe the imagery; open destination details for travel descriptions.\n  - paragraph:\n    - text: Lisbon —\n    - link \"Dale Cruse\":\n      - /url: https://commons.wikimedia.org/wiki/File:Lisbon_Skyline_from_Miradouro_de_S%C3%A3o_Pedro_de_Alc%C3%A2ntara_at_Twilight_(54714276547).jpg\n    - text: ·\n    - link \"CC BY 4.0\":\n      - /url: https://creativecommons.org/licenses/by/4.0/\n  - paragraph:\n    - text: Kyoto —\n    - link \"Basile Morin\":\n      - /url: https://commons.wikimedia.org/wiki/File:Dry-sand_Zen_garden_made_of_beige_stripes_a_sunny_day_at_Higashiyama_Jisho-ji_Buddhist_temple_Ginkaku-ji_Kyoto_Japan.jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - paragraph:\n    - text: São Miguel —\n    - link \"Gonçalo Torres\":\n      - /url: https://commons.wikimedia.org/wiki/File:View_overlooking_the_Sete_Cidades_Lagoon,_S%C3%A3o_Miguel_island,_Azores_(Portugal).jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - paragraph:\n    - text: Crete —\n    - link \"Ввласенко\":\n      - /url: https://commons.wikimedia.org/wiki/File:Coast_in_Agioi_apostoli._Crete,_Greece.jpg\n    - text: ·\n    - link \"CC BY-SA 3.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/3.0/\n  - paragraph:\n    - text: Monteverde —\n    - link \"Cephas\":\n      - /url: https://commons.wikimedia.org/wiki/File:Monteverde_Reserve_Costa_Rica_02.jpg\n    - text: ·\n    - link \"CC BY-SA 4.0\":\n      - /url: https://creativecommons.org/licenses/by-sa/4.0/\n  - alert\n  - button \"Cancel\"",
+      "focusReturned": true
+    }
+  ],
+  "hit": {
+    "button": {
+      "bottom": 799.421875,
+      "height": 46,
+      "left": 16,
+      "right": 220.203125,
+      "top": 753.421875,
+      "width": 204.203125,
+      "x": 16,
+      "y": 753.421875
+    },
+    "focusOutline": "rgb(184, 227, 255) solid 3px",
+    "focusVisible": true,
+    "footerPointer": "none",
+    "hit": "Scene & photo credits"
+  }
+}

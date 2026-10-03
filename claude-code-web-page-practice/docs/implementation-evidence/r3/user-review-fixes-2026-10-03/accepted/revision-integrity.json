@@ -1,0 +1,161 @@
+{
+  "head": "b01837d1c3498b8e0acd6f19d6a9a4d86b57815e",
+  "branch": "main",
+  "runtimeHashes": {
+    "games/games.js": "efc4477e15e5b80d233fcc6e9709c3ec2c4cd29b6c6aa8c6db792050b9861e85",
+    "games/games-redesign.js": "1db8af255dd60b99f6cb45cc1735b422a69cd25fcdf5d42b234001e8276815ae",
+    "games/games-redesign.css": "bfcbf90dce3b2ec90692a3a63c5030c7d5d4160230bf6a2215dd6b190ccb216e",
+    "explore/explore-redesign.js": "6a8c6e4453013137d9e8db929e82c82b41c22bcd00e6f8a9ca201ee622837818",
+    "shared/redesign-foundation.js": "878fb15aa7268c1789da45e184efb18ff7a23be2da269472c3a77adee90fe981",
+    "shared/visual-utils.js": "c18c77ea129bb6564f88b5566393b7a7331ee20aadf9d50badc0a0a483c9b32f",
+    "styles/redesign-layout.css": "124caa4801b4e282dc721bcb3ffcc004318b02ef91cbefd8f0cb468923009562",
+    "index.html": "a5df06e6560a7915cb656a0a62721d7309fad9fdce65f55a2e2938fab2ba93cc"
+  },
+  "canonicalUnchanged": {
+    "saveLibrary": "49bc056670f15f31d057db04c2fc7cc1fdf0a1950763e1f1a22d7f4ae5ad07ab",
+    "saveWeekly": "e09af0d6eb64a055700543926e2c4dfb47043908e85bfba09f23997823ce6548",
+    "saveJournal": "65ccd8f55e9227707aead6cd9b7878443a3310dac446d78abc3b9e309e4d8557",
+    "commitGameChanges": "eeb8b4b11585e2619a2a6512b5be260b597011a41bac7cc295ecbf8b3b9390d7",
+    "toggleObjective": "370762ba74f41c51268773dad5658ef6fb7d9b7bd126953e3c2659569529fa59",
+    "toggleWeeklyTask": "721939c1a80a4a2bb30d4e58fd8796a13a31e16eae9b4e80c901443bf4febdf2",
+    "addObjective": "1c809747731d544c4a06afcfcdc17b983107714381ff62d737b784720b4b56d6",
+    "deleteObjective": "20463c6967d38a65ae49d137000011ec4bc25b40080b42058ab013cd7ce3b4c1",
+    "startEditObjective": "692e15f735debb8c1a2e32cfee20204d38a597972b9ea8fe5d8aaaadc3acddd6",
+    "commitEditObjective": "2ae5f80c46456927e694750cf8081ddf18cbdc8a635e848b0527d6928e72fe36",
+    "goToTracker": "7d17719956a6330368a50d7500b741177b9c81797c97d8134485e933dcbcecec",
+    "wireAddGameModal": "cf229773ee3b8c54a820b53e20cc53d1e2e911dd71bb5fbfb8accb2db452961a",
+    "deleteGame": "97258b260d6ea0f8b2891b3ec68a82315244f0770573632e025aa964be6f9e9f",
+    "addSuggestionToLibrary": "c0136a2cf1c0ccc05a080b58d97dca5b9ac2efc73a58fb41c7abd7646c623ed1",
+    "addToWishlist": "68acf1afa57d1ce9d9317f6831a705874cbbf7ff465e2f24026c2e199d5913fe",
+    "removeFromWishlist": "c18145b706abf2b3fe2051d3ff9910429f6a27efda31eda4095fdad39d4cc258",
+    "moveWishlistToLibrary": "846e68068598d27715379106c64c207267aa8844ad5766232e37439cd8da52d4",
+    "dismissSuggestion": "cfb8179fc0a19fee5874432d7fffee56eba2fe60af8666698f79fa8166b011a4",
+    "computeSuggestions": "2afd54c88a9e21ced43b6b54ce38a8e052fbdbf4dcaf10392d83b5d88eef610e",
+    "renderPrefGroups": "a078ad7e46ab33702f2393d19db0c1886f43abd076eed52cac790c13260ee007",
+    "handlePrefChange": "e9dd950a08e1abd00df80630de62bce15640cb921fac6e4a318138446ba3f1fd",
+    "wireSuggestions": "f31b755c7f911728ffb37c15864c657128689daf4aa66be22574bcd0546751ba",
+    "wireGameSearch": "d343bbed4560d7e4cf4e96fdffd733e465aa5127b18182e64d56ad0e744a5107",
+    "activeSession": "433ae7aa3afd9950bdff7b5e77be6e11b8bb92e0896a4e038930a6cf6140807a",
+    "startSession": "4c8bb3d8ef71c743f959b12df6ea565ce1ff26b830947bb92fb2cf67ffcfa6cf",
+    "stopSession": "49889f35147b4bc427e9f91436239c1c1f6d50c8e4afe9fc3f02e018e95e6e39",
+    "logSessionManual": "c031370cd6db328f5fa5f6644023d7b042cfbd0cce81de3a7f41ec36197af34c",
+    "deleteSession": "893628b854ace7e87b0b929aaa0fc0c3e384ac78de2ca4d2ebe9608fba0e61de",
+    "wireSessions": "439a476dcf7f319af8da116f4788d32ae2f2e0a874dac8b988d9356e5a428f59",
+    "startEditJournal": "88ab6e399fb442b3ad06f9441865b478270c72e809e64e8154184568dfb9f789",
+    "cancelJournalEdit": "d197fff0b947376ebccb9f1a32341643cb3e0e72a9ebf903cf77335323f4e2e7",
+    "deleteJournalEntry": "409fd399191efd45b9ec5460c21544f8827ebb18949e923d1011a22b3ce9d72f",
+    "wireJournal": "7a4f346667dd3d095d6b23731186150db8ff026d563fc70d6313f9a144fd6ef3",
+    "switchTab": "408ecda4af35cfc1a0a164cc0c67c03bc0185ce6267b28521db60ffeaff5bc01",
+    "wireTabs": "c06e6147ffed96da44c032c5f2c571d37bf614286eb7a28b094177c34c1c6433",
+    "wireDelegatedEvents": "d259c604d2264164fdd5bfaf290e3593ca1234fa573c97981d46b4d529ac8d39",
+    "withFocusPreserved": "7dca83afb2bbb9c10304bd96a652c34f8fb392fff25ba8aaf44ec818e76d925b",
+    "syncSpotlightPlayback": "cde7b2a65e0693b3076d93ce474ef19cfee2e3c48edb4a51014806ae4ade2434"
+  },
+  "changedFunctionSections": [
+    "wireLogoFallback",
+    "cardHtml",
+    "storyTrackerHtml",
+    "weeklyTrackerHtml",
+    "renderAppearancePanel",
+    "renderOverview",
+    "renderSuggestions",
+    "renderWishlist",
+    "openSuggestionDetails",
+    "renderSessionsPanel",
+    "renderJournalPanel",
+    "focusPanel"
+  ],
+  "newFunctions": [
+    "ownerCover",
+    "ownerArtworkSource"
+  ],
+  "assets": {
+    "assets": [
+      {
+        "slug": "weekly-tasks",
+        "sourceId": "exec-0a7ed546-914d-497f-a4cf-1159d70ae3ad",
+        "master": "weekly-tasks-master.png",
+        "file": "weekly-tasks.jpg",
+        "masterDimensions": [
+          1536,
+          1024
+        ],
+        "displayDimensions": [
+          960,
+          640
+        ],
+        "masterSha256": "7619a3005a06c6c1bb484627a1e0aa570d85667ff6da57ce38edc6d5a2f3cc01",
+        "displaySha256": "cc76957fad41935408043eba200f213d3207f3bc757f4b3441b8b93b2ea4b232",
+        "displayBytes": 171472,
+        "source": "OpenAI built-in image_gen tool; original generated OneSpace artwork",
+        "promptSubject": "Seven-column physical quest board with blank parchment cards, checkmark pins and controller, oak wall, evening practical lighting and cyan/violet glass",
+        "constraints": "1536x1024 premium warm architectural 3D gaming vignette; no readable text, people, logos, watermark or UI controls",
+        "crop": "No crop. Proportional downsample from retained master. CSS object-fit only at presentation time."
+      },
+      {
+        "slug": "game-journal",
+        "sourceId": "exec-61e387e7-b9a1-4243-a927-7cd5c917cdf7",
+        "master": "game-journal-master.png",
+        "file": "game-journal.jpg",
+        "masterDimensions": [
+          1536,
+          1024
+        ],
+        "displayDimensions": [
+          960,
+          640
+        ],
+        "masterSha256": "5fe874e14df6fdfa431b35925c91758a4c57bea1237ac097784db99202e4b8fd",
+        "displaySha256": "690750bdccb0f50084dad20e9ebaa8d07aa859fc8ae952556ba389e63bdbde08",
+        "displayBytes": 148347,
+        "source": "OpenAI built-in image_gen tool; original generated OneSpace artwork",
+        "promptSubject": "Open leather gaming journal, blank creamy pages, fountain pen, controller, small game landscape pictures, brass lamp and warm oak desk",
+        "constraints": "1536x1024 premium warm architectural 3D gaming vignette; no readable text, people, logos, watermark or UI controls",
+        "crop": "No crop. Proportional downsample from retained master. CSS object-fit only at presentation time."
+      },
+      {
+        "file": "alan-wake-2-card.jpg",
+        "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+        "original": "assets\\game-art\\alan-wake-2.webp",
+        "originalSha256": "be97566ca5b1f4e040b5e396fa645ae57b32ae5fee9a954fdd5f6c489be843e7",
+        "displaySha256": "0db031dbd0b1ee9a4fb7c15c08fd462a2d0e2f91459342feb4b1d328060b1148",
+        "displayDimensions": [
+          960,
+          494
+        ],
+        "displayBytes": 109118,
+        "crop": "No crop; proportional downsample; original preserved"
+      },
+      {
+        "file": "resident-evil-4-card.jpg",
+        "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+        "original": "assets\\game-art\\resident-evil-4.jpg",
+        "originalSha256": "31e6ab296f5fd1cb0691cc493286bc3cc755108e9a96c6efc113105499221a63",
+        "displaySha256": "e72185e18a7141447d36e0fb2ad7a9eeefdf465ca69cb2f9ea6697eabb65e359",
+        "displayDimensions": [
+          960,
+          310
+        ],
+        "displayBytes": 43889,
+        "crop": "No crop; proportional downsample; original preserved"
+      },
+      {
+        "file": "diablo-immortal-card.jpg",
+        "source": "Existing publisher artwork; original provenance remains assets/game-art/SOURCES.md",
+        "original": "assets\\game-art\\diablo-immortal.webp",
+        "originalSha256": "625d10be74cb7a261bd684d507e68b5f9b8de31344a8bba82a26a23d1d0a3865",
+        "displaySha256": "019ff3cd9dc5af13f0f2247ae4e63158aebad1a54256583237c578a85c4bc53a",
+        "displayDimensions": [
+          960,
+          498
+        ],
+        "displayBytes": 91943,
+        "crop": "No crop; proportional downsample; original preserved"
+      }
+    ],
+    "fallback": "Text heading and functional controls remain visible if decorative art fails; owner cover image errors reveal existing deterministic gameScene SVG.",
+    "loading": "CSS owner headers load only when their panel is visible; both display images <200KB. Masters never referenced by runtime."
+  },
+  "runtimeDisplayBytes": 564769,
+  "canonicalScope": "38 unchanged action, storage, tracker, journal, session, filter and focus function sections. No new data schema, storage owner, module route or business rule."
+}

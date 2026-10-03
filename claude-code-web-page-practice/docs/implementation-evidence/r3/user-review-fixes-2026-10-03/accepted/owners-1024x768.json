@@ -1,0 +1,202 @@
+[
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/portals/my-games.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 7,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Games overview",
+    "panel": {
+      "bottom": 1352.453125,
+      "height": 876.90625,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 475.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 475.546875
+    },
+    "small": [],
+    "tab": "overview",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/portals/game-library.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 33,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Game Library",
+    "panel": {
+      "bottom": 2559.109375,
+      "height": 2070.5625,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 488.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 488.546875
+    },
+    "small": [],
+    "tab": "library",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/portals/missions-quests.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 23,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Missions & Quests",
+    "panel": {
+      "bottom": 1794.953125,
+      "height": 1306.40625,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 488.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 488.546875
+    },
+    "small": [],
+    "tab": "missions",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/owners/weekly-tasks.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 9,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Weekly Tasks",
+    "panel": {
+      "bottom": 1618.015625,
+      "height": 1129.46875,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 488.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 488.546875
+    },
+    "small": [],
+    "tab": "weekly",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/portals/discover-games.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 93,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Discover Games",
+    "panel": {
+      "bottom": 9432.59375,
+      "height": 9000.046875,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 432.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 432.546875
+    },
+    "small": [],
+    "tab": "suggestions",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/portals/game-sessions.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 9,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Game Sessions",
+    "panel": {
+      "bottom": 1148.265625,
+      "height": 715.71875,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 432.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 432.546875
+    },
+    "small": [],
+    "tab": "sessions",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/owners/game-journal.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 6,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Game Journal",
+    "panel": {
+      "bottom": 1339.5,
+      "height": 906.953125,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 432.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 432.546875
+    },
+    "small": [],
+    "tab": "journal",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  },
+  {
+    "art": "linear-gradient(90deg, rgb(16, 28, 41) 38%, rgba(16, 28, 41, 0.69) 60%, rgba(16, 28, 41, 0.063)), url(\"http://localhost:18986/assets/scenes/games/portals/game-settings.jpg\")",
+    "brokenVisibleImages": [],
+    "controls": 4,
+    "documentWidth": 1009,
+    "overflows": [],
+    "ownerHeading": "Game Settings",
+    "panel": {
+      "bottom": 1224.125,
+      "height": 791.578125,
+      "left": 21.5,
+      "right": 987.5,
+      "top": 432.546875,
+      "width": 966,
+      "x": 21.5,
+      "y": 432.546875
+    },
+    "small": [],
+    "tab": "appearance",
+    "tabGrid": "231.5px 231.5px 231.5px 231.5px",
+    "viewport": [
+      1024,
+      768
+    ]
+  }
+]

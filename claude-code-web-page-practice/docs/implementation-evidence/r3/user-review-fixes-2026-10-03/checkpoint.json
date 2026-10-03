@@ -1,0 +1,15 @@
+{
+  "Games step 11": "IN PROGRESS / IMPLEMENTED / NOT VERIFIED",
+  "Games steps 12–19": "PENDING",
+  "Gate R3": "OPEN",
+  "R4": "NOT STARTED / DEFERRED",
+  "R5": "NOT STARTED / DEFERRED",
+  "Games cinematic": "Not implemented or started in this correction",
+  "nextRequired": [
+    "Actual Edge 100% hard-refresh review",
+    "Actual Edge 200% hard-refresh review",
+    "Native browser background/document-hidden lifecycle",
+    "Actual OS reduced motion with app Motion=Auto"
+  ],
+  "preservation": "All prior valid work/evidence retained; no reset/revert/clean/discard, stage, commit or push."
+}
